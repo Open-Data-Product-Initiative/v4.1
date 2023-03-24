@@ -55,6 +55,7 @@ Copyrights 2022 Mindmote Oy. Original creators of the specification: Jarkko Moil
 * <a href="https://www.linkedin.com/in/jarkkomoilanen/">Jarkko Moilanen</a>
 * <a href="https://www.linkedin.com/in/jussi-niilahti/">Jussi Niilahti</a>
 
+
 **Participate:**
 
 * [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-2.0/issues)
