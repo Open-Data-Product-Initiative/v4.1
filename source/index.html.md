@@ -58,7 +58,7 @@ Copyrights 2022 Mindmote Oy. Original creators of the specification: Jarkko Moil
 
 **Participate:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-2.0/issues)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues)
 * [Raise an issue in service designed for average mortals](https://v90nkeo0oq0.typeform.com/to/Q1Zo6wE5) 
 
 ## Introduction
