@@ -73,4 +73,4 @@ The data product may be exploited e.g. by licensing its use and exploitation to 
 | damages| string | text content, max length 512 chars | Damages refers to the sum of money (i.e. indemnifications) for a breach of some duty or violation of license right. |
 | confidentiality | string | text content, max length 512 chars| Restrictions and requirements imposed on the Data User regarding e.g. the use and disclosure of the Data Holder's confidential information. |
 | applicableLaws | string | text content, max length 512 chars | Applicable laws not covered in **applicaplePrivacyLaws**, i.e local acts, degrees or law. |
-| forceMajeure | string | text content, max length 512 chars | Force Majeure |
+| forceMajeure | string | text content, max length 512 chars | Force majeure is a clause that is included in contracts to remove liability for unforeseeable and unavoidable catastrophes that interrupt the expected course of events and prevent participants from fulfilling obligations. These clauses generally cover both natural disasters and catastrophes created by humans. |
