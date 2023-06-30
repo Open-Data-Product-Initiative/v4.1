@@ -42,7 +42,7 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 
 The specification is shared under <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> license. 
 
-Copyrights 2022 Mindmote Oy. Original creators of the specification: Jarkko Moilanen (igniter), Jussi Niilahti & Toni Luhti
+Copyrights 2023 Mindmote Oy. Original creators of the specification: Jarkko Moilanen (igniter), Jussi Niilahti & Toni Luhti
 
 **VERSION 2.0 - PUBLISHED 1st APRIL 2023**
 
