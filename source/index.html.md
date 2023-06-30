@@ -83,11 +83,9 @@ Development of the standard is coordinated in Open Data Product Initiative (ODPI
 
 **Note!** In the "Open Data Product" focus is on the latter words and the prefix  'open' refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.
 
-The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure & access), 2) business (pricing & plans), 3) legal (licensing & IPR), and 4) ethical (privacy & mydata). The four aspects are described in 6 elements, which contain attributes and other elements. 
-
+The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure & access), 2) business (pricing & plans), 3) legal (licensing & IPR), and 4) ethical (privacy & mydata). The four aspects are described in 7 elements, which contain attributes and other elements. 
 
 ![odps-model](images/odps-2.0-structure.jpg)
-
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, click the button below and proceed forward. 
