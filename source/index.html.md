@@ -1,5 +1,5 @@
 ---
-title: Open Data Product Specification 2.0 | Enabling Data Economy | Open Data Product Initiative
+title: Open Data Product Specification Dev | Enabling Data Economy | Open Data Product Initiative
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - JSON
@@ -33,31 +33,32 @@ meta:
     content: The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. 
 ---
 
-# OPEN DATA PRODUCT SPECIFICATION 2.0
+# OPEN DATA PRODUCT SPECIFICATION DEV
 
 
-## Production version 
+## Development version 
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 The specification is shared under <a href='https://creativecommons.org/licenses/by-sa/4.0/'>Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> license. 
 
-Copyrights 2022 Mindmote Oy. Original creators of the specification: Jarkko Moilanen (igniter), Jussi Niilahti & Toni Luhti
+Copyrights 2023 Mindmote Oy. Original creators of the specification: Jarkko Moilanen (igniter), Jussi Niilahti & Toni Luhti
 
-**VERSION 2.0 - PUBLISHED 1st APRIL 2023**
+**VERSION DEV**
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-2.0">https://github.com/Open-Data-Product-Initiative/open-data-product-spec-2.0</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev">https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev</a>
 
 **Editors:**
 
 * <a href="https://www.linkedin.com/in/jarkkomoilanen/">Jarkko Moilanen</a>
 * <a href="https://www.linkedin.com/in/jussi-niilahti/">Jussi Niilahti</a>
 
+
 **Participate:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-2.0/issues)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues)
 * [Raise an issue in service designed for average mortals](https://v90nkeo0oq0.typeform.com/to/Q1Zo6wE5) 
 
 ## Introduction
@@ -82,11 +83,9 @@ Development of the standard is coordinated in Open Data Product Initiative (ODPI
 
 **Note!** In the "Open Data Product" focus is on the latter words and the prefix  'open' refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.
 
-The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure & access), 2) business (pricing & plans), 3) legal (licensing & IPR), and 4) ethical (privacy & mydata). The four aspects are described in 6 elements, which contain attributes and other elements. 
-
+The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure & access), 2) business (pricing & plans), 3) legal (licensing & IPR), and 4) ethical (privacy & mydata). The four aspects are described in 7 elements, which contain attributes and other elements. 
 
 ![odps-model](images/odps-2.0-structure.jpg)
-
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, click the button below and proceed forward. 
@@ -180,6 +179,7 @@ RecommendedUseCases **OBJECT** is an array which contains offers method to attac
   "status":"draft",
   "version":"0.1",
   "versionNotes":"New version with additional details such more accurate pet details",
+  "issues": "The current issues include incorrect information in the dog breeds. The resolution for these problems is planned for the next     update, scheduled to be released on July 15th, 2023.",
   "categories":["pets"],
   "standards":["ISO 24631-6"],
   "tags":["pet"],
@@ -221,7 +221,8 @@ RecommendedUseCases **OBJECT** is an array which contains offers method to attac
 | standards| array | - | Comma separates array of standards related e.g. to data content or quality, such as ISO 8000 or ISO 19131. |
 | tags| array | - | Comma separates array of tags. |
 | version | string | The versioning scheme is **major.minor.**. Examples: 1.0, 2.1, 3.15 | The version of the data product. Applies for ODPS metadata as well. |
-| versionNotes | string | - | Additional information about the version |
+| versionNotes | string | - | Additional information about the version. |
+| issues | string | - |  There may be errors in the data product that require corrections. These issues will be briefly described to users, along with information about when the fixes will be implemented.|
 | contentSample| URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | Sample content of the data product, for example JSON/XML output. This sample should match the actual data product output and give the data consumer an idea what to expect. Obviously if the data product is pure service for example dashboard or algorithm, then consider providing preview version or alike |
 | logoURL| URL | Valid URL | Valid URL of the logo. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). |
 | outputFileFormats | string | - | Output file formats for data product |
