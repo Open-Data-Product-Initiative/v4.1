@@ -22,7 +22,8 @@ DataOps **OBJECT** describes building, deploying, and running data product's cod
     "dataLineageTool":"Collibra",
     "dataLineageOutput":"http://192.168.10.1/lineage.json",
     "hashType":"SHA-2",
-    "checksum":"7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921"
+    "checksum":"7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921",
+    "signatureType": "JWK"
   }
 }
   
@@ -43,3 +44,4 @@ DataOps **OBJECT** describes building, deploying, and running data product's cod
 | datalineageOutput | URL | Valid URL  | 	The URL of the data lineage output. Data lineage output shows the mapping of source data to target output on a metadata level |
 | hashType| string | One of: SHA-1, SHA-2, SHA-3 | Type of secure hash algorithm for checksum. |
 | checksum| string | any  | 	Script checksum. |
+| signatureType| string | any  | A public-key cryptosystem,such as JWK, PKCS#12, or PEM. |

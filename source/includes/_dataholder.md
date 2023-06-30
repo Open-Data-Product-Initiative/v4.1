@@ -43,7 +43,7 @@ The same logic applies to the optional attributes as well. Optional attributes a
       {
          "taxID":"12243434-12",
          "vatID":"12243434-12",
-         "businessDomain":"Data Product Business",
+         "businessDomain":"Product catalogs",
          "logoURL":"https://mindmote.fi/logo.png",
          "description":"Digital Economy services and tools",
          "URL":"https://mindmote.fi",

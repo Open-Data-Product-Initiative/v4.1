@@ -8,12 +8,12 @@ The same logic applies to the optional attributes as well. Optional attributes a
 
 Supported pricing models include:
 
-1. recurring time period based (day, week, month, year) plans
-2. one time payments plans
-3. pay-as-you-go plans
-4. revenue sharing plans
-5. data volume plan
-6. dynamic pricing (high and low limits for automated pricing)
+1. Recurring time period based (day, week, month, year) plans
+2. One time payments plans
+3. Pay-as-you-go plans
+4. Revenue sharing plans
+5. Data volume plan
+6. Dynamic pricing (high and low limits for automated pricing)
 7. Pay what you want plans
 8. Freemium
 9. Open data
