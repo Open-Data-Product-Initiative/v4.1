@@ -1,5 +1,9 @@
 ---
+<<<<<<< Updated upstream
 title: Open Data Product Specification 2.0 | Enabling Data Economy | Open Data Product Initiative
+=======
+title: Open Data Product Specification RC 2.1 | Enabling Data Economy | Open Data Product Initiative
+>>>>>>> Stashed changes
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - JSON
@@ -33,10 +37,17 @@ meta:
     content: The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. 
 ---
 
+<<<<<<< Updated upstream
 # OPEN DATA PRODUCT SPECIFICATION 2.0
 
 
 ## Production version 
+=======
+# OPEN DATA PRODUCT SPECIFICATION RC 2.1.
+
+
+## Release candidate version 
+>>>>>>> Stashed changes
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
@@ -44,7 +55,11 @@ The specification is shared under <a href='https://creativecommons.org/licenses/
 
 Copyrights 2022 Mindmote Oy. Original creators of the specification: Jarkko Moilanen (igniter), Jussi Niilahti & Toni Luhti
 
+<<<<<<< Updated upstream
 **VERSION 2.0 - PUBLISHED 1st APRIL 2023**
+=======
+**VERSION RC 2.1.**
+>>>>>>> Stashed changes
 
 **Version source:**
 
