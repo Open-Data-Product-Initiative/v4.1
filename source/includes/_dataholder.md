@@ -69,7 +69,7 @@ The same logic applies to the optional attributes as well. Optional attributes a
 | logoURL | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | The URL pointing to organisation logo. |
 | description | string | Max length 512 chars | The introduction to the organization. Often contains information of what the organisation does and focuses on. |
 | URL | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | The URL of the organization's website.   |
-| telephone | string | - | The telephone number.  |
+| telephone | string | Valid telephone number | The telephone number. Use [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) standard.  |
 | streetAddress | string | - | The street address. For example, 1600 Amphitheatre Pkwy.  |
 | postalCode | string | - | The postal code. For example, 94043.  |
 | addressRegion | string | - | The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division |
