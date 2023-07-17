@@ -11,6 +11,7 @@ DataOps **OBJECT** describes building, deploying, and running data product's cod
 "dataOps": {
   "infrastructure":{
     "platform":"Azure",
+    "region": "West US 2 (Washington)";
     "storageTechnology":"Azure SQL",
     "storageType":"sql",
     "containerTool":"helm",
@@ -31,6 +32,7 @@ DataOps **OBJECT** describes building, deploying, and running data product's cod
 |---|---|---|---|
 | infrastructure | element | - | Infrastructure is a process whereby a data product pipeline deployment method is defined. |
 | platform | string | any | Platform infrastructure, such as AWS, GCP, Azure. |
+| region | string | any | Provide details of cloud region of AWS, Azure or alike. Examples for AWS: US West (Oregon), Canada (Central), US East (N. Virginia), US East (Ohio). Examples for Azure: Canada Central (Toronto), East US 2 (Virginia), West US 2 (Washington) |
 | storageTechnology | string | any | Describes the internal storage area technology, such as Amazon S3, Google Cloud Storage, Azure Blob Storage, Azure SQL. |
 | storageType | string | any | Describes the internal storage type, such as files, sql, events, MQTT. |
 | containerTool | string | any | A name of the package manager, container or infrastructure as code tool. |
