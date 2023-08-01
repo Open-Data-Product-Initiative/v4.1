@@ -52,6 +52,11 @@ Copyrights 2023 Mindmote Oy. Original creators of the specification: Jarkko Moil
 
 * <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev">https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev</a>
 
+**ODPS examples:**
+
+* <a href="https://github.com/Open-Data-Product-Initiative/odps-examples">https://github.com/Open-Data-Product-Initiative/odps-examples</a>
+
+
 **Editors:**
 
 * <a href="https://www.linkedin.com/in/jarkkomoilanen/">Jarkko Moilanen</a>
