@@ -1,5 +1,5 @@
 ---
-title: Open Data Product Specification 2.1 | Enabling Data Economy | Open Data Product Initiative
+title: Open Data Product Specification Dev | Enabling Data Economy | Open Data Product Initiative
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - JSON
@@ -32,7 +32,7 @@ meta:
     content: The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. 
 ---
 
-# OPEN DATA PRODUCT SPECIFICATION 2.1.
+# OPEN DATA PRODUCT SPECIFICATION Dev
 
 ## Release candidate version 
 
@@ -43,11 +43,11 @@ The specification is shared under <a href='https://creativecommons.org/licenses/
 Copyrights 2023 Mindmote Oy. Original creators of the specification: Jarkko Moilanen (igniter), Jussi Niilahti & Toni Luhti
 
 
-**VERSION RC 2.1.**
+**VERSION DEV**
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-2.1">https://github.com/Open-Data-Product-Initiative/open-data-product-spec-2.1</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev">https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev</a>
 
 **ODPS examples:**
 
