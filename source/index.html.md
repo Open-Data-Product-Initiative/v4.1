@@ -4,7 +4,6 @@ title: Open Data Product Specification 2.1 | Enabling Data Economy | Open Data P
 language_tabs: # must be one of https://git.io/vQNgJ
   - JSON
 
-
 toc_footers:
   - <a href='https://www.dataproductbusiness.com/'>Data Product Business</a>
   - License <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a>
