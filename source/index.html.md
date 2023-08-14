@@ -1,5 +1,5 @@
 ---
-title: Open Data Product Specification RC 2.1 | Enabling Data Economy | Open Data Product Initiative
+title: Open Data Product Specification 2.1 | Enabling Data Economy | Open Data Product Initiative
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - JSON
@@ -34,7 +34,7 @@ meta:
 ---
 
 
-# OPEN DATA PRODUCT SPECIFICATION RC 2.1.
+# OPEN DATA PRODUCT SPECIFICATION 2.1.
 
 
 ## Release candidate version 
@@ -50,7 +50,7 @@ Copyrights 2023 Mindmote Oy. Original creators of the specification: Jarkko Moil
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev">https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-2.1">https://github.com/Open-Data-Product-Initiative/open-data-product-spec-2.1</a>
 
 **ODPS examples:**
 
