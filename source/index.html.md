@@ -78,7 +78,7 @@ Copyrights 2023 Mindmote Oy. Original creators of the specification: Jarkko Moil
 
 The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. The work is based on existing standards (schema.org), best practices and emerging concepts like Data Mesh. The reasoning is that we reuse and proudly copy instead of reinventing the wheel. More detailed information of the origin can be found from the [Open Data Product Specification homepage](http://www.opendataproducts.org). 
 
-Open Data Product Specification 2.0 (ODPS) changes the data product metadata model towards a standalone model, which helps to decouple data product from the systems often directly associated with it. With help of the ODPS 2.0 data product can be presented and described to the customer also as such without any need for marketplace or other systems. 
+Open Data Product Specification 2.1 (ODPS) changes the data product metadata model towards a standalone model, which helps to decouple data product from the systems often directly associated with it. With help of the ODPS 2.1 data product can be presented and described to the customer also as such without any need for marketplace or other systems. 
 
 Development of the standard is coordinated in Open Data Product Initiative (ODPI) which was established in July 2022 to make it possible for the specification to grow and become institutionlized. The ODPI was taken under the wings of open source chapter of Open Collective.
 
