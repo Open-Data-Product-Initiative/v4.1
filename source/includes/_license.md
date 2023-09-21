@@ -41,6 +41,7 @@ The data product may be exploited e.g. by licensing its use and exploitation to 
 			"continuityConditions":"Expired license will automatically continued without written cancellation (termination) by Data Holder"
 		},
 		"governance":{
+      "ownership":"Mindmote Oy, a company specializing in pet industry insights, owns the license to its proprietary data product 'Pets of the Year'.",
 			"damages":"During the term of license, except for the force majeure or the Data Holders reasons, Data User is required to follow strictly in accordance with the license. If Data User wants to terminate the license early, it needs to pay a certain amount of liquidated damages.",
 			"confidentiality":"Data User undertakes to maintain confidentiality as regards all information of a technical (such as, by way of a non-limiting example, drawings, tables, documentation, formulas and correspondence) and commercial nature (including contractual conditions, prices, payment conditions) gained during the performance of this license.",
 			"applicableLaws":"This license shall be interpreted, construed and enforced in accordance with the law of Finland, Incl. Copyright Act 404/1961.",
@@ -64,10 +65,11 @@ The data product may be exploited e.g. by licensing its use and exploitation to 
 | privacy | element | - | Data privacy related attributes. |
 | containsPersonalData | boolean | true/false | Data contains personal data. |
 | dpaURL| URL| valid URL | The URL of the Data Processing Agreement (DPA). |
-| termination | element | - | Licence termination and continuity related condititions. |
+| termination | element | - | Licence termination and continuity related conditions. |
 | terminationConditions | string | text content, max length 512 chars | Cancellation conditions of the license. |
 | continuityConditions | string |  text content, max length 512 chars | Continuity conditions of the license. |
 | governance | element | - | Governance is the approach taken to ensure that the agreed outcomes are being fulfilled. |
+| ownership | string | text content, max length 512 chars | Data product licensing ownership. |
 | audit | string | text content, max length 512 chars | License auditing terms. |
 | warranties | string | text content, max length 512 chars | License warranties. |
 | damages| string | text content, max length 512 chars | Damages refers to the sum of money (i.e. indemnifications) for a breach of some duty or violation of license right. |
