@@ -4,8 +4,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 
 > Example of Data Governance component usage:
 
-```javascript
-  
+```javascript  
 "dataGovernance": {
   "confidentiality": "Ensuring data privacy and information security in accordance with relevant regulations and best practices.",
   "versionControlSystem": "Git",
