@@ -11,7 +11,6 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
   "versionControlSystem": "Git",
   "versionRepositoryURL": "https://example.com/git-repo",
   "accessPermissions": {
-    "usersGroups": ["groupA", "groupB", "groupC"],
     "permissionLevels": {
       "level1": {
         "read": true,
@@ -26,24 +25,18 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
         "write": true
       }
     },
-    "userRights": {
+    "userGroups": {
       "groupA": {
-        "level1": true,
-        "level2": false,
-        "level3": true,
+         "levels": ["level1"],
         "description":""
-      },
+      },  
       "groupB": {
-        "level1": true,
-        "level2": false,
-        "level3": false,
+         "levels": ["level2"],
         "description":""
-      },
+      },  
       "groupC": {
-        "level1": false,
-        "level2": true,
-        "level3": true,
-        "description":""
+        "levels": ["level1"],
+        "description":"" 
       }
     },
     "compliance": {
