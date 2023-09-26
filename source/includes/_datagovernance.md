@@ -56,7 +56,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 ```
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| dataGovernance | element | - | tructured definition of policies, rules, and permissions that govern the management and utilization of data within an IT system or data product. |
+| dataGovernance | element | - | Structured definition of policies, rules, and permissions that govern the management and utilization of data within an IT system or data product. |
 | confidentiality | string | any | Ensuring data privacy and information security in accordance with relevant regulations and best practices.|
 | versionControlSystem | string | any | A version control system (VCS) is a software tool that tracks and manages changes to files, enabling collaboration and providing a history of revisions. Examples: Git, Mercurial, Bazaar. |
 | versionRepositoryURL | URL| Valid URL | The URL of the version repository, such as Git repository. |
