@@ -34,7 +34,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
         "description":""
       },  
       "groupC": {
-        "levels": ["level1"],
+        "levels": ["level3"],
         "description":"" 
       }
     },
