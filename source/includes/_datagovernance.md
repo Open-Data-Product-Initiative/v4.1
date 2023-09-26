@@ -30,17 +30,20 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
       "groupA": {
         "level1": true,
         "level2": false,
-        "level3": true
+        "level3": true,
+        "description":""
       },
       "groupB": {
         "level1": true,
         "level2": false,
-        "level3": false
+        "level3": false,
+        "description":""
       },
       "groupC": {
         "level1": false,
         "level2": true,
-        "level3": true
+        "level3": true,
+        "description":""
       }
     },
     "compliance": {
@@ -49,11 +52,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
       "guidelines": "The data governance practices and guidelines are defined and followed to maintain data integrity and security."
     }
   }
-}
-
-
-
-  
+}  
 ```
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
