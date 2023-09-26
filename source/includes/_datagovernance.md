@@ -1,6 +1,6 @@
 # Data Governance
 
-The Data Governance **OBJECT** pertains to the structured definition of policies, rules, and permissions that govern the management and utilization of data within an IT system or data product
+The Data Governance **OBJECT** pertains to the structured definition of policies, rules, and permissions that govern the management and utilization of data product.
 
 > Example of Data Governance component usage:
 
