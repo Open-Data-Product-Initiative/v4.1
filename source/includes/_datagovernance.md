@@ -26,11 +26,11 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
     },
     "userGroups": {
       "groupA": {
-         "levels": ["level1"],
+        "levels": ["level1"],
         "description":""
       },  
       "groupB": {
-         "levels": ["level2"],
+        "levels": ["level2"],
         "description":""
       },  
       "groupC": {
