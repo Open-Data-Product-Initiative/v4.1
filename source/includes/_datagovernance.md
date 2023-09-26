@@ -54,7 +54,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 | versionRepositoryURL | URL| Valid URL | The URL of the version repository, such as Git repository. |
 | accessPermissions | element | - | Access permissions refer to the rights and restrictions that determine who can view, edit, or perform specific actions on data product. |
 | permissionLevels| array | - | Comma separates array of permission levels and boolean values. |
-| userRights| array | - | Comma separates array of user rights and boolean values. |
+| userGroups| array | - | Comma separates array of group rights and boolean values. |
 | compiliance| element | -  | Compliance refers to the adherence to established rules, regulations, and standards, ensuring that actions and practices align with legal and industry requirements, particularly in the context of data privacy and security. |
 | regulations | string | any | Requirements for monitoring access to ensure compliance with data privacy and security regulations.|
 | guidelines | string | any | Data governance practices and guidelines defined and followed to maintain data integrity and security.|
