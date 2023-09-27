@@ -53,9 +53,6 @@ The data product may be exploited e.g. by licensing its use and exploitation to 
 | permanent | boolean | true/false |  License with no expiration date. |
 | exclusive | boolean | true/false |  The exclusive license holder is given complete control over the use of the data product, and no other person or organization is allowed to use it during the term of the license agreement. |
 | rights| array |  Options: Reproduction <i>(rights to reproduce)</i>, Display <i>(disclose data to others)</i>, Distribution <i>(right to distribute)</i>, Adaptation <i>(right for derivate work)</i>, Reselling <i>(right to resell)</i>, Transferring <i>(transferable data license)</i>, Sublicensing <i>(license grant may include a right to sublicense)</i>| Rights granted by the licence. The texts in brackets and <i>italic</i> are intended to describe rights. |
-| privacy | element | - | Data privacy related attributes. |
-| containsPersonalData | boolean | true/false | Data contains personal data. |
-| dpaURL| URL| valid URL | The URL of the Data Processing Agreement (DPA). |
 | termination | element | - | Licence termination and continuity related conditions. |
 | terminationConditions | string | text content, max length 512 chars | Cancellation conditions of the license. |
 | continuityConditions | string |  text content, max length 512 chars | Continuity conditions of the license. |
