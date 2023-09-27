@@ -38,14 +38,14 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
         "description":"" 
       }
     },
-		"privacy":{
-			"containsPersonalData":true,
-			"applicaplePrivacyLaws":[
-				"General Data Protection Regulation",
-				"Personal Information Protection and Electronic Documents Act (PIPEDA)",
-				"California Consumer Privacy Act (CCPA)"
-			],
-			"dpaURL":"http://192.168.10.1/dpaconditions"
+    "privacy":{
+      "containsPersonalData":true,
+      "applicaplePrivacyLaws":[
+        "General Data Protection Regulation",
+        "Personal Information Protection and Electronic Documents Act (PIPEDA)",
+        "California Consumer Privacy Act (CCPA)"
+        ],
+      "dpaURL":"http://192.168.10.1/dpaconditions"
 		},
     "compliance": {
       "regulations": "Access needs to be monitored to ensure compliance with data privacy and security regulations.",
