@@ -27,15 +27,6 @@ The data product may be exploited e.g. by licensing its use and exploitation to 
 				"Transferring"
 			]
 		},
-		"privacy":{
-			"containsPersonalData":true,
-			"applicaplePrivacyLaws":[
-				"General Data Protection Regulation",
-				"Personal Information Protection and Electronic Documents Act (PIPEDA)",
-				"California Consumer Privacy Act (CCPA)"
-			],
-			"dpaURL":"http://192.168.10.1/dpaconditions"
-		},
 		"termination":{
 			"terminationConditions":"Cancellation before 30 days. After the expiry of the right of use, the product and its derivatives must be removed.",
 			"continuityConditions":"Expired license will automatically continued without written cancellation (termination) by Data Holder"
