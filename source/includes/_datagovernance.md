@@ -46,7 +46,6 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
         ],
       "dpaURL":"http://192.168.10.1/dpaconditions"
 		},
-
     "dataSecurity":{
       "encryption":"Data in transit is encrypted using the TLS 1.2 protocol with AES-256 encryption. Data at rest is encrypted using industry-standard AES-256 encryption algorithms.",
       "authentication":"Users are initially identified through a username and password combination during API key acquisition. Multi-factor authentication (MFA) is not currently employed but is being considered for future implementation.",
