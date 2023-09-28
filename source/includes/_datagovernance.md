@@ -6,7 +6,6 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 
 ```javascript  
 "dataGovernance":{
-  "confidentiality":"Ensuring data privacy and information security in accordance with relevant regulations and best practices.",
   "versionControlSystem":"Git",
   "versionRepositoryURL":"https://example.com/git-repo",
   "accessPermissions":{
@@ -58,6 +57,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
       "updates":"Security vulnerabilities are patched within 48 hours of discovery. Users are notified of security updates through email, and a dedicated changelog is maintained on our website."
     },
     "compliance":{
+      "confidentiality":"Ensuring data privacy and information security in accordance with relevant regulations and best practices.",
       "regulations":"Access needs to be monitored to ensure compliance with data privacy and security regulations.",
       "training":"Users need to receive training on data access policies and security best practices.",
       "guidelines":"The data governance practices and guidelines are defined and followed to maintain data integrity and security."
@@ -68,7 +68,6 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | dataGovernance | element | - | Structured definition of policies, rules, and permissions that govern the management and utilization of data within an IT system or data product. |
-| confidentiality | string | any | Ensuring data privacy and information security in accordance with relevant regulations and best practices.|
 | versionControlSystem | string | any | A version control system (VCS) is a software tool that tracks and manages changes to files, enabling collaboration and providing a history of revisions. Examples: Git, Mercurial, Bazaar. |
 | versionRepositoryURL | URL| Valid URL | The URL of the version repository, such as Git repository. |
 | accessPermissions | element | - | Access permissions refer to the rights and restrictions that determine who can view, edit, or perform specific actions on data product. |
@@ -86,5 +85,6 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 | monitoring | string | any | How log data from the data product is stored and monitored for security purposes. Processes for reporting and addressing anomalies. |
 | updates | string | any | How security vulnerabilities are addressed and how security updates are managed. Describe the process for notifying users of updates. |
 | compiliance| element | -  | Compliance refers to the adherence to established rules, regulations, and standards, ensuring that actions and practices align with legal and industry requirements, particularly in the context of data privacy and security. |
+| confidentiality | string | any | Ensuring data privacy and information security in accordance with relevant regulations and best practices.|
 | regulations | string | any | Requirements for monitoring access to ensure compliance with data privacy and security regulations.|
 | guidelines | string | any | Data governance practices and guidelines defined and followed to maintain data integrity and security.|
