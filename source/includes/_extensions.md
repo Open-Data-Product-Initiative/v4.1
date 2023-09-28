@@ -9,7 +9,7 @@ The extensions properties are implemented as patterned fields that are always pr
 > Example of extension usage:
 
 ```javascript
-   "product": {
+   "product":{
       "name":"Pets of the year",
       "productID":"123456are",
       "description":"",
