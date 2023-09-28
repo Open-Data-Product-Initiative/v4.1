@@ -48,7 +48,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 		},
     "dataSecurity":{
       "encryption":"Data in transit is encrypted using the TLS 1.2 protocol with AES-256 encryption. Data at rest is encrypted using industry-standard AES-256 encryption algorithms.",
-      "authentication":"Users are initially identified through a username and password combination during API key acquisition. Multi-factor authentication (MFA) is not currently employed but is being considered for future implementation.",
+      "authentication":"Users are initially authenticated using OAuth 2.0, where they grant access to their data or resources, without the need for a username and password combination. While multi-factor authentication (MFA) is not currently in use, it is under consideration for future implementation to enhance security.",
       "vulnerabilities":"Security vulnerabilities are identified through regular automated scans and user-reported issues. A dedicated security team reviews and addresses these vulnerabilities. We have a vulnerability management process in place.",
       "securityCertificatesAndAudits":"Our data product has undergone an annual security audit by a third-party firm, and we hold a SOC 2 Type II certification. The current certification is valid until December 31, 2024.",
       "resilience":"In case of data breaches, we have a disaster recovery plan that includes data backups with daily snapshots. DDoS attacks are mitigated through a combination of traffic filtering and load balancing.",
