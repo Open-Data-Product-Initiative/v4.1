@@ -12,8 +12,7 @@ The same logic applies to the optional attributes as well. Optional attributes a
 > Example of Licensor Object mandatory attributes usage:
 
 ```javascript
-   "Licensor":
-      {
+   "Licensor":{
          "legalName":"MindMote Oy",
          "businessId":"12243434-12",
          "email":"contact@mindmote.fi"
