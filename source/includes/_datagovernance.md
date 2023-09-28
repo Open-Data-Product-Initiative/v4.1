@@ -39,7 +39,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
     },
     "dataPrivacy":{
       "containsPersonalData":true,
-      "applicaplePrivacyLaws":[
+      "applicablePrivacyLaws":[
         "General Data Protection Regulation",
         "Personal Information Protection and Electronic Documents Act (PIPEDA)",
         "California Consumer Privacy Act (CCPA)"
@@ -75,6 +75,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 | userGroups| array | - | Comma separates array of group rights and boolean values. |
 | dataPrivacy | element | - | Data privacy related attributes. |
 | containsPersonalData | boolean | true/false | Data contains personal data. |
+| applicablePrivacyLaws | string | any |  Applicable privacy laws. |
 | dpaURL| URL| valid URL | The URL of the Data Processing Agreement (DPA). |
 | dataSecurity | element | - | Information related to data product security. |
 | encryption | string | any |  How data is encrypted both in transit and at rest. List encryption algorithms and protocols used. |
