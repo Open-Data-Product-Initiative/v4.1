@@ -5,36 +5,36 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 > Example of Data Governance component usage:
 
 ```javascript  
-"dataGovernance": {
-  "confidentiality": "Ensuring data privacy and information security in accordance with relevant regulations and best practices.",
-  "versionControlSystem": "Git",
-  "versionRepositoryURL": "https://example.com/git-repo",
-  "accessPermissions": {
-    "permissionLevels": {
-      "level1": {
-        "read": true,
-        "write": false
+"dataGovernance":{
+  "confidentiality":"Ensuring data privacy and information security in accordance with relevant regulations and best practices.",
+  "versionControlSystem":"Git",
+  "versionRepositoryURL":"https://example.com/git-repo",
+  "accessPermissions":{
+    "permissionLevels":{
+      "level1":{
+        "read":true,
+        "write":false
       },
-      "level2": {
-        "read": false,
-        "write": true
+      "level2":{
+        "read":false,
+        "write":true
       },
-      "level3": {
-        "read": true,
-        "write": true
+      "level3":{
+        "read":true,
+        "write":true
       }
     },
-    "userGroups": {
-      "groupA": {
-        "levels": ["level1"],
+    "userGroups":{
+      "groupA":{
+        "levels":["level1"],
         "description":""
       },  
-      "groupB": {
-        "levels": ["level2"],
+      "groupB":{
+        "levels":["level2"],
         "description":""
       },  
-      "groupC": {
-        "levels": ["level3"],
+      "groupC":{
+        "levels":["level3"],
         "description":"" 
       }
     },
@@ -48,19 +48,19 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
       "dpaURL":"http://192.168.10.1/dpaconditions"
 		},
 
-    "dataSecurity": {
-      "encryption": "Data in transit is encrypted using the TLS 1.2 protocol with AES-256 encryption. Data at rest is encrypted using industry-standard AES-256 encryption algorithms.",
-      "authentication": "Users are initially identified through a username and password combination during API key acquisition. Multi-factor authentication (MFA) is not currently employed but is being considered for future implementation.",
-      "vulnerabilities": "Security vulnerabilities are identified through regular automated scans and user-reported issues. A dedicated security team reviews and addresses these vulnerabilities. We have a vulnerability management process in place.",
-      "securityCertificatesAndAudits": "Our data product has undergone an annual security audit by a third-party firm, and we hold a SOC 2 Type II certification. The current certification is valid until December 31, 2024.",
-      "resilience": "In case of data breaches, we have a disaster recovery plan that includes data backups with daily snapshots. DDoS attacks are mitigated through a combination of traffic filtering and load balancing.",
-      "monitoring": "Log data is securely stored in an isolated environment with restricted access. We use real-time monitoring tools to detect anomalies, and automated alerts are triggered for any suspicious activities.",
-      "updates": "Security vulnerabilities are patched within 48 hours of discovery. Users are notified of security updates through email, and a dedicated changelog is maintained on our website."
+    "dataSecurity":{
+      "encryption":"Data in transit is encrypted using the TLS 1.2 protocol with AES-256 encryption. Data at rest is encrypted using industry-standard AES-256 encryption algorithms.",
+      "authentication":"Users are initially identified through a username and password combination during API key acquisition. Multi-factor authentication (MFA) is not currently employed but is being considered for future implementation.",
+      "vulnerabilities":"Security vulnerabilities are identified through regular automated scans and user-reported issues. A dedicated security team reviews and addresses these vulnerabilities. We have a vulnerability management process in place.",
+      "securityCertificatesAndAudits":"Our data product has undergone an annual security audit by a third-party firm, and we hold a SOC 2 Type II certification. The current certification is valid until December 31, 2024.",
+      "resilience":"In case of data breaches, we have a disaster recovery plan that includes data backups with daily snapshots. DDoS attacks are mitigated through a combination of traffic filtering and load balancing.",
+      "monitoring":"Log data is securely stored in an isolated environment with restricted access. We use real-time monitoring tools to detect anomalies, and automated alerts are triggered for any suspicious activities.",
+      "updates":"Security vulnerabilities are patched within 48 hours of discovery. Users are notified of security updates through email, and a dedicated changelog is maintained on our website."
     },
-    "compliance": {
-      "regulations": "Access needs to be monitored to ensure compliance with data privacy and security regulations.",
-      "training": "Users need to receive training on data access policies and security best practices.",
-      "guidelines": "The data governance practices and guidelines are defined and followed to maintain data integrity and security."
+    "compliance":{
+      "regulations":"Access needs to be monitored to ensure compliance with data privacy and security regulations.",
+      "training":"Users need to receive training on data access policies and security best practices.",
+      "guidelines":"The data governance practices and guidelines are defined and followed to maintain data integrity and security."
     }
   }
 }  
