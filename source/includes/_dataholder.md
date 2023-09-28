@@ -16,8 +16,7 @@ The same logic applies to the optional attributes as well. Optional attributes a
 > Example of Provider component mandatory attributes usage:
 
 ```javascript
-   "dataHolder":
-      {
+   "dataHolder":{
          "legalName":"MindMote Oy",
          "businessId":"12243434-12",
          "email":"contact@mindmote.fi"
