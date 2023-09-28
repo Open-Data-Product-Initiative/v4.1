@@ -38,7 +38,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
         "description":"" 
       }
     },
-    "privacy":{
+    "dataPrivacy":{
       "containsPersonalData":true,
       "applicaplePrivacyLaws":[
         "General Data Protection Regulation",
@@ -48,7 +48,7 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
       "dpaURL":"http://192.168.10.1/dpaconditions"
 		},
 
-    "securityInformation": {
+    "dataSecurity": {
       "encryption": "Data in transit is encrypted using the TLS 1.2 protocol with AES-256 encryption. Data at rest is encrypted using industry-standard AES-256 encryption algorithms.",
       "authentication": "Users are initially identified through a username and password combination during API key acquisition. Multi-factor authentication (MFA) is not currently employed but is being considered for future implementation.",
       "vulnerabilities": "Security vulnerabilities are identified through regular automated scans and user-reported issues. A dedicated security team reviews and addresses these vulnerabilities. We have a vulnerability management process in place.",
@@ -74,10 +74,10 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 | accessPermissions | element | - | Access permissions refer to the rights and restrictions that determine who can view, edit, or perform specific actions on data product. |
 | permissionLevels| array | - | Comma separates array of permission levels and boolean values. |
 | userGroups| array | - | Comma separates array of group rights and boolean values. |
-| privacy | element | - | Data privacy related attributes. |
+| dataPrivacy | element | - | Data privacy related attributes. |
 | containsPersonalData | boolean | true/false | Data contains personal data. |
 | dpaURL| URL| valid URL | The URL of the Data Processing Agreement (DPA). |
-| securityInformation | element | - | Information related to data product security. |
+| dataSecurity | element | - | Information related to data product security. |
 | encryption | string | any |  How data is encrypted both in transit and at rest. List encryption algorithms and protocols used. |
 | authentication | string | any | How users are initially identified. |
 | vulnerabilities | string | any | Process for identifying and responding to security vulnerabilities and gaps. |
