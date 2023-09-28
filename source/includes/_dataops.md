@@ -8,7 +8,7 @@ DataOps **OBJECT** describes building, deploying, and running data product's cod
 
 ```javascript
   
-"dataOps": {
+"dataOps":{
   "infrastructure":{
     "platform":"Azure",
     "region": "West US 2 (Washington)";
