@@ -59,7 +59,8 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
       "confidentiality":"Ensuring data privacy and information security in accordance with relevant regulations and best practices.",
       "regulations":"Access needs to be monitored to ensure compliance with data privacy and security regulations.",
       "training":"Users need to receive training on data access policies and security best practices.",
-      "guidelines":"The data governance practices and guidelines are defined and followed to maintain data integrity and security."
+      "guidelines":"The data governance practices and guidelines are defined and followed to maintain data integrity and security.",
+      "audits":"We annually undergo external security audits by a third-party cybersecurity firm, with last year's audit confirming our data product's compliance and SOC 2 Type II certification validity until the end of 2024, ensuring robust security."
     }
   }
 }  
@@ -88,3 +89,5 @@ The Data Governance **OBJECT** pertains to the structured definition of policies
 | confidentiality | string | any | Ensuring data privacy and information security in accordance with relevant regulations and best practices.|
 | regulations | string | any | Requirements for monitoring access to ensure compliance with data privacy and security regulations.|
 | guidelines | string | any | Data governance practices and guidelines defined and followed to maintain data integrity and security.|
+| audits | string | any | Data Governance auditing terms.|
+
