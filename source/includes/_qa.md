@@ -36,7 +36,7 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 | validity | integer | percentage | Validity is a data quality dimension that refers to information that doesn’t conform to a specific format or doesn’t follow business rules. A popular example is birthdays – many systems ask you to enter your birthday in a specific format, and if you don’t, it’s invalid. To meet this data quality dimension, you must check if all of your information follows a specific format or business rules. |
 | uniqueness | integer | percentage | “Unique” information means that there’s only one instance of it appearing in a database. As we know, data duplication is a frequent occurrence. “Daniel A. Robertson” and “Dan A. Robertson” may well be the same person. Meeting this data quality dimension involves reviewing your information to ensure that none of it is duplicated. |
 | dataQualityAssuranceMethods | string | text content, max length 512 chars | Description of the data product quality assurance methods and tools used. Promotes data reliability engineering as-code approach. |
-| dataQualityMonitoring | string | text content, max length 512 chars | Description of the tool to test for data quality, such as [Soda tools](https://docs.soda.io/). |
+| dataQualityMonitoring | string | text content, max length 512 chars | Description of the tool to test for data quality, such as [Soda tools](https://docs.soda.io/soda-cl/soda-cl-overview.html). |
 | monitoringScriptURL | URL | Valid URL | The URL of the data quality testing script.  |
 
 
