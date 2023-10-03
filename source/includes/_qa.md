@@ -21,7 +21,7 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
       "validity":100,
       "uniqueness":100,
       "dataQualityAssuranceMethods":"Data quality assurance suite of tools and methods include both data quality auditing (DQA) tools designed for use by external audit teams and routine data quality assessment (RDQA) tools designed for capacity building and self-assessment.",
-      "dataQualityMonitoring":"Soda",
+      "dataQualityMonitoring":"SodaCL",
       "monitoringScriptURL":"http://192.168.10.1/soda-petshop.py"
       }
       
@@ -36,7 +36,7 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 | validity | integer | percentage | Validity is a data quality dimension that refers to information that doesn’t conform to a specific format or doesn’t follow business rules. A popular example is birthdays – many systems ask you to enter your birthday in a specific format, and if you don’t, it’s invalid. To meet this data quality dimension, you must check if all of your information follows a specific format or business rules. |
 | uniqueness | integer | percentage | “Unique” information means that there’s only one instance of it appearing in a database. As we know, data duplication is a frequent occurrence. “Daniel A. Robertson” and “Dan A. Robertson” may well be the same person. Meeting this data quality dimension involves reviewing your information to ensure that none of it is duplicated. |
 | dataQualityAssuranceMethods | string | text content, max length 512 chars | Description of the data product quality assurance methods and tools used. Promotes data reliability engineering as-code approach. |
-| dataQualityMonitoring | string | text content, max length 512 chars | Description of the tool to test for data quality, such as [Soda tools](https://docs.soda.io/soda-cl/soda-cl-overview.html). |
+| dataQualityMonitoring | string | text content, max length 512 chars | Description of the tool to test for data quality, such as [Soda tools, SodaCL](https://docs.soda.io/soda-cl/soda-cl-overview.html) or SQL queries. |
 | monitoringScriptURL | URL | valid URL | The URL of the data quality testing script.  |
 
 
