@@ -37,7 +37,7 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 | uniqueness | integer | percentage | “Unique” information means that there’s only one instance of it appearing in a database. As we know, data duplication is a frequent occurrence. “Daniel A. Robertson” and “Dan A. Robertson” may well be the same person. Meeting this data quality dimension involves reviewing your information to ensure that none of it is duplicated. |
 | dataQualityAssuranceMethods | string | text content, max length 512 chars | Description of the data product quality assurance methods and tools used. Promotes data reliability engineering as-code approach. |
 | dataQualityMonitoring | string | text content, max length 512 chars | Description of the tool to test for data quality, such as [Soda tools](https://docs.soda.io/soda-cl/soda-cl-overview.html). |
-| monitoringScriptURL | URL | Valid URL | The URL of the data quality testing script.  |
+| monitoringScriptURL | URL | valid URL | The URL of the data quality testing script.  |
 
 
 
