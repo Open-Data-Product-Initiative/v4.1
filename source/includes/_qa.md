@@ -20,7 +20,7 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
       "timeliness":"high",
       "validity":100,
       "uniqueness":100,
-      "dataQualityAssuranceMethods":"Data quality assurance suite of tools and methods include both data quality auditing (DQA) tools designed for use by external audit teams and routine data quality assessment (RDQA) tools designed for capacity building and self-assessment."
+      "dataQualityAssuranceMethods":"Data quality assurance suite of tools and methods include both data quality auditing (DQA) tools designed for use by external audit teams and routine data quality assessment (RDQA) tools designed for capacity building and self-assessment.",
       dataQualityMonitoring:"SodaSQL",
       monitoringScriptURL:"http://192.168.10.1/soda-petshop.py"
       }
