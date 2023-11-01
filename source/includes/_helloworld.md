@@ -251,16 +251,16 @@ You'll find a complete machine-readbale example of a data product from the right
                 "terminationConditions":"Cancellation before 30 days. After the expiry of the right of use, the product and its derivatives must be removed.",
                 "continuityConditions":"Expired license will automatically continued without written cancellation (termination) by Data Holder"
             },
-            "governance":{
-                "ownership":"Mindmote Oy, a company specializing in pet industry insights, owns the license to its proprietary data product 'Pets of the Year'.",
-                "damages":"During the term of license, except for the force majeure or the Data Holders reasons, Data User is required to follow strictly in accordance with the license. If Data User wants to terminate the license early, it needs to pay a certain amount of liquidated damages.",
-                "confidentiality":"Data User undertakes to maintain confidentiality as regards all information of a technical (such as, by way of a non-limiting example, drawings, tables, documentation, formulas and correspondence) and commercial nature (including contractual conditions, prices, payment conditions) gained during the performance of this license.",
-                "applicableLaws":"This license shall be interpreted, construed and enforced in accordance with the law of Finland, Incl. Copyright Act 404/1961.",
-                "warranties":"Data Holder makes no warranties, express or implied, guarantees or conditions with respect to your use of the data product. To the extent permitted under local law, Data Holder disclaims all liability for any damages or losses, including direct, consequential, special, indirect, incidental or punitive, resulting from Data User use of the data product.",
-                "audit":"Data Holder will reasonably cooperate with Data User by providing available additional information concerning the data product. Each party will bear its own costs with respect to the audit procedures.",
-                "forceMajeure":"Each party may suspend the fulfilment of its contractual obligations, when the said fulfilment is impossible or objectively too costly due to an unforeseeable impediment independent from the parties, such as for example: strike, boycott, lockout, fire, war (declared or not), civil war, riots and revolutions, requisitions, embargo, power blackouts, extraordinary breakage of machinery, delays in the delivery of components or raw materials."
-            }
-        },
+            "governance": {
+            "ownership":"Mindmote Oy, a company specializing in pet industry insights, owns the license to its proprietary data product 'Pets of the Year'.",
+            "damages":"During the term of license, except for the force majeure or the Data Holders reasons, Data User is required to follow strictly in accordance with the license. If Data User wants to terminate the license early, it needs to pay a certain amount of liquidated damages.",
+            "confidentiality":"Data User undertakes to maintain confidentiality as regards all information of a technical (such as, by way of a non-limiting example, drawings, tables, documentation, formulas and correspondence) and commercial nature (including contractual conditions, prices, payment conditions) gained during the performance of this license.",
+            "applicableLaws":"This license shall be interpreted, construed and enforced in accordance with the law of Finland, including Copyright Act 404/1961.",
+            "warranties":"Data Holder makes no warranties, express or implied, guarantees or conditions with respect to your use of the data product. To the extent permitted under local law, Data Holder disclaims all liability for any damages or losses, including direct, consequential, special, indirect, incidental or punitive, resulting from Data User use of the data product.",
+            "audit":"Data Holder will reasonably cooperate with Data Users by providing available additional information about the data product. Both parties will bear their own audit-related costs.",
+            "forceMajeure":"Both parties may suspend their contractual obligations when fulfillment becomes impossible or excessively costly due to unforeseeable events beyond their control, such as strikes, fires, wars, and other force majeure events."
+        }
+    },
         "dataHolder":{
             "taxID":"12243434-12",
             "vatID":"12243434-12",
