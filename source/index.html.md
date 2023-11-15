@@ -142,6 +142,8 @@ Here's the list of attributes which can occur at the document root level. In the
 > Example of document level attribute usage and structure:
 
 ```javascript
+{
+    "$schema": "https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
 "product":{
   "en":{
     "name":"Pets of the year",
@@ -179,6 +181,8 @@ RecommendedUseCases **OBJECT** is an array which contains offers method to attac
 > Example of document level attribute usage and structure:
 
 ```javascript
+{
+    "$schema": "https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
 "product":{
   "en":{
   "name":"Pets of the year"
