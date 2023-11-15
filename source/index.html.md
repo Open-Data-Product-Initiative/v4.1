@@ -56,7 +56,7 @@ Copyrights 2023 Mindmote Oy. Original creators of the specification: Jarkko Moil
 
 **ODPS JSON Schema:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/odps-examples/blob/main/odps-v2.1-json-schema.json">https://github.com/Open-Data-Product-Initiative/odps-examples/blob/main/odps-v2.1-json-schema.json</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-specs-dev/source/schema/odps-dev-json-schemas.json">https://github.com/Open-Data-Product-Initiative/open-data-product-specs-dev/source/schema/odps-dev-json-schemas.json</a>
 
 
 
