@@ -7,6 +7,7 @@ You'll find a complete machine-readbale example of a data product from the right
 ```javascript
 {
     "product": {
+        "odpsSchemaUrl":"https://github.com/Open-Data-Product-Initiative/open-data-product-specs-dev/source/schema/odps-dev-json-schemas.json",
         "en": {
             "name":"Pets of the year",
             "productID":"123456are",
