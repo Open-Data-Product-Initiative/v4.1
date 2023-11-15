@@ -182,7 +182,7 @@ RecommendedUseCases **OBJECT** is an array which contains offers method to attac
 
 ```javascript
 {
-    "$schema": "https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
+"$schema": "https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
 "product":{
   "en":{
   "name":"Pets of the year"
