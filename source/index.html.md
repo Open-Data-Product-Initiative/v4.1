@@ -143,7 +143,7 @@ Here's the list of attributes which can occur at the document root level. In the
 
 ```javascript
 "product":{
-  "odpsSchemaURL":"https://github.com/Open-Data-Product-Initiative/open-data-product-specs-dev/source/schema/odps-dev-json-schemas.json",
+  "odpsSchemaURL":"https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
   "en":{
     "name":"Pets of the year",
     "productID":"123456are",
