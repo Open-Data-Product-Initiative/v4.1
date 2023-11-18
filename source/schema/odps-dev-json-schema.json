@@ -48,66 +48,42 @@
             "name": {
               "type": "string",
               "default": "",
-              "title": "name",
-              "examples": [
-                "Pets of the year"
-              ]
+              "title": "name"
             },
             "productID": {
               "type": "string",
               "default": "",
-              "title": "productID",
-              "examples": [
-                "123456are"
-              ]
+              "title": "productID"
             },
             "valueProposition": {
               "type": "string",
               "default": "",
-              "title": "valueProposition",
-              "examples": [
-                "Design a customised petstore using a data product that describes pets with their habits, preferences and characteristics."
-              ]
+              "title": "valueProposition"
             },
             "description": {
               "type": "string",
               "default": "",
-              "title": "description",
-              "examples": [
-                "This is an example of a Petstore product."
-              ]
+              "title": "description"
             },
             "productSeries": {
               "type": "string",
               "default": "",
-              "title": "productSeries",
-              "examples": [
-                "Lovely pets data products"
-              ]
+              "title": "productSeries"
             },
             "visibility": {
               "type": "string",
               "default": "",
-              "title": "visibility",
-              "examples": [
-                "private"
-              ]
+              "title": "visibility"
             },
             "status": {
               "type": "string",
               "default": "",
-              "title": "status",
-              "examples": [
-                "draft"
-              ]
+              "title": "status"
             },
             "version": {
               "type": "string",
               "default": "",
-              "title": "version",
-              "examples": [
-                "0.1"
-              ]
+              "title": "version"
             },
             "categories": {
               "type": "array",
@@ -116,16 +92,8 @@
               "items": {
                 "type": "string",
                 "default": "",
-                "title": "items",
-                "examples": [
-                  "pets"
-                ]
-              },
-              "examples": [
-                [
-                  "pets"
-                ]
-              ]
+                "title": "items"
+              }
             },
             "standards": {
               "type": "array",
@@ -134,16 +102,8 @@
               "items": {
                 "type": "string",
                 "default": "",
-                "title": "items",
-                "examples": [
-                  "ISO 24631-6"
-                ]
-              },
-              "examples": [
-                [
-                  "ISO 24631-6"
-                ]
-              ]
+                "title": "items"
+              }
             },
             "tags": {
               "type": "array",
@@ -152,40 +112,23 @@
               "items": {
                 "type": "string",
                 "default": "",
-                "title": "items",
-                "examples": [
-                  "pet"
-                ]
-              },
-              "examples": [
-                [
-                  "pet"
-                ]
-              ]
+                "title": "items"
+              }
             },
             "brandSlogan": {
               "type": "string",
               "default": "",
-              "title": "brandSlogan",
-              "examples": [
-                "Passion for the data monetization"
-              ]
+              "title": "brandSlogan"
             },
             "type": {
               "type": "string",
               "default": "",
-              "title": "type",
-              "examples": [
-                "derived data"
-              ]
+              "title": "type"
             },
             "logoURL": {
               "type": "string",
               "default": "",
-              "title": "logoURL",
-              "examples": [
-                "https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png"
-              ]
+              "title": "logoURL"
             },
             "OutputFileFormats": {
               "type": "array",
@@ -193,22 +136,8 @@
               "title": "OutputFileFormats",
               "items": {
                 "type": "string",
-                "title": "items",
-                "examples": [
-                  "json",
-                  "xml",
-                  "csv",
-                  "zip"
-                ]
-              },
-              "examples": [
-                [
-                  "json",
-                  "xml",
-                  "csv",
-                  "zip"
-                ]
-              ]
+                "title": "items"
+              }
             },
             "useCases": {
               "type": "array",
@@ -235,99 +164,24 @@
                       "useCaseTitle": {
                         "type": "string",
                         "default": "",
-                        "title": "useCaseTitle",
-                        "examples": [
-                          "Build attractive and lucrative petstore!"
-                        ]
+                        "title": "useCaseTitle"
                       },
                       "useCaseDescription": {
                         "type": "string",
                         "default": "",
-                        "title": "useCaseDescription",
-                        "examples": [
-                          "Use case description how succesfull petstore chain was established in Abu Dhabi"
-                        ]
+                        "title": "useCaseDescription"
                       },
                       "useCaseURL": {
                         "type": "string",
                         "default": "",
-                        "title": "useCaseURL",
-                        "examples": [
-                          "https://marketplace.com/usecase1"
-                        ]
+                        "title": "useCaseURL"
                       }
-                    },
-                    "examples": [
-                      {
-                        "useCaseTitle": "Build attractive and lucrative petstore!",
-                        "useCaseDescription": "Use case description how succesfull petstore chain was established in Abu Dhabi",
-                        "useCaseURL": "https://marketplace.com/usecase1"
-                      }
-                    ]
-                  }
-                },
-                "examples": [
-                  {
-                    "useCase": {
-                      "useCaseTitle": "Build attractive and lucrative petstore!",
-                      "useCaseDescription": "Use case description how succesfull petstore chain was established in Abu Dhabi",
-                      "useCaseURL": "https://marketplace.com/usecase1"
                     }
-                  }
-                ]
-              },
-              "examples": [
-                [
-                  {
-                    "useCase": {
-                      "useCaseTitle": "Build attractive and lucrative petstore!",
-                      "useCaseDescription": "Use case description how succesfull petstore chain was established in Abu Dhabi",
-                      "useCaseURL": "https://marketplace.com/usecase1"
-                    }
-                  }
-                ]
-              ]
-            }
-          },
-          "examples": [
-            {
-              "name": "Pets of the year",
-              "productID": "123456are",
-              "valueProposition": "Design a customised petstore using a data product that describes pets with their habits, preferences and characteristics.",
-              "description": "This is an example of a Petstore product.",
-              "productSeries": "Lovely pets data products",
-              "visibility": "private",
-              "status": "draft",
-              "version": "0.1",
-              "categories": [
-                "pets"
-              ],
-              "standards": [
-                "ISO 24631-6"
-              ],
-              "tags": [
-                "pet"
-              ],
-              "brandSlogan": "Passion for the data monetization",
-              "type": "derived data",
-              "logoURL": "https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png",
-              "OutputFileFormats": [
-                "json",
-                "xml",
-                "csv",
-                "zip"
-              ],
-              "useCases": [
-                {
-                  "useCase": {
-                    "useCaseTitle": "Build attractive and lucrative petstore!",
-                    "useCaseDescription": "Use case description how succesfull petstore chain was established in Abu Dhabi",
-                    "useCaseURL": "https://marketplace.com/usecase1"
                   }
                 }
-              ]
+              }
             }
-          ]
+          }
         },
         "recommendedDataProducts": {
           "type": "array",
@@ -336,16 +190,8 @@
           "items": {
             "type": "string",
             "default": "",
-            "title": "items",
-            "examples": [
-              "https://marketplace.com/dataproduct.json, https://marketplace.com/dataproduct-another.json"
-            ]
-          },
-          "examples": [
-            [
-              "https://marketplace.com/dataproduct.json, https://marketplace.com/dataproduct-another.json"
-            ]
-          ]
+            "title": "items"
+          }
         },
         "pricingPlans": {
           "type": "object",
@@ -373,173 +219,35 @@
                 "properties": {
                   "name": {
                     "type": "string",
-                    "title": "name",
-                    "examples": [
-                      "Premium subscription 1 year",
-                      "Premium Package Monthly",
-                      "Freemium Package",
-                      "Revenue sharing"
-                    ]
+                    "title": "name"
                   },
                   "priceCurrency": {
                     "type": "string",
-                    "title": "priceCurrency",
-                    "examples": [
-                      "EUR",
-                      "percentage"
-                    ]
+                    "title": "priceCurrency"
                   },
                   "price": {
                     "type": "string",
-                    "title": "price",
-                    "examples": [
-                      "50.00",
-                      "5.00",
-                      "0.00",
-                      "5.50"
-                    ]
+                    "title": "price"
                   },
                   "billingDuration": {
                     "type": "string",
-                    "title": "billingDuration",
-                    "examples": [
-                      "year",
-                      "month"
-                    ]
+                    "title": "billingDuration"
                   },
                   "unit": {
                     "type": "string",
-                    "title": "unit",
-                    "examples": [
-                      "recurring",
-                      "revenue-sharing"
-                    ]
+                    "title": "unit"
                   },
                   "maxTransactionQuantity": {
                     "type": [
                       "string",
                       "integer"
                     ],
-                    "title": "maxTransactionQuantity",
-                    "examples": [
-                      "unlimited",
-                      10000,
-                      1000,
-                      20000
-                    ]
+                    "title": "maxTransactionQuantity"
                   }
-                },
-                "examples": [
-                  {
-                    "name": "Premium subscription 1 year",
-                    "priceCurrency": "EUR",
-                    "price": "50.00",
-                    "billingDuration": "year",
-                    "unit": "recurring",
-                    "maxTransactionQuantity": "unlimited"
-                  },
-                  {
-                    "name": "Premium Package Monthly",
-                    "priceCurrency": "EUR",
-                    "price": "5.00",
-                    "billingDuration": "month",
-                    "unit": "recurring",
-                    "maxTransactionQuantity": 10000
-                  },
-                  {
-                    "name": "Freemium Package",
-                    "priceCurrency": "EUR",
-                    "price": "0.00",
-                    "billingDuration": "month",
-                    "unit": "recurring",
-                    "maxTransactionQuantity": 1000
-                  },
-                  {
-                    "name": "Revenue sharing",
-                    "priceCurrency": "percentage",
-                    "price": "5.50",
-                    "billingDuration": "month",
-                    "unit": "revenue-sharing",
-                    "maxTransactionQuantity": 20000
-                  }
-                ]
-              },
-              "examples": [
-                [
-                  {
-                    "name": "Premium subscription 1 year",
-                    "priceCurrency": "EUR",
-                    "price": "50.00",
-                    "billingDuration": "year",
-                    "unit": "recurring",
-                    "maxTransactionQuantity": "unlimited"
-                  },
-                  {
-                    "name": "Premium Package Monthly",
-                    "priceCurrency": "EUR",
-                    "price": "5.00",
-                    "billingDuration": "month",
-                    "unit": "recurring",
-                    "maxTransactionQuantity": 10000
-                  },
-                  {
-                    "name": "Freemium Package",
-                    "priceCurrency": "EUR",
-                    "price": "0.00",
-                    "billingDuration": "month",
-                    "unit": "recurring",
-                    "maxTransactionQuantity": 1000
-                  },
-                  {
-                    "name": "Revenue sharing",
-                    "priceCurrency": "percentage",
-                    "price": "5.50",
-                    "billingDuration": "month",
-                    "unit": "revenue-sharing",
-                    "maxTransactionQuantity": 20000
-                  }
-                ]
-              ]
-            }
-          },
-          "examples": [
-            {
-              "en": [
-                {
-                  "name": "Premium subscription 1 year",
-                  "priceCurrency": "EUR",
-                  "price": "50.00",
-                  "billingDuration": "year",
-                  "unit": "recurring",
-                  "maxTransactionQuantity": "unlimited"
-                },
-                {
-                  "name": "Premium Package Monthly",
-                  "priceCurrency": "EUR",
-                  "price": "5.00",
-                  "billingDuration": "month",
-                  "unit": "recurring",
-                  "maxTransactionQuantity": 10000
-                },
-                {
-                  "name": "Freemium Package",
-                  "priceCurrency": "EUR",
-                  "price": "0.00",
-                  "billingDuration": "month",
-                  "unit": "recurring",
-                  "maxTransactionQuantity": 1000
-                },
-                {
-                  "name": "Revenue sharing",
-                  "priceCurrency": "percentage",
-                  "price": "5.50",
-                  "billingDuration": "month",
-                  "unit": "revenue-sharing",
-                  "maxTransactionQuantity": 20000
                 }
-              ]
+              }
             }
-          ]
+          }
         },
         "dataOps": {
           "type": "object",
@@ -572,146 +280,71 @@
                 "platform": {
                   "type": "string",
                   "default": "",
-                  "title": "platform",
-                  "examples": [
-                    "Azure"
-                  ]
+                  "title": "platform"
                 },
                 "storageTechnology": {
                   "type": "string",
                   "default": "",
-                  "title": "storageTechnology",
-                  "examples": [
-                    "Azure SQL"
-                  ]
+                  "title": "storageTechnology"
                 },
                 "storageType": {
                   "type": "string",
                   "default": "",
-                  "title": "storageType",
-                  "examples": [
-                    "sql"
-                  ]
+                  "title": "storageType"
                 },
                 "containerTool": {
                   "type": "string",
                   "default": "",
-                  "title": "containerTool",
-                  "examples": [
-                    "helm"
-                  ]
+                  "title": "containerTool"
                 },
                 "format": {
                   "type": "string",
                   "default": "",
-                  "title": "format",
-                  "examples": [
-                    "yaml"
-                  ]
+                  "title": "format"
                 },
                 "status": {
                   "type": "string",
                   "default": "",
-                  "title": "status",
-                  "examples": [
-                    "development"
-                  ]
+                  "title": "status"
                 },
                 "schemaLocationURL": {
                   "type": "string",
                   "default": "",
-                  "title": "schemaLocationURL",
-                  "examples": [
-                    "http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd"
-                  ]
+                  "title": "schemaLocationURL"
                 },
                 "scriptURL": {
                   "type": "string",
                   "default": "",
-                  "title": "scriptURL",
-                  "examples": [
-                    "http://192.168.10.1/rundatapipeline.yml"
-                  ]
+                  "title": "scriptURL"
                 },
                 "deploymentDocumentationURL": {
                   "type": "string",
                   "default": "",
-                  "title": "deploymentDocumentationURL",
-                  "examples": [
-                    "http://192.168.10.1/datapipeline"
-                  ]
+                  "title": "deploymentDocumentationURL"
                 },
                 "dataLineageTool": {
                   "type": "string",
                   "default": "",
-                  "title": "dataLineageTool",
-                  "examples": [
-                    "Collibra"
-                  ]
+                  "title": "dataLineageTool"
                 },
                 "dataLineageOutput": {
                   "type": "string",
                   "default": "",
-                  "title": "dataLineageOutput",
-                  "examples": [
-                    "http://192.168.10.1/lineage.json"
-                  ]
+                  "title": "dataLineageOutput"
                 },
                 "hashType": {
                   "type": "string",
                   "default": "",
-                  "title": "hashType",
-                  "examples": [
-                    "SHA-2"
-                  ]
+                  "title": "hashType"
                 },
                 "checksum": {
                   "type": "string",
                   "default": "",
-                  "title": "checksum",
-                  "examples": [
-                    "7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921"
-                  ]
+                  "title": "checksum"
                 }
-              },
-              "examples": [
-                {
-                  "platform": "Azure",
-                  "storageTechnology": "Azure SQL",
-                  "storageType": "sql",
-                  "containerTool": "helm",
-                  "format": "yaml",
-                  "status": "development",
-                  "schemaLocationURL": "http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd",
-                  "scriptURL": "http://192.168.10.1/rundatapipeline.yml",
-                  "deploymentDocumentationURL": "http://192.168.10.1/datapipeline",
-                  "dataLineageTool": "Collibra",
-                  "dataLineageOutput": "http://192.168.10.1/lineage.json",
-                  "hashType": "SHA-2",
-                  "checksum": "7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921"
-                }
-              ]
-            }
-          },
-          "examples": [
-            {
-              "infrastructure": {
-                "platform": "Azure",
-                "storageTechnology": "Azure SQL",
-                "storageType": "sql",
-                "containerTool": "helm",
-                "format": "yaml",
-                "status": "development",
-                "schemaLocationURL": "http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd",
-                "scriptURL": "http://192.168.10.1/rundatapipeline.yml",
-                "deploymentDocumentationURL": "http://192.168.10.1/datapipeline",
-                "dataLineageTool": "Collibra",
-                "dataLineageOutput": "http://192.168.10.1/lineage.json",
-                "hashType": "SHA-2",
-                "checksum": "7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921"
               }
             }
-          ]
+          }
         },
         "dataAccess": {
           "type": "object",
@@ -728,53 +361,29 @@
             "type": {
               "type": "string",
               "default": "",
-              "title": "type",
-              "examples": [
-                "API"
-              ]
+              "title": "type"
             },
             "authenticationMethod": {
               "type": "string",
               "default": "",
-              "title": "authenticationMethod",
-              "examples": [
-                "OAuth"
-              ]
+              "title": "authenticationMethod"
             },
             "specification": {
               "type": "string",
               "default": "",
-              "title": "specification",
-              "examples": [
-                "OAS"
-              ]
+              "title": "specification"
             },
             "format": {
               "type": "string",
               "default": "",
-              "title": "format",
-              "examples": [
-                "JSON"
-              ]
+              "title": "format"
             },
             "documentationURL": {
               "type": "string",
               "default": "",
-              "title": "documentationURL",
-              "examples": [
-                "https://swagger.com/petstore.json"
-              ]
+              "title": "documentationURL"
             }
-          },
-          "examples": [
-            {
-              "type": "API",
-              "authenticationMethod": "OAuth",
-              "specification": "OAS",
-              "format": "JSON",
-              "documentationURL": "https://swagger.com/petstore.json"
-            }
-          ]
+          }
         },
         "dataQuality": {
           "type": "object",
@@ -795,75 +404,48 @@
             "accuracy": {
               "type": "integer",
               "default": 0,
-              "title": "accuracy",
-              "examples": [
-                100
-              ]
+              "title": "accuracy"
             },
             "completeness": {
               "type": "integer",
               "default": 0,
-              "title": "completeness",
-              "examples": [
-                100
-              ]
+              "title": "completeness"
             },
             "consistency": {
               "type": "integer",
               "default": 0,
-              "title": "consistency",
-              "examples": [
-                100
-              ]
+              "title": "consistency"
             },
             "timeliness": {
               "type": "string",
               "default": "",
-              "title": "timeliness",
-              "examples": [
-                "high"
-              ]
+              "title": "timeliness"
             },
             "validity": {
               "type": "integer",
               "default": 0,
-              "title": "validity",
-              "examples": [
-                100
-              ]
+              "title": "validity"
             },
             "uniqueness": {
               "type": "integer",
               "default": 0,
-              "title": "uniqueness",
-              "examples": [
-                100
-              ]
+              "title": "uniqueness"
             },
             "dataQualityAssuranceMethods": {
               "type": "string",
               "default": "",
-              "title": "dataQualityAssuranceMethods",
-              "examples": [
-                "Data quality assurance suite of tools and methods include both data quality auditing (DQA) tools designed for use by external audit teams and routine data quality assessment (RDQA) tools designed for capacity building and self-assessment."
-              ]
+              "title": "dataQualityAssuranceMethods"
             },
             "dataQualityMonitoring": {
               "type": "string",
               "default": "",
-              "title": "dataQualityMonitoring",
-              "examples": [
-                "SodaCL"
-              ]
+              "title": "dataQualityMonitoring"
             },
             "monitoringScriptURL": {
               "type": "string",
               "default": "",
               "title": "monitoringScriptURL",
-              "format": "uri",
-              "examples": [
-                "http://192.168.10.1/soda-petshop.py"
-              ]
+              "format": "uri"
             }
           }
         },
@@ -892,26 +474,14 @@
                 "unit": {
                   "type": "string",
                   "default": "",
-                  "title": "unit",
-                  "examples": [
-                    "hours"
-                  ]
+                  "title": "unit"
                 },
                 "value": {
                   "type": "integer",
                   "default": 0,
-                  "title": "value",
-                  "examples": [
-                    1
-                  ]
+                  "title": "value"
                 }
-              },
-              "examples": [
-                {
-                  "unit": "hours",
-                  "value": 1
-                }
-              ]
+              }
             },
             "uptime": {
               "type": "object",
@@ -925,26 +495,14 @@
                 "unit": {
                   "type": "string",
                   "default": "",
-                  "title": "unit",
-                  "examples": [
-                    "percentage"
-                  ]
+                  "title": "unit"
                 },
                 "value": {
                   "type": "integer",
                   "default": 0,
-                  "title": "value",
-                  "examples": [
-                    99
-                  ]
+                  "title": "value"
                 }
-              },
-              "examples": [
-                {
-                  "unit": "percentage",
-                  "value": 99
-                }
-              ]
+              }
             },
             "responseTime": {
               "type": "object",
@@ -958,26 +516,14 @@
                 "unit": {
                   "type": "string",
                   "default": "",
-                  "title": "unit",
-                  "examples": [
-                    "milliseconds"
-                  ]
+                  "title": "unit"
                 },
                 "value": {
                   "type": "integer",
                   "default": 0,
-                  "title": "value",
-                  "examples": [
-                    200
-                  ]
+                  "title": "value"
                 }
-              },
-              "examples": [
-                {
-                  "unit": "milliseconds",
-                  "value": 200
-                }
-              ]
+              }
             },
             "nullValues": {
               "type": "object",
@@ -991,26 +537,14 @@
                 "unit": {
                   "type": "string",
                   "default": "",
-                  "title": "unit",
-                  "examples": [
-                    "percentage"
-                  ]
+                  "title": "unit"
                 },
                 "value": {
                   "type": "number",
                   "default": 0.0,
-                  "title": "value",
-                  "examples": [
-                    0.01
-                  ]
+                  "title": "value"
                 }
-              },
-              "examples": [
-                {
-                  "unit": "percentage",
-                  "value": 0.01
-                }
-              ]
+              }
             },
             "support": {
               "type": "object",
@@ -1041,98 +575,54 @@
                     "phoneNumber": {
                       "type": "string",
                       "default": "",
-                      "title": "phoneNumber",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "phoneNumber"
                     },
                     "phoneServiceHours": {
                       "type": "string",
                       "default": "",
-                      "title": "phoneServiceHours",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "phoneServiceHours"
                     },
                     "chatURL": {
                       "type": "string",
                       "default": "",
-                      "title": "chatURL",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "chatURL"
                     },
                     "chatServiceHours": {
                       "type": "string",
                       "default": "",
-                      "title": "chatServiceHours",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "chatServiceHours"
                     },
                     "chatResponseTime": {
                       "type": "string",
                       "default": "",
-                      "title": "chatResponseTime",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "chatResponseTime"
                     },
                     "email": {
                       "type": "string",
                       "default": "",
-                      "title": "email",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "email"
                     },
                     "emailServiceHours": {
                       "type": "string",
                       "default": "",
-                      "title": "emailServiceHours",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "emailServiceHours"
                     },
                     "emailResponseTime": {
                       "type": "string",
                       "default": "",
-                      "title": "emailResponseTime",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "emailResponseTime"
                     },
                     "documentationURL": {
                       "type": "string",
                       "default": "",
-                      "title": "documentationURL",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "documentationURL"
                     },
                     "guidesURL": {
                       "type": "string",
                       "default": "",
-                      "title": "guidesURL",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "guidesURL"
                     }
-                  },
-                  "examples": [
-                    {
-                      "phoneNumber": "",
-                      "phoneServiceHours": "",
-                      "chatURL": "",
-                      "chatServiceHours": "",
-                      "chatResponseTime": "",
-                      "email": "",
-                      "emailServiceHours": "",
-                      "emailResponseTime": "",
-                      "documentationURL": "",
-                      "guidesURL": ""
-                    }
-                  ]
+                  }
                 },
                 "community": {
                   "type": "object",
@@ -1148,68 +638,26 @@
                     "stackoverflowURL": {
                       "type": "string",
                       "default": "",
-                      "title": "stackoverflowURL",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "stackoverflowURL"
                     },
                     "forumURL": {
                       "type": "string",
                       "default": "",
-                      "title": "forumURL",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "forumURL"
                     },
                     "slackURL": {
                       "type": "string",
                       "default": "",
-                      "title": "slackURL",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "slackURL"
                     },
                     "twitterURL": {
                       "type": "string",
                       "default": "",
-                      "title": "twitterURL",
-                      "examples": [
-                        ""
-                      ]
+                      "title": "twitterURL"
                     }
-                  },
-                  "examples": [
-                    {
-                      "stackoverflowURL": "",
-                      "forumURL": "",
-                      "slackURL": "",
-                      "twitterURL": ""
-                    }
-                  ]
-                }
-              },
-              "examples": [
-                {
-                  "company": {
-                    "phoneNumber": "",
-                    "phoneServiceHours": "",
-                    "chatURL": "",
-                    "chatServiceHours": "",
-                    "chatResponseTime": "",
-                    "email": "",
-                    "emailServiceHours": "",
-                    "emailResponseTime": "",
-                    "documentationURL": "",
-                    "guidesURL": ""
-                  },
-                  "community": {
-                    "stackoverflowURL": "",
-                    "forumURL": "",
-                    "slackURL": "",
-                    "twitterURL": ""
                   }
                 }
-              ]
+              }
             },
             "observability": {
               "type": "object",
@@ -1224,82 +672,21 @@
                 "logsURL": {
                   "type": "string",
                   "default": "",
-                  "title": "logsURL",
-                  "examples": [
-                    "https://logs.com"
-                  ]
+                  "title": "logsURL"
                 },
                 "dashboardURL": {
                   "type": "string",
                   "default": "",
-                  "title": "dashboardURL",
-                  "examples": [
-                    "https://dashboard.com"
-                  ]
+                  "title": "dashboardURL"
                 },
                 "uptimeURL": {
                   "type": "string",
                   "default": "",
-                  "title": "uptimeURL",
-                  "examples": [
-                    "https://uptime.com"
-                  ]
+                  "title": "uptimeURL"
                 }
-              },
-              "examples": [
-                {
-                  "logsURL": "https://logs.com",
-                  "dashboardURL": "https://dashboard.com",
-                  "uptimeURL": "https://uptime.com"
-                }
-              ]
-            }
-          },
-          "examples": [
-            {
-              "updateFrequency": {
-                "unit": "hours",
-                "value": 1
-              },
-              "uptime": {
-                "unit": "percentage",
-                "value": 99
-              },
-              "responseTime": {
-                "unit": "milliseconds",
-                "value": 200
-              },
-              "nullValues": {
-                "unit": "percentage",
-                "value": 0.01
-              },
-              "support": {
-                "company": {
-                  "phoneNumber": "",
-                  "phoneServiceHours": "",
-                  "chatURL": "",
-                  "chatServiceHours": "",
-                  "chatResponseTime": "",
-                  "email": "",
-                  "emailServiceHours": "",
-                  "emailResponseTime": "",
-                  "documentationURL": "",
-                  "guidesURL": ""
-                },
-                "community": {
-                  "stackoverflowURL": "",
-                  "forumURL": "",
-                  "slackURL": "",
-                  "twitterURL": ""
-                }
-              },
-              "observability": {
-                "logsURL": "https://logs.com",
-                "dashboardURL": "https://dashboard.com",
-                "uptimeURL": "https://uptime.com"
               }
             }
-          ]
+          }
         },
         "dataGovernance": {
           "type": "object",
@@ -1532,73 +919,6 @@
             "versionControlSystem",
             "versionRepositoryURL",
             "accessPermissions"
-          ],
-          "examples": [
-            {
-              "versionControlSystem": "Git",
-              "versionRepositoryURL": "https://example.com/git-repo",
-              "accessPermissions": {
-                "permissionLevels": {
-                  "level1": {
-                    "read": true,
-                    "write": false
-                  },
-                  "level2": {
-                    "read": false,
-                    "write": true
-                  },
-                  "level3": {
-                    "read": true,
-                    "write": true
-                  }
-                },
-                "userGroups": {
-                  "groupA": {
-                    "levels": [
-                      "level1"
-                    ],
-                    "description": ""
-                  },
-                  "groupB": {
-                    "levels": [
-                      "level2"
-                    ],
-                    "description": ""
-                  },
-                  "groupC": {
-                    "levels": [
-                      "level3"
-                    ],
-                    "description": ""
-                  }
-                },
-                "dataPrivacy": {
-                  "containsPersonalData": true,
-                  "applicablePrivacyLaws": [
-                    "General Data Protection Regulation",
-                    "Personal Information Protection and Electronic Documents Act (PIPEDA)",
-                    "California Consumer Privacy Act (CCPA)"
-                  ],
-                  "dpaURL": "http://192.168.10.1/dpaconditions"
-                },
-                "dataSecurity": {
-                  "encryption": "Data in transit is encrypted using the TLS 1.2 protocol with AES-256 encryption. Data at rest is encrypted using industry-standard AES-256 encryption algorithms.",
-                  "authentication": "Users are initially authenticated using OAuth 2.0, where they grant access to their data or resources, without the need for a username and password combination. While multi-factor authentication (MFA) is not currently in use, it is under consideration for future implementation to enhance security.",
-                  "vulnerabilities": "Security vulnerabilities are identified through regular automated scans and user-reported issues. A dedicated security team reviews and addresses these vulnerabilities. We have a vulnerability management process in place.",
-                  "securityCertificatesAndAudits": "Our data product has undergone an annual security audit by a third-party firm, and we hold a SOC 2 Type II certification. The current certification is valid until December 31, 2024.",
-                  "resilience": "In case of data breaches, we have a disaster recovery plan that includes data backups with daily snapshots. DDoS attacks are mitigated through a combination of traffic filtering and load balancing.",
-                  "monitoring": "Log data is securely stored in an isolated environment with restricted access. We use real-time monitoring tools to detect anomalies, and automated alerts are triggered for any suspicious activities.",
-                  "updates": "Security vulnerabilities are patched within 48 hours of discovery. Users are notified of security updates through email, and a dedicated changelog is maintained on our website."
-                },
-                "compliance": {
-                  "confidentiality": "Ensuring data privacy and information security in accordance with relevant regulations and best practices.",
-                  "regulations": "Access needs to be monitored to ensure compliance with data privacy and security regulations.",
-                  "training": "Users need to receive training on data access policies and security best practices.",
-                  "guidelines": "The data governance practices and guidelines are defined and followed to maintain data integrity and security.",
-                  "audits": "We annually undergo external security audits by a third-party cybersecurity firm, with last year's audit confirming our data product's compliance and SOC 2 Type II certification validity until the end of 2024, ensuring robust security."
-                }
-              }
-            }
           ]
         }
       },
@@ -1630,26 +950,17 @@
               "definition": {
                 "type": "string",
                 "default": "",
-                "title": "definition",
-                "examples": [
-                  "The purpose of this license is to determine the terms and conditions applicable to the licensing of the data product, whereby Data Holder grants Data User the right to use the data."
-                ]
+                "title": "definition"
               },
               "language": {
                 "type": "string",
                 "default": "",
-                "title": "language",
-                "examples": [
-                  "en-us"
-                ]
+                "title": "language"
               },
               "restrictions": {
                 "type": "string",
                 "default": "",
-                "title": "restrictions",
-                "examples": [
-                  "Data User agrees not to, directly or indirectly, participate in the unauthorized use, disclosure or conversion of any confidential information."
-                ]
+                "title": "restrictions"
               },
               "geographicalArea": {
                 "type": "array",
@@ -1657,34 +968,18 @@
                 "title": "geographicalArea",
                 "items": {
                   "type": "string",
-                  "title": "A Schema",
-                  "examples": [
-                    "EU",
-                    "US"
-                  ]
-                },
-                "examples": [
-                  [
-                    "EU",
-                    "US"
-                  ]
-                ]
+                  "title": "A Schema"
+                }
               },
               "permanent": {
                 "type": "boolean",
                 "default": false,
-                "title": "permanent",
-                "examples": [
-                  false
-                ]
+                "title": "permanent"
               },
               "exclusive": {
                 "type": "boolean",
                 "default": false,
-                "title": "exclusive",
-                "examples": [
-                  false
-                ]
+                "title": "exclusive"
               },
               "rights": {
                 "type": "array",
@@ -1692,52 +987,10 @@
                 "title": "rights",
                 "items": {
                   "type": "string",
-                  "title": "A Schema",
-                  "examples": [
-                    "Reproduction",
-                    "Display",
-                    "Distribution",
-                    "Adaptation",
-                    "Reselling",
-                    "Sublicensing",
-                    "Transferring"
-                  ]
-                },
-                "examples": [
-                  [
-                    "Reproduction",
-                    "Display",
-                    "Distribution",
-                    "Adaptation",
-                    "Reselling",
-                    "Sublicensing",
-                    "Transferring"
-                  ]
-                ]
+                  "title": "A Schema"
+                }
               }
-            },
-            "examples": [
-              {
-                "definition": "The purpose of this license is to determine the terms and conditions applicable to the licensing of the data product, whereby Data Holder grants Data User the right to use the data.",
-                "language": "en-us",
-                "restrictions": "Data User agrees not to, directly or indirectly, participate in the unauthorized use, disclosure or conversion of any confidential information.",
-                "geographicalArea": [
-                  "EU",
-                  "US"
-                ],
-                "permanent": false,
-                "exclusive": false,
-                "rights": [
-                  "Reproduction",
-                  "Display",
-                  "Distribution",
-                  "Adaptation",
-                  "Reselling",
-                  "Sublicensing",
-                  "Transferring"
-                ]
-              }
-            ]
+            }
           },
           "privacy": {
             "type": "object",
@@ -1752,10 +1005,7 @@
               "containsPersonalData": {
                 "type": "boolean",
                 "default": false,
-                "title": "containsPersonalData",
-                "examples": [
-                  true
-                ]
+                "title": "containsPersonalData"
               },
               "applicaplePrivacyLaws": {
                 "type": "array",
@@ -1763,41 +1013,15 @@
                 "title": "applicaplePrivacyLaws",
                 "items": {
                   "type": "string",
-                  "title": "items",
-                  "examples": [
-                    "General Data Protection Regulation",
-                    "Personal Information Protection and Electronic Documents Act (PIPEDA)",
-                    "California Consumer Privacy Act (CCPA)"
-                  ]
-                },
-                "examples": [
-                  [
-                    "General Data Protection Regulation",
-                    "Personal Information Protection and Electronic Documents Act (PIPEDA)",
-                    "California Consumer Privacy Act (CCPA)"
-                  ]
-                ]
+                  "title": "items"
+                }
               },
               "dpaURL": {
                 "type": "string",
                 "default": "",
-                "title": "dpaURL",
-                "examples": [
-                  "http://192.168.10.1/dpaconditions"
-                ]
+                "title": "dpaURL"
               }
-            },
-            "examples": [
-              {
-                "containsPersonalData": true,
-                "applicaplePrivacyLaws": [
-                  "General Data Protection Regulation",
-                  "Personal Information Protection and Electronic Documents Act (PIPEDA)",
-                  "California Consumer Privacy Act (CCPA)"
-                ],
-                "dpaURL": "http://192.168.10.1/dpaconditions"
-              }
-            ]
+            }
           },
           "termination": {
             "type": "object",
@@ -1811,26 +1035,14 @@
               "terminationConditions": {
                 "type": "string",
                 "default": "",
-                "title": "terminationConditions",
-                "examples": [
-                  "Cancellation before 30 days. After the expiry of the right of use, the product and its derivatives must be removed."
-                ]
+                "title": "terminationConditions"
               },
               "continuityConditions": {
                 "type": "string",
                 "default": "",
-                "title": "continuityConditions",
-                "examples": [
-                  "Expired license will automatically continued without written cancellation (termination) by Data Holder"
-                ]
+                "title": "continuityConditions"
               }
-            },
-            "examples": [
-              {
-                "terminationConditions": "Cancellation before 30 days. After the expiry of the right of use, the product and its derivatives must be removed.",
-                "continuityConditions": "Expired license will automatically continued without written cancellation (termination) by Data Holder"
-              }
-            ]
+            }
           },
           "governance": {
             "type": "object",
@@ -1848,109 +1060,36 @@
               "damages": {
                 "type": "string",
                 "default": "",
-                "title": "damages",
-                "examples": [
-                  "During the term of license, except for the force majeure or the Data Holders reasons, Data User is required to follow strictly in accordance with the license. If Data User wants to terminate the license early, it needs to pay a certain amount of liquidated damages."
-                ]
+                "title": "damages"
               },
               "confidentiality": {
                 "type": "string",
                 "default": "",
-                "title": "confidentiality",
-                "examples": [
-                  "Data User undertakes to maintain confidentiality as regards all information of a technical (such as, by way of a non-limiting example, drawings, tables, documentation, formulas and correspondence) and commercial nature (including contractual conditions, prices, payment conditions) gained during the performance of this license."
-                ]
+                "title": "confidentiality"
               },
               "applicableLaws": {
                 "type": "string",
                 "default": "",
-                "title": "applicableLaws",
-                "examples": [
-                  "This license shall be interpreted, construed and enforced in accordance with the law of Finland, Incl. Copyright Act 404/1961."
-                ]
+                "title": "applicableLaws"
               },
               "warranties": {
                 "type": "string",
                 "default": "",
-                "title": "warranties",
-                "examples": [
-                  "Data Holder makes no warranties, express or implied, guarantees or conditions with respect to your use of the data product. To the extent permitted under local law, Data Holder disclaims all liability for any damages or losses, including direct, consequential, special, indirect, incidental or punitive, resulting from Data User use of the data product."
-                ]
+                "title": "warranties"
               },
               "audit": {
                 "type": "string",
                 "default": "",
-                "title": "audit",
-                "examples": [
-                  "Data Holder will reasonably cooperate with Data User by providing available additional information concerning the data product. Each party will bear its own costs with respect to the audit procedures."
-                ]
+                "title": "audit"
               },
               "forceMajeure": {
                 "type": "string",
                 "default": "",
-                "title": "forceMajeure",
-                "examples": [
-                  "Each party may suspend the fulfilment of its contractual obligations, when the said fulfilment is impossible or objectively too costly due to an unforeseeable impediment independent from the parties, such as for example: strike, boycott, lockout, fire, war (declared or not), civil war, riots and revolutions, requisitions, embargo, power blackouts, extraordinary breakage of machinery, delays in the delivery of components or raw materials."
-                ]
+                "title": "forceMajeure"
               }
-            },
-            "examples": [
-              {
-                "damages": "During the term of license, except for the force majeure or the Data Holders reasons, Data User is required to follow strictly in accordance with the license. If Data User wants to terminate the license early, it needs to pay a certain amount of liquidated damages.",
-                "confidentiality": "Data User undertakes to maintain confidentiality as regards all information of a technical (such as, by way of a non-limiting example, drawings, tables, documentation, formulas and correspondence) and commercial nature (including contractual conditions, prices, payment conditions) gained during the performance of this license.",
-                "applicableLaws": "This license shall be interpreted, construed and enforced in accordance with the law of Finland, Incl. Copyright Act 404/1961.",
-                "warranties": "Data Holder makes no warranties, express or implied, guarantees or conditions with respect to your use of the data product. To the extent permitted under local law, Data Holder disclaims all liability for any damages or losses, including direct, consequential, special, indirect, incidental or punitive, resulting from Data User use of the data product.",
-                "audit": "Data Holder will reasonably cooperate with Data User by providing available additional information concerning the data product. Each party will bear its own costs with respect to the audit procedures.",
-                "forceMajeure": "Each party may suspend the fulfilment of its contractual obligations, when the said fulfilment is impossible or objectively too costly due to an unforeseeable impediment independent from the parties, such as for example: strike, boycott, lockout, fire, war (declared or not), civil war, riots and revolutions, requisitions, embargo, power blackouts, extraordinary breakage of machinery, delays in the delivery of components or raw materials."
-              }
-            ]
-          }
-        },
-        "examples": [
-          {
-            "scope": {
-              "definition": "The purpose of this license is to determine the terms and conditions applicable to the licensing of the data product, whereby Data Holder grants Data User the right to use the data.",
-              "language": "en-us",
-              "restrictions": "Data User agrees not to, directly or indirectly, participate in the unauthorized use, disclosure or conversion of any confidential information.",
-              "geographicalArea": [
-                "EU",
-                "US"
-              ],
-              "permanent": false,
-              "exclusive": false,
-              "rights": [
-                "Reproduction",
-                "Display",
-                "Distribution",
-                "Adaptation",
-                "Reselling",
-                "Sublicensing",
-                "Transferring"
-              ]
-            },
-            "privacy": {
-              "containsPersonalData": true,
-              "applicaplePrivacyLaws": [
-                "General Data Protection Regulation",
-                "Personal Information Protection and Electronic Documents Act (PIPEDA)",
-                "California Consumer Privacy Act (CCPA)"
-              ],
-              "dpaURL": "http://192.168.10.1/dpaconditions"
-            },
-            "termination": {
-              "terminationConditions": "Cancellation before 30 days. After the expiry of the right of use, the product and its derivatives must be removed.",
-              "continuityConditions": "Expired license will automatically continued without written cancellation (termination) by Data Holder"
-            },
-            "governance": {
-              "damages": "During the term of license, except for the force majeure or the Data Holders reasons, Data User is required to follow strictly in accordance with the license. If Data User wants to terminate the license early, it needs to pay a certain amount of liquidated damages.",
-              "confidentiality": "Data User undertakes to maintain confidentiality as regards all information of a technical (such as, by way of a non-limiting example, drawings, tables, documentation, formulas and correspondence) and commercial nature (including contractual conditions, prices, payment conditions) gained during the performance of this license.",
-              "applicableLaws": "This license shall be interpreted, construed and enforced in accordance with the law of Finland, Incl. Copyright Act 404/1961.",
-              "warranties": "Data Holder makes no warranties, express or implied, guarantees or conditions with respect to your use of the data product. To the extent permitted under local law, Data Holder disclaims all liability for any damages or losses, including direct, consequential, special, indirect, incidental or punitive, resulting from Data User use of the data product.",
-              "audit": "Data Holder will reasonably cooperate with Data User by providing available additional information concerning the data product. Each party will bear its own costs with respect to the audit procedures.",
-              "forceMajeure": "Each party may suspend the fulfilment of its contractual obligations, when the said fulfilment is impossible or objectively too costly due to an unforeseeable impediment independent from the parties, such as for example: strike, boycott, lockout, fire, war (declared or not), civil war, riots and revolutions, requisitions, embargo, power blackouts, extraordinary breakage of machinery, delays in the delivery of components or raw materials."
             }
           }
-        ]
+        }
       },
       "dataHolder": {
         "type": "object",
@@ -1978,152 +1117,84 @@
           "taxID": {
             "type": "string",
             "default": "",
-            "title": "taxID",
-            "examples": [
-              "12243434-12"
-            ]
+            "title": "taxID"
           },
           "vatID": {
             "type": "string",
             "default": "",
-            "title": "vatID",
-            "examples": [
-              "12243434-12"
-            ]
+            "title": "vatID"
           },
           "businessDomain": {
             "type": "string",
             "default": "",
-            "title": "businessDomain",
-            "examples": [
-              "Data Product Business"
-            ]
+            "title": "businessDomain"
           },
           "logoURL": {
             "type": "string",
             "default": "",
-            "title": "logoURL",
-            "examples": [
-              "https://mindmote.fi/logo.png"
-            ]
+            "title": "logoURL"
           },
           "description": {
             "type": "string",
             "default": "",
-            "title": "description",
-            "examples": [
-              "Digital Economy services and tools"
-            ]
+            "title": "description"
           },
           "URL": {
             "type": "string",
             "default": "",
-            "title": "URL",
-            "examples": [
-              "https://mindmote.fi"
-            ]
+            "title": "URL"
           },
           "telephone": {
             "type": "string",
             "default": "",
-            "title": "telephone",
-            "examples": [
-              "+358 45 232 2323"
-            ]
+            "title": "telephone"
           },
           "streetAddress": {
             "type": "string",
             "default": "",
-            "title": "streetAddress",
-            "examples": [
-              "Koulukatu 1"
-            ]
+            "title": "streetAddress"
           },
           "postalCode": {
             "type": "string",
             "default": "",
-            "title": "postalCode",
-            "examples": [
-              "33100"
-            ]
+            "title": "postalCode"
           },
           "addressRegion": {
             "type": "string",
             "default": "",
-            "title": "addressRegion",
-            "examples": [
-              " Pirkanmaa"
-            ]
+            "title": "addressRegion"
           },
           "addressLocality": {
             "type": "string",
             "default": "",
-            "title": "addressLocality",
-            "examples": [
-              "Tampere"
-            ]
+            "title": "addressLocality"
           },
           "addressCountry": {
             "type": "string",
             "default": "",
-            "title": "addressCountry",
-            "examples": [
-              "Finland"
-            ]
+            "title": "addressCountry"
           },
           "aggregateRating": {
             "type": "string",
             "default": "",
-            "title": "aggregateRating",
-            "examples": [
-              ""
-            ]
+            "title": "aggregateRating"
           },
           "ratingCount": {
             "type": "integer",
             "default": 0,
-            "title": "ratingCount",
-            "examples": [
-              1245
-            ]
+            "title": "ratingCount"
           },
           "slogan": {
             "type": "string",
             "default": "",
-            "title": "slogan",
-            "examples": [
-              ""
-            ]
+            "title": "slogan"
           },
           "parentOrganization": {
             "type": "string",
             "default": "",
-            "title": "parentOrganization",
-            "examples": [
-              ""
-            ]
+            "title": "parentOrganization"
           }
-        },
-        "examples": [
-          {
-            "taxID": "12243434-12",
-            "vatID": "12243434-12",
-            "businessDomain": "Data Product Business",
-            "logoURL": "https://mindmote.fi/logo.png",
-            "description": "Digital Economy services and tools",
-            "URL": "https://mindmote.fi",
-            "telephone": "+358 45 232 2323",
-            "streetAddress": "Koulukatu 1",
-            "postalCode": "33100",
-            "addressRegion": " Pirkanmaa",
-            "addressLocality": "Tampere",
-            "addressCountry": "Finland",
-            "aggregateRating": "",
-            "ratingCount": 1245,
-            "slogan": "",
-            "parentOrganization": ""
-          }
-        ]
+        }
       }
     }
   }
