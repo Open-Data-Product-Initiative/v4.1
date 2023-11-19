@@ -26,6 +26,7 @@ The same logic applies to the optional attributes as well. Optional attributes a
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
+| **dataHolder** | element | - | **REQUIRED** Binds the provider related business elements and attributes together |
 | **legalName** | string  | text content, max length 256 chars  | **REQUIRED** The official name of the organization, e.g. the registered company name.  | 
 |  **businessID**| string  | As defined in [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322)  | **REQUIRED** The business identifier code of the company. Often this is given to the company by authorized public sector organization managing register of businesses.  |
 | **email** | string | - | **REQUIRED** Email to be used in contacting the organization. |
