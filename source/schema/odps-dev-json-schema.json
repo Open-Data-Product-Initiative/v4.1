@@ -267,7 +267,6 @@
                 "storageType",
                 "containerTool",
                 "format",
-                "status",
                 "schemaLocationURL",
                 "scriptURL",
                 "deploymentDocumentationURL",
@@ -301,11 +300,6 @@
                   "type": "string",
                   "default": "",
                   "title": "format"
-                },
-                "status": {
-                  "type": "string",
-                  "default": "",
-                  "title": "status"
                 },
                 "schemaLocationURL": {
                   "type": "string",
