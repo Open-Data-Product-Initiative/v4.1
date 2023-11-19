@@ -31,6 +31,7 @@ DataOps **OBJECT** describes building, deploying, and running data product's cod
 ```
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
+| dataOps | element | - |  Binds the dataOps related elements and attributes together. |
 | infrastructure | element | - | Infrastructure is a process whereby a data product pipeline deployment method is defined. |
 | platform | string | any | Platform infrastructure, such as AWS, GCP, Azure. |
 | region | string | any | Provide details of cloud region of AWS, Azure or alike. Examples for AWS: US West (Oregon), Canada (Central), US East (N. Virginia), US East (Ohio). Examples for Azure: Canada Central (Toronto), East US 2 (Virginia), West US 2 (Washington) |
