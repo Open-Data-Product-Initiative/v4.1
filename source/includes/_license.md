@@ -45,6 +45,7 @@ The data product may be exploited e.g. by licensing its use and exploitation to 
 ```
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
+| license | element | - |  Binds the licensing related elements and attributes together. |
 | scope | element | - |  Extent, range, coverage, area or space of the license. |
 | definition | string | text content, max length 512 chars  | Background and purpose of the license. |
 | language | string | ISO 639-1 standard language codes | License language. |
