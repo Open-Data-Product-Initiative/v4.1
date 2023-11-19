@@ -15,9 +15,7 @@ DataOps **OBJECT** describes building, deploying, and running data product's cod
     "storageTechnology":"Azure SQL",
     "storageType":"sql",
     "containerTool":"helm",
-    "format":"yaml",
-    "status":"development",
-    "schemaLocationURL":"http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd",
+    "format":"yaml",    "schemaLocationURL":"http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd",
     "scriptURL":"http://192.168.10.1/rundatapipeline.yml",
     "deploymentDocumentationURL":"http://192.168.10.1/datapipeline",
     "dataLineageTool":"Collibra",
@@ -39,7 +37,6 @@ DataOps **OBJECT** describes building, deploying, and running data product's cod
 | storageType | string | any | Describes the internal storage type, such as files, sql, events, MQTT. |
 | containerTool | string | any | A name of the package manager, container or infrastructure as code tool. |
 | format | string  | any |  Type of script language.|
-| status | string  | Options: announcement, draft, development, testing, acceptance, production, sunset, retired. | Development status. |
 | schemaLocationURL | URL  | Valid URL |  The URL of the data product schema, such as XSD, XML or JSON Schema. |
 | scriptURL | URL | Valid URL  | 	The URL of the deployment script. Script can be used for implementing the data product. In a Data Mesh -model it can be used to define, for example, one or more outputs which take the data from source systems or other data products.|
 | deploymentDocumentationURL | URL | Valid URL  | 	The URL of the deployment documentation. |
