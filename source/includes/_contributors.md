@@ -8,4 +8,5 @@ The work around the specification would not be possible without enormous help fr
 
 * Toni Luhti
 * Topi Santakivi
+* Antti Loukiala and Solita Oy
 
