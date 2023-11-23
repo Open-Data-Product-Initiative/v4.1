@@ -144,6 +144,7 @@ Here's the list of attributes which can occur at the document root level. In the
 ```javascript
 {
 "$schema": "https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
+"$version": "dev",
 "product":{
   "en":{
     "name":"Pets of the year",
@@ -165,6 +166,7 @@ Here's the list of attributes which can occur at the document root level. In the
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **$schema** | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | **REQUIRED** Defines the URL of Schema. Used often for validation purposes. In the URL, the used ODPS version is indicated in the name, odps-_VERSION_-json-schema.json. |
+| **$version** | string | Current ODPS version. |
 | **product** | element | root element | **REQUIRED** Root element to tie all together. |
 | **en** | element | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | **REQUIRED** - **NOTE! This is a dynamic element!** This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
 | **name** | string | max length 256 chars | **REQUIRED** The name of the product. |
@@ -184,7 +186,8 @@ RecommendedUseCases **OBJECT** is an array which contains offers method to attac
 
 ```javascript
 {
-"$schema": "https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
+"$schema":"https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
+"$version": "dev",
 "product":{
   "en":{
   "name":"Pets of the year"
@@ -194,7 +197,7 @@ RecommendedUseCases **OBJECT** is an array which contains offers method to attac
   "productSeries":"Lovely pets data products",
   "visibility":"private",
   "status":"draft",
-  "version":"0.1",
+  "productVersion":"0.1",
   "versionNotes":"New version with additional details such more accurate pet details",
   "issues": "The current issues include incorrect information in the dog breeds. The resolution for these problems is planned for the next     update, scheduled to be released on July 15th, 2023.",
   "categories":["pets"],
@@ -237,7 +240,7 @@ RecommendedUseCases **OBJECT** is an array which contains offers method to attac
 | categories| array | - | Comma separates array of categories. |
 | standards| array | - | Comma separates array of standards related e.g. to data content or quality, such as ISO 8000 or ISO 19131. |
 | tags| array | - | Comma separates array of tags. |
-| version | string | The versioning scheme is **major.minor.**. Examples: 1.0, 2.1, 3.15 | The version of the data product. Applies for ODPS metadata as well. |
+| productVersion | string | The versioning scheme is **major.minor.**. Examples: 1.0, 2.1, 3.15 | The version of the data product. Applies for ODPS metadata as well. |
 | versionNotes | string | - | Additional information about the version. |
 | issues | string | - |  There may be errors in the data product that require corrections. These issues will be briefly described to users, along with information about when the fixes will be implemented.|
 | contentSample| URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | Sample content of the data product, for example JSON/XML output. This sample should match the actual data product output and give the data consumer an idea what to expect. Obviously if the data product is pure service for example dashboard or algorithm, then consider providing preview version or alike |
