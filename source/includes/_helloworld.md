@@ -252,7 +252,7 @@ You'll find a complete machine-readbale example of a data product from the right
                 "terminationConditions":"Cancellation before 30 days. After the expiry of the right of use, the product and its derivatives must be removed.",
                 "continuityConditions":"Expired license will automatically continued without written cancellation (termination) by Data Holder"
             },
-            "governance": {
+            "governance":{
             "ownership":"Mindmote Oy, a company specializing in pet industry insights, owns the license to its proprietary data product 'Pets of the Year'.",
             "damages":"During the term of license, except for the force majeure or the Data Holders reasons, Data User is required to follow strictly in accordance with the license. If Data User wants to terminate the license early, it needs to pay a certain amount of liquidated damages.",
             "confidentiality":"Data User undertakes to maintain confidentiality as regards all information of a technical (such as, by way of a non-limiting example, drawings, tables, documentation, formulas and correspondence) and commercial nature (including contractual conditions, prices, payment conditions) gained during the performance of this license.",
