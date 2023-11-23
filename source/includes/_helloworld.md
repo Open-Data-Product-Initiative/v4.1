@@ -6,10 +6,10 @@ You'll find a complete machine-readbale example of a data product from the right
 
 ```javascript
 {
-    "$schema": "https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
-    "$version": "dev",
-    "product": {
-        "en": {
+    "$schema":"https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
+    "$version":"dev",
+    "product":{
+        "en":{
             "name":"Pets of the year",
             "productID":"123456are",
             "valueProposition":"Design a customised petstore using a data product that describes pets with their habits, preferences and characteristics.",
@@ -50,7 +50,7 @@ You'll find a complete machine-readbale example of a data product from the right
             "https://marketplace.com/dataproduct.json, https://marketplace.com/dataproduct-another.json"
         ],
         "pricingPlans":{
-            "en": [
+            "en":[
                 {
                     "name":"Premium subscription 1 year",
                     "priceCurrency":"EUR",
@@ -101,7 +101,7 @@ You'll find a complete machine-readbale example of a data product from the right
                 "checksum":"7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921"
             }
         },
-        "dataAccess": {
+        "dataAccess":{
             "type":"API",
             "authenticationMethod":"OAuth",
             "specification":"OAS",
