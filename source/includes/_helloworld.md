@@ -195,8 +195,9 @@ You'll find a complete machine-readbale example of a data product from the right
             "warranties":"Data Holder makes no warranties, express or implied, guarantees or conditions with respect to your use of the data product. To the extent permitted under local law, Data Holder disclaims all liability for any damages or losses, including direct, consequential, special, indirect, incidental or punitive, resulting from Data User use of the data product.",
             "audit":"Data Holder will reasonably cooperate with Data Users by providing available additional information about the data product. Both parties will bear their own audit-related costs.",
             "forceMajeure":"Both parties may suspend their contractual obligations when fulfillment becomes impossible or excessively costly due to unforeseeable events beyond their control, such as strikes, fires, wars, and other force majeure events."
-        }
-    },
+            }
+        
+        },
         "dataHolder":{
             "taxID":"12243434-12",
             "vatID":"12243434-12",
