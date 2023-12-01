@@ -15,7 +15,6 @@ includes:
   - dataaccess
   - sla
   - qa
-  - datagovernance
   - license
   - dataholder
   - extensions
