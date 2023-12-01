@@ -91,7 +91,7 @@ Development of the standard is coordinated in Open Data Product Initiative (ODPI
 
 The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure & access), 2) business (pricing & plans), 3) legal (licensing & IPR), and 4) ethical (privacy & mydata). The four aspects are described in 8 elements, which contain attributes and other elements. 
 
-![odps-model](images/ODPS-design-v-3.0.jpg)
+![odps-model](images/ODPS-design.png)
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues)
