@@ -19,6 +19,7 @@ includes:
   - dataholder
   - extensions
   - helloworld
+  - bareminimum
   - terms
   - contributors
 
