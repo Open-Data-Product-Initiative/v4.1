@@ -1,6 +1,6 @@
-# Example with mandatory-only elements
+# Mandatory-only example
 
-Example data product with just the mandatory elements and attributes. 
+Example data product with just the mandatory elements and attributes. This is the minimal representation of a data product metadata that is expected to be found from every data product following ODPS standard. This bare minimum can be expanded with other elements and attributes defined in the specification. Also the possibilty to use extensions exists if local additions are needed. 
 
 > Example of mandatory-only elements and attributes Data Product specification instance:
 
