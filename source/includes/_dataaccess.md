@@ -2,6 +2,8 @@
 
 Data Access **OBJECT** describes the authorised ability to retrieve, edit, copy or transfer data from IT systems.
 
+## Optional attributes and elements
+
 > Example of Data Access component usage:
 
 ```javascript
