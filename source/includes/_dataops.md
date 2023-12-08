@@ -4,6 +4,8 @@ DataOps is a process whereby a data product pipeline deployment method is define
 
 DataOps **OBJECT** describes building, deploying, and running data product's code, and storing and giving access to data and metadata. This principle has been adopted from the [Data Mesh](https://towardsdatascience.com/what-is-a-data-mesh-and-how-not-to-mesh-it-up-210710bb41e0).
 
+## Optional attributes and elements
+
 > Example of DataOps component usage:
 
 ```javascript
