@@ -3,7 +3,7 @@ title: Open Data Product Specification Dev | Enabling Data Economy | Open Data P
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yml
-- json
+
 
 toc_footers:
   - License <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a>
@@ -112,23 +112,18 @@ Note! Mandatory elements and attributes are listed separately in the definition 
 
 **RIGHT COLUMN: Examples**
 
-The right column contains JSON formatted examples of how the specification is used. In the future other output formats are added on request basis. 
+The right column contains YAML formatted examples of how the specification is used. In the future other output formats are added on request basis. YAML can easily be converted to JSON if needed. 
 
-> Example of JSON formatted snippet from the Open Data Product Specification:
+> Example of YAML formatted snippet from the Open Data Product Specification:
 
 ```yml
 monitoring:
   url: https://monitoring.com
 ```
 
-```json
-"monitoring":{
-  "url":"https://monitoring.com"
-}
-```
 
 <aside class="notice">
-The JSON examples are not based on any real data product, but exemplify the usage of Open Data Product Specification. 
+The YAML examples are not based on any real data product, but exemplify the usage of Open Data Product Specification. 
 
 </aside>
 
@@ -141,26 +136,22 @@ Here's the list of attributes which can occur at the document root level. In the
 
 > Example of document level attribute usage and structure:
 
-```javascript
-{
-"$schema":"https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
-"$version":"dev",
-"product":{
-  "en":{
-    "name":"Pets of the year",
-    "productID":"123456are",
-    "visibility":"private",
-    "status":"draft",
-    "type":"dataset"
-   },
-   "fi":{
-    "name":"Vuoden suosituimmat lemmikit",
-    "productID":"123456are",
-    "visibility":"private",
-    "status":"draft",
-    "type":"dataset"
-  }
-}
+```yml
+$schema: https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json
+$version": dev
+product:
+  en:
+    name: Pets of the year
+    productID: 123456are
+    visibility: private
+    status": draft
+    type: dataset
+  fi:
+    name: Vuoden suosituimmat lemmikit
+    productID: 123456are
+    visibility: private
+    status: draft
+    type: dataset
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
