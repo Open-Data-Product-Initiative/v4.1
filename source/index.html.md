@@ -116,15 +116,15 @@ The right column contains JSON formatted examples of how the specification is us
 
 > Example of JSON formatted snippet from the Open Data Product Specification:
 
+```yml
+monitoring:
+  url: https://monitoring.com
+```
+
 ```json
 "monitoring":{
   "url":"https://monitoring.com"
 }
-```
-
-```yml
-monitoring:
-  url: https://monitoring.com
 ```
 
 <aside class="notice">
