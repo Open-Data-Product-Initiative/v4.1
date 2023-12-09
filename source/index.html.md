@@ -121,6 +121,11 @@ The right column contains JSON formatted examples of how the specification is us
 }
 ```
 
+```yml
+monitoring:
+  url: https://monitoring.com
+```
+
 <aside class="notice">
 The JSON examples are not based on any real data product, but exemplify the usage of Open Data Product Specification. 
 
