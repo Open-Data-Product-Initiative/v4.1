@@ -2,7 +2,8 @@
 title: Open Data Product Specification Dev | Enabling Data Economy | Open Data Product Initiative
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - JSON
+- YAML
+- JSON
 
 toc_footers:
   - License <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a>
@@ -119,6 +120,11 @@ The right column contains JSON formatted examples of how the specification is us
 "monitoring":{
   "url":"https://monitoring.com"
 }
+```
+
+```yml
+monitoring:
+  url: https://monitoring.com
 ```
 
 <aside class="notice">
