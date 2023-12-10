@@ -8,26 +8,24 @@ DataOps **OBJECT** describes building, deploying, and running data product's cod
 
 > Example of DataOps component usage:
 
-```javascript
+```yml
   
-"dataOps":{
-  "infrastructure":{
-    "platform":"Azure",
-    "region": "West US 2 (Washington)";
-    "storageTechnology":"Azure SQL",
-    "storageType":"sql",
-    "containerTool":"helm",
-    "format":"yaml",
-    "schemaLocationURL":"http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd",
-    "scriptURL":"http://192.168.10.1/rundatapipeline.yml",
-    "deploymentDocumentationURL":"http://192.168.10.1/datapipeline",
-    "dataLineageTool":"Collibra",
-    "dataLineageOutput":"http://192.168.10.1/lineage.json",
-    "hashType":"SHA-2",
-    "checksum":"7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921",
-    "signatureType": "JWK"
-  }
-}
+dataOps:
+  infrastructure:
+    platform: Azure
+    region: West US 2 (Washington)
+    storageTechnology: Azure SQL
+    storageType: sql
+    containerTool: helm
+    format: yaml
+    schemaLocationURL: http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd
+    scriptURL: http://192.168.10.1/rundatapipeline.yml
+    deploymentDocumentationURL: http://192.168.10.1/datapipeline
+    dataLineageTool: Collibra
+    dataLineageOutput: http://192.168.10.1/lineage.json
+    hashType: SHA-2
+    checksum: 7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921
+    signatureType: JWK
   
 ```
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
