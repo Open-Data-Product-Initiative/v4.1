@@ -6,18 +6,16 @@ Data Access **OBJECT** describes the authorised ability to retrieve, edit, copy 
 
 > Example of Data Access component usage:
 
-```javascript
+```yml
  
- "dataAccess":{
-  "interface"{
-    "outputPorttype":"API",
-    "authenticationMethod":"OAuth",
-    "specification":"OAS",
-    "format":"GraphQL",
-    "specsURL":"http://192.168.10.1/petshop.json",
-    "documentationURL":"http://192.168.10.1/petshop"
-  }
-}
+dataAccess:
+  interface:
+    outputPorttype: API
+    authenticationMethod: OAuth
+    specification: OAS
+    format: GraphQL
+    specsURL: http://192.168.10.1/petshop.json
+    documentationURL: http://192.168.10.1/petshop
   
 ```
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
