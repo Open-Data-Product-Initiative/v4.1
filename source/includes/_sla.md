@@ -8,54 +8,42 @@ No mandatory attributes at the moment. Optional attributes are listed in own tab
 
 > Example of Quality component usage:
 
-```javascript
-   "SLA":{
-      "updateFrequency": 
-      {
-         "unit":"hours",
-         "value":1
-      },
-      "uptime": 
-      {
-         "unit":"percentage",
-         "value":99
-      },
-      "responseTime": 
-      {
-         "unit":"milliseconds",
-         "value":200
-      },
-      "support": 
-      {
-         "company": 
-         {
-            "phoneNumber":"",
-            "phoneServiceHours":""
-            "chatURL":"",
-            "chatServiceHours":"",
-            "chatResponseTime":"",
-            "email":"support@support.org",
-            "emailServiceHours":"",
-            "emailResponseTime":"",
-            "documentationURL":"",
-            "guidesURL":"",
-         },
-         "community": 
-         {
-            "stackoverflowURL":"",
-            "forumURL":"" 
-            "slackURL":"",
-            "twitterURL":""
-         }
-      }
-      "observability":
-      {
-         "healthStatus":true,
-         "logsURL":"https://logs.com"
-         "dashboardURL":"https://dashboard.com",
-         "uptimeURL":"https://uptime.com"
-      } 
-   }
+```yml
+
+SLA:
+  updateFrequency:
+    unit: hours
+    value: 1
+  uptime:
+    unit: percentage
+    value: 99
+  responseTime:
+    unit: milliseconds
+    value: 200
+  support:
+    company:
+      phoneNumber: ''
+      phoneServiceHours: ''
+      chatURL: ''
+      chatServiceHours: ''
+      chatResponseTime: ''
+      email: support@opendataproducts.org
+      emailServiceHours: ''
+      emailResponseTime: ''
+      documentationURL: ''
+      guidesURL: ''
+    community:
+      stackoverflowURL: ''
+      forumURL: ''
+      slackURL: ''
+      twitterURL: ''
+  observability:
+    healthStatus: true
+    logsURL: https://logs.opendataproducts.org
+    dashboardURL: https://dashboard.opendataproducts.org
+    uptimeURL: https://uptime.opendataproducts.org
+
+
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
