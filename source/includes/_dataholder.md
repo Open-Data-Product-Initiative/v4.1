@@ -13,14 +13,14 @@ The same logic applies to the optional attributes as well. Optional attributes a
 ## Mandatory attributes and elements
 
 
-> Example of Provider component mandatory attributes usage:
+> Example of Holder component mandatory attributes usage:
 
-```javascript
-   "dataHolder":{
-         "legalName":"MindMote Oy",
-         "businessId":"12243434-12",
-         "email":"contact@mindmote.fi"
-      }
+```yml
+
+dataHolder:
+  legalName: MindMote Oy
+  businessId: 12243434-12
+  email: contact@mindmote.fi
       
 ```
 
@@ -36,28 +36,27 @@ If you see something missing, described inaccurately or plain wrong, or you want
 
 ## Optional attributes and elements
 
-> Example of Provider component with some of the voluntary attributes:
+> Example of Holder component with some of the voluntary attributes:
 
-```javascript
-   "dataHolder":
-      {
-         "taxID":"12243434-12",
-         "vatID":"12243434-12",
-         "businessDomain":"Product catalogs",
-         "logoURL":"https://mindmote.fi/logo.png",
-         "description":"Digital Economy services and tools",
-         "URL":"https://mindmote.fi",
-         "telephone":"+35845 0232 2323",
-         "streetAddress":"Koulukatu 1",
-         "postalCode":"33100",
-         "addressRegion":"Pirkanmaa",
-         "addressLocality":"Tampere",
-         "addressCountry":"Finland",
-         "aggregateRating":"",
-         "ratingCount":1245,
-         "slogan":"",
-         "parentOrganization":""
-      }
+```yml
+
+dataHolder:
+  taxID: 12243434-12
+  vatID: 12243434-12
+  businessDomain: Product catalogs
+  logoURL: https://mindmote.fi/logo.png
+  description: Digital Economy services and tools
+  URL: https://mindmote.fi
+  telephone: "+35845 0232 2323"
+  streetAddress: Koulukatu 1
+  postalCode: 33100
+  addressRegion: Pirkanmaa
+  addressLocality: Tampere
+  addressCountry: Finland
+  aggregateRating: ''
+  ratingCount: 1245
+  slogan: ''
+  parentOrganization: ''
       
 ```
 
