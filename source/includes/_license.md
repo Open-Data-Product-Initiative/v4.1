@@ -31,7 +31,8 @@ license:
     - Sublicensing
     - Transferring
   termination:
-    terminationConditions: Cancellation before 30 days. After the expiry of the right
+    noticePeriod: 90
+    terminationConditions: After the expiry of the right
       of use, the product and its derivatives must be removed.
     continuityConditions: Expired license will automatically continued without written
       cancellation (termination) by Data Holder
@@ -74,6 +75,7 @@ license:
 | exclusive | boolean | true/false |  The exclusive license holder is given complete control over the use of the data product, and no other person or organization is allowed to use it during the term of the license agreement. |
 | rights| array |  Options: Reproduction <i>(rights to reproduce)</i>, Display <i>(disclose data to others)</i>, Distribution <i>(right to distribute)</i>, Adaptation <i>(right for derivate work)</i>, Reselling <i>(right to resell)</i>, Transferring <i>(transferable data license)</i>, Sublicensing <i>(license grant may include a right to sublicense)</i>| Rights granted by the licence. The texts in brackets and <i>italic</i> are intended to describe rights. |
 | termination | element | - | Licence termination and continuity related conditions. |
+| noticePeriod | integer | unit is days | The notice period is a particular time that an data product provider or consumer must give before ending the contract. This time window allows both sides to make the necessary preparations, guaranteeing an unhindered transfer. |
 | terminationConditions | string | text content, max length 512 chars | Cancellation conditions of the license. |
 | continuityConditions | string |  text content, max length 512 chars | Continuity conditions of the license. |
 | governance | element | - | Governance is the approach taken to ensure that the agreed outcomes are being fulfilled. |
