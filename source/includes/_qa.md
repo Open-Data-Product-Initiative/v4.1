@@ -15,7 +15,7 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 ```yml
 
 dataQuality:
-  accuracy:
+  - dimension: accuracy
     objective: 98
     unit: percentage
     monitoring:
@@ -23,7 +23,7 @@ dataQuality:
       spec:
         - require_unique(member_id) 
         - require_range(age_band, 18, 100)
-  completeness:
+  - dimension: completeness
     objective: 98
     unit: percentage
     monitoring:
@@ -34,25 +34,33 @@ dataQuality:
             checks:
               - not null:
                   fail: when > 2% # Fail if more than 2% of records are null
-  consistency: 100
-  timeliness: high
-  validity: 100
-  uniqueness: 100
+  - dimension: consistency
+    objective: 98
+    unit: percentage
+
+  - dimension: timeliness
+    objective: 100
+    unit: percentage
+
+  - dimension: validity
+    objective: 98
+    unit: percentage
+
+  - dimension: uniqueness
+    objective: 100
+    unit: percentage
       
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| dataQuality | element | - | Binds the data quality related elements and attributes together |
-| accuracy | integer  | percentage | The term “accuracy” refers to the degree to which information accurately reflects an event or object described. For example, if a customer’s age is 32, but the system says she’s 34, that information is inaccurate. |
-| completeness | integer | percentage | Data is considered “complete” when it fulfills expectations of comprehensiveness. Let’s say that you ask the customer to supply his or her name. You might make a customer’s middle name optional, but as long as you have the first and last name, the data is complete. |
-| consistency | integer | percentage | At many companies, the same information may be stored in more than one place. If that information matches, it’s considered “consistent.” For example, if your human resources information systems say an employee doesn’t work there anymore, yet your payroll says he’s still receiving a check, that’s inconsistent. |
-| timeliness | string | one of: low, medium, high | Is your information available right when it’s needed? That data quality dimension is called “timeliness.” Let’s say that you need financial information every quarter; if the data is ready when it’s supposed to be, it’s timely. The data quality dimension of timeliness is a user expectation.  |
-| validity | integer | percentage | Validity is a data quality dimension that refers to information that doesn’t conform to a specific format or doesn’t follow business rules. A popular example is birthdays – many systems ask you to enter your birthday in a specific format, and if you don’t, it’s invalid. To meet this data quality dimension, you must check if all of your information follows a specific format or business rules. |
-| uniqueness | integer | percentage | “Unique” information means that there’s only one instance of it appearing in a database. As we know, data duplication is a frequent occurrence. “Daniel A. Robertson” and “Dan A. Robertson” may well be the same person. Meeting this data quality dimension involves reviewing your information to ensure that none of it is duplicated. |
-| dataQualityAssuranceMethods | string | text content, max length 512 chars | Description of the data product quality assurance methods and tools used. Promotes data reliability engineering as-code approach. |
-| dataQualityMonitoring | string | text content, max length 512 chars |  The tool used for assessing data quality, like [Soda tools: SodaCL](https://docs.soda.io/soda-cl/soda-cl-overview.html) or SQL queries. |
-| monitoringScriptURL | URL | valid URL | The URL of the data quality assessment and monitoring script.  |
+| dataQuality | element | - | Contains array of data quality dimensions with optional computational monotoring object. Binds the data quality related elements and attributes together |
+| dimension | attribute | string, one of | Defines the data quality dimension. Can be one of: accuracy, completeness, consistency, timeliness, validity, or uniqueness  |
+| objective | attribute | integer | Defines the target value for the data quality dimension |
+| unit | attribute | string | Defines the unit used in stating the target quality level. One of: percentage, number |
+| monitoring | element | - | Contains the monitoring (computational "as code") structure to validate target state for the selected data quality dimension. |
+| type | attribute | string | monitoring system name name such as SodaCL and Montecarlo. The systems enable as code approach to monitor data quality. |
+| spec | element | - | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. |
 
 
 
