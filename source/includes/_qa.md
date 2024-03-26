@@ -15,21 +15,29 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 ```yml
 
 dataQuality:
-  accuracy: 100
-  completeness: 100
+  accuracy:
+    objective: 98
+    unit: percentage
+    monitoring:
+      type: SodaCL 
+      spec:
+        - require_unique(member_id) 
+        - require_range(age_band, 18, 100)
+  completeness:
+    objective: 98
+    unit: percentage
+    monitoring:
+      type: SodaCL 
+      spec:
+        - for each column:
+            name: [member_id, gender, age_band]
+            checks:
+              - not null:
+                  fail: when > 2% # Fail if more than 2% of records are null
   consistency: 100
   timeliness: high
   validity: 100
   uniqueness: 100
-  dataQualityAssuranceMethods: > 
-    Data quality assurance suite of tools and methods include
-    both data quality auditing (DQA) tools designed for 
-    use by external audit teams and routine data quality 
-    assessment (RDQA) tools 
-    designed for capacity building
-    and self-assessment.
-  dataQualityMonitoring: SodaCL
-  monitoringScriptURL: http://monitoring.opendataproducts.org/soda/petshop 
       
 ```
 
