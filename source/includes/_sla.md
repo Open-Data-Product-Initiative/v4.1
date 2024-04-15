@@ -11,45 +11,105 @@ No mandatory attributes at the moment. Optional attributes are listed in own tab
 ```yml
 
 SLA:
-- dimension: updateFrequency
-  objective: 30
-  unit: minutes
-  monitoring:
-    type: Prometheus 
-    spec: | # expressed as string or inline yaml 
-      time() - max_over_time(timestamp(changes(table[5m]) > 0)[1d:1m])
-
-- dimension: uptime
-  objective: 99.9
-  unit: percentage
-  monitoring:
-    type: Prometheus 
-    spec: | # expressed as string or inline yaml
-      avg_over_time(
-        (
-          sum without() (up{job="prometheus"})
-            or
-          (0 * sum_over_time(up{job="prometheus"}[7d]))
-        )[7d:5m]
-      )      
-
-- dimension: responseTime
-  objective: 300
-  unit: milliseconds
+  - dimension: latency
+    objective: 100
+    unit: milliseconds
     monitoring:
-    type: Prometheus 
-    spec: | # expressed as string or inline yaml
-      sum(rate(http_request_duration_seconds_bucket{le="0.3"}[5m])) by (job)
+      type: prometheus 
+      spec:  
+        myTimer.observeDuration();
 
-dashboardURL: https://uptime.opendataproducts.org
-support:  
-  phoneNumber: ''
-  phoneServiceHours: ''
-  chatURL: ''
-  chatServiceHours: ''
-  email: support@opendataproducts.org
-  emailServiceHours: ''
-  guidesURL: ''
+  uptime:
+    unit: percentage
+    value: 99
+  responseTime:
+    unit: milliseconds
+    value: 200
+  support:
+    company:
+      phoneNumber: ''
+      phoneServiceHours: ''
+      chatURL: ''
+      chatServiceHours: ''
+      chatResponseTime: ''
+      email: support@opendataproducts.org
+      emailServiceHours: ''
+      emailResponseTime: ''
+      documentationURL: ''
+      guidesURL: ''
+    community:
+      stackoverflowURL: ''
+      forumURL: ''
+      slackURL: ''
+      twitterURL: ''
+
+
+```
+
+```json
+
+{
+    "dataQuality": [
+        {
+            "dimension": "accuracy",
+            "objective": 98,
+            "unit": "percentage",
+            "monitoring": {
+                "type": "SodaCL",
+                "spec": [
+                    "require_unique(member_id)",
+                    "require_range(age_band, 18, 100)"
+                ]
+            }
+        },
+        {
+            "dimension": "completeness",
+            "objective": 98,
+            "unit": "percentage",
+            "monitoring": {
+                "type": "SodaCL",
+                "spec": [
+                    {
+                        "for each column": {
+                            "name": [
+                                "member_id",
+                                "gender",
+                                "age_band"
+                            ],
+                            "checks": [
+                                {
+                                    "not null": {
+                                        "fail": "when > 2%"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "dimension": "consistency",
+            "objective": 98,
+            "unit": "percentage"
+        },
+        {
+            "dimension": "timeliness",
+            "objective": 100,
+            "unit": "percentage"
+        },
+        {
+            "dimension": "validity",
+            "objective": 98,
+            "unit": "percentage"
+        },
+        {
+            "dimension": "uniqueness",
+            "objective": 100,
+            "unit": "percentage"
+        }
+    ]
+}
 
 
 
