@@ -112,34 +112,22 @@ SLA:
 }
 
 
+
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | SLA | element | - | Binds the SLA related elements and attributes together |
-| updateFrequency | element  | Options for *unit* are: milliseconds, seconds, minutes, days, weeks, months, years, never, null. <br/><br/> *Value* attribute is Integer.  | Name of the quality attribute indicating the timely interval how often data is updated. |
-| uptime | element | Options for *unit* are: percentage, string, null. <br/><br/> The *value* attribute can be integer or string "best effort". | Uptime is the amount of time that a service is online available and operational. Guaranteed uptime is expressed as SLA level and is generally the most important metric to measure the quality of a hosting provider. An SLA level of 99.99% for example equates to 52 minutes and 36 seconds of downtime per year. in this context uptime is SLA.  |
-|  responseTime| element | *Unit* options are: milliseconds, seconds, null. <br/><br/>*Value* can be integer or null | Response time is the total amount of time it takes to respond to a request for service. |
-| support | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. Support can be based on company provided support and community driven support. |
+| unit | attribute  | Options for *unit* are: milliseconds, seconds, minutes, days, weeks, months, years, never, null. <br/><br/>  | Name of the quality attribute indicating the timely interval how often data is updated. |
+| support | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. |
 | phoneNumber | string | - | The support phone number |
 | phoneServiceHours | string | - | Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
 | chatURL | URL | Valid URL | The URL of chat service to use. Service hours and response time defined in other attributes. |
 | chatServiceHours | string | - | Describes the chat service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
-| chatResponseTime | string | - | Describes aimed maximum delay in responding to chat support requests. This doesn't normally guarantee a resolution to the problem.  |
 | email | string | - | Email information for support requests. |
 | emailServiceHours | string | - | Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
-| emailResponseTime | string | - | Describes aimed maximum delay in responding to email support requests. This doesn't normally guarantee a resolution to the problem.  |
-| documentationURL | URL | - | URL to the documentation of the product. |
 | guidesURL | URL | Valid URL | URL to the guides offering more information and examples about how to use the data product. Guides might be platform specific. |
-| community | Element | - | Element that contains community based support function information. |  
-| stackoverflowURL | URL | Valid URL | URL to the Stack Overflow. Could be for example list of resolved issues related to the product. |  
-| forumURL | URL | Valid URL | URL to the community forum in which product related support requests can be raised. |  
-| slackURL | URL | Valid URL | URL to the Slack workspace in which product related support requests can be raised. |  
-| twitterURL | URL | Valid URL | URL to the Twitter account for which product related support requests can be raised. |  
-| observability | element | - | Observability is a superset of monitoring. It provides not only high-level overviews of the system’s health but also highly granular insights into the implicit failure modes of the system. In addition, an observable system furnishes ample context about its inner workings, unlocking the ability to uncover deeper, systemic issues. | 
-| healthStatus | boolean | true/false | The usability of the data product can be determined through (an automated) review that assesses the data quality, accuracy, and other characteristics to ensure its usability. In this process, a value of 'true' indicates that the review has deemed the product to be usable. Conversely, a value of 'false' signifies that the automated review has identified deficiencies or errors that render the product unusable. |
-| logsURL | URL | Valid URL | URL to service which offers access to event logs including errors, response times, call information. | 
-| dashboardURL | URL | Valid URL | URL to dashboard application which visualizes product behaviour. This service should support at least part of the given product quality indicators. | 
-| uptimeURL | URL | Valid URL | URL to service which shows uptime statistics as well as other statistical information. This service should support at least part of the given product quality indicators. | 
+| dashboardURL | URL | Valid URL | URL to dashboard application which visualizes product behaviour. This service should support the given indicators. | 
+
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues)

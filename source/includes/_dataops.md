@@ -15,15 +15,13 @@ dataOps:
     schemaLocationURL: http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd
     origin:
       - source: human # sensor, human, analytics
-        sourceId: 
-        type: raw # raw, cleansed
-        description: 
+        sourceId: # 
+        type:  # analog to digital, synthetic generated (informative). 
+        description: # 
+        creationTimestamp: #
+        creator: # internal use, ability to attribute data generation to exact device or hw, related to sourceId perhaps  
         checksum: # ?
-      - source: sensor # sensor, human, analytics
-        sourceId: 
-        type: cleansed # raw, cleansed
-        description: 
-        checksum: # ?
+
     lineage:
       dataLineageTool: Collibra
       dataLineageOutput: http://192.168.10.1/lineage.json
