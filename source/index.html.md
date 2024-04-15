@@ -3,6 +3,7 @@ title: Open Data Product Specification Dev | Enabling Data Economy | Open Data P
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yml
+- json
 
 
 toc_footers:

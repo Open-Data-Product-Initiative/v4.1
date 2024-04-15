@@ -11,9 +11,14 @@ No mandatory attributes at the moment. Optional attributes are listed in own tab
 ```yml
 
 SLA:
-  updateFrequency:
-    unit: hours
-    value: 1
+  - dimension: latency
+    objective: 100
+    unit: milliseconds
+    monitoring:
+      type: prometheus 
+      spec:  
+        myTimer.observeDuration();
+
   uptime:
     unit: percentage
     value: 99
@@ -37,11 +42,74 @@ SLA:
       forumURL: ''
       slackURL: ''
       twitterURL: ''
-  observability:
-    healthStatus: true
-    logsURL: https://logs.opendataproducts.org
-    dashboardURL: https://dashboard.opendataproducts.org
-    uptimeURL: https://uptime.opendataproducts.org
+
+
+```
+
+```json
+
+{
+    "dataQuality": [
+        {
+            "dimension": "accuracy",
+            "objective": 98,
+            "unit": "percentage",
+            "monitoring": {
+                "type": "SodaCL",
+                "spec": [
+                    "require_unique(member_id)",
+                    "require_range(age_band, 18, 100)"
+                ]
+            }
+        },
+        {
+            "dimension": "completeness",
+            "objective": 98,
+            "unit": "percentage",
+            "monitoring": {
+                "type": "SodaCL",
+                "spec": [
+                    {
+                        "for each column": {
+                            "name": [
+                                "member_id",
+                                "gender",
+                                "age_band"
+                            ],
+                            "checks": [
+                                {
+                                    "not null": {
+                                        "fail": "when > 2%"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "dimension": "consistency",
+            "objective": 98,
+            "unit": "percentage"
+        },
+        {
+            "dimension": "timeliness",
+            "objective": 100,
+            "unit": "percentage"
+        },
+        {
+            "dimension": "validity",
+            "objective": 98,
+            "unit": "percentage"
+        },
+        {
+            "dimension": "uniqueness",
+            "objective": 100,
+            "unit": "percentage"
+        }
+    ]
+}
 
 
 ```
