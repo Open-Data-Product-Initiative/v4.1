@@ -1,8 +1,20 @@
 # Data SLA
 
-Data Service Level Agreement (SLA) **Object** contains attributes which define the desired and promised quality of the data product. 
+Data Service Level Agreement (SLA) **Object** contains attributes which define the desired and promised quality of the data product. SLA can be defined with 11 dimentions: 
 
-SLA is defined as dimensions. Each dimension has objective value, a unit and then monitoring "as code" to verify objective. In some cases monitoring is 
+1. latency, 
+1. uptime, 
+1. responseTime, 
+1. errorRate, 
+1. endOfSupport, 
+1. endOfLife, 
+1. updateFrequency, 
+1. timeToDetect, 
+1. timeToNotify, 
+1. timeToRepair, 
+1. emailResponseTime. 
+
+Each dimension has objective value, a unit and then monitoring "as code" to verify objective. In some cases monitoring is 
 not feasable or possible to arrange for various reasons. Type attribute indicates which monitoring system is used. Reference attribute contains url for reference documentation regarding the monitoring spec. Spec contains the actucal "as code" part which can be executed in selected monitoring system as is. 
 
 No mandatory attributes at the moment. Optional attributes are listed in own table and an example is given in the right column. 
