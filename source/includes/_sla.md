@@ -2,20 +2,22 @@
 
 Data Service Level Agreement (SLA) **Object** contains attributes which define the desired and promised quality of the data product. SLA can be defined with 11 dimentions: 
 
-1. latency, 
-1. uptime, 
-1. responseTime, 
-1. errorRate, 
-1. endOfSupport, 
-1. endOfLife, 
-1. updateFrequency, 
-1. timeToDetect, 
-1. timeToNotify, 
-1. timeToRepair, 
-1. emailResponseTime. 
+1. latency (minimal amount of time before getting any response) 
+1. uptime (Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/) 
+1. responseTime (amount of time to process external request) 
+1. errorRate (Maximum tolerated errors in data, percentage) 
+1. endOfSupport (The date at which your product will not have support anymore.) 
+1. endOfLife (The date at which your product will not be available anymore. No support, no access.) 
+1. updateFrequency (how often data is updates) 
+1. timeToDetect (How fast can you detect a problem? ) 
+1. timeToNotify (Once you see a problem, how much time do you need to notify your users? ) 
+1. timeToRepair (How long do you need to fix the issue once it is detected?) 
+1. emailResponseTime (How long do you need to respond to email support requests?) 
 
 Each dimension has objective value, a unit and then monitoring "as code" to verify objective. In some cases monitoring is 
 not feasable or possible to arrange for various reasons. Type attribute indicates which monitoring system is used. Reference attribute contains url for reference documentation regarding the monitoring spec. Spec contains the actucal "as code" part which can be executed in selected monitoring system as is. 
+
+Also basic email and phone support information can be expressed inside the SLA component. 
 
 No mandatory attributes at the moment. Optional attributes are listed in own table and an example is given in the right column. 
 
@@ -93,7 +95,7 @@ SLA:
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | SLA | element | - | Binds the SLA related elements and attributes together |
-| dimension | attribute | string, one of | Defines the SLA dimension. Can be one of: latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime  |
+| dimension | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension.   |
 | unit | attribute  | Options for *unit* are: milliseconds, seconds, minutes, days, weeks, months, years, never, date, null. <br/><br/>  | Name of the quality attribute indicating the timely interval. If date is given, format is dd/mm/yyyy |
 | support | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. |
 | phoneNumber | string | - | The support phone number |
