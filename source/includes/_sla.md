@@ -29,6 +29,8 @@ No mandatory attributes at the moment. Optional attributes are listed in own tab
 
 SLA:
   - dimension: latency
+    displaytitle:
+      - en: Latency
     objective: 100
     unit: milliseconds
     monitoring:
@@ -38,6 +40,8 @@ SLA:
         myTimer.observeDuration();
 
   - dimension: uptime
+    displaytitle:
+      - en: Uptime
     objective: 99
     unit: percent
     
@@ -97,6 +101,10 @@ SLA:
 | SLA | element | - | Binds the SLA related elements and attributes together |
 | dimension | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension.   |
 | unit | attribute  | Options for *unit* are: milliseconds, seconds, minutes, days, weeks, months, years, never, date, null. <br/><br/>  | Name of the quality attribute indicating the timely interval. If date is given, format is dd/mm/yyyy |
+| monitoring | element | - | Contains the monitoring (computational "as code") structure to validate target state for the selected SLA dimension. |
+| type | attribute | string | monitoring system name name such as Prometheus. The systems enable as code approach to monitor SLA. |
+| spec | element | - | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. |
+| reference | URL | Valid URL | Provide URL for the reference documentation |
 | support | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. |
 | phoneNumber | string | - | The support phone number |
 | phoneServiceHours | string | - | Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
