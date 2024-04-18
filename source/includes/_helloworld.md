@@ -77,72 +77,145 @@ product:
       offering:
         - item 1
   dataOps:
+    data:
+      schemaLocationURL: http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd
+
+    lineage:
+      dataLineageTool: Collibra
+      dataLineageOutput: http://192.168.10.1/lineage.json
+
     infrastructure:
       platform: Azure
+      region: West US 2 (Washington)
       storageTechnology: Azure SQL
       storageType: sql
       containerTool: helm
+
+    build:
       format: yaml
-      schemaLocationURL: http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd
-      scriptURL: http://192.168.10.1/rundatapipeline.yml
-      deploymentDocumentationURL: http://192.168.10.1/datapipeline
-      dataLineageTool: Collibra
-      dataLineageOutput: http://192.168.10.1/lineage.json
       hashType: SHA-2
       checksum: 7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921
+      signatureType: JWK
+      scriptURL: http://192.168.10.1/rundatapipeline.yml
+      deploymentDocumentationURL: http://192.168.10.1/datapipeline
+
   dataAccess:
     type: API
     authenticationMethod: OAuth
     specification: OAS
     format: JSON
     documentationURL: https://swagger.com/petstore.json
+
   SLA:
-    updateFrequency:
-      unit: hours
-      value: 1
-    uptime:
-      unit: percentage
-      value: 99
-    responseTime:
-      unit: milliseconds
-      value: 200
-    nullValues:
-      unit: percentage
-      value: 0.01
-    support:
-      company:
-        phoneNumber: ''
-        phoneServiceHours: ''
-        chatURL: ''
-        chatServiceHours: ''
-        chatResponseTime: ''
-        email: ''
-        emailServiceHours: ''
-        emailResponseTime: ''
-        documentationURL: ''
-        guidesURL: ''
-      community:
-        stackoverflowURL: ''
-        forumURL: ''
-        slackURL: ''
-        twitterURL: ''
-    observability:
-      logsURL: https://logs.com
-      dashboardURL: https://dashboard.com
-      uptimeURL: https://uptime.com
+  - dimension: latency
+    displaytitle:
+      - en: Latency
+    objective: 100
+    unit: milliseconds
+    monitoring:
+      type: prometheus
+      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/ 
+      spec:  
+        myTimer.observeDuration();
+
+  - dimension: uptime
+    displaytitle:
+      - en: Uptime
+    objective: 99
+    unit: percent
+    
+  - dimension: responseTime
+    objective: 200
+    unit: milliseconds
+    monitoring:
+      type: prometheus
+      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/ 
+      spec:  
+       rate(http_server_requests_seconds_sum[$__rate_interval]) / rate(http_server_requests_seconds_count[$__rate_interval])
+
+  - dimension: errorRate
+    objective: 0.1
+    unit: percent
+  
+  - dimension: endOfSupport
+    objective: 01/01/2025 # dd/mm/yyyy
+    unit: date
+
+  - dimension: endOfLife
+    objective: 01/03/2025 # dd/mm/yyyy
+    unit: date
+
+  - dimension: updateFrequency
+    objective: 7
+    unit: days
+
+  - dimension: timeToDetect
+    objective: 60
+    unit: minutes
+
+  - dimension: timeToNotify
+    objective: 120
+    unit: minutes
+
+  - dimension: timeToRepair
+    objective: 24
+    unit: hours
+
+  - dimension: emailResponseTime
+    objective: 12
+    unit: hours
+
+  support:
+      phoneNumber: '+971508976456'
+      phoneServiceHours: 'Mon-Fri 8am-4pm (GMT)'
+      email: support@opendataproducts.org
+      emailServiceHours: 'Mon-Fri 8am-4pm (GMT)'
+      documentationURL: ''
+      
   dataQuality:
-    accuracy: 100
-    completeness: 100
-    consistency: 100
-    timeliness: high
-    validity: 100
-    uniqueness: 100
-    dataQualityAssuranceMethods: Data quality assurance suite of tools and methods
-      include both data quality auditing (DQA) tools designed for use by external
-      audit teams and routine data quality assessment (RDQA) tools designed for capacity
-      building and self-assessment.
-    dataQualityMonitoring: Soda
-    monitoringScriptURL: http://192.168.10.1/soda-petshop.py
+  - dimension: accuracy
+    displaytitle:
+    - en: Data Accuracy (percent)
+    - fi: Datan virheettömyys (prosenttia)
+    objective: 98
+    unit: percentage
+    monitoring:
+      type: SodaCL 
+      reference: https://docs.soda.io/soda-cl/soda-cl-overview.html
+      spec:
+        - require_unique(member_id) 
+        - require_range(age_band, 18, 100)
+
+  - dimension: completeness
+    displaytitle:
+    - en: Data Completeness
+    objective: 99.9
+    unit: percentage
+    monitoring:
+      type: SodaCL 
+      reference: https://docs.soda.io/soda-cl/soda-cl-overview.html
+      spec:
+        - for each column:
+            name: [member_id, gender, age_band]
+            checks:
+              - not null:
+                  fail: when > 0.1% # Fail if more than 0.1% of records are null
+
+  - dimension: consistency
+    objective: 98
+    unit: percentage
+
+  - dimension: timeliness
+    objective: 100
+    unit: percentage
+
+  - dimension: validity
+    objective: 98
+    unit: percentage
+
+  - dimension: uniqueness
+    objective: 100
+    unit: percentage
   license:
     scope:
       definition: The purpose of this license is to determine the terms and conditions
