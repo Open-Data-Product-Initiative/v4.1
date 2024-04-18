@@ -17,7 +17,8 @@ Data Service Level Agreement (SLA) **Object** contains attributes which define t
 Each dimension has objective value, a unit and then monitoring "as code" to verify objective. In some cases monitoring is 
 not feasable or possible to arrange for various reasons. Type attribute indicates which monitoring system is used. Reference attribute contains url for reference documentation regarding the monitoring spec. Spec contains the actucal "as code" part which can be executed in selected monitoring system as is. 
 
-Also basic email and phone support information can be expressed inside the SLA component. 
+Also basic email and phone support information can be expressed inside the SLA component. **Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. 
+
 
 No mandatory attributes at the moment. Optional attributes are listed in own table and an example is given in the right column. 
 
@@ -98,19 +99,21 @@ SLA:
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| SLA | element | - | Binds the SLA related elements and attributes together |
-| dimension | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension.   |
-| unit | attribute  | Options for *unit* are: milliseconds, seconds, minutes, days, weeks, months, years, never, date, null. <br/><br/>  | Name of the quality attribute indicating the timely interval. If date is given, format is dd/mm/yyyy |
-| monitoring | element | - | Contains the monitoring (computational "as code") structure to validate target state for the selected SLA dimension. |
-| type | attribute | string | monitoring system name name such as Prometheus. The systems enable as code approach to monitor SLA. |
-| spec | element | - | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. |
-| reference | URL | Valid URL | Provide URL for the reference documentation |
-| support | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. |
-| phoneNumber | string | - | The support phone number |
-| phoneServiceHours | string | - | Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
-| email | string | - | Email information for support requests. |
-| emailServiceHours | string | - | Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
-| documentationURL | URL | Valid URL | URL to documentation | 
+| **SLA** | element | - | Binds the SLA related elements and attributes together |
+| **dimension** | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension.   |
+| **unit** | attribute  | Options for *unit* are: milliseconds, seconds, minutes, days, weeks, months, years, never, date, null. <br/><br/>  | Name of the quality attribute indicating the timely interval. If date is given, format is dd/mm/yyyy |
+| **monitoring** | element | - | Contains the monitoring (computational "as code") structure to validate target state for the selected SLA dimension. |
+| **displayTitle** | array| - | Dimension title to be shown is various UIs. Keep it short and sweet. |
+| **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | **REQUIRED** - **NOTE! This is a dynamic element!** This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
+| **type** | attribute | string | monitoring system name name such as Prometheus. The systems enable as code approach to monitor SLA. |
+| **spec** | element | - | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. |
+| **reference** | URL | Valid URL | Provide URL for the reference documentation |
+| **support** | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. |
+| **phoneNumber** | string | - | The support phone number |
+| **phoneServiceHours** | string | - | Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
+| **email** | string | - | Email information for support requests. |
+| **emailServiceHours** | string | - | Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
+| **documentationURL** | URL | Valid URL | URL to documentation | 
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues)
