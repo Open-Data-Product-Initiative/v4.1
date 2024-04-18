@@ -57,21 +57,21 @@ If you see something missing, described inaccurately or plain wrong, or you want
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| taxID | string  | - | The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain. |
-| vatID | string | - | The Value-added Tax ID of the organization or person. |
-| logoURL | URL | Valid URL | The URL pointing to organisation logo |
-| description | string | Max length 512 chars | The introduction to the organization. Often contains information of what the organisation does and focuses on. |
-| URL | URL | Valid URL | The URL of the organization's website  |
-| telephone | string | - | The telephone number.  |
-| streetAddress | string | - | The street address. For example, 1600 Amphitheatre Pkwy.  |
-| postalCode | string | - | The postal code. For example, 94043.  |
-| addressRegion | string | - | The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division |
-| addressLocality | string | -  | The locality in which the street address is, and which is in the region. For example, Mountain View.  |
-| addressCountry | string | two-letter ISO 3166-1 alpha-2 country code | The country.  |
-| aggregateRating | string | - | The average rating based on multiple ratings or reviews. |
-| ratingCount | integer | - | The amount of ratigns and reviews used in calculating the aggregateRating. |
-| slogan | string | Max length 256 chars | The slogan of the organization. This is often related to showing the brand |
-| parentOrganization | string | - | The larger organization that this organization is a subOrganization of, if any. |
+| **taxID** | string  | - | The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain. |
+| **vatID** | string | - | The Value-added Tax ID of the organization or person. |
+| **logoURL** | URL | Valid URL | The URL pointing to organisation logo |
+| **description** | string | Max length 512 chars | The introduction to the organization. Often contains information of what the organisation does and focuses on. |
+| **URL** | URL | Valid URL | The URL of the organization's website  |
+| **telephone** | string | - | The telephone number.  |
+| **streetAddress** | string | - | The street address. For example, 1600 Amphitheatre Pkwy.  |
+| **postalCode** | string | - | The postal code. For example, 94043.  |
+| **addressRegion** | string | - | The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division |
+| **addressLocality** | string | -  | The locality in which the street address is, and which is in the region. For example, Mountain View.  |
+| **addressCountry** | string | two-letter ISO 3166-1 alpha-2 country code | The country.  |
+| **aggregateRating** | string | - | The average rating based on multiple ratings or reviews. |
+| **ratingCount** | integer | - | The amount of ratigns and reviews used in calculating the aggregateRating. |
+| **slogan** | string | Max length 256 chars | The slogan of the organization. This is often related to showing the brand |
+| **parentOrganization** | string | - | The larger organization that this organization is a subOrganization of, if any. |
 
 
 
