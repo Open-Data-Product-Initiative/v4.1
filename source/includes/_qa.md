@@ -23,6 +23,7 @@ dataQuality:
       spec:
         - require_unique(member_id) 
         - require_range(age_band, 18, 100)
+
   - dimension: completeness
     objective: 98
     unit: percentage
@@ -34,6 +35,7 @@ dataQuality:
             checks:
               - not null:
                   fail: when > 2% # Fail if more than 2% of records are null
+                  
   - dimension: consistency
     objective: 98
     unit: percentage
@@ -55,11 +57,12 @@ dataQuality:
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | dataQuality | element | - | Contains array of data quality dimensions with optional computational monotoring object. Binds the data quality related elements and attributes together |
-| dimension | attribute | string, one of | Defines the data quality dimension. Can be one of: accuracy, completeness, consistency, timeliness, validity, or uniqueness  |
+| dimension | attribute | string, one of: *accuracy, completeness, consistency, timeliness, validity, or uniqueness* | Defines the data quality dimension.  |
 | objective | attribute | integer | Defines the target value for the data quality dimension |
 | unit | attribute | string | Defines the unit used in stating the target quality level. One of: percentage, number |
 | monitoring | element | - | Contains the monitoring (computational "as code") structure to validate target state for the selected data quality dimension. |
 | type | attribute | string | monitoring system name name such as SodaCL and Montecarlo. The systems enable as code approach to monitor data quality. |
+| reference | URL | Valid URL | Provide URL for the reference documentation |
 | spec | element | - | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. |
 
 
