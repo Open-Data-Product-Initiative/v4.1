@@ -91,6 +91,7 @@ Development of the standard is coordinated in Open Data Product Initiative (ODPI
 * increase the speed of designing, testing, and implementing data products. 
 * speed up tools development around data product design, development and management.
 * enable creation of automated data product deployment with standard methods (DataOps)
+* enable Everything as Code approach for SLA and Data Quality monitoring
 
 **Note!** In the "Open Data Product" focus is on the latter words and the prefix  'open' refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.
 
