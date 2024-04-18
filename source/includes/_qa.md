@@ -19,7 +19,8 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 dataQuality:
   - dimension: accuracy
     displaytitle:
-    - en: Data Accuracy
+    - en: Data Accuracy (percent)
+    - fi: Datan virheettömyys (prosenttia)
     objective: 98
     unit: percentage
     monitoring:
@@ -69,7 +70,7 @@ dataQuality:
 | **objective** | attribute | integer | Defines the target value for the data quality dimension |
 | **unit** | attribute | string. One of: *percentage, number* | Defines the unit used in stating the target quality level. |
 | **monitoring** | element | - | Contains the monitoring (computational "as code") structure to validate target state for the selected data quality dimension. |
-| **displayTitle** | array| - | Dimension title to be shown is various UIs. Keep it short and sweet. |
+| **displayTitle** | array| - | Dimension title to be shown is various UIs. Array contains array list of titles in desired amount of languages. |
 | **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
 | **type** | attribute | string | monitoring system name name such as SodaCL and Montecarlo. The systems enable as code approach to monitor data quality. |
 | **reference** | URL | Valid URL | Provide URL for the reference documentation |
