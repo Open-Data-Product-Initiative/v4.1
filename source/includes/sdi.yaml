@@ -1,0 +1,24 @@
+---
+sid: "string"
+protocol_type: "rest"
+url: "string"
+title_en: "string"
+title_ar: "string"
+organization_en: "string"
+organization_ar: "string"
+desc_en: "string"
+desc_ar: "string"
+contact_en: "string"
+contact_ar: "string"
+contact_email: "string"
+domain_en: 
+- "string"
+domain_ar: 
+- "string"
+tags_ar: 
+- "string"
+tags_en: 
+- "string"
+update_frequency: "annual"
+dq_uniqueness: "0"
+dq_consistency: "0"

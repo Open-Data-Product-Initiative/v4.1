@@ -1,0 +1,38 @@
+schema: https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json
+version: 3.0
+product:
+  en:
+    name: name in english
+    productID: 123456are
+    visibility: public
+    status: production
+    tags: 
+    categories: 
+    type: data-driven service
+  ar:
+    name: name in Arabic
+    productID: 123456are
+    visibility: public
+    status: production
+    tags: 
+    categories: 
+    type: data-driven service
+  dataQuality:
+    - dimension: consistency
+      objective: 98
+      unit: percentage
+    - dimension: uniqueness
+      objective: 100
+      unit: percentage
+  dataAccess:
+    interface:
+      documentationURL: http://192.168.10.1/petshop
+  dataHolder:
+    en:
+      legalName: DED
+      contactName: Jarkko Moilanen
+      email: contact@mindmote.fi
+    ar:
+      legalName: DED
+      contactName: Jarkko Moilanen
+      email: contact@mindmote.fi
