@@ -1,8 +1,8 @@
 # Data Quality
 
-Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? 
+Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? ODPS is compatible with EDM Council data quality model. 
 
-ODPS offers 8 options to define and measure data quality: 
+**ODPS offers 8 options to define and measure data quality:** 
 
 1. accuracy, 
 1. completeness, 

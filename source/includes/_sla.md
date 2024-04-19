@@ -1,16 +1,18 @@
 # Data SLA
 
-Data Service Level Agreement (SLA) **Object** contains attributes which define the desired and promised quality of the data product. SLA can be defined with 11 dimentions: 
+Data Service Level Agreement (SLA) **Object** contains attributes which define the desired and promised quality of the data product. 
 
-1. latency (minimal amount of time before getting any response) 
-1. uptime (Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/) 
-1. responseTime (amount of time to process external request) 
-1. errorRate (Maximum tolerated errors in data, percentage) 
+**SLA can be defined with 11 standardized dimentions:**
+
+1. latency (minimal amount of time before getting any response.) 
+1. uptime (Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/.) 
+1. responseTime (amount of time to process external request.) 
+1. errorRate (Maximum tolerated errors in data, percentage.) 
 1. endOfSupport (The date at which your product will not have support anymore.) 
 1. endOfLife (The date at which your product will not be available anymore. No support, no access.) 
-1. updateFrequency (how often data is updates) 
-1. timeToDetect (How fast can you detect a problem? ) 
-1. timeToNotify (Once you see a problem, how much time do you need to notify your users? ) 
+1. updateFrequency (how often data is updates.) 
+1. timeToDetect (How fast can you detect a problem?) 
+1. timeToNotify (Once you see a problem, how much time do you need to notify your users?) 
 1. timeToRepair (How long do you need to fix the issue once it is detected?) 
 1. emailResponseTime (How long do you need to respond to email support requests?) 
 
