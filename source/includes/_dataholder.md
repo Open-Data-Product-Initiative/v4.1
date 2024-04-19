@@ -40,11 +40,12 @@ dataHolder:
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| **dataHolder** | element | - | **REQUIRED** Binds the provider related business elements and attributes together |
+| **dataHolder** | element | - | Binds the provider related business elements and attributes together |
 | **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
 | **legalName** | string  | text content, max length 256 chars  | **REQUIRED** The official name of the organization, e.g. the registered company name.  | 
-|  **businessID**| string  | As defined in [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322)  | **REQUIRED** The business identifier code of the company. Often this is given to the company by authorized public sector organization managing register of businesses.  |
-| **email** | string | - | **REQUIRED** Email to be used in contacting the organization. |
+|  **businessID**| string  | As defined in [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322)  |  The business identifier code of the company. Often this is given to the company by authorized public sector organization managing register of businesses.  |
+| **contactName** | string | - | Contact person name |
+| **email** | string | - | Email to be used in contacting the organization. |
 | **taxID** | string  | - | The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain. |
 | **vatID** | string | - | The Value-added Tax ID of the organization or person. |
 | **businessDomain** | string | - |  In a data mesh architecture, data (or data product) ownership and management are distributed across self-contained business domains. |
