@@ -4,17 +4,20 @@ Data Service Level Agreement (SLA) **Object** contains attributes which define t
 
 **SLA can be defined with 11 standardized dimentions:**
 
-1. latency (minimal amount of time before getting any response.) 
-1. uptime (Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/.) 
-1. responseTime (amount of time to process external request.) 
-1. errorRate (Maximum tolerated errors in data, percentage.) 
-1. endOfSupport (The date at which your product will not have support anymore.) 
-1. endOfLife (The date at which your product will not be available anymore. No support, no access.) 
-1. updateFrequency (how often data is updates.) 
-1. timeToDetect (How fast can you detect a problem?) 
-1. timeToNotify (Once you see a problem, how much time do you need to notify your users?) 
-1. timeToRepair (How long do you need to fix the issue once it is detected?) 
-1. emailResponseTime (How long do you need to respond to email support requests?) 
+| <div style="width:150px">SLA Dimension</div>   | Description | 
+|---|---|
+| **latency** | minimal amount of time before getting any response. |
+| **uptime** | Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/. |
+| **responseTime** | amount of time to process external request. |
+| **errorRate** | Maximum tolerated errors in data, percentage. |
+| **endOfSupport** | The date at which your product will not have support anymore. |
+| **endOfLife** | The date at which your product will not be available anymore. No support, no access. |
+| **updateFrequency** | how often data is updates. |
+| **timeToDetect** | How fast can you detect a problem? |
+| **timeToNotify** | Once you see a problem, how much time do you need to notify your users? |
+| **timeToRepair** | How long do you need to fix the issue once it is detected? |
+| **emailResponseTime** | How long do you need to respond to email support requests? |
+
 
 Each dimension has objective value, a unit and then monitoring "as code" to verify objective. In some cases monitoring is 
 not feasable or possible to arrange for various reasons. Type attribute indicates which monitoring system is used. Reference attribute contains url for reference documentation regarding the monitoring spec. Spec contains the actucal "as code" part which can be executed in selected monitoring system as is. 
