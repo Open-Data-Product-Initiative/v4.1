@@ -2,61 +2,42 @@
 
 Licensor **Object** describes the Organization legal IPR owner of the data used. This might be occasionally the same as *Provider*. 
 
-Mandatory attributes are listed in separate table and marked with **bolded names** and asterix **\***. Next to the mandatory attributes is an example. 
-
-The same logic applies to the optional attributes as well. Optional attributes are listed in own table and an example is given in the right column. 
-
-## Mandatory attributes and elements
-
-
-> Example of Licensor Object mandatory attributes usage:
-
-```javascript
-   "Licensor":{
-         "legalName":"MindMote Oy",
-         "businessId":"12243434-12",
-         "email":"contact@mindmote.fi"
-      }
-      
-```
-
-| <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
-|---|---|---|---|
-| **legalName** **\*** | string  | text content, max length 256 chars  | The official name of the organization, e.g. the registered company name.  | 
-|  **businessID** **\*** | string  | -  | The business identifier code of the company. Often this is given to the company by authorized public sector organization managing register of businesses.  |
-| **email** **\*** | string | - | Email to be used in contacting the organization. |
-
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues)
-
+Optional attributes are listed in own table and an example is given in the right column. 
 
 ## Optional attributes and elements
 
 > Example of Licensor Object with some of the voluntary attributes:
 
-```javascript
-   "Provider":
-      {
-         "taxID":"12243434-12",
-         "vatID":"12243434-12",
-         "logoURL":"https://mindmote.fi/logo.png",
-         "description":"Digital Economy services and tools",
-         "URL":"https://mindmote.fi"
-         "telephone":"+35845 0232 2323",
-         "streetAddress":"Koulukatu 1",
-         "postalCode":"33100",
-         "addressRegion":"Pirkanmaa"
-         "addressLocality":"Tampere",
-         "addressCountry":"Finland",
-         "aggregateRating":"",
-         "ratingCount":1245,
-         "slogan":"",
-         "parentOrganization":""
-      }
+```yaml
+   Licensor:
+      en:
+         legalName: MindMote Oy
+         businessId: 12243434-12
+         email: contact@mindmote.fi
+         taxID: "12243434-12"
+         vatID: "12243434-12"
+         logoURL: "https://mindmote.fi/logo.png"
+         description: "Digital Economy services and tools"
+         URL: "https://mindmote.fi"
+         telephone: "+35845 0232 2323"
+         streetAddress: "Koulukatu 1"
+         postalCode: "33100"
+         addressRegion: "Pirkanmaa"
+         addressLocality: "Tampere"
+         addressCountry: "Finland"
+         aggregateRating: ""
+         ratingCount: "1245"
+         slogan: ""
+         parentOrganization: ""
       
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
+| **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use Arabic details, then name the element "ar". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
+| **legalName** | string  | text content, max length 256 chars  | The official name of the organization, e.g. the registered company name.  | 
+| **businessID** | string  | -  | The business identifier code of the company. Often this is given to the company by authorized public sector organization managing register of businesses.  |
+| **email** **\*** | string | - | Email to be used in contacting the organization. |
 | **taxID** | string  | - | The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain. |
 | **vatID** | string | - | The Value-added Tax ID of the organization or person. |
 | **logoURL** | URL | Valid URL | The URL pointing to organisation logo |

@@ -25,9 +25,5 @@ product:
       maxTransactionQuantity: 1000
       offering:
         - item 1
-  dataHolder:
-    legalName: MindMote Oy
-    businessId: 12243434-12
-    email: contact@mindmote.fi
 
 ```
