@@ -6,14 +6,14 @@ Data quality is essential for one main reason: You give customers the best exper
 
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|
-| **accuracy** | Desc |
-| **completeness** | Desc |
-| **conformity** | Desc |
-| **consistency** | Desc |
-| **coverage** | Desc |
-| **timeliness** | Desc |
-| **validity** | Desc |
-| **uniqueness** | Desc |
+| **accuracy** | The measurement of the veracity of data to its authoritative source |
+| **completeness** | Data is required to be populated with a value (aka not null, not nullable). Completeness checks if all necessary data attributes are present in the dataset. |
+| **conformity** | Data content must align with required standards, syntax (format, type, range), or permissible domain values. Conformity assesses how closely data adheres to standards, whether internal, external, or industry-wide. |
+| **consistency** | Data should retain consistent content across data stores. Consistency ensures that data values, formats, and definitions in one group match those in another group. |
+| **coverage** | All records are contained in a data store or data source. Coverage relates to the extent and availability of data present but absent from a dataset. |
+| **timeliness** | The data must represent current conditions; the data is available and can be used when needed.  |
+| **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
+| **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
 
 
 The above list most likely covers majority of the cases and needs of organizations. In case additional indicators are needed, then use specification extensions (x-) described in the specification separately. 
