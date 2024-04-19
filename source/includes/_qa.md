@@ -1,6 +1,19 @@
 # Data Quality
 
-Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? Data quality meets six dimensions: accuracy, completeness, consistency, timeliness, validity, and uniqueness. 
+Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? 
+
+ODPS offers 8 options to define and measure data quality: 
+
+1. accuracy, 
+1. completeness, 
+1. conformity,
+1. consistency,
+1. coverage 
+1. timeliness, 
+1. validity, 
+1. uniqueness. 
+
+The above list most likely covers majority of the cases and needs of organizations. In case additional indicators are needed, then use specification extensions (x-) described in the specification separately. 
 
 The values of the QA attributes are given by the vendor. Should you trust in the values, is the choice made by the data consumer. If possible utilize automatic checking of data quality against the source and update the values accordingly. 
 
@@ -12,7 +25,7 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 
 ## Optional attributes and elements
 
-> Example of Data Quality component with some of the voluntary attributes:
+> Example of Data Quality component with some of the data quality dimensions:
 
 ```yml
 
