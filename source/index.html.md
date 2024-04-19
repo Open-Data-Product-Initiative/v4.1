@@ -228,6 +228,8 @@ product:
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
+| **created**  | date | When prodcut was created. Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | 
+| **updated**  | date | When prodcut was last updated Use Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) |
 | **valueProposition** | string  | text content, max length 512 chars  | This is the product's value proposition. Often one or two sentences and crystallizes the value for the customer. |
 | **description** | string | - | The description of the product. Text only. |
 | **productSeries** | string | - | A group of products in the product mix which are associated with each other and they can be obtained for the same type of customers or they are marketable for the same type of market place. |

@@ -19,6 +19,8 @@ tags_ar:
 - "string"
 tags_en: 
 - "string"
+created_date:
+updates_date:
 update_frequency: "annual"
 dq_uniqueness: "0"
 dq_consistency: "0"
