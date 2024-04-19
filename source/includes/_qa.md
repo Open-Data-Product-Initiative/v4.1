@@ -1,4 +1,4 @@
-# Data Quality with 8 dimensions
+# Data Quality
 
 Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? 
 
