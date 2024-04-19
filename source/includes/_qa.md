@@ -4,14 +4,17 @@ Data quality is essential for one main reason: You give customers the best exper
 
 **ODPS offers 8 options to define and measure data quality:** 
 
-1. accuracy, 
-1. completeness, 
-1. conformity,
-1. consistency,
-1. coverage, 
-1. timeliness, 
-1. validity, 
-1. uniqueness. 
+| <div style="width:150px">Data Quality Dimension</div>   | Description | 
+|---|---|
+| **accuracy** | Desc |
+| **completeness** | Desc |
+| **conformity** | Desc |
+| **consistency** | Desc |
+| **coverage** | Desc |
+| **timeliness** | Desc |
+| **validity** | Desc |
+| **uniqueness** | Desc |
+
 
 The above list most likely covers majority of the cases and needs of organizations. In case additional indicators are needed, then use specification extensions (x-) described in the specification separately. 
 
