@@ -6,7 +6,7 @@ A Data Service Level Agreement (SLA) is a contractual agreement between a data s
 
 Defining Data SLAs in a machine-readable format enhances automation, facilitates monitoring, enables real-time compliance tracking, and supports seamless integration with monitoring and alerting systems.
 
-### SLA can be defined with 11 standardized dimensions with Everything as Code monitoring
+## SLA can be defined with 11 standardized dimensions with Everything as Code monitoring
 
 | <div style="width:150px">SLA Dimension</div>   | Description | 
 |---|---|

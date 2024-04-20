@@ -6,7 +6,7 @@ By adhering to defined quality characteristics, organizations can maximize the v
 
 How can you assess your data quality? ODPS is compatible with EDM Council data quality model. 
 
-### ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
+## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
 
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|

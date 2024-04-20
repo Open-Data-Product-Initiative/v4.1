@@ -1,6 +1,8 @@
 # Data Licensing
 
-The data product may be exploited e.g. by licensing its use and exploitation to third parties. Machine-readable license as part of the specification is implemented for this purpose. It can be used to conclude various agreements regarding data protection, processing and intellectual property rights (IPR). Data can be protected by one or more intellectual property rights. Principle is that when a third party (Data User) exploits the data, it must have a license or other right from Data Holder to exploit to the data.
+Data product licensing is essential for ensuring legal compliance, protecting intellectual property rights, enabling monetization and commercialization, facilitating control and governance, managing liability and indemnification, promoting standardization and interoperability, and fostering transparency and trust in data exchange and collaboration. By establishing clear and enforceable licensing agreements, data producers and consumers can effectively leverage data assets while minimizing legal risks and maximizing the value of data products.
+
+The data product may be exploited e.g. by licensing its use and exploitation to third parties. Machine-readable license as part of the specification is implemented for this purpose. It can be used to conclude various agreements regarding data protection, processing and intellectual property rights (IPR). Data can be protected by one or more intellectual property rights. Principle is that when a third party (Data User) exploits the data, it must have a license or other right from Data Holder to exploit the data.
 
 ## Optional attributes and elements
 
