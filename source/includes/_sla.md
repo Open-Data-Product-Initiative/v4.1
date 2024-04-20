@@ -2,7 +2,7 @@
 
 Data Service Level Agreement (SLA) **Object** contains attributes which define the desired and promised quality of the data product. 
 
-**SLA can be defined with 11 standardized dimentions:**
+**SLA can be defined with 11 standardized dimensions with Everything as Code monitoring:**
 
 | <div style="width:150px">SLA Dimension</div>   | Description | 
 |---|---|
@@ -18,12 +18,25 @@ Data Service Level Agreement (SLA) **Object** contains attributes which define t
 | **timeToRepair** | How long do you need to fix the issue once it is detected? |
 | **emailResponseTime** | How long do you need to respond to email support requests? |
 
+> Template structure of SLA array component:
 
-Each dimension has objective value, a unit and then monitoring "as code" to verify objective. In some cases monitoring is 
-not feasable or possible to arrange for various reasons. Type attribute indicates which monitoring system is used. Reference attribute contains url for reference documentation regarding the monitoring spec. Spec contains the actucal "as code" part which can be executed in selected monitoring system as is. 
+```yml
+ - dimension: selected dimension
+    objective: 
+    unit: 
+    monitoring:
+      type:  
+      reference: 
+      spec:
+      
+```
 
-Also basic email and phone support information can be expressed inside the SLA component. **Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. 
+Each dimension has objective value, a unit and then *monitoring* "as code" to verify objective. In some cases monitoring is 
+not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the actucal "as code" part as YAML or string which can be executed in selected monitoring system as is. **Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental.
 
+The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The "Specification extensions" section provides details on how to use this feature. 
+
+Also basic email and phone support information can be expressed inside the SLA component.  
 
 No mandatory attributes at the moment. Optional attributes are listed in own table and an example is given in the right column. 
 
@@ -42,7 +55,7 @@ SLA:
     monitoring:
       type: prometheus
       reference: https://prometheus.io/docs/prometheus/latest/querying/basics/ 
-      spec:  
+      spec:  # expressed as string or inline yaml
         myTimer.observeDuration();
 
   - dimension: uptime
@@ -50,6 +63,17 @@ SLA:
       - en: Uptime
     objective: 99
     unit: percent
+    monitoring:
+      type: prometheus
+      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/
+      spec:  | # expressed as string or inline yaml
+        avg_over_time(
+          (
+            sum without() (up{job="prometheus"})
+              or
+            (0 * sum_over_time(up{job="prometheus"}[7d]))
+          )[7d:5m]
+        )    
     
   - dimension: responseTime
     objective: 200
@@ -57,8 +81,16 @@ SLA:
     monitoring:
       type: prometheus
       reference: https://prometheus.io/docs/prometheus/latest/querying/basics/ 
-      spec:  
-       rate(http_server_requests_seconds_sum[$__rate_interval]) / rate(http_server_requests_seconds_count[$__rate_interval])
+      spec:  | # expressed as string or inline yaml
+        rate(http_server_requests_seconds_sum[$__rate_interval]) / rate(http_server_requests_seconds_count[$__rate_interval])
+
+  - dimension: updateFrequency
+    objective: 30
+    unit: minutes
+    monitoring:
+      type: prometheus 
+      spec: | # expressed as string or inline yaml
+        time() - max_over_time(timestamp(changes(table[5m]) > 0)[1d:1m])
 
   - dimension: errorRate
     objective: 0.1
@@ -71,10 +103,6 @@ SLA:
   - dimension: endOfLife
     objective: 01/03/2025 # dd/mm/yyyy
     unit: date
-
-  - dimension: updateFrequency
-    objective: 7
-    unit: days
 
   - dimension: timeToDetect
     objective: 60
@@ -111,7 +139,7 @@ SLA:
 | **displayTitle** | array | - | Dimension title to be shown is various UIs. Keep it short and sweet. |
 | **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
 | **type** | attribute | string | monitoring system name name such as Prometheus. The systems enable as code approach to monitor SLA. |
-| **spec** | element | - | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. |
+| **spec** | element | YAML or string | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. |
 | **reference** | URL | Valid URL | Provide URL for the reference documentation |
 | **support** | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. |
 | **phoneNumber** | string | valid phone number | The support phone number. Use [E.164](https://www.itu.int/rec/T-REC-E.164/en)  |
