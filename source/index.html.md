@@ -11,12 +11,12 @@ toc_footers:
 
 
 includes:
-  - pricing
-  - dataops
-  - dataaccess
   - sla
   - qa
+  - pricing
   - license
+  - dataops
+  - dataaccess
   - dataholder
   - extensions
   - helloworld
@@ -91,7 +91,7 @@ Development of the standard is coordinated in Open Data Product Initiative (ODPI
 * increase the speed of designing, testing, and implementing data products. 
 * speed up tools development around data product design, development and management.
 * enable creation of automated data product deployment with standard methods (DataOps)
-* enable Everything as Code approach for SLA and Data Quality monitoring
+* enable [Everything as Code](https://www.cloudbees.com/blog/what-is-everything-as-code-eac) approach for SLA and Data Quality monitoring
 
 **Note!** In the "Open Data Product" focus is on the latter words and the prefix  'open' refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.
 
@@ -231,8 +231,8 @@ product:
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| **created**  | date | Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | When prodcut was created. | 
-| **updated**  | date | Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | When prodcut was last updated. |
+| **created**  | date | Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | When product was created. | 
+| **updated**  | date | Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | When product was last updated. |
 | **valueProposition** | string  | text content, max length 512 chars  | This is the product's value proposition. Often one or two sentences and crystallizes the value for the customer. |
 | **description** | string | - | The description of the product. Text only. |
 | **productSeries** | string | - | A group of products in the product mix which are associated with each other and they can be obtained for the same type of customers or they are marketable for the same type of market place. |
@@ -250,6 +250,6 @@ product:
 | **useCaseTitle**| string | string | Title of the usecase. |
 | **useCaseDescription** | string | string | Brief description of the usecase. |
 | **useCaseURL**| URL | Valid URL, [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) | Valid URL of the more detailed usecase description. |
-| recommendedDataProducts** | array | Array of valid URLs ([RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986)) | Data products to recommend use next to this data product or even as replacement (for comparison). The URL provided MUST reference a description of a data product following this same standard |
+| **recommendedDataProducts** | array | Array of valid URLs ([RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986)) | Data products to recommend use next to this data product or even as replacement (for comparison). The URL provided MUST reference a description of a data product following this same standard |
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues)

@@ -34,7 +34,7 @@ Data Service Level Agreement (SLA) **Object** contains attributes which define t
 Each dimension has objective value, a unit and then *monitoring* "as code" to verify objective. In some cases monitoring is 
 not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the actucal "as code" part as YAML or string which can be executed in selected monitoring system as is. **Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental.
 
-The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The "Specification extensions" section provides details on how to use this feature. 
+The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
 Also basic email and phone support information can be expressed inside the SLA component.  
 
