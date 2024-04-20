@@ -2,7 +2,7 @@
 
 Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? ODPS is compatible with EDM Council data quality model. 
 
-**ODPS offers 8 options to define and measure data quality:** 
+**ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring:** 
 
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|
@@ -16,11 +16,27 @@ Data quality is essential for one main reason: You give customers the best exper
 | **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
 
 
-The above list most likely covers majority of the cases and needs of organizations. In case additional indicators are needed, then use specification extensions (x-) described in the specification separately. 
+> Template structure of Data Quality array component:
+
+```yml
+ - dimension: selected dimension
+    objective: 
+    unit: 
+    monitoring:
+      type:  
+      reference: 
+      spec:
+      
+```
+
+Each dimension has objective value, a unit and then *monitoring* "as code" to verify objective. In some cases monitoring is 
+not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the actucal "as code" part as YAML or string which can be executed in selected monitoring system as is. See template example. 
+
+**Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. 
 
 The values of the QA attributes are given by the vendor. Should you trust in the values, is the choice made by the data consumer. If possible utilize automatic checking of data quality against the source and update the values accordingly. 
 
-The QA object is general in nature and should be enough for common (80%) of the use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The "Specification extensions" section provides details on how to use this feature. 
+The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The "Specification extensions" section provides details on how to use this feature. 
 
 Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why *integrity* is not in the attributes, but accuracy and consistency as well as completeness are. 
 
@@ -48,7 +64,7 @@ dataQuality:
 
   - dimension: completeness
     displaytitle:
-    - en: Data Completeness
+    - en: Data Completeness (percent)
     objective: 99.9
     unit: percentage
     monitoring:
@@ -62,6 +78,9 @@ dataQuality:
                   fail: when > 0.1% # Fail if more than 0.1% of records are null
 
   - dimension: consistency
+    displaytitle:
+    - en: Data Consistency (percent)
+    - fi: Datan johdonmukaisuus (prosenttia)
     objective: 98
     unit: percentage
 
@@ -90,7 +109,7 @@ dataQuality:
 | **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
 | **type** | attribute | string | monitoring system name name such as SodaCL and Montecarlo. The systems enable as code approach to monitor data quality. |
 | **reference** | URL | Valid URL | Provide URL for the reference documentation |
-| **spec** | element | - | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. |
+| **spec** | element | YAML or string | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. |
 
 
 
