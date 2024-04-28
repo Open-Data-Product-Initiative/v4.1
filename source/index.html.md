@@ -2,7 +2,7 @@
 title: Open Data Product Specification Dev | Enabling Data Economy | Open Data Product Initiative
 
 language_tabs: # must be one of https://git.io/vQNgJ
-- yml
+- yaml
 
 
 toc_footers:
