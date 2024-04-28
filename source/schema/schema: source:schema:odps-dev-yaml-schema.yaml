@@ -1,4 +1,4 @@
-schema: schema: source/schema/odps-dev-yaml-schema.yaml
+schema: source/schema/odps-dev-yaml-schema.yaml
 version: dev
 properties:
   schema:
