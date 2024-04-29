@@ -55,7 +55,7 @@ The specification is shared under <a href='https://www.apache.org/licenses/LICEN
 
 **ODPS YAML Schema:**
 
-* <a href="https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/main/source/schema/odps.yaml">YAML Schema</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/tree/main/source/schema">YAML Schema</a>
 
 
 
