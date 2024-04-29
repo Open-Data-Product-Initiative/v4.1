@@ -4,20 +4,22 @@ While the Open Data Product Specification tries to accommodate most use cases, a
 
 The extensions properties are implemented as patterned fields that are always prefixed by "x-". The extensions may or may not be supported by the available tooling, but those may be extended as well to add requested support (if tools are internal or open-sourced). Open Data Product Initiative Technical Steering Committee does not officially approve external extensions - they are fully independent. Popular extensions however are natural candidates for future additions of the standard. 
 
+We encourage you to let us know of useful extensions so that we can consider those in the future releases, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues)
+
 
 
 > Example of extension usage:
 
-```javascript
-   "product": {
-      "name":"Pets of the year",
-      "productID":"123456are",
-      "description":"",
-      "x-internal-id":"foobar123"
-}
+```yml
+
+product:
+  name: Pets of the year
+  productID: 123456are
+  description: ''
+  x-internal-id: foobar123
 
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-|  ^x- | any  |  | Allows extensions to the Open Data Product Schema. The field name MUST begin with x-, for example, x-internal-id. The value can be null, a primitive, an array or an object. Can have any valid JSON format value. |
+|  **^x-** | any  |  | Allows extensions to the Open Data Product Schema. The field name MUST begin with x-, for example, x-internal-id. The value can be null, a primitive, an array or an object. Can have any valid JSON format value. |

@@ -1,5 +1,7 @@
-<!--
-⚠️ 🚨 ⚠️  STOP AND READ THIS ⚠️ 🚨 ⚠️
 
-👆👆 see that 'base fork' dropdown above? You should change it! The default value of "slatedocs/slate" submits your change to ALL USERS OF SLATE, not just your company. This is PROBABLY NOT WHAT YOU WANT.
--->
+### Reference to related issue ###
+Link to issue in the backlog
+
+
+### ---- Leave intact! Approval of Contributor Agreement ----- ### 
+By submitting pull request you approve the Contributor Agreement, https://governance.opendataproducts.org/v1/contributions/contributor-agreement 

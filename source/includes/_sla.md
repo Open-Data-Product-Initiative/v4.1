@@ -1,88 +1,156 @@
 # Data SLA
 
-Data Service Level Agreement (SLA) **Object**** contains attributes which define the desired and promised quality of the data product. 
+Data Service Level Agreement (SLA) **Object** contains attributes which define the desired and promised quality of the data product. 
+
+A Data Service Level Agreement (SLA) is a contractual agreement between a data service provider and its customers that defines the expected level of service quality, performance, and availability for the data services provided. SLAs outline specific metrics, targets, and responsibilities that both parties agree to adhere to, ensuring accountability and transparency in the delivery of data services.
+
+Defining Data SLAs in a machine-readable format enhances automation, facilitates monitoring, enables real-time compliance tracking, and supports seamless integration with monitoring and alerting systems.
+
+## SLA can be defined with 11 standardized dimensions with Everything as Code monitoring
+
+| <div style="width:150px">SLA Dimension</div>   | Description | 
+|---|---|
+| **latency** | minimal amount of time before getting any response. |
+| **uptime** | Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/. |
+| **responseTime** | amount of time to process external request. |
+| **errorRate** | Maximum tolerated errors in data, percentage. |
+| **endOfSupport** | The date at which your product will not have support anymore. |
+| **endOfLife** | The date at which your product will not be available anymore. No support, no access. |
+| **updateFrequency** | how often data is updates. |
+| **timeToDetect** | How fast can you detect a problem? |
+| **timeToNotify** | Once you see a problem, how much time do you need to notify your users? |
+| **timeToRepair** | How long do you need to fix the issue once it is detected? |
+| **emailResponseTime** | How long do you need to respond to email support requests? |
+
+> Template structure of SLA array component:
+
+```yml
+ - dimension: selected dimension
+    objective: 
+    unit: 
+    monitoring:
+      type:  
+      reference: 
+      spec:
+      
+```
+
+Each dimension has objective value, a unit and then *monitoring* "as code" to verify objective. In some cases monitoring is 
+not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the actucal "as code" part as YAML or string which can be executed in selected monitoring system as is. **Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental.
+
+The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
+
+Also basic email and phone support information can be expressed inside the SLA component.  
 
 No mandatory attributes at the moment. Optional attributes are listed in own table and an example is given in the right column. 
 
 ## Optional attributes and elements
 
-> Example of Quality component usage:
+> Example of SLA component usage:
 
-```javascript
-   "SLA": {
-      "updateFrequency": 
-      {
-         "unit":"hours",
-         "value":1
-      },
-      "uptime": 
-      {
-         "unit":"percentage",
-         "value":99
-      },
-      "responseTime": 
-      {
-         "unit":"milliseconds",
-         "value":200
-      },
-      "support": 
-      {
-         "company": 
-         {
-            "phoneNumber":"",
-            "phoneServiceHours":""
-            "chatURL":"",
-            "chatServiceHours":"",
-            "chatResponseTime":"",
-            "email":"support@support.org",
-            "emailServiceHours":"",
-            "emailResponseTime":"",
-            "documentationURL":"",
-            "guidesURL":"",
-         },
-         "community": 
-         {
-            "stackoverflowURL":"",
-            "forumURL":"" 
-            "slackURL":"",
-            "twitterURL":""
-         }
-      }
-      "observability":
-      {
-         "healthStatus":true,
-         "logsURL":"https://logs.com"
-         "dashboardURL":"https://dashboard.com",
-         "uptimeURL":"https://uptime.com"
-      } 
-   }
+```yml
+
+SLA:
+  - dimension: latency
+    displaytitle:
+      - en: Latency
+    objective: 100
+    unit: milliseconds
+    monitoring:
+      type: prometheus
+      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/ 
+      spec:  # expressed as string or inline yaml
+        myTimer.observeDuration();
+
+  - dimension: uptime
+    displaytitle:
+      - en: Uptime
+    objective: 99
+    unit: percent
+    monitoring:
+      type: prometheus
+      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/
+      spec:  | # expressed as string or inline yaml
+        avg_over_time(
+          (
+            sum without() (up{job="prometheus"})
+              or
+            (0 * sum_over_time(up{job="prometheus"}[7d]))
+          )[7d:5m]
+        )    
+    
+  - dimension: responseTime
+    objective: 200
+    unit: milliseconds
+    monitoring:
+      type: prometheus
+      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/ 
+      spec:  | # expressed as string or inline yaml
+        rate(http_server_requests_seconds_sum[$__rate_interval]) / rate(http_server_requests_seconds_count[$__rate_interval])
+
+  - dimension: updateFrequency
+    objective: 30
+    unit: minutes
+    monitoring:
+      type: prometheus 
+      spec: | # expressed as string or inline yaml
+        time() - max_over_time(timestamp(changes(table[5m]) > 0)[1d:1m])
+
+  - dimension: errorRate
+    objective: 0.1
+    unit: percent
+  
+  - dimension: endOfSupport
+    objective: 01/01/2025 # dd/mm/yyyy
+    unit: date
+
+  - dimension: endOfLife
+    objective: 01/03/2025 # dd/mm/yyyy
+    unit: date
+
+  - dimension: timeToDetect
+    objective: 60
+    unit: minutes
+
+  - dimension: timeToNotify
+    objective: 120
+    unit: minutes
+
+  - dimension: timeToRepair
+    objective: 24
+    unit: hours
+
+  - dimension: emailResponseTime
+    objective: 12
+    unit: hours
+
+  support:
+      phoneNumber: '+971508976456'
+      phoneServiceHours: 'Mon-Fri 8am-4pm (GMT)'
+      email: support@opendataproducts.org
+      emailServiceHours: 'Mon-Fri 8am-4pm (GMT)'
+      documentationURL: ''
 ```
+
+
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| updateFrequency | element  | Options for *unit* are: milliseconds, seconds, minutes, days, weeks, months, years, never, null. <br/><br/> *Value* attribute is Integer.  | Name of the quality attribute indicating the timely interval how often data is updated. |
-| uptime | element | Options for *unit* are: percentage, string, null. <br/><br/> The *value* attribute can be integer or string "best effort". | Uptime is the amount of time that a service is online available and operational. Guaranteed uptime is expressed as SLA level and is generally the most important metric to measure the quality of a hosting provider. An SLA level of 99.99% for example equates to 52 minutes and 36 seconds of downtime per year. in this context uptime is SLA.  |
-|  responseTime| element | *Unit* options are: milliseconds, seconds, null. <br/><br/>*Value* can be integer or null | Response time is the total amount of time it takes to respond to a request for service. |
-| support | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. Support can be based on company provided support and community driven support. |
-| phoneNumber | string | - | The support phone number |
-| phoneServiceHours | string | - | Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
-| chatURL | URL | Valid URL | The URL of chat service to use. Service hours and response time defined in other attributes. |
-| chatServiceHours | string | - | Describes the chat service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
-| chatResponseTime | string | - | Describes aimed maximum delay in responding to chat support requests. This doesn't normally guarantee a resolution to the problem.  |
-| email | string | - | Email information for support requests. |
-| emailServiceHours | string | - | Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
-| emailResponseTime | string | - | Describes aimed maximum delay in responding to email support requests. This doesn't normally guarantee a resolution to the problem.  |
-| documentationURL | URL | - | URL to the documentation of the product. |
-| guidesURL | URL | Valid URL | URL to the guides offering more information and examples about how to use the data product. Guides might be platform specific. |
-| community | Element | - | Element that contains community based support function information. |  
-| stackoverflowURL | URL | Valid URL | URL to the Stack Overflow. Could be for example list of resolved issues related to the product. |  
-| forumURL | URL | Valid URL | URL to the community forum in which product related support requests can be raised. |  
-| slackURL | URL | Valid URL | URL to the Slack workspace in which product related support requests can be raised. |  
-| twitterURL | URL | Valid URL | URL to the Twitter account for which product related support requests can be raised. |  
-| observability | element | - | Observability is a superset of monitoring. It provides not only high-level overviews of the system’s health but also highly granular insights into the implicit failure modes of the system. In addition, an observable system furnishes ample context about its inner workings, unlocking the ability to uncover deeper, systemic issues. | 
-| healthStatus | boolean | true/false | The usability of the data product can be determined through (an automated) review that assesses the data quality, accuracy, and other characteristics to ensure its usability. In this process, a value of 'true' indicates that the review has deemed the product to be usable. Conversely, a value of 'false' signifies that the automated review has identified deficiencies or errors that render the product unusable. |
-| logsURL | URL | Valid URL | URL to service which offers access to event logs including errors, response times, call information. | 
-| dashboardURL | URL | Valid URL | URL to dashboard application which visualizes product behaviour. This service should support at least part of the given product quality indicators. | 
-| uptimeURL | URL | Valid URL | URL to service which shows uptime statistics as well as other statistical information. This service should support at least part of the given product quality indicators. | 
+| **SLA** | element | - | Binds the SLA related elements and attributes together |
+| **dimension** | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension.   |
+| **unit** | attribute  | Options for *unit* are: milliseconds, seconds, minutes, days, weeks, months, years, never, date, null. <br/><br/>  | Name of the quality attribute indicating the timely interval. If date is given, format is dd/mm/yyyy |
+| **monitoring** | element | - | Contains the monitoring (computational "as code") structure to validate target state for the selected SLA dimension. |
+| **displayTitle** | array | - | Dimension title to be shown is various UIs. Keep it short and sweet. |
+| **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
+| **type** | attribute | string | monitoring system name name such as Prometheus. The systems enable as code approach to monitor SLA. |
+| **spec** | element | YAML or string | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. |
+| **reference** | URL | Valid URL | Provide URL for the reference documentation |
+| **support** | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. |
+| **phoneNumber** | string | valid phone number | The support phone number. Use [E.164](https://www.itu.int/rec/T-REC-E.164/en)  |
+| **phoneServiceHours** | string | - | Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
+| **email** | string | valid email address | Email information for support requests. Use [RFC2822](https://datatracker.ietf.org/doc/html/rfc2822) |
+| **emailServiceHours** | string | - | Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
+| **documentationURL** | URL | Valid URL | URL to documentation | 
 
-<button data-tf-popup="Q1Zo6wE5" data-tf-iframe-props="title=Customer Feedback Survey" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#FA6B05;color:#000000;font-size:17px;border-radius:3px;padding:0 28px;font-weight:bold;height:42.5px;cursor:pointer;line-height:42.5px;text-align:center;margin:0;text-decoration:none;">Raise an issue</button><script src="//embed.typeform.com/next/embed.js"></script>
+
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues)

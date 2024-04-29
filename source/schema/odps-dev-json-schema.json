@@ -1,0 +1,1196 @@
+{
+  "$id": "https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$version": "dev",
+  "type": "object",
+  "default": {},
+  "title": "product",
+  "properties": {
+    "product": {
+      "type": "object",
+      "default": {},
+      "title": "product",
+      "required": [
+        "en",
+        "recommendedDataProducts",
+        "pricingPlans",
+        "dataOps",
+        "dataAccess",
+        "SLA",
+        "dataQuality",
+        "dataGovernance",
+        "license",
+        "dataHolder"
+      ],
+      "properties": {
+        "en": {
+          "type": "object",
+          "default": {},
+          "title": "en",
+          "required": [
+            "name",
+            "productID",
+            "valueProposition",
+            "description",
+            "productSeries",
+            "visibility",
+            "status",
+            "version",
+            "categories",
+            "standards",
+            "tags",
+            "brandSlogan",
+            "type",
+            "logoURL",
+            "OutputFileFormats",
+            "useCases"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "default": "",
+              "title": "name"
+            },
+            "productID": {
+              "type": "string",
+              "default": "",
+              "title": "productID"
+            },
+            "valueProposition": {
+              "type": "string",
+              "default": "",
+              "title": "valueProposition"
+            },
+            "description": {
+              "type": "string",
+              "default": "",
+              "title": "description"
+            },
+            "productSeries": {
+              "type": "string",
+              "default": "",
+              "title": "productSeries"
+            },
+            "visibility": {
+              "type": "string",
+              "default": "",
+              "title": "visibility"
+            },
+            "status": {
+              "type": "string",
+              "default": "",
+              "title": "status"
+            },
+            "version": {
+              "type": "string",
+              "default": "",
+              "title": "version"
+            },
+            "categories": {
+              "type": "array",
+              "default": [],
+              "title": "categories",
+              "items": {
+                "type": "string",
+                "default": "",
+                "title": "items"
+              }
+            },
+            "standards": {
+              "type": "array",
+              "default": [],
+              "title": "standards",
+              "items": {
+                "type": "string",
+                "default": "",
+                "title": "items"
+              }
+            },
+            "tags": {
+              "type": "array",
+              "default": [],
+              "title": "tags",
+              "items": {
+                "type": "string",
+                "default": "",
+                "title": "items"
+              }
+            },
+            "brandSlogan": {
+              "type": "string",
+              "default": "",
+              "title": "brandSlogan"
+            },
+            "type": {
+              "type": "string",
+              "default": "",
+              "title": "type"
+            },
+            "logoURL": {
+              "type": "string",
+              "default": "",
+              "title": "logoURL"
+            },
+            "OutputFileFormats": {
+              "type": "array",
+              "default": [],
+              "title": "OutputFileFormats",
+              "items": {
+                "type": "string",
+                "title": "items"
+              }
+            },
+            "useCases": {
+              "type": "array",
+              "default": [],
+              "title": "useCases",
+              "items": {
+                "type": "object",
+                "default": {},
+                "title": "items",
+                "required": [
+                  "useCase"
+                ],
+                "properties": {
+                  "useCase": {
+                    "type": "object",
+                    "default": {},
+                    "title": "useCase",
+                    "required": [
+                      "useCaseTitle",
+                      "useCaseDescription",
+                      "useCaseURL"
+                    ],
+                    "properties": {
+                      "useCaseTitle": {
+                        "type": "string",
+                        "default": "",
+                        "title": "useCaseTitle"
+                      },
+                      "useCaseDescription": {
+                        "type": "string",
+                        "default": "",
+                        "title": "useCaseDescription"
+                      },
+                      "useCaseURL": {
+                        "type": "string",
+                        "default": "",
+                        "title": "useCaseURL"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "recommendedDataProducts": {
+          "type": "array",
+          "default": [],
+          "title": "recommendedDataProducts",
+          "items": {
+            "type": "string",
+            "default": "",
+            "title": "items"
+          }
+        },
+        "pricingPlans": {
+          "type": "object",
+          "default": {},
+          "title": "pricingPlans",
+          "required": [
+            "en"
+          ],
+          "properties": {
+            "en": {
+              "type": "array",
+              "default": [],
+              "title": "properties",
+              "items": {
+                "type": "object",
+                "title": "items",
+                "required": [
+                  "name",
+                  "priceCurrency",
+                  "price",
+                  "billingDuration",
+                  "unit",
+                  "maxTransactionQuantity"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "title": "name"
+                  },
+                  "priceCurrency": {
+                    "type": "string",
+                    "title": "priceCurrency"
+                  },
+                  "price": {
+                    "type": "string",
+                    "title": "price"
+                  },
+                  "billingDuration": {
+                    "type": "string",
+                    "title": "billingDuration"
+                  },
+                  "unit": {
+                    "type": "string",
+                    "title": "unit"
+                  },
+                  "maxTransactionQuantity": {
+                    "type": [
+                      "string",
+                      "integer"
+                    ],
+                    "title": "maxTransactionQuantity"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dataOps": {
+          "type": "object",
+          "default": {},
+          "title": "dataOps",
+          "required": [
+            "infrastructure"
+          ],
+          "properties": {
+            "infrastructure": {
+              "type": "object",
+              "default": {},
+              "title": "infrastructure",
+              "required": [
+                "platform",
+                "storageTechnology",
+                "storageType",
+                "containerTool",
+                "format",
+                "schemaLocationURL",
+                "scriptURL",
+                "deploymentDocumentationURL",
+                "dataLineageTool",
+                "dataLineageOutput",
+                "hashType",
+                "checksum"
+              ],
+              "properties": {
+                "platform": {
+                  "type": "string",
+                  "default": "",
+                  "title": "platform"
+                },
+                "storageTechnology": {
+                  "type": "string",
+                  "default": "",
+                  "title": "storageTechnology"
+                },
+                "storageType": {
+                  "type": "string",
+                  "default": "",
+                  "title": "storageType"
+                },
+                "containerTool": {
+                  "type": "string",
+                  "default": "",
+                  "title": "containerTool"
+                },
+                "format": {
+                  "type": "string",
+                  "default": "",
+                  "title": "format"
+                },
+                "schemaLocationURL": {
+                  "type": "string",
+                  "default": "",
+                  "title": "schemaLocationURL"
+                },
+                "scriptURL": {
+                  "type": "string",
+                  "default": "",
+                  "title": "scriptURL"
+                },
+                "deploymentDocumentationURL": {
+                  "type": "string",
+                  "default": "",
+                  "title": "deploymentDocumentationURL"
+                },
+                "dataLineageTool": {
+                  "type": "string",
+                  "default": "",
+                  "title": "dataLineageTool"
+                },
+                "dataLineageOutput": {
+                  "type": "string",
+                  "default": "",
+                  "title": "dataLineageOutput"
+                },
+                "hashType": {
+                  "type": "string",
+                  "default": "",
+                  "title": "hashType"
+                },
+                "checksum": {
+                  "type": "string",
+                  "default": "",
+                  "title": "checksum"
+                }
+              }
+            }
+          }
+        },
+        "dataAccess": {
+          "type": "object",
+          "default": {},
+          "title": "dataAccess",
+          "required": [
+            "type",
+            "authenticationMethod",
+            "specification",
+            "format",
+            "documentationURL"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "default": "",
+              "title": "type"
+            },
+            "authenticationMethod": {
+              "type": "string",
+              "default": "",
+              "title": "authenticationMethod"
+            },
+            "specification": {
+              "type": "string",
+              "default": "",
+              "title": "specification"
+            },
+            "format": {
+              "type": "string",
+              "default": "",
+              "title": "format"
+            },
+            "documentationURL": {
+              "type": "string",
+              "default": "",
+              "title": "documentationURL"
+            }
+          }
+        },
+        "dataQuality": {
+          "type": "object",
+          "default": {},
+          "title": "dataQuality",
+          "required": [
+            "accuracy",
+            "completeness",
+            "consistency",
+            "timeliness",
+            "validity",
+            "uniqueness",
+            "dataQualityAssuranceMethods",
+            "dataQualityMonitoring",
+            "monitoringScriptURL"
+          ],
+          "properties": {
+            "accuracy": {
+              "type": "integer",
+              "default": 0,
+              "title": "accuracy"
+            },
+            "completeness": {
+              "type": "integer",
+              "default": 0,
+              "title": "completeness"
+            },
+            "consistency": {
+              "type": "integer",
+              "default": 0,
+              "title": "consistency"
+            },
+            "timeliness": {
+              "type": "string",
+              "default": "",
+              "title": "timeliness"
+            },
+            "validity": {
+              "type": "integer",
+              "default": 0,
+              "title": "validity"
+            },
+            "uniqueness": {
+              "type": "integer",
+              "default": 0,
+              "title": "uniqueness"
+            },
+            "dataQualityAssuranceMethods": {
+              "type": "string",
+              "default": "",
+              "title": "dataQualityAssuranceMethods"
+            },
+            "dataQualityMonitoring": {
+              "type": "string",
+              "default": "",
+              "title": "dataQualityMonitoring"
+            },
+            "monitoringScriptURL": {
+              "type": "string",
+              "default": "",
+              "title": "monitoringScriptURL",
+              "format": "uri"
+            }
+          }
+        },
+        "SLA": {
+          "type": "object",
+          "default": {},
+          "title": "SLA",
+          "required": [
+            "updateFrequency",
+            "uptime",
+            "responseTime",
+            "nullValues",
+            "support",
+            "observability"
+          ],
+          "properties": {
+            "updateFrequency": {
+              "type": "object",
+              "default": {},
+              "title": "updateFrequency",
+              "required": [
+                "unit",
+                "value"
+              ],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "default": "",
+                  "title": "unit"
+                },
+                "value": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "value"
+                }
+              }
+            },
+            "uptime": {
+              "type": "object",
+              "default": {},
+              "title": "uptime",
+              "required": [
+                "unit",
+                "value"
+              ],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "default": "",
+                  "title": "unit"
+                },
+                "value": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "value"
+                }
+              }
+            },
+            "responseTime": {
+              "type": "object",
+              "default": {},
+              "title": "responseTime",
+              "required": [
+                "unit",
+                "value"
+              ],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "default": "",
+                  "title": "unit"
+                },
+                "value": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "value"
+                }
+              }
+            },
+            "nullValues": {
+              "type": "object",
+              "default": {},
+              "title": "nullValues",
+              "required": [
+                "unit",
+                "value"
+              ],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "default": "",
+                  "title": "unit"
+                },
+                "value": {
+                  "type": "number",
+                  "default": 0.0,
+                  "title": "value"
+                }
+              }
+            },
+            "support": {
+              "type": "object",
+              "default": {},
+              "title": "support",
+              "required": [
+                "company",
+                "community"
+              ],
+              "properties": {
+                "company": {
+                  "type": "object",
+                  "default": {},
+                  "title": "company",
+                  "required": [
+                    "phoneNumber",
+                    "phoneServiceHours",
+                    "chatURL",
+                    "chatServiceHours",
+                    "chatResponseTime",
+                    "email",
+                    "emailServiceHours",
+                    "emailResponseTime",
+                    "documentationURL",
+                    "guidesURL"
+                  ],
+                  "properties": {
+                    "phoneNumber": {
+                      "type": "string",
+                      "default": "",
+                      "title": "phoneNumber"
+                    },
+                    "phoneServiceHours": {
+                      "type": "string",
+                      "default": "",
+                      "title": "phoneServiceHours"
+                    },
+                    "chatURL": {
+                      "type": "string",
+                      "default": "",
+                      "title": "chatURL"
+                    },
+                    "chatServiceHours": {
+                      "type": "string",
+                      "default": "",
+                      "title": "chatServiceHours"
+                    },
+                    "chatResponseTime": {
+                      "type": "string",
+                      "default": "",
+                      "title": "chatResponseTime"
+                    },
+                    "email": {
+                      "type": "string",
+                      "default": "",
+                      "title": "email"
+                    },
+                    "emailServiceHours": {
+                      "type": "string",
+                      "default": "",
+                      "title": "emailServiceHours"
+                    },
+                    "emailResponseTime": {
+                      "type": "string",
+                      "default": "",
+                      "title": "emailResponseTime"
+                    },
+                    "documentationURL": {
+                      "type": "string",
+                      "default": "",
+                      "title": "documentationURL"
+                    },
+                    "guidesURL": {
+                      "type": "string",
+                      "default": "",
+                      "title": "guidesURL"
+                    }
+                  }
+                },
+                "community": {
+                  "type": "object",
+                  "default": {},
+                  "title": "community",
+                  "required": [
+                    "stackoverflowURL",
+                    "forumURL",
+                    "slackURL",
+                    "twitterURL"
+                  ],
+                  "properties": {
+                    "stackoverflowURL": {
+                      "type": "string",
+                      "default": "",
+                      "title": "stackoverflowURL"
+                    },
+                    "forumURL": {
+                      "type": "string",
+                      "default": "",
+                      "title": "forumURL"
+                    },
+                    "slackURL": {
+                      "type": "string",
+                      "default": "",
+                      "title": "slackURL"
+                    },
+                    "twitterURL": {
+                      "type": "string",
+                      "default": "",
+                      "title": "twitterURL"
+                    }
+                  }
+                }
+              }
+            },
+            "observability": {
+              "type": "object",
+              "default": {},
+              "title": "observability",
+              "required": [
+                "logsURL",
+                "dashboardURL",
+                "uptimeURL"
+              ],
+              "properties": {
+                "logsURL": {
+                  "type": "string",
+                  "default": "",
+                  "title": "logsURL"
+                },
+                "dashboardURL": {
+                  "type": "string",
+                  "default": "",
+                  "title": "dashboardURL"
+                },
+                "uptimeURL": {
+                  "type": "string",
+                  "default": "",
+                  "title": "uptimeURL"
+                }
+              }
+            }
+          }
+        },
+        "dataGovernance": {
+          "type": "object",
+          "properties": {
+            "versionControlSystem": {
+              "type": "string"
+            },
+            "versionRepositoryURL": {
+              "type": "string",
+              "format": "uri"
+            },
+            "accessPermissions": {
+              "type": "object",
+              "properties": {
+                "permissionLevels": {
+                  "type": "object",
+                  "properties": {
+                    "level1": {
+                      "type": "object",
+                      "properties": {
+                        "read": {
+                          "type": "boolean"
+                        },
+                        "write": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "read",
+                        "write"
+                      ]
+                    },
+                    "level2": {
+                      "type": "object",
+                      "properties": {
+                        "read": {
+                          "type": "boolean"
+                        },
+                        "write": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "read",
+                        "write"
+                      ]
+                    },
+                    "level3": {
+                      "type": "object",
+                      "properties": {
+                        "read": {
+                          "type": "boolean"
+                        },
+                        "write": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "read",
+                        "write"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "level1",
+                    "level2",
+                    "level3"
+                  ]
+                },
+                "userGroups": {
+                  "type": "object",
+                  "properties": {
+                    "groupA": {
+                      "type": "object",
+                      "properties": {
+                        "levels": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "levels",
+                        "description"
+                      ]
+                    },
+                    "groupB": {
+                      "type": "object",
+                      "properties": {
+                        "levels": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "levels",
+                        "description"
+                      ]
+                    },
+                    "groupC": {
+                      "type": "object",
+                      "properties": {
+                        "levels": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "levels",
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "groupA",
+                    "groupB",
+                    "groupC"
+                  ]
+                },
+                "dataPrivacy": {
+                  "type": "object",
+                  "properties": {
+                    "containsPersonalData": {
+                      "type": "boolean"
+                    },
+                    "applicablePrivacyLaws": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "dpaURL": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  "required": [
+                    "containsPersonalData",
+                    "applicablePrivacyLaws",
+                    "dpaURL"
+                  ]
+                },
+                "dataSecurity": {
+                  "type": "object",
+                  "properties": {
+                    "encryption": {
+                      "type": "string"
+                    },
+                    "authentication": {
+                      "type": "string"
+                    },
+                    "vulnerabilities": {
+                      "type": "string"
+                    },
+                    "securityCertificatesAndAudits": {
+                      "type": "string"
+                    },
+                    "resilience": {
+                      "type": "string"
+                    },
+                    "monitoring": {
+                      "type": "string"
+                    },
+                    "updates": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "encryption",
+                    "authentication",
+                    "vulnerabilities",
+                    "securityCertificatesAndAudits",
+                    "resilience",
+                    "monitoring",
+                    "updates"
+                  ]
+                },
+                "compliance": {
+                  "type": "object",
+                  "properties": {
+                    "confidentiality": {
+                      "type": "string"
+                    },
+                    "regulations": {
+                      "type": "string"
+                    },
+                    "training": {
+                      "type": "string"
+                    },
+                    "guidelines": {
+                      "type": "string"
+                    },
+                    "audits": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "confidentiality",
+                    "regulations",
+                    "training",
+                    "guidelines",
+                    "audits"
+                  ]
+                }
+              },
+              "required": [
+                "permissionLevels",
+                "userGroups",
+                "dataPrivacy",
+                "dataSecurity",
+                "compliance"
+              ]
+            }
+          },
+          "required": [
+            "versionControlSystem",
+            "versionRepositoryURL",
+            "accessPermissions"
+          ]
+        }
+      },
+      "license": {
+        "type": "object",
+        "default": {},
+        "title": "license",
+        "required": [
+          "scope",
+          "privacy",
+          "termination",
+          "governance"
+        ],
+        "properties": {
+          "scope": {
+            "type": "object",
+            "default": {},
+            "title": "scope",
+            "required": [
+              "definition",
+              "language",
+              "restrictions",
+              "geographicalArea",
+              "permanent",
+              "exclusive",
+              "rights"
+            ],
+            "properties": {
+              "definition": {
+                "type": "string",
+                "default": "",
+                "title": "definition"
+              },
+              "language": {
+                "type": "string",
+                "default": "",
+                "title": "language"
+              },
+              "restrictions": {
+                "type": "string",
+                "default": "",
+                "title": "restrictions"
+              },
+              "geographicalArea": {
+                "type": "array",
+                "default": [],
+                "title": "geographicalArea",
+                "items": {
+                  "type": "string",
+                  "title": "A Schema"
+                }
+              },
+              "permanent": {
+                "type": "boolean",
+                "default": false,
+                "title": "permanent"
+              },
+              "exclusive": {
+                "type": "boolean",
+                "default": false,
+                "title": "exclusive"
+              },
+              "rights": {
+                "type": "array",
+                "default": [],
+                "title": "rights",
+                "items": {
+                  "type": "string",
+                  "title": "A Schema"
+                }
+              }
+            }
+          },
+          "privacy": {
+            "type": "object",
+            "default": {},
+            "title": "privacy",
+            "required": [
+              "containsPersonalData",
+              "applicaplePrivacyLaws",
+              "dpaURL"
+            ],
+            "properties": {
+              "containsPersonalData": {
+                "type": "boolean",
+                "default": false,
+                "title": "containsPersonalData"
+              },
+              "applicaplePrivacyLaws": {
+                "type": "array",
+                "default": [],
+                "title": "applicaplePrivacyLaws",
+                "items": {
+                  "type": "string",
+                  "title": "items"
+                }
+              },
+              "dpaURL": {
+                "type": "string",
+                "default": "",
+                "title": "dpaURL"
+              }
+            }
+          },
+          "termination": {
+            "type": "object",
+            "default": {},
+            "title": "termination",
+            "required": [
+              "terminationConditions",
+              "continuityConditions"
+            ],
+            "properties": {
+              "terminationConditions": {
+                "type": "string",
+                "default": "",
+                "title": "terminationConditions"
+              },
+              "continuityConditions": {
+                "type": "string",
+                "default": "",
+                "title": "continuityConditions"
+              }
+            }
+          },
+          "governance": {
+            "type": "object",
+            "default": {},
+            "title": "governance",
+            "required": [
+              "damages",
+              "confidentiality",
+              "applicableLaws",
+              "warranties",
+              "audit",
+              "forceMajeure"
+            ],
+            "properties": {
+              "damages": {
+                "type": "string",
+                "default": "",
+                "title": "damages"
+              },
+              "confidentiality": {
+                "type": "string",
+                "default": "",
+                "title": "confidentiality"
+              },
+              "applicableLaws": {
+                "type": "string",
+                "default": "",
+                "title": "applicableLaws"
+              },
+              "warranties": {
+                "type": "string",
+                "default": "",
+                "title": "warranties"
+              },
+              "audit": {
+                "type": "string",
+                "default": "",
+                "title": "audit"
+              },
+              "forceMajeure": {
+                "type": "string",
+                "default": "",
+                "title": "forceMajeure"
+              }
+            }
+          }
+        }
+      },
+      "dataHolder": {
+        "type": "object",
+        "default": {},
+        "title": "dataHolder",
+        "required": [
+          "taxID",
+          "vatID",
+          "businessDomain",
+          "logoURL",
+          "description",
+          "URL",
+          "telephone",
+          "streetAddress",
+          "postalCode",
+          "addressRegion",
+          "addressLocality",
+          "addressCountry",
+          "aggregateRating",
+          "ratingCount",
+          "slogan",
+          "parentOrganization"
+        ],
+        "properties": {
+          "taxID": {
+            "type": "string",
+            "default": "",
+            "title": "taxID"
+          },
+          "vatID": {
+            "type": "string",
+            "default": "",
+            "title": "vatID"
+          },
+          "businessDomain": {
+            "type": "string",
+            "default": "",
+            "title": "businessDomain"
+          },
+          "logoURL": {
+            "type": "string",
+            "default": "",
+            "title": "logoURL"
+          },
+          "description": {
+            "type": "string",
+            "default": "",
+            "title": "description"
+          },
+          "URL": {
+            "type": "string",
+            "default": "",
+            "title": "URL"
+          },
+          "telephone": {
+            "type": "string",
+            "default": "",
+            "title": "telephone"
+          },
+          "streetAddress": {
+            "type": "string",
+            "default": "",
+            "title": "streetAddress"
+          },
+          "postalCode": {
+            "type": "string",
+            "default": "",
+            "title": "postalCode"
+          },
+          "addressRegion": {
+            "type": "string",
+            "default": "",
+            "title": "addressRegion"
+          },
+          "addressLocality": {
+            "type": "string",
+            "default": "",
+            "title": "addressLocality"
+          },
+          "addressCountry": {
+            "type": "string",
+            "default": "",
+            "title": "addressCountry"
+          },
+          "aggregateRating": {
+            "type": "string",
+            "default": "",
+            "title": "aggregateRating"
+          },
+          "ratingCount": {
+            "type": "integer",
+            "default": 0,
+            "title": "ratingCount"
+          },
+          "slogan": {
+            "type": "string",
+            "default": "",
+            "title": "slogan"
+          },
+          "parentOrganization": {
+            "type": "string",
+            "default": "",
+            "title": "parentOrganization"
+          }
+        }
+      }
+    }
+  }
+}

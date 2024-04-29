@@ -1,41 +1,120 @@
 # Data Quality
 
-Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? Data quality meets six dimensions: accuracy, completeness, consistency, timeliness, validity, and uniqueness. 
+Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
 
-The values of the QA attributes are given by the vendor. Should you trust in the values, is the choice made by the data consumer. If possbile utilize automatic checking of data quality against the source and update the values accordingly. 
+By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems.
 
-The QA object is general in nature and should be enough for common (80%) of the use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The "Specification extensions" section provides details on how to use this feature. 
+How can you assess your data quality? ODPS is compatible with EDM Council data quality model. 
+
+## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
+
+| <div style="width:150px">Data Quality Dimension</div>   | Description | 
+|---|---|
+| **accuracy** | The measurement of the veracity of data to its authoritative source |
+| **completeness** | Data is required to be populated with a value (aka not null, not nullable). Completeness checks if all necessary data attributes are present in the dataset. |
+| **conformity** | Data content must align with required standards, syntax (format, type, range), or permissible domain values. Conformity assesses how closely data adheres to standards, whether internal, external, or industry-wide. |
+| **consistency** | Data should retain consistent content across data stores. Consistency ensures that data values, formats, and definitions in one group match those in another group. |
+| **coverage** | All records are contained in a data store or data source. Coverage relates to the extent and availability of data present but absent from a dataset. |
+| **timeliness** | The data must represent current conditions; the data is available and can be used when needed.  |
+| **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
+| **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
+
+
+> Template structure of Data Quality array component:
+
+```yml
+ - dimension: selected dimension
+    objective: 
+    unit: 
+    monitoring:
+      type:  
+      reference: 
+      spec:
+      
+```
+
+Each dimension has objective value, a unit and then *monitoring* "as code" to verify objective. In some cases monitoring is 
+not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the actucal "as code" part as YAML or string which can be executed in selected monitoring system as is. See template example. 
+
+**Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. 
+
+The values of the QA attributes are given by the vendor. Should you trust in the values, is the choice made by the data consumer. If possible utilize automatic checking of data quality against the source and update the values accordingly. 
+
+The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
 Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why *integrity* is not in the attributes, but accuracy and consistency as well as completeness are. 
 
+**Note!** The "as code" *spec* part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. We need more vendors supporting the approach. In the mean while you can use custom solutions. 
+
 ## Optional attributes and elements
 
-> Example of Data Quality component with some of the voluntary attributes:
+> Example of Data Quality component with some of the data quality dimensions:
 
-```javascript
-   "dataQuality":
-      {
-         "accuracy":100,
-         "completeness":100,
-         "consistency":100,
-         "timeliness":"high",
-         "validity":100,
-         "uniqueness":100,
-         "dataQualityAssuranceMethods":"Data quality assurance suite of tools and methods include both data quality auditing (DQA) tools designed for use by external audit teams and routine data quality assessment (RDQA) tools designed for capacity building and self-assessment."
-      }
+```yml
+
+dataQuality:
+  - dimension: accuracy
+    displaytitle:
+    - en: Data Accuracy (percent)
+    - fi: Datan virheettömyys (prosenttia)
+    objective: 98
+    unit: percentage
+    monitoring:
+      type: SodaCL 
+      reference: https://docs.soda.io/soda-cl/soda-cl-overview.html
+      spec:
+        - require_unique(member_id) 
+        - require_range(age_band, 18, 100)
+
+  - dimension: completeness
+    displaytitle:
+    - en: Data Completeness (percent)
+    objective: 99.9
+    unit: percentage
+    monitoring:
+      type: SodaCL 
+      reference: https://docs.soda.io/soda-cl/soda-cl-overview.html
+      spec:
+        - for each column:
+            name: [member_id, gender, age_band]
+            checks:
+              - not null:
+                  fail: when > 0.1% # Fail if more than 0.1% of records are null
+
+  - dimension: consistency
+    displaytitle:
+    - en: Data Consistency (percent)
+    - fi: Datan johdonmukaisuus (prosenttia)
+    objective: 98
+    unit: percentage
+
+  - dimension: timeliness
+    objective: 100
+    unit: percentage
+
+  - dimension: validity
+    objective: 98
+    unit: percentage
+
+  - dimension: uniqueness
+    objective: 100
+    unit: percentage
       
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| accuracy | integer  | percentage | The term “accuracy” refers to the degree to which information accurately reflects an event or object described. For example, if a customer’s age is 32, but the system says she’s 34, that information is inaccurate. |
-| completeness | integer | percentage | Data is considered “complete” when it fulfills expectations of comprehensiveness. Let’s say that you ask the customer to supply his or her name. You might make a customer’s middle name optional, but as long as you have the first and last name, the data is complete. |
-| consistency | integer | percentage | At many companies, the same information may be stored in more than one place. If that information matches, it’s considered “consistent.” For example, if your human resources information systems say an employee doesn’t work there anymore, yet your payroll says he’s still receiving a check, that’s inconsistent. |
-| timeliness | string | one of: low, medium, high | Is your information available right when it’s needed? That data quality dimension is called “timeliness.” Let’s say that you need financial information every quarter; if the data is ready when it’s supposed to be, it’s timely. The data quality dimension of timeliness is a user expectation.  |
-| validity | integer | percentage | Validity is a data quality dimension that refers to information that doesn’t conform to a specific format or doesn’t follow business rules. A popular example is birthdays – many systems ask you to enter your birthday in a specific format, and if you don’t, it’s invalid. To meet this data quality dimension, you must check if all of your information follows a specific format or business rules. |
-| uniqueness | integer | percentage | “Unique” information means that there’s only one instance of it appearing in a database. As we know, data duplication is a frequent occurrence. “Daniel A. Robertson” and “Dan A. Robertson” may well be the same person. Meeting this data quality dimension involves reviewing your information to ensure that none of it is duplicated. |
-| dataQualityAssuranceMethods | string | text content, max length 512 chars | Description of the data product quality assurance methods and tools used.  |
+| **dataQuality** | element | - | Contains array of data quality dimensions with optional computational monotoring object. Binds the data quality related elements and attributes together |
+| **dimension** | attribute | string, one of: *accuracy, completeness, conformity, consistency, coverage, timeliness, validity, or uniqueness.* | Defines the data quality dimension.  |
+| **objective** | attribute | integer | Defines the target value for the data quality dimension |
+| **unit** | attribute | string. One of: *percentage, number* | Defines the unit used in stating the target quality level. |
+| **monitoring** | element | - | Contains the monitoring (computational "as code") structure to validate target state for the selected data quality dimension. |
+| **displayTitle** | array| - | Dimension title to be shown is various UIs. Array contains array list of titles in desired amount of languages. |
+| **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
+| **type** | attribute | string | monitoring system name name such as SodaCL and Montecarlo. The systems enable as code approach to monitor data quality. |
+| **reference** | URL | Valid URL | Provide URL for the reference documentation |
+| **spec** | element | YAML or string | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. |
 
 
 
-<button data-tf-popup="Q1Zo6wE5" data-tf-iframe-props="title=Customer Feedback Survey" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#FA6B05;color:#000000;font-size:17px;border-radius:3px;padding:0 28px;font-weight:bold;height:42.5px;cursor:pointer;line-height:42.5px;text-align:center;margin:0;text-decoration:none;">Raise an issue</button><script src="//embed.typeform.com/next/embed.js"></script>
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues)
