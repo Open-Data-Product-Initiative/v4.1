@@ -1,0 +1,322 @@
+schema: schema: source/schema/odps-dev-yaml-schema.yaml
+version: dev
+properties:
+  schema:
+    type: string
+    format: uri
+  version:
+    type: string
+  product:
+    type: object
+    properties:
+      en:
+        type: object
+        properties:
+          name:
+            type: string
+          productID:
+            type: string
+          valueProposition:
+            type: string
+          description:
+            type: string
+          productSeries:
+            type: string
+          visibility:
+            type: string
+          status:
+            type: string
+          version:
+            type: string
+          categories:
+            type: array
+            items:
+              type: string
+          standards:
+            type: array
+            items:
+              type: string
+          tags:
+            type: array
+            items:
+              type: string
+          brandSlogan:
+            type: string
+          type:
+            type: string
+          logoURL:
+            type: string
+            format: uri
+          OutputFileFormats:
+            type: array
+            items:
+              type: string
+          useCases:
+            type: array
+            items:
+              type: object
+              properties:
+                useCase:
+                  type: object
+                  properties:
+                    useCaseTitle:
+                      type: string
+                    useCaseDescription:
+                      type: string
+                    useCaseURL:
+                      type: string
+      recommendedDataProducts:
+        type: array
+        items:
+          type: string
+          format: uri
+      pricingPlans:
+        type: object
+        properties:
+          en:
+            type: array
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                priceCurrency:
+                  type: string
+                price:
+                  type: string
+                billingDuration:
+                  type: string
+                unit:
+                  type: string
+                maxTransactionQuantity:
+                  type: string
+                offering:
+                  type: array
+                  items:
+                    type: string
+      dataOps:
+        type: object
+        properties:
+          data:
+            type: object
+            properties:
+              schemaLocationURL:
+                type: string
+                format: uri
+            required: ["schemaLocationURL"]
+          lineage:
+            type: object
+            properties:
+              dataLineageTool:
+                type: string
+              dataLineageOutput:
+                type: string
+          infrastructure:
+            type: object
+            properties:
+              platform:
+                type: string
+              region:
+                type: string
+              storageTechnology:
+                type: string
+              storageType:
+                type: string
+              containerTool:
+                type: string
+          build:
+            type: object
+            properties:
+              format:
+                type: string
+              hashType:
+                type: string
+              checksum:
+                type: string
+              signatureType:
+                type: string
+              scriptURL:
+                type: string
+                format: uri
+              deploymentDocumentationURL:
+                type: string
+                format: uri
+      dataAccess:
+        type: object
+        properties:
+          type:
+            type: string
+          authenticationMethod:
+            type: string
+          specification:
+            type: string
+          format:
+            type: string
+          documentationURL:
+            type: string
+            format: uri
+      SLA:
+        type: array
+        items:
+          type: object
+          properties:
+            dimension:
+              type: string
+            displaytitle:
+              type: array
+              items:
+                type: object
+                properties:
+                  en:
+                    type: string
+            objective:
+              type: number
+            unit:
+              type: string
+            monitoring:
+              type: object
+              properties:
+                type:
+                  type: string
+                reference:
+                  type: string
+                  format: uri
+                spec:
+                  type: string
+      support:
+        type: object
+        properties:
+          phoneNumber:
+            type: string
+          phoneServiceHours:
+            type: string
+          email:
+            type: string
+          emailServiceHours:
+            type: string
+          documentationURL:
+            type: string
+            format: uri
+      dataQuality:
+        type: array
+        items:
+          type: object
+          properties:
+            dimension:
+              type: string
+            displaytitle:
+              type: array
+              items:
+                type: object
+                properties:
+                  en:
+                    type: string
+            objective:
+              type: number
+            unit:
+              type: string
+            monitoring:
+              type: object
+              properties:
+                type:
+                  type: string
+                reference:
+                  type: string
+                  format: uri
+                spec:
+                  type: string
+      license:
+        type: object
+        properties:
+          scope:
+            type: object
+            properties:
+              definition:
+                type: string
+              language:
+                type: string
+              restrictions:
+                type: string
+              geographicalArea:
+                type: array
+                items:
+                  type: string
+              permanent:
+                type: boolean
+              exclusive:
+                type: boolean
+              rights:
+                type: array
+                items:
+                  type: string
+          termination:
+            type: object
+            properties:
+              terminationConditions:
+                type: string
+              continuityConditions:
+                type: string
+          governance:
+            type: object
+            properties:
+              ownership:
+                type: string
+              damages:
+                type: string
+              confidentiality:
+                type: string
+              applicableLaws:
+                type: string
+              warranties:
+                type: string
+              audit:
+                type: string
+              forceMajeure:
+                type: string
+      dataHolder:
+        type: object
+        properties:
+          taxID:
+            type: string
+          vatID:
+            type: string
+          businessDomain:
+            type: string
+          logoURL:
+            type: string
+            format: uri
+          description:
+            type: string
+          URL:
+            type: string
+            format: uri
+          telephone:
+            type: string
+          streetAddress:
+            type: string
+          postalCode:
+            type: string
+          addressRegion:
+            type: string
+          addressLocality:
+            type: string
+          addressCountry:
+            type: string
+          aggregateRating:
+            type: string
+          ratingCount:
+            type: integer
+          slogan:
+            type: string
+          parentOrganization:
+            type: string
+required:
+  - schema
+  - version
+  - product
+  - dataOps
+  - dataAccess
+  - SLA
+  - dataQuality
+  - license
+  - dataHolder

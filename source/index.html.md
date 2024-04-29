@@ -44,6 +44,7 @@ The specification is shared under <a href='https://www.apache.org/licenses/LICEN
 
 **VERSION DEV**
 
+
 **Version source:**
 
 * <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev">https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev</a>
