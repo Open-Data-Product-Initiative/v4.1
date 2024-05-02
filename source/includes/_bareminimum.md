@@ -6,8 +6,8 @@ Example data product with just the mandatory elements and attributes. This is th
 
 ```yml
 
-schema: https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json
-version: dev
+schema: https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-rc/main/source/schema/odps.yaml
+version: 3.0
 product:
   en:
     name: Pets of the year
