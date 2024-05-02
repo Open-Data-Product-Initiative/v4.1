@@ -144,7 +144,7 @@ product:
       name: Pets of the year
       productID: 123456are
       visibility: private
-      status": draft
+      status: draft
       type: dataset
     fi:
       name: Vuoden suosituimmat lemmikit

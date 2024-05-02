@@ -15,15 +15,5 @@ product:
     visibility: private
     status: draft
     type: derived data
-  pricingPlans:
-    en:
-    - name: Freemium Package
-      priceCurrency: EUR
-      price: '0.00'
-      billingDuration: month
-      unit: recurring
-      maxTransactionQuantity: 1000
-      offering:
-        - item 1
 
 ```
