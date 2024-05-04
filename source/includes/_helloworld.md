@@ -7,7 +7,7 @@ You'll find a complete machine-readbale example of a data product from the right
 ```yml
 
 ---
-schema: https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-rc/main/source/schema/odps.yaml
+schema: https://opendataproducts.org/v3.0rc/schema/odps.yaml
 version: 3.0
 product:
   en:
