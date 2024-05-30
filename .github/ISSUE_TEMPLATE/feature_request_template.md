@@ -1,9 +1,10 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: 'Please replace with a clear and descriptive title'
-labels: 'type: feature'
+title: Please replace with a clear and descriptive title
+labels: ''
 assignees: ''
+
 ---
 
 <!--
@@ -39,4 +40,4 @@ Pull requests are welcome!
 -->
 
 ### ---- Leave intact! Approval of Contributor Agreement ----- ### 
-By submitting issue you approve the Contributor Agreement, https://governance.opendataproducts.org/v1/contributions/contributor-agreement 
+By submitting issue you approve the Contributor Agreement, https://governance.opendataproducts.org/v1/contributions/contributor-agreement

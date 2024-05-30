@@ -1,12 +1,11 @@
 ---
-name: 🐞 Bug
+name: "\U0001F41E Bug"
 about: File a bug/issue
-title: '[BUG] <title>'
-labels: Bug, Needs Triage
+title: "[BUG] <title>"
+labels: ''
 assignees: ''
 
 ---
-
 
 ### Bug Description ###
 A clear and concise description of what the bug is and how to reproduce it.
@@ -19,4 +18,4 @@ Describe expected behavior
 
 
 ### ---- Leave intact! Approval of Contributor Agreement ----- ### 
-By submitting issue you approve the Contributor Agreement, https://governance.opendataproducts.org/v1/contributions/contributor-agreement 
+By submitting issue you approve the Contributor Agreement, https://governance.opendataproducts.org/v1/contributions/contributor-agreement
