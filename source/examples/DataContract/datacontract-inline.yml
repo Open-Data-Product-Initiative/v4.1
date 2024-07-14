@@ -1,6 +1,7 @@
-schema: https://opendataproducts.org/v3.0rc/schema/odps.yaml
+schema: https://opendataproducts.org/dev/schema/odps.yaml
 version: 3.0
 product:
+
   contract:
     id: 02323M123  
     type:  DCS 
@@ -22,7 +23,8 @@ product:
       tags:
         - checkout
         - orders
-        .... CUT FOR SAKE OF SPACE....
+        .... CUT OFF FOR SAKE OF SPACE....
+
   details: 
     en:
       name: Pets of the year
