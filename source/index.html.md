@@ -1,5 +1,5 @@
 ---
-title: Open Data Product Specification Development Version | Enabling Data Economy 
+title: Open Data Product Specification Development Version | Linux Foundation 
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -28,7 +28,7 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. 
+    content: The Open Data Product Specification (Linux Foundation project) is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. 
 ---
 
 # OPEN DATA PRODUCT SPECIFICATION 
@@ -67,10 +67,9 @@ The Open Data Product Specification is a vendor-neutral, open-source machine-rea
 
 Open Data Product Specification (ODPS) changes the data product metadata model towards a standalone model, which helps to decouple data product from the systems often directly associated with it. With help of the ODPS data product can be presented and described to the customer also as such without any need for marketplace or other systems. 
 
-This version signifies a step towards embracing Everything as Code paradigm, but is still experimental. Both SLA and Data quality support now "as code" monitoring.   
-
-
-Development of the standard is coordinated in Open Data Product Initiative (ODPI) which was established in July 2022 to make it possible for the specification to grow and become institutionlized. The ODPI was taken under the wings of open source chapter of Open Collective.
+This version Data Contract support has been added to Open Data Product Specification. You can reference Data Contract as a URL or define Data Contract as an inline element in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. 
+   
+Development of the standard is under the umbrella of the Linux Foundation. 
 
 ![odps-features](images/features.png)
 
