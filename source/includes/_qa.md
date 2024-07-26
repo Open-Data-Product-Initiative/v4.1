@@ -2,15 +2,14 @@
 
 Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
 
-By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems.
+By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.
 
-How can you assess your data quality? ODPS is compatible with EDM Council data quality model. 
-
-The ODPS support "as code" approach to monitor data quality. Supported DQ tools for Everything as Code to define monitoring are: 
+How can you assess your data quality? The ODPS support "as code" approach to monitor data quality. Supported DQ tools for Everything as Code to define monitoring are: 
 
 * SodaCL
 * MonteCarlo
 * DQOps
+* Custom (in-house solutions)
 
 
 
@@ -43,17 +42,14 @@ The ODPS support "as code" approach to monitor data quality. Supported DQ tools 
 ```
 
 Each dimension has objective value, a unit and then *monitoring* "as code" to verify objective. In some cases monitoring is 
-not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the actucal "as code" part as YAML or string which can be executed in selected monitoring system as is. See template example. 
+not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the monitoring rules "as code" to be executed in selected monitoring system as is.  
 
-**Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. 
-
-The values of the QA attributes are given by the vendor. Should you trust in the values, is the choice made by the data consumer. If possible utilize automatic checking of data quality against the source and update the values accordingly. 
+**Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. We need more vendors supporting the approach. You can use predefined vendor options (as type) and custom for in-house solutions.
 
 The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
 Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why *integrity* is not in the attributes, but accuracy and consistency as well as completeness are. 
-
-**Note!** The "as code" *spec* part of the component embraces Everything as Code paradigm. We need more vendors supporting the approach. You can use predefined vendor options (as type) and custom for in-house solutions. 
+  
 
 ## Optional attributes and elements
 
@@ -128,11 +124,10 @@ dataQuality:
 | **monitoring** | element | - | Contains the monitoring (computational "as code") structure to validate target state for the selected data quality dimension. |
 | **displayTitle** | array| - | Dimension title to be shown is various UIs. Array contains array list of titles in desired amount of languages. |
 | **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
-| **type** | attribute | string, one of: SodaCL, Montecarlo, DQOps, Custom | monitoring system name name such as SodaCL and Montecarlo. The systems enable as code approach to monitor data quality. Tith _custom_ type you can use your in-house solution. |
+| **type** | attribute | string, one of: [SodaCL](https://docs.soda.io/soda-cl/soda-cl-overview.html), [Montecarlo](https://docs.getmontecarlo.com/docs/monitors-as-code), [DQOps](https://dqops.com/docs/categories-of-data-quality-checks/), Custom | DAta Quality Monitoring as code system name. Use one of the predefined options only. With _Custom_ type you can use your in-house solution. |
 | **version** | attribute | string | The version of DQ monitoring tool used. |
-| **reference** | URL | Valid URL | Provide URL for the reference documentation |
-| **spec** | element | YAML or string | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. |
-
+| **reference** | URL | Valid URL | Provide URL pointing to the reference documentation |
+| **spec** | element | YAML/URL/string | The content the as code part for Data Quality monitoring. Content is intended to be in a form that can be injected as is to _type_ defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> **Note!** By default the rules must be provide as valid YAML, either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML content file. String content is allowed and used only if _type_ attribute value is _Custom_. In the custom case your string of course can be YAML too. |
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
