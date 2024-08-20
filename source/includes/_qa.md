@@ -98,49 +98,6 @@ dataQuality:
                     max_percent: 11.0      
 ```
 
-```json
-{
-    "dataQuality": {
-        "declarative": [
-            {
-                "dimension": "accuracy",
-                "displaytitle": [
-                    {
-                        "en": "Data Accuracy (percent)"
-                    },
-                    {
-                        "fi": "Datan virheettömyys (prosenttia)"
-                    }
-                ],
-                "objective": 98,
-                "unit": "percentage"
-            },
-            {
-                "dimension": "completeness",
-                "displaytitle": [
-                    {
-                        "en": "Data Completeness (percent)"
-                    }
-                ],
-                "objective": 90,
-                "unit": "percentage"
-            }
-        ],
-        "executable": [
-            {
-                "dimension": "accuracy",
-                "type": "SodaCL",
-                "reference": "https://docs.soda.io/soda-cl/soda-cl-overview.html",
-                "spec": [
-                    "require_unique(member_id)",
-                    "require_range(age_band, 18, 100)"
-                ]
-            }
-        ]
-    }
-}
-```
-
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **dataQuality** | element | - | Contains array of data quality dimensions with optional computational monotoring object. Binds the data quality related elements and attributes together |
