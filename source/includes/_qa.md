@@ -30,9 +30,11 @@ How can you assess your data quality? The ODPS support "as code" approach to mon
 > Template structure of Data Quality array component:
 
 ```yml
+declative:
  - dimension: selected dimension
     objective: 
-    unit: 
+    unit:
+executable:
     monitoring:
       type:  
       version: 
@@ -56,27 +58,29 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 > Example of Data Quality component with some of the data quality dimensions:
 
 ```yml
-
 dataQuality:
-  - dimension: accuracy
-    displaytitle:
-    - en: Data Accuracy (percent)
-    - fi: Datan virheettömyys (prosenttia)
-    objective: 98
-    unit: percentage
-    monitoring:
+  
+  declarative:
+    - dimension: accuracy
+      displaytitle:
+      - en: Data Accuracy (percent)
+      - fi: Datan virheettömyys (prosenttia)
+      objective: 98
+      unit: percentage
+    - dimension: completeness
+      displaytitle:
+      - en: Data Completeness (percent)
+      objective: 90
+      unit: percentage
+
+  executable:
+    - dimension: accuracy
       type: SodaCL
       reference: https://docs.soda.io/soda-cl/soda-cl-overview.html
       spec:
         - require_unique(member_id) 
         - require_range(age_band, 18, 100)
-
-  - dimension: completeness
-    displaytitle:
-    - en: Data Completeness (percent)
-    objective: 90
-    unit: percentage
-    monitoring:
+    - dimension: completeness
       type: DQOps
       version: 1.6.0 
       reference: https://dqops.com/docs/dqo-concepts/running-data-quality-checks/
@@ -91,28 +95,50 @@ dataQuality:
                   error: 
                     max_percent: 10.0
                   fatal: 
-                    max_percent: 11.0
+                    max_percent: 11.0      
+```
 
-
-  - dimension: consistency
-    displaytitle:
-    - en: Data Consistency (percent)
-    - fi: Datan johdonmukaisuus (prosenttia)
-    objective: 98
-    unit: percentage
-      
-  - dimension: timeliness
-    objective: 100
-    unit: percentage
-
-  - dimension: validity
-    objective: 98
-    unit: percentage
-
-  - dimension: uniqueness
-    objective: 100
-    unit: percentage
-      
+```json
+{
+    "dataQuality": {
+        "declarative": [
+            {
+                "dimension": "accuracy",
+                "displaytitle": [
+                    {
+                        "en": "Data Accuracy (percent)"
+                    },
+                    {
+                        "fi": "Datan virheettömyys (prosenttia)"
+                    }
+                ],
+                "objective": 98,
+                "unit": "percentage"
+            },
+            {
+                "dimension": "completeness",
+                "displaytitle": [
+                    {
+                        "en": "Data Completeness (percent)"
+                    }
+                ],
+                "objective": 90,
+                "unit": "percentage"
+            }
+        ],
+        "executable": [
+            {
+                "dimension": "accuracy",
+                "type": "SodaCL",
+                "reference": "https://docs.soda.io/soda-cl/soda-cl-overview.html",
+                "spec": [
+                    "require_unique(member_id)",
+                    "require_range(age_band, 18, 100)"
+                ]
+            }
+        ]
+    }
+}
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
