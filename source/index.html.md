@@ -3,7 +3,6 @@ title: Open Data Product Specification Development Version | Linux Foundation
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
-- json
 
 toc_footers:
   - License <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a>
