@@ -32,7 +32,7 @@ How can you assess your data quality? The ODPS support "as code" approach to mon
 > Template structure of Data Quality array component:
 
 ```yml
-declative:
+declarative:
   - dimension: selected dimension
     displaytitle:
     objective: 
