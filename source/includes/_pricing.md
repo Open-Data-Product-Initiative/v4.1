@@ -1,8 +1,32 @@
-# Data Pricing Plans
+# 10 Standardized Data Pricing Plans
 
 Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing **OBJECT** consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  
 
-**12 standardized pricing models include:**
+**Standardized pricing models:**
+
+> In case standardized options are not enough:
+
+```yml
+You can make extensions to the standard 
+with "x-" mechanism in order to fulfill 
+any industry specific needs. 
+
+A suggestive example below 
+
+pricingPlans:
+  en:
+  - name: Premium subscription 1 year
+    priceCurrency: EUR
+    price: 50.00
+    billingDuration: year
+    unit: recurring
+  - x-name: Extension plan
+    priceCurrency: EUR
+    price: 50.00
+    billingDuration: year
+    unit: recurring
+```
+
 
 | <div style="width:150px">Pricing plan</div>   | Description | 
 |---|---|
