@@ -1,7 +1,5 @@
 # Hello world example
 
-You'll find a complete machine-readbale example of a data product from the right column. It is imaginary data product *Pets of the year* which contains derived data about the most common pets in the world. The product has 4 pricing plans which are mostly based on recurring subscription model. Note! Not all voluntary attributes are used in the example and multilingualism has not been fully applied.
-
 > Example of complete working Data Product specification instance:
 
 ```yml
@@ -289,3 +287,4 @@ product:
 
 
 ```
+You'll find a complete machine-readbale example of a data product from the right column. It is imaginary data product *Pets of the year* which contains derived data about the most common pets in the world. The product has 4 pricing plans which are mostly based on recurring subscription model. Note! Not all voluntary attributes are used in the example and multilingualism has not been fully applied.
