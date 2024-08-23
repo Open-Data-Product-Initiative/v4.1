@@ -39,7 +39,12 @@ not feasable or possible to arrange for various reasons. *Type* attribute indica
 > In case standardized options are not enough:
 
 ```yml
-The QA object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. 
+The QA object is general in nature and should 
+be enough for common (80%) use cases. 
+
+You can make extensions to the standard 
+with "x-" mechanism in order to fulfill 
+any industry specific needs. 
 ```
 
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
