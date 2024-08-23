@@ -273,12 +273,14 @@ html, body {
     right: 0;
     top: 0;
     bottom: 0;
+    visibility: hidden;
   }
 
   .lang-selector {
     position: fixed;
     z-index: 50;
     border-bottom: 5px solid $lang-select-active-bg;
+    visibility: hidden;
   }
 }
 
