@@ -118,12 +118,6 @@ monitoring:
 ```
 
 
-<aside class="notice">
-The YAML examples are not based on any real data product, but exemplify the usage of Open Data Product Specification. 
-
-</aside>
-
-
 # Document level attributes
 
 Here's the list of attributes which can occur at the document root level. In the following description, if a field is not explicitly **REQUIRED** or described with a MUST or SHALL, it can be considered OPTIONAL. Optional attributes are listed in own table and examples are given on the right column. 
