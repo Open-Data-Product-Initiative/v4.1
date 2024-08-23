@@ -14,18 +14,19 @@ How can you assess your data quality? The ODPS support "as code" approach to mon
 > Template structure of Data Quality array component:
 
 ```yml
-declarative:
-  - dimension: selected dimension
-    displaytitle:
-    description:
-    objective: 
-    unit:
-executable:
-  - dimension: selected dimension
-    type:  
-    version: 
-    reference: 
-    spec:
+dataQuality:
+  declarative:
+    - dimension: selected dimension
+      displaytitle:
+      description:
+      objective: 
+      unit:
+  executable:
+    - dimension: selected dimension
+      type:  
+      version: 
+      reference: 
+      spec:
 ```
 
 **Structure notes:** The Data Quality object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. Executable part contains the machine-readable "as code" rules to validate data quality dimensions. The code inside _spec_ element is intended to be injected as in supporting data quality platforms in their defined format and structure.  
@@ -57,7 +58,6 @@ The QA object is general in nature and should be enough for common (80%) use cas
 
 ```yml
 dataQuality:
-  
   declarative:
     - dimension: accuracy
       displaytitle:
@@ -73,7 +73,6 @@ dataQuality:
       - en: Data Completeness (percent)
       objective: 90
       unit: percentage
-
   executable:
     - dimension: accuracy
       type: SodaCL
