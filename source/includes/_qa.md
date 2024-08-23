@@ -45,6 +45,17 @@ be enough for common (80%) use cases.
 You can make extensions to the standard 
 with "x-" mechanism in order to fulfill 
 any industry specific needs. 
+
+A suggestive example below 
+
+dataQuality:
+  declarative:
+    - dimension: accuracy
+      displaytitle:
+      - en: Data Accuracy (percent)
+    - x-dimension: extended-dq
+      displaytitle:
+      - en: Extended Data Quality dimension
 ```
 
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
