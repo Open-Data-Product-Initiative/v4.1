@@ -1,8 +1,8 @@
-# 10 Standardized Data Pricing Plans
+# Data Pricing Plans
 
 Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing **OBJECT** consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  
 
-**Standardized pricing models:**
+**ODPS offers 12 standardized pricing models:**
 
 > In case standardized options are not enough:
 
