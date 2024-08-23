@@ -36,6 +36,11 @@ not feasable or possible to arrange for various reasons. *Type* attribute indica
 
 ## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
 
+> In case standardized options are not enough:
+
+The QA object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
+
+
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|
 | **accuracy** | The measurement of the veracity of data to its authoritative source |
@@ -48,8 +53,6 @@ not feasable or possible to arrange for various reasons. *Type* attribute indica
 | **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
 
 Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why *integrity* is not in the attributes, but accuracy and consistency as well as completeness are. 
-
-The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
   
 
 ## Optional attributes and elements
