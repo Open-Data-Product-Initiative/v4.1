@@ -611,11 +611,11 @@ html, body {
   }
 
   .toc-wrapper .lang-selector {
-    display: block;
+    visibility: hidden;
   }
 
   .page-wrapper .lang-selector {
-    display: none;
+    visibility: hidden;
   }
 
   %right-col {
