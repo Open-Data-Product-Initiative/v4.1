@@ -11,24 +11,6 @@ How can you assess your data quality? The ODPS support "as code" approach to mon
 * DQOps
 * Custom (in-house solutions)
 
-
-
-## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
-
-| <div style="width:150px">Data Quality Dimension</div>   | Description | 
-|---|---|
-| **accuracy** | The measurement of the veracity of data to its authoritative source |
-| **completeness** | Data is required to be populated with a value (aka not null, not nullable). Completeness checks if all necessary data attributes are present in the dataset. |
-| **conformity** | Data content must align with required standards, syntax (format, type, range), or permissible domain values. Conformity assesses how closely data adheres to standards, whether internal, external, or industry-wide. |
-| **consistency** | Data should retain consistent content across data stores. Consistency ensures that data values, formats, and definitions in one group match those in another group. |
-| **coverage** | All records are contained in a data store or data source. Coverage relates to the extent and availability of data present but absent from a dataset. |
-| **timeliness** | The data must represent current conditions; the data is available and can be used when needed.  |
-| **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
-| **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
-
-
-**Structure notes:** The Data Quality object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. Executable part contains the machine-readable "as code" rules to validate data quality dimensions. The code inside _spec_ element is intended to be injected as in supporting data quality platforms in their defined format and structure.  
-
 > Template structure of Data Quality array component:
 
 ```yml
@@ -46,14 +28,27 @@ executable:
     spec:
 ```
 
+**Structure notes:** The Data Quality object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. Executable part contains the machine-readable "as code" rules to validate data quality dimensions. The code inside _spec_ element is intended to be injected as in supporting data quality platforms in their defined format and structure.  
+
 Each dimension has objective value, a unit and then *monitoring* "as code" to verify objective. In some cases monitoring is 
-not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the monitoring rules "as code" to be executed in selected monitoring system as is.  
+not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the monitoring rules "as code" to be executed in selected monitoring system as is. 
 
-**Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. We need more vendors supporting the approach. You can use predefined vendor options (as type) and custom for in-house solutions.
+## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
 
-The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
+| <div style="width:150px">Data Quality Dimension</div>   | Description | 
+|---|---|
+| **accuracy** | The measurement of the veracity of data to its authoritative source |
+| **completeness** | Data is required to be populated with a value (aka not null, not nullable). Completeness checks if all necessary data attributes are present in the dataset. |
+| **conformity** | Data content must align with required standards, syntax (format, type, range), or permissible domain values. Conformity assesses how closely data adheres to standards, whether internal, external, or industry-wide. |
+| **consistency** | Data should retain consistent content across data stores. Consistency ensures that data values, formats, and definitions in one group match those in another group. |
+| **coverage** | All records are contained in a data store or data source. Coverage relates to the extent and availability of data present but absent from a dataset. |
+| **timeliness** | The data must represent current conditions; the data is available and can be used when needed.  |
+| **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
+| **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
 
 Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why *integrity* is not in the attributes, but accuracy and consistency as well as completeness are. 
+
+The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
   
 
 ## Optional attributes and elements
