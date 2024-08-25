@@ -23,7 +23,12 @@ A Data Service Level Agreement (SLA) is a contractual agreement between a data s
 
 Defining Data SLAs in a machine-readable format enhances automation, facilitates monitoring, enables real-time compliance tracking, and supports seamless integration with monitoring and alerting systems.
 
-**Structure notes:** The SLA object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended SLA levels in defined unit. Executable part contains the machine-readable "as code" rules to validate SLA dimensions. The code inside _spec_ element is intended to be injected as in supporting SLA monitoring platforms in their defined format and structure.  
+**Structure notes:** The SLA object is divided into 2 parts: declarative and executable. 
+
+* Declarative part defines the dimensions and aimed/intended SLA levels in defined unit. 
+* Executable part contains the machine-readable "as code" rules to validate SLA dimensions. The code inside _spec_ element is intended to be injected as in supporting SLA monitoring platforms in their defined format and structure.  
+
+The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature.
 
 > In case standardized options are not enough:
 
@@ -48,8 +53,6 @@ SLA:
       objective: 200
       unit: milliseconds
 ```
-
-The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature.
 
 
 ## SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring
