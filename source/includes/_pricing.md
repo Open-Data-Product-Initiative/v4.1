@@ -18,12 +18,6 @@ pricingPlans:
     billingDuration: month
 ```
 
-Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing **OBJECT** consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  
-
-## ODPS supports 11 standardized pricing models
-
-The _unit_ attribute defines the plan and options for that are fixed unless extended with "x-" mechanism. Read more about the [Pricing plans from ODPS wiki](https://github.com/Open-Data-Product-Initiative/dev/wiki/Pricing-Plans#version-dev)
-
 > In case standardized options are not enough:
 
 ```yml
@@ -49,6 +43,11 @@ pricingPlans:
     
 ```
 
+Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing **OBJECT** consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  
+
+## ODPS supports 12 standardized pricing models
+
+The _unit_ attribute defines the plan and options for that are fixed unless extended with "x-" mechanism. Read more about the [Pricing plans from ODPS wiki](https://github.com/Open-Data-Product-Initiative/dev/wiki/Pricing-Plans#version-dev)
 
 | <div style="width:150px">Pricing plan</div>   | Description | 
 |---|---|
