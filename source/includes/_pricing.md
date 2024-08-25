@@ -1,5 +1,23 @@
 # Data Pricing Plans
 
+> Template structure of Data Pricing Plans array component:
+
+```yml
+pricingPlans:
+  en:
+  - name: Premium subscription 1 year
+    unit: recurring
+    priceCurrency: EUR
+    price: 50.00
+    billingDuration: year
+    
+  - name: Premium subcsription 1 month
+    unit: recurring
+    priceCurrency: EUR
+    price: 8.00
+    billingDuration: month
+```
+
 Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing **OBJECT** consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  
 
 ## ODPS supports 11 standardized pricing models
