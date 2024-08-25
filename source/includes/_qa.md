@@ -33,23 +33,18 @@ How can you assess your data quality? The ODPS support "as code" approach to mon
 
 ```yml
 declarative:
-  - dimension: selected dimension
-    displaytitle:
-    description:
-    objective: 
-    unit:
+- dimension: selected dimension
+  displaytitle:
+  description:
+  objective: 
+  unit:
 executable:
-  - dimension: selected dimension
-    type:  
-    version: 
-    reference: 
-    spec:
+- dimension: selected dimension
+  type:  
+  version: 
+  reference: 
+  spec:
 ```
-
-Each dimension has objective value, a unit and then *monitoring* "as code" to verify objective. In some cases monitoring is 
-not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the monitoring rules "as code" to be executed in selected monitoring system as is.  
-
-**Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. We need more vendors supporting the approach. You can use predefined vendor options (as type) and custom for in-house solutions.
 
 The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
@@ -61,47 +56,52 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 > Example of Data Quality component with some of the data quality dimensions:
 
 ```yml
-dataQuality:
-  
-  declarative:
-    - dimension: accuracy
-      displaytitle:
+
+declarative:
+  - dimension: accuracy
+    displaytitle:
       - en: Data Accuracy (percent)
       - fi: Datan virheettömyys (prosenttia)
-      description: 
-      - en: Data Accuracy ensures the data product reflects the real-world entities or events it represents, minimizing errors and providing reliable insights.
-      - fi: Datatuotteen tarkkuus varmistaa, että se heijastaa todellisia kohteita tai tapahtumia, vähentää virheitä ja tarjoaa luotettavaa tietoa.
-      objective: 98
-      unit: percentage
-    - dimension: completeness
-      displaytitle:
+    description:
+      - en: >-
+          Data Accuracy ensures the data product reflects the real-world
+          entities or events it represents, minimizing errors and providing
+          reliable insights.
+      - fi: >-
+          Datatuotteen tarkkuus varmistaa, että se heijastaa todellisia
+          kohteita tai tapahtumia, vähentää virheitä ja tarjoaa luotettavaa
+          tietoa.
+    objective: 98
+    unit: percentage
+  - dimension: completeness
+    displaytitle:
       - en: Data Completeness (percent)
-      objective: 90
-      unit: percentage
-
-  executable:
-    - dimension: accuracy
-      type: SodaCL
-      reference: https://docs.soda.io/soda-cl/soda-cl-overview.html
-      spec:
-        - require_unique(member_id) 
-        - require_range(age_band, 18, 100)
-    - dimension: completeness
-      type: DQOps
-      version: 1.6.0 
-      reference: https://dqops.com/docs/dqo-concepts/running-data-quality-checks/
-      spec:
-        columns:
-          target_column:
-            profiling_checks: 
-              nulls: 
-                profile_nulls_percent: 
-                  warning: 
-                    max_percent: 8.0
-                  error: 
-                    max_percent: 10.0
-                  fatal: 
-                    max_percent: 11.0      
+    objective: 90
+    unit: percentage
+executable:
+  - dimension: accuracy
+    type: SodaCL
+    reference: 'https://docs.soda.io/soda-cl/soda-cl-overview.html'
+    spec:
+      - require_unique(member_id)
+      - 'require_range(age_band, 18, 100)'
+  - dimension: completeness
+    type: DQOps
+    version: 1.6.0
+    reference: 'https://dqops.com/docs/dqo-concepts/running-data-quality-checks/'
+    spec:
+      columns:
+        target_column:
+          profiling_checks:
+            nulls:
+              profile_nulls_percent:
+                warning:
+                  max_percent: 8
+                error:
+                  max_percent: 10
+                fatal:
+                  max_percent: 11
+     
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
@@ -111,7 +111,7 @@ dataQuality:
 | **dimension** | attribute | string, one of: *accuracy, completeness, conformity, consistency, coverage, timeliness, validity, or uniqueness.* | Defines the data quality dimension.  |
 | **objective** | attribute | integer | Defines the target value for the data quality dimension |
 | **unit** | attribute | string. One of: *percentage, number* | Defines the unit used in stating the target quality level. |
-**executable** | element | - | Grouping element which collects together data quality monitoring. You can define the monitoring patterns as code under this element for the above mentioned data quality dimensions. In other words, contains the monitoring (computational "as code") structure to validate target state for the selected data quality dimension. The actual as code part is added with _spec_ element. |
+| **executable** | element | - | Grouping element which collects together data quality monitoring. You can define the monitoring patterns as code under this element for the above mentioned data quality dimensions. In other words, contains the monitoring (computational "as code") structure to validate target state for the selected data quality dimension. The actual as code part is added with _spec_ element. |
 | **displayTitle** | array| - | Dimension title to be shown is various UIs. Array contains array list of titles in desired amount of languages. |
 | **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
 | **description** | array | - | Describe the dimension so that it can be used for example in info boxes in UI. | Array contains array list of titles in desired amount of languages.
