@@ -18,24 +18,6 @@ dataQuality:
       spec:
 ```
 
-Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
-
-By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.
-
-How can you assess your data quality? The ODPS support "as code" approach to monitor data quality. Supported DQ tools for Everything as Code to define monitoring are: 
-
-* SodaCL
-* MonteCarlo
-* DQOps
-* Custom (in-house solutions)
-
-**Structure notes:** The Data Quality object is divided into 2 parts: declarative and executable. 
-
-* Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. 
-* Executable part contains the machine-readable "as code" rules to validate data quality dimensions. The code inside _spec_ element is intended to be injected as in supporting data quality platforms in their defined format and structure.  
-
-## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
-
 > In case standardized options are not enough:
 
 ```yml
@@ -58,6 +40,28 @@ dataQuality:
       - en: Extended Data Quality dimension
 ```
 
+Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
+
+By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.
+
+How can you assess your data quality? The ODPS support "as code" approach to monitor data quality. Supported DQ tools for Everything as Code to define monitoring are: 
+
+* SodaCL
+* MonteCarlo
+* DQOps
+* Custom (in-house solutions)
+
+**Structure notes:** The Data Quality object is divided into 2 parts: declarative and executable. 
+
+* Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. 
+* Executable part contains the machine-readable "as code" rules to validate data quality dimensions. The code inside _spec_ element is intended to be injected as in supporting data quality platforms in their defined format and structure.  
+
+The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
+
+## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
+
+
+
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|
 | **accuracy** | The measurement of the veracity of data to its authoritative source |
@@ -69,9 +73,6 @@ dataQuality:
 | **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
 | **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
 
-**Structure notes:** The Data Quality object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. Executable part contains the machine-readable "as code" rules to validate data quality dimensions. The code inside _spec_ element is intended to be injected as in supporting data quality platforms in their defined format and structure.  
-
-The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
 Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why *integrity* is not in the attributes, but accuracy and consistency as well as completeness are. 
   
