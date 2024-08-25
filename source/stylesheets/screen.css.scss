@@ -279,6 +279,7 @@ html, body {
     position: fixed;
     z-index: 50;
     border-bottom: 5px solid $lang-select-active-bg;
+    visibility: hidden;
   }
 }
 
@@ -615,7 +616,7 @@ html, body {
   }
 
   .page-wrapper .lang-selector {
-    display: none;
+    visibility: hidden;
   }
 
   %right-col {
