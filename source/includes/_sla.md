@@ -1,12 +1,31 @@
 # Data SLA
 
+> Template structure of SLA array component:
+
+```yml
+declarative:
+  - dimension: selected dimension
+    displaytitle:
+    description:
+    objective: 
+    unit:
+executable:
+  - dimension: selected dimension
+    type:  
+    version: 
+    reference: 
+    spec:
+```
+
 Data Service Level Agreement (SLA) **Object** contains attributes which define the desired and promised quality of the data product. 
 
 A Data Service Level Agreement (SLA) is a contractual agreement between a data service provider and its customers that defines the expected level of service quality, performance, and availability for the data services provided. SLAs outline specific metrics, targets, and responsibilities that both parties agree to adhere to, ensuring accountability and transparency in the delivery of data services.
 
 Defining Data SLAs in a machine-readable format enhances automation, facilitates monitoring, enables real-time compliance tracking, and supports seamless integration with monitoring and alerting systems.
 
-## SLA can be defined with 11 standardized dimensions with Everything as Code monitoring
+
+
+## SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring
 
 | <div style="width:150px">SLA Dimension</div>   | Description | 
 |---|---|
@@ -22,21 +41,7 @@ Defining Data SLAs in a machine-readable format enhances automation, facilitates
 | **timeToRepair** | How long do you need to fix the issue once it is detected? |
 | **emailResponseTime** | How long do you need to respond to email support requests? |
 
-> Template structure of SLA array component:
-
-```yml
- - dimension: selected dimension
-    objective: 
-    unit: 
-    monitoring:
-      type:  
-      reference: 
-      spec:
-      
-```
-
-Each dimension has objective value, a unit and then *monitoring* "as code" to verify objective. In some cases monitoring is 
-not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the actucal "as code" part as YAML or string which can be executed in selected monitoring system as is. **Note!** The "as code" part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental.
+**Structure notes:** The SLA object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended SLA levels in defined unit. Executable part contains the machine-readable "as code" rules to validate SLA dimensions. The code inside _spec_ element is intended to be injected as in supporting SLA monitoring platforms in their defined format and structure.  
 
 The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
@@ -51,85 +56,52 @@ No mandatory attributes at the moment. Optional attributes are listed in own tab
 ```yml
 
 SLA:
-  - dimension: latency
-    displaytitle:
-      - en: Latency
-    objective: 100
-    unit: milliseconds
-    monitoring:
+  declarative:
+    - dimension: uptime
+      displaytitle:
+        - en: Uptime
+      objective: 99
+      unit: percent
+    - dimension: responseTime
+      objective: 200
+      unit: milliseconds
+    - dimension: updateFrequency
+      objective: 30
+      unit: minutes
+    - dimension: errorRate
+      objective: 0.1
+      unit: percent
+    - dimension: endOfSupport
+      objective: 01/01/2025
+      unit: date
+    - dimension: endOfLife
+      objective: 01/03/2025
+      unit: date
+  executable:
+    - dimension: uptime
       type: prometheus
-      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/ 
-      spec:  # expressed as string or inline yaml
-        myTimer.observeDuration();
-
-  - dimension: uptime
-    displaytitle:
-      - en: Uptime
-    objective: 99
-    unit: percent
-    monitoring:
-      type: prometheus
-      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/
-      spec:  | # expressed as string or inline yaml
+      reference: 'https://prometheus.io/docs/prometheus/latest/querying/basics/'
+      spec: |-
         avg_over_time(
           (
             sum without() (up{job="prometheus"})
               or
             (0 * sum_over_time(up{job="prometheus"}[7d]))
           )[7d:5m]
-        )    
-    
-  - dimension: responseTime
-    objective: 200
-    unit: milliseconds
-    monitoring:
+        )   
+    - dimension: responseTime
       type: prometheus
-      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/ 
-      spec:  | # expressed as string or inline yaml
-        rate(http_server_requests_seconds_sum[$__rate_interval]) / rate(http_server_requests_seconds_count[$__rate_interval])
-
-  - dimension: updateFrequency
-    objective: 30
-    unit: minutes
-    monitoring:
-      type: prometheus 
-      spec: | # expressed as string or inline yaml
-        time() - max_over_time(timestamp(changes(table[5m]) > 0)[1d:1m])
-
-  - dimension: errorRate
-    objective: 0.1
-    unit: percent
-  
-  - dimension: endOfSupport
-    objective: 01/01/2025 # dd/mm/yyyy
-    unit: date
-
-  - dimension: endOfLife
-    objective: 01/03/2025 # dd/mm/yyyy
-    unit: date
-
-  - dimension: timeToDetect
-    objective: 60
-    unit: minutes
-
-  - dimension: timeToNotify
-    objective: 120
-    unit: minutes
-
-  - dimension: timeToRepair
-    objective: 24
-    unit: hours
-
-  - dimension: emailResponseTime
-    objective: 12
-    unit: hours
-
+      reference: 'https://prometheus.io/docs/prometheus/latest/querying/basics/'
+      spec: |-
+        rate(http_server_requests_seconds_sum[$__rate_interval]) /
+        rate(http_server_requests_seconds_count[$__rate_interval])
   support:
-      phoneNumber: '+971508976456'
-      phoneServiceHours: 'Mon-Fri 8am-4pm (GMT)'
-      email: support@opendataproducts.org
-      emailServiceHours: 'Mon-Fri 8am-4pm (GMT)'
-      documentationURL: ''
+    phoneNumber: '+971508976456'
+    phoneServiceHours: Mon-Fri 8am-4pm (GMT)
+    email: support@opendataproducts.org
+    emailServiceHours: Mon-Fri 8am-4pm (GMT)
+    documentationURL: ''
+
 ```
 
 
@@ -137,14 +109,15 @@ SLA:
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **SLA** | element | - | Binds the SLA related elements and attributes together |
+| **declarative** | element | - | Grouping element which collects together SLA dimensions target level (objectives), name to display in UI in wanted languages, measuring unit used, and dimension name (one of standardized options). |
 | **dimension** | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension.   |
 | **unit** | attribute  | Options for *unit* are: milliseconds, seconds, minutes, days, weeks, months, years, never, date, null. <br/><br/>  | Name of the quality attribute indicating the timely interval. If date is given, format is dd/mm/yyyy |
-| **monitoring** | element | - | Contains the monitoring (computational "as code") structure to validate target state for the selected SLA dimension. |
+| **executable** | element | - | Grouping element which collects together SLA monitoring. You can define the monitoring patterns as code under this element for the above mentioned SLA dimensions. In other words, contains the monitoring (computational "as code") structure to validate target state for the selected SLA dimension. The actual as code part is added with _spec_ element. |
 | **displayTitle** | array | - | Dimension title to be shown is various UIs. Keep it short and sweet. |
 | **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
-| **type** | attribute | string | monitoring system name name such as Prometheus. The systems enable as code approach to monitor SLA. |
-| **spec** | element | YAML or string | contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. |
-| **reference** | URL | Valid URL | Provide URL for the reference documentation |
+| **type** | attribute | string | monitoring system name name such as Prometheus. The system used must support as code approach to monitor SLA. |
+| **spec** | element | YAML/URL/string | The content the as code part for SLA monitoring. Content is intended to be in a form that can be injected as is to _type_ defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> **Note!** By default the rules must be provide as valid String or YAML. If YAML is used, it must be either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML or string content file. |
+| **reference** | URL | Valid URL | Provide URL for the reference documentation regarding used monitoring system. |
 | **support** | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. |
 | **phoneNumber** | string | valid phone number | The support phone number. Use [E.164](https://www.itu.int/rec/T-REC-E.164/en)  |
 | **phoneServiceHours** | string | - | Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
