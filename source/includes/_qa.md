@@ -71,23 +71,6 @@ dataQuality:
 
 **Structure notes:** The Data Quality object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. Executable part contains the machine-readable "as code" rules to validate data quality dimensions. The code inside _spec_ element is intended to be injected as in supporting data quality platforms in their defined format and structure.  
 
-> Template structure of Data Quality array component:
-
-```yml
-declarative:
-- dimension: selected dimension
-  displaytitle:
-  description:
-  objective: 
-  unit:
-executable:
-- dimension: selected dimension
-  type:  
-  version: 
-  reference: 
-  spec:
-```
-
 The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
 Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why *integrity* is not in the attributes, but accuracy and consistency as well as completeness are. 
