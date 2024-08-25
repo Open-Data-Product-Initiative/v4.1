@@ -11,9 +11,52 @@ How can you assess your data quality? The ODPS support "as code" approach to mon
 * DQOps
 * Custom (in-house solutions)
 
+> Template structure of Data Quality array component:
 
+```yml
+dataQuality:
+  declarative:
+    - dimension: selected dimension
+      displaytitle:
+      description:
+      objective: 
+      unit:
+  executable:
+    - dimension: selected dimension
+      type:  
+      version: 
+      reference: 
+      spec:
+```
+
+**Structure notes:** The Data Quality object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. Executable part contains the machine-readable "as code" rules to validate data quality dimensions. The code inside _spec_ element is intended to be injected as in supporting data quality platforms in their defined format and structure.  
+
+Each dimension has objective value, a unit and then *monitoring* "as code" to verify objective. In some cases monitoring is 
+not feasable or possible to arrange for various reasons. *Type* attribute indicates which monitoring system is used. *Reference* attribute contains url for reference documentation regarding the monitoring spec. *Spec* contains the monitoring rules "as code" to be executed in selected monitoring system as is. 
 
 ## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
+
+> In case standardized options are not enough:
+
+```yml
+The QA object is general in nature and should 
+be enough for common (80%) use cases. 
+
+You can make extensions to the standard 
+with "x-" mechanism in order to fulfill 
+any industry specific needs. 
+
+A suggestive example below 
+
+dataQuality:
+  declarative:
+    - dimension: accuracy
+      displaytitle:
+      - en: Data Accuracy (percent)
+    - x-dimension: extended-dq
+      displaytitle:
+      - en: Extended Data Quality dimension
+```
 
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|
@@ -25,7 +68,6 @@ How can you assess your data quality? The ODPS support "as code" approach to mon
 | **timeliness** | The data must represent current conditions; the data is available and can be used when needed.  |
 | **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
 | **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
-
 
 **Structure notes:** The Data Quality object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. Executable part contains the machine-readable "as code" rules to validate data quality dimensions. The code inside _spec_ element is intended to be injected as in supporting data quality platforms in their defined format and structure.  
 
@@ -56,10 +98,10 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 > Example of Data Quality component with some of the data quality dimensions:
 
 ```yml
-
-declarative:
-  - dimension: accuracy
-    displaytitle:
+dataQuality:
+  declarative:
+    - dimension: accuracy
+      displaytitle:
       - en: Data Accuracy (percent)
       - fi: Datan virheettömyys (prosenttia)
     description:
@@ -76,32 +118,31 @@ declarative:
   - dimension: completeness
     displaytitle:
       - en: Data Completeness (percent)
-    objective: 90
-    unit: percentage
-executable:
-  - dimension: accuracy
-    type: SodaCL
-    reference: 'https://docs.soda.io/soda-cl/soda-cl-overview.html'
-    spec:
-      - require_unique(member_id)
-      - 'require_range(age_band, 18, 100)'
-  - dimension: completeness
-    type: DQOps
-    version: 1.6.0
-    reference: 'https://dqops.com/docs/dqo-concepts/running-data-quality-checks/'
-    spec:
-      columns:
-        target_column:
-          profiling_checks:
-            nulls:
-              profile_nulls_percent:
-                warning:
-                  max_percent: 8
-                error:
-                  max_percent: 10
-                fatal:
-                  max_percent: 11
-     
+        objective: 90
+        unit: percentage
+  executable:
+    - dimension: accuracy
+      type: SodaCL
+      reference: https://docs.soda.io/soda-cl/soda-cl-overview.html
+      spec:
+        - require_unique(member_id) 
+        - require_range(age_band, 18, 100)
+    - dimension: completeness
+      type: DQOps
+      version: 1.6.0 
+      reference: https://dqops.com/docs/dqo-concepts/running-data-quality-checks/
+      spec:
+        columns:
+          target_column:
+            profiling_checks: 
+              nulls: 
+                profile_nulls_percent: 
+                  warning: 
+                    max_percent: 8.0
+                  error: 
+                    max_percent: 10.0
+                  fatal: 
+                    max_percent: 11.0      
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
