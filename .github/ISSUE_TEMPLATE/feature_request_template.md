@@ -39,5 +39,3 @@ Yes/No.
 Pull requests are welcome! 
 -->
 
-### ---- Leave intact! Approval of Contributor Agreement ----- ### 
-By submitting issue you approve the Contributor Agreement, https://governance.opendataproducts.org/v1/contributions/contributor-agreement
