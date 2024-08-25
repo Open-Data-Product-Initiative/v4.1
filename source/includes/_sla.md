@@ -30,6 +30,23 @@ The SLA object is general in nature and should be enough for common (80%) use ca
 
 ## SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring
 
+> Example of SLA component usage:
+
+```yml
+
+SLA:
+  declarative:
+    - dimension: uptime
+      displaytitle:
+        - en: Uptime
+      objective: 99
+      unit: percent
+    - dimension: responseTime
+      objective: 200
+      unit: milliseconds
+
+```
+
 | <div style="width:150px">SLA Dimension</div>   | Description | 
 |---|---|
 | **latency** | minimal amount of time before getting any response. |
