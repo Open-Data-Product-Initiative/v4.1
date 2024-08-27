@@ -1,5 +1,5 @@
 ---
-title: Open Data Product Specification Development Version | Linux Foundation 
+title: Open (source) Data Product Specification Development Version | Linux Foundation 
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -38,9 +38,9 @@ meta:
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
+Development of the specification is under the umbrella of the Linux Foundation. 
 
-
-**VERSION DEV**
+**DEVELOPMENT VERSION**
 
 
 **Version source:**
@@ -68,10 +68,6 @@ The Open Data Product Specification is a vendor-neutral, open-source machine-rea
 Open Data Product Specification (ODPS) changes the data product metadata model towards a standalone model, which helps to decouple data product from the systems often directly associated with it. With help of the ODPS data product can be presented and described to the customer also as such without any need for marketplace or other systems. 
 
 This version Data Contract support has been added to Open Data Product Specification. You can reference Data Contract as a URL or define Data Contract as an inline element in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. 
-   
-Development of the standard is under the umbrella of the Linux Foundation. 
-
-![odps-features](images/features.png)
 
 ## Specification aims and aspects
 
@@ -86,7 +82,9 @@ Development of the standard is under the umbrella of the Linux Foundation.
 
 **Note!** In the "Open Data Product" focus is on the latter words and the prefix  'open' refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.
 
-The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure & access), 2) business (pricing & plans), 3) legal (licensing & IPR), and 4) ethical (privacy & mydata). The four aspects are described in 7 elements, which contain attributes and other elements. 
+The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure & access), 2) business (pricing & plans), 3) legal (licensing & IPR), and 4) ethical (privacy & mydata). The four aspects are described in 7 objects, which contain attributes and elements. 
+
+![odps-model](images/ODPS-design.png)
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
@@ -110,9 +108,11 @@ The right column contains YAML formatted examples of how the specification is us
 > Example of YAML formatted snippet from the Open Data Product Specification:
 
 ```yml
-monitoring:
-  space: 
-    https://monitoring.com
+dataQuality:
+  declarative:
+    - dimension: accuracy
+      displaytitle:
+      - en: Data Accuracy (percent)
 ```
 
 
@@ -125,7 +125,7 @@ Here's the list of attributes which can occur at the document root level. In the
 > Example of document level attribute usage and structure:
 
 ```yml
-schema: https://opendataproducts.org/v3.0rc/schema/odps.yaml
+schema: https://opendataproducts.org/v3.0/schema/odps.yaml
 version: 3.0
 product:
   details:
@@ -166,7 +166,7 @@ RecommendedUseCases **OBJECT** is an array which contains offers method to attac
 > Example of document level attribute usage and structure:
 
 ```yml
-schema: https://opendataproducts.org/v3.0rc/schema/odps.yaml
+schema: https://opendataproducts.org/v3.0/schema/odps.yaml
 version: 3.0
 product:
   contract:
