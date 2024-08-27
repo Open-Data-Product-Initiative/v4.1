@@ -3,18 +3,19 @@
 > Template structure of SLA array component:
 
 ```yml
-declarative:
-  - dimension: selected dimension
-    displaytitle:
-    description:
-    objective: 
-    unit:
-executable:
-  - dimension: selected dimension
-    type:  
-    version: 
-    reference: 
-    spec:
+SLA:
+  declarative:
+    - dimension: selected dimension
+      displaytitle:
+      description:
+      objective: 
+      unit:
+  executable:
+    - dimension: selected dimension
+      type:  
+      version: 
+      reference: 
+      spec:
 ```
 
 Data Service Level Agreement (SLA) **Object** contains attributes which define the desired and promised quality of the data product. 
@@ -52,6 +53,7 @@ SLA:
     - dimension: responseTime
       objective: 200
       unit: milliseconds
+
 ```
 
 
@@ -109,15 +111,6 @@ SLA:
     - dimension: updateFrequency
       objective: 30
       unit: minutes
-    - dimension: errorRate
-      objective: 0.1
-      unit: percent
-    - dimension: endOfSupport
-      objective: 01/01/2025
-      unit: date
-    - dimension: endOfLife
-      objective: 01/03/2025
-      unit: date
   executable:
     - dimension: uptime
       type: prometheus
@@ -136,6 +129,7 @@ SLA:
       spec: |-
         rate(http_server_requests_seconds_sum[$__rate_interval]) /
         rate(http_server_requests_seconds_count[$__rate_interval])
+
   support:
     phoneNumber: '+971508976456'
     phoneServiceHours: Mon-Fri 8am-4pm (GMT)
