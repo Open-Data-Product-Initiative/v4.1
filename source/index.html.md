@@ -88,8 +88,6 @@ Development of the standard is under the umbrella of the Linux Foundation.
 
 The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure & access), 2) business (pricing & plans), 3) legal (licensing & IPR), and 4) ethical (privacy & mydata). The four aspects are described in 7 elements, which contain attributes and other elements. 
 
-![odps-model](images/ODPS-design.png)
-
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
 
