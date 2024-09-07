@@ -268,7 +268,7 @@ html, body {
   
   .dark-box {
     width: $examples-width;
-    background-color: $examples-bg;
+    background-color: #5F1C87;
     position: absolute;
     right: 0;
     top: 0;
@@ -360,7 +360,8 @@ html, body {
     margin-top: 2em;
     border-top: 1px solid #FCB601;
     border-bottom: 1px solid #FCB601;
-    background-color: #5F1C87;
+    background-color: #144378; // #5F1C87
+    color:#eee;
     margin-right: 1px;
   }
 
