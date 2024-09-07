@@ -70,7 +70,7 @@ The _unit_ attribute defines the plan and options for that are fixed unless exte
 | **On Request** | Access to data product is given only on request. Often provider expects customer to meet provider first. In the discussions conditions, pricing etc are agreed. |
 
 
-## Optional attributes and elements
+## Pricing Plans optional attributes and elements
 
 > Example of Pricing component usage in english:
 
