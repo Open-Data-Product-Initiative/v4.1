@@ -7,6 +7,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 toc_footers:
   - License <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a>
   - <br/><a href='https://opendataproducts.org'>Specification home</a>
+  - <br/>Linux Foundation</a>
 
 includes:
   - sla
