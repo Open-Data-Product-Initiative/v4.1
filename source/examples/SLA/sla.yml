@@ -1,0 +1,26 @@
+
+
+SLA:
+  declarative:
+    - dimension: uptime
+      displaytitle:
+        - en: Uptime
+      objective: 99
+      unit: percent
+  executable:
+    - dimension: uptime
+      type: prometheus
+      reference: 'https://prometheus.io/docs/prometheus/latest/querying/basics/'
+      spec: |-
+        avg_over_time(
+          (
+            sum without() (up{job="prometheus"})
+              or
+            (0 * sum_over_time(up{job="prometheus"}[7d]))
+          )[7d:5m]
+        )   
+  support:
+    phoneNumber: '+971508976456'
+    phoneServiceHours: Mon-Fri 8am-4pm (GMT)
+    email: support@opendataproducts.org
+    emailServiceHours: Mon-Fri 8am-4pm (GMT)
