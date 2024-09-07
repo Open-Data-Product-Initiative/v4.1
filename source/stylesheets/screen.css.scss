@@ -153,14 +153,14 @@ html, body {
 
   // This is the currently selected ToC entry
   .toc-link.active {
-    background-color: $nav-active-bg;
-    color: $nav-active-text;
+    background-color: #144378;
+    color: #fff;
   }
 
   // this is parent links of the currently selected ToC entry
   .toc-link.active-parent {
-    background-color: $nav-active-parent-bg;
-    color: $nav-active-parent-text;
+    background-color: #144378;
+    color: #fff;
   }
 
   .toc-list-h2 {
@@ -378,7 +378,7 @@ html, body {
     border-top: 0px solid #ccc;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
-    background-color: transparent;
+    background-color: transparent
     margin-right: 1px;
 
   }
