@@ -15,7 +15,7 @@ pricingPlans:
     - name: Premium subscription 1 year
       type: Stripe
       # On Stripe to get started with Payment Links, create a product, then use that product to create a price. 
-      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/
+      reference: urls to Stripe docs
 
       # CREATE: Here we want to provide YAML or alike as code in order to create the product in Stripe
       # Stripe supports standard pricing (charging the same price for each unit—either 
