@@ -52,10 +52,10 @@ The Pricing object is general in nature and should be enough for common (80%) us
 
 **This version introduces the "Pricing Plans as Code" feature.** You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. **CRUP** stands for: 
 
-* **C**reate (create pricing plan), 
-* **R**etire (delete pricing plan), 
-* **U**pdate (update existing pricing plan) and,
-* **P**urchase (generate link to ignite purchase process in the gateway). 
+- **C**reate (create pricing plan), 
+- **R**etire (delete pricing plan), 
+- **U**pdate (update existing pricing plan) and,
+- **P**urchase (generate link to ignite purchase process in the gateway). 
 
 With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. 
 
