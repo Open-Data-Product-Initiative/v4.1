@@ -13,17 +13,8 @@ pricingPlans:
         - Billed monthly 
   executable:
     - name: Premium subscription 1 year
-      type: Stripe
-      # On Stripe to get started with Payment Links, create a product, then use that product to create a price. 
-      reference: urls to Stripe docs
-
-      # CREATE: Here we want to provide YAML or alike as code in order to create the product in Stripe
-      # Stripe supports standard pricing (charging the same price for each unit—either 
-      # one time or recurring) and Customer chooses price (letting your customer specify 
-      # the price). It doesn’t support advanced options like package pricing, graduated 
-      # pricing, or volume pricing. Additionally, Customer choose prices currently doesn’t 
-      # support recurring payments or donations. https://docs.stripe.com/payment-links/api
-
+      type: Stripe 
+      reference: https://docs.stripe.com/payment-links/api
       create:
         spec: |- 
           stripe products create  \
@@ -34,23 +25,13 @@ pricingPlans:
           --unit-amount=50 \
           -d "recurring[interval]"=month \
           -d "product_data[name]"="Premium subscription 1 year"
-
-      # MODIFY: Here we want to provide YAML or alike as code in order to modify the product in Stripe
-
       update:
         spec: |- 
           - update the product
           - update the price
-
-      # RETIRE: Here we want to provide YAML or alike as code in order to retire the product in Stripe
-
       retire:
         spec: |- 
           - retire the product
-      
-      # PURCHASE: Here we want to generate active link or other information 
-      # to ignite the purchase on Stripe 
-
       purchase:
         spec: |- 
           - generate or get the link in order to provide method for client to ignite purchase process  
