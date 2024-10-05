@@ -51,6 +51,7 @@ The 12 pricing plans enabled by ODPS are meticulously defined through an in-dept
 The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
 **This version introduces the "Pricing Plans as Code" feature.** You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. **CRUP** stands for: 
+
 - **C**reate (create pricing plan), 
 - **R**etire (delete pricing plan), 
 - **U**pdate (update existing pricing plan) and,
