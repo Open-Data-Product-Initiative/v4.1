@@ -50,6 +50,8 @@ The 12 pricing plans enabled by ODPS are meticulously defined through an in-dept
 
 The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
+**This version introduces "Pricing plans as Code" feature.** You can define the needed actions (CRUP) to setup and use the selected payment gateway to ignite purchase process. <br/><br/> **CRUP** stands for: **C**reate, **R**etire, **U**pdate, and **P**urchase. With this feature you can reflect the pricing plans defined in declarative part with executable code in payment gateways.   
+
 ## ODPS supports 12 standardized pricing models
 
 The _unit_ attribute defines the plan and options for that are fixed unless extended with "x-" mechanism. Read more about the [Pricing plans from ODPS wiki](https://github.com/Open-Data-Product-Initiative/dev/wiki/Pricing-Plans#version-dev)
