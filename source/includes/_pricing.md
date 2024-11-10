@@ -57,6 +57,11 @@ The Pricing object is general in nature and should be enough for common (80%) us
 - **U**pdate (update existing pricing plan) and,
 - **P**urchase (generate link to ignite purchase process in the gateway). 
 
+Supported payment gateways:
+- Stripe, 
+- Checkout,
+- Custom
+
 With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. 
 
 ## ODPS supports 12 standardized pricing models
@@ -145,8 +150,8 @@ pricingPlans:
 | **additionalPrice**  | string  | -  | This is used to define fees for usage which exceeds the defined max transaction quantity. This value is for each additional transaction. Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols. |
 |  **maxDataQuantity** | Integer  | -  | The maximum amount of data transferred during the billing duration. Unit is GB. |
 |  **valueSimulator**  | url | valid url | Intended to be used with *value-based* pricing plan. Provide url to value simulator in which customer can see the value in various cases. In the simulator customer might be able to input own variables to match their exact case and see the gained value. |
-| **executable** | element | - | Grouping element which collects together pricing plans payment gateway management features. You can define the needed action (CRUP) to setup and use the gateway to ignite purchase process. <br/><br/> CRUP stands for: **C**reate, **R**etire, **U**pdate, and **P**urchase.  The actual as code part is added with _spec_ element. |
-| **type** | attribute | string, one of: _Stripe_, _Custom_ | Payment gateway system name. Use one of the predefined options only. With _Custom_ type you can use your in-house solution. |
+| **executable** | element | - | Grouping element which collects together pricing plans payment gateway management features. You can define the needed action (CRUP) to setup and use the gateway to ignite purchase process. <br/><br/> CRUP stands for: **C**reate, **R**etire, **U**pdate, and **Purchase**.  The actual as code part is added with _spec_ element. |
+| **type** | attribute | string, one of: _Stripe_, _Checkout_, _Custom_ | Payment gateway system name. Use one of the predefined options only. With _Custom_ type you can use your in-house solution. |
 | **version** | attribute | string | The version of the payment gateway tool used. |
 | **reference** | URL | Valid URL | Provide URL pointing to the reference documentation |
 | **create** | element | - | Contains the as code part to create pricing plan in the payment gateway |
