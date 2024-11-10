@@ -59,9 +59,10 @@ The Pricing object is general in nature and should be enough for common (80%) us
 
 **Supported payment gateways:**
 
-- Stripe, 
-- Checkout,
-- Square,
+- Stripe [Docs](https://docs.stripe.com/cli), 
+- Checkout [Docs](https://api-reference.checkout.com),
+- Square [Docs](https://developer.squareup.com/docs),
+- Paypal [Docs](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/),
 - Custom
 
 With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. 
@@ -108,7 +109,7 @@ pricingPlans:
   executable:
       type: Stripe 
       version: 1.2
-      reference: https://docs.stripe.com/payment-links/api
+      reference: https://docs.stripe.com/cli
       create:
         spec: |- 
           stripe products create  \
