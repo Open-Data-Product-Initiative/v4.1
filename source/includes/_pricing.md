@@ -55,11 +55,13 @@ The Pricing object is general in nature and should be enough for common (80%) us
 - **C**reate (create pricing plan), 
 - **R**etire (delete pricing plan), 
 - **U**pdate (update existing pricing plan) and,
-- **P**urchase (generate link to ignite purchase process in the gateway). 
+- **P**urchase (generate or get link to ignite purchase process in the gateway). 
 
-Supported payment gateways:
+**Supported payment gateways:**
+
 - Stripe, 
 - Checkout,
+- Square,
 - Custom
 
 With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. 
