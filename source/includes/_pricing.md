@@ -57,6 +57,8 @@ The Pricing object is general in nature and should be enough for common (80%) us
 - **U**pdate (update existing pricing plan) and,
 - **P**urchase (generate or get link to ignite purchase process in the gateway). 
 
+With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. 
+
 **Supported payment gateways:**
 
 - Stripe [Docs](https://docs.stripe.com/cli), 
@@ -64,8 +66,6 @@ The Pricing object is general in nature and should be enough for common (80%) us
 - Square [Docs](https://developer.squareup.com/docs),
 - Paypal [Docs](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/),
 - Custom
-
-With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. 
 
 ## ODPS supports 12 standardized pricing models
 
