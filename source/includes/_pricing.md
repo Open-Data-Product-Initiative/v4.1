@@ -69,7 +69,7 @@ With this feature, you can translate the pricing plans defined in the declarativ
 
 ## ODPS supports 12 standardized pricing models
 
-The _unit_ attribute defines the plan and options for that are fixed unless extended with "x-" mechanism. Read more about the [Pricing plans from ODPS wiki](https://github.com/Open-Data-Product-Initiative/dev/wiki/Pricing-Plans#version-dev)
+The _unit_ attribute defines the plan and options for that are fixed unless extended with "x-" mechanism. 
 
 | <div style="width:150px">Pricing plan</div>   | Description | 
 |---|---|
