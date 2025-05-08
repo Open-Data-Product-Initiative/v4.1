@@ -40,34 +40,35 @@ Components:
             objective: 1
             unit: days
 
-Interfaces:
-    API:
-        description: REST API for real-time event data access.
-        authenticationMethod: OAuth
-        specification: OAS 3.0
-        format: REST
-        specsURL: urbanpulse.ai/urbanpulse.json
-        documentationURL: urbanpulse.ai/docs 
-    Agent:
-        description: MCP interface for structured data access and agent interaction.
-        authenticationMethod: Token
-        specification: MCP 2025-03-26
-        format: MCP
-        specsURL: urbanpulse.ai/llms.txt
-        documentationURL: urbanpulse.ai/llms-full.txt
-DataQuality:
-    Basic:
-    - dimension: uptime
-        displaytitle:
-        - en: Uptime
-        objective: 90
-        unit: percent
-    - dimension: responseTime
-        objective: 500
-        unit: milliseconds
-    - dimension: updateFrequency
-        objective: 1
-        unit: days
+    Interfaces:
+        API:
+            description: REST API for real-time event data access.
+            authenticationMethod: OAuth
+            specification: OAS 3.0
+            format: REST
+            specsURL: urbanpulse.ai/urbanpulse.json
+            documentationURL: urbanpulse.ai/docs 
+        Agent:
+            description: MCP interface for structured data access and agent interaction.
+            authenticationMethod: Token
+            specification: MCP 2025-03-26
+            format: MCP
+            specsURL: urbanpulse.ai/llms.txt
+            documentationURL: urbanpulse.ai/llms-full.txt
+
+    DataQuality:
+        Basic:
+        - dimension: uptime
+            displaytitle:
+            - en: Uptime
+            objective: 90
+            unit: percent
+        - dimension: responseTime
+            objective: 500
+            unit: milliseconds
+        - dimension: updateFrequency
+            objective: 1
+            unit: days
    
 
   
