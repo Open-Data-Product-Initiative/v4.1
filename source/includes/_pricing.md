@@ -1,47 +1,6 @@
 # Data Pricing Plans
 
-> Template structure of Data Pricing Plans array component:
 
-```yml
-pricingPlans:
-  en:
-  - name: Premium subscription 1 year
-    unit: recurring
-    priceCurrency: EUR
-    price: 50.00
-    billingDuration: year
-    
-  - name: Premium subcsription 1 month
-    unit: recurring
-    priceCurrency: EUR
-    price: 8.00
-    billingDuration: month
-```
-
-> In case standardized options are not enough:
-
-```yml
-You can make extensions to the standard 
-with "x-" mechanism in order to fulfill 
-any industry specific needs. 
-
-A suggestive example below 
-
-pricingPlans:
-  en:
-  - name: Premium subscription 1 year
-    unit: recurring
-    priceCurrency: EUR
-    price: 50.00
-    billingDuration: year
-    
-  - x-name: Extension plan
-    unit: custom
-    priceCurrency: EUR
-    price: 50.00
-    billingDuration: year
-    
-```
 **Standardized data pricing plans are crucial for transparency, scalability, and customer trust.** They ensure that customers can easily understand and compare costs, fostering trust and reducing disputes. For providers, standardized pricing streamlines operations, supports scalability, and simplifies market comparison, allowing for effective competitive positioning. Additionally, it aids in better financial planning and forecasting for both the provider and the customer, ensuring predictable revenue and informed decision-making. Overall, standardized pricing is essential for the sustainable growth and success of data products.
 
 Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing **OBJECT** contains pricing plans related metadata to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard to foster global interoperability.  
@@ -94,42 +53,41 @@ The _unit_ attribute defines the plan and options for that are fixed unless exte
 ```yml
 
 pricingPlans:
-  declarative:
-    en:
-    - name: Premium subscription 1 month
-      priceCurrency: EUR
-      price: 50.00
-      billingDuration: month
-      unit: recurring
-      maxTransactionQuantity: 200000
-      offering:
-        - High Quality Pets data
-        - High amount of transactions
-        - Billed monthly 
-  executable:
-      type: Stripe 
-      version: 1.2
-      reference: https://docs.stripe.com/cli
-      create:
-        spec: |- 
-          stripe products create  \
-          --name="Premium subscription 1 year"
-          
-          stripe prices create  \
-          --currency=eur \
-          --unit-amount=50 \
-          -d "recurring[interval]"=month \
-          -d "product_data[name]"="Premium subscription 1 year"
-      update:
-        spec: |- 
-          # update plan as Stripe requires
-      retire:
-        spec: |- 
-          # delete of the plan as Stripe requires
-      purchase:
-        spec: |- 
-          # generate or get the link in order to 
-          # provide method for client to ignite purchase process  
+  en:
+
+  - name: MCP Agent
+    priceCurrency: EUR
+    price: 0.01
+    billingDuration: instant
+    unit: Pay-per-use
+    maxTransactionQuantity: 200
+    offering:
+      - High Quality Pets data
+      - MC access
+      - Billed instantly 
+    interface:  
+      $ref: "#/Components/Interafaces/Agent/"
+    SLA:  
+      $ref: "#/Components/SLAs/Extended"  
+    dataQuality:  
+      $ref: "#/Components/DQs/Basic"
+
+  - name: Premium subscription 1 month
+    priceCurrency: EUR
+    price: 50.00
+    billingDuration: month
+    unit: recurring
+    maxTransactionQuantity: 200000
+    offering:
+      - High Quality Pets data
+      - High amount of transactions
+      - Billed monthly 
+    interface:  
+      $ref: "#/Components/Interafaces/API"
+    SLA:  
+      $ref: "#/Components/SLAs/Basic"  
+    dataQuality:  
+      $ref: "#/Components/DQs/Basic"
 
 ```
 
