@@ -881,21 +881,29 @@ Development of the specification is under the umbrella of the Linux Foundation. 
   <span class="na">en</span><span class="pi">:</span>
 
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">MCP Agent</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">USDC</span>
     <span class="na">price</span><span class="pi">:</span> <span class="m">0.01</span>
     <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">instant</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">Pay-per-use</span>
     <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">200</span>
     <span class="na">offering</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-      <span class="pi">-</span> <span class="s">MC access</span>
-      <span class="pi">-</span> <span class="s">Billed instantly</span> 
-    <span class="na">interface</span><span class="pi">:</span> <span class="s">MCP</span> 
+      <span class="pi">-</span> <span class="s">Unlimited** agent queries (rate-limited to protect service)</span>
+      <span class="pi">-</span> <span class="s">MCP tools &amp; prompt templates</span>
+      <span class="pi">-</span> <span class="s">Structured data via MCP resources</span>
+      <span class="pi">-</span> <span class="s">Real-time agent response SLA</span>
+      <span class="pi">-</span> <span class="s">Dedicated onboarding support</span>
+    <span class="na">notes</span><span class="pi">:</span> <span class="pi">&gt;</span>
+        <span class="s">Designed for conversational agents rather</span>
+        <span class="s">than direct API usage. **"Unlimited" subject to fair-use rate limits.</span>
+    <span class="na">paymentGateway</span><span class="pi">:</span> 
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/PaymentGateways/Agent"</span>
+    <span class="na">interface</span><span class="pi">:</span> 
       <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/Interafaces/Agent/"</span>
-    <span class="na">SLA</span><span class="pi">:</span> <span class="s">Extended</span> 
+    <span class="na">SLA</span><span class="pi">:</span> 
       <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/SLAs/Extended"</span>  
-    <span class="na">dataQuality</span><span class="pi">:</span> <span class="s">Basic</span> 
-      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/DQs/Basic"</span>
+    <span class="na">dataQuality</span><span class="pi">:</span>  
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/DataQualities/Basic"</span>
+
 
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 month</span>
     <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
@@ -907,12 +915,14 @@ Development of the specification is under the umbrella of the Linux Foundation. 
       <span class="pi">-</span> <span class="s">High Quality Pets data</span>
       <span class="pi">-</span> <span class="s">High amount of transactions</span>
       <span class="pi">-</span> <span class="s">Billed monthly</span> 
-    <span class="na">interface</span><span class="pi">:</span> <span class="s">API</span>
+    <span class="na">paymentGateway</span><span class="pi">:</span> 
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/PaymentGateways/API"</span>
+    <span class="na">interface</span><span class="pi">:</span> 
       <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/Interafaces/API"</span>
-    <span class="na">SLA</span><span class="pi">:</span> <span class="s">Basic</span> 
+    <span class="na">SLA</span><span class="pi">:</span> 
       <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/SLAs/Basic"</span>  
-    <span class="na">dataQuality</span><span class="pi">:</span> <span class="s">Basic</span> 
-      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/DQs/Basic"</span>
+    <span class="na">dataQuality</span><span class="pi">:</span>  
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/DataQualities/Basic"</span>
 
 </code></pre></div>
 <table><thead>
@@ -1141,8 +1151,21 @@ Development of the specification is under the umbrella of the Linux Foundation. 
             <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
             <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms.txt</span>
             <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms-full.txt</span>
+    <span class="na">PaymentGateways</span><span class="pi">:</span>
+        <span class="na">Agent</span><span class="pi">:</span>
+            <span class="na">type</span><span class="pi">:</span> <span class="s">Axio</span>
+            <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
+            <span class="na">reference</span><span class="pi">:</span> <span class="s">https://www.x402.org/</span>
+            <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+                <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
+        <span class="na">API</span><span class="pi">:</span>
+            <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
+            <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
+            <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.stripe.com/</span>
+            <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+                <span class="s">links to ignite purchase</span>
 
-    <span class="na">DataQuality</span><span class="pi">:</span>
+    <span class="na">DataQualities</span><span class="pi">:</span>
         <span class="na">Basic</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
             <span class="s">displaytitle</span><span class="pi">:</span>
