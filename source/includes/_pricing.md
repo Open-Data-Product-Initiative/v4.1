@@ -56,21 +56,29 @@ pricingPlans:
   en:
 
   - name: MCP Agent
-    priceCurrency: EUR
+    priceCurrency: USDC
     price: 0.01
     billingDuration: instant
     unit: Pay-per-use
     maxTransactionQuantity: 200
     offering:
-      - High Quality Pets data
-      - MC access
-      - Billed instantly 
-    interface: MCP 
+      - Unlimited* agent queries (rate-limited to protect service)
+      - MCP tools & prompt templates
+      - Structured data via MCP resources
+      - Real-time agent response SLA
+      - Dedicated onboarding support
+    notes: >
+        Designed for conversational agents rather
+        than direct API usage. **"Unlimited" subject to fair-use rate limits.
+    purchase: 
+      $ref: "#/Components/Actions/Purchase"
+    interface: 
       $ref: "#/Components/Interafaces/Agent/"
-    SLA: Extended 
+    SLA: 
       $ref: "#/Components/SLAs/Extended"  
-    dataQuality: Basic 
-      $ref: "#/Components/DQs/Basic"
+    dataQuality:  
+      $ref: "#/Components/DataQualities/Basic"
+    
 
   - name: Premium subscription 1 month
     priceCurrency: EUR
@@ -82,12 +90,12 @@ pricingPlans:
       - High Quality Pets data
       - High amount of transactions
       - Billed monthly 
-    interface: API
+    interface: 
       $ref: "#/Components/Interafaces/API"
-    SLA: Basic 
+    SLA: 
       $ref: "#/Components/SLAs/Basic"  
-    dataQuality: Basic 
-      $ref: "#/Components/DQs/Basic"
+    dataQuality:  
+      $ref: "#/Components/DataQualities/Basic"
 
 ```
 

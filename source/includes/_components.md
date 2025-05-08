@@ -55,8 +55,15 @@ Components:
             format: MCP
             specsURL: urbanpulse.ai/llms.txt
             documentationURL: urbanpulse.ai/llms-full.txt
+    Actions:
+        purchase:
+            type: Axio
+            version: 1.0
+            reference: https://www.x402.org/
+            spec: |
+                paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});
 
-    DataQuality:
+    DataQualities:
         Basic:
         - dimension: uptime
             displaytitle:
