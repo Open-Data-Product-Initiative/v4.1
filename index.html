@@ -1,0 +1,1345 @@
+
+<!doctype html>
+<html>
+  <head>
+    <link rel="icon" href="https://data-product-business.github.io/open-data-product-spec/images/favicon-bc890431.png"/>
+    <meta charset="utf-8">
+    <meta property="og:title" content="Open Data Product Specification Development Version" />
+    <meta property="og:url" content="https://opendataproducts.org/dev/" />
+    <meta property=”og:type” content=”website” />
+    <meta property="og:image" content="https://camo.githubusercontent.com/899d761afc97f791f9b3b5950427cdeb5c1e087d0b90af249e6be9a4c1119973/68747470733a2f2f6f70656e6461746170726f64756374732e6f72672f696d672f70726f66696c652e706e67" />
+    <meta property="og:description" 
+    content="The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products." />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="The Open Data Product Specification (Linux Foundation project) is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products."
+        >
+
+    <title>Open (source) Data Product Specification Component Version | Linux Foundation</title>
+
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-9f8457fa.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NN2RZ765V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8NN2RZ765V');
+    </script>
+
+  </head>
+
+  <body class="index" data-languages="[&quot;yaml&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-dps-2024-fdf78826.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="yaml">yaml</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#open-data-product-specification" class="toc-h1 toc-link" data-title="OPEN DATA PRODUCT SPECIFICATION">OPEN DATA PRODUCT SPECIFICATION</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#forked-development-version-component-approach-test" class="toc-h2 toc-link" data-title="Forked Development Version - Component approach test">Forked Development Version - Component approach test</a>
+                  </li>
+                  <li>
+                    <a href="#introduction" class="toc-h2 toc-link" data-title="Introduction">Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#specification-aims-and-aspects" class="toc-h2 toc-link" data-title="Specification aims and aspects">Specification aims and aspects</a>
+                  </li>
+                  <li>
+                    <a href="#document-structure" class="toc-h2 toc-link" data-title="Document structure">Document structure</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#document-level-attributes" class="toc-h1 toc-link" data-title="Document level attributes">Document level attributes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#mandatory-attributes" class="toc-h2 toc-link" data-title="Mandatory attributes">Mandatory attributes</a>
+                  </li>
+                  <li>
+                    <a href="#optional-attributes" class="toc-h2 toc-link" data-title="Optional attributes">Optional attributes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#data-pricing-plans" class="toc-h1 toc-link" data-title="Data Pricing Plans">Data Pricing Plans</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#odps-supports-12-standardized-pricing-models" class="toc-h2 toc-link" data-title="ODPS supports 12 standardized pricing models">ODPS supports 12 standardized pricing models</a>
+                  </li>
+                  <li>
+                    <a href="#pricing-plans-optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Pricing Plans optional attributes and elements">Pricing Plans optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#components" class="toc-h1 toc-link" data-title="Components">Components</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li>License <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a></li>
+            <li><br/><a href='https://opendataproducts.org'>Specification home</a></li>
+            <li><br/>Linux Foundation</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='open-data-product-specification'>OPEN DATA PRODUCT SPECIFICATION</h1><h2 id='forked-development-version-component-approach-test'>Forked Development Version - Component approach test</h2>
+<p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.</p>
+
+<p>The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
+Development of the specification is under the umbrella of the Linux Foundation. </p>
+
+<p><strong>DEVELOPMENT VERSION</strong></p>
+
+<p><strong>Version source:</strong></p>
+
+<ul>
+<li><a href="https://github.com/Open-Data-Product-Initiative/comp">https://github.com/Open-Data-Product-Initiative/comp</a></li>
+</ul>
+
+<p><strong>ODPS YAML Schema:</strong></p>
+
+<ul>
+<li><a href="https://opendataproducts.org/comp/schema/odps.yaml">YAML Schema</a></li>
+</ul>
+
+<p><strong>Editors:</strong></p>
+
+<ul>
+<li><a href="https://www.linkedin.com/in/jarkkomoilanen/">Jarkko Moilanen</a></li>
+</ul>
+
+<p><strong>Participate:</strong></p>
+
+<ul>
+<li><a href="https://github.com/Open-Data-Product-Initiative/comp/issues">Raise an issue in Github</a></li>
+</ul>
+<h2 id='introduction'>Introduction</h2>
+<p>The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. The work is based on existing standards (schema.org), best practices and emerging concepts like Data Mesh. The reasoning is that we reuse and proudly copy instead of reinventing the wheel. More detailed information of the origin can be found from the <a href="http://www.opendataproducts.org">Open Data Product Specification homepage</a>. </p>
+
+<p>Open Data Product Specification (ODPS) changes the data product metadata model towards a standalone model, which helps to decouple data product from the systems often directly associated with it. With help of the ODPS data product can be presented and described to the customer also as such without any need for marketplace or other systems. </p>
+
+<p>This version Data Contract support has been added to Open Data Product Specification. You can reference Data Contract as a URL or define Data Contract as an inline element in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. </p>
+<h2 id='specification-aims-and-aspects'>Specification aims and aspects</h2>
+<p><strong>Specification aims:</strong></p>
+
+<ul>
+<li>enable interoperability between organizations, data platforms,  marketplaces, and tools. </li>
+<li>reduce data product metadata conversions and errors between systems and organizations, </li>
+<li>increase the speed of designing, testing, and implementing data products. </li>
+<li>speed up tools development around data product design, development and management.</li>
+<li>enable creation of automated data product deployment with standard methods (DataOps)</li>
+<li>enable <a href="https://www.cloudbees.com/blog/what-is-everything-as-code-eac">Everything as Code</a> approach for SLA and Data Quality monitoring</li>
+</ul>
+
+<p><strong>Note!</strong> In the &quot;Open Data Product&quot; focus is on the latter words and the prefix  &#39;open&#39; refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.</p>
+
+<p>The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure &amp; access), 2) business (pricing &amp; plans), 3) legal (licensing &amp; IPR), and 4) ethical (privacy &amp; mydata). The four aspects are described in 7 objects, which contain attributes and elements. </p>
+
+<p><img src="images/ODPS-design-d19966d9.png" alt="odps-model" /></p>
+
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
+<h2 id='document-structure'>Document structure</h2>
+<p><strong>LEFT COLUMN: Navigation</strong></p>
+
+<p>The left column is navigation which enables fluent and easy movement around the specification. </p>
+
+<p><strong>MIDDLE COLUMN: Principles and components</strong></p>
+
+<p>The middle column contains detailed information about the included components and related options. This is the theory part. </p>
+
+<p>Note! Mandatory elements and attributes are listed separately in the definition tables. This enables user to construct minimum viable specification more easily and fast. https://schema.org provided ready-made definitions are applied when ever possible instead of re-inventing the wheel. </p>
+
+<p><strong>RIGHT COLUMN: Examples</strong></p>
+
+<p>The right column contains YAML formatted examples of how the specification is used. In the future other output formats are added on request basis. YAML can easily be converted to JSON if needed. </p>
+
+<blockquote>
+<p>Example of YAML formatted snippet from the Open Data Product Specification:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+</code></pre></div><h1 id='document-level-attributes'>Document level attributes</h1>
+<p>Here&#39;s the list of attributes which can occur at the document root level. In the following description, if a field is not explicitly <strong>REQUIRED</strong> or described with a MUST or SHALL, it can be considered OPTIONAL. Optional attributes are listed in own table and examples are given on the right column. </p>
+<h2 id='mandatory-attributes'>Mandatory attributes</h2>
+<blockquote>
+<p>Example of document level attribute usage and structure:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v3.0/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">3.0</span>
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">details</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
+    <span class="na">fi</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">Vuoden suosituimmat lemmikit</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>schema</strong></td>
+<td>URL</td>
+<td>Valid URL. See more from <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</td>
+<td><strong>REQUIRED</strong> Defines the URL of Schema. Used often for validation purposes.</td>
+</tr>
+<tr>
+<td><strong>version</strong></td>
+<td>string</td>
+<td>This is the version of ODPS, for example dev or 2.2</td>
+<td><strong>REQUIRED</strong> Defines the ODPS version.</td>
+</tr>
+<tr>
+<td><strong>product</strong></td>
+<td>element</td>
+<td>root element</td>
+<td><strong>REQUIRED</strong> Root element to tie all together.</td>
+</tr>
+<tr>
+<td><strong>details</strong></td>
+<td>element</td>
+<td>product business details</td>
+<td><strong>REQUIRED</strong> Binds together business details in different languages.</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>element</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td><strong>REQUIRED</strong> - <strong>NOTE! This is a dynamic element!</strong> This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>string</td>
+<td>max length 256 chars</td>
+<td><strong>REQUIRED</strong> The name of the product.</td>
+</tr>
+<tr>
+<td><strong>productID</strong></td>
+<td>string</td>
+<td>max length 256 chars</td>
+<td><strong>REQUIRED</strong> Product identifier.</td>
+</tr>
+<tr>
+<td><strong>visibility</strong></td>
+<td>string</td>
+<td>one of: private, invitation, organisation, dataspace, public</td>
+<td><strong>REQUIRED</strong> The publicity level eg who can see this product. Private - just the creator. Invitation - visible only to parties explicitly invited. Organisation - visible to all in your organisation. Dataspace - visible to all existent members of the data space. Public - visible to all publicly.</td>
+</tr>
+<tr>
+<td><strong>status</strong></td>
+<td>string</td>
+<td>one of: announcement, draft, development, testing, acceptance, production, sunset, retired</td>
+<td><strong>REQUIRED</strong> The status of the product. Lifecycle model discussed in details in here (link).</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>string</td>
+<td>one of: raw data, derived data, dataset, reports, analytic view, 3D visualisation, algorithm, decision support, automated decision-making, data-enhanced product, data-driven service, data-enabled performance, bi-directional.</td>
+<td><strong>REQUIRED</strong> The type of the product. Options are derived from examples and lists found from academic literature.</td>
+</tr>
+</tbody></table>
+<h2 id='optional-attributes'>Optional attributes</h2>
+<p>RecommendedDataProducts <strong>OBJECT</strong> contains an array of data products which offers means to attach related data products to the data product at hand. The source of the recommended data product might be from the same marketplace/catalog or an external one. Recommended object offers method to extend the reach and promotion escpecially when data product is treated as an independent entity much like described in Data Mesh. Also when data product is published in a marketplace, the Recommended object offers means to promote other than just the data products from the given data marketplace. In short, tis object is mainly for discovery and reach purposes. </p>
+
+<p>RecommendedUseCases <strong>OBJECT</strong> is an array which contains offers method to attach usefull usecases to the data product. Usecases are informatiove for the the data customer and exemplify how the data product can create value. </p>
+
+<blockquote>
+<p>Example of document level attribute usage and structure:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v3.0/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">3.0</span>
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">contract</span><span class="pi">:</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">02323M123</span>  
+    <span class="na">type</span><span class="pi">:</span>  <span class="s">ODCS</span> 
+    <span class="na">contractVersion</span><span class="pi">:</span>  <span class="s">2.2.2</span>
+    <span class="na">contractURL</span><span class="pi">:</span> <span class="s">https://demo.datamesh-manager.com/demo834016807886/dataproducts/9bd53b1b-b51e-41a8-a757-4d33b4cde460</span>
+  <span class="na">details</span><span class="pi">:</span> 
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+      <span class="na">valueProposition</span><span class="pi">:</span> <span class="s">Design a customised petstore using a data product that describes</span>
+        <span class="s">pets with their habits, preferences and characteristics.</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">This is an example of a Petstore product.</span>
+      <span class="na">productSeries</span><span class="pi">:</span> <span class="s">Lovely pets data products</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+      <span class="na">productVersion</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>
+      <span class="na">versionNotes</span><span class="pi">:</span> <span class="s">New version with additional details such more accurate pet details</span>
+      <span class="na">issues</span><span class="pi">:</span> <span class="s">The current issues include incorrect information in the dog breeds. The</span>
+        <span class="s">resolution for these problems is planned for the next     update, scheduled</span>
+        <span class="s">to be released on July 15th, 2023.</span>
+      <span class="na">categories</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">pets</span>
+      <span class="na">standards</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">ISO 24631-6</span>
+      <span class="na">tags</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">pet</span>
+      <span class="na">brandSlogan</span><span class="pi">:</span> <span class="s">Passion for the data monetization</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
+      <span class="na">contentSample</span><span class="pi">:</span> <span class="s">https://download.com/pets.json</span>
+      <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png</span>
+      <span class="na">OutputFileFormats</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">JSON</span>
+      <span class="pi">-</span> <span class="s">XML</span>
+      <span class="pi">-</span> <span class="s">CSV</span>
+      <span class="pi">-</span> <span class="s">ZIP</span>
+      <span class="pi">-</span> <span class="s">PDF</span>
+      <span class="na">useCases</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">useCase</span><span class="pi">:</span>
+          <span class="na">useCaseTitle</span><span class="pi">:</span> <span class="s">Build attractive and lucrative petstore!</span>
+          <span class="na">useCaseDescription</span><span class="pi">:</span> <span class="s">Use case description how succesfull petstore chain was</span>
+            <span class="s">established in Abu Dhabi</span>
+          <span class="na">useCaseURL</span><span class="pi">:</span> <span class="s">https://marketplace.com/usecase1</span>
+      <span class="na">recommendedDataProducts</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct.json</span>
+      <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct-another.json</span>
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>contract</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Binds together data contract details. You can use both URL and inline (YAML) for data contract content.</td>
+</tr>
+<tr>
+<td><strong>id</strong></td>
+<td>string</td>
+<td>-</td>
+<td>UUID of the data contract</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>string</td>
+<td>one of: ODCS, DCS</td>
+<td>Defines the standard used in data contract. Currently supported options: <a href="https://github.com/bitol-io/open-data-contract-standard">ODCS</a> and <a href="https://datacontract.com/">DCS</a>.</td>
+</tr>
+<tr>
+<td><strong>contractVersion</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Version of the standard used to define the Data Contract. Type attribute defines the standard/specification. NOTE! This is not the possible iterated version of the data contract itself.</td>
+</tr>
+<tr>
+<td><strong>contractURL</strong></td>
+<td>URL</td>
+<td>Valid URL. See more from <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</td>
+<td>URL pointing to data contract in data contract management service or alike. Optionally you can use <em>spec</em> to add data contract details as YAML inline element.</td>
+</tr>
+<tr>
+<td><strong>spec</strong></td>
+<td>string</td>
+<td>YAML</td>
+<td>Inline YAML element to add data contract details instead of using URL.</td>
+</tr>
+<tr>
+<td><strong>created</strong></td>
+<td>date</td>
+<td>Use <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
+<td>When product was created.</td>
+</tr>
+<tr>
+<td><strong>updated</strong></td>
+<td>date</td>
+<td>Use <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
+<td>When product was last updated.</td>
+</tr>
+<tr>
+<td><strong>valueProposition</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>This is the product&#39;s value proposition. Often one or two sentences and crystallizes the value for the customer.</td>
+</tr>
+<tr>
+<td><strong>description</strong></td>
+<td>string</td>
+<td>-</td>
+<td>The description of the product. Text only.</td>
+</tr>
+<tr>
+<td><strong>productSeries</strong></td>
+<td>string</td>
+<td>-</td>
+<td>A group of products in the product mix which are associated with each other and they can be obtained for the same type of customers or they are marketable for the same type of market place.</td>
+</tr>
+<tr>
+<td><strong>categories</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Comma separated array of categories.</td>
+</tr>
+<tr>
+<td><strong>standards</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Comma separated array of standards related e.g. to data content or quality, such as ISO 8000 or ISO 19131.</td>
+</tr>
+<tr>
+<td><strong>tags</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Comma separates array of tags.</td>
+</tr>
+<tr>
+<td><strong>productVersion</strong></td>
+<td>string</td>
+<td>The versioning according to <a href="https://semver.org/">SemVer</a></td>
+<td>The version of the data product. Applies for ODPS metadata as well.</td>
+</tr>
+<tr>
+<td><strong>versionNotes</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Additional information about the version.</td>
+</tr>
+<tr>
+<td><strong>issues</strong></td>
+<td>string</td>
+<td>-</td>
+<td>There may be errors in the data product that require corrections. These issues will be briefly described to users, along with information about when the fixes will be implemented.</td>
+</tr>
+<tr>
+<td><strong>contentSample</strong></td>
+<td>URL</td>
+<td>Valid URL. See more from <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</td>
+<td>Sample content of the data product, for example JSON/XML output. This sample should match the actual data product output and give the data consumer an idea what to expect. Obviously if the data product is pure service for example dashboard or algorithm, then consider providing preview version or alike</td>
+</tr>
+<tr>
+<td><strong>logoURL</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>Valid URL of the logo. See more from <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</td>
+</tr>
+<tr>
+<td><strong>outputFileFormats</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Output file formats for data product</td>
+</tr>
+<tr>
+<td><strong>brandSlogan</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Brand related slogan like Nike has <em>just do it</em>.</td>
+</tr>
+<tr>
+<td><strong>useCases</strong></td>
+<td>element</td>
+<td>array</td>
+<td>Contains list of related use cases with description information and link to details. <strong>NOTE!</strong> These examples are expected to use same language as defined previously in the data product details content binding element.</td>
+</tr>
+<tr>
+<td><strong>useCaseTitle</strong></td>
+<td>string</td>
+<td>string</td>
+<td>Title of the usecase.</td>
+</tr>
+<tr>
+<td><strong>useCaseDescription</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Brief description of the usecase.</td>
+</tr>
+<tr>
+<td><strong>useCaseURL</strong></td>
+<td>URL</td>
+<td>Valid URL, <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a></td>
+<td>Valid URL of the more detailed usecase description.</td>
+</tr>
+<tr>
+<td><strong>recommendedDataProducts</strong></td>
+<td>array</td>
+<td>Array of valid URLs (<a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>)</td>
+<td>Data products to recommend use next to this data product or even as replacement (for comparison). The URL provided MUST reference a description of a data product following this same standard</td>
+</tr>
+</tbody></table>
+
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
+<h1 id='data-pricing-plans'>Data Pricing Plans</h1>
+<blockquote>
+<p>Template structure of Data Pricing Plans array component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">pricingPlans</span><span class="pi">:</span>
+  <span class="na">en</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
+
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subcsription 1 month</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">8.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+</code></pre></div>
+<blockquote>
+<p>In case standardized options are not enough:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="s">You can make extensions to the standard</span> 
+<span class="s">with "x-" mechanism in order to fulfill</span> 
+<span class="s">any industry specific needs.</span> 
+
+<span class="s">A suggestive example below</span> 
+
+<span class="na">pricingPlans</span><span class="pi">:</span>
+  <span class="na">en</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
+
+  <span class="pi">-</span> <span class="na">x-name</span><span class="pi">:</span> <span class="s">Extension plan</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">custom</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
+
+</code></pre></div>
+<p><strong>Standardized data pricing plans are crucial for transparency, scalability, and customer trust.</strong> They ensure that customers can easily understand and compare costs, fostering trust and reducing disputes. For providers, standardized pricing streamlines operations, supports scalability, and simplifies market comparison, allowing for effective competitive positioning. Additionally, it aids in better financial planning and forecasting for both the provider and the customer, ensuring predictable revenue and informed decision-making. Overall, standardized pricing is essential for the sustainable growth and success of data products.</p>
+
+<p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> contains pricing plans related metadata to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard to foster global interoperability.  </p>
+
+<p>The 12 pricing plans enabled by ODPS are meticulously defined through an in-depth analysis of pricing models applied across more than 300 data products. We continuously monitor the evolution of pricing plans in the data economy, striving to provide the most comprehensive and up-to-date list of standardized pricing options - yet some gaps might exist.</p>
+
+<p>The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
+
+<p><strong>This version introduces the &quot;Pricing Plans as Code&quot; feature.</strong> You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. <strong>CRUP</strong> stands for: </p>
+
+<ul>
+<li><strong>C</strong>reate (create pricing plan), </li>
+<li><strong>R</strong>etire (delete pricing plan), </li>
+<li><strong>U</strong>pdate (update existing pricing plan) and,</li>
+<li><strong>P</strong>urchase (generate or get link to ignite purchase process in the gateway). </li>
+</ul>
+
+<p>With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. </p>
+
+<p><strong>Supported payment gateways:</strong></p>
+
+<ul>
+<li>Stripe <a href="https://docs.stripe.com/cli">Docs</a>, </li>
+<li>Checkout <a href="https://api-reference.checkout.com">Docs</a>,</li>
+<li>Square <a href="https://developer.squareup.com/docs">Docs</a>,</li>
+<li>Paypal <a href="https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/">Docs</a>,</li>
+<li>Custom</li>
+</ul>
+<h2 id='odps-supports-12-standardized-pricing-models'>ODPS supports 12 standardized pricing models</h2>
+<p>The <em>unit</em> attribute defines the plan and options for that are fixed unless extended with &quot;x-&quot; mechanism. </p>
+
+<table><thead>
+<tr>
+<th><div style="width:150px">Pricing plan</div></th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>Recurring time period based</strong></td>
+<td>In the simplest terms, recurring payments (also known as subscription payments, automatic payments, or recurring billing) take place when customers authorize a merchant to charge them repeatedly for goods or services on a prearranged schedule.</td>
+</tr>
+<tr>
+<td><strong>One time payments plans</strong></td>
+<td>One Time Fee Revenue Model is a business model that generates revenue through a single payment for perpetual product use or service access. The One Time Fee Revenue Model is a fundamental concept in the world of small businesses and entrepreneurship.</td>
+</tr>
+<tr>
+<td><strong>Pay-as-you-go plans</strong></td>
+<td>The Pay As You Go Plan is a flexible alternative to a monthly plan. Instead of paying a recurring monthly charge, you buy credits as needed.</td>
+</tr>
+<tr>
+<td><strong>Revenue sharing plans</strong></td>
+<td>Revenue sharing is a performance-based income model that involves sharing business profits or losses among participating partners. Revenue sharing is a profit-sharing system that ensures all parties involved are compensated for their contribution to the business.</td>
+</tr>
+<tr>
+<td><strong>Data volume plan</strong></td>
+<td>Volume pricing is a pricing strategy in which an item&#39;s price per unit decreases as the purchase quantity increases.</td>
+</tr>
+<tr>
+<td><strong>Trial</strong></td>
+<td>A free trial pricing strategy offers target customers a chance to try your product for free for a limited time. It is a sales promotion technique that uses the product to market itself.</td>
+</tr>
+<tr>
+<td><strong>Dynamic pricing</strong></td>
+<td>Dynamic pricing is a pricing strategy that applies variable prices instead of fixed prices. Instead of deciding on a set price for a season, retailers can update their prices multiple times per day to capitalize on the ever-changing market.</td>
+</tr>
+<tr>
+<td><strong>Pay what you want plans</strong></td>
+<td>Also known as PWYW pricing, is a pricing strategy in which buyers pay the desired price for a particular product, commodity, or service. The approach may sometimes lead to the value of zero. Following the buyer&#39;s guidance, one can set a suggested price and a minimum price.</td>
+</tr>
+<tr>
+<td><strong>Freemium</strong></td>
+<td>A type of business model that offers basic features of a product or service to users at no cost and charges a premium for supplemental or advanced features.</td>
+</tr>
+<tr>
+<td><strong>Open data</strong></td>
+<td>Access to open data is expected to be free of cost, but in some cases it is also possible to collect fees to cover costs of the service.</td>
+</tr>
+<tr>
+<td><strong>Value-based</strong></td>
+<td>Value-based pricing is a strategy of setting prices primarily based on a consumer&#39;s perceived value of a product or service. Value-based pricing is customer-focused, meaning companies base their pricing on how much the customer believes a product is worth. Often worth to provide customer a value simulator to see expected value gains and possibly set the price based on that. Pricing would be customized per customer.</td>
+</tr>
+<tr>
+<td><strong>On Request</strong></td>
+<td>Access to data product is given only on request. Often provider expects customer to meet provider first. In the discussions conditions, pricing etc are agreed.</td>
+</tr>
+</tbody></table>
+<h2 id='pricing-plans-optional-attributes-and-elements'>Pricing Plans optional attributes and elements</h2>
+<blockquote>
+<p>Example of Pricing component usage in english:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">pricingPlans</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 month</span>
+      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+      <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
+      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">200000</span>
+      <span class="na">offering</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+        <span class="pi">-</span> <span class="s">High amount of transactions</span>
+        <span class="pi">-</span> <span class="s">Billed monthly</span> 
+  <span class="na">executable</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span> 
+      <span class="na">version</span><span class="pi">:</span> <span class="m">1.2</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.stripe.com/cli</span>
+      <span class="na">create</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
+          <span class="s">stripe products create  \</span>
+          <span class="s">--name="Premium subscription 1 year"</span>
+
+          <span class="s">stripe prices create  \</span>
+          <span class="s">--currency=eur \</span>
+          <span class="s">--unit-amount=50 \</span>
+          <span class="s">-d "recurring[interval]"=month \</span>
+          <span class="s">-d "product_data[name]"="Premium subscription 1 year"</span>
+      <span class="na">update</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
+          <span class="s"># update plan as Stripe requires</span>
+      <span class="na">retire</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
+          <span class="s"># delete of the plan as Stripe requires</span>
+      <span class="na">purchase</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
+          <span class="s"># generate or get the link in order to </span>
+          <span class="s"># provide method for client to ignite purchase process  </span>
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>pricingPlans</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Binds the pricing plans related elements and attributes together</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>element</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td><strong>NOTE! This is a dynamic element!</strong> This element binds together other product pricing plan attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that pricing plan details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product pricing plan details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+</tr>
+<tr>
+<td><strong>declarative</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Grouping element which collects together data product pricing plans with business details</td>
+</tr>
+<tr>
+<td><strong>priceCurrency</strong></td>
+<td>string</td>
+<td>Use standard formats: <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> currency format e.g. &quot;USD&quot;; Ticker symbol for cryptocurrencies e.g. &quot;BTC&quot;</td>
+<td>The primary currency used in pricing. Platforms are assumed to use this as primary currency if currency conversions are used to display product pricing in different locations for various currencies. If the <em>unit</em> is revenue-sharing, then this attribute value MUST be percentage.</td>
+</tr>
+<tr>
+<td><strong>price</strong></td>
+<td>string</td>
+<td>-</td>
+<td>The offer price of a product, or of a price component, or revenue-sharing percentage. <br/><br/> If the <em>unit</em> of pricing is revenue-sharing, then this <em>price</em> attribute value is percentage value. <br/><br/> Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols. <br/><br/>With <em>data-volume</em> the price is for each 1GB of data.</td>
+</tr>
+<tr>
+<td><strong>billingDuration</strong></td>
+<td>string</td>
+<td>options: instant, day, week, month, year</td>
+<td>Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan.</td>
+</tr>
+<tr>
+<td><strong>unit</strong></td>
+<td>string</td>
+<td>One of: One-time-payment, Pay-per-use, Recurring, Revenue-sharing, Data-volume , Pay-what-you-want, Freemium, Open-data, Value-based, On-request, Trial</td>
+<td>One-time-payment is for single time purchase purposes, further purchaces are not intended to continue under same agreement. <br/><br/> <em>Pay-per-use</em> is intended for continuous usage and price set is for each successful usage action. <br/><br/> <em>Recurrring</em> is intended for continuous time period plans. <br/><br/><em>Revenue sharing</em> is a performance-based income model. An effective revenue sharing deal structure is offering your expertise to a business owner to help them grow their business. In return, you get paid a percentage of the revenue as a royalty fee. <br/><br/> <em>Freemium</em> is for free access. Use this option also for open data. <br/><br/> <em>Data-volume</em> is for data amount based pricing in which customer pays based on the served data amount. The price is always for 1GB of data. <br/><br/> <em>Pay-what-you-want</em>  is a pricing system where buyers pay any desired amount for a given commodity, sometimes including zero. In some cases, a minimum (floor) price may be set, and/or a suggested price may be indicated as guidance for the buyer. The buyer can also select an amount higher than the standard price for the commodity. If the floor price is set, use <em>minPrice</em> attribute. <br/><br/> <em>Open-data</em>  is an explicit pricing plan category for open data. By default open data should be free, but in some cases it can have a price. <br/><br/> <em>Value-based</em> is value-based selling unit. Present the outcome of your story with solid data and a measurable impact with help of <em>offering</em> attribute. Example: “We can lower the energy bill in heating by $8-13/square meter in a year. Try out simulator to calculate your value!”. Use optional <em>valueSimulator</em> attribute to provide link (URL) to value simulator you have created. In order to set base fee for value-based plan, you can for example set monthly (<em>billingDuration</em>) plan with base see with help of <em>minPrice</em> attribute. <br/><br/> <em>On-request</em> is for plans in which customer is given access to data product after contacting provider. Use provider contact information in providing means to contact data product provider for access permissions request. If the <em>trial</em> is used, then trial duration should be defined in the <em>offering</em> part. <br/><br/> Read more about the <a href="https://github.com/Open-Data-Product-Initiative/dev/wiki/Pricing-Plans#version-dev">Pricing plans from ODPS wiki</a></td>
+</tr>
+<tr>
+<td><strong>maxTransactionQuantity</strong></td>
+<td>Integer</td>
+<td>Integer</td>
+<td>The maximum transaction quantity for the given billing duration. Use this to define for example monthly (or any other period) request limit to the data product. Note! If you want to set unlimited use, value must be 0 (zero).</td>
+</tr>
+<tr>
+<td><strong>offering</strong></td>
+<td>string</td>
+<td>array</td>
+<td>The element that contains pricing plan content as array of strings. Think of this as the list of what is included in the pricing plan and what you offer in return to the price asked. Use the language defined in the <em>plan</em></td>
+</tr>
+<tr>
+<td><strong>minPrice</strong></td>
+<td>string</td>
+<td>-</td>
+<td>The lowest price if the price is a range. If dynamic pricing is used with this product, this is the lowest price allowed. In dynamic pricing businesses are able to change prices based on algorithms that take into account competitor pricing, supply and demand, and other external factors in the market. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
+</tr>
+<tr>
+<td><strong>maxPrice</strong></td>
+<td>string</td>
+<td>-</td>
+<td>The highest price if the price is a range. If dynamic pricing is used with this product, this is the highest price allowed. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
+</tr>
+<tr>
+<td><strong>valueAddedTaxIncluded</strong></td>
+<td>boolean</td>
+<td>true/false</td>
+<td>Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.</td>
+</tr>
+<tr>
+<td><strong>valueAddedTaxPercentage</strong></td>
+<td>Integer</td>
+<td>Number percentage value, range 0-100</td>
+<td>Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
+</tr>
+<tr>
+<td><strong>validFrom</strong></td>
+<td>DateTime</td>
+<td>A combination of date and time in <a href="https://www.ionos.com/digitalguide/websites/web-development/iso-8601/">ISO 8601</a> format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.</td>
+<td>The date when the item becomes valid.</td>
+</tr>
+<tr>
+<td><strong>validTo</strong></td>
+<td>DateTime</td>
+<td>A combination of date and time in <a href="https://www.ionos.com/digitalguide/websites/web-development/iso-8601/">ISO 8601</a> format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.</td>
+<td>The date after when the item is not valid.</td>
+</tr>
+<tr>
+<td><strong>additionalPrice</strong></td>
+<td>string</td>
+<td>-</td>
+<td>This is used to define fees for usage which exceeds the defined max transaction quantity. This value is for each additional transaction. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
+</tr>
+<tr>
+<td><strong>maxDataQuantity</strong></td>
+<td>Integer</td>
+<td>-</td>
+<td>The maximum amount of data transferred during the billing duration. Unit is GB.</td>
+</tr>
+<tr>
+<td><strong>valueSimulator</strong></td>
+<td>url</td>
+<td>valid url</td>
+<td>Intended to be used with <em>value-based</em> pricing plan. Provide url to value simulator in which customer can see the value in various cases. In the simulator customer might be able to input own variables to match their exact case and see the gained value.</td>
+</tr>
+<tr>
+<td><strong>executable</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Grouping element which collects together pricing plans payment gateway management features. You can define the needed action (CRUP) to setup and use the gateway to ignite purchase process. <br/><br/> CRUP stands for: <strong>C</strong>reate, <strong>R</strong>etire, <strong>U</strong>pdate, and <strong>Purchase</strong>.  The actual as code part is added with <em>spec</em> element.</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>attribute</td>
+<td>string, one of: <em>Stripe</em>, <em>Checkout</em>, <em>Custom</em></td>
+<td>Payment gateway system name. Use one of the predefined options only. With <em>Custom</em> type you can use your in-house solution.</td>
+</tr>
+<tr>
+<td><strong>version</strong></td>
+<td>attribute</td>
+<td>string</td>
+<td>The version of the payment gateway tool used.</td>
+</tr>
+<tr>
+<td><strong>reference</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>Provide URL pointing to the reference documentation</td>
+</tr>
+<tr>
+<td><strong>create</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Contains the as code part to create pricing plan in the payment gateway</td>
+</tr>
+<tr>
+<td><strong>retire</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Contains the as code part to retire (delete) pricing plan in the payment gateway</td>
+</tr>
+<tr>
+<td><strong>update</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Contains the as code part to update pricing plan in the payment gateway</td>
+</tr>
+<tr>
+<td><strong>purchase</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Contains the as code part to create or get pricing plan purchase igniting link in the payment gateway</td>
+</tr>
+<tr>
+<td><strong>spec</strong></td>
+<td>element</td>
+<td>YAML/URL/string</td>
+<td>The content the as code part for the pricing plan. Content is intended to be in a form that can be injected as is to <em>type</em> defined payment gateway system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> <strong>Note!</strong> By default the rules must be provide as valid YAML, either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML content file. String content is allowed and used only if <em>type</em> attribute value is <em>Custom</em>. In the custom case your string of course can be YAML too.</td>
+</tr>
+</tbody></table>
+
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
+<h1 id='components'>Components</h1>
+<p>Components object contains reusable objects to be used in various parts of the spec for example in Pricing. In the Pricing you might have 3 pricing plans and each can have different level of SLAs and Data Quality or Access. As an example. We have a data product which is for human and AI agent consumers. Obviously the access is different for both. Humans use API access and AI Agent uses MCP server (reusing the API perhaps). </p>
+
+<p>More over, the pricing might have Freemium and Premium plans as tiers. Then the SLA levels and/or Data Quality might differ. DAta Product provider wants to set different SLAs to both tiers. But in this case they want to set the sam Data Quality (reuse setting).</p>
+
+<p>On the right is components needed to fulfill the above need and use case. </p>
+<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<blockquote>
+<p>Example of License Object usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">Components</span><span class="pi">:</span>
+  <span class="na">SLAs</span><span class="pi">:</span>
+    <span class="na">Basic</span><span class="pi">:</span>
+      <span class="na">declarative</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">500</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">1</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+    <span class="na">Extended</span><span class="pi">:</span>
+      <span class="na">declarative</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">1</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+
+  <span class="na">Interfaces</span><span class="pi">:</span>
+    <span class="na">API</span><span class="pi">:</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">REST API for real-time event data access.</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS </span><span class="m">3.0</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s">REST</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/urbanpulse.json</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/docs</span> 
+    <span class="na">Agent</span><span class="pi">:</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms.txt</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms-full.txt</span>
+
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>license</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Binds the licensing related elements and attributes together.</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>attribute</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td>This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use Arabic details, then name the element &quot;ar&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+</tr>
+<tr>
+<td><strong>scope</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Extent, range, coverage, area or space of the license.</td>
+</tr>
+<tr>
+<td><strong>definition</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Background and purpose of the license.</td>
+</tr>
+<tr>
+<td><strong>restrictions</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Restrictions of the license.</td>
+</tr>
+<tr>
+<td><strong>geographicalArea</strong></td>
+<td>string</td>
+<td>ISO 3166-1 alpha-2 codes</td>
+<td>License right restricted to the geographical area.</td>
+</tr>
+<tr>
+<td><strong>permanent</strong></td>
+<td>boolean</td>
+<td>true/false</td>
+<td>License with no expiration date.</td>
+</tr>
+<tr>
+<td><strong>exclusive</strong></td>
+<td>boolean</td>
+<td>true/false</td>
+<td>The exclusive license holder is given complete control over the use of the data product, and no other person or organization is allowed to use it during the term of the license agreement.</td>
+</tr>
+<tr>
+<td><strong>rights</strong></td>
+<td>array</td>
+<td>Options: Reproduction <i>(rights to reproduce)</i>, Display <i>(disclose data to others)</i>, Distribution <i>(right to distribute)</i>, Adaptation <i>(right for derivate work)</i>, Reselling <i>(right to resell)</i>, Transferring <i>(transferable data license)</i>, Sublicensing <i>(license grant may include a right to sublicense)</i></td>
+<td>Rights granted by the licence. The texts in brackets and <i>italic</i> are intended to describe rights.</td>
+</tr>
+<tr>
+<td><strong>termination</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Licence termination and continuity related conditions.</td>
+</tr>
+<tr>
+<td><strong>noticePeriod</strong></td>
+<td>integer</td>
+<td>unit is days</td>
+<td>The notice period is a particular time that an data product provider or consumer must give before ending the contract. This time window allows both sides to make the necessary preparations, guaranteeing an unhindered transfer.</td>
+</tr>
+<tr>
+<td><strong>terminationConditions</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Cancellation conditions of the license.</td>
+</tr>
+<tr>
+<td><strong>continuityConditions</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Continuity conditions of the license.</td>
+</tr>
+<tr>
+<td><strong>governance</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Governance is the approach taken to ensure that the agreed outcomes are being fulfilled.</td>
+</tr>
+<tr>
+<td><strong>ownership</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Data product licensing ownership.</td>
+</tr>
+<tr>
+<td><strong>audit</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>License auditing terms.</td>
+</tr>
+<tr>
+<td><strong>warranties</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>License warranties.</td>
+</tr>
+<tr>
+<td><strong>damages</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Damages refers to the sum of money (i.e. indemnifications) for a breach of some duty or violation of license right.</td>
+</tr>
+<tr>
+<td><strong>confidentiality</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Restrictions and requirements imposed on the Data User regarding e.g. the use and disclosure of the Data Holder&#39;s confidential information.</td>
+</tr>
+<tr>
+<td><strong>applicableLaws</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Applicable laws, i.e local acts, degrees or law.</td>
+</tr>
+<tr>
+<td><strong>forceMajeure</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Force majeure is a clause that is included in contracts to remove liability for unforeseeable and unavoidable catastrophes that interrupt the expected course of events and prevent participants from fulfilling obligations. These clauses generally cover both natural disasters and catastrophes created by humans.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="yaml">yaml</a>
+          </div>
+      </div>
+    </div>
+    <!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nztzi');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+  </body>
+</html>

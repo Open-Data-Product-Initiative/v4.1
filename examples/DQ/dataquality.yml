@@ -1,0 +1,24 @@
+
+
+dataQuality:
+  declarative:
+    - dimension: accuracy
+      displaytitle:
+      - en: Data Accuracy (percent)
+      description:
+      - en: >-
+          Data Accuracy ensures the data product reflects the real-world
+          entities or events it represents, minimizing errors and providing
+          reliable insights.
+      objective: 98
+      unit: percentage
+  executable:
+    - dimension: accuracy
+      type: SodaCL
+      reference: https://docs.soda.io/soda-cl/soda-cl-overview.html
+      spec:
+        - require_unique(member_id) 
+        - require_range(age_band, 18, 100)
+    
+
+

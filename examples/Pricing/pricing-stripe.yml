@@ -1,0 +1,39 @@
+pricingPlans:
+  declarative:
+    en:
+    - name: Premium subscription 1 month
+      priceCurrency: EUR
+      price: 50.00
+      billingDuration: month
+      unit: recurring
+      maxTransactionQuantity: 200000
+      offering:
+        - High Quality Pets data
+        - High amount of transactions
+        - Billed monthly 
+  executable:
+    - name: Premium subscription 1 year
+      type: Stripe 
+      reference: https://docs.stripe.com/payment-links/api
+      create:
+        spec: |- 
+          stripe products create  \
+          --name="Premium subscription 1 year"
+          
+          stripe prices create  \
+          --currency=eur \
+          --unit-amount=50 \
+          -d "recurring[interval]"=month \
+          -d "product_data[name]"="Premium subscription 1 year"
+      update:
+        spec: |- 
+          - update the product
+          - update the price
+      retire:
+        spec: |- 
+          - retire the product
+      purchase:
+        spec: |- 
+          - generate or get the link in order to provide method for client to ignite purchase process  
+
+
