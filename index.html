@@ -786,47 +786,6 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 <h1 id='data-pricing-plans'>Data Pricing Plans</h1>
-<blockquote>
-<p>Template structure of Data Pricing Plans array component:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">pricingPlans</span><span class="pi">:</span>
-  <span class="na">en</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
-
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subcsription 1 month</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">8.00</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-</code></pre></div>
-<blockquote>
-<p>In case standardized options are not enough:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="s">You can make extensions to the standard</span> 
-<span class="s">with "x-" mechanism in order to fulfill</span> 
-<span class="s">any industry specific needs.</span> 
-
-<span class="s">A suggestive example below</span> 
-
-<span class="na">pricingPlans</span><span class="pi">:</span>
-  <span class="na">en</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
-
-  <span class="pi">-</span> <span class="na">x-name</span><span class="pi">:</span> <span class="s">Extension plan</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">custom</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
-
-</code></pre></div>
 <p><strong>Standardized data pricing plans are crucial for transparency, scalability, and customer trust.</strong> They ensure that customers can easily understand and compare costs, fostering trust and reducing disputes. For providers, standardized pricing streamlines operations, supports scalability, and simplifies market comparison, allowing for effective competitive positioning. Additionally, it aids in better financial planning and forecasting for both the provider and the customer, ensuring predictable revenue and informed decision-making. Overall, standardized pricing is essential for the sustainable growth and success of data products.</p>
 
 <p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> contains pricing plans related metadata to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard to foster global interoperability.  </p>
@@ -919,42 +878,41 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">pricingPlans</span><span class="pi">:</span>
-  <span class="na">declarative</span><span class="pi">:</span>
-    <span class="na">en</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 month</span>
-      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-      <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
-      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">200000</span>
-      <span class="na">offering</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-        <span class="pi">-</span> <span class="s">High amount of transactions</span>
-        <span class="pi">-</span> <span class="s">Billed monthly</span> 
-  <span class="na">executable</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span> 
-      <span class="na">version</span><span class="pi">:</span> <span class="m">1.2</span>
-      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.stripe.com/cli</span>
-      <span class="na">create</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
-          <span class="s">stripe products create  \</span>
-          <span class="s">--name="Premium subscription 1 year"</span>
+  <span class="na">en</span><span class="pi">:</span>
 
-          <span class="s">stripe prices create  \</span>
-          <span class="s">--currency=eur \</span>
-          <span class="s">--unit-amount=50 \</span>
-          <span class="s">-d "recurring[interval]"=month \</span>
-          <span class="s">-d "product_data[name]"="Premium subscription 1 year"</span>
-      <span class="na">update</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
-          <span class="s"># update plan as Stripe requires</span>
-      <span class="na">retire</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
-          <span class="s"># delete of the plan as Stripe requires</span>
-      <span class="na">purchase</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
-          <span class="s"># generate or get the link in order to </span>
-          <span class="s"># provide method for client to ignite purchase process  </span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">MCP Agent</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">0.01</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">instant</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">Pay-per-use</span>
+    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">200</span>
+    <span class="na">offering</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+      <span class="pi">-</span> <span class="s">MC access</span>
+      <span class="pi">-</span> <span class="s">Billed instantly</span> 
+    <span class="na">interface</span><span class="pi">:</span>  
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/Interafaces/Agent/"</span>
+    <span class="na">SLA</span><span class="pi">:</span>  
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/SLAs/Extended"</span>  
+    <span class="na">dataQuality</span><span class="pi">:</span>  
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/DQs/Basic"</span>
+
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 month</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">200000</span>
+    <span class="na">offering</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+      <span class="pi">-</span> <span class="s">High amount of transactions</span>
+      <span class="pi">-</span> <span class="s">Billed monthly</span> 
+    <span class="na">interface</span><span class="pi">:</span>  
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/Interafaces/API"</span>
+    <span class="na">SLA</span><span class="pi">:</span>  
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/SLAs/Basic"</span>  
+    <span class="na">dataQuality</span><span class="pi">:</span>  
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/DQs/Basic"</span>
 
 </code></pre></div>
 <table><thead>
@@ -1142,49 +1100,61 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">Components</span><span class="pi">:</span>
-  <span class="na">SLAs</span><span class="pi">:</span>
-    <span class="na">Basic</span><span class="pi">:</span>
-      <span class="na">declarative</span><span class="pi">:</span>
+    <span class="na">SLAs</span><span class="pi">:</span>
+        <span class="na">Basic</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="s">displaytitle</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">500</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">500</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">1</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
-    <span class="na">Extended</span><span class="pi">:</span>
-      <span class="na">declarative</span><span class="pi">:</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+        <span class="na">Extended</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="s">displaytitle</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">200</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">1</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
 
-  <span class="na">Interfaces</span><span class="pi">:</span>
+<span class="na">Interfaces</span><span class="pi">:</span>
     <span class="na">API</span><span class="pi">:</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">REST API for real-time event data access.</span>
-      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
-      <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS </span><span class="m">3.0</span>
-      <span class="na">format</span><span class="pi">:</span> <span class="s">REST</span>
-      <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/urbanpulse.json</span>
-      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/docs</span> 
+        <span class="na">description</span><span class="pi">:</span> <span class="s">REST API for real-time event data access.</span>
+        <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
+        <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS </span><span class="m">3.0</span>
+        <span class="na">format</span><span class="pi">:</span> <span class="s">REST</span>
+        <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/urbanpulse.json</span>
+        <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/docs</span> 
     <span class="na">Agent</span><span class="pi">:</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
-      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
-      <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
-      <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
-      <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms.txt</span>
-      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms-full.txt</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
+        <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
+        <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
+        <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
+        <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms.txt</span>
+        <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms-full.txt</span>
+<span class="na">DataQuality</span><span class="pi">:</span>
+    <span class="na">Basic</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+        <span class="s">displaytitle</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+        <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+        <span class="s">objective</span><span class="pi">:</span> <span class="m">500</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+        <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+
 
 
 </code></pre></div>
