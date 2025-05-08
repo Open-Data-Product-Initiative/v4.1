@@ -65,11 +65,11 @@ pricingPlans:
       - High Quality Pets data
       - MC access
       - Billed instantly 
-    interface:  
+    interface: MCP 
       $ref: "#/Components/Interafaces/Agent/"
-    SLA:  
+    SLA: Extended 
       $ref: "#/Components/SLAs/Extended"  
-    dataQuality:  
+    dataQuality: Basic 
       $ref: "#/Components/DQs/Basic"
 
   - name: Premium subscription 1 month
@@ -82,11 +82,11 @@ pricingPlans:
       - High Quality Pets data
       - High amount of transactions
       - Billed monthly 
-    interface:  
+    interface: API
       $ref: "#/Components/Interafaces/API"
-    SLA:  
+    SLA: Basic 
       $ref: "#/Components/SLAs/Basic"  
-    dataQuality:  
+    dataQuality: Basic 
       $ref: "#/Components/DQs/Basic"
 
 ```
