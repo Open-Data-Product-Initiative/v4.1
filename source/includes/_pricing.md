@@ -62,7 +62,7 @@ pricingPlans:
     unit: Pay-per-use
     maxTransactionQuantity: 200
     offering:
-      - Unlimited* agent queries (rate-limited to protect service)
+      - Unlimited** agent queries (rate-limited to protect service)
       - MCP tools & prompt templates
       - Structured data via MCP resources
       - Real-time agent response SLA
@@ -70,8 +70,8 @@ pricingPlans:
     notes: >
         Designed for conversational agents rather
         than direct API usage. **"Unlimited" subject to fair-use rate limits.
-    purchase: 
-      $ref: "#/Components/Actions/Purchase"
+    paymentGateway: 
+      $ref: "#/Components/PaymentGateways/Agent"
     interface: 
       $ref: "#/Components/Interafaces/Agent/"
     SLA: 
@@ -90,6 +90,8 @@ pricingPlans:
       - High Quality Pets data
       - High amount of transactions
       - Billed monthly 
+    paymentGateway: 
+      $ref: "#/Components/PaymentGateways/API"
     interface: 
       $ref: "#/Components/Interafaces/API"
     SLA: 
