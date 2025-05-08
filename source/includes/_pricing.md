@@ -9,22 +9,7 @@ The 12 pricing plans enabled by ODPS are meticulously defined through an in-dept
 
 The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
-**This version introduces the "Pricing Plans as Code" feature.** You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. **CRUP** stands for: 
-
-- **C**reate (create pricing plan), 
-- **R**etire (delete pricing plan), 
-- **U**pdate (update existing pricing plan) and,
-- **P**urchase (generate or get link to ignite purchase process in the gateway). 
-
-With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. 
-
-**Supported payment gateways:**
-
-- Stripe [Docs](https://docs.stripe.com/cli), 
-- Checkout [Docs](https://api-reference.checkout.com),
-- Square [Docs](https://developer.squareup.com/docs),
-- Paypal [Docs](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/),
-- Custom
+**Payment Gateways, SLAs, Data Quality and Interfaces** defined in Components to support reusability and flexibility. Components referenced with **$ref:** and path in Components. An example is *$ref: "#/Components/PaymentGateways/Agent"*
 
 ## ODPS supports 12 standardized pricing models
 
