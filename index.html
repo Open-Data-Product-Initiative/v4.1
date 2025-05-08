@@ -794,26 +794,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
 <p>The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
 
-<p><strong>This version introduces the &quot;Pricing Plans as Code&quot; feature.</strong> You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. <strong>CRUP</strong> stands for: </p>
-
-<ul>
-<li><strong>C</strong>reate (create pricing plan), </li>
-<li><strong>R</strong>etire (delete pricing plan), </li>
-<li><strong>U</strong>pdate (update existing pricing plan) and,</li>
-<li><strong>P</strong>urchase (generate or get link to ignite purchase process in the gateway). </li>
-</ul>
-
-<p>With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. </p>
-
-<p><strong>Supported payment gateways:</strong></p>
-
-<ul>
-<li>Stripe <a href="https://docs.stripe.com/cli">Docs</a>, </li>
-<li>Checkout <a href="https://api-reference.checkout.com">Docs</a>,</li>
-<li>Square <a href="https://developer.squareup.com/docs">Docs</a>,</li>
-<li>Paypal <a href="https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/">Docs</a>,</li>
-<li>Custom</li>
-</ul>
+<p><strong>Payment Gateways, SLAs, Data Quality and Interfaces</strong> defined in Components to support reusability and flexibility. Components referenced with <strong>$ref:</strong> and path in Components. An example is <em>$ref: &quot;#/Components/PaymentGateways/Agent&quot;</em></p>
 <h2 id='odps-supports-12-standardized-pricing-models'>ODPS supports 12 standardized pricing models</h2>
 <p>The <em>unit</em> attribute defines the plan and options for that are fixed unless extended with &quot;x-&quot; mechanism. </p>
 
