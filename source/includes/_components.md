@@ -71,17 +71,12 @@ Components:
 
     DataQualities:
         Basic:
-        - dimension: uptime
-            displaytitle:
-            - en: Uptime
+        - dimension: accuracy
+            objective: 98
+            unit: percentage
+        - dimension: completeness
             objective: 90
-            unit: percent
-        - dimension: responseTime
-            objective: 500
-            unit: milliseconds
-        - dimension: updateFrequency
-            objective: 1
-            unit: days
+            unit: percentage
    
 
   
