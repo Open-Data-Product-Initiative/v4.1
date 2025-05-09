@@ -179,20 +179,21 @@ Components:
 > Example:
 
 ```yml 
-Components:
-    PaymentGateways:
-        Agent:
-            type: Axio
-            version: 1.0
-            reference: https://www.x402.org/
-            spec: |
-                paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});
-        API:
-            type: Stripe
-            version: 1.0
-            reference: https://docs.stripe.com/
-            spec: |
-                links to ignite purchase
+components:
+  paymentGateways:
+    - name: Agent
+      type: Axio
+      version: 1.0
+      reference: https://www.x402.org/
+      spec: |
+        paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});
+
+    - name: API
+      type: Stripe
+      version: 1.0
+      reference: https://docs.stripe.com/
+      spec: |
+        link or code to ignite purchase
 
 ```
 
