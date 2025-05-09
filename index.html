@@ -403,7 +403,7 @@
                     <a href="#data-quality-component" class="toc-h2 toc-link" data-title="Data Quality Component">Data Quality Component</a>
                   </li>
                   <li>
-                    <a href="#interfaces-compoentnt" class="toc-h2 toc-link" data-title="Interfaces Compoentnt">Interfaces Compoentnt</a>
+                    <a href="#interfaces-component" class="toc-h2 toc-link" data-title="Interfaces Component">Interfaces Component</a>
                   </li>
                   <li>
                     <a href="#paymentgateways-component" class="toc-h2 toc-link" data-title="PaymentGateways Component">PaymentGateways Component</a>
@@ -1466,79 +1466,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <li>Interfaces</li>
 <li>PaymentGateways</li>
 </ul>
-
-<blockquote>
-<p>Example of License Object usage:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>
-<span class="na">Components</span><span class="pi">:</span>
-    <span class="na">SLAs</span><span class="pi">:</span>
-        <span class="na">Basic</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-            <span class="s">displaytitle</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-            <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">500</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
-        <span class="na">Extended</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-            <span class="s">displaytitle</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-            <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">200</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
-
-    <span class="na">Interfaces</span><span class="pi">:</span>
-        <span class="na">API</span><span class="pi">:</span>
-            <span class="na">description</span><span class="pi">:</span> <span class="s">REST API for real-time event data access.</span>
-            <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
-            <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS </span><span class="m">3.0</span>
-            <span class="na">format</span><span class="pi">:</span> <span class="s">REST</span>
-            <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/urbanpulse.json</span>
-            <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/docs</span> 
-        <span class="na">Agent</span><span class="pi">:</span>
-            <span class="na">description</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
-            <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
-            <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
-            <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
-            <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms.txt</span>
-            <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms-full.txt</span>
-    <span class="na">PaymentGateways</span><span class="pi">:</span>
-        <span class="na">Agent</span><span class="pi">:</span>
-            <span class="na">type</span><span class="pi">:</span> <span class="s">Axio</span>
-            <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
-            <span class="na">reference</span><span class="pi">:</span> <span class="s">https://www.x402.org/</span>
-            <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
-                <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
-        <span class="na">API</span><span class="pi">:</span>
-            <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
-            <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
-            <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.stripe.com/</span>
-            <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
-                <span class="s">links to ignite purchase</span>
-
-    <span class="na">DataQualities</span><span class="pi">:</span>
-        <span class="na">Basic</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">98</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">90</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-
-
-
-</code></pre></div><h2 id='slas-component'>SLAs Component</h2>
+<h2 id='slas-component'>SLAs Component</h2>
 <table><thead>
 <tr>
 <th><div style="width:150px">SLA Dimension</div></th>
@@ -1590,7 +1518,37 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>How long do you need to respond to email support requests?</td>
 </tr>
 </tbody></table>
-<h2 id='data-quality-component'>Data Quality Component</h2>
+
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
+    <span class="na">SLAs</span><span class="pi">:</span>
+        <span class="na">Basic</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+            <span class="s">displaytitle</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">500</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+        <span class="na">Extended</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+            <span class="s">displaytitle</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">200</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+</code></pre></div><h2 id='data-quality-component'>Data Quality Component</h2>
 <table><thead>
 <tr>
 <th><div style="width:150px">Data Quality Dimension</div></th>
@@ -1630,23 +1588,21 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry</td>
 </tr>
 </tbody></table>
-<h2 id='interfaces-compoentnt'>Interfaces Compoentnt</h2>
-<table><thead>
-<tr>
-<th><div style="width:150px">Element name</div></th>
-<th>Type</th>
-<th>Options</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>object</strong></td>
-<td>type</td>
-<td>Options</td>
-<td>Desc</td>
-</tr>
-</tbody></table>
-<h2 id='paymentgateways-component'>PaymentGateways Component</h2>
+
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
+    <span class="na">DataQuality</span><span class="pi">:</span>
+        <span class="na">Basic</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">98</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">90</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
+</code></pre></div><h2 id='interfaces-component'>Interfaces Component</h2>
 <table><thead>
 <tr>
 <th><div style="width:150px">Element name</div></th>
@@ -1663,6 +1619,61 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </tr>
 </tbody></table>
 
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
+    <span class="na">Interfaces</span><span class="pi">:</span>
+        <span class="na">API</span><span class="pi">:</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s">REST API for real-time event data access.</span>
+            <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
+            <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS </span><span class="m">3.0</span>
+            <span class="na">format</span><span class="pi">:</span> <span class="s">REST</span>
+            <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/urbanpulse.json</span>
+            <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/docs</span> 
+        <span class="na">Agent</span><span class="pi">:</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
+            <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
+            <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
+            <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
+            <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms.txt</span>
+            <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms-full.txt</span>
+</code></pre></div><h2 id='paymentgateways-component'>PaymentGateways Component</h2>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>object</strong></td>
+<td>type</td>
+<td>Options</td>
+<td>Desc</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
+    <span class="na">PaymentGateways</span><span class="pi">:</span>
+        <span class="na">Agent</span><span class="pi">:</span>
+            <span class="na">type</span><span class="pi">:</span> <span class="s">Axio</span>
+            <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
+            <span class="na">reference</span><span class="pi">:</span> <span class="s">https://www.x402.org/</span>
+            <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+                <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
+        <span class="na">API</span><span class="pi">:</span>
+            <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
+            <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
+            <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.stripe.com/</span>
+            <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+                <span class="s">links to ignite purchase</span>
+
+</code></pre></div>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
