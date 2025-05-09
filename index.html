@@ -1466,16 +1466,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <li>Interfaces</li>
 <li>PaymentGateways</li>
 </ul>
-<h2 id='slas-component'>SLAs Component</h2><h3 id='reference-examples-in-spec'>Reference Examples in Spec</h3>
-<p>Each SLA set is anonymous to the parser (in a list), but includes a name for human readability and UI logic.</p>
-
-<p><strong>By index (for strict referencing):</strong></p>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">slaRef</span><span class="pi">:</span>
-  <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/slaSets/1"</span>
-</code></pre></div>
-<p><strong>By name (if your tooling supports dereferencing by metadata):</strong></p>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">slaName</span><span class="pi">:</span> <span class="s">Extended</span>
-</code></pre></div>
+<h2 id='slas-component'>SLAs Component</h2>
 <blockquote>
 <p>Example:</p>
 </blockquote>
@@ -1564,7 +1555,16 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>How long do you need to respond to email support requests?</td>
 </tr>
 </tbody></table>
-<h2 id='data-quality-component'>Data Quality Component</h2>
+<h3 id='reference-examples-in-spec'>Reference Examples in Spec</h3>
+<p>Each SLA set is anonymous to the parser (in a list), but includes a name for human readability and UI logic.</p>
+
+<p><strong>By index (for strict referencing):</strong></p>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">slaRef</span><span class="pi">:</span>
+  <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/slaSets/1"</span>
+</code></pre></div>
+<p><strong>By name (if your tooling supports dereferencing by metadata):</strong></p>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">slaName</span><span class="pi">:</span> <span class="s">Extended</span>
+</code></pre></div><h2 id='data-quality-component'>Data Quality Component</h2>
 <blockquote>
 <p>Example:</p>
 </blockquote>
