@@ -79,17 +79,14 @@ Components:
 Each SLA set is anonymous to the parser (in a list), but includes a name for human readability and UI logic.
 
 **By index (for strict referencing):**
+ 
+'$ref: "#/components/slaSets/1"'
 
-```yml 
-slaRef:
-  $ref: "#/components/slaSets/1"
-```
 
 **By name (if your tooling supports dereferencing by metadata):**
 
-```yml 
-slaName: Extended
-```
+'slaName: Extended'
+
 
 
 ## Data Quality Component
@@ -97,17 +94,26 @@ slaName: Extended
 > Example:
 
 ```yml 
-Components:
-    DataQuality:
-        Basic:
+components:
+  dataQualities:
+    - name: Basic
+      description:
+        - en: Minimum acceptable quality for open data publishing
+      metrics:
         - dimension: accuracy
-            objective: 98
-            unit: percentage
+          objective: 98
+          unit: percentage
         - dimension: completeness
-            objective: 90
-            unit: percentage
-
+          objective: 90
+          unit: percentage
 ```
+
+
+### Reference from a Pricing Plan or Spec
+
+dataQualityRef:
+  $ref: "#/components/dataQualities/0"
+
 
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|
@@ -139,7 +145,8 @@ Components:
 Components:
   interfaces:
     - name: API
-      description: REST API for real-time event data access.
+      description: 
+      - en: REST API for real-time event data access.
       authenticationMethod: OAuth
       specification: OAS 3.0
       format: REST
@@ -147,7 +154,8 @@ Components:
       documentationURL: https://urbanpulse.ai/docs
 
     - name: Agent
-      description: MCP interface for structured data access and agent interaction.
+      description: 
+      - en: MCP interface for structured data access and agent interaction.
       authenticationMethod: Token
       specification: MCP 2025-03-26
       format: MCP
