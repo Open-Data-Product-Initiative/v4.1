@@ -89,7 +89,7 @@ Components:
   
 ```
 
-## SLAs
+## SLAs Component
 
 | <div style="width:150px">SLA Dimension</div>   | Description | 
 |---|---|
@@ -105,7 +105,7 @@ Components:
 | **timeToRepair** | How long do you need to fix the issue once it is detected? |
 | **emailResponseTime** | How long do you need to respond to email support requests? |
 
-## Data Quality
+## Data Quality Component
 
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|
@@ -118,13 +118,13 @@ Components:
 | **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
 | **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
 
-## Interfaces
+## Interfaces Compoentnt
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **object** | type | Options | Desc |
 
-## PaymentGateways
+## PaymentGateways Component
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
