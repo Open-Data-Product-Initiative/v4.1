@@ -11,6 +11,8 @@ toc_footers:
 
 includes:
   - pricing
+  - qa
+  - sla
   - components
 
  
