@@ -1,4 +1,4 @@
-# Referenced Pattern
+# Inline Pattern
 
 The objects are not defined inline, but instead references a reusable definition in the components section using a $ref path.
 
@@ -21,7 +21,7 @@ product:
       - dimension: uptime
         objective: 99
         unit: percent
-        
+
   access:
     format: REST
     specification: OAS 3.0
