@@ -1680,20 +1680,21 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <blockquote>
 <p>Example:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
-    <span class="na">PaymentGateways</span><span class="pi">:</span>
-        <span class="na">Agent</span><span class="pi">:</span>
-            <span class="na">type</span><span class="pi">:</span> <span class="s">Axio</span>
-            <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
-            <span class="na">reference</span><span class="pi">:</span> <span class="s">https://www.x402.org/</span>
-            <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
-                <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
-        <span class="na">API</span><span class="pi">:</span>
-            <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
-            <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
-            <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.stripe.com/</span>
-            <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
-                <span class="s">links to ignite purchase</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">components</span><span class="pi">:</span>
+  <span class="na">paymentGateways</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Agent</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Axio</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://www.x402.org/</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">API</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.stripe.com/</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">link or code to ignite purchase</span>
 
 </code></pre></div>
 <table><thead>
