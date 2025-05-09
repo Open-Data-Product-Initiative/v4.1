@@ -96,7 +96,7 @@ Each SLA set is anonymous to the parser (in a list), but includes a name for hum
 ```yml 
 components:
   dataQualities:
-    - name: Basic
+    - dqName: Basic
       description:
         - en: Minimum acceptable quality for open data publishing
       metrics:
@@ -111,9 +111,13 @@ components:
 
 ### Reference from a Pricing Plan or Spec
 
-dataQualityRef:
-  $ref: "#/components/dataQualities/0"
+**By index (for strict referencing):**
 
+'$ref: "#/components/dataQualities/0"'
+
+**By name (if your tooling supports dereferencing by metadata):**
+
+'dqName: Basic'
 
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|
