@@ -19,25 +19,6 @@ ODPS contains Standardized Components to use. Those cover most likely 80 percent
 
 ## SLAs Component
 
-
-### Reference Examples in Spec
-
-Each SLA set is anonymous to the parser (in a list), but includes a name for human readability and UI logic.
-
-**By index (for strict referencing):**
-
-```yml 
-slaRef:
-  $ref: "#/components/slaSets/1"
-```
-
-**By name (if your tooling supports dereferencing by metadata):**
-
-```yml 
-slaName: Extended
-```
-
-
 > Example:
 
 
@@ -78,9 +59,6 @@ Components:
 ```
 
 
-
-
-
 | <div style="width:150px">SLA Dimension</div>   | Description | 
 |---|---|
 | **latency** | minimal amount of time before getting any response. |
@@ -95,6 +73,23 @@ Components:
 | **timeToRepair** | How long do you need to fix the issue once it is detected? |
 | **emailResponseTime** | How long do you need to respond to email support requests? |
 
+
+### Reference Examples in Spec
+
+Each SLA set is anonymous to the parser (in a list), but includes a name for human readability and UI logic.
+
+**By index (for strict referencing):**
+
+```yml 
+slaRef:
+  $ref: "#/components/slaSets/1"
+```
+
+**By name (if your tooling supports dereferencing by metadata):**
+
+```yml 
+slaName: Extended
+```
 
 
 ## Data Quality Component
