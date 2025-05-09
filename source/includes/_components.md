@@ -108,17 +108,6 @@ components:
           unit: percentage
 ```
 
-
-### Reference from a Pricing Plan or Spec
-
-**By index (for strict referencing):**
-
-'$ref: "#/components/dataQualities/0"'
-
-**By name (if your tooling supports dereferencing by metadata):**
-
-'dqName: Basic'
-
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|
 | **accuracy** | The measurement of the veracity of data to its authoritative source |
@@ -130,7 +119,15 @@ components:
 | **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
 | **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
 
+### Reference from a Pricing Plan or Spec
 
+**By index (for strict referencing):**
+
+'$ref: "#/components/dataQualities/0"'
+
+**By name (if your tooling supports dereferencing by metadata):**
+
+'dqName: Basic'
 
 ## Interfaces Component
 
