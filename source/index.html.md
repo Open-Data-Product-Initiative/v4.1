@@ -16,6 +16,7 @@ includes:
   - components
   - example_referenced
   - example_referenced_pricing
+  - example_inline
 
  
 
