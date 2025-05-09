@@ -19,20 +19,6 @@ ODPS contains Standardized Components to use. Those cover most likely 80 percent
 
 ## SLAs Component
 
-| <div style="width:150px">SLA Dimension</div>   | Description | 
-|---|---|
-| **latency** | minimal amount of time before getting any response. |
-| **uptime** | Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/. |
-| **responseTime** | amount of time to process external request. |
-| **errorRate** | Maximum tolerated errors in data, percentage. |
-| **endOfSupport** | The date at which your product will not have support anymore. |
-| **endOfLife** | The date at which your product will not be available anymore. No support, no access. |
-| **updateFrequency** | how often data is updates. |
-| **timeToDetect** | How fast can you detect a problem? |
-| **timeToNotify** | Once you see a problem, how much time do you need to notify your users? |
-| **timeToRepair** | How long do you need to fix the issue once it is detected? |
-| **emailResponseTime** | How long do you need to respond to email support requests? |
-
 > Example:
 
 
@@ -64,6 +50,22 @@ Components:
             objective: 1
             unit: days
 ```
+
+| <div style="width:150px">SLA Dimension</div>   | Description | 
+|---|---|
+| **latency** | minimal amount of time before getting any response. |
+| **uptime** | Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/. |
+| **responseTime** | amount of time to process external request. |
+| **errorRate** | Maximum tolerated errors in data, percentage. |
+| **endOfSupport** | The date at which your product will not have support anymore. |
+| **endOfLife** | The date at which your product will not be available anymore. No support, no access. |
+| **updateFrequency** | how often data is updates. |
+| **timeToDetect** | How fast can you detect a problem? |
+| **timeToNotify** | Once you see a problem, how much time do you need to notify your users? |
+| **timeToRepair** | How long do you need to fix the issue once it is detected? |
+| **emailResponseTime** | How long do you need to respond to email support requests? |
+
+
 
 ## Data Quality Component
 
