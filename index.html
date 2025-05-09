@@ -1559,26 +1559,32 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>Each SLA set is anonymous to the parser (in a list), but includes a name for human readability and UI logic.</p>
 
 <p><strong>By index (for strict referencing):</strong></p>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">slaRef</span><span class="pi">:</span>
-  <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/slaSets/1"</span>
-</code></pre></div>
+
+<p>&#39;$ref: &quot;#/components/slaSets/1&quot;&#39;</p>
+
 <p><strong>By name (if your tooling supports dereferencing by metadata):</strong></p>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">slaName</span><span class="pi">:</span> <span class="s">Extended</span>
-</code></pre></div><h2 id='data-quality-component'>Data Quality Component</h2>
+
+<p>&#39;slaName: Extended&#39;</p>
+<h2 id='data-quality-component'>Data Quality Component</h2>
 <blockquote>
 <p>Example:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
-    <span class="na">DataQuality</span><span class="pi">:</span>
-        <span class="na">Basic</span><span class="pi">:</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">components</span><span class="pi">:</span>
+  <span class="na">dataQualities</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Basic</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Minimum acceptable quality for open data publishing</span>
+      <span class="na">metrics</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">98</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">90</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+</code></pre></div><h3 id='reference-from-a-pricing-plan-or-spec'>Reference from a Pricing Plan or Spec</h3>
+<p>dataQualityRef:
+  $ref: &quot;#/components/dataQualities/0&quot;</p>
 
-</code></pre></div>
 <table><thead>
 <tr>
 <th><div style="width:150px">Data Quality Dimension</div></th>
@@ -1632,7 +1638,8 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
   <span class="na">interfaces</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">API</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">REST API for real-time event data access.</span>
+      <span class="na">description</span><span class="pi">:</span> 
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">REST API for real-time event data access.</span>
       <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
       <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS </span><span class="m">3.0</span>
       <span class="na">format</span><span class="pi">:</span> <span class="s">REST</span>
@@ -1640,7 +1647,8 @@ Development of the specification is under the umbrella of the Linux Foundation. 
       <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/docs</span>
 
     <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Agent</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
+      <span class="na">description</span><span class="pi">:</span> 
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
       <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
       <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
       <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
