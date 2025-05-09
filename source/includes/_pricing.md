@@ -60,7 +60,7 @@ pricingPlans:
     interface: 
       $ref: "#/Components/Interafaces/Agent/"
     SLA: 
-      $ref: "#/Components/SLAs/Extended"  
+      $ref: "#/components/slaSets/1"
     dataQuality:  
       $ref: "#/Components/DataQualities/Basic"
     
@@ -80,7 +80,7 @@ pricingPlans:
     interface: 
       $ref: "#/Components/Interafaces/API"
     SLA: 
-      $ref: "#/Components/SLAs/Basic"  
+      $ref: "#/components/slaSets/0" 
     dataQuality:  
       $ref: "#/Components/DataQualities/Basic"
 

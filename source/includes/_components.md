@@ -24,31 +24,38 @@ ODPS contains Standardized Components to use. Those cover most likely 80 percent
 
 ```yml 
 Components:
-    SLAs:
-        Basic:
+  slaSets:
+    - name: Basic
+      description:
+        - en: Default SLA for internal and non-paying users
+      slas:
         - dimension: uptime
-            displaytitle:
-            - en: Uptime
-            objective: 90
-            unit: percent
+          displayTitle:
+            en: Uptime
+          objective: 90
+          unit: percent
         - dimension: responseTime
-            objective: 500
-            unit: milliseconds
+          objective: 500
+          unit: milliseconds
         - dimension: updateFrequency
-            objective: 1
-            unit: days
-        Extended:
+          objective: 1
+          unit: days
+
+    - name: Extended
+      description:
+        - en: Premium SLA for external users or partners
+      slas:
         - dimension: uptime
-            displaytitle:
-            - en: Uptime
-            objective: 99
-            unit: percent
+          displayTitle:
+            en: Uptime
+          objective: 99
+          unit: percent
         - dimension: responseTime
-            objective: 200
-            unit: milliseconds
+          objective: 200
+          unit: milliseconds
         - dimension: updateFrequency
-            objective: 1
-            unit: days
+          objective: 1
+          unit: days
 ```
 
 | <div style="width:150px">SLA Dimension</div>   | Description | 
