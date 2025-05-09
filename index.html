@@ -1549,6 +1549,20 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </tr>
 </tbody></table>
 <h2 id='data-quality-component'>Data Quality Component</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
+    <span class="na">DataQuality</span><span class="pi">:</span>
+        <span class="na">Basic</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">98</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">90</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
+</code></pre></div>
 <table><thead>
 <tr>
 <th><div style="width:150px">Data Quality Dimension</div></th>
@@ -1588,37 +1602,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry</td>
 </tr>
 </tbody></table>
-
-<blockquote>
-<p>Example:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
-    <span class="na">DataQuality</span><span class="pi">:</span>
-        <span class="na">Basic</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">98</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">90</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-
-</code></pre></div><h2 id='interfaces-component'>Interfaces Component</h2>
-<table><thead>
-<tr>
-<th><div style="width:150px">Element name</div></th>
-<th>Type</th>
-<th>Options</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>object</strong></td>
-<td>type</td>
-<td>Options</td>
-<td>Desc</td>
-</tr>
-</tbody></table>
-
+<h2 id='interfaces-component'>Interfaces Component</h2>
 <blockquote>
 <p>Example:</p>
 </blockquote>
@@ -1638,7 +1622,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
             <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
             <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms.txt</span>
             <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms-full.txt</span>
-</code></pre></div><h2 id='paymentgateways-component'>PaymentGateways Component</h2>
+</code></pre></div>
 <table><thead>
 <tr>
 <th><div style="width:150px">Element name</div></th>
@@ -1654,7 +1638,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>Desc</td>
 </tr>
 </tbody></table>
-
+<h2 id='paymentgateways-component'>PaymentGateways Component</h2>
 <blockquote>
 <p>Example:</p>
 </blockquote>
@@ -1674,6 +1658,22 @@ Development of the specification is under the umbrella of the Linux Foundation. 
                 <span class="s">links to ignite purchase</span>
 
 </code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>object</strong></td>
+<td>type</td>
+<td>Options</td>
+<td>Desc</td>
+</tr>
+</tbody></table>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
