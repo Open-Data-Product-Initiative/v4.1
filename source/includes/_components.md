@@ -58,6 +58,24 @@ Components:
           unit: days
 ```
 
+### Reference Examples in Spec
+
+**By index (for strict referencing):**
+
+```yml 
+slaRef:
+  $ref: "#/components/slaSets/1"
+```
+
+**By name (if your tooling supports dereferencing by metadata):**
+
+```yml 
+slaName: Extended
+```
+
+
+
+
 | <div style="width:150px">SLA Dimension</div>   | Description | 
 |---|---|
 | **latency** | minimal amount of time before getting any response. |
