@@ -912,7 +912,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
     <span class="na">interface</span><span class="pi">:</span> 
       <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/Interafaces/Agent/"</span>
     <span class="na">SLA</span><span class="pi">:</span> 
-      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/SLAs/Extended"</span>  
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/slaSets/1"</span>
     <span class="na">dataQuality</span><span class="pi">:</span>  
       <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/DataQualities/Basic"</span>
 
@@ -932,7 +932,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
     <span class="na">interface</span><span class="pi">:</span> 
       <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/Interafaces/API"</span>
     <span class="na">SLA</span><span class="pi">:</span> 
-      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/SLAs/Basic"</span>  
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/slaSets/0"</span> 
     <span class="na">dataQuality</span><span class="pi">:</span>  
       <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/Components/DataQualities/Basic"</span>
 
@@ -1471,31 +1471,38 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>Example:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
-    <span class="na">SLAs</span><span class="pi">:</span>
-        <span class="na">Basic</span><span class="pi">:</span>
+  <span class="na">slaSets</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Basic</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Default SLA for internal and non-paying users</span>
+      <span class="na">slas</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-            <span class="s">displaytitle</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-            <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+          <span class="na">displayTitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">500</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">500</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
-        <span class="na">Extended</span><span class="pi">:</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">1</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Extended</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Premium SLA for external users or partners</span>
+      <span class="na">slas</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-            <span class="s">displaytitle</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-            <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+          <span class="na">displayTitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">200</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
         <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">1</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
 </code></pre></div>
 <table><thead>
 <tr>
