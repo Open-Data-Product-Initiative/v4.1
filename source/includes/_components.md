@@ -89,26 +89,26 @@ Components:
   
 ```
 
-### SLAs
+## SLAs
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **object** | type | Options | Desc |
 
 
-### Data Quality
+## Data Quality
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **object** | type | Options | Desc |
 
-### Interfaces
+## Interfaces
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **object** | type | Options | Desc |
 
-### PaymentGateways
+## PaymentGateways
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
