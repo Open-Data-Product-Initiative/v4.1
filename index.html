@@ -375,9 +375,6 @@
             <a href="#data-quality" class="toc-h1 toc-link" data-title="Data Quality">Data Quality</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring" class="toc-h2 toc-link" data-title="ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring">ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</a>
-                  </li>
-                  <li>
                     <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
                   </li>
               </ul>
@@ -1137,51 +1134,9 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </ul>
 
 <p>The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
-<h2 id='odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring'>ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</h2>
-<table><thead>
-<tr>
-<th><div style="width:150px">Data Quality Dimension</div></th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>accuracy</strong></td>
-<td>The measurement of the veracity of data to its authoritative source</td>
-</tr>
-<tr>
-<td><strong>completeness</strong></td>
-<td>Data is required to be populated with a value (aka not null, not nullable). Completeness checks if all necessary data attributes are present in the dataset.</td>
-</tr>
-<tr>
-<td><strong>conformity</strong></td>
-<td>Data content must align with required standards, syntax (format, type, range), or permissible domain values. Conformity assesses how closely data adheres to standards, whether internal, external, or industry-wide.</td>
-</tr>
-<tr>
-<td><strong>consistency</strong></td>
-<td>Data should retain consistent content across data stores. Consistency ensures that data values, formats, and definitions in one group match those in another group.</td>
-</tr>
-<tr>
-<td><strong>coverage</strong></td>
-<td>All records are contained in a data store or data source. Coverage relates to the extent and availability of data present but absent from a dataset.</td>
-</tr>
-<tr>
-<td><strong>timeliness</strong></td>
-<td>The data must represent current conditions; the data is available and can be used when needed.</td>
-</tr>
-<tr>
-<td><strong>validity</strong></td>
-<td>Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe.</td>
-</tr>
-<tr>
-<td><strong>uniqueness</strong></td>
-<td>Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry</td>
-</tr>
-</tbody></table>
-
-<p>Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why <em>integrity</em> is not in the attributes, but accuracy and consistency as well as completeness are. </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
-<p>Example of Data Quality component with some of the data quality dimensions:</p>
+<p>Example of Data Quality:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
   <span class="na">promise</span><span class="pi">:</span>
