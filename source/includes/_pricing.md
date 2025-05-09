@@ -56,13 +56,13 @@ pricingPlans:
         Designed for conversational agents rather
         than direct API usage. **"Unlimited" subject to fair-use rate limits.
     paymentGateway: 
-      $ref: "#/Components/PaymentGateways/Agent"
+      $ref: "#/Components/PaymentGateways/1"
     interface: 
-      $ref: "#/Components/Interafaces/Agent/"
+      $ref: "#/Components/Interafaces/0"
     SLA: 
       $ref: "#/components/slaSets/1"
     dataQuality:  
-      $ref: "#/Components/DataQualities/Basic"
+      $ref: "#/Components/DataQualities/0"
     
 
   - name: Premium subscription 1 month
@@ -76,13 +76,13 @@ pricingPlans:
       - High amount of transactions
       - Billed monthly 
     paymentGateway: 
-      $ref: "#/Components/PaymentGateways/API"
+      $ref: "#/Components/PaymentGateways/0"
     interface: 
-      $ref: "#/Components/Interafaces/API"
+      $ref: "#/Components/Interafaces/1"
     SLA: 
       $ref: "#/components/slaSets/0" 
     dataQuality:  
-      $ref: "#/Components/DataQualities/Basic"
+      $ref: "#/Components/DataQualities/0"
 
 ```
 
