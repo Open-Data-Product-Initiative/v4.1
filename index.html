@@ -1766,17 +1766,38 @@ Development of the specification is under the umbrella of the Linux Foundation. 
     <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">derived data</span>
 
-  <span class="na">serviceLevel</span><span class="pi">:</span>
-    <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/slaSets/1"</span>
+  <span class="na">pricingPlans</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Basic Access</span>
+        <span class="na">price</span><span class="pi">:</span> <span class="m">0.00</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+        <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+        <span class="na">offering</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">10,000 API calls/month</span>
+        <span class="na">serviceLevel</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/slaSets/0"</span>
+        <span class="na">dataQuality</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/dataQualities/0"</span>
+        <span class="na">interface</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/interfaces/0"</span>
+        <span class="na">paymentGateway</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/paymentGateways/0"</span>
 
-  <span class="na">access</span><span class="pi">:</span>
-    <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/interfaces/0"</span>
-
-  <span class="na">dataQuality</span><span class="pi">:</span>
-    <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/dataQualities/0"</span>
-
-  <span class="na">paymentGateway</span><span class="pi">:</span>
-    <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/paymentGateways/1"</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium Access</span>
+        <span class="na">price</span><span class="pi">:</span> <span class="m">500.00</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+        <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+        <span class="na">offering</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">100,000 API calls/month</span>
+          <span class="pi">-</span> <span class="s">AI agent access</span>
+        <span class="na">serviceLevel</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/slaSets/1"</span>
+        <span class="na">dataQuality</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/dataQualities/1"</span>
+        <span class="na">interface</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/interfaces/1"</span>
+        <span class="na">paymentGateway</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/paymentGateways/1"</span>
 </code></pre></div><h1 id='inline-pattern'>Inline Pattern</h1>
 <p>The objects are not defined inline, but instead references a reusable definition in the components section using a $ref path.</p>
 
