@@ -416,6 +416,9 @@
           <li>
             <a href="#referenced-pricing-pattern" class="toc-h1 toc-link" data-title="Referenced Pricing Pattern">Referenced Pricing Pattern</a>
           </li>
+          <li>
+            <a href="#referenced-pattern" class="toc-h1 toc-link" data-title="Referenced Pattern">Referenced Pattern</a>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li>License <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a></li>
@@ -1774,6 +1777,42 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
   <span class="na">paymentGateway</span><span class="pi">:</span>
     <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/components/paymentGateways/1"</span>
+</code></pre></div><h1 id='referenced-pattern'>Referenced Pattern</h1>
+<p>The objects are not defined inline, but instead references a reusable definition in the components section using a $ref path.</p>
+
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v3.0rc/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">3.0</span>
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">en</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+    <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+    <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+    <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">derived data</span>
+
+  <span class="na">serviceLevel</span><span class="pi">:</span>
+    <span class="na">slas</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+        <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+
+  <span class="na">access</span><span class="pi">:</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">REST</span>
+    <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS </span><span class="m">3.0</span>
+    <span class="na">specsURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/spec.json</span>
+
+  <span class="na">dataQuality</span><span class="pi">:</span>
+    <span class="na">metrics</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+        <span class="na">objective</span><span class="pi">:</span> <span class="m">95</span>
+        <span class="na">code</span><span class="pi">:</span>
+          <span class="na">language</span><span class="pi">:</span> <span class="s">SQL</span>
+          <span class="na">logic</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">SELECT ...;</span>
 </code></pre></div>
       </div>
       <div class="dark-box">
