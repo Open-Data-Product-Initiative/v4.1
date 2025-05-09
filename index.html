@@ -1618,26 +1618,35 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry</td>
 </tr>
 </tbody></table>
-<h2 id='interfaces-component'>Interfaces Component</h2>
+<h2 id='interfaces-component'>Interfaces Component</h2><h3 id='benefits'>Benefits</h3>
+<ul>
+<li>Anonymous list allows index-based referencing</li>
+<li>Human-readable name enables UI clarity and matching logic</li>
+<li>Structure matches your SLA approach for consistency</li>
+<li>Scalable and interoperable for future tooling</li>
+</ul>
+
 <blockquote>
 <p>Example:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
-    <span class="na">Interfaces</span><span class="pi">:</span>
-        <span class="na">API</span><span class="pi">:</span>
-            <span class="na">description</span><span class="pi">:</span> <span class="s">REST API for real-time event data access.</span>
-            <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
-            <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS </span><span class="m">3.0</span>
-            <span class="na">format</span><span class="pi">:</span> <span class="s">REST</span>
-            <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/urbanpulse.json</span>
-            <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/docs</span> 
-        <span class="na">Agent</span><span class="pi">:</span>
-            <span class="na">description</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
-            <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
-            <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
-            <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
-            <span class="na">specsURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms.txt</span>
-            <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">urbanpulse.ai/llms-full.txt</span>
+  <span class="na">interfaces</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">API</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">REST API for real-time event data access.</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS </span><span class="m">3.0</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s">REST</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/urbanpulse.json</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/docs</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Agent</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/llms.txt</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/llms-full.txt</span>
+
 </code></pre></div>
 <table><thead>
 <tr>
