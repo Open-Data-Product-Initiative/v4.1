@@ -1467,6 +1467,36 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <li>PaymentGateways</li>
 </ul>
 <h2 id='slas-component'>SLAs Component</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
+    <span class="na">SLAs</span><span class="pi">:</span>
+        <span class="na">Basic</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+            <span class="s">displaytitle</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">500</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+        <span class="na">Extended</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+            <span class="s">displaytitle</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">200</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+</code></pre></div>
 <table><thead>
 <tr>
 <th><div style="width:150px">SLA Dimension</div></th>
@@ -1518,37 +1548,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>How long do you need to respond to email support requests?</td>
 </tr>
 </tbody></table>
-
-<blockquote>
-<p>Example:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">Components</span><span class="pi">:</span>
-    <span class="na">SLAs</span><span class="pi">:</span>
-        <span class="na">Basic</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-            <span class="s">displaytitle</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-            <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">500</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
-        <span class="na">Extended</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-            <span class="s">displaytitle</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-            <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">200</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-            <span class="s">objective</span><span class="pi">:</span> <span class="m">1</span>
-            <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
-</code></pre></div><h2 id='data-quality-component'>Data Quality Component</h2>
+<h2 id='data-quality-component'>Data Quality Component</h2>
 <table><thead>
 <tr>
 <th><div style="width:150px">Data Quality Dimension</div></th>
