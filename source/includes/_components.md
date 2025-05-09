@@ -91,16 +91,32 @@ Components:
 
 ## SLAs
 
-| <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
-|---|---|---|---|
-| **object** | type | Options | Desc |
-
+| <div style="width:150px">SLA Dimension</div>   | Description | 
+|---|---|
+| **latency** | minimal amount of time before getting any response. |
+| **uptime** | Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/. |
+| **responseTime** | amount of time to process external request. |
+| **errorRate** | Maximum tolerated errors in data, percentage. |
+| **endOfSupport** | The date at which your product will not have support anymore. |
+| **endOfLife** | The date at which your product will not be available anymore. No support, no access. |
+| **updateFrequency** | how often data is updates. |
+| **timeToDetect** | How fast can you detect a problem? |
+| **timeToNotify** | Once you see a problem, how much time do you need to notify your users? |
+| **timeToRepair** | How long do you need to fix the issue once it is detected? |
+| **emailResponseTime** | How long do you need to respond to email support requests? |
 
 ## Data Quality
 
-| <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
-|---|---|---|---|
-| **object** | type | Options | Desc |
+| <div style="width:150px">Data Quality Dimension</div>   | Description | 
+|---|---|
+| **accuracy** | The measurement of the veracity of data to its authoritative source |
+| **completeness** | Data is required to be populated with a value (aka not null, not nullable). Completeness checks if all necessary data attributes are present in the dataset. |
+| **conformity** | Data content must align with required standards, syntax (format, type, range), or permissible domain values. Conformity assesses how closely data adheres to standards, whether internal, external, or industry-wide. |
+| **consistency** | Data should retain consistent content across data stores. Consistency ensures that data values, formats, and definitions in one group match those in another group. |
+| **coverage** | All records are contained in a data store or data source. Coverage relates to the extent and availability of data present but absent from a dataset. |
+| **timeliness** | The data must represent current conditions; the data is available and can be used when needed.  |
+| **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
+| **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
 
 ## Interfaces
 
