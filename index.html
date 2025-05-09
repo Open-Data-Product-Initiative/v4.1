@@ -1571,7 +1571,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">components</span><span class="pi">:</span>
   <span class="na">dataQualities</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Basic</span>
+    <span class="pi">-</span> <span class="na">dqName</span><span class="pi">:</span> <span class="s">Basic</span>
       <span class="na">description</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Minimum acceptable quality for open data publishing</span>
       <span class="na">metrics</span><span class="pi">:</span>
@@ -1582,8 +1582,13 @@ Development of the specification is under the umbrella of the Linux Foundation. 
           <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
           <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
 </code></pre></div><h3 id='reference-from-a-pricing-plan-or-spec'>Reference from a Pricing Plan or Spec</h3>
-<p>dataQualityRef:
-  $ref: &quot;#/components/dataQualities/0&quot;</p>
+<p><strong>By index (for strict referencing):</strong></p>
+
+<p>&#39;$ref: &quot;#/components/dataQualities/0&quot;&#39;</p>
+
+<p><strong>By name (if your tooling supports dereferencing by metadata):</strong></p>
+
+<p>&#39;dqName: Basic&#39;</p>
 
 <table><thead>
 <tr>
