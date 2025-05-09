@@ -372,6 +372,28 @@
               </ul>
           </li>
           <li>
+            <a href="#data-quality" class="toc-h1 toc-link" data-title="Data Quality">Data Quality</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring" class="toc-h2 toc-link" data-title="ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring">ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</a>
+                  </li>
+                  <li>
+                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#data-sla" class="toc-h1 toc-link" data-title="Data SLA">Data SLA</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#sla-can-be-defined-with-11-standardized-dimensions-with-decoupled-everything-as-code-monitoring" class="toc-h2 toc-link" data-title="SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring">SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring</a>
+                  </li>
+                  <li>
+                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#components" class="toc-h1 toc-link" data-title="Components">Components</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1075,6 +1097,525 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>element</td>
 <td>YAML/URL/string</td>
 <td>The content the as code part for the pricing plan. Content is intended to be in a form that can be injected as is to <em>type</em> defined payment gateway system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> <strong>Note!</strong> By default the rules must be provide as valid YAML, either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML content file. String content is allowed and used only if <em>type</em> attribute value is <em>Custom</em>. In the custom case your string of course can be YAML too.</td>
+</tr>
+</tbody></table>
+
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
+<h1 id='data-quality'>Data Quality</h1>
+<blockquote>
+<p>Template structure of Data Quality array component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="na">description</span><span class="pi">:</span>
+      <span class="na">objective</span><span class="pi">:</span> 
+      <span class="na">unit</span><span class="pi">:</span>
+  <span class="na">executable</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+      <span class="na">type</span><span class="pi">:</span>  
+      <span class="na">version</span><span class="pi">:</span> 
+      <span class="na">reference</span><span class="pi">:</span> 
+      <span class="na">spec</span><span class="pi">:</span>
+</code></pre></div>
+<blockquote>
+<p>In case standardized options are not enough:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="s">The QA object is general in nature and should</span> 
+<span class="s">be enough for common (80%) use cases.</span> 
+
+<span class="s">You can make extensions to the standard</span> 
+<span class="s">with "x-" mechanism in order to fulfill</span> 
+<span class="s">any industry specific needs.</span> 
+
+<span class="s">A suggestive example below</span> 
+
+<span class="na">dataQuality</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+    <span class="pi">-</span> <span class="na">x-dimension</span><span class="pi">:</span> <span class="s">extended-dq</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Extended Data Quality dimension</span>
+</code></pre></div>
+<p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  </p>
+
+<p>By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.</p>
+
+<p>How can you assess your data quality? The ODPS support &quot;as code&quot; approach to monitor data quality. Supported DQ tools for Everything as Code to define monitoring are: </p>
+
+<ul>
+<li>SodaCL</li>
+<li>MonteCarlo</li>
+<li>DQOps</li>
+<li>Custom (in-house solutions)</li>
+</ul>
+
+<p><strong>Structure notes:</strong> The Data Quality object is divided into 2 parts: declarative and executable. </p>
+
+<ul>
+<li>Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. </li>
+<li>Executable part contains the machine-readable &quot;as code&quot; rules to validate data quality dimensions. The code inside <em>spec</em> element is intended to be injected as in supporting data quality platforms in their defined format and structure.<br></li>
+</ul>
+
+<p>The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
+<h2 id='odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring'>ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</h2>
+<table><thead>
+<tr>
+<th><div style="width:150px">Data Quality Dimension</div></th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>accuracy</strong></td>
+<td>The measurement of the veracity of data to its authoritative source</td>
+</tr>
+<tr>
+<td><strong>completeness</strong></td>
+<td>Data is required to be populated with a value (aka not null, not nullable). Completeness checks if all necessary data attributes are present in the dataset.</td>
+</tr>
+<tr>
+<td><strong>conformity</strong></td>
+<td>Data content must align with required standards, syntax (format, type, range), or permissible domain values. Conformity assesses how closely data adheres to standards, whether internal, external, or industry-wide.</td>
+</tr>
+<tr>
+<td><strong>consistency</strong></td>
+<td>Data should retain consistent content across data stores. Consistency ensures that data values, formats, and definitions in one group match those in another group.</td>
+</tr>
+<tr>
+<td><strong>coverage</strong></td>
+<td>All records are contained in a data store or data source. Coverage relates to the extent and availability of data present but absent from a dataset.</td>
+</tr>
+<tr>
+<td><strong>timeliness</strong></td>
+<td>The data must represent current conditions; the data is available and can be used when needed.</td>
+</tr>
+<tr>
+<td><strong>validity</strong></td>
+<td>Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe.</td>
+</tr>
+<tr>
+<td><strong>uniqueness</strong></td>
+<td>Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry</td>
+</tr>
+</tbody></table>
+
+<p>Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why <em>integrity</em> is not in the attributes, but accuracy and consistency as well as completeness are. </p>
+<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<blockquote>
+<p>Example of Data Quality component with some of the data quality dimensions:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+      <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="s">Datan virheettömyys (prosenttia)</span>
+    <span class="na">description</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
+          <span class="s">entities or events it represents, minimizing errors and providing</span>
+          <span class="s">reliable insights.</span>
+      <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Datatuotteen tarkkuus varmistaa, että se heijastaa todellisia</span>
+          <span class="s">kohteita tai tapahtumia, vähentää virheitä ja tarjoaa luotettavaa</span>
+          <span class="s">tietoa.</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+    <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+        <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+  <span class="na">executable</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.soda.io/soda-cl/soda-cl-overview.html</span>
+      <span class="na">spec</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">require_unique(member_id)</span> 
+        <span class="pi">-</span> <span class="s">require_range(age_band, 18, 100)</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">DQOps</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="s">1.6.0</span> 
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://dqops.com/docs/dqo-concepts/running-data-quality-checks/</span>
+      <span class="na">spec</span><span class="pi">:</span>
+        <span class="na">columns</span><span class="pi">:</span>
+          <span class="na">target_column</span><span class="pi">:</span>
+            <span class="na">profiling_checks</span><span class="pi">:</span> 
+              <span class="na">nulls</span><span class="pi">:</span> 
+                <span class="na">profile_nulls_percent</span><span class="pi">:</span> 
+                  <span class="na">warning</span><span class="pi">:</span> 
+                    <span class="na">max_percent</span><span class="pi">:</span> <span class="m">8.0</span>
+                  <span class="na">error</span><span class="pi">:</span> 
+                    <span class="na">max_percent</span><span class="pi">:</span> <span class="m">10.0</span>
+                  <span class="na">fatal</span><span class="pi">:</span> 
+                    <span class="na">max_percent</span><span class="pi">:</span> <span class="s">11.0</span>      
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>dataQuality</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Contains array of data quality dimensions with optional computational monotoring object. Under this element Data quality is divided into declarative and executable parts.</td>
+</tr>
+<tr>
+<td><strong>declarative</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Grouping element which collects together data quality dimensions target level (objectives), name to display in UI in wanted languages, measuring unit used, and dimension name (one of standardized options).</td>
+</tr>
+<tr>
+<td><strong>dimension</strong></td>
+<td>attribute</td>
+<td>string, one of: <em>accuracy, completeness, conformity, consistency, coverage, timeliness, validity, or uniqueness.</em></td>
+<td>Defines the data quality dimension.</td>
+</tr>
+<tr>
+<td><strong>objective</strong></td>
+<td>attribute</td>
+<td>integer</td>
+<td>Defines the target value for the data quality dimension</td>
+</tr>
+<tr>
+<td><strong>unit</strong></td>
+<td>attribute</td>
+<td>string. One of: <em>percentage, number</em></td>
+<td>Defines the unit used in stating the target quality level.</td>
+</tr>
+<tr>
+<td><strong>executable</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Grouping element which collects together data quality monitoring. You can define the monitoring patterns as code under this element for the above mentioned data quality dimensions. In other words, contains the monitoring (computational &quot;as code&quot;) structure to validate target state for the selected data quality dimension. The actual as code part is added with <em>spec</em> element.</td>
+</tr>
+<tr>
+<td><strong>displayTitle</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Dimension title to be shown is various UIs. Array contains array list of titles in desired amount of languages.</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>attribute</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td>This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+</tr>
+<tr>
+<td><strong>description</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Describe the dimension so that it can be used for example in info boxes in UI.</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>attribute</td>
+<td>string, one of: <a href="https://docs.soda.io/soda-cl/soda-cl-overview.html">SodaCL</a>, <a href="https://docs.getmontecarlo.com/docs/monitors-as-code">Montecarlo</a>, <a href="https://dqops.com/docs/categories-of-data-quality-checks/">DQOps</a>, Custom</td>
+<td>DAta Quality Monitoring as code system name. Use one of the predefined options only. With <em>Custom</em> type you can use your in-house solution.</td>
+</tr>
+<tr>
+<td><strong>version</strong></td>
+<td>attribute</td>
+<td>string</td>
+<td>The version of DQ monitoring tool used.</td>
+</tr>
+<tr>
+<td><strong>reference</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>Provide URL pointing to the reference documentation</td>
+</tr>
+<tr>
+<td><strong>spec</strong></td>
+<td>element</td>
+<td>YAML/URL/string</td>
+<td>The content the as code part for Data Quality monitoring. Content is intended to be in a form that can be injected as is to <em>type</em> defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> <strong>Note!</strong> By default the rules must be provide as valid YAML, either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML content file. String content is allowed and used only if <em>type</em> attribute value is <em>Custom</em>. In the custom case your string of course can be YAML too.</td>
+</tr>
+</tbody></table>
+
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
+<h1 id='data-sla'>Data SLA</h1>
+<blockquote>
+<p>Template structure of SLA array component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">SLA</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="na">description</span><span class="pi">:</span>
+      <span class="na">objective</span><span class="pi">:</span> 
+      <span class="na">unit</span><span class="pi">:</span>
+  <span class="na">executable</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+      <span class="na">type</span><span class="pi">:</span>  
+      <span class="na">version</span><span class="pi">:</span> 
+      <span class="na">reference</span><span class="pi">:</span> 
+      <span class="na">spec</span><span class="pi">:</span>
+</code></pre></div>
+<p>Data Service Level Agreement (SLA) <strong>Object</strong> contains attributes which define the desired and promised quality of the data product. </p>
+
+<p>A Data Service Level Agreement (SLA) is a contractual agreement between a data service provider and its customers that defines the expected level of service quality, performance, and availability for the data services provided. SLAs outline specific metrics, targets, and responsibilities that both parties agree to adhere to, ensuring accountability and transparency in the delivery of data services.</p>
+
+<p>Defining Data SLAs in a machine-readable format enhances automation, facilitates monitoring, enables real-time compliance tracking, and supports seamless integration with monitoring and alerting systems.</p>
+
+<p><strong>Structure notes:</strong> The SLA object is divided into 2 parts: declarative and executable. </p>
+
+<ul>
+<li>Declarative part defines the dimensions and aimed/intended SLA levels in defined unit. </li>
+<li>Executable part contains the machine-readable &quot;as code&quot; rules to validate SLA dimensions. The code inside <em>spec</em> element is intended to be injected as in supporting SLA monitoring platforms in their defined format and structure.<br></li>
+</ul>
+
+<p>The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature.</p>
+
+<blockquote>
+<p>In case standardized options are not enough:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="s">The SLA object is general in nature and should</span> 
+<span class="s">be enough for common (80%) use cases.</span> 
+
+<span class="s">You can make extensions to the standard</span> 
+<span class="s">with "x-" mechanism in order to fulfill</span> 
+<span class="s">any industry specific needs.</span> 
+
+<span class="s">A suggestive example below</span> 
+
+<span class="na">SLA</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">x-dimension</span><span class="pi">:</span> <span class="s">custom</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Custom SLA</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+
+</code></pre></div><h2 id='sla-can-be-defined-with-11-standardized-dimensions-with-decoupled-everything-as-code-monitoring'>SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring</h2>
+<blockquote>
+<p>Example of SLA component usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">SLA</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">SLA Dimension</div></th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>latency</strong></td>
+<td>minimal amount of time before getting any response.</td>
+</tr>
+<tr>
+<td><strong>uptime</strong></td>
+<td>Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/.</td>
+</tr>
+<tr>
+<td><strong>responseTime</strong></td>
+<td>amount of time to process external request.</td>
+</tr>
+<tr>
+<td><strong>errorRate</strong></td>
+<td>Maximum tolerated errors in data, percentage.</td>
+</tr>
+<tr>
+<td><strong>endOfSupport</strong></td>
+<td>The date at which your product will not have support anymore.</td>
+</tr>
+<tr>
+<td><strong>endOfLife</strong></td>
+<td>The date at which your product will not be available anymore. No support, no access.</td>
+</tr>
+<tr>
+<td><strong>updateFrequency</strong></td>
+<td>how often data is updates.</td>
+</tr>
+<tr>
+<td><strong>timeToDetect</strong></td>
+<td>How fast can you detect a problem?</td>
+</tr>
+<tr>
+<td><strong>timeToNotify</strong></td>
+<td>Once you see a problem, how much time do you need to notify your users?</td>
+</tr>
+<tr>
+<td><strong>timeToRepair</strong></td>
+<td>How long do you need to fix the issue once it is detected?</td>
+</tr>
+<tr>
+<td><strong>emailResponseTime</strong></td>
+<td>How long do you need to respond to email support requests?</td>
+</tr>
+</tbody></table>
+
+<p>No mandatory attributes at the moment. Optional attributes are listed in own table and an example is given in the right column. </p>
+<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<blockquote>
+<p>Example of SLA component usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">SLA</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+  <span class="na">executable</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/'</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span>
+        <span class="s">avg_over_time(</span>
+          <span class="s">(</span>
+            <span class="s">sum without() (up{job="prometheus"})</span>
+              <span class="s">or</span>
+            <span class="s">(0 * sum_over_time(up{job="prometheus"}[7d]))</span>
+          <span class="s">)[7d:5m]</span>
+        <span class="s">)   </span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/'</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span>
+        <span class="s">rate(http_server_requests_seconds_sum[$__rate_interval]) /</span>
+        <span class="s">rate(http_server_requests_seconds_count[$__rate_interval])</span>
+
+  <span class="na">support</span><span class="pi">:</span>
+    <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">+971508976456'</span>
+    <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s">Mon-Fri 8am-4pm (GMT)</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s">support@opendataproducts.org</span>
+    <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s">Mon-Fri 8am-4pm (GMT)</span>
+    <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>SLA</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Binds the SLA related elements and attributes together</td>
+</tr>
+<tr>
+<td><strong>declarative</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Grouping element which collects together SLA dimensions target level (objectives), name to display in UI in wanted languages, measuring unit used, and dimension name (one of standardized options).</td>
+</tr>
+<tr>
+<td><strong>dimension</strong></td>
+<td>attribute</td>
+<td>string, one of: <em>latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime</em></td>
+<td>Defines the SLA dimension.</td>
+</tr>
+<tr>
+<td><strong>unit</strong></td>
+<td>attribute</td>
+<td>Options for <em>unit</em> are: milliseconds, seconds, minutes, days, weeks, months, years, never, date, null. <br/><br/></td>
+<td>Name of the quality attribute indicating the timely interval. If date is given, format is dd/mm/yyyy</td>
+</tr>
+<tr>
+<td><strong>executable</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Grouping element which collects together SLA monitoring. You can define the monitoring patterns as code under this element for the above mentioned SLA dimensions. In other words, contains the monitoring (computational &quot;as code&quot;) structure to validate target state for the selected SLA dimension. The actual as code part is added with <em>spec</em> element.</td>
+</tr>
+<tr>
+<td><strong>displayTitle</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Dimension title to be shown is various UIs. Keep it short and sweet.</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>attribute</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td>This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>attribute</td>
+<td>string</td>
+<td>monitoring system name name such as Prometheus. The system used must support as code approach to monitor SLA.</td>
+</tr>
+<tr>
+<td><strong>spec</strong></td>
+<td>element</td>
+<td>YAML/URL/string</td>
+<td>The content the as code part for SLA monitoring. Content is intended to be in a form that can be injected as is to <em>type</em> defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> <strong>Note!</strong> By default the rules must be provide as valid String or YAML. If YAML is used, it must be either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML or string content file.</td>
+</tr>
+<tr>
+<td><strong>reference</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>Provide URL for the reference documentation regarding used monitoring system.</td>
+</tr>
+<tr>
+<td><strong>support</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise.</td>
+</tr>
+<tr>
+<td><strong>phoneNumber</strong></td>
+<td>string</td>
+<td>valid phone number</td>
+<td>The support phone number. Use <a href="https://www.itu.int/rec/T-REC-E.164/en">E.164</a></td>
+</tr>
+<tr>
+<td><strong>phoneServiceHours</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm.</td>
+</tr>
+<tr>
+<td><strong>email</strong></td>
+<td>string</td>
+<td>valid email address</td>
+<td>Email information for support requests. Use <a href="https://datatracker.ietf.org/doc/html/rfc2822">RFC2822</a></td>
+</tr>
+<tr>
+<td><strong>emailServiceHours</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm.</td>
+</tr>
+<tr>
+<td><strong>documentationURL</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>URL to documentation</td>
 </tr>
 </tbody></table>
 
