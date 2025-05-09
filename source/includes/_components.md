@@ -124,25 +124,36 @@ Components:
 
 ## Interfaces Component
 
+
+### Benefits
+
+- Anonymous list allows index-based referencing
+- Human-readable name enables UI clarity and matching logic
+- Structure matches your SLA approach for consistency
+- Scalable and interoperable for future tooling
+
+
 > Example:
 
 ```yml 
 Components:
-    Interfaces:
-        API:
-            description: REST API for real-time event data access.
-            authenticationMethod: OAuth
-            specification: OAS 3.0
-            format: REST
-            specsURL: urbanpulse.ai/urbanpulse.json
-            documentationURL: urbanpulse.ai/docs 
-        Agent:
-            description: MCP interface for structured data access and agent interaction.
-            authenticationMethod: Token
-            specification: MCP 2025-03-26
-            format: MCP
-            specsURL: urbanpulse.ai/llms.txt
-            documentationURL: urbanpulse.ai/llms-full.txt
+  interfaces:
+    - name: API
+      description: REST API for real-time event data access.
+      authenticationMethod: OAuth
+      specification: OAS 3.0
+      format: REST
+      specsURL: https://urbanpulse.ai/urbanpulse.json
+      documentationURL: https://urbanpulse.ai/docs
+
+    - name: Agent
+      description: MCP interface for structured data access and agent interaction.
+      authenticationMethod: Token
+      specification: MCP 2025-03-26
+      format: MCP
+      specsURL: https://urbanpulse.ai/llms.txt
+      documentationURL: https://urbanpulse.ai/llms-full.txt
+
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
