@@ -19,6 +19,25 @@ ODPS contains Standardized Components to use. Those cover most likely 80 percent
 
 ## SLAs Component
 
+
+### Reference Examples in Spec
+
+Each SLA set is anonymous to the parser (in a list), but includes a name for human readability and UI logic.
+
+**By index (for strict referencing):**
+
+```yml 
+slaRef:
+  $ref: "#/components/slaSets/1"
+```
+
+**By name (if your tooling supports dereferencing by metadata):**
+
+```yml 
+slaName: Extended
+```
+
+
 > Example:
 
 
@@ -58,20 +77,6 @@ Components:
           unit: days
 ```
 
-### Reference Examples in Spec
-
-**By index (for strict referencing):**
-
-```yml 
-slaRef:
-  $ref: "#/components/slaSets/1"
-```
-
-**By name (if your tooling supports dereferencing by metadata):**
-
-```yml 
-slaName: Extended
-```
 
 
 
