@@ -14,6 +14,8 @@ includes:
   - qa
   - sla
   - components
+  - example_referenced
+  - example_referenced_pricing
 
  
 
