@@ -1248,7 +1248,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>Example of Data Quality component with some of the data quality dimensions:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">basic</span>
+  <span class="na">default</span><span class="pi">:</span>
     <span class="na">name</span><span class="pi">:</span> 
       <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic Data Quality</span>
     <span class="na">description</span><span class="pi">:</span> 
@@ -1271,7 +1271,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
         <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
 
 
-  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">premium</span>
+  <span class="na">premium</span><span class="pi">:</span>
     <span class="na">name</span><span class="pi">:</span> 
       <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium Data Quality</span>
     <span class="na">description</span><span class="pi">:</span> 
@@ -1553,7 +1553,9 @@ Development of the specification is under the umbrella of the Linux Foundation. 
         <span class="pi">-</span> <span class="s">High amount of transactions</span>
         <span class="pi">-</span> <span class="s">Billed monthly</span> 
       <span class="na">paymentGateway</span><span class="pi">:</span>
-        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/paymentGateways/api"</span>
+        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/paymentGateways/default"</span>
+      <span class="na">dataQuality</span><span class="pi">:</span>
+        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/dataQuality/premium"</span>
   <span class="na">executable</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span> 
       <span class="na">version</span><span class="pi">:</span> <span class="m">1.2</span>
@@ -2398,15 +2400,17 @@ Development of the specification is under the umbrella of the Linux Foundation. 
     <span class="na">type</span><span class="pi">:</span> <span class="s">Axio</span>
     <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
     <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://www.x402.org/'</span>
+    <span class="na">accessURL</span><span class="pi">:</span> <span class="s">url to payment gateway</span>
     <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
       <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
 
-  <span class="na">API</span><span class="pi">:</span>
+  <span class="na">default</span><span class="pi">:</span>
     <span class="na">description</span><span class="pi">:</span>
       <span class="na">en</span><span class="pi">:</span> <span class="s">API consumption payment gateway for humans</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
     <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
     <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://docs.stripe.com/'</span>
+    <span class="na">accessURL</span><span class="pi">:</span> <span class="s">url to payment gateway</span>
     <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
       <span class="s">// Replace this with your actual implementation or link</span>
       <span class="s">stripe.createCheckoutSession({</span>
