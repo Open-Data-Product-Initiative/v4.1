@@ -39,9 +39,9 @@ dataAccess:
 | **outputPorttype** | string | any  | 	Type of data access, such as API, SQL, sFTP, gRPC. |
 | **hashType** | string | any | Type of secure hash algorithm, such as SHA-1, SHA-2, for checksum, when output is file(s).  |
 | **checksum** | string | any | File checksum. |
-| **authenticationMethod** | string | any  | Data access authentication method type, such as API key, HTTP Basic, OAuth, No authentication. |
+| **authenticationMethod** | string | any  | Data access authentication method type: API key, HTTP Basic, OAuth, No authentication. |
 | **specification** | string | any  | Type of the data access specification, such as OAS, RAML, Slate. |
-| **format** | string | any | 	Data access file format type, such as JSON, XML, GraphQL, plain text. |
+| **format** | string | any | 	Data access file format type: JSON, XML, GraphQL, plain text, zip, CSV, Excel. |
 | **specsURL** | URL | Valid URL | 	The URL of the data access documentation, preferably in a machine-readable format, such as OpenAPI specs. |
 | **acccessURL** | URL | Valid URL | 	The URL of direct data access. Can be API endpoint or file  |
 | **documentationURL** | URL | Valid URL  | The URL of the separated data access documentation or guide. For example, it may contain instructions on how to create and manage api keys.|
