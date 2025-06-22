@@ -9,7 +9,7 @@ Payment Gateways **OBJECT** describes the methods to define payment gateways for
 ```yml
 
 paymentGateways:
-  - id: Agent
+  Agent:
     description:
       en: Payment gateway for AI agents
     type: Axio
@@ -18,7 +18,7 @@ paymentGateways:
     spec: |
       paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});
 
-  - id: API
+  API:
     description:
       en: API consumption payment gateway for humans
     type: Stripe
