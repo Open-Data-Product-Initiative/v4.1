@@ -103,7 +103,7 @@ pricingPlans:
         unit: recurring
         maxTransactionQuantity: 200000
         offering:
-          - High Quality Pets data
+          - High Quality Events data
           - High amount of transactions
           - Billed monthly
         paymentGateway:
@@ -121,7 +121,7 @@ pricingPlans:
         unit: recurring
         maxTransactionQuantity: 0
         offering:
-          - High Quality Pets data
+          - High Quality Events data
           - High amount of transactions
           - Billed monthly
         paymentGateway:
