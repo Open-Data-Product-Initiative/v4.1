@@ -426,6 +426,14 @@
               </ul>
           </li>
           <li>
+            <a href="#payment-gateways" class="toc-h1 toc-link" data-title="Payment Gateways">Payment Gateways</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#specification-extensions" class="toc-h1 toc-link" data-title="Specification extensions">Specification extensions</a>
           </li>
           <li>
@@ -2345,6 +2353,44 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </tbody></table>
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-rc/issues">raise an issue in Github</a></p>
+<h1 id='payment-gateways'>Payment Gateways</h1>
+<p>Payment Gateways <strong>OBJECT</strong> describes the methods to define payment gateways for pricing plans as references</p>
+<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<blockquote>
+<p>Example of Payment Gateways object usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">paymentGateways</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Agent</span>
+      <span class="s">type</span><span class="pi">:</span> <span class="s">Axio</span>
+      <span class="s">version</span><span class="pi">:</span> <span class="m">1.0</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://www.x402.org/</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">API</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.stripe.com/</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">link or code to ignite purchase</span>
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>object</strong></td>
+<td>type</td>
+<td>Options</td>
+<td>Desc</td>
+</tr>
+</tbody></table>
 <h1 id='specification-extensions'>Specification extensions</h1>
 <p>While the Open Data Product Specification tries to accommodate most use cases, additional data can be added to extend the specification at certain points.</p>
 
