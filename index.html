@@ -1246,27 +1246,47 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>Example of Data Quality component with some of the data quality dimensions:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
-  <span class="na">declarative</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-      <span class="na">displaytitle</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-      <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="s">Datan virheettömyys (prosenttia)</span>
-    <span class="na">description</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;-</span>
-          <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
-          <span class="s">entities or events it represents, minimizing errors and providing</span>
-          <span class="s">reliable insights.</span>
-      <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="pi">&gt;-</span>
-          <span class="s">Datatuotteen tarkkuus varmistaa, että se heijastaa todellisia</span>
-          <span class="s">kohteita tai tapahtumia, vähentää virheitä ja tarjoaa luotettavaa</span>
-          <span class="s">tietoa.</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">basic</span>
+    <span class="na">description</span><span class="pi">:</span> 
+      <span class="na">en</span><span class="pi">:</span> <span class="s">The basic quality package</span>
+    <span class="na">dimensions</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+        <span class="na">displaytitle</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
+            <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
+            <span class="s">entities or events it represents, minimizing errors and providing</span>
+            <span class="s">reliable insights.</span>
         <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
         <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+        <span class="na">displaytitle</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+        <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
+
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">premium</span>
+    <span class="na">description</span><span class="pi">:</span> 
+      <span class="na">en</span><span class="pi">:</span> <span class="s">The Preimum quality package</span>
+    <span class="na">dimensions</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+        <span class="na">displaytitle</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
+            <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
+            <span class="s">entities or events it represents, minimizing errors and providing</span>
+            <span class="s">reliable insights.</span>
+        <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+        <span class="na">displaytitle</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+        <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
   <span class="na">executable</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span>
@@ -2362,12 +2382,16 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">paymentGateways</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Agent</span>
+    <span class="na">description</span><span class="pi">:</span>
+      <span class="na">en</span><span class="pi">:</span> <span class="s">Payment gateway for AI agents</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">Axio</span>
     <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
     <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://www.x402.org/'</span>
     <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
       <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">API</span>
+    <span class="na">description</span><span class="pi">:</span>
+      <span class="na">en</span><span class="pi">:</span> <span class="s">API consumption Payment gateway for humans</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
     <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
     <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://docs.stripe.com/'</span>
