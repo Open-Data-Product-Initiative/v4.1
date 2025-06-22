@@ -2523,283 +2523,341 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="nn">---</span>
-<span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v3.0rc/schema/odps.yaml</span>
-<span class="na">version</span><span class="pi">:</span> <span class="m">3.0</span>
+<span class="na">schema</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://opendataproducts.org/v3.1/schema/odps.yaml'</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">3.1</span>
 <span class="na">product</span><span class="pi">:</span>
-  <span class="na">en</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
-    <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
-    <span class="na">valueProposition</span><span class="pi">:</span> <span class="s">Design a customised petstore using a data product that describes</span>
-      <span class="s">pets with their habits, preferences and characteristics.</span>
-    <span class="na">description</span><span class="pi">:</span> <span class="s">This is an example of a Petstore product.</span>
-    <span class="na">productSeries</span><span class="pi">:</span> <span class="s">Lovely pets data products</span>
-    <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
-    <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1'</span>
-    <span class="na">categories</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">pets</span>
-    <span class="na">standards</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ISO 24631-6</span>
-    <span class="na">tags</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">pet</span>
-    <span class="na">brandSlogan</span><span class="pi">:</span> <span class="s">Passion for the data monetization</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">derived data</span>
-    <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png</span>
-    <span class="na">OutputFileFormats</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">json</span>
-    <span class="pi">-</span> <span class="s">xml</span>
-    <span class="pi">-</span> <span class="s">csv</span>
-    <span class="pi">-</span> <span class="s">zip</span>
-    <span class="na">useCases</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">useCase</span><span class="pi">:</span>
-        <span class="na">useCaseTitle</span><span class="pi">:</span> <span class="s">Build attractive and lucrative petstore!</span>
-        <span class="na">useCaseDescription</span><span class="pi">:</span> <span class="s">Use case description how succesfull petstore chain was</span>
-          <span class="s">established in Abu Dhabi</span>
-        <span class="na">useCaseURL</span><span class="pi">:</span> <span class="s">https://marketplace.com/usecase1</span>
-  <span class="na">recommendedDataProducts</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct.json, https://marketplace.com/dataproduct-another.json</span>
-  <span class="na">pricingPlans</span><span class="pi">:</span>
+  <span class="na">contract</span><span class="pi">:</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">02323M123</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">ODCS</span>
+    <span class="na">contractVersion</span><span class="pi">:</span> <span class="s">2.2.2</span>
+    <span class="na">contractURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://datamesh-manager.com/urbanltd/dataproducts/9bd530'</span>
+  <span class="na">details</span><span class="pi">:</span>
     <span class="na">en</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
-      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-      <span class="na">price</span><span class="pi">:</span> <span class="s1">'</span><span class="s">50.00'</span>
-      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="s">unlimited</span>
-      <span class="na">offering</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium Package Monthly</span>
-      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-      <span class="na">price</span><span class="pi">:</span> <span class="s1">'</span><span class="s">5.00'</span>
-      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">10000</span>
-      <span class="na">offering</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Freemium Package</span>
-      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-      <span class="na">price</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.00'</span>
-      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">1000</span>
-      <span class="na">offering</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Revenue sharing</span>
-      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">percentage</span>
-      <span class="na">price</span><span class="pi">:</span> <span class="s1">'</span><span class="s">5.50'</span>
-      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">revenue-sharing</span>
-      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">20000</span>
-      <span class="na">offering</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
-  <span class="na">dataOps</span><span class="pi">:</span>
-    <span class="na">data</span><span class="pi">:</span>
-      <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
-
-    <span class="na">lineage</span><span class="pi">:</span>
-      <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
-      <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
-
-    <span class="na">infrastructure</span><span class="pi">:</span>
-      <span class="na">platform</span><span class="pi">:</span> <span class="s">Azure</span>
-      <span class="na">region</span><span class="pi">:</span> <span class="s">West US 2 (Washington)</span>
-      <span class="na">storageTechnology</span><span class="pi">:</span> <span class="s">Azure SQL</span>
-      <span class="na">storageType</span><span class="pi">:</span> <span class="s">sql</span>
-      <span class="na">containerTool</span><span class="pi">:</span> <span class="s">helm</span>
-
-    <span class="na">build</span><span class="pi">:</span>
-      <span class="na">format</span><span class="pi">:</span> <span class="s">yaml</span>
-      <span class="na">hashType</span><span class="pi">:</span> <span class="s">SHA-2</span>
-      <span class="na">checksum</span><span class="pi">:</span> <span class="s">7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921</span>
-      <span class="na">signatureType</span><span class="pi">:</span> <span class="s">JWK</span>
-      <span class="na">scriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/rundatapipeline.yaml</span>
-      <span class="na">deploymentDocumentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/datapipeline</span>
-
-  <span class="na">dataAccess</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">API</span>
-    <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
-    <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS</span>
-    <span class="na">format</span><span class="pi">:</span> <span class="s">JSON</span>
-    <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">https://swagger.com/petstore.json</span>
-
+      <span class="na">name</span><span class="pi">:</span> <span class="s">UrbanPulse Events</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s">urbanpulse-events-001</span>
+      <span class="na">valueProposition</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+        <span class="s">Enable smarter city experiences by providing structured, real-time</span>
+        <span class="s">public event data ready for integration into travel apps, tourism</span>
+        <span class="s">platforms, and smart city services.</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+        <span class="s">UrbanPulse Events is a SmartCity data product that aggregates and</span>
+        <span class="s">structures public event information — concerts, exhibitions, festivals,</span>
+        <span class="s">sports events — making it accessible through APIs and dashboards for</span>
+        <span class="s">internal and future external use.</span>
+      <span class="na">productSeries</span><span class="pi">:</span> <span class="s">SmartCity Living Data Products</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s">internal</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s">production</span>
+      <span class="na">productVersion</span><span class="pi">:</span> <span class="s">0.1.0</span>
+      <span class="na">versionNotes</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+        <span class="s">Initial internal release with basic event metadata structure and shadow</span>
+        <span class="s">pricing model implemented.</span>
+      <span class="na">issues</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+        <span class="s">Current limitations include manual ingestion of some event sources and</span>
+        <span class="s">partial metadata for smaller events. These will be addressed in the next</span>
+        <span class="s">update with automated feeds and metadata enrichment.</span>
+      <span class="na">categories</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">city-events</span>
+        <span class="pi">-</span> <span class="s">tourism</span>
+        <span class="pi">-</span> <span class="s">smartcity</span>
+      <span class="na">standards</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">ODPS </span><span class="m">3.1</span>
+      <span class="na">tags</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">smartcity</span>
+        <span class="pi">-</span> <span class="s">events</span>
+        <span class="pi">-</span> <span class="s">tourism</span>
+        <span class="pi">-</span> <span class="s">public-data</span>
+      <span class="na">brandSlogan</span><span class="pi">:</span> <span class="s">Turning City Buzz into Business Value</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
+  <span class="na">pricingPlans</span><span class="pi">:</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="na">en</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Basic Reader</span>
+          <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">USD</span>
+          <span class="na">price</span><span class="pi">:</span> <span class="m">0</span>
+          <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+          <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">100</span>
+          <span class="na">offering</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">Standard access to event metadata</span>
+            <span class="pi">-</span> <span class="s">Up to 100 SQL queries per month</span>
+            <span class="pi">-</span> <span class="s">Shared SLA (best-effort availability)</span>
+            <span class="pi">-</span> <span class="s">No prioritization in case of peaks</span>
+          <span class="na">notes</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+            <span class="s">Shadow pricing only for internal visibility. No actual billing</span>
+            <span class="s">applied.</span>
+          <span class="na">paymentGateway</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/paymentGateways/default'</span>
+          <span class="na">dataQuality</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/default'</span>
+          <span class="na">SLA</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/SLA/default'</span>
+          <span class="na">access</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataAccess/API'</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Extended User</span>
+          <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">USD</span>
+          <span class="na">price</span><span class="pi">:</span> <span class="m">300</span>
+          <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+          <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">1000</span>
+          <span class="na">offering</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">Prioritized SQL access during high-demand periods</span>
+            <span class="pi">-</span> <span class="s">Up to 1000 SQL queries per month</span>
+            <span class="pi">-</span> <span class="s">Faster response times</span>
+            <span class="pi">-</span> <span class="s">Moderate rate limits</span>
+          <span class="na">notes</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+            <span class="s">Shadow pricing estimate based on infrastructure and operational cost</span>
+            <span class="s">models.</span>
+          <span class="na">paymentGateway</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/paymentGateways/default'</span>
+          <span class="na">dataQuality</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/default'</span>
+          <span class="na">SLA</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/SLA/default'</span>
+          <span class="na">access</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataAccess/API'</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">High Volume Access</span>
+          <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">USD</span>
+          <span class="na">price</span><span class="pi">:</span> <span class="m">2000</span>
+          <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+          <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">500000</span>
+          <span class="na">offering</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">Dedicated API channel for bulk usage</span>
+            <span class="pi">-</span> <span class="s1">'</span><span class="s">Up</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">500,000</span><span class="nv"> </span><span class="s">SQL</span><span class="nv"> </span><span class="s">queries</span><span class="nv"> </span><span class="s">per</span><span class="nv"> </span><span class="s">month'</span>
+            <span class="pi">-</span> <span class="s">Guaranteed SLA for availability and response time</span>
+          <span class="na">notes</span><span class="pi">:</span> <span class="s">Shadow pricing for strategic high-usage internal consumers.</span>
+          <span class="na">paymentGateway</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/paymentGateways/agent'</span>
+          <span class="na">dataQuality</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/premium'</span>
+          <span class="na">SLA</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/SLA/premium'</span>
+          <span class="na">access</span><span class="pi">:</span>
+            <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataAccess/Agent'</span>
   <span class="na">SLA</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">latency</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Latency</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-    <span class="na">monitoring</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
-      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span> 
-      <span class="na">spec</span><span class="pi">:</span>  
-        <span class="s">myTimer.observeDuration();</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-    <span class="na">monitoring</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
-      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span> 
-      <span class="na">spec</span><span class="pi">:</span>  
-       <span class="s">rate(http_server_requests_seconds_sum[$__rate_interval]) / rate(http_server_requests_seconds_count[$__rate_interval])</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">errorRate</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">0.1</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfSupport</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="s">01/01/2025</span> <span class="c1"># dd/mm/yyyy</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfLife</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="s">01/03/2025</span> <span class="c1"># dd/mm/yyyy</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">7</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeToDetect</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">60</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeToNotify</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">120</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeToRepair</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">24</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">hours</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">emailResponseTime</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">12</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">hours</span>
-
-  <span class="na">support</span><span class="pi">:</span>
-      <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">+971508976456'</span>
-      <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Mon-Fri</span><span class="nv"> </span><span class="s">8am-4pm</span><span class="nv"> </span><span class="s">(GMT)'</span>
-      <span class="na">email</span><span class="pi">:</span> <span class="s">support@opendataproducts.org</span>
-      <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Mon-Fri</span><span class="nv"> </span><span class="s">8am-4pm</span><span class="nv"> </span><span class="s">(GMT)'</span>
-      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic SLA</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The basic SLA package</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+    <span class="na">premium</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium SLA</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium SLA package</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">5</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
   <span class="na">dataQuality</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-    <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="s">Datan virheettömyys (prosenttia)</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-    <span class="na">monitoring</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
-      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.soda.io/soda-cl/soda-cl-overview.html</span>
-      <span class="na">spec</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">require_unique(member_id)</span> 
-        <span class="pi">-</span> <span class="s">require_range(age_band, 18, 100)</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">99.9</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-    <span class="na">monitoring</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
-      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.soda.io/soda-cl/soda-cl-overview.html</span>
-      <span class="na">spec</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">for each column</span><span class="pi">:</span>
-            <span class="na">name</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">member_id</span><span class="pi">,</span> <span class="nv">gender</span><span class="pi">,</span> <span class="nv">age_band</span><span class="pi">]</span>
-            <span class="na">checks</span><span class="pi">:</span>
-              <span class="pi">-</span> <span class="na">not null</span><span class="pi">:</span>
-                  <span class="na">fail</span><span class="pi">:</span> <span class="s">when &gt; 0.1%</span> <span class="c1"># Fail if more than 0.1% of records are null</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">consistency</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeliness</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">validity</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uniqueness</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic Data Quality</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The basic quality package</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+          <span class="na">description</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
+              <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
+              <span class="s">entities or events it represents, minimizing errors and providing</span>
+              <span class="s">reliable insights.</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="na">premium</span><span class="pi">:</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium Data Quality</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The premium quality package</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+          <span class="na">description</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
+              <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
+              <span class="s">entities or events it represents, minimizing errors and providing</span>
+              <span class="s">reliable insights.</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+  <span class="na">dataAccess</span><span class="pi">:</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">Access to zipped package</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">Latest Dataset and Resources</span>
+      <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">file</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s">zip</span>
+      <span class="na">accessURL</span><span class="pi">:</span> <span class="s">url to file as zip</span>
+    <span class="na">dataonly</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">Access to latest dataset</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">Latest Dataset</span>
+      <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">file</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s">CSV</span>
+      <span class="na">accessURL</span><span class="pi">:</span> <span class="s">url to file as CSV</span>
+    <span class="na">API</span><span class="pi">:</span>
+      <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">API</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s">JSON</span>
+      <span class="na">accessURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://data.cms.gov/data-api/v1/dataset/2/data'</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://data.cms.gov/provr-enrollment/api-docs'</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://data.cms.gov/provr-enrollment/docs'</span>
+    <span class="na">Agent</span><span class="pi">:</span>
+      <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">AI</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://urbanpulse.ai/llms.txt'</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://urbanpulse.ai/llms-full.txt'</span>
+  <span class="na">paymentGateways</span><span class="pi">:</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">Stripe-based API payment gateway</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://docs.stripe.com/'</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">stripe.createCheckoutSession({</span>
+          <span class="s">amount: 4999,</span>
+          <span class="s">currency: 'usd',</span>
+          <span class="s">success_url: 'https://your-platform.com/success',</span>
+          <span class="s">cancel_url: 'https://your-platform.com/cancel'</span>
+        <span class="s">});</span>
+    <span class="na">agent</span><span class="pi">:</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">Payment gateway for AI agents</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Axio</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://www.x402.org/'</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">paymentMiddleware("0xYourAddress", {"/mcp-access": "$0.01"});</span>
+  <span class="na">support</span><span class="pi">:</span>
+    <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">+971508976456'</span>
+    <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s">Mon–Fri 8am–4pm (GMT)</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s">support@opendataproducts.org</span>
+    <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s">Mon–Fri 8am–4pm (GMT)</span>
+    <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
   <span class="na">license</span><span class="pi">:</span>
     <span class="na">en</span><span class="pi">:</span>
       <span class="na">scope</span><span class="pi">:</span>
-        <span class="na">definition</span><span class="pi">:</span> <span class="s">The purpose of this license is to determine the terms and conditions</span>
-          <span class="s">applicable to the licensing of the data product, whereby Data Holder grants</span>
-          <span class="s">Data User the right to use the data.</span>
-        <span class="na">restrictions</span><span class="pi">:</span> <span class="s">Data User agrees not to, directly or indirectly, participate in</span>
-          <span class="s">the unauthorized use, disclosure or conversion of any confidential information.</span>
+        <span class="na">definition</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">The purpose of this license is to determine the terms and conditions</span>
+          <span class="s">applicable to the licensing of the data product, whereby Data Holder</span>
+          <span class="s">grants Data User the right to use the data.</span>
+        <span class="na">restrictions</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Data User agrees not to, directly or indirectly, participate in the</span>
+          <span class="s">unauthorized use, disclosure or conversion of any confidential</span>
+          <span class="s">information.</span>
         <span class="na">geographicalArea</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">EU</span>
-        <span class="pi">-</span> <span class="s">US</span>
+          <span class="pi">-</span> <span class="s">EU</span>
+          <span class="pi">-</span> <span class="s">US</span>
         <span class="na">permanent</span><span class="pi">:</span> <span class="no">false</span>
         <span class="na">exclusive</span><span class="pi">:</span> <span class="no">false</span>
         <span class="na">rights</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">Reproduction</span>
-        <span class="pi">-</span> <span class="s">Display</span>
-        <span class="pi">-</span> <span class="s">Distribution</span>
-        <span class="pi">-</span> <span class="s">Adaptation</span>
-        <span class="pi">-</span> <span class="s">Reselling</span>
-        <span class="pi">-</span> <span class="s">Sublicensing</span>
-        <span class="pi">-</span> <span class="s">Transferring</span>
+          <span class="pi">-</span> <span class="s">Reproduction</span>
+          <span class="pi">-</span> <span class="s">Display</span>
+          <span class="pi">-</span> <span class="s">Distribution</span>
+          <span class="pi">-</span> <span class="s">Adaptation</span>
+          <span class="pi">-</span> <span class="s">Reselling</span>
+          <span class="pi">-</span> <span class="s">Sublicensing</span>
+          <span class="pi">-</span> <span class="s">Transferring</span>
       <span class="na">termination</span><span class="pi">:</span>
-        <span class="na">terminationConditions</span><span class="pi">:</span> <span class="s">Cancellation before 30 days. After the expiry of the</span>
-          <span class="s">right of use, the product and its derivatives must be removed.</span>
-        <span class="na">continuityConditions</span><span class="pi">:</span> <span class="s">Expired license will automatically continued without written</span>
+        <span class="na">noticePeriod</span><span class="pi">:</span> <span class="m">90</span>
+        <span class="na">terminationConditions</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">After the expiry of the right of use, the product and its derivatives</span>
+          <span class="s">must be removed.</span>
+        <span class="na">continuityConditions</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Expired license will automatically continued without written</span>
           <span class="s">cancellation (termination) by Data Holder</span>
       <span class="na">governance</span><span class="pi">:</span>
-        <span class="na">ownership</span><span class="pi">:</span> <span class="s">Mindmote Oy, a company specializing in pet industry insights, owns</span>
-          <span class="s">the license to its proprietary data product 'Pets of the Year'.</span>
-        <span class="na">damages</span><span class="pi">:</span> <span class="s">During the term of license, except for the force majeure or the Data</span>
-          <span class="s">Holders reasons, Data User is required to follow strictly in accordance with</span>
-          <span class="s">the license. If Data User wants to terminate the license early, it needs to</span>
-          <span class="s">pay a certain amount of liquidated damages.</span>
-        <span class="na">confidentiality</span><span class="pi">:</span> <span class="s">Data User undertakes to maintain confidentiality as regards</span>
-          <span class="s">all information of a technical (such as, by way of a non-limiting example,</span>
-          <span class="s">drawings, tables, documentation, formulas and correspondence) and commercial</span>
-          <span class="s">nature (including contractual conditions, prices, payment conditions) gained</span>
-          <span class="s">during the performance of this license.</span>
-        <span class="na">applicableLaws</span><span class="pi">:</span> <span class="s">This license shall be interpreted, construed and enforced in</span>
+        <span class="na">ownership</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Mindmote Oy, a company specializing in pet industry insights, owns the</span>
+          <span class="s">license to its proprietary data product 'Pets of the Year'.</span>
+        <span class="na">damages</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">During the term of license, except for the force majeure or the Data</span>
+          <span class="s">Holders reasons, Data User is required to follow strictly in</span>
+          <span class="s">accordance with the license. If Data User wants to terminate the</span>
+          <span class="s">license early, it needs to pay a certain amount of liquidated damages.</span>
+        <span class="na">confidentiality</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Data User undertakes to maintain confidentiality as regards all</span>
+          <span class="s">information of a technical (such as, by way of a non-limiting example,</span>
+          <span class="s">drawings, tables, documentation, formulas and correspondence) and</span>
+          <span class="s">commercial nature (including contractual conditions, prices, payment</span>
+          <span class="s">conditions) gained during the performance of this license.</span>
+        <span class="na">applicableLaws</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">This license shall be interpreted, construed and enforced in</span>
           <span class="s">accordance with the law of Finland, including Copyright Act 404/1961.</span>
-        <span class="na">warranties</span><span class="pi">:</span> <span class="s">Data Holder makes no warranties, express or implied, guarantees</span>
-          <span class="s">or conditions with respect to your use of the data product. To the extent</span>
-          <span class="s">permitted under local law, Data Holder disclaims all liability for any damages</span>
-          <span class="s">or losses, including direct, consequential, special, indirect, incidental</span>
-          <span class="s">or punitive, resulting from Data User use of the data product.</span>
-        <span class="na">audit</span><span class="pi">:</span> <span class="s">Data Holder will reasonably cooperate with Data Users by providing available</span>
-          <span class="s">additional information about the data product. Both parties will bear their</span>
-          <span class="s">own audit-related costs.</span>
-        <span class="na">forceMajeure</span><span class="pi">:</span> <span class="s">Both parties may suspend their contractual obligations when fulfillment</span>
-          <span class="s">becomes impossible or excessively costly due to unforeseeable events beyond</span>
-          <span class="s">their control, such as strikes, fires, wars, and other force majeure events.</span>
+        <span class="na">warranties</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Data Holder makes no warranties, express or implied, guarantees or</span>
+          <span class="s">conditions with respect to your use of the data product. To the extent</span>
+          <span class="s">permitted under local law, Data Holder disclaims all liability for any</span>
+          <span class="s">damages or losses, including direct, consequential, special, indirect,</span>
+          <span class="s">incidental or punitive, resulting from Data User use of the data</span>
+          <span class="s">product.</span>
+        <span class="na">audit</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Data Holder will reasonably cooperate with Data Users by providing</span>
+          <span class="s">available additional information about the data product. Both parties</span>
+          <span class="s">will bear their own audit-related costs.</span>
+        <span class="na">forceMajeure</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Both parties may suspend their contractual obligations when</span>
+          <span class="s">fulfillment becomes impossible or excessively costly due to</span>
+          <span class="s">unforeseeable events beyond their control, such as strikes, fires,</span>
+          <span class="s">wars, and other force majeure events.</span>
   <span class="na">dataHolder</span><span class="pi">:</span>
     <span class="na">en</span><span class="pi">:</span>
+      <span class="na">legalName</span><span class="pi">:</span> <span class="s">MindMote Oy</span>
+      <span class="na">businessId</span><span class="pi">:</span> <span class="s">12243434-12</span>
+      <span class="na">email</span><span class="pi">:</span> <span class="s">contact@mindmote.fi</span>
       <span class="na">taxID</span><span class="pi">:</span> <span class="s">12243434-12</span>
       <span class="na">vatID</span><span class="pi">:</span> <span class="s">12243434-12</span>
-      <span class="na">businessDomain</span><span class="pi">:</span> <span class="s">Data Product Business</span>
-      <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://mindmote.fi/logo.png</span>
+      <span class="na">logoURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://mindmote.fi/logo.png'</span>
       <span class="na">description</span><span class="pi">:</span> <span class="s">Digital Economy services and tools</span>
-      <span class="na">URL</span><span class="pi">:</span> <span class="s">https://mindmote.fi</span>
-      <span class="na">telephone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">+358</span><span class="nv"> </span><span class="s">45</span><span class="nv"> </span><span class="s">232</span><span class="nv"> </span><span class="s">2323"</span>
+      <span class="na">URL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://mindmote.fi'</span>
+      <span class="na">telephone</span><span class="pi">:</span> <span class="s">+35845 0232 </span><span class="m">2323</span>
       <span class="na">streetAddress</span><span class="pi">:</span> <span class="s">Koulukatu </span><span class="m">1</span>
       <span class="na">postalCode</span><span class="pi">:</span> <span class="s1">'</span><span class="s">33100'</span>
       <span class="na">addressRegion</span><span class="pi">:</span> <span class="s">Pirkanmaa</span>
       <span class="na">addressLocality</span><span class="pi">:</span> <span class="s">Tampere</span>
       <span class="na">addressCountry</span><span class="pi">:</span> <span class="s">Finland</span>
       <span class="na">aggregateRating</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">ratingCount</span><span class="pi">:</span> <span class="m">1245</span>
+      <span class="na">ratingCount</span><span class="pi">:</span> <span class="s1">'</span><span class="s">1245'</span>
       <span class="na">slogan</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
       <span class="na">parentOrganization</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
 
