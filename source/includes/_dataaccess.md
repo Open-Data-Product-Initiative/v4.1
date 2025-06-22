@@ -35,7 +35,7 @@ dataAccess:
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **dataAccess** | element | - |  Binds the data access related elements and attributes together. |
-| **interface** | element | - | Reference to the ability to use data. |
+| **interface** | element | - | Reference to the ability to use data. Use simple name, it will be references from other objects like Pricing |
 | **outputPorttype** | string | any  | 	Type of data access, such as API, SQL, sFTP, gRPC. |
 | **hashType** | string | any | Type of secure hash algorithm, such as SHA-1, SHA-2, for checksum, when output is file(s).  |
 | **checksum** | string | any | File checksum. |
