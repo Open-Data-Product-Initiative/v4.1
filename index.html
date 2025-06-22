@@ -1564,7 +1564,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <span class="na">pricingPlans</span><span class="pi">:</span>
   <span class="na">declarative</span><span class="pi">:</span>
     <span class="na">en</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 month</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Standard API subscription 1 month</span>
       <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
       <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
       <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
@@ -1577,9 +1577,31 @@ Development of the specification is under the umbrella of the Linux Foundation. 
       <span class="na">paymentGateway</span><span class="pi">:</span>
         <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/paymentGateways/default"</span>
       <span class="na">dataQuality</span><span class="pi">:</span>
+        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/dataQuality/default"</span>
+      <span class="na">SLA</span><span class="pi">:</span>
+        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/SLA/default"</span>
+      <span class="na">access</span><span class="pi">:</span>
+        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/dataAccess/API"</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium MCP 1 month</span>
+      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+      <span class="na">price</span><span class="pi">:</span> <span class="m">500.00</span>
+      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="na">offering</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+        <span class="pi">-</span> <span class="s">High amount of transactions</span>
+        <span class="pi">-</span> <span class="s">Billed monthly</span> 
+      <span class="na">paymentGateway</span><span class="pi">:</span>
+        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/paymentGateways/agent"</span>
+      <span class="na">dataQuality</span><span class="pi">:</span>
         <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/dataQuality/premium"</span>
       <span class="na">SLA</span><span class="pi">:</span>
         <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/SLA/premium"</span>
+      <span class="na">access</span><span class="pi">:</span>
+        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/dataAccess/agent"</span>
+
   <span class="na">executable</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span> 
       <span class="na">version</span><span class="pi">:</span> <span class="m">1.2</span>
@@ -2123,19 +2145,24 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">dataAccess</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">filecollection</span>
+  <span class="na">default</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Access to zipped package</span>
     <span class="na">description</span><span class="pi">:</span> 
-      <span class="na">en</span><span class="pi">:</span> <span class="s">Latest Dataset and Resources</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Latest Dataset and Resources</span>
     <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">file</span>
     <span class="na">format</span><span class="pi">:</span> <span class="s">zip</span>
     <span class="na">accessURL</span><span class="pi">:</span> <span class="s">url to file as zip</span>
-  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">dataonly</span>
+  <span class="na">dataonly</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Access to latest dataset</span>
     <span class="na">description</span><span class="pi">:</span> 
-      <span class="na">en</span><span class="pi">:</span> <span class="s">Latest Dataset and Resources</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Latest Dataset</span>
     <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">file</span>
     <span class="na">format</span><span class="pi">:</span> <span class="s">CSV</span>
     <span class="na">accessURL</span><span class="pi">:</span> <span class="s">url to file as CSV</span>
-  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">API</span>
+  <span class="na">API</span><span class="pi">:</span>
+    <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">API</span>
     <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
     <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS</span>
     <span class="na">format</span><span class="pi">:</span> <span class="s">JSON</span>
@@ -2145,14 +2172,15 @@ Development of the specification is under the umbrella of the Linux Foundation. 
       <span class="s">https://data.cms.gov/provr-enrollment/api-docs</span>
     <span class="na">documentationURL</span><span class="pi">:</span> <span class="pi">&gt;-</span> 
       <span class="s">https://data.cms.gov/provr-enrollment/docs</span>
-  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">Agent</span> 
-      <span class="s">description</span><span class="pi">:</span> 
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
-      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
-      <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
-      <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
-      <span class="na">specsURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/llms.txt</span>
-      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/llms-full.txt</span>
+  <span class="na">Agent</span><span class="pi">:</span> 
+    <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">AI</span>
+    <span class="na">description</span><span class="pi">:</span> 
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
+    <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
+    <span class="na">specification</span><span class="pi">:</span> <span class="s">MCP 2025-03-26</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
+    <span class="na">specsURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/llms.txt</span>
+    <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/llms-full.txt</span>
 </code></pre></div>
 <table><thead>
 <tr>
@@ -2415,18 +2443,6 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">paymentGateways</span><span class="pi">:</span>
-
-  <span class="na">default</span><span class="pi">:</span>
-
-  <span class="na">Agent</span><span class="pi">:</span>
-    <span class="na">description</span><span class="pi">:</span>
-      <span class="na">en</span><span class="pi">:</span> <span class="s">Payment gateway for AI agents</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">Axio</span>
-    <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
-    <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://www.x402.org/'</span>
-    <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
-      <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
-
   <span class="na">default</span><span class="pi">:</span>
     <span class="na">description</span><span class="pi">:</span>
       <span class="na">en</span><span class="pi">:</span> <span class="s">API consumption payment gateway for humans</span>
@@ -2441,6 +2457,17 @@ Development of the specification is under the umbrella of the Linux Foundation. 
         <span class="s">success_url: 'https://your-platform.com/success',</span>
         <span class="s">cancel_url: 'https://your-platform.com/cancel'</span>
       <span class="s">});</span>
+
+  <span class="na">Agent</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span>
+      <span class="na">en</span><span class="pi">:</span> <span class="s">Payment gateway for AI agents</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">Axio</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
+    <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://www.x402.org/'</span>
+    <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
+      <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
+
+
 
 </code></pre></div>
 <table><thead>
