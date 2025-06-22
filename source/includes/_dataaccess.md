@@ -49,7 +49,7 @@ dataAccess:
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **dataAccess** | object | - | Root-level object containing named access configurations. Each key (e.g., `default`, `API`, `Agent`) defines an access method that can be reused across the ODPS YAML. |
-| **default** | object | - | **Mandatory.** This object defines the default access interface and must always be present. The name `default` is fixed and used as the fallback or primary access method. <br/><br/> In the example above, you will see additional user-defined access methods (`dataonly`, `API`, `Agent`) demonstrating how various access interfaces can be added beyond the required `default`. <br/><br/> **Example reference usage:** <br/> `access: $ref: '#/dataAccess/default'`|
+| **default** | object | - | This object defines the default access interface and must always be present if dataAccess object is used. The name `default` is fixed and used as the fallback or primary access method. <br/><br/> In the example above, you will see additional user-defined access methods (`dataonly`, `API`, `Agent`) demonstrating how various access interfaces can be added beyond the required `default`. <br/><br/> **Example reference usage:** <br/> `access: $ref: '#/dataAccess/default'`|
 
 | **name** | object | ISO 639-1 language codes (e.g., `en`) | Multilingual name for the access interface. Can be shown in UIs. |
 | **description** | object | ISO 639-1 language codes (e.g., `en`) | Multilingual description for the access interface. Supports user understanding. |
