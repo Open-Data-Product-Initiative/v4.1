@@ -1246,7 +1246,9 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>Example of Data Quality component with some of the data quality dimensions:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">basic</span>
+  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">basic</span>
+    <span class="na">name</span><span class="pi">:</span> 
+      <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic Data Quality</span>
     <span class="na">description</span><span class="pi">:</span> 
       <span class="na">en</span><span class="pi">:</span> <span class="s">The basic quality package</span>
     <span class="na">dimensions</span><span class="pi">:</span>
@@ -1267,7 +1269,9 @@ Development of the specification is under the umbrella of the Linux Foundation. 
         <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
 
 
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">premium</span>
+  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">premium</span>
+    <span class="na">name</span><span class="pi">:</span> 
+      <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium Data Quality</span>
     <span class="na">description</span><span class="pi">:</span> 
       <span class="na">en</span><span class="pi">:</span> <span class="s">The Preimum quality package</span>
     <span class="na">dimensions</span><span class="pi">:</span>
@@ -2091,19 +2095,19 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">dataAccess</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">interface</span><span class="pi">:</span> <span class="s">filecollection</span>
+  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">filecollection</span>
     <span class="na">description</span><span class="pi">:</span> 
       <span class="na">en</span><span class="pi">:</span> <span class="s">Latest Dataset and Resources</span>
     <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">file</span>
     <span class="na">format</span><span class="pi">:</span> <span class="s">zip</span>
     <span class="na">accessURL</span><span class="pi">:</span> <span class="s">url to file as zip</span>
-  <span class="pi">-</span> <span class="na">interface</span><span class="pi">:</span> <span class="s">dataonly</span>
+  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">dataonly</span>
     <span class="na">description</span><span class="pi">:</span> 
       <span class="na">en</span><span class="pi">:</span> <span class="s">Latest Dataset and Resources</span>
     <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">file</span>
     <span class="na">format</span><span class="pi">:</span> <span class="s">CSV</span>
     <span class="na">accessURL</span><span class="pi">:</span> <span class="s">url to file as CSV</span>
-  <span class="pi">-</span> <span class="na">interface</span><span class="pi">:</span> <span class="s">API</span>
+  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">API</span>
     <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
     <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS</span>
     <span class="na">format</span><span class="pi">:</span> <span class="s">JSON</span>
@@ -2113,7 +2117,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
       <span class="s">https://data.cms.gov/provr-enrollment/api-docs</span>
     <span class="na">documentationURL</span><span class="pi">:</span> <span class="pi">&gt;-</span> 
       <span class="s">https://data.cms.gov/provr-enrollment/docs</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Agent</span> 
+  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">Agent</span> 
       <span class="s">description</span><span class="pi">:</span> 
       <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">MCP interface for structured data access and agent interaction.</span>
       <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">Token</span>
