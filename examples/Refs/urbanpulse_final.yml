@@ -1,0 +1,222 @@
+
+
+schema: https://opendataproducts.org/v3.1/schema/odps.yaml
+version: 3.1
+product:
+  contract:
+    id: 02323M123  
+    type:  ODCS 
+    contractVersion:  2.2.2
+    contractURL: https://datamesh-manager.com/urbanltd/dataproducts/9bd530
+  details:
+    en:
+      name: UrbanPulse Events
+      productID: urbanpulse-events-001
+      valueProposition: Enable smarter city experiences by providing structured, real-time 
+        public event data ready for integration into travel apps, tourism platforms, and 
+        smart city services.
+      description: UrbanPulse Events is a SmartCity data product that aggregates and structures 
+        public event information — concerts, exhibitions, festivals, sports events — 
+        making it accessible through APIs, MCP, and dashboards for internal and future external use.
+      productSeries: SmartCity Living Data Products
+      visibility: public
+      status: production
+      productVersion: '1.0.0'
+      versionNotes: First production version with AI agent support.
+      issues: Current limitations include manual ingestion of some event sources and partial 
+        metadata for smaller events. These will be addressed in the next update with automated 
+        feeds and metadata enrichment.
+      categories:
+        - city-events
+        - tourism
+        - smartcity
+      standards:
+        - ODPS 3.1
+        - OpenAPI Specification 3.0
+        - MCP
+      tags:
+        - smartcity
+        - events
+        - tourism
+        - public-data
+      brandSlogan: Turning City Buzz into Business Value
+      type: 'data-driven service'
+
+
+pricingPlans:
+  en:
+    - name: Freemium
+      priceCurrency: USD
+      price: 0.00                 
+      billingDuration: month
+      unit: recurring
+      maxTransactionQuantity: 1000
+      offering:
+        - Basic event‑stream metadata (last 30 days only)
+        - Up to 1,000 API calls per month
+        - No SLA 
+        - community‑only support 
+        - no add‑ons
+      notes: >
+        Free developer tier. Best‑effort availability and no traffic‑peak prioritisation.
+
+    
+    - name: Growth (Pay‑as‑you‑go)
+      priceCurrency: USD
+      price: 0.005                
+      billingDuration: none       
+      unit: Pay-per-use
+      maxTransactionQuantity: null   
+      offering:
+        - Real‑time & historical data
+        - Billed per call, $0.005 (basic), $0.01 (history), $0.015 (live)
+        - Optional add‑ons, predictions, optimiser, SLA uplift
+        - Standard SLA 
+        - Email + standard support
+      notes: >
+        Amount invoiced monthly equals (#basic × $0.005) + (#history × $0.01) +
+        (#live × $0.015). No upfront commitment.
+
+    
+    - name: Premium
+      priceCurrency: USD
+      price: 5000.00
+      billingDuration: month
+      unit: recurring
+      maxTransactionQuantity: 200000
+      offering:
+        - Real‑time & historical access
+        - Up to 200,000 API calls per month
+        - All add‑ons included (predictions, optimiser)
+        - Enhanced SLA
+        - priority support
+      notes: >
+        Fixed‑price enterprise plan for predictable high‑volume workloads.
+
+    - name: MCP Agent Access
+      priceCurrency: USD
+      price: 999.00               
+      billingDuration: month
+      unit: recurring
+      maxTransactionQuantity: null
+      offering:
+        - Unlimited* agent queries (rate‑limited to protect service)
+        - MCP tools & prompt templates
+        - Structured data via MCP resources
+        - Real‑time agent‑response SLA
+        - Dedicated onboarding support
+      notes: >
+        Designed for conversational agents rather
+        than direct API usage.  *“Unlimited” subject to fair‑use rate limits.
+
+SLA:
+  declarative:
+    - dimension: uptime
+      displaytitle:
+        - en: Uptime
+      objective: 99
+      unit: percent
+    - dimension: responseTime
+      objective: 200
+      unit: milliseconds
+    - dimension: updateFrequency
+      objective: 1
+      unit: days
+
+dataQuality:
+  declarative:
+    - dimension: accuracy
+      displaytitle:
+      - en: Data Accuracy (percent)
+      - fi: Datan virheettömyys (prosenttia)
+      description:
+      - en: >-
+          Data Accuracy ensures the data product reflects the real-world
+          entities or events it represents, minimizing errors and providing
+          reliable insights.
+      - fi: >-
+          Datatuotteen tarkkuus varmistaa, että se heijastaa todellisia
+          kohteita tai tapahtumia, vähentää virheitä ja tarjoaa luotettavaa
+          tietoa.
+      objective: 98
+      unit: percentage
+    - dimension: completeness
+      displaytitle:
+      - en: Data Completeness (percent)
+        objective: 90
+        unit: percentage
+
+support:
+    phoneNumber: '+971508976456'
+    phoneServiceHours: Mon-Fri 8am-4pm (GMT)
+    email: support@opendataproducts.org
+    emailServiceHours: Mon-Fri 8am-4pm (GMT)
+    documentationURL: ''
+
+dataAccess:
+  - interface: API
+    authenticationMethod: OAuth
+    specification: OAS
+    format: REST
+    specsURL: urbanpulse.ai/urbanpulse.json
+    documentationURL: urbanpulse.ai/docs 
+  - interface: MCP
+    authenticationMethod: Token
+    specification: MCP 2025-03-26
+    format: MCP
+    specsURL: urbanpulse.ai/llms.txt
+    documentationURL: urbanpulse.ai/llms-full.txt   
+
+
+license:
+  en:
+    scope:
+      definition: The purpose of this license is to determine the terms and conditions
+        applicable to the licensing of the data product, whereby Data Holder grants
+        Data User the right to use the data.
+      restrictions: Data User agrees not to, directly or indirectly, participate in
+        the unauthorized use, disclosure or conversion of any confidential information.
+      geographicalArea:
+      - EU
+      - US
+      permanent: False
+      exclusive: False
+      rights:
+      - Reproduction
+      - Display
+      - Distribution
+      - Adaptation
+  
+    termination:
+      noticePeriod: 90
+      terminationConditions: After the expiry of the right
+        of use, the product and its derivatives must be removed.
+      continuityConditions: Expired license will automatically continued without written
+        cancellation (termination) by Data Holder
+    governance:
+      ownership: MM Ltd, a company specializing in pet industry insights, owns
+        the license to its proprietary data product 'Pets of the Year'.
+      damages: During the term of license, except for the force majeure or the Data
+        Holders reasons, Data User is required to follow strictly in accordance with
+        the license. If Data User wants to terminate the license early, it needs to
+        pay a certain amount of liquidated damages.
+      confidentiality: Data User undertakes to maintain confidentiality as regards all
+        information of a technical (such as, by way of a non-limiting example, drawings,
+        tables, documentation, formulas and correspondence) and commercial nature (including
+        contractual conditions, prices, payment conditions) gained during the performance
+        of this license.
+      applicableLaws: This license shall be interpreted, construed and enforced in accordance
+        with the law of Finland, including Copyright Act 404/1961.
+      warranties: Data Holder makes no warranties, express or implied, guarantees or
+        conditions with respect to your use of the data product. To the extent permitted
+        under local law, Data Holder disclaims all liability for any damages or losses,
+        including direct, consequential, special, indirect, incidental or punitive,
+        resulting from Data User use of the data product.
+      audit: Data Holder will reasonably cooperate with Data Users by providing available
+        additional information about the data product. Both parties will bear their
+        own audit-related costs.
+      forceMajeure: Both parties may suspend their contractual obligations when fulfillment
+        becomes impossible or excessively costly due to unforeseeable events beyond
+        their control, such as strikes, fires, wars, and other force majeure events.
+
+

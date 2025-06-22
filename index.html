@@ -1564,43 +1564,42 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <span class="na">pricingPlans</span><span class="pi">:</span>
   <span class="na">declarative</span><span class="pi">:</span>
     <span class="na">en</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Standard API subscription 1 month</span>
-      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-      <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
-      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">200000</span>
-      <span class="na">offering</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-        <span class="pi">-</span> <span class="s">High amount of transactions</span>
-        <span class="pi">-</span> <span class="s">Billed monthly</span> 
-      <span class="na">paymentGateway</span><span class="pi">:</span>
-        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/paymentGateways/default"</span>
-      <span class="na">dataQuality</span><span class="pi">:</span>
-        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/dataQuality/default"</span>
-      <span class="na">SLA</span><span class="pi">:</span>
-        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/SLA/default"</span>
-      <span class="na">access</span><span class="pi">:</span>
-        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/dataAccess/API"</span>
-
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium MCP 1 month</span>
-      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-      <span class="na">price</span><span class="pi">:</span> <span class="m">500.00</span>
-      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">0</span>
-      <span class="na">offering</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-        <span class="pi">-</span> <span class="s">High amount of transactions</span>
-        <span class="pi">-</span> <span class="s">Billed monthly</span> 
-      <span class="na">paymentGateway</span><span class="pi">:</span>
-        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/paymentGateways/agent"</span>
-      <span class="na">dataQuality</span><span class="pi">:</span>
-        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/dataQuality/premium"</span>
-      <span class="na">SLA</span><span class="pi">:</span>
-        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/SLA/premium"</span>
-      <span class="na">access</span><span class="pi">:</span>
-        <span class="s">$ref</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#/dataAccess/agent"</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Standard API subscription 1 month</span>
+        <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+        <span class="na">price</span><span class="pi">:</span> <span class="m">50</span>
+        <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+        <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">200000</span>
+        <span class="na">offering</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+          <span class="pi">-</span> <span class="s">High amount of transactions</span>
+          <span class="pi">-</span> <span class="s">Billed monthly</span>
+        <span class="na">paymentGateway</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/paymentGateways/default'</span>
+        <span class="na">dataQuality</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/default'</span>
+        <span class="na">SLA</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/SLA/default'</span>
+        <span class="na">access</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataAccess/API'</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium MCP 1 month</span>
+        <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+        <span class="na">price</span><span class="pi">:</span> <span class="m">500</span>
+        <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+        <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">0</span>
+        <span class="na">offering</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+          <span class="pi">-</span> <span class="s">High amount of transactions</span>
+          <span class="pi">-</span> <span class="s">Billed monthly</span>
+        <span class="na">paymentGateway</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/paymentGateways/agent'</span>
+        <span class="na">dataQuality</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/premium'</span>
+        <span class="na">SLA</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/SLA/premium'</span>
+        <span class="na">access</span><span class="pi">:</span>
+          <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataAccess/agent'</span>
 
   <span class="na">executable</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span> 

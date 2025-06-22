@@ -1,0 +1,106 @@
+
+
+schema: https://opendataproducts.org/v3.1/schema/odps.yaml
+version: 3.1
+product:
+  contract:
+    id: 02323M123  
+    type:  ODCS 
+    contractVersion:  2.2.2
+    contractURL: https://datamesh-manager.com/urbanltd/dataproducts/9bd530
+  details:
+    en:
+      name: UrbanPulse Events
+      productID: urbanpulse-events-001
+      valueProposition: Enable smarter city experiences by providing structured, real-time 
+        public event data ready for integration into travel apps, tourism platforms, and 
+        smart city services.
+      description: UrbanPulse Events is a SmartCity data product that aggregates and structures 
+        public event information — concerts, exhibitions, festivals, sports events — 
+        making it accessible through APIs and dashboards for internal and future external use.
+      productSeries: SmartCity Living Data Products
+      visibility: public
+      status: production
+      productVersion: '0.9.0'
+      versionNotes: Initial partner release with basic event metadata structure and shadow 
+        pricing model implemented.
+      issues: Current limitations include manual ingestion of some event sources and partial 
+        metadata for smaller events. These will be addressed in the next update with automated 
+        feeds and metadata enrichment.
+      categories:
+        - city-events
+        - tourism
+        - smartcity
+      standards:
+        - ODPS 3.1
+        - OpenAPI Specification 3.0
+      tags:
+        - smartcity
+        - events
+        - tourism
+        - public-data
+      brandSlogan: Turning City Buzz into Business Value
+      type: data-driven service
+
+
+pricingPlans:
+  en:
+    - name: Freemium
+      priceCurrency: USD
+      price: 0.00                 
+      billingDuration: month
+      unit: recurring
+      maxTransactionQuantity: 1000
+      offering:
+        - Basic event‑stream metadata (last 30 days only)
+        - Up to 1,000 API calls per month
+        - No SLA 
+        - community‑only support 
+        - no add‑ons
+      notes: >
+        Free developer tier. Best‑effort availability and no traffic‑peak prioritisation.
+
+    
+    - name: Growth (Pay‑as‑you‑go)
+      priceCurrency: USD
+      price: 0.005                
+      billingDuration: none       
+      unit: Pay-per-use
+      maxTransactionQuantity: null   
+      offering:
+        - Real‑time & historical data
+        - Billed per call, $0.005 (basic), $0.01 (history), $0.015 (live)
+        - Optional add‑ons, predictions, optimiser, SLA uplift
+        - Standard SLA 
+        - Email + standard support
+      notes: >
+        Amount invoiced monthly equals (#basic × $0.005) + (#history × $0.01) +
+        (#live × $0.015). No upfront commitment.
+
+    
+    - name: Premium
+      priceCurrency: USD
+      price: 5000.00
+      billingDuration: month
+      unit: recurring
+      maxTransactionQuantity: 200000
+      offering:
+        - Real‑time & historical access
+        - Up to 200,000 API calls per month
+        - All add‑ons included (predictions, optimiser)
+        - Enhanced SLA
+        - priority support
+      notes: >
+        Fixed‑price enterprise plan for predictable high‑volume workloads.
+
+dataAccess:
+  interface:
+    outputPorttype: API
+    authenticationMethod: OAuth
+    specification: OAS
+    format: REST
+    specsURL: urbanpulse.ai/urbanpulse.json
+    documentationURL: urbanpulse.ai/docs      
+
+
+    

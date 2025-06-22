@@ -1,0 +1,99 @@
+
+
+schema: https://opendataproducts.org/v4.0/schema/odps.yaml
+version: 4.0
+product:
+  details:
+    en:
+      name: UrbanPulse Events
+      productID: urbanpulse-events-001
+      valueProposition: Enable smarter city experiences by providing structured, real-time 
+        public event data ready for integration into travel apps, tourism platforms, and 
+        smart city services.
+      description: UrbanPulse Events is a SmartCity data product that aggregates and structures 
+        public event information — concerts, exhibitions, festivals, sports events — 
+        making it accessible through APIs, MCP, and dashboards for internal and future external use.
+      
+pricingPlans:
+  en:
+    - name: Premium
+      priceCurrency: USD
+      price: 5000.00
+      billingDuration: month
+      unit: recurring
+      maxTransactionQuantity: 200000
+      offering:
+        - Real‑time & historical access
+        - Up to 200,000 API calls per month
+        - All add‑ons included (predictions, optimiser)
+        - Enhanced SLA
+        - priority support
+      interface:  
+        $ref: "#/components/Interafaces/API"
+      SLA:  
+        $ref: "#/components/SLAs/Basic"
+
+    - name: MCP Agent Access
+      priceCurrency: USD
+      price: 999.00               
+      billingDuration: month
+      unit: recurring
+      maxTransactionQuantity: null
+      offering:
+        - Unlimited* agent queries (rate‑limited to protect service)
+        - MCP tools & prompt templates
+        - Structured data via MCP resources
+        - Real‑time agent‑response SLA
+        - Dedicated onboarding support
+      interface:  
+        $ref: "#/components/Interafaces/MCP"
+      SLA:  
+        $ref: "#/components/SLAs/Extended"
+
+Components:
+  SLAs:
+    Basic:
+      declarative:
+        - dimension: uptime
+          displaytitle:
+            - en: Uptime
+          objective: 90
+          unit: percent
+        - dimension: responseTime
+          objective: 500
+          unit: milliseconds
+        - dimension: updateFrequency
+          objective: 1
+          unit: days
+    Extended:
+      declarative:
+        - dimension: uptime
+          displaytitle:
+            - en: Uptime
+          objective: 99
+          unit: percent
+        - dimension: responseTime
+          objective: 200
+          unit: milliseconds
+        - dimension: updateFrequency
+          objective: 1
+          unit: days
+
+  Interfaces:
+    API:
+      description: REST API for real-time event data access.
+      authenticationMethod: OAuth
+      specification: OAS 3.0
+      format: REST
+      specsURL: urbanpulse.ai/urbanpulse.json
+      documentationURL: urbanpulse.ai/docs 
+    Agent:
+      description: MCP interface for structured data access and agent interaction.
+      authenticationMethod: Token
+      specification: MCP 2025-03-26
+      format: MCP
+      specsURL: urbanpulse.ai/llms.txt
+      documentationURL: urbanpulse.ai/llms-full.txt
+  
+
+
