@@ -1601,30 +1601,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
         <span class="na">access</span><span class="pi">:</span>
           <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataAccess/agent'</span>
 
-  <span class="na">executable</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span> 
-      <span class="na">version</span><span class="pi">:</span> <span class="m">1.2</span>
-      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.stripe.com/cli</span>
-      <span class="na">create</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
-          <span class="s">stripe products create  \</span>
-          <span class="s">--name="Premium subscription 1 year"</span>
 
-          <span class="s">stripe prices create  \</span>
-          <span class="s">--currency=eur \</span>
-          <span class="s">--unit-amount=50 \</span>
-          <span class="s">-d "recurring[interval]"=month \</span>
-          <span class="s">-d "product_data[name]"="Premium subscription 1 year"</span>
-      <span class="na">update</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
-          <span class="s"># update plan as Stripe requires</span>
-      <span class="na">retire</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
-          <span class="s"># delete of the plan as Stripe requires</span>
-      <span class="na">purchase</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
-          <span class="s"># generate or get the link in order to </span>
-          <span class="s"># provide method for client to ignite purchase process  </span>
 
 </code></pre></div>
 <table><thead>
