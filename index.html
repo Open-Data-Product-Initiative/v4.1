@@ -2485,10 +2485,46 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>object</strong></td>
-<td>type</td>
-<td>Options</td>
-<td>Desc</td>
+<td><strong>paymentGateways</strong></td>
+<td>object</td>
+<td>-</td>
+<td>Object containing all defined payment gateway configurations. Each key is a named reference (e.g. <code>default</code>, <code>agent</code>) that can be reused in pricing plans.</td>
+</tr>
+<tr>
+<td><strong>default</strong></td>
+<td>object</td>
+<td>-</td>
+<td>Named default payment gateway used. If you use paymentGateways object, this default is expected to be first option and is defined always. Can be referenced using <code>$ref: &#39;#/paymentGateways/default&#39;</code>. <br/> <br/> In the example, <em>agent</em> payment gateway as an example of freely named gateway which can be referenced using <code>$ref: &#39;#/paymentGateways/agent&#39;</code>. You can follow the same pattern and create more</td>
+</tr>
+<tr>
+<td><strong>description</strong></td>
+<td>object</td>
+<td>string <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a></td>
+<td>Multilingual descriptions of the payment gateway. Enables UI rendering in multiple languages.</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>string</td>
+<td>Stripe, Axio, Checkout, Custom</td>
+<td>Defines the payment system or protocol used. Use predefined values. <code>Custom</code> allows custom or internal solutions.</td>
+</tr>
+<tr>
+<td><strong>version</strong></td>
+<td>string</td>
+<td>Free-form version label</td>
+<td>Indicates the version of the payment gateway specification, SDK, or integration logic.</td>
+</tr>
+<tr>
+<td><strong>reference</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>Points to documentation or developer reference for the payment gateway system.</td>
+</tr>
+<tr>
+<td><strong>spec</strong></td>
+<td>string / YAML / URL</td>
+<td>-</td>
+<td>Contains the executable or declarative logic for the payment gateway integration. Can be inline YAML, stringified logic, or link to external file.</td>
 </tr>
 </tbody></table>
 <h1 id='specification-extensions'>Specification extensions</h1>
