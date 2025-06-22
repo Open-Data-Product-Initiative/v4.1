@@ -2198,71 +2198,29 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </thead><tbody>
 <tr>
 <td><strong>dataAccess</strong></td>
-<td>element</td>
+<td>object</td>
 <td>-</td>
-<td>Binds the data access related elements and attributes together.</td>
+<td>Root-level object containing named access configurations. Each key (e.g., <code>default</code>, <code>API</code>, <code>Agent</code>) defines an access method that can be reused across the ODPS YAML.</td>
 </tr>
 <tr>
-<td><strong>id</strong></td>
-<td>element</td>
+<td><strong>default</strong></td>
+<td>object</td>
 <td>-</td>
-<td>Reference to the ability to use data. Use simple name, it will be references from other objects like Pricing</td>
-</tr>
-<tr>
-<td><strong>outputPorttype</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Type of data access, such as API, SQL, sFTP, gRPC.</td>
-</tr>
-<tr>
-<td><strong>hashType</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Type of secure hash algorithm, such as SHA-1, SHA-2, for checksum, when output is file(s).</td>
-</tr>
-<tr>
-<td><strong>checksum</strong></td>
-<td>string</td>
-<td>any</td>
-<td>File checksum.</td>
-</tr>
-<tr>
-<td><strong>authenticationMethod</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Data access authentication method type: API key, HTTP Basic, OAuth, No authentication.</td>
-</tr>
-<tr>
-<td><strong>specification</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Type of the data access specification, such as OAS, RAML, Slate.</td>
-</tr>
-<tr>
-<td><strong>format</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Data access file format type: JSON, XML, GraphQL, plain text, zip, CSV, Excel.</td>
-</tr>
-<tr>
-<td><strong>specsURL</strong></td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>The URL of the data access documentation, preferably in a machine-readable format, such as OpenAPI specs.</td>
-</tr>
-<tr>
-<td><strong>acccessURL</strong></td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>The URL of direct data access. Can be API endpoint or file</td>
-</tr>
-<tr>
-<td><strong>documentationURL</strong></td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>The URL of the separated data access documentation or guide. For example, it may contain instructions on how to create and manage api keys.</td>
+<td><strong>Mandatory.</strong> This object defines the default access interface and must always be present. The name <code>default</code> is fixed and used as the fallback or primary access method. <br/><br/> In the example above, you will see additional user-defined access methods (<code>dataonly</code>, <code>API</code>, <code>Agent</code>) demonstrating how various access interfaces can be added beyond the required <code>default</code>. <br/><br/> <strong>Example reference usage:</strong> <br/> <code>access: $ref: &#39;#/dataAccess/default&#39;</code></td>
 </tr>
 </tbody></table>
+
+<p>| <strong>name</strong> | object | ISO 639-1 language codes (e.g., <code>en</code>) | Multilingual name for the access interface. Can be shown in UIs. |
+| <strong>description</strong> | object | ISO 639-1 language codes (e.g., <code>en</code>) | Multilingual description for the access interface. Supports user understanding. |
+| <strong>outputPorttype</strong> | string | file, API, SQL, AI, gRPC, sFTP, etc. | Describes the technical method for delivering data (e.g., <code>file</code> for file downloads, <code>API</code> for web services). |
+| <strong>format</strong> | string | JSON, XML, CSV, Excel, zip, plain text, GraphQL, MCP | Specifies the data format made available through this access channel. |
+| <strong>authenticationMethod</strong> | string | OAuth, Token, API key, HTTP Basic, none | Security model required to access the data. |
+| <strong>specification</strong> | string | OAS, RAML, Slate, MCP | Defines the type of API or protocol specification used to describe access (e.g., OpenAPI, RAML, or a custom protocol like MCP). |
+| <strong>specsURL</strong> | URL | Valid URL | Points to the machine-readable technical documentation (e.g., OpenAPI YAML). |
+| <strong>accessURL</strong> | URL | Valid URL | The direct access point to retrieve the data – can be an API endpoint or a file link. |
+| <strong>documentationURL</strong> | URL | Valid URL | A human-readable documentation or guide for access setup, authentication steps, or onboarding. |
+| <strong>hashType</strong> | string | SHA-1, SHA-2, SHA-256, MD5, etc. | (Optional) Defines hash algorithm used when providing file integrity verification. |
+| <strong>checksum</strong> | string | any string | (Optional) File hash/checksum value, useful for verifying data integrity after download. |</p>
 <h1 id='data-holder'>Data Holder</h1>
 <p>DataHolder <strong>Object</strong> describes the <strong>Organization legally allowed to create, develop and publish data products.</strong> </p>
 
