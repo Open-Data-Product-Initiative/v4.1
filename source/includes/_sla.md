@@ -99,18 +99,32 @@ No mandatory attributes at the moment. Optional attributes are listed in own tab
 ```yml
 
 SLA:
-  declarative:
-    - dimension: uptime
-      displaytitle:
-        - en: Uptime
-      objective: 99
-      unit: percent
-    - dimension: responseTime
-      objective: 200
-      unit: milliseconds
-    - dimension: updateFrequency
-      objective: 30
-      unit: minutes
+  default:
+    dimensions:
+      - dimension: uptime
+        displaytitle:
+          - en: Uptime
+        objective: 90
+        unit: percent
+      - dimension: responseTime
+        objective: 200
+        unit: milliseconds
+      - dimension: updateFrequency
+        objective: 30
+        unit: minutes
+  premium:
+    dimensions:
+      - dimension: uptime
+        displaytitle:
+          - en: Uptime
+        objective: 99
+        unit: percent
+      - dimension: responseTime
+        objective: 100
+        unit: milliseconds
+      - dimension: updateFrequency
+        objective: 5
+        unit: minutes
   executable:
     - dimension: uptime
       type: prometheus
