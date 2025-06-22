@@ -9,19 +9,19 @@ Data Access **OBJECT** describes the authorised ability to retrieve, edit, copy 
 ```yml
 
 dataAccess:
-  - interface: filecollection
+  - id: filecollection
     description: 
       en: Latest Dataset and Resources
     outputPorttype: file
     format: zip
     accessURL: url to file as zip
-  - interface: dataonly
+  - id: dataonly
     description: 
       en: Latest Dataset and Resources
     outputPorttype: file
     format: CSV
     accessURL: url to file as CSV
-  - interface: API
+  - id: API
     authenticationMethod: OAuth
     specification: OAS
     format: JSON
@@ -31,7 +31,7 @@ dataAccess:
       https://data.cms.gov/provr-enrollment/api-docs
     documentationURL: >- 
       https://data.cms.gov/provr-enrollment/docs
-  - name: Agent 
+  - id: Agent 
       description: 
       - en: MCP interface for structured data access and agent interaction.
       authenticationMethod: Token
