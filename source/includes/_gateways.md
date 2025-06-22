@@ -9,6 +9,9 @@ Payment Gateways **OBJECT** describes the methods to define payment gateways for
 ```yml
 
 paymentGateways:
+
+  default:
+  
   Agent:
     description:
       en: Payment gateway for AI agents
