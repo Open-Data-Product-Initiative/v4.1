@@ -153,6 +153,25 @@ dataQuality:
                     max_percent: 11.0      
 ```
 
+
+| <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
+|---|---|---|---|
+| **dataQuality** | element | - | Contains array of data quality dimensions with optional computational monitoring object. Under this element Data Quality is divided into declarative and executable parts. |
+| **default** | object | - | This object must always be present and named exactly `default` if dataQuality object is used. It acts as the fallback or primary data quality profile. <br/><br/>Users are free to define additional named profiles such as `premium`, `gold`, etc., in parallel to the default. <br/><br/>In the example, `default` and `premium` are both included. These variants can be referred to from other components like pricing plans. <br/><br/>**Example reference usage:** <br/> `dataQuality: $ref: '#/dataQuality/default'` |
+| **dimension** | attribute | string, one of: *accuracy, completeness, conformity, consistency, coverage, timeliness, validity, or uniqueness.* | Defines the data quality dimension. |
+| **objective** | attribute | integer | Defines the target value for the data quality dimension |
+| **unit** | attribute | string. One of: *percentage, number* | Defines the unit used in stating the target quality level. |
+| **executable** | element | - | Grouping element that collects together data quality monitoring rules. You can define monitoring patterns as code under this element for each dimension. The actual as-code part is defined in the `spec` element. |
+| **displaytitle** | array | - | Dimension title to be shown in various UIs. Array contains title(s) in desired language(s). |
+| **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | Binds the text elements together in a given language. Multilanguage support is implemented by duplicating content under other ISO language codes. |
+| **description** | array | - | Describe the dimension so that it can be used for example in info boxes in UI. Array contains descriptions in desired language(s). |
+| **type** | attribute | string, one of: [SodaCL](https://docs.soda.io/soda-cl/soda-cl-overview.html), [Montecarlo](https://docs.getmontecarlo.com/docs/monitors-as-code), [DQOps](https://dqops.com/docs/categories-of-data-quality-checks/), Custom | Data Quality Monitoring as code system name. Use one of the predefined options only. With _Custom_ type you can use your in-house solution. |
+| **version** | attribute | string | The version of DQ monitoring tool used. |
+| **reference** | URL | Valid URL | Provide URL pointing to the reference documentation. |
+| **spec** | element | YAML/URL/string | The content for Data Quality monitoring expressed as code. Accepted as inline YAML, a valid URL pointing to YAML, or a plain string if `type` is `Custom`. |
+
+
+
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **dataQuality** | element | - | Contains array of data quality dimensions with optional computational monotoring object. Under this element Data quality is divided into declarative and executable parts. |
