@@ -83,7 +83,7 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 
 ```yml
 dataQuality:
-  - id: basic
+  default:
     name: 
       en: The Basic Data Quality
     description: 
@@ -106,7 +106,7 @@ dataQuality:
         unit: percentage
 
 
-  - id: premium
+  premium:
     name: 
       en: The Premium Data Quality
     description: 

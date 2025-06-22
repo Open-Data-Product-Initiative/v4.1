@@ -11,7 +11,7 @@ Payment Gateways **OBJECT** describes the methods to define payment gateways for
 paymentGateways:
 
   default:
-  
+
   Agent:
     description:
       en: Payment gateway for AI agents
@@ -21,7 +21,7 @@ paymentGateways:
     spec: |
       paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});
 
-  API:
+  default:
     description:
       en: API consumption payment gateway for humans
     type: Stripe

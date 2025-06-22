@@ -107,7 +107,9 @@ pricingPlans:
         - High amount of transactions
         - Billed monthly 
       paymentGateway:
-        $ref: "#/paymentGateways/api"
+        $ref: "#/paymentGateways/default"
+      dataQuality:
+        $ref: "#/dataQuality/premium"
   executable:
       type: Stripe 
       version: 1.2
