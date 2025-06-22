@@ -2389,14 +2389,21 @@ Development of the specification is under the umbrella of the Linux Foundation. 
     <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://www.x402.org/'</span>
     <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
       <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
+
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">API</span>
     <span class="na">description</span><span class="pi">:</span>
-      <span class="na">en</span><span class="pi">:</span> <span class="s">API consumption Payment gateway for humans</span>
+      <span class="na">en</span><span class="pi">:</span> <span class="s">API consumption payment gateway for humans</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
     <span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
     <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://docs.stripe.com/'</span>
     <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
-      <span class="s">link or code to ignite purchase</span>
+      <span class="s">// Replace this with your actual implementation or link</span>
+      <span class="s">stripe.createCheckoutSession({</span>
+        <span class="s">amount: 100, // in cents</span>
+        <span class="s">currency: 'usd',</span>
+        <span class="s">success_url: 'https://your-platform.com/success',</span>
+        <span class="s">cancel_url: 'https://your-platform.com/cancel'</span>
+      <span class="s">});</span>
 
 </code></pre></div>
 <table><thead>
