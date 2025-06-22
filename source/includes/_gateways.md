@@ -18,6 +18,7 @@ paymentGateways:
     type: Axio
     version: 1
     reference: 'https://www.x402.org/'
+    accessURL: url to payment gateway
     spec: |
       paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});
 
@@ -27,6 +28,7 @@ paymentGateways:
     type: Stripe
     version: 1
     reference: 'https://docs.stripe.com/'
+    accessURL: url to payment gateway
     spec: |
       // Replace this with your actual implementation or link
       stripe.createCheckoutSession({
