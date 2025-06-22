@@ -110,6 +110,8 @@ pricingPlans:
         $ref: "#/paymentGateways/default"
       dataQuality:
         $ref: "#/dataQuality/premium"
+      SLA:
+        $ref: "#/SLA/premium"
   executable:
       type: Stripe 
       version: 1.2
