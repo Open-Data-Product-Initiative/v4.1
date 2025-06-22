@@ -1,5 +1,5 @@
 ---
-title: Open (source) Data Product Specification Development Version | Linux Foundation 
+title: Open (source) Data Product Specification 4.0 RC Version | Linux Foundation 
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -34,19 +34,19 @@ meta:
 
 # OPEN DATA PRODUCT SPECIFICATION 
 
-## Development Version 
+## 4.0 Release Candidate Version 
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
 Development of the specification is under the umbrella of the Linux Foundation. 
 
-**DEVELOPMENT VERSION**
+**RELEASE CANDIDATE VERSION**
 
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/dev">https://github.com/Open-Data-Product-Initiative/dev</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/4rc">https://github.com/Open-Data-Product-Initiative/4rc</a>
 
 **ODPS YAML Schema:**
 
@@ -61,7 +61,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Participate:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/4rc/issues)
 
 ## Introduction
 
@@ -80,6 +80,7 @@ This version Data Contract support has been added to Open Data Product Specifica
 * increase the speed of designing, testing, and implementing data products. 
 * speed up tools development around data product design, development and management.
 * enable creation of automated data product deployment with standard methods (DataOps)
+* support flexible data product pricing with plans specific DQ, SLA, and Access (with references)
 * enable [Everything as Code](https://www.cloudbees.com/blog/what-is-everything-as-code-eac) approach for SLA and Data Quality monitoring
 
 **Note!** In the "Open Data Product" focus is on the latter words and the prefix  'open' refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.
@@ -89,7 +90,7 @@ The specification has been designed with four major aspects of the data product 
 ![odps-model](images/ODPS-design.png)
 
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc4/issues)
 
 ## Document structure
 
