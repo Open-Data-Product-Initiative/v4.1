@@ -10,12 +10,16 @@ Payment Gateways **OBJECT** describes the methods to define payment gateways for
 
 paymentGateways:
   - name: Agent
+    description:
+      en: Payment gateway for AI agents
     type: Axio
     version: 1
     reference: 'https://www.x402.org/'
     spec: |
       paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});
   - name: API
+    description:
+      en: API consumption Payment gateway for humans
     type: Stripe
     version: 1
     reference: 'https://docs.stripe.com/'
