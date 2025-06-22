@@ -162,25 +162,26 @@ SLA:
 ```
 
 
-
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| **SLA** | element | - | Binds the SLA related elements and attributes together |
-| **declarative** | element | - | Grouping element which collects together SLA dimensions target level (objectives), name to display in UI in wanted languages, measuring unit used, and dimension name (one of standardized options). |
-| **dimension** | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension.   |
-| **unit** | attribute  | Options for *unit* are: milliseconds, seconds, minutes, days, weeks, months, years, never, date, null. <br/><br/>  | Name of the quality attribute indicating the timely interval. If date is given, format is dd/mm/yyyy |
-| **executable** | element | - | Grouping element which collects together SLA monitoring. You can define the monitoring patterns as code under this element for the above mentioned SLA dimensions. In other words, contains the monitoring (computational "as code") structure to validate target state for the selected SLA dimension. The actual as code part is added with _spec_ element. |
-| **displayTitle** | array | - | Dimension title to be shown is various UIs. Keep it short and sweet. |
-| **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
-| **type** | attribute | string | monitoring system name name such as Prometheus. The system used must support as code approach to monitor SLA. |
-| **spec** | element | YAML/URL/string | The content the as code part for SLA monitoring. Content is intended to be in a form that can be injected as is to _type_ defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> **Note!** By default the rules must be provide as valid String or YAML. If YAML is used, it must be either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML or string content file. |
-| **reference** | URL | Valid URL | Provide URL for the reference documentation regarding used monitoring system. |
-| **support** | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. |
-| **phoneNumber** | string | valid phone number | The support phone number. Use [E.164](https://www.itu.int/rec/T-REC-E.164/en)  |
-| **phoneServiceHours** | string | - | Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
-| **email** | string | valid email address | Email information for support requests. Use [RFC2822](https://datatracker.ietf.org/doc/html/rfc2822) |
-| **emailServiceHours** | string | - | Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
-| **documentationURL** | URL | Valid URL | URL to documentation | 
+| **SLA** | element | - | Binds the SLA-related elements and attributes together. |
+| **default** | object | - | This object must always be present and named exactly `default` if SLA object is used. It acts as the fallback or baseline SLA profile. <br/><br/>Users are free to define additional named profiles such as `premium`, `gold`, etc., in parallel to the default. <br/><br/>In the example above, both `default` and `premium` profiles are included. These variants can be referenced from pricing plans or other objects. <br/><br/>**Example reference usage:** <br/> `SLA: $ref: '#/SLA/default'` |
+| **dimensions** | array | - | Contains one or more SLA dimension objects. Each defines a measurable SLA metric such as uptime or responseTime. |
+| **dimension** | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension. |
+| **objective** | attribute | integer | Target level to be achieved for the dimension (e.g., 99). |
+| **unit** | attribute | Options: milliseconds, seconds, minutes, days, weeks, months, years, never, date, null | Measurement unit for the SLA objective. If "date" is used, format should be dd/mm/yyyy. |
+| **displayTitle** | array | - | Dimension title to be shown in UIs. Localized per language. |
+| **description** | array | - | Description of the SLA package or specific dimension, localized per language. |
+| **executable** | element | - | Grouping element for SLA monitoring logic. Monitoring definitions are provided as code in the `spec` field for each dimension. |
+| **type** | attribute | string | Name of the monitoring system (e.g., Prometheus). Must support SLA-as-code. |
+| **spec** | element | YAML/URL/string | Monitoring logic for the defined dimension. Can be inline YAML, plain string, or URL to code file. |
+| **reference** | URL | Valid URL | Link to documentation about the monitoring system used. |
+| **support** | element | - | Describes how users can get help with usage, billing, or other issues. |
+| **phoneNumber** | string | valid phone number | The phone number for support (e.g., +971508976456). Should follow [E.164](https://www.itu.int/rec/T-REC-E.164/en) format. |
+| **phoneServiceHours** | string | - | Description of phone support hours, e.g., "Mon–Fri 8am–4pm (GMT)". |
+| **email** | string | valid email address | Email address for support requests. Must follow [RFC2822](https://datatracker.ietf.org/doc/html/rfc2822). |
+| **emailServiceHours** | string | - | Description of email support hours. |
+| **documentationURL** | URL | Valid URL | Link to documentation describing the support process or SLA handling. |
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
