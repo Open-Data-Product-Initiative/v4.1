@@ -100,6 +100,10 @@ No mandatory attributes at the moment. Optional attributes are listed in own tab
 
 SLA:
   default:
+    name: 
+      - en: The Basic SLA
+    description: 
+      - en: The basic SLA package
     dimensions:
       - dimension: uptime
         displaytitle:
@@ -113,6 +117,10 @@ SLA:
         objective: 30
         unit: minutes
   premium:
+    name: 
+      - en: The Premium SLA
+    description: 
+      - en: The Premium SLA package
     dimensions:
       - dimension: uptime
         displaytitle:

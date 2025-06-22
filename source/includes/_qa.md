@@ -85,15 +85,15 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 dataQuality:
   default:
     name: 
-      en: The Basic Data Quality
+      - en: The Basic Data Quality
     description: 
-      en: The basic quality package
+      - en: The basic quality package
     dimensions:
       - dimension: accuracy
         displaytitle:
-          en: Data Accuracy (percent)
+          - en: Data Accuracy (percent)
         description:
-          en: >
+          - en: >
             Data Accuracy ensures the data product reflects the real-world
             entities or events it represents, minimizing errors and providing
             reliable insights.
@@ -101,22 +101,22 @@ dataQuality:
         unit: percentage
       - dimension: completeness
         displaytitle:
-          en: Data Completeness (percent)
+          - en: Data Completeness (percent)
         objective: 90
         unit: percentage
 
 
   premium:
     name: 
-      en: The Premium Data Quality
+      - en: The Premium Data Quality
     description: 
-      en: The Preimum quality package
+      - en: The Preimum quality package
     dimensions:
       - dimension: accuracy
         displaytitle:
-          en: Data Accuracy (percent)
+          - en: Data Accuracy (percent)
         description:
-          en: >
+          - en: >
             Data Accuracy ensures the data product reflects the real-world
             entities or events it represents, minimizing errors and providing
             reliable insights.
@@ -124,7 +124,7 @@ dataQuality:
         unit: percentage
       - dimension: completeness
         displaytitle:
-          en: Data Completeness (percent)
+          - en: Data Completeness (percent)
         objective: 99
         unit: percentage
 
