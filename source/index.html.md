@@ -124,6 +124,8 @@ dataQuality:
 
 Here's the list of attributes which can occur at the document root level. In the following description, if a field is not explicitly **REQUIRED** or described with a MUST or SHALL, it can be considered OPTIONAL. Optional attributes are listed in own table and examples are given on the right column. 
 
+It is RECOMMENDED that the root OpenAPI document be named: dataproduct.json or dataproduct.yaml.
+
 ## Mandatory attributes
 
 > Example of document level attribute usage and structure:
