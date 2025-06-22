@@ -1744,6 +1744,36 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>Intended to be used with <em>value-based</em> pricing plan. Provide url to value simulator in which customer can see the value in various cases. In the simulator customer might be able to input own variables to match their exact case and see the gained value.</td>
 </tr>
 <tr>
+<td><strong>notes</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Optional free-text explanatory note associated with the pricing plan. Often used for disclaimers, internal remarks, or elaborating on intent.</td>
+</tr>
+<tr>
+<td><strong>paymentGateway</strong></td>
+<td>reference</td>
+<td>path to paymentGateways</td>
+<td>Reference to an available payment gateway definition under #/paymentGateways/...</td>
+</tr>
+<tr>
+<td><strong>dataQuality</strong></td>
+<td>reference</td>
+<td>path to dataQuality</td>
+<td>Reference to a defined data quality package from #/dataQuality/...</td>
+</tr>
+<tr>
+<td><strong>SLA</strong></td>
+<td>reference</td>
+<td>path to SLA</td>
+<td>Reference to a defined SLA specification under #/SLA/...</td>
+</tr>
+<tr>
+<td><strong>access</strong></td>
+<td>reference</td>
+<td>path to dataAccess</td>
+<td>Reference to a data access method under #/dataAccess/...</td>
+</tr>
+<tr>
 <td><strong>executable</strong></td>
 <td>element</td>
 <td>-</td>
