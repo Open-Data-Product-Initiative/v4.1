@@ -4,20 +4,34 @@ Data Access **OBJECT** describes the authorised ability to retrieve, edit, copy 
 
 ## Optional attributes and elements
 
-> Example of Data Access component usage:
+> Example of Data Access object usage:
 
 ```yml
- 
+
 dataAccess:
-  interface:
-    outputPorttype: API
+  - interface: filecollection
+    description: 
+      en: Latest Dataset and Resources
+    outputPorttype: file
+    format: zip
+    accessURL: url to file as zip
+  - interface: dataonly
+    description: 
+      en: Latest Dataset and Resources
+    outputPorttype: file
+    format: CSV
+    accessURL: url to file as CSV
+  - interface: API
     authenticationMethod: OAuth
     specification: OAS
-    format: GraphQL
-    specsURL: http://192.168.10.1/petshop.json
-    documentationURL: http://192.168.10.1/petshop
-  
+    accessURL: >-
+      https://data.cms.gov/data-api/v1/dataset/2/data
+    specsURL: >-
+      https://data.cms.gov/provr-enrollment/api-docs
+    documentationURL: >- 
+      https://data.cms.gov/provr-enrollment/docs
 ```
+
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **dataAccess** | element | - |  Binds the data access related elements and attributes together. |
@@ -29,4 +43,5 @@ dataAccess:
 | **specification** | string | any  | Type of the data access specification, such as OAS, RAML, Slate. |
 | **format** | string | any | 	Data access file format type, such as JSON, XML, GraphQL, plain text. |
 | **specsURL** | URL | Valid URL | 	The URL of the data access documentation, preferably in a machine-readable format, such as OpenAPI specs. |
+| **acccessURL** | URL | Valid URL | 	The URL of direct data access. Can be API endpoint or file  |
 | **documentationURL** | URL | Valid URL  | The URL of the separated data access documentation or guide. For example, it may contain instructions on how to create and manage api keys.|
