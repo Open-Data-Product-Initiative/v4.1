@@ -46,17 +46,19 @@ dataAccess:
     specsURL: https://urbanpulse.ai/llms.txt
     documentationURL: https://urbanpulse.ai/llms-full.txt
 ```
-
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| **dataAccess** | element | - |  Binds the data access related elements and attributes together. |
-| **id** | element | - | Reference to the ability to use data. Use simple name, it will be references from other objects like Pricing |
-| **outputPorttype** | string | any  | 	Type of data access, such as API, SQL, sFTP, gRPC. |
-| **hashType** | string | any | Type of secure hash algorithm, such as SHA-1, SHA-2, for checksum, when output is file(s).  |
-| **checksum** | string | any | File checksum. |
-| **authenticationMethod** | string | any  | Data access authentication method type: API key, HTTP Basic, OAuth, No authentication. |
-| **specification** | string | any  | Type of the data access specification, such as OAS, RAML, Slate. |
-| **format** | string | any | 	Data access file format type: JSON, XML, GraphQL, plain text, zip, CSV, Excel. |
-| **specsURL** | URL | Valid URL | 	The URL of the data access documentation, preferably in a machine-readable format, such as OpenAPI specs. |
-| **acccessURL** | URL | Valid URL | 	The URL of direct data access. Can be API endpoint or file  |
-| **documentationURL** | URL | Valid URL  | The URL of the separated data access documentation or guide. For example, it may contain instructions on how to create and manage api keys.|
+| **dataAccess** | object | - | Root-level object containing named access configurations. Each key (e.g., `default`, `API`, `Agent`) defines an access method that can be reused across the ODPS YAML. |
+| **default** | object | - | **Mandatory.** This object defines the default access interface and must always be present. The name `default` is fixed and used as the fallback or primary access method. <br/><br/> In the example above, you will see additional user-defined access methods (`dataonly`, `API`, `Agent`) demonstrating how various access interfaces can be added beyond the required `default`. <br/><br/> **Example reference usage:** <br/> `access: $ref: '#/dataAccess/default'`|
+
+| **name** | object | ISO 639-1 language codes (e.g., `en`) | Multilingual name for the access interface. Can be shown in UIs. |
+| **description** | object | ISO 639-1 language codes (e.g., `en`) | Multilingual description for the access interface. Supports user understanding. |
+| **outputPorttype** | string | file, API, SQL, AI, gRPC, sFTP, etc. | Describes the technical method for delivering data (e.g., `file` for file downloads, `API` for web services). |
+| **format** | string | JSON, XML, CSV, Excel, zip, plain text, GraphQL, MCP | Specifies the data format made available through this access channel. |
+| **authenticationMethod** | string | OAuth, Token, API key, HTTP Basic, none | Security model required to access the data. |
+| **specification** | string | OAS, RAML, Slate, MCP | Defines the type of API or protocol specification used to describe access (e.g., OpenAPI, RAML, or a custom protocol like MCP). |
+| **specsURL** | URL | Valid URL | Points to the machine-readable technical documentation (e.g., OpenAPI YAML). |
+| **accessURL** | URL | Valid URL | The direct access point to retrieve the data – can be an API endpoint or a file link. |
+| **documentationURL** | URL | Valid URL | A human-readable documentation or guide for access setup, authentication steps, or onboarding. |
+| **hashType** | string | SHA-1, SHA-2, SHA-256, MD5, etc. | (Optional) Defines hash algorithm used when providing file integrity verification. |
+| **checksum** | string | any string | (Optional) File hash/checksum value, useful for verifying data integrity after download. |
