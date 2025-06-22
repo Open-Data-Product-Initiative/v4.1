@@ -106,6 +106,8 @@ pricingPlans:
         - High Quality Pets data
         - High amount of transactions
         - Billed monthly 
+      paymentGateway:
+        $ref: "#/components/paymentGateways/api"
   executable:
       type: Stripe 
       version: 1.2
