@@ -1,6 +1,47 @@
 # Data Pricing Plans
 
+> Template structure of Data Pricing Plans array component:
 
+```yml
+pricingPlans:
+  en:
+  - name: Premium subscription 1 year
+    unit: recurring
+    priceCurrency: EUR
+    price: 50.00
+    billingDuration: year
+    
+  - name: Premium subcsription 1 month
+    unit: recurring
+    priceCurrency: EUR
+    price: 8.00
+    billingDuration: month
+```
+
+> In case standardized options are not enough:
+
+```yml
+You can make extensions to the standard 
+with "x-" mechanism in order to fulfill 
+any industry specific needs. 
+
+A suggestive example below 
+
+pricingPlans:
+  en:
+  - name: Premium subscription 1 year
+    unit: recurring
+    priceCurrency: EUR
+    price: 50.00
+    billingDuration: year
+    
+  - x-name: Extension plan
+    unit: custom
+    priceCurrency: EUR
+    price: 50.00
+    billingDuration: year
+    
+```
 **Standardized data pricing plans are crucial for transparency, scalability, and customer trust.** They ensure that customers can easily understand and compare costs, fostering trust and reducing disputes. For providers, standardized pricing streamlines operations, supports scalability, and simplifies market comparison, allowing for effective competitive positioning. Additionally, it aids in better financial planning and forecasting for both the provider and the customer, ensuring predictable revenue and informed decision-making. Overall, standardized pricing is essential for the sustainable growth and success of data products.
 
 Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing **OBJECT** contains pricing plans related metadata to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard to foster global interoperability.  
@@ -9,7 +50,22 @@ The 12 pricing plans enabled by ODPS are meticulously defined through an in-dept
 
 The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
-**Payment Gateways, SLAs, Data Quality and Interfaces** defined in Components to support reusability and flexibility. Components referenced with **$ref:** and path in Components. An example is *$ref: "#/Components/PaymentGateways/Agent"*
+**This version introduces the "Pricing Plans as Code" feature.** You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. **CRUP** stands for: 
+
+- **C**reate (create pricing plan), 
+- **R**etire (delete pricing plan), 
+- **U**pdate (update existing pricing plan) and,
+- **P**urchase (generate or get link to ignite purchase process in the gateway). 
+
+With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. 
+
+**Supported payment gateways:**
+
+- Stripe [Docs](https://docs.stripe.com/cli), 
+- Checkout [Docs](https://api-reference.checkout.com),
+- Square [Docs](https://developer.squareup.com/docs),
+- Paypal [Docs](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/),
+- Custom
 
 ## ODPS supports 12 standardized pricing models
 
@@ -38,51 +94,42 @@ The _unit_ attribute defines the plan and options for that are fixed unless exte
 ```yml
 
 pricingPlans:
-  en:
-
-  - name: MCP Agent
-    priceCurrency: USDC
-    price: 0.01
-    billingDuration: instant
-    unit: Pay-per-use
-    maxTransactionQuantity: 200
-    offering:
-      - Unlimited** agent queries (rate-limited to protect service)
-      - MCP tools & prompt templates
-      - Structured data via MCP resources
-      - Real-time agent response SLA
-      - Dedicated onboarding support
-    notes: >
-        Designed for conversational agents rather
-        than direct API usage. **"Unlimited" subject to fair-use rate limits.
-    paymentGateway: 
-      $ref: "#/Components/PaymentGateways/1"
-    interface: 
-      $ref: "#/Components/Interafaces/0"
-    SLA: 
-      $ref: "#/components/slaSets/1"
-    dataQuality:  
-      $ref: "#/Components/DataQualities/0"
-    
-
-  - name: Premium subscription 1 month
-    priceCurrency: EUR
-    price: 50.00
-    billingDuration: month
-    unit: recurring
-    maxTransactionQuantity: 200000
-    offering:
-      - High Quality Pets data
-      - High amount of transactions
-      - Billed monthly 
-    paymentGateway: 
-      $ref: "#/Components/PaymentGateways/0"
-    interface: 
-      $ref: "#/Components/Interafaces/1"
-    SLA: 
-      $ref: "#/components/slaSets/0" 
-    dataQuality:  
-      $ref: "#/Components/DataQualities/0"
+  declarative:
+    en:
+    - name: Premium subscription 1 month
+      priceCurrency: EUR
+      price: 50.00
+      billingDuration: month
+      unit: recurring
+      maxTransactionQuantity: 200000
+      offering:
+        - High Quality Pets data
+        - High amount of transactions
+        - Billed monthly 
+  executable:
+      type: Stripe 
+      version: 1.2
+      reference: https://docs.stripe.com/cli
+      create:
+        spec: |- 
+          stripe products create  \
+          --name="Premium subscription 1 year"
+          
+          stripe prices create  \
+          --currency=eur \
+          --unit-amount=50 \
+          -d "recurring[interval]"=month \
+          -d "product_data[name]"="Premium subscription 1 year"
+      update:
+        spec: |- 
+          # update plan as Stripe requires
+      retire:
+        spec: |- 
+          # delete of the plan as Stripe requires
+      purchase:
+        spec: |- 
+          # generate or get the link in order to 
+          # provide method for client to ignite purchase process  
 
 ```
 

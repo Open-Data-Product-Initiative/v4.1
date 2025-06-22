@@ -1,5 +1,5 @@
 ---
-title: Open (source) Data Product Specification Component Version | Linux Foundation 
+title: Open (source) Data Product Specification Development Version | Linux Foundation 
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -10,15 +10,18 @@ toc_footers:
   - <br/>Linux Foundation</a>
 
 includes:
-  - pricing
-  - qa
   - sla
-  - components
-  - example_referenced
-  - example_referenced_pricing
-  - example_inline
-
- 
+  - qa
+  - pricing
+  - license
+  - dataops
+  - dataaccess
+  - dataholder
+  - extensions
+  - helloworld
+  - bareminimum
+  - terms
+  - contributors
 
 search: true
 
@@ -31,7 +34,7 @@ meta:
 
 # OPEN DATA PRODUCT SPECIFICATION 
 
-## Forked Development Version - Component approach test
+## Development Version 
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
@@ -43,22 +46,22 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/comp">https://github.com/Open-Data-Product-Initiative/comp</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/dev">https://github.com/Open-Data-Product-Initiative/dev</a>
 
 **ODPS YAML Schema:**
 
-* <a href="https://opendataproducts.org/comp/schema/odps.yaml">YAML Schema</a>
+* <a href="https://opendataproducts.org/dev/schema/odps.yaml">YAML Schema</a>
 
 **Editors:**
 
 * <a href="https://www.linkedin.com/in/jarkkomoilanen/">Jarkko Moilanen</a>
-
+* <a href="https://www.linkedin.com/in/manfred-sorg/">Manfred Sorg</a>
 
 
 
 **Participate:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/comp/issues)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
 
 ## Introduction
 
