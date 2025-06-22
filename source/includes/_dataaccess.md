@@ -24,12 +24,21 @@ dataAccess:
   - interface: API
     authenticationMethod: OAuth
     specification: OAS
+    format: JSON
     accessURL: >-
       https://data.cms.gov/data-api/v1/dataset/2/data
     specsURL: >-
       https://data.cms.gov/provr-enrollment/api-docs
     documentationURL: >- 
       https://data.cms.gov/provr-enrollment/docs
+  - name: Agent 
+      description: 
+      - en: MCP interface for structured data access and agent interaction.
+      authenticationMethod: Token
+      specification: MCP 2025-03-26
+      format: MCP
+      specsURL: https://urbanpulse.ai/llms.txt
+      documentationURL: https://urbanpulse.ai/llms-full.txt
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
