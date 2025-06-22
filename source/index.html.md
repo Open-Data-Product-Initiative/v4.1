@@ -17,6 +17,7 @@ includes:
   - dataops
   - dataaccess
   - dataholder
+  - gateways
   - extensions
   - helloworld
   - bareminimum
