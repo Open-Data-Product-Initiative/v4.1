@@ -96,7 +96,7 @@ The _unit_ attribute defines the plan and options for that are fixed unless exte
 pricingPlans:
   declarative:
     en:
-    - name: Premium subscription 1 month
+    - name: Standard API subscription 1 month
       priceCurrency: EUR
       price: 50.00
       billingDuration: month
@@ -109,9 +109,31 @@ pricingPlans:
       paymentGateway:
         $ref: "#/paymentGateways/default"
       dataQuality:
+        $ref: "#/dataQuality/default"
+      SLA:
+        $ref: "#/SLA/default"
+      access:
+        $ref: "#/dataAccess/API"
+
+    - name: Premium MCP 1 month
+      priceCurrency: EUR
+      price: 500.00
+      billingDuration: month
+      unit: recurring
+      maxTransactionQuantity: 0
+      offering:
+        - High Quality Pets data
+        - High amount of transactions
+        - Billed monthly 
+      paymentGateway:
+        $ref: "#/paymentGateways/agent"
+      dataQuality:
         $ref: "#/dataQuality/premium"
       SLA:
         $ref: "#/SLA/premium"
+      access:
+        $ref: "#/dataAccess/agent"
+        
   executable:
       type: Stripe 
       version: 1.2

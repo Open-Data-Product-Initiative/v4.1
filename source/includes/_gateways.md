@@ -9,18 +9,6 @@ Payment Gateways **OBJECT** describes the methods to define payment gateways for
 ```yml
 
 paymentGateways:
-
-  default:
-
-  Agent:
-    description:
-      en: Payment gateway for AI agents
-    type: Axio
-    version: 1
-    reference: 'https://www.x402.org/'
-    spec: |
-      paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});
-
   default:
     description:
       en: API consumption payment gateway for humans
@@ -35,6 +23,17 @@ paymentGateways:
         success_url: 'https://your-platform.com/success',
         cancel_url: 'https://your-platform.com/cancel'
       });
+
+  Agent:
+    description:
+      en: Payment gateway for AI agents
+    type: Axio
+    version: 1
+    reference: 'https://www.x402.org/'
+    spec: |
+      paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});
+
+  
 
 ```
 

@@ -9,19 +9,24 @@ Data Access **OBJECT** describes the authorised ability to retrieve, edit, copy 
 ```yml
 
 dataAccess:
-  - id: filecollection
+  default:
+    name:
+      - en: Access to zipped package
     description: 
-      en: Latest Dataset and Resources
+      - en: Latest Dataset and Resources
     outputPorttype: file
     format: zip
     accessURL: url to file as zip
-  - id: dataonly
+  dataonly:
+    name:
+      - en: Access to latest dataset
     description: 
-      en: Latest Dataset and Resources
+      - en: Latest Dataset
     outputPorttype: file
     format: CSV
     accessURL: url to file as CSV
-  - id: API
+  API:
+    outputPorttype: API
     authenticationMethod: OAuth
     specification: OAS
     format: JSON
@@ -31,14 +36,15 @@ dataAccess:
       https://data.cms.gov/provr-enrollment/api-docs
     documentationURL: >- 
       https://data.cms.gov/provr-enrollment/docs
-  - id: Agent 
-      description: 
-      - en: MCP interface for structured data access and agent interaction.
-      authenticationMethod: Token
-      specification: MCP 2025-03-26
-      format: MCP
-      specsURL: https://urbanpulse.ai/llms.txt
-      documentationURL: https://urbanpulse.ai/llms-full.txt
+  Agent: 
+    outputPorttype: AI
+    description: 
+    - en: MCP interface for structured data access and agent interaction.
+    authenticationMethod: Token
+    specification: MCP 2025-03-26
+    format: MCP
+    specsURL: https://urbanpulse.ai/llms.txt
+    documentationURL: https://urbanpulse.ai/llms-full.txt
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
