@@ -133,30 +133,7 @@ pricingPlans:
         access:
           $ref: '#/dataAccess/agent'
 
-  executable:
-      type: Stripe 
-      version: 1.2
-      reference: https://docs.stripe.com/cli
-      create:
-        spec: |- 
-          stripe products create  \
-          --name="Premium subscription 1 year"
-          
-          stripe prices create  \
-          --currency=eur \
-          --unit-amount=50 \
-          -d "recurring[interval]"=month \
-          -d "product_data[name]"="Premium subscription 1 year"
-      update:
-        spec: |- 
-          # update plan as Stripe requires
-      retire:
-        spec: |- 
-          # delete of the plan as Stripe requires
-      purchase:
-        spec: |- 
-          # generate or get the link in order to 
-          # provide method for client to ignite purchase process  
+  
 
 ```
 
