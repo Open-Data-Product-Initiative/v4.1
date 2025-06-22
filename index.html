@@ -2057,18 +2057,31 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>Data Access <strong>OBJECT</strong> describes the authorised ability to retrieve, edit, copy or transfer data from IT systems.</p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
-<p>Example of Data Access component usage:</p>
+<p>Example of Data Access object usage:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">dataAccess</span><span class="pi">:</span>
-  <span class="na">interface</span><span class="pi">:</span>
-    <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">API</span>
+  <span class="pi">-</span> <span class="na">interface</span><span class="pi">:</span> <span class="s">filecollection</span>
+    <span class="na">description</span><span class="pi">:</span> 
+      <span class="na">en</span><span class="pi">:</span> <span class="s">Latest Dataset and Resources</span>
+    <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">file</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">zip</span>
+    <span class="na">accessURL</span><span class="pi">:</span> <span class="s">url to file as zip</span>
+  <span class="pi">-</span> <span class="na">interface</span><span class="pi">:</span> <span class="s">dataonly</span>
+    <span class="na">description</span><span class="pi">:</span> 
+      <span class="na">en</span><span class="pi">:</span> <span class="s">Latest Dataset and Resources</span>
+    <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">file</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">CSV</span>
+    <span class="na">accessURL</span><span class="pi">:</span> <span class="s">url to file as CSV</span>
+  <span class="pi">-</span> <span class="na">interface</span><span class="pi">:</span> <span class="s">API</span>
     <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
     <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS</span>
-    <span class="na">format</span><span class="pi">:</span> <span class="s">GraphQL</span>
-    <span class="na">specsURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/petshop.json</span>
-    <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/petshop</span>
-
+    <span class="na">accessURL</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+      <span class="s">https://data.cms.gov/data-api/v1/dataset/2/data</span>
+    <span class="na">specsURL</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+      <span class="s">https://data.cms.gov/provr-enrollment/api-docs</span>
+    <span class="na">documentationURL</span><span class="pi">:</span> <span class="pi">&gt;-</span> 
+      <span class="s">https://data.cms.gov/provr-enrollment/docs</span>
 </code></pre></div>
 <table><thead>
 <tr>
@@ -2131,6 +2144,12 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>URL</td>
 <td>Valid URL</td>
 <td>The URL of the data access documentation, preferably in a machine-readable format, such as OpenAPI specs.</td>
+</tr>
+<tr>
+<td><strong>acccessURL</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>The URL of direct data access. Can be API endpoint or file</td>
 </tr>
 <tr>
 <td><strong>documentationURL</strong></td>
