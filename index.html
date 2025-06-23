@@ -2667,40 +2667,41 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
           <span class="na">access</span><span class="pi">:</span>
             <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataAccess/Agent'</span>
   <span class="na">SLA</span><span class="pi">:</span>
-    <span class="na">default</span><span class="pi">:</span>
-      <span class="na">name</span><span class="pi">:</span>
-        <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic SLA</span>
-      <span class="na">description</span><span class="pi">:</span>
-        <span class="na">en</span><span class="pi">:</span> <span class="s">The basic SLA package</span>
-      <span class="na">dimensions</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
-    <span class="na">premium</span><span class="pi">:</span>
-      <span class="na">name</span><span class="pi">:</span>
-        <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium SLA</span>
-      <span class="na">description</span><span class="pi">:</span>
-        <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium SLA package</span>
-      <span class="na">dimensions</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">5</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="na">default</span><span class="pi">:</span>
+        <span class="na">name</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic SLA</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">The basic SLA package</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+            <span class="na">displaytitle</span><span class="pi">:</span>
+              <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+      <span class="na">premium</span><span class="pi">:</span>
+        <span class="na">name</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium SLA</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium SLA package</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+            <span class="na">displaytitle</span><span class="pi">:</span>
+              <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">5</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
     <span class="na">support</span><span class="pi">:</span>
     <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">+971508976456'</span>
     <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s">Mon–Fri 8am–4pm (GMT)</span>
@@ -2709,48 +2710,49 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
     <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
 
   <span class="na">dataQuality</span><span class="pi">:</span>
-    <span class="na">default</span><span class="pi">:</span>
-      <span class="na">displaytitle</span><span class="pi">:</span>
-        <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic Data Quality</span>
-      <span class="na">description</span><span class="pi">:</span>
-        <span class="na">en</span><span class="pi">:</span> <span class="s">The basic quality package</span>
-      <span class="na">dimensions</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-          <span class="na">description</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
-              <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
-              <span class="s">entities or events it represents, minimizing errors and providing</span>
-              <span class="s">reliable insights.</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-    <span class="na">premium</span><span class="pi">:</span>
-      <span class="na">displaytitle</span><span class="pi">:</span>
-        <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium Data Quality</span>
-      <span class="na">description</span><span class="pi">:</span>
-        <span class="na">en</span><span class="pi">:</span> <span class="s">The premium quality package</span>
-      <span class="na">dimensions</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-          <span class="na">description</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
-              <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
-              <span class="s">entities or events it represents, minimizing errors and providing</span>
-              <span class="s">reliable insights.</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="na">default</span><span class="pi">:</span>
+        <span class="na">displaytitle</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic Data Quality</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">The basic quality package</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+            <span class="na">displaytitle</span><span class="pi">:</span>
+              <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+            <span class="na">description</span><span class="pi">:</span>
+              <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
+                <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
+                <span class="s">entities or events it represents, minimizing errors and providing</span>
+                <span class="s">reliable insights.</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+            <span class="na">displaytitle</span><span class="pi">:</span>
+              <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+      <span class="na">premium</span><span class="pi">:</span>
+        <span class="na">displaytitle</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium Data Quality</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s">The premium quality package</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+            <span class="na">displaytitle</span><span class="pi">:</span>
+              <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+            <span class="na">description</span><span class="pi">:</span>
+              <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
+                <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
+                <span class="s">entities or events it represents, minimizing errors and providing</span>
+                <span class="s">reliable insights.</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+            <span class="na">displaytitle</span><span class="pi">:</span>
+              <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
   <span class="na">dataAccess</span><span class="pi">:</span>
     <span class="na">default</span><span class="pi">:</span>
       <span class="na">name</span><span class="pi">:</span>
