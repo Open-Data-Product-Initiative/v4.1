@@ -1,6 +1,17 @@
 # Data Access
 
-Data Access **OBJECT** describes the authorised ability to retrieve, edit, copy or transfer data from IT systems.
+The `dataAccess` object defines how users—or machines—can technically access the data product. It allows publishers to describe **multiple, named access methods** tailored to different consumer needs: from simple file downloads and APIs to AI agent integration via protocols like **MCP**.
+
+Each entry under `dataAccess` (such as `default`, `API`, or `Agent`) represents a distinct access interface with its own metadata, authentication requirements, and documentation references. This structure makes it possible to:
+
+- Offer **flexible access modes** for various user personas (analysts, developers, AI agents, etc.)
+- Support **multilingual UI presentation** through localized `name` and `description` fields
+- Clearly declare **security expectations** using `authenticationMethod`
+- Link to both **machine-readable specs** (`specsURL`) and **human-readable guides** (`documentationURL`)
+- Promote **reusability** by referencing these interfaces throughout the ODPS YAML using `$ref`
+
+Including an AI agent-specific access interface (`outputPorttype: AI`) supports MCP-based agent interactions, aligning your product with **AI-native data delivery patterns**.
+
 
 ## Optional attributes and elements
 
