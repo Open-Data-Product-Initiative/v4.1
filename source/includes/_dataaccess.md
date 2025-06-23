@@ -26,6 +26,10 @@ dataAccess:
     format: CSV
     accessURL: url to file as CSV
   API:
+    name:
+      - en: Access to API
+    description: 
+      - en: API Access to the Latest Dataset
     outputPorttype: API
     authenticationMethod: OAuth
     specification: OAS
@@ -37,6 +41,10 @@ dataAccess:
     documentationURL: >- 
       https://data.cms.gov/provr-enrollment/docs
   Agent: 
+    name:
+      - en: AI Agent access to the data product
+    description: 
+      - en: Provides AI agents access to the data product via MCP server. 
     outputPorttype: AI
     description: 
     - en: MCP interface for structured data access and agent interaction.
