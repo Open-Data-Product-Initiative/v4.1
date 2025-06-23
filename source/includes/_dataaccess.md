@@ -65,7 +65,7 @@ dataAccess:
 | **authenticationMethod** | string | OAuth, Token, API key, HTTP Basic, none | Security model required to access the data. |
 | **specification** | string | OAS, RAML, Slate, MCP | Defines the type of API or protocol specification used to describe access (e.g., OpenAPI, RAML, or a custom protocol like MCP). |
 | **specsURL** | URL | Valid URL | Points to the machine-readable technical documentation (e.g., OpenAPI YAML). |
-| **accessURL** | URL | Valid URL | The direct access point to retrieve the data – can be an API endpoint or a file link. |
+| **accessURL** | URL | Valid URL | The direct access point to retrieve the data – can be for example an API endpoint or a file link. |
 | **documentationURL** | URL | Valid URL | A human-readable documentation or guide for access setup, authentication steps, or onboarding. |
 | **hashType** | string | SHA-1, SHA-2, SHA-256, MD5, etc. | (Optional) Defines hash algorithm used when providing file integrity verification. |
 | **checksum** | string | any string | (Optional) File hash/checksum value, useful for verifying data integrity after download. |
