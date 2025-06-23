@@ -51,6 +51,7 @@ dataQuality:
             en: Extended Data Quality dimension
           
 ```
+
 ## Data Quality Configuration
 
 Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
@@ -68,7 +69,6 @@ The `dataQuality` object consists of two parts:
 
 This structure ensures that both expectations and enforcement logic are documented and machine-actionable in the same place.
 
----
 
 ## Referencing Capability
 
@@ -80,7 +80,6 @@ One of the key features of ODPS is the ability to **reuse** named data quality p
 - **Scalability**: You can support multiple audiences or markets with varying quality expectations.
 - **Auditability**: Clearly link machine-readable checks to business commitments.
 
----
 
 ## The Role of `default`
 
@@ -93,7 +92,7 @@ You should use the `default` profile when:
 
 This makes the `default` profile both a **minimum requirement** and a **best practice** for clarity and interoperability.
 
----
+
 
 ## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
 
