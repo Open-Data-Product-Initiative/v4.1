@@ -61,32 +61,8 @@ You should use the `default` profile when:
 
 This makes the `default` profile both a **minimum requirement** and a **best practice** for clarity and interoperability.
 
-> In case standardized options are not enough:
-
-```yml
-The QA object is general in nature and should 
-be enough for common (80%) use cases. 
-
-You can make extensions to the standard 
-with "x-" mechanism in order to fulfill 
+The QA object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with "x-" mechanism in order to fulfill 
 any industry specific needs. 
-
-A suggestive example below 
-
-dataQuality:
-  declarative:
-    default:
-      dimensions:
-        - dimension: accuracy
-          displaytitle:
-            en: Data Accuracy (percent)
-          objective: 90
-          unit: percentage
-        - x-dimension: extended-dq
-          displaytitle:
-            en: Extended Data Quality dimension
-          
-```
 
 ## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
 
