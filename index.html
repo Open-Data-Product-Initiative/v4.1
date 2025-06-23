@@ -1217,6 +1217,12 @@ The <code>dataQuality</code> object consists of two parts:</p>
 
 <p>This structure ensures that both expectations and enforcement logic are documented and machine-actionable in the same place.</p>
 
+<blockquote>
+<p>referencing example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
+  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/premium'</span>
+</code></pre></div>
 <p><strong>Referencing Capability:</strong>
 One of the key features of ODPS is the ability to <strong>reuse</strong> named data quality profiles via references. For example, quality profiles such as <code>default</code>, <code>premium</code>, or <code>gold</code> can be defined once under <code>dataQuality.declarative</code> and referenced elsewhere in the YAML—such as in SLA definitions, pricing plans, or tiered service offerings.</p>
 
