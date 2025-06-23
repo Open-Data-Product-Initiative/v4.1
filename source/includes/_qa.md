@@ -51,24 +51,49 @@ dataQuality:
             en: Extended Data Quality dimension
           
 ```
+### Data Quality Configuration
 
 Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
 
 By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.
 
-How can you assess your data quality? The ODPS support "as code" approach to monitor data quality. Supported DQ tools for Everything as Code to define monitoring are: 
+The `dataQuality` component in ODPS provides a structured and machine-readable way to **declare and monitor the quality characteristics** of a data product. It helps align technical validation with business expectations and supports both human understanding and automated tooling.
 
-* SodaCL
-* MonteCarlo
-* DQOps
-* Custom (in-house solutions)
+#### Structure Overview
 
-**Structure notes:** The Data Quality object is divided into 2 parts: declarative and executable. 
+The `dataQuality` object consists of two parts:
 
-* Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. 
-* Executable part contains the machine-readable "as code" rules to validate data quality dimensions. The code inside _spec_ element is intended to be injected as in supporting data quality platforms in their defined format and structure.  
+- **`declarative`**: Captures target levels for defined quality dimensions like `accuracy`, `completeness`, or `timeliness`. These values represent your **intended** or **promised** quality levels.
+- **`executive`**: Allows integration with supported *Everything as Code* tools (e.g., SodaCL, DQOps, MonteCarlo) to define **verifiable** and **executable** rules that check whether those targets are met in practice.
 
-The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
+This structure ensures that both expectations and enforcement logic are documented and machine-actionable in the same place.
+
+---
+
+### Referencing Capability
+
+One of the key features of ODPS is the ability to **reuse** named data quality profiles via references. For example, quality profiles such as `default`, `premium`, or `gold` can be defined once under `dataQuality.declarative` and referenced elsewhere in the YAML—such as in SLA definitions, pricing plans, or tiered service offerings.
+
+#### Benefits of Referencing:
+- **DRY Principle**: Avoid repetition. Define once, reference many times.
+- **Clarity**: Consumers of your data product can easily see which quality profile is associated with a particular service tier or access plan.
+- **Scalability**: You can support multiple audiences or markets with varying quality expectations.
+- **Auditability**: Clearly link machine-readable checks to business commitments.
+
+---
+
+### The Role of `default`
+
+The `default` quality profile is **mandatory** whenever the `dataQuality` object is used. It acts as the **baseline** definition, ensuring there is always a clear and predictable quality configuration, even when no referencing is used.
+
+You should use the `default` profile when:
+- You want to describe core quality expectations for the product.
+- You don’t yet need pricing or SLA-specific variations.
+- You want to ensure future compatibility with advanced features such as AI agents, data marketplaces, or automated governance.
+
+This makes the `default` profile both a **minimum requirement** and a **best practice** for clarity and interoperability.
+
+---
 
 ## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
 
