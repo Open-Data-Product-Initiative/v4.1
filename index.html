@@ -375,12 +375,6 @@
             <a href="#data-quality" class="toc-h1 toc-link" data-title="Data Quality">Data Quality</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#referencing-examples" class="toc-h2 toc-link" data-title="Referencing Examples">Referencing Examples</a>
-                  </li>
-                  <li>
-                    <a href="#the-role-of-default" class="toc-h2 toc-link" data-title="The Role of default">The Role of <code>default</code></a>
-                  </li>
-                  <li>
                     <a href="#odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring" class="toc-h2 toc-link" data-title="ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring">ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</a>
                   </li>
                   <li>
@@ -1234,10 +1228,12 @@ One of the key features of ODPS is the ability to <strong>reuse</strong> named d
 <li><strong>Scalability</strong>: You can support multiple audiences or markets with varying quality expectations.</li>
 <li><strong>Auditability</strong>: Clearly link machine-readable checks to business commitments.</li>
 </ul>
-<h2 id='referencing-examples'>Referencing Examples</h2>
-<p>To reference a defined quality profile from another part of your YAML (e.g., pricing plan): <code>$ref: &#39;#/dataQuality/default&#39;</code>. Or reference a named premium quality package: <code>$ref: &#39;#/dataQuality/premium&#39;</code> Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you&#39;re reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. </p>
-<h2 id='the-role-of-default'>The Role of <code>default</code></h2>
-<p>The <code>default</code> quality profile is <strong>mandatory</strong> whenever the <code>dataQuality</code> object is used. It acts as the <strong>baseline</strong> definition, ensuring there is always a clear and predictable quality configuration, even when no referencing is used.</p>
+
+<p><strong>Referencing Examples:</strong>
+To reference a defined quality profile from another part of your YAML (e.g., pricing plan): <code>$ref: &#39;#/dataQuality/default&#39;</code>. Or reference a named premium quality package: <code>$ref: &#39;#/dataQuality/premium&#39;</code> Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you&#39;re reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. </p>
+
+<p><strong>The Role of <code>default</code></strong>
+The <code>default</code> quality profile is <strong>mandatory</strong> whenever the <code>dataQuality</code> object is used. It acts as the <strong>baseline</strong> definition, ensuring there is always a clear and predictable quality configuration, even when no referencing is used.</p>
 
 <p>You should use the <code>default</code> profile when:
 - You want to describe core quality expectations for the product.
