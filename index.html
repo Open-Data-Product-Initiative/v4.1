@@ -378,6 +378,9 @@
                     <a href="#odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring" class="toc-h2 toc-link" data-title="ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring">ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</a>
                   </li>
                   <li>
+                    <a href="#referencing-examples" class="toc-h2 toc-link" data-title="Referencing Examples">Referencing Examples</a>
+                  </li>
+                  <li>
                     <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
                   </li>
               </ul>
@@ -1182,11 +1185,18 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
   <span class="na">declarative</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
-      <span class="na">displaytitle</span><span class="pi">:</span>
-      <span class="na">description</span><span class="pi">:</span>
-      <span class="na">objective</span><span class="pi">:</span> 
-      <span class="na">unit</span><span class="pi">:</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
   <span class="na">executable</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
       <span class="na">type</span><span class="pi">:</span>  
@@ -1208,12 +1218,17 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
 <span class="na">dataQuality</span><span class="pi">:</span>
   <span class="na">declarative</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-      <span class="na">displaytitle</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-    <span class="pi">-</span> <span class="na">x-dimension</span><span class="pi">:</span> <span class="s">extended-dq</span>
-      <span class="na">displaytitle</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Extended Data Quality dimension</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="pi">-</span> <span class="na">x-dimension</span><span class="pi">:</span> <span class="s">extended-dq</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Extended Data Quality dimension</span>
+
 </code></pre></div>
 <p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  </p>
 
@@ -1276,8 +1291,8 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry</td>
 </tr>
 </tbody></table>
-
-<p>Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why <em>integrity</em> is not in the attributes, but accuracy and consistency as well as completeness are. </p>
+<h2 id='referencing-examples'>Referencing Examples</h2>
+<p>To reference a defined quality profile from another part of your YAML (e.g., pricing plan): <em>$ref: &#39;#/dataQuality/default&#39;</em>. Or reference a named premium quality package: <em>$ref: &#39;#/dataQuality/premium&#39;</em> Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you&#39;re reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
 <p>Example of Data Quality component with some of the data quality dimensions:</p>
@@ -1615,6 +1630,28 @@ Development of the specification is under the umbrella of the Linux Foundation. 
         <span class="na">access</span><span class="pi">:</span>
           <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataAccess/agent'</span>
 
+  <span class="na">executable</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">urls to Stripe docs</span>
+      <span class="na">create</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">cmd</span><span class="pi">:</span> <span class="s">stripe products create  \</span>
+            <span class="na">params</span><span class="pi">:</span> <span class="s1">'</span><span class="s">--name="Premium</span><span class="nv"> </span><span class="s">subscription</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">year"'</span>
+          <span class="pi">-</span> <span class="na">cmd</span><span class="pi">:</span> <span class="s">stripe prices create  \</span>
+            <span class="na">params</span><span class="pi">:</span> <span class="s1">'</span><span class="s">--currency=eur</span><span class="nv"> </span><span class="s">--unit-amount=50</span><span class="nv"> </span><span class="s">-d</span><span class="nv"> </span><span class="s">"recurring[interval]"=month</span><span class="nv"> </span><span class="s">-d</span><span class="nv"> </span><span class="s">"product_data[name]"="Premium</span><span class="nv"> </span><span class="s">subscription</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">year"'</span>
+      <span class="na">read</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">cmd</span><span class="pi">:</span> <span class="s">stripe products get  \</span>
+            <span class="na">params</span><span class="pi">:</span> <span class="s1">'</span><span class="s">--name="Premium</span><span class="nv"> </span><span class="s">subscription</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">year"'</span>
+      <span class="na">update</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">cmd</span><span class="pi">:</span> <span class="s">stripe products update  \</span>
+            <span class="na">params</span><span class="pi">:</span> <span class="s1">'</span><span class="s">--name="Premium</span><span class="nv"> </span><span class="s">subscription</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">year"'</span>
+      <span class="na">delete</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">cmd</span><span class="pi">:</span> <span class="s">stripe products delete  \</span>
+            <span class="na">params</span><span class="pi">:</span> <span class="s1">'</span><span class="s">--name="Premium</span><span class="nv"> </span><span class="s">subscription</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">year"'</span>
 
 
 </code></pre></div>
