@@ -14,7 +14,6 @@ includes:
   - qa
   - pricing
   - license
-  - dataops
   - dataaccess
   - dataholder
   - gateways
