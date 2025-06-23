@@ -66,6 +66,7 @@ To reference a defined quality profile from another part of your YAML (e.g., pri
 The `default` quality profile is **mandatory** whenever the `dataQuality` object is used. It acts as the **baseline** definition, ensuring there is always a clear and predictable quality configuration, even when no referencing is used.
 
 You should use the `default` profile when:
+
 - You want to describe core quality expectations for the product.
 - You don’t yet need pricing or SLA-specific variations.
 - You want to ensure future compatibility with advanced features such as AI agents, data marketplaces, or automated governance.
