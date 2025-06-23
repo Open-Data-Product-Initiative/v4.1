@@ -1,6 +1,36 @@
 # Payment Gateways
 
-Payment Gateways **OBJECT** describes the methods to define payment gateways for pricing plans as references
+The `paymentGateways` object in ODPS defines how **transactions are handled** when pricing plans require financial exchanges—whether from humans or AI agents. It allows you to describe and configure multiple named gateway setups (e.g., `default`, `Agent`, `PremiumStripe`) that can be **referenced from pricing plans**.
+
+Each gateway definition provides a structured way to:
+
+- Describe the payment system (e.g., Stripe, Axio, Custom)
+- Point to relevant documentation (`reference`)
+- Include executable or declarative configuration under `spec`
+
+This component enables flexible monetization strategies, including differentiated billing models for human users vs. machine users, and support for both traditional and agent-native payment protocols.
+
+**Referencing Payment Gateways:**
+Named gateway definitions (e.g., `default`, `Agent`) can be **reused across pricing plans** using `$ref`. This ensures consistent payment logic, minimizes duplication, and allows you to tie multiple plans to a single gateway configuration.
+
+**Benefits of Referencing:**
+
+- **Centralization**: Maintain payment logic in one place and link to it from many pricing plans.
+- **Consistency**: Ensure all monetized components use the same gateway logic, version, and authentication flow.
+- **Flexibility**: Easily create alternative gateways for specific user segments (e.g., AI agents vs. humans).
+- **Transparency**: Documented specs help consumers understand how billing works—and let machines integrate autonomously.
+
+
+**The Role of `default`:**
+Whenever the `paymentGateways` object is used, a gateway named `default` is **expected and required**. It serves as the **primary or fallback payment method** and enables compatibility even in simpler configurations that only need one payment integration.
+
+Use the `default` gateway when:
+
+- You want to offer a single, unified payment method (e.g., Stripe for API consumption)
+- You’re not using tiered monetization or segmentation
+- You want to future-proof your YAML to support pricing plan evolution
+
+Other named gateways (e.g., `Agent`, `premiumStripe`) can be added freely as needed.
 
 ## Optional attributes and elements
 
