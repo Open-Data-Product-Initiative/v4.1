@@ -51,7 +51,7 @@ dataQuality:
             en: Extended Data Quality dimension
           
 ```
-### Data Quality Configuration
+## Data Quality Configuration
 
 Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
 
@@ -59,7 +59,7 @@ By adhering to defined quality characteristics, organizations can maximize the v
 
 The `dataQuality` component in ODPS provides a structured and machine-readable way to **declare and monitor the quality characteristics** of a data product. It helps align technical validation with business expectations and supports both human understanding and automated tooling.
 
-#### Structure Overview
+## Structure Overview
 
 The `dataQuality` object consists of two parts:
 
@@ -70,11 +70,11 @@ This structure ensures that both expectations and enforcement logic are document
 
 ---
 
-### Referencing Capability
+## Referencing Capability
 
 One of the key features of ODPS is the ability to **reuse** named data quality profiles via references. For example, quality profiles such as `default`, `premium`, or `gold` can be defined once under `dataQuality.declarative` and referenced elsewhere in the YAML—such as in SLA definitions, pricing plans, or tiered service offerings.
 
-#### Benefits of Referencing:
+## Benefits of Referencing:
 - **DRY Principle**: Avoid repetition. Define once, reference many times.
 - **Clarity**: Consumers of your data product can easily see which quality profile is associated with a particular service tier or access plan.
 - **Scalability**: You can support multiple audiences or markets with varying quality expectations.
@@ -82,7 +82,7 @@ One of the key features of ODPS is the ability to **reuse** named data quality p
 
 ---
 
-### The Role of `default`
+## The Role of `default`
 
 The `default` quality profile is **mandatory** whenever the `dataQuality` object is used. It acts as the **baseline** definition, ensuring there is always a clear and predictable quality configuration, even when no referencing is used.
 
