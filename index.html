@@ -2158,7 +2158,19 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </tr>
 </tbody></table>
 <h1 id='data-access'>Data Access</h1>
-<p>Data Access <strong>OBJECT</strong> describes the authorised ability to retrieve, edit, copy or transfer data from IT systems.</p>
+<p>The <code>dataAccess</code> object defines how users—or machines—can technically access the data product. It allows publishers to describe <strong>multiple, named access methods</strong> tailored to different consumer needs: from simple file downloads and APIs to AI agent integration via protocols like <strong>MCP</strong>.</p>
+
+<p>Each entry under <code>dataAccess</code> (such as <code>default</code>, <code>API</code>, or <code>Agent</code>) represents a distinct access interface with its own metadata, authentication requirements, and documentation references. This structure makes it possible to:</p>
+
+<ul>
+<li>Offer <strong>flexible access modes</strong> for various user personas (analysts, developers, AI agents, etc.)</li>
+<li>Support <strong>multilingual UI presentation</strong> through localized <code>name</code> and <code>description</code> fields</li>
+<li>Clearly declare <strong>security expectations</strong> using <code>authenticationMethod</code></li>
+<li>Link to both <strong>machine-readable specs</strong> (<code>specsURL</code>) and <strong>human-readable guides</strong> (<code>documentationURL</code>)</li>
+<li>Promote <strong>reusability</strong> by referencing these interfaces throughout the ODPS YAML using <code>$ref</code></li>
+</ul>
+
+<p>Including an AI agent-specific access interface (<code>outputPorttype: AI</code>) supports MCP-based agent interactions, aligning your product with <strong>AI-native data delivery patterns</strong>.</p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
 <p>Example of Data Access object usage:</p>
