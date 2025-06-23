@@ -14,12 +14,8 @@ Including an AI agent-specific access interface (`outputPorttype: AI`) supports 
 
 #### Referencing Examples
 
-For example in your `access` section in Pricing, you can reuse any defined method from `dataAccess` like this:
+For example in your `access` section in Pricing, you can reuse any defined method from `dataAccess` like this: _$ref: '#/dataAccess/default'_
 
-```yaml
-access:
-  $ref: '#/dataAccess/default'
-```
 
 ## Optional attributes and elements
 
