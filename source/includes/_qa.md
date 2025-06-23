@@ -80,6 +80,10 @@ One of the key features of ODPS is the ability to **reuse** named data quality p
 - **Scalability**: You can support multiple audiences or markets with varying quality expectations.
 - **Auditability**: Clearly link machine-readable checks to business commitments.
 
+## Referencing Examples
+
+To reference a defined quality profile from another part of your YAML (e.g., pricing plan): `$ref: '#/dataQuality/default'`. Or reference a named premium quality package: `$ref: '#/dataQuality/premium'` Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you're reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. 
+
 
 ## The Role of `default`
 
@@ -107,9 +111,6 @@ This makes the `default` profile both a **minimum requirement** and a **best pra
 | **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
 | **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
 
-## Referencing Examples
-
-To reference a defined quality profile from another part of your YAML (e.g., pricing plan): _$ref: '#/dataQuality/default'_. Or reference a named premium quality package: _$ref: '#/dataQuality/premium'_ Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you're reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. 
 
 
 ## Optional attributes and elements
