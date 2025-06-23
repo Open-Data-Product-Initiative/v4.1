@@ -1216,32 +1216,6 @@ Development of the specification is under the umbrella of the Linux Foundation. 
       <span class="na">reference</span><span class="pi">:</span> 
       <span class="na">spec</span><span class="pi">:</span>
 </code></pre></div>
-<blockquote>
-<p>In case standardized options are not enough:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="s">The QA object is general in nature and should</span> 
-<span class="s">be enough for common (80%) use cases.</span> 
-
-<span class="s">You can make extensions to the standard</span> 
-<span class="s">with "x-" mechanism in order to fulfill</span> 
-<span class="s">any industry specific needs.</span> 
-
-<span class="s">A suggestive example below</span> 
-
-<span class="na">dataQuality</span><span class="pi">:</span>
-  <span class="na">declarative</span><span class="pi">:</span>
-    <span class="na">default</span><span class="pi">:</span>
-      <span class="na">dimensions</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-        <span class="pi">-</span> <span class="na">x-dimension</span><span class="pi">:</span> <span class="s">extended-dq</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="s">Extended Data Quality dimension</span>
-
-</code></pre></div>
 <p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  </p>
 
 <p>By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.</p>
@@ -1276,7 +1250,33 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 - You want to ensure future compatibility with advanced features such as AI agents, data marketplaces, or automated governance.</p>
 
 <p>This makes the <code>default</code> profile both a <strong>minimum requirement</strong> and a <strong>best practice</strong> for clarity and interoperability.</p>
-<h2 id='odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring'>ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</h2>
+
+<blockquote>
+<p>In case standardized options are not enough:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="s">The QA object is general in nature and should</span> 
+<span class="s">be enough for common (80%) use cases.</span> 
+
+<span class="s">You can make extensions to the standard</span> 
+<span class="s">with "x-" mechanism in order to fulfill</span> 
+<span class="s">any industry specific needs.</span> 
+
+<span class="s">A suggestive example below</span> 
+
+<span class="na">dataQuality</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="pi">-</span> <span class="na">x-dimension</span><span class="pi">:</span> <span class="s">extended-dq</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Extended Data Quality dimension</span>
+
+</code></pre></div><h2 id='odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring'>ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</h2>
 <table><thead>
 <tr>
 <th><div style="width:150px">Data Quality Dimension</div></th>
