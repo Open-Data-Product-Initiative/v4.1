@@ -378,7 +378,13 @@
                     <a href="#data-quality-configuration" class="toc-h2 toc-link" data-title="Data Quality Configuration">Data Quality Configuration</a>
                   </li>
                   <li>
+                    <a href="#structure-overview" class="toc-h2 toc-link" data-title="Structure Overview">Structure Overview</a>
+                  </li>
+                  <li>
                     <a href="#referencing-capability" class="toc-h2 toc-link" data-title="Referencing Capability">Referencing Capability</a>
+                  </li>
+                  <li>
+                    <a href="#benefits-of-referencing" class="toc-h2 toc-link" data-title="Benefits of Referencing:">Benefits of Referencing:</a>
                   </li>
                   <li>
                     <a href="#the-role-of-default" class="toc-h2 toc-link" data-title="The Role of default">The Role of <code>default</code></a>
@@ -1238,13 +1244,13 @@ Development of the specification is under the umbrella of the Linux Foundation. 
           <span class="na">displaytitle</span><span class="pi">:</span>
             <span class="na">en</span><span class="pi">:</span> <span class="s">Extended Data Quality dimension</span>
 
-</code></pre></div><h3 id='data-quality-configuration'>Data Quality Configuration</h3>
+</code></pre></div><h2 id='data-quality-configuration'>Data Quality Configuration</h2>
 <p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  </p>
 
 <p>By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.</p>
 
 <p>The <code>dataQuality</code> component in ODPS provides a structured and machine-readable way to <strong>declare and monitor the quality characteristics</strong> of a data product. It helps align technical validation with business expectations and supports both human understanding and automated tooling.</p>
-<h4 id='structure-overview'>Structure Overview</h4>
+<h2 id='structure-overview'>Structure Overview</h2>
 <p>The <code>dataQuality</code> object consists of two parts:</p>
 
 <ul>
@@ -1255,9 +1261,9 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>This structure ensures that both expectations and enforcement logic are documented and machine-actionable in the same place.</p>
 
 <hr>
-<h3 id='referencing-capability'>Referencing Capability</h3>
+<h2 id='referencing-capability'>Referencing Capability</h2>
 <p>One of the key features of ODPS is the ability to <strong>reuse</strong> named data quality profiles via references. For example, quality profiles such as <code>default</code>, <code>premium</code>, or <code>gold</code> can be defined once under <code>dataQuality.declarative</code> and referenced elsewhere in the YAML—such as in SLA definitions, pricing plans, or tiered service offerings.</p>
-<h4 id='benefits-of-referencing'>Benefits of Referencing:</h4>
+<h2 id='benefits-of-referencing'>Benefits of Referencing:</h2>
 <ul>
 <li><strong>DRY Principle</strong>: Avoid repetition. Define once, reference many times.</li>
 <li><strong>Clarity</strong>: Consumers of your data product can easily see which quality profile is associated with a particular service tier or access plan.</li>
@@ -1266,7 +1272,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </ul>
 
 <hr>
-<h3 id='the-role-of-default'>The Role of <code>default</code></h3>
+<h2 id='the-role-of-default'>The Role of <code>default</code></h2>
 <p>The <code>default</code> quality profile is <strong>mandatory</strong> whenever the <code>dataQuality</code> object is used. It acts as the <strong>baseline</strong> definition, ensuring there is always a clear and predictable quality configuration, even when no referencing is used.</p>
 
 <p>You should use the <code>default</code> profile when:
