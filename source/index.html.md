@@ -50,7 +50,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **ODPS YAML Schema:**
 
-* <a href="https://opendataproducts.org/dev/schema/odps.yaml">YAML Schema</a>
+* <a href="https://opendataproducts.org/v4.0/schema/odps.yaml">YAML Schema</a>
 
 **Editors:**
 
