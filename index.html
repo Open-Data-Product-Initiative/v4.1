@@ -1242,32 +1242,9 @@ The <code>default</code> quality profile is <strong>mandatory</strong> whenever 
 
 <p>This makes the <code>default</code> profile both a <strong>minimum requirement</strong> and a <strong>best practice</strong> for clarity and interoperability.</p>
 
-<blockquote>
-<p>In case standardized options are not enough:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="s">The QA object is general in nature and should</span> 
-<span class="s">be enough for common (80%) use cases.</span> 
-
-<span class="s">You can make extensions to the standard</span> 
-<span class="s">with "x-" mechanism in order to fulfill</span> 
-<span class="s">any industry specific needs.</span> 
-
-<span class="s">A suggestive example below</span> 
-
-<span class="na">dataQuality</span><span class="pi">:</span>
-  <span class="na">declarative</span><span class="pi">:</span>
-    <span class="na">default</span><span class="pi">:</span>
-      <span class="na">dimensions</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-        <span class="pi">-</span> <span class="na">x-dimension</span><span class="pi">:</span> <span class="s">extended-dq</span>
-          <span class="na">displaytitle</span><span class="pi">:</span>
-            <span class="na">en</span><span class="pi">:</span> <span class="s">Extended Data Quality dimension</span>
-
-</code></pre></div><h2 id='odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring'>ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</h2>
+<p>The QA object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill 
+any industry specific needs. </p>
+<h2 id='odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring'>ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</h2>
 <table><thead>
 <tr>
 <th><div style="width:150px">Data Quality Dimension</div></th>
