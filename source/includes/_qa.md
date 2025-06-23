@@ -83,50 +83,51 @@ Data integrity is the maintenance of, and the assurance of, data accuracy and co
 
 ```yml
 dataQuality:
-  default:
-    displaytitle: 
-      en: The Basic Data Quality
-    description: 
-      en: The basic quality package
-    dimensions:
-      - dimension: accuracy
-        displaytitle:
-          en: Data Accuracy (percent)
-        description:
-          en: >
-            Data Accuracy ensures the data product reflects the real-world
-            entities or events it represents, minimizing errors and providing
-            reliable insights.
-        objective: 90
-        unit: percentage
-      - dimension: completeness
-        displaytitle:
-          - en: Data Completeness (percent)
-        objective: 90
-        unit: percentage
+  declarative:
+    default:
+      displaytitle: 
+        en: The Basic Data Quality
+      description: 
+        en: The basic quality package
+      dimensions:
+        - dimension: accuracy
+          displaytitle:
+            en: Data Accuracy (percent)
+          description:
+            en: >
+              Data Accuracy ensures the data product reflects the real-world
+              entities or events it represents, minimizing errors and providing
+              reliable insights.
+          objective: 90
+          unit: percentage
+        - dimension: completeness
+          displaytitle:
+            - en: Data Completeness (percent)
+          objective: 90
+          unit: percentage
 
 
-  premium:
-    displaytitle: 
-      en: The Premium Data Quality
-    description: 
-      en: The Preimum quality package
-    dimensions:
-      - dimension: accuracy
-        displaytitle:
-          en: Data Accuracy (percent)
-        description:
-          en: >
-            Data Accuracy ensures the data product reflects the real-world
-            entities or events it represents, minimizing errors and providing
-            reliable insights.
-        objective: 98
-        unit: percentage
-      - dimension: completeness
-        displaytitle:
-          en: Data Completeness (percent)
-        objective: 99
-        unit: percentage
+    premium:
+      displaytitle: 
+        en: The Premium Data Quality
+      description: 
+        en: The Preimum quality package
+      dimensions:
+        - dimension: accuracy
+          displaytitle:
+            en: Data Accuracy (percent)
+          description:
+            en: >
+              Data Accuracy ensures the data product reflects the real-world
+              entities or events it represents, minimizing errors and providing
+              reliable insights.
+          objective: 98
+          unit: percentage
+        - dimension: completeness
+          displaytitle:
+            en: Data Completeness (percent)
+          objective: 99
+          unit: percentage
 
   executable:
     - dimension: accuracy
