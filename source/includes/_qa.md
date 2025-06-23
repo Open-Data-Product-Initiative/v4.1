@@ -51,7 +51,6 @@ dataQuality:
             en: Extended Data Quality dimension
           
 ```
-
 ## Data Quality Configuration
 Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
 
