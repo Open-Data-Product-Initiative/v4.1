@@ -375,6 +375,9 @@
             <a href="#data-quality" class="toc-h1 toc-link" data-title="Data Quality">Data Quality</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#referencing-capability" class="toc-h2 toc-link" data-title="Referencing Capability">Referencing Capability</a>
+                  </li>
+                  <li>
                     <a href="#odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring" class="toc-h2 toc-link" data-title="ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring">ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</a>
                   </li>
                   <li>
@@ -1225,9 +1228,8 @@ The <code>dataQuality</code> object consists of two parts:</p>
   <span class="s">...</span>
 
   <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/premium'</span>
-</code></pre></div>
-<p><strong>Referencing Capability:</strong>
-One of the key features of ODPS is the ability to <strong>reuse</strong> named data quality profiles via references. For example, quality profiles such as <code>default</code>, <code>premium</code>, or <code>gold</code> can be defined once under <code>dataQuality.declarative</code> and referenced elsewhere in the YAML—such as in SLA definitions, pricing plans, or tiered service offerings.</p>
+</code></pre></div><h2 id='referencing-capability'>Referencing Capability</h2>
+<p>One of the key features of ODPS is the ability to <strong>reuse</strong> named data quality profiles via references. For example, quality profiles such as <code>default</code>, <code>premium</code>, or <code>gold</code> can be defined once under <code>dataQuality.declarative</code> and referenced elsewhere in the YAML—such as in SLA definitions, pricing plans, or tiered service offerings.</p>
 
 <p><strong>Benefits of Referencing:</strong></p>
 
