@@ -20,6 +20,15 @@ Named gateway definitions (e.g., `default`, `Agent`) can be **reused across pric
 - **Flexibility**: Easily create alternative gateways for specific user segments (e.g., AI agents vs. humans).
 - **Transparency**: Documented specs help consumers understand how billing works—and let machines integrate autonomously.
 
+> referencing examples:
+
+```yml
+  $ref: '#/paymentGateways/default'
+
+  ...
+
+  $ref: '#/dataQuality/agent'
+```
 
 **The Role of `default`:**
 Whenever the `paymentGateways` object is used, a gateway named `default` is **expected and required**. It serves as the **primary or fallback payment method** and enables compatibility even in simpler configurations that only need one payment integration.
