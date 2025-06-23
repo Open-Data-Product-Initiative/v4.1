@@ -53,7 +53,6 @@ dataQuality:
 ```
 
 ## Data Quality Configuration
-
 Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
 
 By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.
@@ -61,7 +60,6 @@ By adhering to defined quality characteristics, organizations can maximize the v
 The `dataQuality` component in ODPS provides a structured and machine-readable way to **declare and monitor the quality characteristics** of a data product. It helps align technical validation with business expectations and supports both human understanding and automated tooling.
 
 ## Structure Overview
-
 The `dataQuality` object consists of two parts:
 
 - **`declarative`**: Captures target levels for defined quality dimensions like `accuracy`, `completeness`, or `timeliness`. These values represent your **intended** or **promised** quality levels.
@@ -69,9 +67,7 @@ The `dataQuality` object consists of two parts:
 
 This structure ensures that both expectations and enforcement logic are documented and machine-actionable in the same place.
 
-
 ## Referencing Capability
-
 One of the key features of ODPS is the ability to **reuse** named data quality profiles via references. For example, quality profiles such as `default`, `premium`, or `gold` can be defined once under `dataQuality.declarative` and referenced elsewhere in the YAML—such as in SLA definitions, pricing plans, or tiered service offerings.
 
 ## Benefits of Referencing:
@@ -81,12 +77,10 @@ One of the key features of ODPS is the ability to **reuse** named data quality p
 - **Auditability**: Clearly link machine-readable checks to business commitments.
 
 ## Referencing Examples
-
 To reference a defined quality profile from another part of your YAML (e.g., pricing plan): `$ref: '#/dataQuality/default'`. Or reference a named premium quality package: `$ref: '#/dataQuality/premium'` Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you're reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. 
 
 
 ## The Role of `default`
-
 The `default` quality profile is **mandatory** whenever the `dataQuality` object is used. It acts as the **baseline** definition, ensuring there is always a clear and predictable quality configuration, even when no referencing is used.
 
 You should use the `default` profile when:
