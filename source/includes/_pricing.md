@@ -132,7 +132,29 @@ pricingPlans:
           $ref: '#/SLA/premium'
         access:
           $ref: '#/dataAccess/agent'
-
+          
+  executable:
+    - name: Premium subscription 1 year
+      type: Stripe
+      reference: urls to Stripe docs
+      create:
+        spec:
+          - cmd: stripe products create  \
+            params: '--name="Premium subscription 1 year"'
+          - cmd: stripe prices create  \
+            params: '--currency=eur --unit-amount=50 -d "recurring[interval]"=month -d "product_data[name]"="Premium subscription 1 year"'
+      read:
+        spec:
+          - cmd: stripe products get  \
+            params: '--name="Premium subscription 1 year"'
+      update:
+        spec:
+          - cmd: stripe products update  \
+            params: '--name="Premium subscription 1 year"'
+      delete:
+        spec:
+          - cmd: stripe products delete  \
+            params: '--name="Premium subscription 1 year"'
   
 
 ```

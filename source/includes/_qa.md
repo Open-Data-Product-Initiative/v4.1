@@ -5,11 +5,18 @@
 ```yml
 dataQuality:
   declarative:
-    - dimension: selected dimension
-      displaytitle:
-      description:
-      objective: 
-      unit:
+    default:
+      dimensions:
+        - dimension: accuracy
+          displaytitle:
+            en: Data Accuracy (percent)
+          objective: 90
+          unit: percentage
+        - dimension: completeness
+          displaytitle:
+            - en: Data Completeness (percent)
+          objective: 90
+          unit: percentage
   executable:
     - dimension: selected dimension
       type:  
@@ -32,12 +39,17 @@ A suggestive example below
 
 dataQuality:
   declarative:
-    - dimension: accuracy
-      displaytitle:
-      - en: Data Accuracy (percent)
-    - x-dimension: extended-dq
-      displaytitle:
-      - en: Extended Data Quality dimension
+    default:
+      dimensions:
+        - dimension: accuracy
+          displaytitle:
+            en: Data Accuracy (percent)
+          objective: 90
+          unit: percentage
+        - x-dimension: extended-dq
+          displaytitle:
+            en: Extended Data Quality dimension
+          
 ```
 
 Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
@@ -60,8 +72,6 @@ The QA object is general in nature and should be enough for common (80%) use cas
 
 ## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
 
-
-
 | <div style="width:150px">Data Quality Dimension</div>   | Description | 
 |---|---|
 | **accuracy** | The measurement of the veracity of data to its authoritative source |
@@ -73,9 +83,10 @@ The QA object is general in nature and should be enough for common (80%) use cas
 | **validity** | Validity refers to the extent to which the data accurately and appropriately represents the real-world object or concept it is supposed to describe. |
 | **uniqueness** | Uniqueness means each record and attribute should be one-of-a-kind, aiming for a single, unique data entry |
 
+## Referencing Examples
 
-Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why *integrity* is not in the attributes, but accuracy and consistency as well as completeness are. 
-  
+To reference a defined quality profile from another part of your YAML (e.g., pricing plan): _$ref: '#/dataQuality/default'_. Or reference a named premium quality package: _$ref: '#/dataQuality/premium'_ Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you're reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. 
+
 
 ## Optional attributes and elements
 
