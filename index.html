@@ -995,40 +995,41 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">SLA</span><span class="pi">:</span>
-  <span class="na">default</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> 
-      <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic SLA</span>
-    <span class="na">description</span><span class="pi">:</span> 
-      <span class="na">en</span><span class="pi">:</span> <span class="s">The basic SLA package</span>
-    <span class="na">dimensions</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-        <span class="na">displaytitle</span><span class="pi">:</span>
-          <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-        <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-        <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-        <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
-        <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-        <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
-        <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
-  <span class="na">premium</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> 
-      <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium SLA</span>
-    <span class="na">description</span><span class="pi">:</span> 
-      <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium SLA package</span>
-    <span class="na">dimensions</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-        <span class="na">displaytitle</span><span class="pi">:</span>
-          <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-        <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
-        <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-        <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
-        <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-        <span class="na">objective</span><span class="pi">:</span> <span class="m">5</span>
-        <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> 
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic SLA</span>
+      <span class="na">description</span><span class="pi">:</span> 
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The basic SLA package</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+    <span class="na">premium</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> 
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium SLA</span>
+      <span class="na">description</span><span class="pi">:</span> 
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium SLA package</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">5</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
   <span class="na">executable</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
