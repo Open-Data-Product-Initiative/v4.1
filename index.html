@@ -2533,7 +2533,42 @@ any industry specific needs. </p>
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-rc/issues">raise an issue in Github</a></p>
 <h1 id='payment-gateways'>Payment Gateways</h1>
-<p>Payment Gateways <strong>OBJECT</strong> describes the methods to define payment gateways for pricing plans as references</p>
+<p>The <code>paymentGateways</code> object in ODPS defines how <strong>transactions are handled</strong> when pricing plans require financial exchanges—whether from humans or AI agents. It allows you to describe and configure multiple named gateway setups (e.g., <code>default</code>, <code>Agent</code>, <code>PremiumStripe</code>) that can be <strong>referenced from pricing plans</strong>.</p>
+
+<p>Each gateway definition provides a structured way to:</p>
+
+<ul>
+<li>Describe the payment system (e.g., Stripe, Axio, Custom)</li>
+<li>Point to relevant documentation (<code>reference</code>)</li>
+<li>Include executable or declarative configuration under <code>spec</code></li>
+</ul>
+
+<p>This component enables flexible monetization strategies, including differentiated billing models for human users vs. machine users, and support for both traditional and agent-native payment protocols.</p>
+
+<p><strong>Referencing Payment Gateways:</strong>
+Named gateway definitions (e.g., <code>default</code>, <code>Agent</code>) can be <strong>reused across pricing plans</strong> using <code>$ref</code>. This ensures consistent payment logic, minimizes duplication, and allows you to tie multiple plans to a single gateway configuration.</p>
+
+<p><strong>Benefits of Referencing:</strong></p>
+
+<ul>
+<li><strong>Centralization</strong>: Maintain payment logic in one place and link to it from many pricing plans.</li>
+<li><strong>Consistency</strong>: Ensure all monetized components use the same gateway logic, version, and authentication flow.</li>
+<li><strong>Flexibility</strong>: Easily create alternative gateways for specific user segments (e.g., AI agents vs. humans).</li>
+<li><strong>Transparency</strong>: Documented specs help consumers understand how billing works—and let machines integrate autonomously.</li>
+</ul>
+
+<p><strong>The Role of <code>default</code>:</strong>
+Whenever the <code>paymentGateways</code> object is used, a gateway named <code>default</code> is <strong>expected and required</strong>. It serves as the <strong>primary or fallback payment method</strong> and enables compatibility even in simpler configurations that only need one payment integration.</p>
+
+<p>Use the <code>default</code> gateway when:</p>
+
+<ul>
+<li>You want to offer a single, unified payment method (e.g., Stripe for API consumption)</li>
+<li>You’re not using tiered monetization or segmentation</li>
+<li>You want to future-proof your YAML to support pricing plan evolution</li>
+</ul>
+
+<p>Other named gateways (e.g., <code>Agent</code>, <code>premiumStripe</code>) can be added freely as needed.</p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
 <p>Example of Payment Gateways object usage:</p>
