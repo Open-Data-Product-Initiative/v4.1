@@ -24,33 +24,6 @@ dataQuality:
       reference: 
       spec:
 ```
-
-> In case standardized options are not enough:
-
-```yml
-The QA object is general in nature and should 
-be enough for common (80%) use cases. 
-
-You can make extensions to the standard 
-with "x-" mechanism in order to fulfill 
-any industry specific needs. 
-
-A suggestive example below 
-
-dataQuality:
-  declarative:
-    default:
-      dimensions:
-        - dimension: accuracy
-          displaytitle:
-            en: Data Accuracy (percent)
-          objective: 90
-          unit: percentage
-        - x-dimension: extended-dq
-          displaytitle:
-            en: Extended Data Quality dimension
-          
-```
 Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  
 
 By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.
@@ -88,7 +61,32 @@ You should use the `default` profile when:
 
 This makes the `default` profile both a **minimum requirement** and a **best practice** for clarity and interoperability.
 
+> In case standardized options are not enough:
 
+```yml
+The QA object is general in nature and should 
+be enough for common (80%) use cases. 
+
+You can make extensions to the standard 
+with "x-" mechanism in order to fulfill 
+any industry specific needs. 
+
+A suggestive example below 
+
+dataQuality:
+  declarative:
+    default:
+      dimensions:
+        - dimension: accuracy
+          displaytitle:
+            en: Data Accuracy (percent)
+          objective: 90
+          unit: percentage
+        - x-dimension: extended-dq
+          displaytitle:
+            en: Extended Data Quality dimension
+          
+```
 
 ## ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring 
 
