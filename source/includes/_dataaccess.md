@@ -12,6 +12,14 @@ Each entry under `dataAccess` (such as `default`, `API`, or `Agent`) represents 
 
 Including an AI agent-specific access interface (`outputPorttype: AI`) supports MCP-based agent interactions, aligning your product with **AI-native data delivery patterns**.
 
+#### Referencing Examples
+
+For example in your `access` section in Pricing, you can reuse any defined method from `dataAccess` like this:
+
+```yaml
+access:
+  $ref: '#/dataAccess/default'
+```
 
 ## Optional attributes and elements
 
