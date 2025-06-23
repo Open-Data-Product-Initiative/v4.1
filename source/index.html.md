@@ -130,8 +130,8 @@ It is RECOMMENDED that the root OpenAPI document be named: dataproduct.json or d
 > Example of document level attribute usage and structure:
 
 ```yml
-schema: https://opendataproducts.org/v3.0/schema/odps.yaml
-version: 3.0
+schema: https://opendataproducts.org/v4.0/schema/odps.yaml
+version: 4.0
 product:
   details:
     en:
@@ -171,8 +171,8 @@ RecommendedUseCases **OBJECT** is an array which contains offers method to attac
 > Example of document level attribute usage and structure:
 
 ```yml
-schema: https://opendataproducts.org/v3.0/schema/odps.yaml
-version: 3.0
+schema: https://opendataproducts.org/v4.0/schema/odps.yaml
+version: 4.0
 product:
   contract:
     id: 02323M123  
