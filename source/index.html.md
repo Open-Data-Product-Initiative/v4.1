@@ -57,11 +57,14 @@ Development of the specification is under the umbrella of the Linux Foundation.
 * <a href="https://www.linkedin.com/in/jarkkomoilanen/">Jarkko Moilanen</a>
 * <a href="https://www.linkedin.com/in/manfred-sorg/">Manfred Sorg</a>
 
-
-
 **Participate:**
 
 * [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/4rc/issues)
+
+
+## Examples
+
+We provide some [examples of ODPS spec files in Github](https://github.com/Open-Data-Product-Initiative/odps-examples). We appreciate contributions to this collection. 
 
 ## Introduction
 
