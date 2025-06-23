@@ -1221,6 +1221,11 @@ The <code>dataQuality</code> object consists of two parts:</p>
 <p>referencing example:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
+  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/default'</span>
+
+  <span class="s">or</span>
+
+<span class="na">dataQuality</span><span class="pi">:</span>
   <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/premium'</span>
 </code></pre></div>
 <p><strong>Referencing Capability:</strong>
