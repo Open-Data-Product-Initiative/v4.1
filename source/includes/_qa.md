@@ -42,6 +42,11 @@ This structure ensures that both expectations and enforcement logic are document
 
 ```yml
 dataQuality:
+  $ref: '#/dataQuality/default'
+
+  or
+
+dataQuality:
   $ref: '#/dataQuality/premium'
 ```
 
