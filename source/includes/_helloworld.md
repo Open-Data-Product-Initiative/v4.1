@@ -151,6 +151,13 @@ product:
         - dimension: updateFrequency
           objective: 5
           unit: minutes
+    support:
+    phoneNumber: '+971508976456'
+    phoneServiceHours: Mon–Fri 8am–4pm (GMT)
+    email: support@opendataproducts.org
+    emailServiceHours: Mon–Fri 8am–4pm (GMT)
+    documentationURL: ''
+    
   dataQuality:
     default:
       displaytitle:
@@ -250,12 +257,7 @@ product:
       reference: 'https://www.x402.org/'
       spec: |
         paymentMiddleware("0xYourAddress", {"/mcp-access": "$0.01"});
-  support:
-    phoneNumber: '+971508976456'
-    phoneServiceHours: Mon–Fri 8am–4pm (GMT)
-    email: support@opendataproducts.org
-    emailServiceHours: Mon–Fri 8am–4pm (GMT)
-    documentationURL: ''
+  
   license:
     en:
       scope:
