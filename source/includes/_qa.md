@@ -38,16 +38,6 @@ The `dataQuality` object consists of two parts:
 
 This structure ensures that both expectations and enforcement logic are documented and machine-actionable in the same place.
 
-> referencing examples:
-
-```yml
-  $ref: '#/dataQuality/default'
-
-  ...
-
-  $ref: '#/dataQuality/premium'
-```
-
 ## Referencing Capability
 One of the key features of ODPS is the ability to **reuse** named data quality profiles via references. For example, quality profiles such as `default`, `premium`, or `gold` can be defined once under `dataQuality.declarative` and referenced elsewhere in the YAML—such as in SLA definitions, pricing plans, or tiered service offerings.
 
@@ -58,8 +48,19 @@ One of the key features of ODPS is the ability to **reuse** named data quality p
 - **Scalability**: You can support multiple audiences or markets with varying quality expectations.
 - **Auditability**: Clearly link machine-readable checks to business commitments.
 
+> referencing examples:
+
+```yml
+  $ref: '#/dataQuality/default'
+
+  ...
+
+  $ref: '#/dataQuality/premium'
+```
+
 **Referencing Examples:**
 To reference a defined quality profile from another part of your YAML (e.g., pricing plan): `$ref: '#/dataQuality/default'`. Or reference a named premium quality package: `$ref: '#/dataQuality/premium'` Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you're reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. 
+
 
 **The Role of `default`**
 
