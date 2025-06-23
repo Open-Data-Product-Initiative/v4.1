@@ -375,15 +375,6 @@
             <a href="#data-quality" class="toc-h1 toc-link" data-title="Data Quality">Data Quality</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#structure-overview" class="toc-h2 toc-link" data-title="Structure Overview">Structure Overview</a>
-                  </li>
-                  <li>
-                    <a href="#referencing-capability" class="toc-h2 toc-link" data-title="Referencing Capability">Referencing Capability</a>
-                  </li>
-                  <li>
-                    <a href="#benefits-of-referencing" class="toc-h2 toc-link" data-title="Benefits of Referencing:">Benefits of Referencing:</a>
-                  </li>
-                  <li>
                     <a href="#referencing-examples" class="toc-h2 toc-link" data-title="Referencing Examples">Referencing Examples</a>
                   </li>
                   <li>
@@ -1221,8 +1212,9 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.</p>
 
 <p>The <code>dataQuality</code> component in ODPS provides a structured and machine-readable way to <strong>declare and monitor the quality characteristics</strong> of a data product. It helps align technical validation with business expectations and supports both human understanding and automated tooling.</p>
-<h2 id='structure-overview'>Structure Overview</h2>
-<p>The <code>dataQuality</code> object consists of two parts:</p>
+
+<p><strong>Structure Overview:</strong>
+The <code>dataQuality</code> object consists of two parts:</p>
 
 <ul>
 <li><strong><code>declarative</code></strong>: Captures target levels for defined quality dimensions like <code>accuracy</code>, <code>completeness</code>, or <code>timeliness</code>. These values represent your <strong>intended</strong> or <strong>promised</strong> quality levels.</li>
@@ -1230,9 +1222,12 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </ul>
 
 <p>This structure ensures that both expectations and enforcement logic are documented and machine-actionable in the same place.</p>
-<h2 id='referencing-capability'>Referencing Capability</h2>
-<p>One of the key features of ODPS is the ability to <strong>reuse</strong> named data quality profiles via references. For example, quality profiles such as <code>default</code>, <code>premium</code>, or <code>gold</code> can be defined once under <code>dataQuality.declarative</code> and referenced elsewhere in the YAML—such as in SLA definitions, pricing plans, or tiered service offerings.</p>
-<h2 id='benefits-of-referencing'>Benefits of Referencing:</h2>
+
+<p><strong>Referencing Capability:</strong>
+One of the key features of ODPS is the ability to <strong>reuse</strong> named data quality profiles via references. For example, quality profiles such as <code>default</code>, <code>premium</code>, or <code>gold</code> can be defined once under <code>dataQuality.declarative</code> and referenced elsewhere in the YAML—such as in SLA definitions, pricing plans, or tiered service offerings.</p>
+
+<p><strong>Benefits of Referencing:</strong></p>
+
 <ul>
 <li><strong>DRY Principle</strong>: Avoid repetition. Define once, reference many times.</li>
 <li><strong>Clarity</strong>: Consumers of your data product can easily see which quality profile is associated with a particular service tier or access plan.</li>
