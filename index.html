@@ -1282,50 +1282,51 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>Example of Data Quality component with some of the data quality dimensions:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
-  <span class="na">default</span><span class="pi">:</span>
-    <span class="na">displaytitle</span><span class="pi">:</span> 
-      <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic Data Quality</span>
-    <span class="na">description</span><span class="pi">:</span> 
-      <span class="na">en</span><span class="pi">:</span> <span class="s">The basic quality package</span>
-    <span class="na">dimensions</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-        <span class="na">displaytitle</span><span class="pi">:</span>
-          <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-        <span class="na">description</span><span class="pi">:</span>
-          <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
-            <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
-            <span class="s">entities or events it represents, minimizing errors and providing</span>
-            <span class="s">reliable insights.</span>
-        <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-        <span class="na">displaytitle</span><span class="pi">:</span>
-          <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
-        <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">displaytitle</span><span class="pi">:</span> 
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Basic Data Quality</span>
+      <span class="na">description</span><span class="pi">:</span> 
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The basic quality package</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+          <span class="na">description</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
+              <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
+              <span class="s">entities or events it represents, minimizing errors and providing</span>
+              <span class="s">reliable insights.</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
 
 
-  <span class="na">premium</span><span class="pi">:</span>
-    <span class="na">displaytitle</span><span class="pi">:</span> 
-      <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium Data Quality</span>
-    <span class="na">description</span><span class="pi">:</span> 
-      <span class="na">en</span><span class="pi">:</span> <span class="s">The Preimum quality package</span>
-    <span class="na">dimensions</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-        <span class="na">displaytitle</span><span class="pi">:</span>
-          <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-        <span class="na">description</span><span class="pi">:</span>
-          <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
-            <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
-            <span class="s">entities or events it represents, minimizing errors and providing</span>
-            <span class="s">reliable insights.</span>
-        <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
-        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-      <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-        <span class="na">displaytitle</span><span class="pi">:</span>
-          <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
-        <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
-        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="na">premium</span><span class="pi">:</span>
+      <span class="na">displaytitle</span><span class="pi">:</span> 
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Premium Data Quality</span>
+      <span class="na">description</span><span class="pi">:</span> 
+        <span class="na">en</span><span class="pi">:</span> <span class="s">The Preimum quality package</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+          <span class="na">description</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;</span>
+              <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
+              <span class="s">entities or events it represents, minimizing errors and providing</span>
+              <span class="s">reliable insights.</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
 
   <span class="na">executable</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
