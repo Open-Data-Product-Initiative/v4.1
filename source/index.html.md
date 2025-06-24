@@ -72,7 +72,7 @@ The Open Data Product Specification is a vendor-neutral, open-source machine-rea
 
 **The ODPS 4.0 specification supports referencing mechanisms** that improve modularity, reduce duplication, and ease governance. Users can reference internal components, such as SLA, dataQuality, dataAccess, and paymentGateways, from other parts of the product definition using JSON Reference syntax ($ref). In addition, any of these components can be defined and maintained in external YAML files and included via URL-based references. This makes it possible to reuse standardized SLA profiles, DQ rules, or access definitions across multiple data products, helping teams manage changes consistently, reduce errors, and align with enterprise-level governance practices.
 
-You can reference Data Contract as a URL or define Data Contract as an inline element in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. 
+You can reference **Data Contract as a URL or define Data Contract as an inline element** in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. 
 
 ## Specification aims and aspects
 
