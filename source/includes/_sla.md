@@ -161,7 +161,7 @@ SLA:
     documentationURL: ''
 
 ```
-> Example of SLA extenal profiles usage:
+> Example of SLA external profiles usage:
 
 ```yml
 
@@ -170,7 +170,7 @@ SLA: # the below file contains the same content as above
 
 ```
 
-> Example of SLA extenal profiles for each profile usage:
+> Example of SLA external profiles for each profile usage:
 
 ```yml
 
