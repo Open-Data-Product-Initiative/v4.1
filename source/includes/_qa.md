@@ -168,11 +168,32 @@ dataQuality:
                   fatal: 
                     max_percent: 11.0      
 ```
+> Example of DQ extenal profiles usage:
+
+```yml
+
+dataQuality: # the below file contains the same content as above
+  $ref: 'https://example.org/DQ/all-packages.yaml'
+
+```
+
+> Example of DQ extenal profiles for each profile usage:
+
+```yml
+
+dataQuality:
+  declarative:
+    default:
+      $ref: 'https://example.org/DQ/basic.yaml'
+    premium:
+      $ref: 'https://example.org/DQ/premium.yaml'
+```
 
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **dataQuality** | element | - | Contains array of data quality dimensions with optional computational monitoring object. Under this element Data Quality is divided into declarative and executable parts. |
+| **$ref** | filepath or valid URL | - | Define the Data quality profiles in external file for reuse purposes, example  `$ref: 'https://example.org/DQ/all-packages.yaml'` See example. This makes it easy to keep related profiles (e.g. default, premium, gold) together, apply versioning and validation once, and publish all variants from a single repo or source. <br/><br/>The same pattern can be used in individual data quality profiles instead of doing it inline. See example. This gives finer control if each Data quality is owned or updated by a different team, but increases the number of files to track and host.|
 | **default** | object | - | This object must always be present and named exactly `default` if dataQuality object is used. It acts as the fallback or primary data quality profile. <br/><br/>Users are free to define additional named profiles such as `premium`, `gold`, etc., in parallel to the default. <br/><br/>In the example, `default` and `premium` are both included. These variants can be referred to from other components like pricing plans. <br/><br/>**Example reference usage:** <br/> `dataQuality: $ref: '#/dataQuality/default'` |
 | **dimension** | attribute | string, one of: *accuracy, completeness, conformity, consistency, coverage, timeliness, validity, or uniqueness.* | Defines the data quality dimension. |
 | **objective** | attribute | integer | Defines the target value for the data quality dimension |
