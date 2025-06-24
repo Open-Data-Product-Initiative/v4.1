@@ -65,6 +65,17 @@ license:
         their control, such as strikes, fires, wars, and other force majeure events.
   
 ```
+
+> Example of License as ref usage:
+
+
+```yml 
+
+license:
+  $ref: 'https://example.org/licenses/default'
+  
+```
+
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **license** | element | - |  Binds the licensing related elements and attributes together. |
