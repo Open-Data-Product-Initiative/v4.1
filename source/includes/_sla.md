@@ -161,7 +161,14 @@ SLA:
     documentationURL: ''
 
 ```
+> Example of SLA extenal profiles usage:
 
+```yml
+
+SLA: # the below file contains the same content as above
+  $ref: 'https://example.org/slas/all-packages.yaml'
+
+```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
@@ -184,6 +191,8 @@ SLA:
 | **email** | string | valid email address | Email address for support requests. Must follow [RFC2822](https://datatracker.ietf.org/doc/html/rfc2822). |
 | **emailServiceHours** | string | - | Description of email support hours. |
 | **documentationURL** | URL | Valid URL | Link to documentation describing the support process or SLA handling. |
+
+
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
