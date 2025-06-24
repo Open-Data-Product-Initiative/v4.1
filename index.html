@@ -1258,14 +1258,14 @@ The <code>dataQuality</code> object consists of two parts:</p>
 <blockquote>
 <p>referencing examples:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/default'</span>
+<div class="highlight"><pre class="highlight yaml"><code>  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/Product/dataQuality/default'</span>
 
   <span class="s">...</span>
 
-  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/premium'</span>
+  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/Product/dataQuality/premium'</span>
 </code></pre></div>
 <p><strong>Referencing Examples:</strong>
-To reference a defined quality profile from another part of your YAML (e.g., pricing plan): <code>$ref: &#39;#/dataQuality/default&#39;</code>. Or reference a named premium quality package: <code>$ref: &#39;#/dataQuality/premium&#39;</code> Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you&#39;re reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. </p>
+To reference a defined quality profile from another part of your YAML (e.g., pricing plan): <code>$ref: &#39;#/Product/dataQuality/default&#39;</code>. Or reference a named premium quality package: <code>$ref: &#39;#/Product/dataQuality/premium&#39;</code> Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you&#39;re reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. </p>
 
 <p><strong>The Role of <code>default</code></strong></p>
 
