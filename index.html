@@ -1102,7 +1102,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td><strong>default</strong></td>
 <td>object</td>
 <td>-</td>
-<td>This object must always be present and named exactly <code>default</code> if SLA object is used. It acts as the fallback or baseline SLA profile. <br/><br/>Users are free to define additional named profiles such as <code>premium</code>, <code>gold</code>, etc., in parallel to the default. <br/><br/>In the example above, both <code>default</code> and <code>premium</code> profiles are included. These variants can be referenced from pricing plans or other objects. <br/><br/><strong>Example reference usage:</strong> <br/> <code>SLA: $ref: &#39;#/SLA/default&#39;</code></td>
+<td>This object must always be present and named exactly <code>default</code> if SLA object is used. It acts as the fallback or baseline SLA profile. <br/><br/>Users are free to define additional named profiles such as <code>premium</code>, <code>gold</code>, etc., in parallel to the default. <br/><br/>In the example above, both <code>default</code> and <code>premium</code> profiles are included. These variants can be referenced from pricing plans or other objects. <br/><br/><strong>Example reference usage:</strong> <br/> <code>SLA: $ref: &#39;#/Product/SLA/default&#39;</code></td>
 </tr>
 <tr>
 <td><strong>dimensions</strong></td>
