@@ -1398,6 +1398,25 @@ any industry specific needs. </p>
                   <span class="na">fatal</span><span class="pi">:</span> 
                     <span class="na">max_percent</span><span class="pi">:</span> <span class="s">11.0</span>      
 </code></pre></div>
+<blockquote>
+<p>Example of DQ extenal profiles usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">dataQuality</span><span class="pi">:</span> <span class="c1"># the below file contains the same content as above</span>
+  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/DQ/all-packages.yaml'</span>
+
+</code></pre></div>
+<blockquote>
+<p>Example of DQ extenal profiles for each profile usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">dataQuality</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/DQ/basic.yaml'</span>
+    <span class="na">premium</span><span class="pi">:</span>
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/DQ/premium.yaml'</span>
+</code></pre></div>
 <table><thead>
 <tr>
 <th><div style="width:150px">Element name</div></th>
@@ -1411,6 +1430,12 @@ any industry specific needs. </p>
 <td>element</td>
 <td>-</td>
 <td>Contains array of data quality dimensions with optional computational monitoring object. Under this element Data Quality is divided into declarative and executable parts.</td>
+</tr>
+<tr>
+<td><strong>$ref</strong></td>
+<td>filepath or valid URL</td>
+<td>-</td>
+<td>Define the Data quality profiles in external file for reuse purposes, example  <code>$ref: &#39;https://example.org/DQ/all-packages.yaml&#39;</code> See example. This makes it easy to keep related profiles (e.g. default, premium, gold) together, apply versioning and validation once, and publish all variants from a single repo or source. <br/><br/>The same pattern can be used in individual data quality profiles instead of doing it inline. See example. This gives finer control if each Data quality is owned or updated by a different team, but increases the number of files to track and host.</td>
 </tr>
 <tr>
 <td><strong>default</strong></td>
