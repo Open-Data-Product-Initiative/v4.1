@@ -170,6 +170,20 @@ SLA: # the below file contains the same content as above
 
 ```
 
+> Example of SLA extenal profiles for each profile usage:
+
+```yml
+
+SLA:
+  declarative:
+    default:
+      $ref: 'https://example.org/slas/basic.yaml'
+    premium:
+      $ref: 'https://example.org/slas/premium.yaml'
+
+
+```
+
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **SLA** | element | - | Binds the SLA-related elements and attributes together. |
