@@ -168,7 +168,7 @@ dataQuality:
                   fatal: 
                     max_percent: 11.0      
 ```
-> Example of DQ extenal profiles usage:
+> Example of DQ external profiles usage:
 
 ```yml
 
@@ -177,7 +177,7 @@ dataQuality: # the below file contains the same content as above
 
 ```
 
-> Example of DQ extenal profiles for each profile usage:
+> Example of DQ external profiles for each profile usage:
 
 ```yml
 
