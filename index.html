@@ -2170,7 +2170,7 @@ any industry specific needs. </p>
       <span class="s">https://data.cms.gov/provr-enrollment/api-docs</span>
     <span class="na">documentationURL</span><span class="pi">:</span> <span class="pi">&gt;-</span> 
       <span class="s">https://data.cms.gov/provr-enrollment/docs</span>
-  <span class="na">Agent</span><span class="pi">:</span> 
+  <span class="na">agent</span><span class="pi">:</span> 
     <span class="na">name</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">AI Agent access to the data product</span>
     <span class="na">description</span><span class="pi">:</span> 
@@ -2183,6 +2183,26 @@ any industry specific needs. </p>
     <span class="na">format</span><span class="pi">:</span> <span class="s">MCP</span>
     <span class="na">specsURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/llms.txt</span>
     <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">https://urbanpulse.ai/llms-full.txt</span>
+</code></pre></div>
+<blockquote>
+<p>Example of Data Access external profiles usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">dataAccess</span><span class="pi">:</span> <span class="c1"># the below file contains the same content as above</span>
+  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/dataAccess/all-packages.yaml'</span>
+
+</code></pre></div>
+<blockquote>
+<p>Example of extenal Data Access for each profile usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">dataAccess</span><span class="pi">:</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/dataAccess/basic.yaml'</span>
+    <span class="na">API</span><span class="pi">:</span>
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/dataAccess/api.yaml'</span>
+    <span class="na">agent</span><span class="pi">:</span>
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/dataAccess/agent.yaml'</span>
 </code></pre></div>
 <table><thead>
 <tr>
@@ -2197,6 +2217,12 @@ any industry specific needs. </p>
 <td>object</td>
 <td>-</td>
 <td>Root-level object containing named access configurations. Each key (e.g., <code>default</code>, <code>API</code>, <code>Agent</code>) defines an access method that can be reused across the ODPS YAML.</td>
+</tr>
+<tr>
+<td><strong>$ref</strong></td>
+<td>filepath or valid URL</td>
+<td>-</td>
+<td>Define the Data Access in external file for reuse purposes, example  <code>$ref: &#39;https://example.org/dataAccess/all-packages.yaml&#39;</code> See example. This makes it easy to keep related profiles (e.g. default, API, agent) together, apply versioning and validation once, and publish all variants from a single repo or source. <br/><br/>The same pattern can be used in individual Data Access profiles instead of doing it inline. See example. This gives finer control if each Data Access is owned or updated by a different team, but increases the number of files to track and host.</td>
 </tr>
 <tr>
 <td><strong>default</strong></td>
