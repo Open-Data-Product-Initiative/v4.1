@@ -71,14 +71,32 @@ paymentGateways:
     reference: 'https://www.x402.org/'
     spec: |
       paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});
+```
 
-  
+> Example of Payment Gateways external profiles usage:
 
+```yml
+
+paymentGateways: # the below file contains the same content as above
+  $ref: 'https://example.org/gateways/all-packages.yaml'
+
+```
+
+> Example of extenal Payment Gateway for each profile usage:
+
+```yml
+
+paymentGateways:
+    default:
+      $ref: 'https://example.org/gateways/basic.yaml'
+    premium:
+      $ref: 'https://example.org/gateways/premium.yaml'
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **paymentGateways** | object | - | Object containing all defined payment gateway configurations. Each key is a named reference (e.g. `default`, `agent`) that can be reused in pricing plans. |
+| **$ref** | filepath or valid URL | - | Define the Payment Gateway profiles in external file for reuse purposes, example  `$ref: 'https://example.org/gateways/all-packages.yaml'` See example. This makes it easy to keep related profiles (e.g. default, API, agent) together, apply versioning and validation once, and publish all variants from a single repo or source. <br/><br/>The same pattern can be used in individual Payment Gateway profiles instead of doing it inline. See example. This gives finer control if each Payment Gateway is owned or updated by a different team, but increases the number of files to track and host.|
 | **default** | object | - | Named default payment gateway used. If you use paymentGateways object, this default is expected to be first option and is defined always. Can be referenced using `$ref: '#/paymentGateways/default'`. <br/> <br/> In the example, _agent_ payment gateway as an example of freely named gateway which can be referenced using `$ref: '#/paymentGateways/agent'`. You can follow the same pattern and create more |
 | **description** | object | string [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) | Multilingual descriptions of the payment gateway. Enables UI rendering in multiple languages. |
 | **type** | string | Stripe, Axio, Checkout, Custom | Defines the payment system or protocol used. Use predefined values. `Custom` allows custom or internal solutions. |
