@@ -2524,9 +2524,24 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
     <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://www.x402.org/'</span>
     <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span>
       <span class="s">paymentMiddleware("0xYourAddress", {"/your-endpoint": "$0.01"});</span>
+</code></pre></div>
+<blockquote>
+<p>Example of Payment Gateways external profiles usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">paymentGateways</span><span class="pi">:</span> <span class="c1"># the below file contains the same content as above</span>
+  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/gateways/all-packages.yaml'</span>
 
-
-
+</code></pre></div>
+<blockquote>
+<p>Example of extenal Payment Gateway for each profile usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">paymentGateways</span><span class="pi">:</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/gateways/basic.yaml'</span>
+    <span class="na">premium</span><span class="pi">:</span>
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/gateways/premium.yaml'</span>
 </code></pre></div>
 <table><thead>
 <tr>
@@ -2541,6 +2556,12 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <td>object</td>
 <td>-</td>
 <td>Object containing all defined payment gateway configurations. Each key is a named reference (e.g. <code>default</code>, <code>agent</code>) that can be reused in pricing plans.</td>
+</tr>
+<tr>
+<td><strong>$ref</strong></td>
+<td>filepath or valid URL</td>
+<td>-</td>
+<td>Define the Payment Gateway profiles in external file for reuse purposes, example  <code>$ref: &#39;https://example.org/gateways/all-packages.yaml&#39;</code> See example. This makes it easy to keep related profiles (e.g. default, API, agent) together, apply versioning and validation once, and publish all variants from a single repo or source. <br/><br/>The same pattern can be used in individual Payment Gateway profiles instead of doing it inline. See example. This gives finer control if each Payment Gateway is owned or updated by a different team, but increases the number of files to track and host.</td>
 </tr>
 <tr>
 <td><strong>default</strong></td>
