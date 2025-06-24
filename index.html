@@ -2503,11 +2503,11 @@ Named gateway definitions (e.g., <code>default</code>, <code>Agent</code>) can b
 <blockquote>
 <p>referencing examples:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/paymentGateways/default'</span>
+<div class="highlight"><pre class="highlight yaml"><code>  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/Product/paymentGateways/default'</span>
 
   <span class="s">...</span>
 
-  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/dataQuality/agent'</span>
+  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#/Product/dataQuality/agent'</span>
 </code></pre></div>
 <p><strong>The Role of <code>default</code>:</strong>
 Whenever the <code>paymentGateways</code> object is used, a gateway named <code>default</code> is <strong>expected and required</strong>. It serves as the <strong>primary or fallback payment method</strong> and enables compatibility even in simpler configurations that only need one payment integration.</p>
