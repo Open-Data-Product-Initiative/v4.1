@@ -215,10 +215,8 @@ product:
       - PDF
       useCases:
       - useCase:
-          useCaseTitle: 
-            en: Build attractive and lucrative petstore!
-          useCaseDescription: 
-            en: Use case description how succesfull petstore chain was established in Abu Dhabi
+          useCaseTitle: Build attractive and lucrative petstore!
+          useCaseDescription: Use case description how succesfull petstore chain was established in Abu Dhabi
           useCaseURL: https://marketplace.com/usecase1
       recommendedDataProducts:
       - https://marketplace.com/dataproduct.json
