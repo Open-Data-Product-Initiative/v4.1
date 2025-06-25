@@ -64,7 +64,11 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 ## Examples
 
-We provide some [examples of ODPS spec files in Github](https://github.com/Open-Data-Product-Initiative/odps-examples). We appreciate contributions to this collection. 
+The odps‑examples repository serves as a comprehensive knowledge base for using the Open Data Product Specification (ODPS), combining clear FAQs with real-world YAML examples to guide users through practical implementation. Each FAQ entry tackles a specific task—like defining metadata, setting pricing tiers, assigning SLAs, configuring data quality rules, managing access roles, or enabling AI/agent consumption—accompanied by executable YAML snippets and full .yml files. 
+
+The content is modular, code‑first, and designed for easy reuse, enabling teams to discover, govern, monetize, validate, and automate data products using standardized, machine-readable metadata. Users are encouraged to contribute new scenarios or enhancements via GitHub issues.
+
+[Examples of ODPS spec files in Github](https://github.com/Open-Data-Product-Initiative/odps-examples). 
 
 ## Introduction
 
