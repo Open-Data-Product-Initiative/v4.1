@@ -10,8 +10,8 @@ toc_footers:
   - <br/>Linux Foundation</a>
 
 includes:
-  - datacontract
   - details
+  - datacontract
   - sla
   - qa
   - pricing
