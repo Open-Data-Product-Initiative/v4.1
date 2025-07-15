@@ -107,13 +107,13 @@ pricingPlans:
           - High amount of transactions
           - Billed monthly
         paymentGateway:
-          $ref: '#/paymentGateways/default'
+          $ref: '#/product/paymentGateways/default'
         dataQuality:
-          $ref: '#/dataQuality/default'
+          $ref: '#/product/dataQuality/default'
         SLA:
-          $ref: '#/SLA/default'
+          $ref: '#/product/SLA/default'
         access:
-          $ref: '#/dataAccess/API'
+          $ref: '#/product/dataAccess/API'
       - name: Premium MCP 1 month
         priceCurrency: EUR
         price: 500
@@ -125,13 +125,13 @@ pricingPlans:
           - High amount of transactions
           - Billed monthly
         paymentGateway:
-          $ref: '#/paymentGateways/agent'
+          $ref: '#/product/paymentGateways/agent'
         dataQuality:
-          $ref: '#/dataQuality/premium'
+          $ref: '#/product/dataQuality/premium'
         SLA:
-          $ref: '#/SLA/premium'
+          $ref: '#/product/SLA/premium'
         access:
-          $ref: '#/dataAccess/agent'
+          $ref: '#/product/dataAccess/agent'
           
   executable:
     - name: Premium subscription 1 year
