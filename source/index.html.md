@@ -11,6 +11,7 @@ toc_footers:
 
 includes:
   - datacontract
+  - details
   - sla
   - qa
   - pricing
