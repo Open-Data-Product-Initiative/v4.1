@@ -128,33 +128,20 @@ dataQuality:
 ```
 
 
-# Document level attributes
+# Document level structure
 
 Here's the list of attributes which can occur at the document root level. In the following description, if a field is not explicitly **REQUIRED** or described with a MUST or SHALL, it can be considered OPTIONAL. Optional attributes are listed in own table and examples are given on the right column. 
 
-It is RECOMMENDED that the root OpenAPI document be named: dataproduct.json or dataproduct.yaml.
+It is RECOMMENDED that the root Data Product document be named: dataproduct.json or dataproduct.yaml.
 
 ## Mandatory attributes
 
-> Example of document level attribute usage and structure:
+> Example of document level usage and structure:
 
 ```yml
 schema: https://opendataproducts.org/v4.0/schema/odps.yaml
 version: 4.0
 product:
-  details:
-    en:
-      name: Pets of the year
-      productID: 123456are
-      visibility: private
-      status: draft
-      type: dataset
-    fi:
-      name: Vuoden suosituimmat lemmikit
-      productID: 123456are
-      visibility: private
-      status: draft
-      type: dataset
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
