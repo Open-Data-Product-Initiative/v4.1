@@ -1,6 +1,6 @@
 # Data Product Details
 
-The `details` object defines... 
+The `details` object defines the business and governance details of the data product. Information added in this object often is the main part of the data product details shown in data product catalogues and market places. 
 
 
 ## Mandatory attributes and elements
@@ -79,6 +79,8 @@ product:
 ```
 
 ## Optional attributes and elements
+
+Additional details of the data product. 
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
