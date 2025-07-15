@@ -1,6 +1,6 @@
 # Data Contract
 
-The `contract` object defines... 
+The `contract` object in the ODPS schema defines the structure for linking a data product to a formal data contract. It includes an `id` as a unique identifier, a `type` field that specifies the contract standard (either ODCS or DCS), a `contractVersion` indicating the version of the standard, and a `contractURL` that points to an external contract document in a contract management service. Optionally, an inline YAML spec element can be used instead of a URL to embed the contract directly in the product file. These specifications allow data producers to clearly declare governance, usage rights, and technical expectations, supporting interoperability across platforms using standards such as the Open Data Contract Standard (ODCS) or the Data Contract Specification (DCS)
 
 
 ## Optional attributes and elements
@@ -19,17 +19,6 @@ product:
 
 
 ```
-
-> Example of contract ref usage:
-
-```yml
-
-contract: # the below file contains the same content as above contract element
-  $ref: 'https://example.org/contracts/default.yaml'
-
-```
-
-
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
