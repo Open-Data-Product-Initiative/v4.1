@@ -526,17 +526,27 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
 <ul>
 <li>enable interoperability between organizations, data platforms,  marketplaces, and tools. </li>
+<li>support and reuse related standards like data contracts</li>
 <li>reduce data product metadata conversions and errors between systems and organizations, </li>
 <li>increase the speed of designing, testing, and implementing data products. </li>
 <li>speed up tools development around data product design, development and management.</li>
-<li>enable creation of automated data product deployment with standard methods (DataOps)</li>
-<li>support flexible data product pricing with plans specific DQ, SLA, and Access (with references)</li>
+<li>enable creation of automated data product deployment with standard methods</li>
+<li>support flexible data product pricing with plans specific DQ, SLA, Payment gateways, and Access (with references)</li>
 <li>enable <a href="https://www.cloudbees.com/blog/what-is-everything-as-code-eac">Everything as Code</a> approach for SLA and Data Quality monitoring</li>
 </ul>
 
 <p><strong>Note!</strong> In the &quot;Open Data Product&quot; focus is on the latter words and the prefix  &#39;open&#39; refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.</p>
 
-<p>The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure &amp; access), 2) business (pricing &amp; plans), 3) legal (licensing &amp; IPR), and 4) ethical (privacy &amp; mydata). The four aspects are described in 9 objects, which contain attributes and elements. </p>
+<p>The specification has been designed with four major aspects of the data product in mind: </p>
+
+<ol>
+<li>technical (infrastructure &amp; access), </li>
+<li>business (pricing &amp; plans), </li>
+<li>legal (licensing &amp; IPR), and </li>
+<li>ethical (privacy &amp; mydata). </li>
+</ol>
+
+<p>The four aspects are described in 9 objects, which contain attributes and elements. </p>
 
 <p><img src="images/ODPS-design-a7522846.png" alt="odps-model" /></p>
 
@@ -852,7 +862,15 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 <h1 id='data-contract'>Data Contract</h1>
-<p>The <code>contract</code> object in the ODPS schema defines the structure for linking a data product to a formal data contract. It includes an <code>id</code> as a unique identifier, a <code>type</code> field that specifies the contract standard (either ODCS or DCS), a <code>contractVersion</code> indicating the version of the standard, and a <code>contractURL</code> that points to an external contract document in a contract management service. Optionally, an inline YAML spec element can be used instead of a URL to embed the contract directly in the product file. These specifications allow data producers to clearly declare governance, usage rights, and technical expectations, supporting interoperability across platforms using standards such as the Open Data Contract Standard (ODCS) or the Data Contract Specification (DCS)</p>
+<p>The <code>contract</code> object in the ODPS schema defines the structure for linking a data product to a formal data contract. It includes an <code>id</code> as a unique identifier, a <code>type</code> field that specifies the contract standard (either ODCS or DCS), a <code>contractVersion</code> indicating the version of the standard, and a <code>contractURL</code> that points to an external contract document in a contract management service. Optionally, an inline YAML spec element can be used instead of a URL to embed the contract directly in the product file. These specifications allow data producers to clearly declare governance, usage rights, and technical expectations, supporting interoperability across platforms using standards such as the Open Data Contract Standard (ODCS) or the Data Contract Specification (DCS). </p>
+
+<p>Contract can be defined in 3 ways:</p>
+
+<ul>
+<li>Use ODPS given attributes to define basic information of the data contract and add URL to details found in contract management system</li>
+<li>Same as above but add contract details as YAML on <code>spec</code> element. </li>
+<li>Use <code>$ref</code> to define contract object content in a separate file.<br></li>
+</ul>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
 <p>Example of contract object usage:</p>
@@ -861,10 +879,16 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <span class="na">version</span><span class="pi">:</span> <span class="m">4.0</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">contract</span><span class="pi">:</span>
+    <span class="c1"># Optionally se URI of external file, contains all contract details</span>
+    <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/contracts/default.yaml'</span>
+    <span class="c1"># Or then define with attributes</span>
     <span class="na">id</span><span class="pi">:</span> <span class="s">02323M123</span>  
     <span class="na">type</span><span class="pi">:</span>  <span class="s">ODCS</span> 
     <span class="na">contractVersion</span><span class="pi">:</span>  <span class="s">2.2.2</span>
     <span class="na">contractURL</span><span class="pi">:</span> <span class="s">https://demo.datamesh-manager.com/demo834016807886/dataproducts/9bd53b1b-b51e-41a8-a757-4d33b4cde460</span>
+    <span class="c1"># Or use inline style and add contract under spec element</span>
+    <span class="na">spec</span><span class="pi">:</span>
+        <span class="s">....</span>
 
 
 </code></pre></div>
@@ -911,6 +935,12 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>string</td>
 <td>YAML</td>
 <td>Inline YAML element to add data contract details instead of using URL.</td>
+</tr>
+<tr>
+<td><strong>$ref</strong></td>
+<td>URI</td>
+<td>Valid URI</td>
+<td>Points to the contract content, local file or online. You can use this or then the other above described approaches to define elements of the contract.</td>
 </tr>
 </tbody></table>
 <h1 id='data-sla'>Data SLA</h1>
