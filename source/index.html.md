@@ -101,7 +101,7 @@ The specification has been designed with four major aspects of the data product 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc4/issues)
 
-## Document structure
+## Documentation structure
 
 **LEFT COLUMN: Navigation**
 
