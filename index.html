@@ -372,6 +372,14 @@
               </ul>
           </li>
           <li>
+            <a href="#data-product-details" class="toc-h1 toc-link" data-title="Data product details">Data product details</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#data-sla" class="toc-h1 toc-link" data-title="Data SLA">Data SLA</a>
               <ul class="toc-list-h2">
                   <li>
@@ -864,6 +872,82 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>string</td>
 <td>YAML</td>
 <td>Inline YAML element to add data contract details instead of using URL.</td>
+</tr>
+</tbody></table>
+<h1 id='data-product-details'>Data product details</h1>
+<p>The <code>details</code> object defines... </p>
+<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<blockquote>
+<p>Example of details object usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.0/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">4.0</span>
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">contract</span><span class="pi">:</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">02323M123</span>  
+    <span class="na">type</span><span class="pi">:</span>  <span class="s">ODCS</span> 
+    <span class="na">contractVersion</span><span class="pi">:</span>  <span class="s">2.2.2</span>
+    <span class="na">contractURL</span><span class="pi">:</span> <span class="s">https://demo.datamesh-manager.com/demo834016807886/dataproducts/9bd53b1b-b51e-41a8-a757-4d33b4cde460</span>
+
+
+</code></pre></div>
+<blockquote>
+<p>Example of contract ref usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">contract</span><span class="pi">:</span> <span class="c1"># the below file contains the same content as above contract element</span>
+  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/contracts/default.yaml'</span>
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>details</strong></td>
+<td>element</td>
+<td>product business details</td>
+<td><strong>REQUIRED</strong> Binds together business details in different languages.</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>element</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td><strong>REQUIRED</strong> - <strong>NOTE! This is a dynamic element!</strong> This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>string</td>
+<td>max length 256 chars</td>
+<td><strong>REQUIRED</strong> The name of the product.</td>
+</tr>
+<tr>
+<td><strong>productID</strong></td>
+<td>string</td>
+<td>max length 256 chars</td>
+<td><strong>REQUIRED</strong> Product identifier.</td>
+</tr>
+<tr>
+<td><strong>visibility</strong></td>
+<td>string</td>
+<td>one of: private, invitation, organisation, dataspace, public</td>
+<td><strong>REQUIRED</strong> The publicity level eg who can see this product. Private - just the creator. Invitation - visible only to parties explicitly invited. Organisation - visible to all in your organisation. Dataspace - visible to all existent members of the data space. Public - visible to all publicly.</td>
+</tr>
+<tr>
+<td><strong>status</strong></td>
+<td>string</td>
+<td>one of: announcement, draft, development, testing, acceptance, production, sunset, retired</td>
+<td><strong>REQUIRED</strong> The status of the product. Lifecycle model discussed in details in here (link).</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>string</td>
+<td>one of: raw data, derived data, dataset, reports, analytic view, 3D visualisation, algorithm, decision support, automated decision-making, data-enhanced product, data-driven service, data-enabled performance, bi-directional.</td>
+<td><strong>REQUIRED</strong> The type of the product. Options are derived from examples and lists found from academic literature.</td>
 </tr>
 </tbody></table>
 <h1 id='data-sla'>Data SLA</h1>
