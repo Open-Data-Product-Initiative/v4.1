@@ -367,6 +367,9 @@
             <a href="#data-product-details" class="toc-h1 toc-link" data-title="Data Product Details">Data Product Details</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#mandatory-attributes-and-elements" class="toc-h2 toc-link" data-title="Mandatory attributes and elements">Mandatory attributes and elements</a>
+                  </li>
+                  <li>
                     <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
                   </li>
               </ul>
@@ -806,7 +809,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 <h1 id='data-product-details'>Data Product Details</h1>
 <p>The <code>details</code> object defines... </p>
-<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<h2 id='mandatory-attributes-and-elements'>Mandatory attributes and elements</h2>
 <blockquote>
 <p>Example of details object usage:</p>
 </blockquote>
@@ -817,43 +820,9 @@ Development of the specification is under the umbrella of the Linux Foundation. 
     <span class="na">en</span><span class="pi">:</span>
       <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
       <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
-      <span class="na">valueProposition</span><span class="pi">:</span> <span class="s">Design a customised petstore using a data product that describes</span>
-        <span class="s">pets with their habits, preferences and characteristics.</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">This is an example of a Petstore product.</span>
-      <span class="na">productSeries</span><span class="pi">:</span> <span class="s">Lovely pets data products</span>
       <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
       <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
-      <span class="na">productVersion</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>
-      <span class="na">versionNotes</span><span class="pi">:</span> <span class="s">New version with additional details such more accurate pet details</span>
-      <span class="na">issues</span><span class="pi">:</span> <span class="s">The current issues include incorrect information in the dog breeds. The</span>
-        <span class="s">resolution for these problems is planned for the next     update, scheduled</span>
-        <span class="s">to be released on July 15th, 2023.</span>
-      <span class="na">categories</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">pets</span>
-      <span class="na">standards</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">ISO 24631-6</span>
-      <span class="na">tags</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">pet</span>
-      <span class="na">brandSlogan</span><span class="pi">:</span> <span class="s">Passion for the data monetization</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
-      <span class="na">contentSample</span><span class="pi">:</span> <span class="s">https://download.com/pets.json</span>
-      <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png</span>
-      <span class="na">OutputFileFormats</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">JSON</span>
-      <span class="pi">-</span> <span class="s">XML</span>
-      <span class="pi">-</span> <span class="s">CSV</span>
-      <span class="pi">-</span> <span class="s">ZIP</span>
-      <span class="pi">-</span> <span class="s">PDF</span>
-      <span class="na">useCases</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">useCase</span><span class="pi">:</span>
-          <span class="na">useCaseTitle</span><span class="pi">:</span> <span class="s">Build attractive and lucrative petstore!</span>
-          <span class="na">useCaseDescription</span><span class="pi">:</span> <span class="s">Use case description how succesfull petstore chain was established in Abu Dhabi</span>
-          <span class="na">useCaseURL</span><span class="pi">:</span> <span class="s">https://marketplace.com/usecase1</span>
-      <span class="na">recommendedDataProducts</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct.json</span>
-      <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct-another.json</span>
-
-
 </code></pre></div>
 <table><thead>
 <tr>
@@ -906,6 +875,184 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td><strong>REQUIRED</strong> The type of the product. Options are derived from examples and lists found from academic literature.</td>
 </tr>
 </tbody></table>
+
+<blockquote>
+<p>Example of details object usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.0/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">4.0</span>
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">details</span><span class="pi">:</span> 
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+      <span class="na">valueProposition</span><span class="pi">:</span> <span class="s">Design a customised petstore using a data product that describes</span>
+        <span class="s">pets with their habits, preferences and characteristics.</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">This is an example of a Petstore product.</span>
+      <span class="na">productSeries</span><span class="pi">:</span> <span class="s">Lovely pets data products</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+      <span class="na">productVersion</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>
+      <span class="na">versionNotes</span><span class="pi">:</span> <span class="s">New version with additional details such more accurate pet details</span>
+      <span class="na">issues</span><span class="pi">:</span> <span class="s">The current issues include incorrect information in the dog breeds. The</span>
+        <span class="s">resolution for these problems is planned for the next     update, scheduled</span>
+        <span class="s">to be released on July 15th, 2023.</span>
+      <span class="na">categories</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">pets</span>
+      <span class="na">standards</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">ISO 24631-6</span>
+      <span class="na">tags</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">pet</span>
+      <span class="na">brandSlogan</span><span class="pi">:</span> <span class="s">Passion for the data monetization</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
+      <span class="na">contentSample</span><span class="pi">:</span> <span class="s">https://download.com/pets.json</span>
+      <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png</span>
+      <span class="na">OutputFileFormats</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">JSON</span>
+      <span class="pi">-</span> <span class="s">XML</span>
+      <span class="pi">-</span> <span class="s">CSV</span>
+      <span class="pi">-</span> <span class="s">ZIP</span>
+      <span class="pi">-</span> <span class="s">PDF</span>
+      <span class="na">useCases</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">useCase</span><span class="pi">:</span>
+          <span class="na">useCaseTitle</span><span class="pi">:</span> <span class="s">Build attractive and lucrative petstore!</span>
+          <span class="na">useCaseDescription</span><span class="pi">:</span> <span class="s">Use case description how succesfull petstore chain was established in Abu Dhabi</span>
+          <span class="na">useCaseURL</span><span class="pi">:</span> <span class="s">https://marketplace.com/usecase1</span>
+      <span class="na">recommendedDataProducts</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct.json</span>
+      <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct-another.json</span>
+</code></pre></div><h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>created</strong></td>
+<td>date</td>
+<td>Use <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
+<td>When product was created.</td>
+</tr>
+<tr>
+<td><strong>updated</strong></td>
+<td>date</td>
+<td>Use <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
+<td>When product was last updated.</td>
+</tr>
+<tr>
+<td><strong>valueProposition</strong></td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>This is the product&#39;s value proposition. Often one or two sentences and crystallizes the value for the customer.</td>
+</tr>
+<tr>
+<td><strong>description</strong></td>
+<td>string</td>
+<td>-</td>
+<td>The description of the product. Text only.</td>
+</tr>
+<tr>
+<td><strong>productSeries</strong></td>
+<td>string</td>
+<td>-</td>
+<td>A group of products in the product mix which are associated with each other and they can be obtained for the same type of customers or they are marketable for the same type of market place.</td>
+</tr>
+<tr>
+<td><strong>categories</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Comma separated array of categories.</td>
+</tr>
+<tr>
+<td><strong>standards</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Comma separated array of standards related e.g. to data content or quality, such as ISO 8000 or ISO 19131.</td>
+</tr>
+<tr>
+<td><strong>tags</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Comma separates array of tags.</td>
+</tr>
+<tr>
+<td><strong>productVersion</strong></td>
+<td>string</td>
+<td>The versioning according to <a href="https://semver.org/">SemVer</a></td>
+<td>The version of the data product. Applies for ODPS metadata as well.</td>
+</tr>
+<tr>
+<td><strong>versionNotes</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Additional information about the version.</td>
+</tr>
+<tr>
+<td><strong>issues</strong></td>
+<td>string</td>
+<td>-</td>
+<td>There may be errors in the data product that require corrections. These issues will be briefly described to users, along with information about when the fixes will be implemented.</td>
+</tr>
+<tr>
+<td><strong>contentSample</strong></td>
+<td>URL</td>
+<td>Valid URL. See more from <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</td>
+<td>Sample content of the data product, for example JSON/XML output. This sample should match the actual data product output and give the data consumer an idea what to expect. Obviously if the data product is pure service for example dashboard or algorithm, then consider providing preview version or alike</td>
+</tr>
+<tr>
+<td><strong>logoURL</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>Valid URL of the logo. See more from <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</td>
+</tr>
+<tr>
+<td><strong>outputFileFormats</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Output file formats for data product</td>
+</tr>
+<tr>
+<td><strong>brandSlogan</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Brand related slogan like Nike has <em>just do it</em>.</td>
+</tr>
+<tr>
+<td><strong>useCases</strong></td>
+<td>element</td>
+<td>array</td>
+<td>Contains list of related use cases with description information and link to details. <strong>NOTE!</strong> These examples are expected to use same language as defined previously in the data product details content binding element.</td>
+</tr>
+<tr>
+<td><strong>useCaseTitle</strong></td>
+<td>string</td>
+<td>string</td>
+<td>Title of the usecase.</td>
+</tr>
+<tr>
+<td><strong>useCaseDescription</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Brief description of the usecase.</td>
+</tr>
+<tr>
+<td><strong>useCaseURL</strong></td>
+<td>URL</td>
+<td>Valid URL, <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a></td>
+<td>Valid URL of the more detailed usecase description.</td>
+</tr>
+<tr>
+<td><strong>recommendedDataProducts</strong></td>
+<td>array</td>
+<td>Array of valid URLs (<a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>)</td>
+<td>Data products to recommend use next to this data product or even as replacement (for comparison). The URL provided MUST reference a description of a data product following this same standard</td>
+</tr>
+</tbody></table>
+
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 <h1 id='data-contract'>Data Contract</h1>
 <p>The <code>contract</code> object defines... </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
