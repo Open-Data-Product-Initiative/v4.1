@@ -85,11 +85,12 @@ You can reference **Data Contract as a URL or define Data Contract as an inline 
 **Specification aims:**
 
 * enable interoperability between organizations, data platforms,  marketplaces, and tools. 
+* support and reuse related standards like data contracts
 * reduce data product metadata conversions and errors between systems and organizations, 
 * increase the speed of designing, testing, and implementing data products. 
 * speed up tools development around data product design, development and management.
-* enable creation of automated data product deployment with standard methods (DataOps)
-* support flexible data product pricing with plans specific DQ, SLA, and Access (with references)
+* enable creation of automated data product deployment with standard methods
+* support flexible data product pricing with plans specific DQ, SLA, Payment gateways, and Access (with references)
 * enable [Everything as Code](https://www.cloudbees.com/blog/what-is-everything-as-code-eac) approach for SLA and Data Quality monitoring
 
 **Note!** In the "Open Data Product" focus is on the latter words and the prefix  'open' refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.
