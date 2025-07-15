@@ -31,6 +31,9 @@ product:
 | **status**  | string | one of: announcement, draft, development, testing, acceptance, production, sunset, retired | **REQUIRED** The status of the product. Lifecycle model discussed in details in here (link). |
 | **type** | string |  one of: raw data, derived data, dataset, reports, analytic view, 3D visualisation, algorithm, decision support, automated decision-making, data-enhanced product, data-driven service, data-enabled performance, bi-directional. | **REQUIRED** The type of the product. Options are derived from examples and lists found from academic literature.  | 
 
+
+## Optional attributes and elements
+
 > Example of details object usage:
 
 ```yml
@@ -77,8 +80,6 @@ product:
       - https://marketplace.com/dataproduct.json
       - https://marketplace.com/dataproduct-another.json
 ```
-
-## Optional attributes and elements
 
 Additional details of the data product. 
 
