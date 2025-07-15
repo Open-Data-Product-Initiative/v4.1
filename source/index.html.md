@@ -68,7 +68,7 @@ The odps‑examples repository serves as a comprehensive knowledge base for usin
 
 The content is modular, code‑first, and designed for easy reuse, enabling teams to discover, govern, monetize, validate, and automate data products using standardized, machine-readable metadata. Users are encouraged to contribute new scenarios or enhancements via GitHub issues.
 
-[Knowledge Base in Github](https://github.com/Open-Data-Product-Initiative/odps-knowledge-base). 
+[Knowledge Base in Github](https://opendataproducts.org/howto/). 
 
 ## Introduction
 
