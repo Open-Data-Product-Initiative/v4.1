@@ -77,8 +77,8 @@ product:
           useCaseDescription: Use case description how succesfull petstore chain was established in Abu Dhabi
           useCaseURL: https://marketplace.com/usecase1
       recommendedDataProducts:
-      - https://marketplace.com/dataproduct.json
-      - https://marketplace.com/dataproduct-another.json
+      - https://marketplace.com/dataproduct.yaml
+      - https://marketplace.com/dataproduct-another.yaml
 ```
 
 Additional details of the data product. 
