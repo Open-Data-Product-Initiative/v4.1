@@ -353,7 +353,7 @@
               </ul>
           </li>
           <li>
-            <a href="#document-level-attributes" class="toc-h1 toc-link" data-title="Document level attributes">Document level attributes</a>
+            <a href="#document-level-structure" class="toc-h1 toc-link" data-title="Document level structure">Document level structure</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#mandatory-attributes" class="toc-h2 toc-link" data-title="Mandatory attributes">Mandatory attributes</a>
@@ -567,30 +567,17 @@ Development of the specification is under the umbrella of the Linux Foundation. 
     <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
       <span class="na">displaytitle</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-</code></pre></div><h1 id='document-level-attributes'>Document level attributes</h1>
+</code></pre></div><h1 id='document-level-structure'>Document level structure</h1>
 <p>Here&#39;s the list of attributes which can occur at the document root level. In the following description, if a field is not explicitly <strong>REQUIRED</strong> or described with a MUST or SHALL, it can be considered OPTIONAL. Optional attributes are listed in own table and examples are given on the right column. </p>
 
-<p>It is RECOMMENDED that the root OpenAPI document be named: dataproduct.json or dataproduct.yaml.</p>
+<p>It is RECOMMENDED that the root Data Product document be named: dataproduct.json or dataproduct.yaml.</p>
 <h2 id='mandatory-attributes'>Mandatory attributes</h2>
 <blockquote>
-<p>Example of document level attribute usage and structure:</p>
+<p>Example of document level usage and structure:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.0/schema/odps.yaml</span>
 <span class="na">version</span><span class="pi">:</span> <span class="m">4.0</span>
 <span class="na">product</span><span class="pi">:</span>
-  <span class="na">details</span><span class="pi">:</span>
-    <span class="na">en</span><span class="pi">:</span>
-      <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
-      <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
-      <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
-      <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
-    <span class="na">fi</span><span class="pi">:</span>
-      <span class="na">name</span><span class="pi">:</span> <span class="s">Vuoden suosituimmat lemmikit</span>
-      <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
-      <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
-      <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
 </code></pre></div>
 <table><thead>
 <tr>
@@ -808,7 +795,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 <h1 id='data-product-details'>Data Product Details</h1>
-<p>The <code>details</code> object defines... </p>
+<p>The <code>details</code> object defines the business and governance details of the data product. Information added in this object often is the main part of the data product details shown in data product catalogues and market places. </p>
 <h2 id='mandatory-attributes-and-elements'>Mandatory attributes and elements</h2>
 <blockquote>
 <p>Example of details object usage:</p>
@@ -922,6 +909,8 @@ Development of the specification is under the umbrella of the Linux Foundation. 
       <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct.json</span>
       <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct-another.json</span>
 </code></pre></div><h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<p>Additional details of the data product. </p>
+
 <table><thead>
 <tr>
 <th><div style="width:150px">Element name</div></th>
