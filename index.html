@@ -372,7 +372,7 @@
               </ul>
           </li>
           <li>
-            <a href="#data-product-details" class="toc-h1 toc-link" data-title="Data product details">Data product details</a>
+            <a href="#data-product-details" class="toc-h1 toc-link" data-title="Data Product Details">Data Product Details</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
@@ -874,7 +874,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>Inline YAML element to add data contract details instead of using URL.</td>
 </tr>
 </tbody></table>
-<h1 id='data-product-details'>Data product details</h1>
+<h1 id='data-product-details'>Data Product Details</h1>
 <p>The <code>details</code> object defines... </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
@@ -883,20 +883,46 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.0/schema/odps.yaml</span>
 <span class="na">version</span><span class="pi">:</span> <span class="m">4.0</span>
 <span class="na">product</span><span class="pi">:</span>
-  <span class="na">contract</span><span class="pi">:</span>
-    <span class="na">id</span><span class="pi">:</span> <span class="s">02323M123</span>  
-    <span class="na">type</span><span class="pi">:</span>  <span class="s">ODCS</span> 
-    <span class="na">contractVersion</span><span class="pi">:</span>  <span class="s">2.2.2</span>
-    <span class="na">contractURL</span><span class="pi">:</span> <span class="s">https://demo.datamesh-manager.com/demo834016807886/dataproducts/9bd53b1b-b51e-41a8-a757-4d33b4cde460</span>
+  <span class="na">details</span><span class="pi">:</span> 
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+      <span class="na">valueProposition</span><span class="pi">:</span> <span class="s">Design a customised petstore using a data product that describes</span>
+        <span class="s">pets with their habits, preferences and characteristics.</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">This is an example of a Petstore product.</span>
+      <span class="na">productSeries</span><span class="pi">:</span> <span class="s">Lovely pets data products</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+      <span class="na">productVersion</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>
+      <span class="na">versionNotes</span><span class="pi">:</span> <span class="s">New version with additional details such more accurate pet details</span>
+      <span class="na">issues</span><span class="pi">:</span> <span class="s">The current issues include incorrect information in the dog breeds. The</span>
+        <span class="s">resolution for these problems is planned for the next     update, scheduled</span>
+        <span class="s">to be released on July 15th, 2023.</span>
+      <span class="na">categories</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">pets</span>
+      <span class="na">standards</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">ISO 24631-6</span>
+      <span class="na">tags</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">pet</span>
+      <span class="na">brandSlogan</span><span class="pi">:</span> <span class="s">Passion for the data monetization</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
+      <span class="na">contentSample</span><span class="pi">:</span> <span class="s">https://download.com/pets.json</span>
+      <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png</span>
+      <span class="na">OutputFileFormats</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">JSON</span>
+      <span class="pi">-</span> <span class="s">XML</span>
+      <span class="pi">-</span> <span class="s">CSV</span>
+      <span class="pi">-</span> <span class="s">ZIP</span>
+      <span class="pi">-</span> <span class="s">PDF</span>
+      <span class="na">useCases</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">useCase</span><span class="pi">:</span>
+          <span class="na">useCaseTitle</span><span class="pi">:</span> <span class="s">Build attractive and lucrative petstore!</span>
+          <span class="na">useCaseDescription</span><span class="pi">:</span> <span class="s">Use case description how succesfull petstore chain was established in Abu Dhabi</span>
+          <span class="na">useCaseURL</span><span class="pi">:</span> <span class="s">https://marketplace.com/usecase1</span>
+      <span class="na">recommendedDataProducts</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct.json</span>
+      <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct-another.json</span>
 
-
-</code></pre></div>
-<blockquote>
-<p>Example of contract ref usage:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>
-<span class="na">contract</span><span class="pi">:</span> <span class="c1"># the below file contains the same content as above contract element</span>
-  <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/contracts/default.yaml'</span>
 
 </code></pre></div>
 <table><thead>
