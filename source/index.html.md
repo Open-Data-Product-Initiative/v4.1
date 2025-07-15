@@ -10,6 +10,8 @@ toc_footers:
   - <br/>Linux Foundation</a>
 
 includes:
+  - details
+  - datacontract
   - sla
   - qa
   - pricing
@@ -84,23 +86,31 @@ You can reference **Data Contract as a URL or define Data Contract as an inline 
 **Specification aims:**
 
 * enable interoperability between organizations, data platforms,  marketplaces, and tools. 
+* support and reuse related standards like data contracts
 * reduce data product metadata conversions and errors between systems and organizations, 
 * increase the speed of designing, testing, and implementing data products. 
 * speed up tools development around data product design, development and management.
-* enable creation of automated data product deployment with standard methods (DataOps)
-* support flexible data product pricing with plans specific DQ, SLA, and Access (with references)
+* enable creation of automated data product deployment with standard methods
+* support flexible data product pricing with plans specific DQ, SLA, Payment gateways, and Access (with references)
 * enable [Everything as Code](https://www.cloudbees.com/blog/what-is-everything-as-code-eac) approach for SLA and Data Quality monitoring
 
 **Note!** In the "Open Data Product" focus is on the latter words and the prefix  'open' refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.
 
-The specification has been designed with four major aspects of the data product in mind: 1) technical (infrastructure & access), 2) business (pricing & plans), 3) legal (licensing & IPR), and 4) ethical (privacy & mydata). The four aspects are described in 9 objects, which contain attributes and elements. 
+The specification has been designed with four major aspects of the data product in mind: 
+
+1. technical (infrastructure & access), 
+2. business (pricing & plans), 
+3. legal (licensing & IPR), and 
+4. ethical (privacy & mydata). 
+
+The four aspects are described in 9 objects, which contain attributes and elements. 
 
 ![odps-model](images/ODPS-design.png)
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc4/issues)
 
-## Document structure
+## Documentation structure
 
 **LEFT COLUMN: Navigation**
 
@@ -127,135 +137,25 @@ dataQuality:
 ```
 
 
-# Document level attributes
+# Document level structure
 
 Here's the list of attributes which can occur at the document root level. In the following description, if a field is not explicitly **REQUIRED** or described with a MUST or SHALL, it can be considered OPTIONAL. Optional attributes are listed in own table and examples are given on the right column. 
 
-It is RECOMMENDED that the root OpenAPI document be named: dataproduct.json or dataproduct.yaml.
+It is RECOMMENDED that the root Data Product document be named: dataproduct.json or dataproduct.yaml.
 
 ## Mandatory attributes
 
-> Example of document level attribute usage and structure:
+> Example of document level usage and structure:
 
 ```yml
 schema: https://opendataproducts.org/v4.0/schema/odps.yaml
 version: 4.0
 product:
-  details:
-    en:
-      name: Pets of the year
-      productID: 123456are
-      visibility: private
-      status: draft
-      type: dataset
-    fi:
-      name: Vuoden suosituimmat lemmikit
-      productID: 123456are
-      visibility: private
-      status: draft
-      type: dataset
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **schema** | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | **REQUIRED** Defines the URL of Schema. Used often for validation purposes. |
-| **version** | string | This is the version of ODPS, for example dev or 2.2 | **REQUIRED** Defines the ODPS version. |
+| **version** | string | This is the version of ODPS, for example dev or 4.0 | **REQUIRED** Defines the ODPS version. |
 | **product** | element | root element | **REQUIRED** Root element to tie all together. |
-| **details** | element | product business details | **REQUIRED** Binds together business details in different languages. |
-| **en** | element | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | **REQUIRED** - **NOTE! This is a dynamic element!** This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
-| **name** | string | max length 256 chars | **REQUIRED** The name of the product. |
-| **productID**  | string | max length 256 chars | **REQUIRED** Product identifier. |
-| **visibility**  | string | one of: private, invitation, organisation, dataspace, public | **REQUIRED** The publicity level eg who can see this product. Private - just the creator. Invitation - visible only to parties explicitly invited. Organisation - visible to all in your organisation. Dataspace - visible to all existent members of the data space. Public - visible to all publicly. |
-| **status**  | string | one of: announcement, draft, development, testing, acceptance, production, sunset, retired | **REQUIRED** The status of the product. Lifecycle model discussed in details in here (link). |
-| **type** | string |  one of: raw data, derived data, dataset, reports, analytic view, 3D visualisation, algorithm, decision support, automated decision-making, data-enhanced product, data-driven service, data-enabled performance, bi-directional. | **REQUIRED** The type of the product. Options are derived from examples and lists found from academic literature.  | 
 
-
-## Optional attributes
-
-RecommendedDataProducts **OBJECT** contains an array of data products which offers means to attach related data products to the data product at hand. The source of the recommended data product might be from the same marketplace/catalog or an external one. Recommended object offers method to extend the reach and promotion escpecially when data product is treated as an independent entity much like described in Data Mesh. Also when data product is published in a marketplace, the Recommended object offers means to promote other than just the data products from the given data marketplace. In short, tis object is mainly for discovery and reach purposes. 
-
-RecommendedUseCases **OBJECT** is an array which contains offers method to attach usefull usecases to the data product. Usecases are informatiove for the the data customer and exemplify how the data product can create value. 
-
-> Example of document level attribute usage and structure:
-
-```yml
-schema: https://opendataproducts.org/v4.0/schema/odps.yaml
-version: 4.0
-product:
-  contract:
-    id: 02323M123  
-    type:  ODCS 
-    contractVersion:  2.2.2
-    contractURL: https://demo.datamesh-manager.com/demo834016807886/dataproducts/9bd53b1b-b51e-41a8-a757-4d33b4cde460
-  details: 
-    en:
-      name: Pets of the year
-      productID: 123456are
-      valueProposition: Design a customised petstore using a data product that describes
-        pets with their habits, preferences and characteristics.
-      description: This is an example of a Petstore product.
-      productSeries: Lovely pets data products
-      visibility: private
-      status: draft
-      productVersion: '0.1.0'
-      versionNotes: New version with additional details such more accurate pet details
-      issues: The current issues include incorrect information in the dog breeds. The
-        resolution for these problems is planned for the next     update, scheduled
-        to be released on July 15th, 2023.
-      categories:
-      - pets
-      standards:
-      - ISO 24631-6
-      tags:
-      - pet
-      brandSlogan: Passion for the data monetization
-      type: dataset
-      contentSample: https://download.com/pets.json
-      logoURL: https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png
-      OutputFileFormats:
-      - JSON
-      - XML
-      - CSV
-      - ZIP
-      - PDF
-      useCases:
-      - useCase:
-          useCaseTitle: Build attractive and lucrative petstore!
-          useCaseDescription: Use case description how succesfull petstore chain was established in Abu Dhabi
-          useCaseURL: https://marketplace.com/usecase1
-      recommendedDataProducts:
-      - https://marketplace.com/dataproduct.json
-      - https://marketplace.com/dataproduct-another.json
-
-```
-
-| <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
-|---|---|---|---|
-| **contract**  | element | - | Binds together data contract details. You can use both URL and inline (YAML) for data contract content. | 
-| **id**  | string | - | UUID of the data contract | 
-| **type**  | string | one of: ODCS, DCS | Defines the standard used in data contract. Currently supported options: [ODCS](https://github.com/bitol-io/open-data-contract-standard) and [DCS](https://datacontract.com/). | 
-| **contractVersion**  | string | - | Version of the standard used to define the Data Contract. Type attribute defines the standard/specification. NOTE! This is not the possible iterated version of the data contract itself. | 
-| **contractURL**  | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | URL pointing to data contract in data contract management service or alike. Optionally you can use _spec_ to add data contract details as YAML inline element. | 
-| **spec**  | string | YAML | Inline YAML element to add data contract details instead of using URL. | 
-| **created**  | date | Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | When product was created. | 
-| **updated**  | date | Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | When product was last updated. |
-| **valueProposition** | string  | text content, max length 512 chars  | This is the product's value proposition. Often one or two sentences and crystallizes the value for the customer. |
-| **description** | string | - | The description of the product. Text only. |
-| **productSeries** | string | - | A group of products in the product mix which are associated with each other and they can be obtained for the same type of customers or they are marketable for the same type of market place. |
-| **categories** | array | - | Comma separated array of categories. |
-| **standards** | array | - | Comma separated array of standards related e.g. to data content or quality, such as ISO 8000 or ISO 19131. |
-| **tags** | array | - | Comma separates array of tags. |
-| **productVersion** | string | The versioning according to [SemVer](https://semver.org/) | The version of the data product. Applies for ODPS metadata as well. |
-| **versionNotes** | string | - | Additional information about the version. |
-| **issues** | string | - |  There may be errors in the data product that require corrections. These issues will be briefly described to users, along with information about when the fixes will be implemented.|
-| **contentSample** | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | Sample content of the data product, for example JSON/XML output. This sample should match the actual data product output and give the data consumer an idea what to expect. Obviously if the data product is pure service for example dashboard or algorithm, then consider providing preview version or alike |
-| **logoURL** | URL | Valid URL | Valid URL of the logo. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). |
-| **outputFileFormats** | string | - | Output file formats for data product |
-| **brandSlogan** | string | - | Brand related slogan like Nike has *just do it*. |
-| **useCases** | element | array | Contains list of related use cases with description information and link to details. **NOTE!** These examples are expected to use same language as defined previously in the data product details content binding element. |
-| **useCaseTitle**| string | string | Title of the usecase. |
-| **useCaseDescription** | string | - | Brief description of the usecase. |
-| **useCaseURL**| URL | Valid URL, [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) | Valid URL of the more detailed usecase description. |
-| **recommendedDataProducts** | array | Array of valid URLs ([RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986)) | Data products to recommend use next to this data product or even as replacement (for comparison). The URL provided MUST reference a description of a data product following this same standard |
-
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)

@@ -9,4 +9,10 @@ The work around the specification would not be possible without enormous help fr
 * Toni Luhti
 * Topi Santakivi
 * Antti Loukiala
+* Zaher Abou Shakra
+* Manfred Sorg
+* Jorge Alvarado
+* Daniel Kocot
+* Srujan Akula
+* Ravi Kruger
 
