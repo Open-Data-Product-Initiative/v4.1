@@ -70,7 +70,6 @@ ODPS 4.0 introduces a modular referencing system that allows pricing plans to re
 
 In each of these component groups, you can expect a `default` option to be defined. This default serves as a baseline configuration, ensuring that even when no custom profile is referenced, a reliable and predictable fallback exists. For example, dataQuality.default, SLA.default, and paymentGateways.default can all be used to provide minimum guarantees. 
 
-----
 
 **Includes the "Pricing Plans as Code" feature.** You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. **CRUP** stands for: 
 
