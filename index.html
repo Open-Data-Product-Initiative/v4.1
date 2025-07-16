@@ -1629,6 +1629,14 @@ any industry specific needs. </p>
     <span class="na">price</span><span class="pi">:</span> <span class="m">8.00</span>
     <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
 </code></pre></div>
+<p><strong>Standardized data pricing plans are crucial for transparency, scalability, and customer trust.</strong> They ensure that customers can easily understand and compare costs, fostering trust and reducing disputes. For providers, standardized pricing streamlines operations, supports scalability, and simplifies market comparison, allowing for effective competitive positioning. Additionally, it aids in better financial planning and forecasting for both the provider and the customer, ensuring predictable revenue and informed decision-making. Overall, standardized pricing is essential for the sustainable growth and success of data products.</p>
+
+<p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> contains pricing plans related metadata to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard to foster global interoperability.  </p>
+
+<p>The 12 pricing plans enabled by ODPS are meticulously defined through an in-depth analysis of pricing models applied across more than 300 data products. We continuously monitor the evolution of pricing plans in the data economy, striving to provide the most comprehensive and up-to-date list of standardized pricing options - yet some gaps might exist.</p>
+
+<p>The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
+
 <blockquote>
 <p>In case standardized options are not enough:</p>
 </blockquote>
@@ -1652,15 +1660,7 @@ any industry specific needs. </p>
     <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
     <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
 
-</code></pre></div>
-<p><strong>Standardized data pricing plans are crucial for transparency, scalability, and customer trust.</strong> They ensure that customers can easily understand and compare costs, fostering trust and reducing disputes. For providers, standardized pricing streamlines operations, supports scalability, and simplifies market comparison, allowing for effective competitive positioning. Additionally, it aids in better financial planning and forecasting for both the provider and the customer, ensuring predictable revenue and informed decision-making. Overall, standardized pricing is essential for the sustainable growth and success of data products.</p>
-
-<p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> contains pricing plans related metadata to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard to foster global interoperability.  </p>
-
-<p>The 12 pricing plans enabled by ODPS are meticulously defined through an in-depth analysis of pricing models applied across more than 300 data products. We continuously monitor the evolution of pricing plans in the data economy, striving to provide the most comprehensive and up-to-date list of standardized pricing options - yet some gaps might exist.</p>
-
-<p>The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
-<h2 id='referencing-capability-in-pricing-plans'>Referencing Capability in Pricing Plans</h2>
+</code></pre></div><h2 id='referencing-capability-in-pricing-plans'>Referencing Capability in Pricing Plans</h2>
 <p>ODPS 4.0 introduces a modular referencing system that allows pricing plans to reuse pre-defined components such as data quality profiles, SLA tiers, access methods, and payment gateways. This makes it easy to maintain consistency across multiple data products, reduces duplication, and enables scalable pricing design. Why Use Referencing?</p>
 
 <ul>
