@@ -50,6 +50,25 @@ The 12 pricing plans enabled by ODPS are meticulously defined through an in-dept
 
 The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with "x-" mechanism in order to fulfill any industry specific needs. The ["Specification extensions"](#specification-extensions) section provides details on how to use this feature. 
 
+## Referencing Capability in Pricing Plans 
+
+ODPS 4.0 introduces a modular referencing system that allows pricing plans to reuse pre-defined components such as data quality profiles, SLA tiers, access methods, and payment gateways. This makes it easy to maintain consistency across multiple data products, reduces duplication, and enables scalable pricing design. Why Use Referencing?
+
+- **DRY Principle**: Define components once, reference them across products.
+- **Modularity**: Maintain separate, reusable blocks for SLA, DQ, access, and payment.
+- **Flexibility**: Switch plans or upgrade tiers by simply changing references.
+- **Auditability**: Easily trace the source of configurations in machine-readable format.
+
+**Example Component Reference Paths**
+
+* SLA: `#/product/SLA/gold` references gold SLA profile in the SLA component
+* Data Quality: `#/product/dataQuality/default` references default data quality profile in the data quality component
+* Access: `#/product/dataAccess/download` references download access profile in the SLA component
+* Payment Gateway: `#/product/paymentGateways/paypal` references paypal payment profile in the Payment Gateways component
+
+In each of these component groups, you can expect a `default` option to be defined. This default serves as a baseline configuration, ensuring that even when no custom profile is referenced, a reliable and predictable fallback exists. For example, dataQuality.default, SLA.default, and paymentGateways.default can all be used to provide minimum guarantees. 
+
+
 **Includes the "Pricing Plans as Code" feature.** You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. **CRUP** stands for: 
 
 - **C**reate (create pricing plan), 
