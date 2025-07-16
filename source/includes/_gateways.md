@@ -11,7 +11,7 @@ Each gateway definition provides a structured way to:
 This component enables flexible monetization strategies, including differentiated billing models for human users vs. machine users, and support for both traditional and agent-native payment protocols.
 
 **Referencing Payment Gateways:**
-Named gateway definitions (e.g., `default`, `Agent`) can be **reused across pricing plans** using `$ref`. This ensures consistent payment logic, minimizes duplication, and allows you to tie multiple plans to a single gateway configuration.
+Named gateway definitions (e.g., `default`, `Agent`) can be **reused across pricing plans** using `$ref`. This ensures consistent payment logic, minimizes duplication, and allows you to tie multiple plans to a single gateway configuration. More details in the [Knowledge Base](https://opendataproducts.org/howto/).
 
 **Benefits of Referencing:**
 
