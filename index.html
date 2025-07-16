@@ -408,6 +408,9 @@
             <a href="#data-pricing-plans" class="toc-h1 toc-link" data-title="Data Pricing Plans">Data Pricing Plans</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#referencing-capability-in-pricing-plans" class="toc-h2 toc-link" data-title="Referencing Capability in Pricing Plans">Referencing Capability in Pricing Plans</a>
+                  </li>
+                  <li>
                     <a href="#odps-supports-12-standardized-pricing-models" class="toc-h2 toc-link" data-title="ODPS supports 12 standardized pricing models">ODPS supports 12 standardized pricing models</a>
                   </li>
                   <li>
@@ -1657,6 +1660,26 @@ any industry specific needs. </p>
 <p>The 12 pricing plans enabled by ODPS are meticulously defined through an in-depth analysis of pricing models applied across more than 300 data products. We continuously monitor the evolution of pricing plans in the data economy, striving to provide the most comprehensive and up-to-date list of standardized pricing options - yet some gaps might exist.</p>
 
 <p>The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
+<h2 id='referencing-capability-in-pricing-plans'>Referencing Capability in Pricing Plans</h2>
+<p>ODPS 4.0 introduces a modular referencing system that allows pricing plans to reuse pre-defined components such as data quality profiles, SLA tiers, access methods, and payment gateways. This makes it easy to maintain consistency across multiple data products, reduces duplication, and enables scalable pricing design. Why Use Referencing?</p>
+
+<ul>
+<li><strong>DRY Principle</strong>: Define components once, reference them across products.</li>
+<li><strong>Modularity</strong>: Maintain separate, reusable blocks for SLA, DQ, access, and payment.</li>
+<li><strong>Flexibility</strong>: Switch plans or upgrade tiers by simply changing references.</li>
+<li><strong>Auditability</strong>: Easily trace the source of configurations in machine-readable format.</li>
+</ul>
+
+<p><strong>Example Component Reference Paths</strong></p>
+
+<ul>
+<li>SLA: <code>#/product/SLA/gold</code> references gold SLA profile in the SLA component</li>
+<li>Data Quality: <code>#/product/dataQuality/default</code> references default data quality profile in the data quality component</li>
+<li>Access: <code>#/product/dataAccess/download</code> references download access profile in the SLA component</li>
+<li>Payment Gateway: <code>#/product/paymentGateways/paypal</code> references paypal payment profile in the Payment Gateways component</li>
+</ul>
+
+<p>In each of these component groups, you can expect a <code>default</code> option to be defined. This default serves as a baseline configuration, ensuring that even when no custom profile is referenced, a reliable and predictable fallback exists. For example, dataQuality.default, SLA.default, and paymentGateways.default can all be used to provide minimum guarantees. </p>
 
 <p><strong>Includes the &quot;Pricing Plans as Code&quot; feature.</strong> You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. <strong>CRUP</strong> stands for: </p>
 
