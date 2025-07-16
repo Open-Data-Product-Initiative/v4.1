@@ -408,9 +408,6 @@
             <a href="#data-pricing-plans" class="toc-h1 toc-link" data-title="Data Pricing Plans">Data Pricing Plans</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#referencing-capability-in-pricing-plans" class="toc-h2 toc-link" data-title="Referencing Capability in Pricing Plans">Referencing Capability in Pricing Plans</a>
-                  </li>
-                  <li>
                     <a href="#odps-supports-12-standardized-pricing-models" class="toc-h2 toc-link" data-title="ODPS supports 12 standardized pricing models">ODPS supports 12 standardized pricing models</a>
                   </li>
                   <li>
@@ -1660,7 +1657,9 @@ any industry specific needs. </p>
     <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
     <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
 
-</code></pre></div><h2 id='referencing-capability-in-pricing-plans'>Referencing Capability in Pricing Plans</h2>
+</code></pre></div>
+<p><strong>Referencing Capability in Pricing Plans</strong> </p>
+
 <p>ODPS 4.0 introduces a modular referencing system that allows pricing plans to reuse pre-defined components such as data quality profiles, SLA tiers, access methods, and payment gateways. This makes it easy to maintain consistency across multiple data products, reduces duplication, and enables scalable pricing design. Why Use Referencing?</p>
 
 <ul>
@@ -1680,6 +1679,8 @@ any industry specific needs. </p>
 </ul>
 
 <p>In each of these component groups, you can expect a <code>default</code> option to be defined. This default serves as a baseline configuration, ensuring that even when no custom profile is referenced, a reliable and predictable fallback exists. For example, dataQuality.default, SLA.default, and paymentGateways.default can all be used to provide minimum guarantees. </p>
+
+<hr>
 
 <p><strong>Includes the &quot;Pricing Plans as Code&quot; feature.</strong> You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. <strong>CRUP</strong> stands for: </p>
 
