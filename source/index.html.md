@@ -77,9 +77,13 @@ The content is modular, code‑first, and designed for easy reuse, enabling team
 
 The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. The work is based on existing standards (schema.org), best practices and emerging concepts like Data Mesh. The reasoning is that we reuse and proudly copy instead of reinventing the wheel. More detailed information of the origin can be found from the [Open Data Product Specification homepage](http://www.opendataproducts.org). 
 
-**The ODPS 4.0 specification supports referencing mechanisms** that improve modularity, reduce duplication, and ease governance. Users can reference internal components, such as SLA, dataQuality, dataAccess, and paymentGateways, from other parts of the product definition using JSON Reference syntax ($ref). In addition, any of these components can be defined and maintained in external YAML files and included via URL-based references. This makes it possible to reuse standardized SLA profiles, DQ rules, or access definitions across multiple data products, helping teams manage changes consistently, reduce errors, and align with enterprise-level governance practices.
+**The ODPS 4.0 specification supports referencing mechanisms** that improve modularity, reduce duplication, and ease governance. Users can reference internal components, such as SLA, dataQuality, dataAccess, and paymentGateways, from other parts of the product definition using JSON Reference syntax ($ref). In addition, any of these components can be defined and maintained in external YAML files and included via URL-based references. This makes it possible 
 
-You can reference **Data Contract as a URL or define Data Contract as an inline element** in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. 
+* to reuse standardized SLA profiles, DQ rules, or access definitions across multiple data products, 
+* helping teams manage changes consistently, reduce errors, and 
+* align with enterprise-level governance practices.
+
+You can also reference **Data Contract as a URL or define Data Contract as an inline element** in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. 
 
 ## Specification aims and aspects
 
