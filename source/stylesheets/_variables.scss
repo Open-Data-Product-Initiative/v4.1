@@ -25,15 +25,15 @@ under the License.
 ////////////////////
 $nav-bg: #fff !default;
 $examples-bg: #2E3336 !default;
-$code-bg: #1E2224 !default;
-$code-annotation-bg: #191D1F !default;
+$code-bg: #5f1c87 !default;
+$code-annotation-bg: #5f1c87 !default;
 $nav-subitem-bg: #fff !default;
 $nav-active-bg: #d3d3d3 !default;
 $nav-active-parent-bg: #fff !default; // parent links of the current section
-$lang-select-border: #000 !default;
-$lang-select-bg: #1E2224 !default;
+$lang-select-border: #5f1c87 !default;
+$lang-select-bg: #5f1c87 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
-$lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
+$lang-select-pressed-bg: #5f1c87!default; // color of language tab bg when mouse is pressed
 $main-bg: #F3F7F9 !default;
 $aside-notice-bg: #ff7b01 !default;
 $aside-warning-bg: #ff4e02 !default;
