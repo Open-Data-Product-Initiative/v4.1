@@ -65,14 +65,6 @@ Development of the specification is under the umbrella of the Linux Foundation.
 * [Join ODPS Discord Server](https://discord.gg/7KfnFxAc) 
 
 
-## HowTo - ODPS Knowledge Base
-
-The odps‑examples repository serves as a comprehensive knowledge base for using the Open Data Product Specification (ODPS), combining clear FAQs with real-world YAML examples to guide users through practical implementation. Each FAQ entry tackles a specific task—like defining metadata, setting pricing tiers, assigning SLAs, configuring data quality rules, managing access roles, or enabling AI/agent consumption—accompanied by executable YAML snippets and full .yml files. 
-
-The content is modular, code‑first, and designed for easy reuse, enabling teams to discover, govern, monetize, validate, and automate data products using standardized, machine-readable metadata. Users are encouraged to contribute new scenarios or enhancements via GitHub issues.
-
-[Knowledge Base in Github](https://opendataproducts.org/howto/). 
-
 ## Introduction
 
 The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. The work is based on existing standards (schema.org), best practices and emerging concepts like Data Mesh. The reasoning is that we reuse and proudly copy instead of reinventing the wheel. More detailed information of the origin can be found from the [Open Data Product Specification homepage](http://www.opendataproducts.org). 
@@ -92,6 +84,14 @@ Benefits of Referencing:
 
 
 You can also reference **Data Contract as a URL or define Data Contract as an inline element** in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. 
+
+## HowTo - ODPS Knowledge Base
+
+The odps‑examples repository serves as a comprehensive knowledge base for using the Open Data Product Specification (ODPS), combining clear FAQs with real-world YAML examples to guide users through practical implementation. Each FAQ entry tackles a specific task—like defining metadata, setting pricing tiers, assigning SLAs, configuring data quality rules, managing access roles, or enabling AI/agent consumption—accompanied by executable YAML snippets and full .yml files. 
+
+The content is modular, code‑first, and designed for easy reuse, enabling teams to discover, govern, monetize, validate, and automate data products using standardized, machine-readable metadata. Users are encouraged to contribute new scenarios or enhancements via GitHub issues.
+
+[Knowledge Base in Github](https://opendataproducts.org/howto/). 
 
 ## Specification aims and aspects
 
