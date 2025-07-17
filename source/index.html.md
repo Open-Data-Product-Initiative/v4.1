@@ -1,5 +1,5 @@
 ---
-title: Open (source) Data Product Specification 4.0 RC Version | Linux Foundation 
+title: Open (source) Data Product Specification 4.0 Version | Linux Foundation 
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -36,19 +36,19 @@ meta:
 
 # OPEN DATA PRODUCT SPECIFICATION 
 
-## 4.0 Release Candidate Version 
+## 4.0 Release Version 
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
 Development of the specification is under the umbrella of the Linux Foundation. 
 
-**RELEASE CANDIDATE VERSION**
+**RELEASE VERSION**
 
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/4rc">https://github.com/Open-Data-Product-Initiative/4rc</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/v4.0">https://github.com/Open-Data-Product-Initiative/v4.0</a>
 
 **ODPS YAML Schema:**
 
@@ -61,7 +61,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Participate:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/4rc/issues)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
 * [Join ODPS Discord Server](https://discord.gg/7KfnFxAc) 
 
 
@@ -69,7 +69,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. The work is based on existing standards (schema.org), best practices and emerging concepts like Data Mesh. The reasoning is that we reuse and proudly copy instead of reinventing the wheel. More detailed information of the origin can be found from the [Open Data Product Specification homepage](http://www.opendataproducts.org). 
 
-**The ODPS 4.0 specification supports referencing mechanisms** that improve modularity, reduce duplication, and ease governance. Users can reference internal components, such as SLA, dataQuality, dataAccess, and paymentGateways, from other parts of the product definition using JSON Reference syntax ($ref). In addition, any of these components can be defined and maintained in external YAML files and included via URL-based references [Examples in the Knowledge Base](https://opendataproducts.org/howto/). This makes it possible: 
+**The ODPS 4.0 specification supports referencing mechanisms** that improve modularity, reduce duplication, and ease governance. Users can reference internal components, such as SLA, dataQuality, dataAccess, and paymentGateways, from other parts of the product definition using [JSON Reference syntax](https://json-spec.readthedocs.io/reference.html) ($ref). In addition, any of these components can be defined and maintained in external YAML files and included via URL-based references [Examples in the Knowledge Base](https://opendataproducts.org/howto/). This makes it possible: 
 
 * to reuse standardized SLA profiles, DQ rules, or access definitions across multiple data products, 
 * helping teams manage changes consistently, reduce errors, and 
@@ -120,7 +120,7 @@ The four aspects are described in 9 objects, which contain attributes and elemen
 ![odps-model](images/ODPS-design.png)
 
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc4/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
 
 ## Documentation structure
 
