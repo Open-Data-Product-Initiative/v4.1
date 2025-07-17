@@ -6,7 +6,7 @@
 
 ---
 schema: 'https://opendataproducts.org/v3.1/schema/odps.yaml'
-version: 3.1
+version: 4.0
 product:
   contract:
     id: 02323M123
@@ -42,7 +42,7 @@ product:
         - tourism
         - smartcity
       standards:
-        - ODPS 3.1
+        - ODPS 4.0
       tags:
         - smartcity
         - events
@@ -68,13 +68,13 @@ product:
             Shadow pricing only for internal visibility. No actual billing
             applied.
           paymentGateway:
-            $ref: '#/paymentGateways/default'
+            $ref: '#/product/paymentGateways/default'
           dataQuality:
-            $ref: '#/dataQuality/default'
+            $ref: '#/product/dataQuality/default'
           SLA:
-            $ref: '#/SLA/default'
+            $ref: '#/product/SLA/default'
           access:
-            $ref: '#/dataAccess/API'
+            $ref: '#/product/dataAccess/API'
         - name: Extended User
           priceCurrency: USD
           price: 300
@@ -90,13 +90,13 @@ product:
             Shadow pricing estimate based on infrastructure and operational cost
             models.
           paymentGateway:
-            $ref: '#/paymentGateways/default'
+            $ref: '#/product/paymentGateways/default'
           dataQuality:
-            $ref: '#/dataQuality/default'
+            $ref: '#/product/dataQuality/default'
           SLA:
-            $ref: '#/SLA/default'
+            $ref: '#/product/SLA/default'
           access:
-            $ref: '#/dataAccess/API'
+            $ref: '#/product/dataAccess/API'
         - name: High Volume Access
           priceCurrency: USD
           price: 2000
@@ -109,13 +109,13 @@ product:
             - Guaranteed SLA for availability and response time
           notes: Shadow pricing for strategic high-usage internal consumers.
           paymentGateway:
-            $ref: '#/paymentGateways/agent'
+            $ref: '#/product/paymentGateways/agent'
           dataQuality:
-            $ref: '#/dataQuality/premium'
+            $ref: '#/product/dataQuality/premium'
           SLA:
-            $ref: '#/SLA/premium'
+            $ref: '#/product/SLA/premium'
           access:
-            $ref: '#/dataAccess/Agent'
+            $ref: '#/product/dataAccess/Agent'
   SLA:
     declarative:
       default:

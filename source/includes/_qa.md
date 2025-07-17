@@ -51,15 +51,15 @@ One of the key features of ODPS is the ability to **reuse** named data quality p
 > referencing examples:
 
 ```yml
-  $ref: '#/Product/dataQuality/default'
+  $ref: '#/product/dataQuality/default'
 
   ...
 
-  $ref: '#/Product/dataQuality/premium'
+  $ref: '#/product/dataQuality/premium'
 ```
 
 **Referencing Examples:**
-To reference a defined quality profile from another part of your YAML (e.g., pricing plan): `$ref: '#/Product/dataQuality/default'`. Or reference a named premium quality package: `$ref: '#/Product/dataQuality/premium'` Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you're reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. 
+To reference a defined quality profile from another part of your YAML (e.g., pricing plan): `$ref: '#/product/dataQuality/default'`. Or reference a named premium quality package: `$ref: '#/product/dataQuality/premium'` Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you're reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. 
 
 
 **The Role of `default`**
@@ -210,4 +210,4 @@ dataQuality:
 
 
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
