@@ -38,12 +38,12 @@ meta:
 
 ## 4.0 Release Version 
 
+**Release date:** 24th July 2025
+
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
 Development of the specification is under the umbrella of the Linux Foundation. 
-
-**Release date:** 24th July 2025
 
 
 **Version source:**
@@ -53,11 +53,6 @@ Development of the specification is under the umbrella of the Linux Foundation.
 **ODPS YAML Schema:**
 
 * <a href="https://opendataproducts.org/v4.0/schema/odps.yaml">YAML Schema</a>
-
-**Editors:**
-
-* <a href="https://www.linkedin.com/in/jarkkomoilanen/">Jarkko Moilanen</a>
-* <a href="https://www.linkedin.com/in/manfred-sorg/">Manfred Sorg</a>
 
 **Participate:**
 
