@@ -6,7 +6,7 @@ The extensions properties are implemented as patterned fields that are always pr
 
 We encourage you to let us know of useful extensions so that we can consider those in the future releases, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
 
-
+Join the [ODPS Discord](https://discord.gg/7KfnFxAc) to discuss the ideas and your needs! 
 
 > Example of extension usage:
 
