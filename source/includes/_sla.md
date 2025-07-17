@@ -188,7 +188,7 @@ SLA:
 |---|---|---|---|
 | **SLA** | element | - | Binds the SLA-related elements and attributes together. |
 | **$ref** | filepath or valid URL | - | Define the SLA in external file for reuse purposes, example  `$ref: 'https://example.org/slas/all-packages.yaml'` See example. This makes it easy to keep related profiles (e.g. default, premium, gold) together, apply versioning and validation once, and publish all variants from a single repo or source. <br/><br/>The same pattern can be used in individual SLA profiles instead of doing it inline. See example. This gives finer control if each SLA is owned or updated by a different team, but increases the number of files to track and host.|
-| **default** | object | - | This object must always be present and named exactly `default` if SLA object is used. It acts as the fallback or baseline SLA profile. <br/><br/>Users are free to define additional named profiles such as `premium`, `gold`, etc., in parallel to the default. <br/><br/>In the example above, both `default` and `premium` profiles are included. These variants can be referenced from pricing plans or other objects. <br/><br/>**Example reference usage:** <br/> `SLA: $ref: '#/Product/SLA/default'` |
+| **default** | object | - | This object must always be present and named exactly `default` if SLA object is used. It acts as the fallback or baseline SLA profile. <br/><br/>Users are free to define additional named profiles such as `premium`, `gold`, etc., in parallel to the default. <br/><br/>In the example above, both `default` and `premium` profiles are included. These variants can be referenced from pricing plans or other objects. <br/><br/>**Example reference usage:** <br/> `SLA: $ref: '#/product/SLA/default'` |
 | **dimensions** | array | - | Contains one or more SLA dimension objects. Each defines a measurable SLA metric such as uptime or responseTime. |
 | **dimension** | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension. |
 | **objective** | attribute | integer | Target level to be achieved for the dimension (e.g., 99). |
@@ -210,3 +210,5 @@ SLA:
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
+
+Or join the [ODPS Discord](https://discord.gg/7KfnFxAc) to discuss the ideas and your needs! 
