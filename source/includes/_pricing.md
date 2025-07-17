@@ -216,3 +216,5 @@ pricingPlans:
 | **spec** | element | YAML/URL/string | The content the as code part for the pricing plan. Content is intended to be in a form that can be injected as is to _type_ defined payment gateway system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> **Note!** By default the rules must be provide as valid YAML, either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML content file. String content is allowed and used only if _type_ attribute value is _Custom_. In the custom case your string of course can be YAML too. |
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
+
+Join the [ODPS Discord](https://discord.gg/7KfnFxAc) to discuss the ideas and your needs! 
