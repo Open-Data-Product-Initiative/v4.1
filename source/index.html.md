@@ -61,7 +61,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Participate:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/4rc/issues)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
 * [Join ODPS Discord Server](https://discord.gg/7KfnFxAc) 
 
 
