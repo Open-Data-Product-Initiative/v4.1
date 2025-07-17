@@ -1,5 +1,5 @@
 ---
-title: Open (source) Data Product Specification 4.0 RC Version | Linux Foundation 
+title: Open (source) Data Product Specification 4.0 Version | Linux Foundation 
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -36,19 +36,19 @@ meta:
 
 # OPEN DATA PRODUCT SPECIFICATION 
 
-## 4.0 Release Candidate Version 
+## 4.0 Release Version 
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
 Development of the specification is under the umbrella of the Linux Foundation. 
 
-**RELEASE CANDIDATE VERSION**
+**RELEASE VERSION**
 
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/4rc">https://github.com/Open-Data-Product-Initiative/4rc</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/v4.0">https://github.com/Open-Data-Product-Initiative/v4.0</a>
 
 **ODPS YAML Schema:**
 
@@ -120,7 +120,7 @@ The four aspects are described in 9 objects, which contain attributes and elemen
 ![odps-model](images/ODPS-design.png)
 
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc4/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
 
 ## Documentation structure
 
