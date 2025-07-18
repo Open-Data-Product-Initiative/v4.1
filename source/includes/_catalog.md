@@ -26,7 +26,7 @@ products:
     categories: environment
     created: 2023-11-12
     updated: 2025-06-30
-    unit: triel
+    unit: trial
     priceCurrency: EUR
     price: 0.00
 
@@ -40,6 +40,9 @@ products:
     categories: transport
     created: 2024-04-10
     updated: 2025-05-28
+    unit: open-data
+    priceCurrency: EUR
+    price: 0.00
 
   - productId: water-consumption
     name: Water Consumption by District
