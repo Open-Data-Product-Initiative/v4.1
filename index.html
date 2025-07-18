@@ -457,6 +457,26 @@
             <a href="#mandatory-only-example" class="toc-h1 toc-link" data-title="Mandatory-only example">Mandatory-only example</a>
           </li>
           <li>
+            <a href="#data-product-catalog" class="toc-h1 toc-link" data-title="Data Product Catalog">Data Product Catalog</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#outcome" class="toc-h2 toc-link" data-title="Outcome">Outcome</a>
+                  </li>
+                  <li>
+                    <a href="#example-automation-scenarios" class="toc-h2 toc-link" data-title="Example Automation Scenarios">Example Automation Scenarios</a>
+                  </li>
+                  <li>
+                    <a href="#use-case-in-government-or-enterprise" class="toc-h2 toc-link" data-title="Use Case in Government or Enterprise">Use Case in Government or Enterprise</a>
+                  </li>
+                  <li>
+                    <a href="#mandatory-attributes-and-elements" class="toc-h2 toc-link" data-title="Mandatory attributes and elements">Mandatory attributes and elements</a>
+                  </li>
+                  <li>
+                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#terms-used" class="toc-h1 toc-link" data-title="Terms used">Terms used</a>
           </li>
           <li>
@@ -3156,7 +3176,168 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
     <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">derived data</span>
 
-</code></pre></div><h1 id='terms-used'>Terms used</h1>
+</code></pre></div><h1 id='data-product-catalog'>Data Product Catalog</h1>
+<p>Instead of changing ODPS (which defines individual products), we define a <strong>sidecar schema</strong> (e.g., odps-catalog.yaml) that:</p>
+
+<ul>
+<li>Acts as a manifest of ODPS product files</li>
+<li>Provides minimal metadata for grouping or navigation</li>
+<li>Is designed for Git-based use or portal ingestion</li>
+</ul>
+
+<p>This follows the “composition over extension” principle.</p>
+<h2 id='outcome'>Outcome</h2>
+<p>This method:</p>
+
+<ul>
+<li>Keeps the ODPS spec focused and clean</li>
+<li>Enables Git-based catalogs and open collaboration</li>
+<li>Offers a bridge to DCAT (without enforcing RDF/OWL complexity)</li>
+<li>Aligns with ODPS-as-code values</li>
+</ul>
+<h2 id='example-automation-scenarios'>Example Automation Scenarios</h2>
+<ul>
+<li>Validation script that checks all *.yaml files against the ODPS schema</li>
+<li>GitHub Action that regenerates a static HTML/JSON catalog from ODPS YAML files</li>
+<li>CI/CD job that publishes selected products to a data portal when main branch updates</li>
+</ul>
+<h2 id='use-case-in-government-or-enterprise'>Use Case in Government or Enterprise</h2>
+<p>Imagine the Abu Dhabi Open Data Platform stores its official ODPS product definitions in a public GitHub repo. Each department can:</p>
+
+<ul>
+<li>Maintain their own odps/*.yaml files</li>
+<li>Submit them via pull request</li>
+<li>Have automatic validation before merging</li>
+<li>Allow public feedback via GitHub issues</li>
+</ul>
+
+<p>It becomes a living catalog, governed like software.</p>
+<h2 id='mandatory-attributes-and-elements'>Mandatory attributes and elements</h2>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>catalogVersion</strong></td>
+<td>string</td>
+<td>e.g., <code>1.0</code></td>
+<td>Version of the catalog schema</td>
+</tr>
+<tr>
+<td><strong>products</strong></td>
+<td>array</td>
+<td>-</td>
+<td>List of logical data products in the catalog</td>
+</tr>
+<tr>
+<td><strong>productId</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Unique ID for the logical data product (shared across variants)</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Human-readable name of the product</td>
+</tr>
+<tr>
+<td><strong>orgName</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Full name of the publishing organization</td>
+</tr>
+<tr>
+<td><strong>orgId</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Unique identifier of the organization (e.g., domain-style ID)</td>
+</tr>
+</tbody></table>
+<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>title</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Title of the catalog for display purposes</td>
+</tr>
+<tr>
+<td><strong>description</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Description of the catalog&#39;s purpose or content</td>
+</tr>
+<tr>
+<td><strong>generated</strong></td>
+<td>string (date)</td>
+<td>ISO 8601</td>
+<td>Timestamp or date when the catalog was generated</td>
+</tr>
+<tr>
+<td><strong>publisher</strong></td>
+<td>object</td>
+<td>-</td>
+<td>Metadata about the organization maintaining the catalog</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Name of the catalog maintainer organization</td>
+</tr>
+<tr>
+<td><strong>url</strong></td>
+<td>string (URI)</td>
+<td>-</td>
+<td>Website of the organization maintaining the catalog</td>
+</tr>
+<tr>
+<td><strong>tags</strong></td>
+<td>array of strings</td>
+<td>-</td>
+<td>Keywords or themes associated with the logical product</td>
+</tr>
+<tr>
+<td><strong>description</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Human-readable explanation of the data product</td>
+</tr>
+<tr>
+<td><strong>category</strong></td>
+<td>string</td>
+<td>e.g., <code>transport</code>, <code>environment</code></td>
+<td>A thematic category for filtering/grouping</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example of catalog object usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+
+
+</code></pre></div>
+<table><thead>
+<tr>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>Bring your ideas, questions, and use cases — <a href="https://discord.gg/7KfnFxAc">join the ODPS Discord</a> and get involved!</p>
+<h1 id='terms-used'>Terms used</h1>
 <p>Here&#39;s list of terms used and what we mean with them. The meaning of terms is mostly taken from existing knowledge eg articles and other trusted sources. The source is always linked to the term. In some rare cases term is defined for the specification purposes only. </p>
 
 <table><thead>
