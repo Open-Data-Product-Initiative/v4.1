@@ -1,5 +1,13 @@
 # Data Product Catalog
 
+> Example of catalog object usage:
+
+```yml
+
+
+
+```
+
 Instead of changing ODPS (which defines individual products), we define a **sidecar schema** (e.g., odps-catalog.yaml) that:
 
 * Acts as a manifest of ODPS product files
@@ -8,13 +16,7 @@ Instead of changing ODPS (which defines individual products), we define a **side
 
 This follows the “composition over extension” principle.
 
-> Example of catalog object usage:
 
-```yml
-
-
-
-```
 
 ### Outcome
 
