@@ -22,6 +22,7 @@ includes:
   - extensions
   - helloworld
   - bareminimum
+  - catalog
   - terms
   - contributors
 
