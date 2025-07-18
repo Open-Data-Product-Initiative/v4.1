@@ -41,3 +41,5 @@ product:
 | **contractURL**  | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | URL pointing to data contract in data contract management service or alike. Optionally you can use _spec_ to add data contract details as YAML inline element. | 
 | **spec**  | string | YAML | Inline YAML element to add data contract details instead of using URL. | 
 | **$ref**  | URI | Valid URI | Points to the contract content, local file or online. You can use this or then the other above described approaches to define elements of the contract.
+
+Bring your ideas, questions, and use cases — [join the ODPS Discord](https://discord.gg/7KfnFxAc) and get involved!
