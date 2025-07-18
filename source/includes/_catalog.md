@@ -3,6 +3,50 @@
 > Example of catalog object usage:
 
 ```yml
+version: "1.0"
+title: Abu Dhabi Smart City ODPS Catalog
+description: >
+  A curated list of ODPS-compliant data products published by multiple Abu Dhabi government entities.
+generated: 2025-07-18
+
+publisher:
+  orgName: Department of Government Enablement
+  orgId: dge.abudhabi
+  url: https://www.dge.abudhabi
+
+products:
+  - productId: air-quality-index
+    name: Air Quality Index
+    orgName: Environment Agency – Abu Dhabi
+    orgId: ead.abudhabi
+    url: https://data.ead.gov/odps/air-quality.yaml
+    tags: ["environment", "pollution", "aqi"]
+    description: Daily air quality readings from across Abu Dhabi emirate.
+    categories: environment
+    created: 2023-11-12
+    updated: 2025-06-30
+
+  - productId: traffic-accidents
+    name: Traffic Accidents in Abu Dhabi
+    orgName: Abu Dhabi Police
+    orgId: police.abudhabi
+    url: https://data.adpolice.gov/odps/traffic-accidents.yaml
+    tags: ["traffic", "safety", "transport"]
+    description: Historical and real-time traffic accident data across the city.
+    categories: transport
+    created: 2024-04-10
+    updated: 2025-05-28
+
+  - productId: water-consumption
+    name: Water Consumption by District
+    orgName: Abu Dhabi Distribution Company
+    orgId: addc.abudhabi
+    url: https://data.addc.abudhabi/odps/water-consumption.yaml
+    tags: ["utilities", "consumption", "water"]
+    description: Monthly water usage data across residential districts.
+    categories: utilities
+    created: 2023-07-01
+    updated: 2025-04-15
 
 
 
