@@ -60,8 +60,6 @@ Instead of changing ODPS (which defines individual products), we define a **side
 
 This follows the “composition over extension” principle.
 
-
-
 ### Outcome
 
 This method:
