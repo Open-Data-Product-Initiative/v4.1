@@ -37,25 +37,40 @@ It becomes a living catalog, governed like software.
 ## Mandatory attributes and elements
 
 
-| <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
-|---|---|---|---|
-| **id**  | string | - | UUID of the data contract | 
+| <div style="width:150px">Element name</div> | Type   | Options     | Description                                  |
+| ------------------------------------------- | ------ | ----------- | -------------------------------------------- |
+| **catalogVersion**                          | string | e.g., `1.0` | Version of the catalog schema                |
+| **products**                                | array  | -           | List of logical data products in the catalog |
+| **productId**                               | string | -       | Unique ID for the logical data product (shared across variants) |
+| **name**                                    | string | -       | Human-readable name of the product                              |
+| **orgName**                                 | string | -       | Full name of the publishing organization                      |
+| **orgId**                                   | string | -       | Unique identifier of the organization (e.g., domain-style ID) |
 
 
 
 ## Optional attributes and elements
 
-> Example of contract object usage:
+| <div style="width:150px">Element name</div> | Type          | Options  | Description                                             |
+| ------------------------------------------- | ------------- | -------- | ------------------------------------------------------- |
+| **title**                                   | string        | -        | Title of the catalog for display purposes               |
+| **description**                             | string        | -        | Description of the catalog's purpose or content         |
+| **generated**                               | string (date) | ISO 8601 | Timestamp or date when the catalog was generated        |
+| **publisher**                               | object        | -        | Metadata about the organization maintaining the catalog |
+| **name**                                    | string        | -        | Name of the catalog maintainer organization         |
+| **url**                                     | string (URI)  | -        | Website of the organization maintaining the catalog |
+| **tags**                                    | array of strings | -     | Keywords or themes associated with the logical product |
+| **description**                             | string           | -     | Human-readable explanation of the data product         |
+| **category**                                | string           | e.g., `transport`, `environment` | A thematic category for filtering/grouping |
+
+
+> Example of catalog object usage:
 
 ```yml
 
 
 
 ```
-
-| <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
-|---|---|---|---|
-| **id**  | string | - | UUID of the data contract | 
+| 
 
 
 Bring your ideas, questions, and use cases — [join the ODPS Discord](https://discord.gg/7KfnFxAc) and get involved!
