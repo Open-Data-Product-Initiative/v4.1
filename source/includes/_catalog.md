@@ -23,7 +23,7 @@ products:
     url: https://data.ead.gov/odps/air-quality.yaml
     tags: ["environment", "pollution", "aqi"]
     description: Daily air quality readings from across Abu Dhabi emirate.
-    categories: environment
+    categories: ["environment"]
     created: 2023-11-12
     updated: 2025-06-30
     unit: trial
@@ -37,7 +37,7 @@ products:
     url: https://data.adpolice.gov/odps/traffic-accidents.yaml
     tags: ["traffic", "safety", "transport"]
     description: Historical and real-time traffic accident data across the city.
-    categories: transport
+    categories: ["transport"]
     created: 2024-04-10
     updated: 2025-05-28
     unit: open-data
@@ -51,7 +51,7 @@ products:
     url: https://data.addc.abudhabi/odps/water-consumption.yaml
     tags: ["utilities", "consumption", "water"]
     description: Monthly water usage data across residential districts.
-    categories: utilities
+    categories: ["utilities"]
     created: 2023-07-01
     updated: 2025-04-15
 
@@ -118,7 +118,7 @@ It becomes a living catalog, governed like software.
 | **tags**                                    | array of strings | -        | Keywords or themes associated with the logical product  |
 | **description**                             | string           | -        | Human-readable explanation of the data product          |
 | **logo**                                    | string (URI)     | -        | URI to the product logo image                           |
-| **categories**                              | string           | e.g., `transport`, `environment` | Thematic categories for filtering/grouping |
+| **categories**                              | array of strings | e.g., ["`transport`", "`environment`"] | Thematic categories for filtering/grouping |
 | **created**                                 | string (date)    | ISO 8601 | Timestamp or date when the product was generated        |
 | **updated**                                 | string (date)    | ISO 8601 | Timestamp or date when the product was last updated     |
 | **rating**                                  | string           | -        | Product rating, example 4/5 or 3.2/10. The latter number indicates maximum and first the aggregated rating     |
