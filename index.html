@@ -3200,7 +3200,7 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
     <span class="na">url</span><span class="pi">:</span> <span class="s">https://data.ead.gov/odps/air-quality.yaml</span>
     <span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">environment"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">pollution"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">aqi"</span><span class="pi">]</span>
     <span class="na">description</span><span class="pi">:</span> <span class="s">Daily air quality readings from across Abu Dhabi emirate.</span>
-    <span class="na">categories</span><span class="pi">:</span> <span class="s">environment</span>
+    <span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">environment"</span><span class="pi">]</span>
     <span class="na">created</span><span class="pi">:</span> <span class="s">2023-11-12</span>
     <span class="na">updated</span><span class="pi">:</span> <span class="s">2025-06-30</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">trial</span>
@@ -3214,7 +3214,7 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
     <span class="na">url</span><span class="pi">:</span> <span class="s">https://data.adpolice.gov/odps/traffic-accidents.yaml</span>
     <span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">traffic"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">safety"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">transport"</span><span class="pi">]</span>
     <span class="na">description</span><span class="pi">:</span> <span class="s">Historical and real-time traffic accident data across the city.</span>
-    <span class="na">categories</span><span class="pi">:</span> <span class="s">transport</span>
+    <span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">transport"</span><span class="pi">]</span>
     <span class="na">created</span><span class="pi">:</span> <span class="s">2024-04-10</span>
     <span class="na">updated</span><span class="pi">:</span> <span class="s">2025-05-28</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">open-data</span>
@@ -3228,7 +3228,7 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
     <span class="na">url</span><span class="pi">:</span> <span class="s">https://data.addc.abudhabi/odps/water-consumption.yaml</span>
     <span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">utilities"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">consumption"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">water"</span><span class="pi">]</span>
     <span class="na">description</span><span class="pi">:</span> <span class="s">Monthly water usage data across residential districts.</span>
-    <span class="na">categories</span><span class="pi">:</span> <span class="s">utilities</span>
+    <span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">utilities"</span><span class="pi">]</span>
     <span class="na">created</span><span class="pi">:</span> <span class="s">2023-07-01</span>
     <span class="na">updated</span><span class="pi">:</span> <span class="s">2025-04-15</span>
 
@@ -3375,8 +3375,8 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 </tr>
 <tr>
 <td><strong>categories</strong></td>
-<td>string</td>
-<td>e.g., <code>transport</code>, <code>environment</code></td>
+<td>array of strings</td>
+<td>e.g., [&quot;<code>transport</code>&quot;, &quot;<code>environment</code>&quot;]</td>
 <td>Thematic categories for filtering/grouping</td>
 </tr>
 <tr>
