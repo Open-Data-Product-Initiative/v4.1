@@ -3279,34 +3279,28 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <td>Version of the catalog schema</td>
 </tr>
 <tr>
-<td><strong>products</strong></td>
-<td>array</td>
-<td>-</td>
-<td>List of logical data products in the catalog</td>
-</tr>
-<tr>
-<td><strong>productId</strong></td>
+<td><strong>title</strong></td>
 <td>string</td>
 <td>-</td>
-<td>Unique ID for the logical data product (shared across variants)</td>
+<td>Title of the catalog for display purposes</td>
 </tr>
 <tr>
-<td><strong>name</strong></td>
+<td><strong>description</strong></td>
 <td>string</td>
 <td>-</td>
-<td>Human-readable name of the product</td>
+<td>Description of the catalog&#39;s purpose or content</td>
 </tr>
 <tr>
 <td><strong>orgName</strong></td>
 <td>string</td>
 <td>-</td>
-<td>Full name of the publishing organization</td>
+<td>Full name of the data product publishing organization</td>
 </tr>
 <tr>
-<td><strong>orgId</strong></td>
-<td>string</td>
+<td><strong>url</strong></td>
+<td>string (URI)</td>
 <td>-</td>
-<td>Unique identifier of the organization (e.g., domain-style ID)</td>
+<td>Website of the organization maintaining the catalog</td>
 </tr>
 </tbody></table>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
@@ -3319,16 +3313,28 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>title</strong></td>
-<td>string</td>
+<td><strong>products</strong></td>
+<td>array</td>
 <td>-</td>
-<td>Title of the catalog for display purposes</td>
+<td>List of logical data products in the catalog</td>
 </tr>
 <tr>
-<td><strong>description</strong></td>
+<td><strong>productId</strong></td>
 <td>string</td>
 <td>-</td>
-<td>Description of the catalog&#39;s purpose or content</td>
+<td>Unique ID for the logical data product</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Human-readable name of the product</td>
+</tr>
+<tr>
+<td><strong>orgId</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Unique identifier of the organization (e.g., domain-style ID)</td>
 </tr>
 <tr>
 <td><strong>generated</strong></td>
@@ -3343,12 +3349,6 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <td>Metadata about the organization maintaining the catalog</td>
 </tr>
 <tr>
-<td><strong>url</strong></td>
-<td>string (URI)</td>
-<td>-</td>
-<td>Website of the organization maintaining the catalog</td>
-</tr>
-<tr>
 <td><strong>tags</strong></td>
 <td>array of strings</td>
 <td>-</td>
@@ -3361,10 +3361,16 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <td>Human-readable explanation of the data product</td>
 </tr>
 <tr>
+<td><strong>logo</strong></td>
+<td>string (URI)</td>
+<td>-</td>
+<td>URI to the product logo image</td>
+</tr>
+<tr>
 <td><strong>categories</strong></td>
 <td>string</td>
 <td>e.g., <code>transport</code>, <code>environment</code></td>
-<td>A thematic category for filtering/grouping</td>
+<td>Thematic categories for filtering/grouping</td>
 </tr>
 <tr>
 <td><strong>created</strong></td>
@@ -3377,6 +3383,12 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <td>string (date)</td>
 <td>ISO 8601</td>
 <td>Timestamp or date when the product was last updated</td>
+</tr>
+<tr>
+<td><strong>rating</strong></td>
+<td>string</td>
+<td>-</td>
+<td>Product rating, example 4/5 or 3.2/10. The latter number indicates maximum and first the aggregated rating</td>
 </tr>
 </tbody></table>
 
