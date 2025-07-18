@@ -8,6 +8,14 @@ Instead of changing ODPS (which defines individual products), we define a **side
 
 This follows the “composition over extension” principle.
 
+> Example of catalog object usage:
+
+```yml
+
+
+
+```
+
 ## Outcome
 
 This method:
@@ -62,15 +70,7 @@ It becomes a living catalog, governed like software.
 | **description**                             | string           | -     | Human-readable explanation of the data product         |
 | **category**                                | string           | e.g., `transport`, `environment` | A thematic category for filtering/grouping |
 
-
-> Example of catalog object usage:
-
-```yml
-
-
-
-```
-| 
+ 
 
 
 Bring your ideas, questions, and use cases — [join the ODPS Discord](https://discord.gg/7KfnFxAc) and get involved!
