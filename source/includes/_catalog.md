@@ -1,0 +1,61 @@
+# Data Product Catalog
+
+Instead of changing ODPS (which defines individual products), we define a **sidecar schema** (e.g., odps-catalog.yaml) that:
+
+* Acts as a manifest of ODPS product files
+* Provides minimal metadata for grouping or navigation
+* Is designed for Git-based use or portal ingestion
+
+This follows the “composition over extension” principle.
+
+## Outcome
+
+This method:
+
+* Keeps the ODPS spec focused and clean
+* Enables Git-based catalogs and open collaboration
+* Offers a bridge to DCAT (without enforcing RDF/OWL complexity)
+* Aligns with ODPS-as-code values
+
+## Example Automation Scenarios
+
+* Validation script that checks all *.yaml files against the ODPS schema
+* GitHub Action that regenerates a static HTML/JSON catalog from ODPS YAML files
+* CI/CD job that publishes selected products to a data portal when main branch updates
+
+## Use Case in Government or Enterprise
+
+Imagine the Abu Dhabi Open Data Platform stores its official ODPS product definitions in a public GitHub repo. Each department can:
+
+* Maintain their own odps/*.yaml files
+* Submit them via pull request
+* Have automatic validation before merging
+* Allow public feedback via GitHub issues
+
+It becomes a living catalog, governed like software.
+
+## Mandatory attributes and elements
+
+
+| <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
+|---|---|---|---|
+| **id**  | string | - | UUID of the data contract | 
+
+
+
+## Optional attributes and elements
+
+> Example of contract object usage:
+
+```yml
+
+
+
+```
+
+| <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
+|---|---|---|---|
+| **id**  | string | - | UUID of the data contract | 
+
+
+Bring your ideas, questions, and use cases — [join the ODPS Discord](https://discord.gg/7KfnFxAc) and get involved!
