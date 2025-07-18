@@ -6,7 +6,8 @@
 version: "1.0"
 title: Abu Dhabi Smart City ODPS Catalog
 description: >
-  A curated list of ODPS-compliant data products published by multiple Abu Dhabi government entities.
+  A curated list of ODPS-compliant data products published 
+  by multiple Abu Dhabi government entities.
 generated: 2025-07-18
 
 publisher:
