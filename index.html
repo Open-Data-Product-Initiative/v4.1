@@ -3180,7 +3180,51 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <blockquote>
 <p>Example of catalog object usage:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.0"</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Abu Dhabi Smart City ODPS Catalog</span>
+<span class="na">description</span><span class="pi">:</span> <span class="pi">&gt;</span>
+  <span class="s">A curated list of ODPS-compliant data products published by multiple Abu Dhabi government entities.</span>
+<span class="na">generated</span><span class="pi">:</span> <span class="s">2025-07-18</span>
+
+<span class="na">publisher</span><span class="pi">:</span>
+  <span class="na">orgName</span><span class="pi">:</span> <span class="s">Department of Government Enablement</span>
+  <span class="na">orgId</span><span class="pi">:</span> <span class="s">dge.abudhabi</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">https://www.dge.abudhabi</span>
+
+<span class="na">products</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">productId</span><span class="pi">:</span> <span class="s">air-quality-index</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Air Quality Index</span>
+    <span class="na">orgName</span><span class="pi">:</span> <span class="s">Environment Agency – Abu Dhabi</span>
+    <span class="na">orgId</span><span class="pi">:</span> <span class="s">ead.abudhabi</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">https://data.ead.gov/odps/air-quality.yaml</span>
+    <span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">environment"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">pollution"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">aqi"</span><span class="pi">]</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">Daily air quality readings from across Abu Dhabi emirate.</span>
+    <span class="na">categories</span><span class="pi">:</span> <span class="s">environment</span>
+    <span class="na">created</span><span class="pi">:</span> <span class="s">2023-11-12</span>
+    <span class="na">updated</span><span class="pi">:</span> <span class="s">2025-06-30</span>
+
+  <span class="pi">-</span> <span class="na">productId</span><span class="pi">:</span> <span class="s">traffic-accidents</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Traffic Accidents in Abu Dhabi</span>
+    <span class="na">orgName</span><span class="pi">:</span> <span class="s">Abu Dhabi Police</span>
+    <span class="na">orgId</span><span class="pi">:</span> <span class="s">police.abudhabi</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">https://data.adpolice.gov/odps/traffic-accidents.yaml</span>
+    <span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">traffic"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">safety"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">transport"</span><span class="pi">]</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">Historical and real-time traffic accident data across the city.</span>
+    <span class="na">categories</span><span class="pi">:</span> <span class="s">transport</span>
+    <span class="na">created</span><span class="pi">:</span> <span class="s">2024-04-10</span>
+    <span class="na">updated</span><span class="pi">:</span> <span class="s">2025-05-28</span>
+
+  <span class="pi">-</span> <span class="na">productId</span><span class="pi">:</span> <span class="s">water-consumption</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Water Consumption by District</span>
+    <span class="na">orgName</span><span class="pi">:</span> <span class="s">Abu Dhabi Distribution Company</span>
+    <span class="na">orgId</span><span class="pi">:</span> <span class="s">addc.abudhabi</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">https://data.addc.abudhabi/odps/water-consumption.yaml</span>
+    <span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">utilities"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">consumption"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">water"</span><span class="pi">]</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">Monthly water usage data across residential districts.</span>
+    <span class="na">categories</span><span class="pi">:</span> <span class="s">utilities</span>
+    <span class="na">created</span><span class="pi">:</span> <span class="s">2023-07-01</span>
+    <span class="na">updated</span><span class="pi">:</span> <span class="s">2025-04-15</span>
+
 
 
 </code></pre></div>
