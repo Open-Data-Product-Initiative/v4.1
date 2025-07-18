@@ -92,28 +92,30 @@ It becomes a living catalog, governed like software.
 | <div style="width:150px">Element name</div> | Type   | Options     | Description                                  |
 | ------------------------------------------- | ------ | ----------- | -------------------------------------------- |
 | **version**                                 | string | e.g., `1.0` | Version of the catalog schema                |
-| **products**                                | array  | -           | List of logical data products in the catalog |
-| **productId**                               | string | -           | Unique ID for the logical data product (shared across variants) |
-| **name**                                    | string | -           | Human-readable name of the product                              |
-| **orgName**                                 | string | -           | Full name of the publishing organization                      |
-| **orgId**                                   | string | -           | Unique identifier of the organization (e.g., domain-style ID) |
-
+| **title**                                   | string           | -        | Title of the catalog for display purposes               |
+| **description**                             | string           | -        | Description of the catalog's purpose or content         |
+| **orgName**                                 | string | -           | Full name of the data product publishing organization                      |
+| **url**                                     | string (URI)     | -        | Website of the organization maintaining the catalog     |
 
 
 ## Optional attributes and elements
 
 | <div style="width:150px">Element name</div> | Type             | Options  | Description                                             |
 | ------------------------------------------- | ---------------- | -------- | ------------------------------------------------------- |
-| **title**                                   | string           | -        | Title of the catalog for display purposes               |
-| **description**                             | string           | -        | Description of the catalog's purpose or content         |
+| **products**                                | array  | -           | List of logical data products in the catalog |
+| **productId**                               | string | -           | Unique ID for the logical data product                        |
+| **name**                                    | string | -           | Human-readable name of the product                              |
+| **orgId**                                   | string | -           | Unique identifier of the organization (e.g., domain-style ID) |
 | **generated**                               | string (date)    | ISO 8601 | Timestamp or date when the catalog was generated        |
 | **publisher**                               | object           | -        | Metadata about the organization maintaining the catalog |
-| **url**                                     | string (URI)     | -        | Website of the organization maintaining the catalog     |
 | **tags**                                    | array of strings | -        | Keywords or themes associated with the logical product  |
 | **description**                             | string           | -        | Human-readable explanation of the data product          |
-| **categories**                              | string           | e.g., `transport`, `environment` | A thematic category for filtering/grouping |
+| **logo**                                    | string (URI)     | -        | URI to the product logo image                           |
+| **categories**                              | string           | e.g., `transport`, `environment` | Thematic categories for filtering/grouping |
 | **created**                                 | string (date)    | ISO 8601 | Timestamp or date when the product was generated        |
 | **updated**                                 | string (date)    | ISO 8601 | Timestamp or date when the product was last updated     |
+| **rating**                                  | string           | -        | Product rating, example 4/5 or 3.2/10. The latter number indicates maximum and first the aggregated rating     |
+
 
  
 
