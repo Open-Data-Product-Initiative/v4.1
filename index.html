@@ -3177,6 +3177,13 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
     <span class="na">type</span><span class="pi">:</span> <span class="s">derived data</span>
 
 </code></pre></div><h1 id='data-product-catalog'>Data Product Catalog</h1>
+<blockquote>
+<p>Example of catalog object usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+
+
+</code></pre></div>
 <p>Instead of changing ODPS (which defines individual products), we define a <strong>sidecar schema</strong> (e.g., odps-catalog.yaml) that:</p>
 
 <ul>
@@ -3186,14 +3193,7 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 </ul>
 
 <p>This follows the “composition over extension” principle.</p>
-
-<blockquote>
-<p>Example of catalog object usage:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>
-
-
-</code></pre></div><h3 id='outcome'>Outcome</h3>
+<h3 id='outcome'>Outcome</h3>
 <p>This method:</p>
 
 <ul>
