@@ -25,7 +25,7 @@ This method:
 
 ## Use Case in Government or Enterprise
 
-Imagine the Abu Dhabi Open Data Platform stores its official ODPS product definitions in a public GitHub repo. Each department can:
+Imagine a Platform storing its official ODPS product definitions in a public GitHub repo. Each department can:
 
 * Maintain their own odps/*.yaml files
 * Submit them via pull request
