@@ -29,6 +29,7 @@ products:
     unit: trial
     priceCurrency: EUR
     price: 0.00
+    rating: 4/5
 
   - productId: traffic-accidents
     name: Traffic Accidents in Abu Dhabi
@@ -43,6 +44,7 @@ products:
     unit: open-data
     priceCurrency: EUR
     price: 0.00
+    rating: 4.5/5
 
   - productId: water-consumption
     name: Water Consumption by District
@@ -54,6 +56,7 @@ products:
     categories: ["utilities"]
     created: 2023-07-01
     updated: 2025-04-15
+    rating: 3.9/5
 
 
 
