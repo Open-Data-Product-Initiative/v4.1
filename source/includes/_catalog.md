@@ -16,7 +16,7 @@ This follows the “composition over extension” principle.
 
 ```
 
-## Outcome
+### Outcome
 
 This method:
 
@@ -25,13 +25,13 @@ This method:
 * Offers a bridge to DCAT (without enforcing RDF/OWL complexity)
 * Aligns with ODPS-as-code values
 
-## Example Automation Scenarios
+### Example Automation Scenarios
 
 * Validation script that checks all *.yaml files against the ODPS schema
 * GitHub Action that regenerates a static HTML/JSON catalog from ODPS YAML files
 * CI/CD job that publishes selected products to a data portal when main branch updates
 
-## Use Case in Government or Enterprise
+### Use Case in Government or Enterprise
 
 Imagine a Platform storing its official ODPS product definitions in a public GitHub repo. Each department can:
 
