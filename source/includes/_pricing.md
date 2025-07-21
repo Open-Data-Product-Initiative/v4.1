@@ -130,9 +130,9 @@ pricingPlans:
         paymentGateway:
           $ref: '#/product/paymentGateways/default'
         dataQuality:
-          $ref: '#/product/dataQuality/default'
+          $ref: '#/product/dataQuality/declarative/default'
         SLA:
-          $ref: '#/product/SLA/default'
+          $ref: '#/product/SLA/declarative/default'
         access:
           $ref: '#/product/dataAccess/API'
       - name: Premium MCP 1 month
