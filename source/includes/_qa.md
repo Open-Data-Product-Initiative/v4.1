@@ -51,15 +51,15 @@ One of the key features of ODPS is the ability to **reuse** named data quality p
 > referencing examples:
 
 ```yml
-  $ref: '#/product/dataQuality/default'
+  $ref: '#/product/dataQuality/declarative/default'
 
   ...
 
-  $ref: '#/product/dataQuality/premium'
+  $ref: '#/product/dataQuality/declarative/premium'
 ```
 
 **Referencing Examples:**
-To reference a defined quality profile from another part of your YAML (e.g., pricing plan): `$ref: '#/product/dataQuality/default'`. Or reference a named premium quality package: `$ref: '#/product/dataQuality/premium'` Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you're reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. 
+To reference a defined quality profile from another part of your YAML (e.g., pricing plan): `$ref: '#/product/dataQuality/declarative/default'`. Or reference a named premium quality package: `$ref: '#/product/dataQuality/declarative/premium'` Use this component to clearly communicate both intentions and verifiable guarantees about data quality—whether you're reporting to stakeholders, building trust with customers, or enabling automated validation through modern DQ tools. 
 
 
 **The Role of `default`**
@@ -194,7 +194,7 @@ dataQuality:
 |---|---|---|---|
 | **dataQuality** | element | - | Contains array of data quality dimensions with optional computational monitoring object. Under this element Data Quality is divided into declarative and executable parts. |
 | **$ref** | filepath or valid URL | - | Define the Data quality profiles in external file for reuse purposes, example  `$ref: 'https://example.org/DQ/all-packages.yaml'` See example. This makes it easy to keep related profiles (e.g. default, premium, gold) together, apply versioning and validation once, and publish all variants from a single repo or source. <br/><br/>The same pattern can be used in individual data quality profiles instead of doing it inline. See example. This gives finer control if each Data quality is owned or updated by a different team, but increases the number of files to track and host.|
-| **default** | object | - | This object must always be present and named exactly `default` if dataQuality object is used. It acts as the fallback or primary data quality profile. <br/><br/>Users are free to define additional named profiles such as `premium`, `gold`, etc., in parallel to the default. <br/><br/>In the example, `default` and `premium` are both included. These variants can be referred to from other components like pricing plans. <br/><br/>**Example reference usage:** <br/> `dataQuality: $ref: '#/dataQuality/default'` |
+| **default** | object | - | This object must always be present and named exactly `default` if dataQuality object is used. It acts as the fallback or primary data quality profile. <br/><br/>Users are free to define additional named profiles such as `premium`, `gold`, etc., in parallel to the default. <br/><br/>In the example, `default` and `premium` are both included. These variants can be referred to from other components like pricing plans. <br/><br/>**Example reference usage:** <br/> `dataQuality: $ref: '#/product/dataQuality/declarative/default'` |
 | **dimension** | attribute | string, one of: *accuracy, completeness, conformity, consistency, coverage, timeliness, validity, or uniqueness.* | Defines the data quality dimension. |
 | **objective** | attribute | integer | Defines the target value for the data quality dimension |
 | **unit** | attribute | string. One of: *percentage, number* | Defines the unit used in stating the target quality level. |
