@@ -22,6 +22,7 @@ includes:
   - extensions
   - helloworld
   - bareminimum
+  - catalog
   - terms
   - contributors
 
@@ -116,6 +117,8 @@ The four aspects are described in 9 objects, which contain attributes and elemen
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
+
+Be part of the ODPS community! Share your challenges and shape the future of data products on our [Discord](https://discord.gg/7KfnFxAc)
 
 ## Documentation structure
 
