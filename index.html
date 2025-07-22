@@ -3447,6 +3447,10 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <td>The ability to define once and reuse across the same ODPS file. It reduces duplication and ensures updates to shared profiles cascade automatically wherever referenced.</td>
 </tr>
 <tr>
+<td>In-Spec reuseExternal Referencing</td>
+<td>External referencing in ODPS 4.0 refers to the practice of pointing to reusable metadata blocks that are defined outside the current data product specification file, using the $ref syntax. These external components—such as SLAs, data quality profiles, access configurations, or payment gateways—are typically stored in shared YAML files or profile directories that can be maintained centrally. <br/><br/> External referencing enables cross-product reuse, central governance, and scalability by allowing multiple data products to reference the same standard definitions without duplication. Use cases: 1) Referencing a common <code>SLA/gold.yaml</code> profile across dozens of premium data products. 2) Sharing access policies via a centralized accessProfiles.yaml 3) Aligning monetization rules with a platform-wide paymentGateways.yaml. External referencing complements in-spec referencing. While in-spec referencing uses internal paths (e.g., #/SLA/default), external referencing uses file-based or URL-based pointers.</td>
+</tr>
+<tr>
 <td>Data point</td>
 <td>A data point refers to a single, individual unit of data. It can be a number, a word, a measurement, or any other piece of information that is recorded and used for analysis. Some mix the data point with a dataset. In a dataset, each data point represents one observation or measurement. For example, in a dataset of temperatures recorded every day, each daily temperature is a data point.</td>
 </tr>
