@@ -3439,6 +3439,22 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 </tr>
 </thead><tbody>
 <tr>
+<td>In-Spec Referencing</td>
+<td>A mechanism in ODPS 4.0 that enables reusable metadata blocks (such as <code>SLA</code>, <code>dataQuality</code>, or <code>paymentGateways</code>) to be referenced <strong>within the same specification file</strong> using $ref. It promotes reuse, consistency, and modularity without relying on external files.</td>
+</tr>
+<tr>
+<td>In-Spec reuse</td>
+<td>The ability to define once and reuse across the same ODPS file. It reduces duplication and ensures updates to shared profiles cascade automatically wherever referenced.</td>
+</tr>
+<tr>
+<td>Data point</td>
+<td>A data point refers to a single, individual unit of data. It can be a number, a word, a measurement, or any other piece of information that is recorded and used for analysis. Some mix the data point with a dataset. In a dataset, each data point represents one observation or measurement. For example, in a dataset of temperatures recorded every day, each daily temperature is a data point.</td>
+</tr>
+<tr>
+<td>Component Profiles</td>
+<td>Named reusable variants of common metadata blocks (e.g., <code>default</code>, <code>gold</code>, <code>partner-grade</code>) defined inside the spec and referenced across products or pricing plans. Profiles encapsulate predefined service levels, data quality guarantees, or access methods.</td>
+</tr>
+<tr>
 <td>Data point</td>
 <td>A data point refers to a single, individual unit of data. It can be a number, a word, a measurement, or any other piece of information that is recorded and used for analysis. Some mix the data point with a dataset. In a dataset, each data point represents one observation or measurement. For example, in a dataset of temperatures recorded every day, each daily temperature is a data point.</td>
 </tr>
