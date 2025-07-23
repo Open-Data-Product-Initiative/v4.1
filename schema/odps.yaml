@@ -1,322 +1,129 @@
-schema: source/schema/odps-dev-yaml-schema.yaml
-version: dev
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: ODPS Minimal Schema
+type: object
+required: [schema, version, product]
 properties:
   schema:
     type: string
     format: uri
   version:
-    type: string
+    type: number
   product:
     type: object
+    required: [contract, details, pricingPlans, SLA, dataQuality, dataAccess, paymentGateways, support, license, dataHolder]
     properties:
-      en:
+      contract:
         type: object
+        required: [id, type, contractVersion, contractURL]
         properties:
-          name:
-            type: string
-          productID:
-            type: string
-          valueProposition:
-            type: string
-          description:
-            type: string
-          productSeries:
-            type: string
-          visibility:
-            type: string
-          status:
-            type: string
-          version:
-            type: string
-          categories:
-            type: array
-            items:
-              type: string
-          standards:
-            type: array
-            items:
-              type: string
-          tags:
-            type: array
-            items:
-              type: string
-          brandSlogan:
+          id:
             type: string
           type:
             type: string
-          logoURL:
+          contractVersion:
+            type: string
+          contractURL:
             type: string
             format: uri
-          OutputFileFormats:
-            type: array
-            items:
-              type: string
-          useCases:
-            type: array
-            items:
-              type: object
-              properties:
-                useCase:
-                  type: object
-                  properties:
-                    useCaseTitle:
-                      type: string
-                    useCaseDescription:
-                      type: string
-                    useCaseURL:
-                      type: string
-      recommendedDataProducts:
-        type: array
-        items:
-          type: string
-          format: uri
-      pricingPlans:
+
+      details:
         type: object
         properties:
           en:
-            type: array
-            items:
+            type: object
+            required: [name, productID, valueProposition, description, visibility, status, productVersion]
+            properties:
+              name:
+                type: string
+              productID:
+                type: string
+              valueProposition:
+                type: string
+              description:
+                type: string
+              visibility:
+                type: string
+              status:
+                type: string
+              productVersion:
+                type: string
+
+      pricingPlans:
+        type: object
+        properties:
+          declarative:
+            type: object
+            properties:
+              en:
+                type: array
+                items:
+                  type: object
+                  required: [name, priceCurrency, price, billingDuration, unit, paymentGateway, SLA, access]
+
+      SLA:
+        type: object
+        properties:
+          declarative:
+            type: object
+            additionalProperties:
               type: object
               properties:
                 name:
-                  type: string
-                priceCurrency:
-                  type: string
-                price:
-                  type: string
-                billingDuration:
-                  type: string
-                unit:
-                  type: string
-                maxTransactionQuantity:
-                  type: string
-                offering:
+                  type: object
+                  properties:
+                    en:
+                      type: string
+                dimensions:
                   type: array
                   items:
-                    type: string
-      dataOps:
+                    type: object
+                    required: [dimension, objective, unit]
+
+      dataQuality:
         type: object
         properties:
-          data:
+          declarative:
             type: object
-            properties:
-              schemaLocationURL:
-                type: string
-                format: uri
-            required: ["schemaLocationURL"]
-          lineage:
-            type: object
-            properties:
-              dataLineageTool:
-                type: string
-              dataLineageOutput:
-                type: string
-          infrastructure:
-            type: object
-            properties:
-              platform:
-                type: string
-              region:
-                type: string
-              storageTechnology:
-                type: string
-              storageType:
-                type: string
-              containerTool:
-                type: string
-          build:
-            type: object
-            properties:
-              format:
-                type: string
-              hashType:
-                type: string
-              checksum:
-                type: string
-              signatureType:
-                type: string
-              scriptURL:
-                type: string
-                format: uri
-              deploymentDocumentationURL:
-                type: string
-                format: uri
+            additionalProperties:
+              type: object
+              properties:
+                displaytitle:
+                  type: object
+                  properties:
+                    en:
+                      type: string
+                dimensions:
+                  type: array
+                  items:
+                    type: object
+                    required: [dimension, objective, unit]
+
       dataAccess:
         type: object
-        properties:
-          type:
-            type: string
-          authenticationMethod:
-            type: string
-          specification:
-            type: string
-          format:
-            type: string
-          documentationURL:
-            type: string
-            format: uri
-      SLA:
-        type: array
-        items:
+        additionalProperties:
           type: object
-          properties:
-            dimension:
-              type: string
-            displaytitle:
-              type: array
-              items:
-                type: object
-                properties:
-                  en:
-                    type: string
-            objective:
-              type: number
-            unit:
-              type: string
-            monitoring:
-              type: object
-              properties:
-                type:
-                  type: string
-                reference:
-                  type: string
-                  format: uri
-                spec:
-                  type: string
+          required: [outputPorttype]
+
+      paymentGateways:
+        type: object
+        additionalProperties:
+          type: object
+          required: [type, version]
+
       support:
         type: object
-        properties:
-          phoneNumber:
-            type: string
-          phoneServiceHours:
-            type: string
-          email:
-            type: string
-          emailServiceHours:
-            type: string
-          documentationURL:
-            type: string
-            format: uri
-      dataQuality:
-        type: array
-        items:
-          type: object
-          properties:
-            dimension:
-              type: string
-            displaytitle:
-              type: array
-              items:
-                type: object
-                properties:
-                  en:
-                    type: string
-            objective:
-              type: number
-            unit:
-              type: string
-            monitoring:
-              type: object
-              properties:
-                type:
-                  type: string
-                reference:
-                  type: string
-                  format: uri
-                spec:
-                  type: string
+        required: [phoneNumber, email]
+
       license:
         type: object
         properties:
-          scope:
+          en:
             type: object
-            properties:
-              definition:
-                type: string
-              language:
-                type: string
-              restrictions:
-                type: string
-              geographicalArea:
-                type: array
-                items:
-                  type: string
-              permanent:
-                type: boolean
-              exclusive:
-                type: boolean
-              rights:
-                type: array
-                items:
-                  type: string
-          termination:
-            type: object
-            properties:
-              terminationConditions:
-                type: string
-              continuityConditions:
-                type: string
-          governance:
-            type: object
-            properties:
-              ownership:
-                type: string
-              damages:
-                type: string
-              confidentiality:
-                type: string
-              applicableLaws:
-                type: string
-              warranties:
-                type: string
-              audit:
-                type: string
-              forceMajeure:
-                type: string
+            required: [scope, termination, governance]
+
       dataHolder:
         type: object
         properties:
-          taxID:
-            type: string
-          vatID:
-            type: string
-          businessDomain:
-            type: string
-          logoURL:
-            type: string
-            format: uri
-          description:
-            type: string
-          URL:
-            type: string
-            format: uri
-          telephone:
-            type: string
-          streetAddress:
-            type: string
-          postalCode:
-            type: string
-          addressRegion:
-            type: string
-          addressLocality:
-            type: string
-          addressCountry:
-            type: string
-          aggregateRating:
-            type: string
-          ratingCount:
-            type: integer
-          slogan:
-            type: string
-          parentOrganization:
-            type: string
-required:
-  - schema
-  - version
-  - product
-  - dataOps
-  - dataAccess
-  - SLA
-  - dataQuality
-  - license
-  - dataHolder
+          en:
+            type: object
+            required: [legalName, email, URL, streetAddress, postalCode, addressLocality, addressCountry]
