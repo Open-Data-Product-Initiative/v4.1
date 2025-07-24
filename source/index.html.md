@@ -89,6 +89,8 @@ The content is modular, code‑first, and designed for easy reuse, enabling team
 
 [Knowledge Base in Github](https://opendataproducts.org/howto/). 
 
+[Udemy course - Master the Leading Data Product Specification with GPT tool](https://www.udemy.com/course/master-the-open-data-product-specification-with-gpt-tool)
+
 ## Specification aims and aspects
 
 **Specification aims:**
