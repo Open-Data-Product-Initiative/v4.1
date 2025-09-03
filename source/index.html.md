@@ -161,6 +161,7 @@ It is RECOMMENDED that the root Data Product document be named: dataproduct.json
 
 ```yml
 schema: https://opendataproducts.org/v4.0/schema/odps.yaml
+# JSON Schema https://opendataproducts.org/v4.0/schema/odps.json
 version: 4.0
 product:
 ```
