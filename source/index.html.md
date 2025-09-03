@@ -167,7 +167,7 @@ product:
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| **schema** | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | **REQUIRED** Defines the URL of Schema. Used often for validation purposes. |
+| **schema** | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | **REQUIRED** Defines the URL of Schema. Used often for validation purposes. [**JSON Schema**](https://opendataproducts.org/v4.0/schema/odps.json) available as well. |
 | **version** | string | This is the version of ODPS, for example dev or 4.0 | **REQUIRED** Defines the ODPS version. |
 | **product** | element | root element | **REQUIRED** Root element to tie all together. |
 
