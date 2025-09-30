@@ -3004,9 +3004,45 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="nn">---</span>
-<span class="na">schema</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://opendataproducts.org/v3.1/schema/odps.yaml'</span>
-<span class="na">version</span><span class="pi">:</span> <span class="m">4.0</span>
+<span class="na">schema</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://opendataproducts.org/v4.1/schema/odps.yaml'</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">4.1</span>
 <span class="na">product</span><span class="pi">:</span>
+  <span class="na">productStrategy</span><span class="pi">:</span>
+    <span class="na">objectives</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Reduce emergency response time</span>
+    <span class="na">strategicAlignment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Smart City Vision </span><span class="m">2030</span>
+    <span class="na">contributesToKPI</span><span class="pi">:</span>
+      <span class="na">id</span><span class="pi">:</span> <span class="s">bizkpi-city-response-time</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">City Emergency Response Time</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">Average minutes from incident to first responder arrival</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+      <span class="na">target</span><span class="pi">:</span> <span class="m">5</span>
+      <span class="na">direction</span><span class="pi">:</span> <span class="s">at_most</span>
+      <span class="na">timeframe</span><span class="pi">:</span> <span class="s2">"</span><span class="s">by</span><span class="nv"> </span><span class="s">Q4"</span>
+    <span class="na">relatedKPIs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">bizkpi-traffic-congestion</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s">Traffic Congestion Index</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="na">target</span><span class="pi">:</span> <span class="s">-10</span>
+        <span class="na">direction</span><span class="pi">:</span> <span class="s">decrease</span>
+    <span class="na">productKPIs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">kpi-detection-coverage</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s">Event Detection Coverage</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="err">%</span> <span class="s">of reported incidents captured in real time</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="na">target</span><span class="pi">:</span> <span class="m">95</span>
+        <span class="na">direction</span><span class="pi">:</span> <span class="s">at_least</span>
+        <span class="na">frequency</span><span class="pi">:</span> <span class="s">hourly</span>
+        <span class="na">calculation</span><span class="pi">:</span> <span class="s">detected_events / reported_events</span>
+
+      <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">kpi-time-to-insight</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s">Average Time to Insight</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="s">Median time from event occurrence to product update</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">seconds</span>
+        <span class="na">target</span><span class="pi">:</span> <span class="m">60</span>
+        <span class="na">direction</span><span class="pi">:</span> <span class="s">at_most</span>
+        <span class="na">calculation</span><span class="pi">:</span> <span class="s">p50(update_ts - event_ts)</span>
   <span class="na">contract</span><span class="pi">:</span>
     <span class="na">id</span><span class="pi">:</span> <span class="s">02323M123</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">ODCS</span>
