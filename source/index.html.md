@@ -50,7 +50,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 * <a href="https://github.com/Open-Data-Product-Initiative/rc">https://github.com/Open-Data-Product-Initiative/v4.1rc</a>
 
-**ODPS YAML Schema:**
+**ODPS Schemas:**
 
 * <a href="https://opendataproducts.org/v4.1rc/schema/odps.yaml">YAML Schema</a>
 * <a href="https://opendataproducts.org/v4.1rc/schema/odps.json">JSON Schema</a>
