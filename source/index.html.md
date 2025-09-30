@@ -48,7 +48,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/rc">https://github.com/Open-Data-Product-Initiative/rc</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/rc">https://github.com/Open-Data-Product-Initiative/v4.1rc</a>
 
 **ODPS YAML Schema:**
 
@@ -56,7 +56,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Participate:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc/issues)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.1rc/issues)
   
 * [Join ODPS Discord Server](https://discord.gg/3EjQf3CD46)
 
@@ -115,12 +115,12 @@ The specification has been designed with four major aspects of the data product 
 3. legal (licensing & IPR), and 
 4. ethical (privacy & mydata). 
 
-The four aspects are described in 9 objects, which contain attributes and elements. 
+The four aspects are described in 10 objects, which contain attributes and elements. 
 
 ![odps-model](images/ODPS-design.png)
 
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.1rc/issues)
 
 Be part of the ODPS community! Share your challenges and shape the future of data products on our [Discord](https://discord.gg/3EjQf3CD46)
 
@@ -162,8 +162,8 @@ It is RECOMMENDED that the root Data Product document be named: dataproduct.json
 > Example of document level usage and structure:
 
 ```yml
-schema: https://opendataproducts.org/dev/schema/odps.yaml
-version: dev
+schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+version: 4.1
 product:
 ```
 
