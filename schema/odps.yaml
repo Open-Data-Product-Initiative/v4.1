@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-title: ODPS Minimal Schema
+title: ODPS 4.1 Minimal Schema
 type: object
 required: [schema, version, product]
 properties:
@@ -47,6 +47,89 @@ properties:
                 type: string
               productVersion:
                 type: string
+
+      productStrategy:
+        type: object
+        properties:
+          objectives:
+            type: array
+            items:
+              type: object
+              properties:
+                en:
+                  type: string
+
+          strategicAlignment:
+            type: array
+            items:
+              type: object
+              properties:
+                en:
+                  type: string
+
+          contributesToKPI:
+            type: object
+            required: [id, name, unit, target]
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              description:
+                type: string
+              unit:
+                type: string
+              target:
+                type: [number, string]
+              direction:
+                type: string
+                enum: [increase, decrease, at_least, at_most, equals]
+              timeframe:
+                type: string
+
+          productKPIs:
+            type: array
+            items:
+              type: object
+              required: [id, name, unit, target]
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                description:
+                  type: string
+                unit:
+                  type: string
+                target:
+                  type: [number, string]
+                direction:
+                  type: string
+                  enum: [increase, decrease, at_least, at_most, equals]
+                frequency:
+                  type: string
+                owner:
+                  type: string
+                calculation:
+                  type: string
+
+          relatedKPIs:
+            type: array
+            items:
+              type: object
+              required: [id, name, unit, target]
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                unit:
+                  type: string
+                target:
+                  type: [number, string]
+                direction:
+                  type: string
+                  enum: [increase, decrease, at_least, at_most, equals]
 
       pricingPlans:
         type: object
