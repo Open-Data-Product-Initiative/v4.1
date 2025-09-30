@@ -1,5 +1,5 @@
 ---
-title: Open (source) Data Product Specification 4.0 Version | Linux Foundation 
+title: Open (source) Data Product Specification 4.1 Release Candidate Version | Linux Foundation 
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -11,6 +11,7 @@ toc_footers:
 
 includes:
   - details
+  - strategy
   - datacontract
   - sla
   - qa
@@ -37,9 +38,7 @@ meta:
 
 # OPEN DATA PRODUCT SPECIFICATION 
 
-## 4.0 Release Version 
-
-**Release date:** 24th July 2025
+## Release Candidate Version for 4.1 
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
@@ -49,25 +48,24 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/v4.0">https://github.com/Open-Data-Product-Initiative/v4.0</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/rc">https://github.com/Open-Data-Product-Initiative/rc</a>
 
 **ODPS YAML Schema:**
 
-* <a href="https://opendataproducts.org/v4.0/schema/odps.yaml">YAML Schema</a>
-* <a href="https://opendataproducts.org/v4.0/schema/odps.json">JSON Schema</a>
-
+* <a href="https://opendataproducts.org/dev/schema/odps.yaml">YAML Schema</a>
 
 **Participate:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
-* [Join ODPS Discord Server][(https://discord.gg/3EjQf3CD46)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc/issues)
+  
+* [Join ODPS Discord Server](https://discord.gg/3EjQf3CD46)
 
 
 ## Introduction
 
 The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. The work is based on existing standards (schema.org), best practices and emerging concepts like Data Mesh. The reasoning is that we reuse and proudly copy instead of reinventing the wheel. More detailed information of the origin can be found from the [Open Data Product Specification homepage](http://www.opendataproducts.org). 
 
-**The ODPS 4.0 specification supports referencing mechanisms** that improve modularity, reduce duplication, and ease governance. Users can reference internal components, such as SLA, dataQuality, dataAccess, and paymentGateways, from other parts of the product definition using [JSON Reference syntax](https://json-spec.readthedocs.io/reference.html) ($ref). In addition, any of these components can be defined and maintained in external YAML files and included via URL-based references [Examples in the Knowledge Base](https://opendataproducts.org/howto/). This makes it possible: 
+**The ODPS 4.1 specification supports referencing mechanisms** that improve modularity, reduce duplication, and ease governance. Users can reference internal components, such as SLA, dataQuality, dataAccess, and paymentGateways, from other parts of the product definition using [JSON Reference syntax](https://json-spec.readthedocs.io/reference.html) ($ref). In addition, any of these components can be defined and maintained in external YAML files and included via URL-based references [Examples in the Knowledge Base](https://opendataproducts.org/howto/). This makes it possible: 
 
 * to reuse standardized SLA profiles, DQ rules, or access definitions across multiple data products, 
 * helping teams manage changes consistently, reduce errors, and 
@@ -81,7 +79,9 @@ Benefits of Referencing:
 * Auditability: Clearly link machine-readable checks to business commitments.
 
 
-You can also reference **Data Contract as a URL or define Data Contract as an inline element** in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. 
+**ODPS 4.1 introduces the productStrategy object**, a significant extension that connects data products to business intent, objectives, and KPIs.
+This release makes ODPS the first open specification where data products declare not just what they are but also why they exist and how success is measured.
+
 
 ## HowTo - ODPS Knowledge Base
 
@@ -120,9 +120,9 @@ The four aspects are described in 9 objects, which contain attributes and elemen
 ![odps-model](images/ODPS-design.png)
 
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc/issues)
 
-Be part of the ODPS community! Share your challenges and shape the future of data products on our [Discord](https://discord.gg/3EjQf3CD46) 
+Be part of the ODPS community! Share your challenges and shape the future of data products on our [Discord](https://discord.gg/3EjQf3CD46)
 
 ## Documentation structure
 
@@ -162,15 +162,14 @@ It is RECOMMENDED that the root Data Product document be named: dataproduct.json
 > Example of document level usage and structure:
 
 ```yml
-schema: https://opendataproducts.org/v4.0/schema/odps.yaml
-# JSON Schema https://opendataproducts.org/v4.0/schema/odps.json
-version: 4.0
+schema: https://opendataproducts.org/dev/schema/odps.yaml
+version: dev
 product:
 ```
 
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
-| **schema** | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | **REQUIRED** Defines the URL of Schema. Used often for validation purposes. [**JSON Schema**](https://opendataproducts.org/v4.0/schema/odps.json) available as well. |
-| **version** | string | This is the version of ODPS, for example dev or 4.0 | **REQUIRED** Defines the ODPS version. |
+| **schema** | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | **REQUIRED** Defines the URL of Schema. Used often for validation purposes. |
+| **version** | string | This is the version of ODPS, for example dev or 4.1 | **REQUIRED** Defines the ODPS version. |
 | **product** | element | root element | **REQUIRED** Root element to tie all together. |
 

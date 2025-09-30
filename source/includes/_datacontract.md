@@ -15,7 +15,7 @@ Contract can be defined in 3 ways:
 
 ```yml
 schema: https://opendataproducts.org/v4.0/schema/odps.yaml
-version: 4.0
+version: 4.1
 product:
   contract:
     # Optionally se URI of external file, contains all contract details

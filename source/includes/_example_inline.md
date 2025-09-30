@@ -6,8 +6,8 @@ The objects are not defined inline, but instead references a reusable definition
 
 ```yml
 
-schema: https://opendataproducts.org/v3.0rc/schema/odps.yaml
-version: 3.0
+schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+version: 4.1
 product:
   en:
     name: Pets of the year
