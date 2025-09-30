@@ -4,8 +4,8 @@
   <head>
     <link rel="icon" href="https://data-product-business.github.io/open-data-product-spec/images/favicon-bc890431.png"/>
     <meta charset="utf-8">
-    <meta property="og:title" content="Open Data Product Specification 4.0 - Release Version" />
-    <meta property="og:url" content="https://opendataproducts.org/v4.0/" />
+    <meta property="og:title" content="Open Data Product Specification - Development Version" />
+    <meta property="og:url" content="https://opendataproducts.org/dev" />
     <meta property=”og:type” content=”website” />
     <meta property="og:image" content="https://opendataproducts.org/images/social.png" />
     <meta property="og:description" 
@@ -17,7 +17,7 @@
             content="The Open Data Product Specification (Linux Foundation project) is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products."
         >
 
-    <title>Open (source) Data Product Specification 4.0 Version | Linux Foundation</title>
+    <title>Open (source) Data Product Specification 4.1 Release Candidate Version | Linux Foundation</title>
 
 
     <style media="screen">
@@ -336,7 +336,7 @@
             <a href="#open-data-product-specification" class="toc-h1 toc-link" data-title="OPEN DATA PRODUCT SPECIFICATION">OPEN DATA PRODUCT SPECIFICATION</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#4-0-release-version" class="toc-h2 toc-link" data-title="4.0 Release Version">4.0 Release Version</a>
+                    <a href="#release-candidate-version-for-4-1" class="toc-h2 toc-link" data-title="Release Candidate Version for 4.1">Release Candidate Version for 4.1</a>
                   </li>
                   <li>
                     <a href="#introduction" class="toc-h2 toc-link" data-title="Introduction">Introduction</a>
@@ -368,6 +368,14 @@
                   </li>
                   <li>
                     <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#data-product-strategy" class="toc-h1 toc-link" data-title="Data Product Strategy">Data Product Strategy</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#attributes-and-options" class="toc-h2 toc-link" data-title="Attributes and options">Attributes and options</a>
                   </li>
               </ul>
           </li>
@@ -483,7 +491,7 @@
             <a href="#editors-and-contributors" class="toc-h1 toc-link" data-title="Editors and contributors">Editors and contributors</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#list-of-community-contributors" class="toc-h2 toc-link" data-title="List of community contributors">List of community contributors</a>
+                    <a href="#list-of-named-community-contributors" class="toc-h2 toc-link" data-title="List of named community contributors">List of named community contributors</a>
                   </li>
               </ul>
           </li>
@@ -497,9 +505,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='open-data-product-specification'>OPEN DATA PRODUCT SPECIFICATION</h1><h2 id='4-0-release-version'>4.0 Release Version</h2>
-<p><strong>Release date:</strong> 24th July 2025</p>
-
+        <h1 id='open-data-product-specification'>OPEN DATA PRODUCT SPECIFICATION</h1><h2 id='release-candidate-version-for-4-1'>Release Candidate Version for 4.1</h2>
 <p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.</p>
 
 <p>The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
@@ -508,26 +514,25 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p><strong>Version source:</strong></p>
 
 <ul>
-<li><a href="https://github.com/Open-Data-Product-Initiative/v4.0">https://github.com/Open-Data-Product-Initiative/v4.0</a></li>
+<li><a href="https://github.com/Open-Data-Product-Initiative/rc">https://github.com/Open-Data-Product-Initiative/rc</a></li>
 </ul>
 
 <p><strong>ODPS YAML Schema:</strong></p>
 
 <ul>
-<li><a href="https://opendataproducts.org/v4.0/schema/odps.yaml">YAML Schema</a></li>
-<li><a href="https://opendataproducts.org/v4.0/schema/odps.json">JSON Schema</a></li>
+<li><a href="https://opendataproducts.org/dev/schema/odps.yaml">YAML Schema</a></li>
 </ul>
 
 <p><strong>Participate:</strong></p>
 
 <ul>
-<li><a href="https://github.com/Open-Data-Product-Initiative/v4.0/issues">Raise an issue in Github</a></li>
-<li>[Join ODPS Discord Server][(https://discord.gg/3EjQf3CD46)</li>
+<li><p><a href="https://github.com/Open-Data-Product-Initiative/rc/issues">Raise an issue in Github</a></p></li>
+<li><p><a href="https://discord.gg/3EjQf3CD46">Join ODPS Discord Server</a></p></li>
 </ul>
 <h2 id='introduction'>Introduction</h2>
 <p>The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. The work is based on existing standards (schema.org), best practices and emerging concepts like Data Mesh. The reasoning is that we reuse and proudly copy instead of reinventing the wheel. More detailed information of the origin can be found from the <a href="http://www.opendataproducts.org">Open Data Product Specification homepage</a>. </p>
 
-<p><strong>The ODPS 4.0 specification supports referencing mechanisms</strong> that improve modularity, reduce duplication, and ease governance. Users can reference internal components, such as SLA, dataQuality, dataAccess, and paymentGateways, from other parts of the product definition using <a href="https://json-spec.readthedocs.io/reference.html">JSON Reference syntax</a> ($ref). In addition, any of these components can be defined and maintained in external YAML files and included via URL-based references <a href="https://opendataproducts.org/howto/">Examples in the Knowledge Base</a>. This makes it possible: </p>
+<p><strong>The ODPS 4.1 specification supports referencing mechanisms</strong> that improve modularity, reduce duplication, and ease governance. Users can reference internal components, such as SLA, dataQuality, dataAccess, and paymentGateways, from other parts of the product definition using <a href="https://json-spec.readthedocs.io/reference.html">JSON Reference syntax</a> ($ref). In addition, any of these components can be defined and maintained in external YAML files and included via URL-based references <a href="https://opendataproducts.org/howto/">Examples in the Knowledge Base</a>. This makes it possible: </p>
 
 <ul>
 <li>to reuse standardized SLA profiles, DQ rules, or access definitions across multiple data products, </li>
@@ -544,7 +549,8 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <li>Auditability: Clearly link machine-readable checks to business commitments.</li>
 </ul>
 
-<p>You can also reference <strong>Data Contract as a URL or define Data Contract as an inline element</strong> in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. </p>
+<p><strong>ODPS 4.1 introduces the productStrategy object</strong>, a significant extension that connects data products to business intent, objectives, and KPIs.
+This release makes ODPS the first open specification where data products declare not just what they are but also why they exist and how success is measured.</p>
 <h2 id='howto-odps-knowledge-base'>HowTo - ODPS Knowledge Base</h2>
 <p>The odps‑examples repository serves as a comprehensive knowledge base for using the Open Data Product Specification (ODPS), combining clear FAQs with real-world YAML examples to guide users through practical implementation. Each FAQ entry tackles a specific task—like defining metadata, setting pricing tiers, assigning SLAs, configuring data quality rules, managing access roles, or enabling AI/agent consumption—accompanied by executable YAML snippets and full .yml files. </p>
 
@@ -582,9 +588,9 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
 <p><img src="images/ODPS-design-ab9d5801.png" alt="odps-model" /></p>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/v4.0/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/rc/issues">raise an issue in Github</a></p>
 
-<p>Be part of the ODPS community! Share your challenges and shape the future of data products on our <a href="https://discord.gg/3EjQf3CD46">Discord</a> </p>
+<p>Be part of the ODPS community! Share your challenges and shape the future of data products on our <a href="https://discord.gg/3EjQf3CD46">Discord</a></p>
 <h2 id='documentation-structure'>Documentation structure</h2>
 <p><strong>LEFT COLUMN: Navigation</strong></p>
 
@@ -616,9 +622,8 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <blockquote>
 <p>Example of document level usage and structure:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.0/schema/odps.yaml</span>
-<span class="c1"># JSON Schema https://opendataproducts.org/v4.0/schema/odps.json</span>
-<span class="na">version</span><span class="pi">:</span> <span class="m">4.0</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/dev/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s">dev</span>
 <span class="na">product</span><span class="pi">:</span>
 </code></pre></div>
 <table><thead>
@@ -633,12 +638,12 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td><strong>schema</strong></td>
 <td>URL</td>
 <td>Valid URL. See more from <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</td>
-<td><strong>REQUIRED</strong> Defines the URL of Schema. Used often for validation purposes. <a href="https://opendataproducts.org/v4.0/schema/odps.json"><strong>JSON Schema</strong></a> available as well.</td>
+<td><strong>REQUIRED</strong> Defines the URL of Schema. Used often for validation purposes.</td>
 </tr>
 <tr>
 <td><strong>version</strong></td>
 <td>string</td>
-<td>This is the version of ODPS, for example dev or 4.0</td>
+<td>This is the version of ODPS, for example dev or 4.1</td>
 <td><strong>REQUIRED</strong> Defines the ODPS version.</td>
 </tr>
 <tr>
@@ -655,7 +660,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>Example of details object usage:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.0/schema/odps.yaml</span>
-<span class="na">version</span><span class="pi">:</span> <span class="m">4.0</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">4.1</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">details</span><span class="pi">:</span> 
     <span class="na">en</span><span class="pi">:</span>
@@ -895,7 +900,185 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </tr>
 </tbody></table>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/v4.0/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
+<h1 id='data-product-strategy'>Data Product Strategy</h1>
+<p>The <code>productStrategy</code> object captures the business intent behind a data product and links it to a <strong>single higher-level business KPI</strong> it is primarily accountable for. It defines the objectives, the primary KPI at the business level, and the <strong>product-level KPIs</strong> that measure its direct contribution.</p>
+
+<p>Optionally, it can also include <strong>related KPIs</strong> — secondary or cross-unit measures that:</p>
+
+<ol>
+<li><strong>Capture additional value</strong> — show extra benefits beyond the main KPI, useful for demonstrating broader impact.</li>
+<li><strong>Track side effects</strong> — monitor unintended positive or negative impacts on other KPIs.</li>
+<li><strong>Highlight cross-department value</strong> — reveal benefits for other business units, strengthening prioritization and funding cases.</li>
+</ol>
+
+<p>Beyond KPIs, <code>productStrategy</code> can include:</p>
+
+<ul>
+<li><strong>objectives</strong> — natural-language statements describing the business outcomes the product supports.</li>
+<li><strong>strategicAlignment</strong> — references to corporate initiatives, programs, or policy documents that the product contributes to (e.g., Smart City Vision 2030).</li>
+</ul>
+
+<p>By embedding both primary and related KPI connections directly into the product specification, <code>productStrategy</code> ensures that data products remain technically sound, strategically aligned, and transparent in how they deliver value.</p>
+<h2 id='attributes-and-options'>Attributes and options</h2>
+<blockquote>
+<p>Example of catalog object usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/dev/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">4.1</span>
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">productStrategy</span><span class="pi">:</span>
+    <span class="na">objectives</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Reduce emergency response time</span>
+    <span class="na">strategicAlignment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Smart City Vision </span><span class="m">2030</span>
+    <span class="na">contributesToKPI</span><span class="pi">:</span>
+      <span class="na">id</span><span class="pi">:</span> <span class="s">bizkpi-city-response-time</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">City Emergency Response Time</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">Average minutes from incident to first responder arrival</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+      <span class="na">target</span><span class="pi">:</span> <span class="m">5</span>
+      <span class="na">direction</span><span class="pi">:</span> <span class="s">at_most</span>
+      <span class="na">timeframe</span><span class="pi">:</span> <span class="s2">"</span><span class="s">by</span><span class="nv"> </span><span class="s">Q4"</span>
+    <span class="na">relatedKPIs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">bizkpi-traffic-congestion</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s">Traffic Congestion Index</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="na">target</span><span class="pi">:</span> <span class="s">-10</span>
+        <span class="na">direction</span><span class="pi">:</span> <span class="s">decrease</span>
+    <span class="na">productKPIs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">kpi-detection-coverage</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s">Event Detection Coverage</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="err">%</span> <span class="s">of reported incidents captured in real time</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="na">target</span><span class="pi">:</span> <span class="m">95</span>
+        <span class="na">direction</span><span class="pi">:</span> <span class="s">at_least</span>
+        <span class="na">frequency</span><span class="pi">:</span> <span class="s">hourly</span>
+        <span class="na">calculation</span><span class="pi">:</span> <span class="s">detected_events / reported_events</span>
+
+      <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">kpi-time-to-insight</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s">Average Time to Insight</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="s">Median time from event occurrence to product update</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">seconds</span>
+        <span class="na">target</span><span class="pi">:</span> <span class="m">60</span>
+        <span class="na">direction</span><span class="pi">:</span> <span class="s">at_most</span>
+        <span class="na">calculation</span><span class="pi">:</span> <span class="s">p50(update_ts - event_ts)</span>
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Element</th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>productStrategy</strong></td>
+<td>object</td>
+<td>–</td>
+<td>Top‑level block that connects the data product to business goals and KPIs.</td>
+</tr>
+<tr>
+<td><strong>objectives</strong></td>
+<td>array of objects</td>
+<td>language‑tagged strings</td>
+<td>Business objectives the product supports, written in natural language.</td>
+</tr>
+<tr>
+<td><strong>contributesToKPI</strong></td>
+<td>object</td>
+<td>required</td>
+<td><strong>Single higher‑level business KPI</strong> (from SMART objectives) that this product is accountable for.</td>
+</tr>
+<tr>
+<td><strong>id</strong></td>
+<td>string</td>
+<td>optional</td>
+<td>Identifier of the business KPI (use shared IDs for roll‑ups).</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>string</td>
+<td>required</td>
+<td>KPI name.</td>
+</tr>
+<tr>
+<td><strong>description</strong></td>
+<td>string</td>
+<td>optional</td>
+<td>Human‑readable description.</td>
+</tr>
+<tr>
+<td><strong>unit</strong></td>
+<td>string</td>
+<td>e.g., <code>percentage</code>, <code>minutes</code>, <code>s</code></td>
+<td>Unit of measurement.</td>
+</tr>
+<tr>
+<td><strong>target</strong></td>
+<td>number/string</td>
+<td>–</td>
+<td>Target value for the KPI.</td>
+</tr>
+<tr>
+<td><strong>direction</strong></td>
+<td>enum</td>
+<td><code>increase</code>, <code>decrease</code>, <code>at_least</code>, <code>at_most</code>, <code>equals</code></td>
+<td>Desired direction of movement.</td>
+</tr>
+<tr>
+<td><strong>timeframe</strong></td>
+<td>string</td>
+<td>optional</td>
+<td>When the target should be met.</td>
+</tr>
+<tr>
+<td><strong>frequency</strong></td>
+<td>string</td>
+<td>Measurement cadence (e.g., hourly, daily, monthly).</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>owner</strong></td>
+<td>string</td>
+<td>Responsible role/team (optional).</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>calculation</strong></td>
+<td>string</td>
+<td>Human‑readable formula (optional).</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>productKPIs</strong></td>
+<td>array</td>
+<td>optional</td>
+<td>KPIs measured <strong>at product level</strong> that influence <code>contributesToKPI</code>. Useful for contribution analysis and governance checks.</td>
+</tr>
+<tr>
+<td><strong>relatedKPIs</strong></td>
+<td>array</td>
+<td>optional</td>
+<td>Secondary/cross‑unit KPIs to monitor side‑effects and additional value (informational; not for prioritization).</td>
+</tr>
+<tr>
+<td><strong>strategicAlignment</strong></td>
+<td>array</td>
+<td>language‑tagged strings</td>
+<td>Strategic initiatives, policies, or visions the product aligns with.</td>
+</tr>
+</tbody></table>
+<h3 id='governance-by-design-checks-minimum-lovable-gates'>Governance‑by‑Design checks (Minimum Lovable Gates)</h3>
+<ul>
+<li><strong>Required:</strong> <code>contributesToKPI.name</code> present.<br></li>
+<li><strong>Recommended:</strong> ≥1 <code>productKPIs</code> with <code>unit</code>, <code>target</code>, and <code>calculation</code>.<br></li>
+<li><strong>Optional:</strong> <code>relatedKPIs</code> for secondary/side effects.<br></li>
+<li><strong>Traceability:</strong> use shared KPI <code>id</code>s to enable cross‑product roll‑ups against the same business KPI.</li>
+</ul>
+
+<p>Bring your ideas, questions, and use cases — <a href="https://discord.gg/7KfnFxAc">join the ODPS Discord</a> and get involved!</p>
 <h1 id='data-contract'>Data Contract</h1>
 <p>The <code>contract</code> object in the ODPS schema defines the structure for linking a data product to a formal data contract. It includes an <code>id</code> as a unique identifier, a <code>type</code> field that specifies the contract standard (either ODCS or DCS), a <code>contractVersion</code> indicating the version of the standard, and a <code>contractURL</code> that points to an external contract document in a contract management service. Optionally, an inline YAML spec element can be used instead of a URL to embed the contract directly in the product file. These specifications allow data producers to clearly declare governance, usage rights, and technical expectations, supporting interoperability across platforms using standards such as the Open Data Contract Standard (ODCS) or the Data Contract Specification (DCS). More details in the <a href="https://opendataproducts.org/howto/">Knowledge Base</a>.</p>
 
@@ -911,7 +1094,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>Example of contract object usage:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.0/schema/odps.yaml</span>
-<span class="na">version</span><span class="pi">:</span> <span class="m">4.0</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">4.1</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">contract</span><span class="pi">:</span>
     <span class="c1"># Optionally se URI of external file, contains all contract details</span>
@@ -1630,7 +1813,7 @@ any industry specific needs. </p>
 </tr>
 </tbody></table>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/v4.0/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 
 <p>Or join the <a href="https://discord.gg/7KfnFxAc">ODPS Discord</a> to discuss the ideas and your needs! </p>
 <h1 id='data-pricing-plans'>Data Pricing Plans</h1>
@@ -2055,7 +2238,7 @@ any industry specific needs. </p>
 </tr>
 </tbody></table>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/v4.0/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 
 <p>Join the <a href="https://discord.gg/7KfnFxAc">ODPS Discord</a> to discuss the ideas and your needs! </p>
 <h1 id='data-licensing'>Data Licensing</h1>
@@ -2784,7 +2967,7 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 
 <p>The extensions properties are implemented as patterned fields that are always prefixed by &quot;x-&quot;. The extensions may or may not be supported by the available tooling, but those may be extended as well to add requested support (if tools are internal or open-sourced). Open Data Product Initiative Technical Steering Committee does not officially approve external extensions - they are fully independent. Popular extensions however are natural candidates for future additions of the standard. </p>
 
-<p>We encourage you to let us know of useful extensions so that we can consider those in the future releases, <a href="https://github.com/Open-Data-Product-Initiative/v4.0/issues">raise an issue in Github</a></p>
+<p>We encourage you to let us know of useful extensions so that we can consider those in the future releases, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 
 <p>Join the <a href="https://discord.gg/7KfnFxAc">ODPS Discord</a> to discuss the ideas and your needs! </p>
 
@@ -3432,6 +3615,8 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 </tr>
 </tbody></table>
 
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
+
 <p>Bring your ideas, questions, and use cases — <a href="https://discord.gg/7KfnFxAc">join the ODPS Discord</a> and get involved!</p>
 <h1 id='terms-used'>Terms used</h1>
 <p>Here&#39;s list of terms used and what we mean with them. The meaning of terms is mostly taken from existing knowledge eg articles and other trusted sources. The source is always linked to the term. In some rare cases term is defined for the specification purposes only. </p>
@@ -3500,7 +3685,7 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <li><a href="https://www.linkedin.com/in/jarkkomoilanen/">Jarkko Moilanen</a></li>
 <li><a href="https://www.linkedin.com/in/manfred-sorg/">Manfred Sorg</a></li>
 </ul>
-<h2 id='list-of-community-contributors'>List of community contributors</h2>
+<h2 id='list-of-named-community-contributors'>List of named community contributors</h2>
 <p>The work around the specification would not be possible without enormous help from the community. Here&#39;s list of contributors so far. </p>
 
 <ul>
