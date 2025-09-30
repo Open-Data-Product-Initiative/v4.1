@@ -111,7 +111,7 @@ The content is modular, code‑first, and designed for easy reuse, enabling team
 The specification has been designed with four major aspects of the data product in mind: 
 
 1. technical (infrastructure & access), 
-2. business (pricing & plans), 
+2. business (product strategy & pricing & plans), 
 3. legal (licensing & IPR), and 
 4. ethical (privacy & mydata). 
 
