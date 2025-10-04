@@ -21,6 +21,7 @@ By embedding both primary and related KPI connections directly into the product 
 
 ```yml
 schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+## JSON schema: https://opendataproducts.org/v4.1/schema/odps.json
 version: 4.1
 product:
   productStrategy:
