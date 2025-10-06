@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://opendataproducts.org/img/profile.png" alt="Open Data Product Specification" width="300">
+  <img src="https://opendataproducts.org/images/logo-bule.png" alt="Open Data Product Specification" width="300">
 </p>
 
 # Open Data Product Specification (ODPS)
