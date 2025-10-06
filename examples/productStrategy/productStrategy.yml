@@ -1,0 +1,29 @@
+product:
+  details:
+    en:
+      name: "Customer Insights Dataset"
+      productID: "CUST-001"
+      valueProposition: "Provide insights into customer behavior"
+      description: "Aggregated customer data for segmentation and planning"
+      visibility: "organisation"
+      status: "production"
+      productVersion: "1.0"
+  productStrategy:
+    objectives:
+      - en: "Enable smarter marketing campaigns"
+    contributesToKPI:
+      id: "KPI-OUT-001"
+      name: "Retail Revenue Uplift"
+      unit: "percent"
+      target: 5
+      direction: increase
+      timeframe: "2025-Q4"
+    productKPIs:
+      - id: "KPI-OUT-001-A"
+        name: "Customer dataset usage"
+        unit: "downloads"
+        target: 4000
+      - id: "KPI-OUT-001-A2"
+        name: "Business units applying insights"
+        unit: "departments"
+        target: 8

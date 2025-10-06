@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-title: ODPS 4.1 Minimal Schema
+title: ODPS 4.1 Schema
 type: object
 required: [schema, version, product]
 properties:
