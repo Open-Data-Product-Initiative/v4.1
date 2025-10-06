@@ -65,17 +65,14 @@ productStrategy:
 ODPS is adopted by organizations and initiatives across public and private sectors — from **governments and data marketplaces** to **enterprises building AI-native data ecosystems**.
 
 If your organization uses ODPS, we’d love to add your logo here.  
-Please open a pull request or [contact the maintainers](https://github.com/Open-Data-Product-Initiative/open-data-product-spec/discussions).
 
 ---
 
-## Questions? Need Help? Found a Bug?
+## Found a Bug?
 
-If you’ve got questions about implementation, contributing, or special features,  
-please start a thread in our [**Discussions** tab](https://github.com/Open-Data-Product-Initiative/open-data-product-spec/discussions).
+If you’ve got questions about implementation, contributing, or special features,  found a bug?
 
-Found a bug?  
-Submit an [**issue**](https://github.com/Open-Data-Product-Initiative/open-data-product-spec/issues) or propose improvements with a pull request to the `dev` branch.
+Submit an [**issue**](https://github.com/Open-Data-Product-Initiative/dev/issues) or propose improvements with a pull request to the `dev`.
 
 ---
 
