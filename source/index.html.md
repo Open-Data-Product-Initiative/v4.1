@@ -48,7 +48,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/rc">https://github.com/Open-Data-Product-Initiative/v4.1rc</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/v4.1rc">https://github.com/Open-Data-Product-Initiative/v4.1rc</a>
 
 **ODPS Schemas:**
 
