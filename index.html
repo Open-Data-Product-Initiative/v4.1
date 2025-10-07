@@ -488,7 +488,7 @@
             <a href="#odps-4-0-4-1-migration-guide" class="toc-h1 toc-link" data-title="ODPS 4.0 → 4.1 Migration Guide">ODPS 4.0 → 4.1 Migration Guide</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#what-changed" class="toc-h2 toc-link" data-title="What Changed">What Changed</a>
+                    <a href="#1-new-productstrategy-object" class="toc-h2 toc-link" data-title="1. New productStrategy object">1. New <code>productStrategy</code> object</a>
                   </li>
                   <li>
                     <a href="#backward-compatibility" class="toc-h2 toc-link" data-title="Backward Compatibility">Backward Compatibility</a>
@@ -498,6 +498,9 @@
                   </li>
                   <li>
                     <a href="#summary" class="toc-h2 toc-link" data-title="Summary">Summary</a>
+                  </li>
+                  <li>
+                    <a href="#next-steps" class="toc-h2 toc-link" data-title="Next Steps">Next Steps</a>
                   </li>
               </ul>
           </li>
@@ -3682,7 +3685,7 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <h1 id='odps-4-0-4-1-migration-guide'>ODPS 4.0 → 4.1 Migration Guide</h1>
 <p>Version 4.1 is a <strong>minor, fully backward-compatible update</strong> to the Open Data Product Specification.<br>
 Existing 4.0 YAML files remain valid without modification.</p>
-<h2 id='what-changed'>What Changed</h2><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">product</span><span class="pi">:</span>
+<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">product</span><span class="pi">:</span>
   <span class="na">productStrategy</span><span class="pi">:</span>
     <span class="na">objectives</span><span class="pi">:</span>
     <span class="na">strategicAlignment</span><span class="pi">:</span>
@@ -3700,7 +3703,7 @@ Existing 4.0 YAML files remain valid without modification.</p>
 <p><strong>Location in schema on the left example</strong></p>
 
 <p>See the <a href="https://opendataproducts.org/v4.1rc/schema">ODPS 4.1 schema</a> for full JSON/YAML definitions.</p>
-<h2 id='backward-compatibility'>Backward Compatibility</h2>
+<h3 id='backward-compatibility'>Backward Compatibility</h3>
 <table><thead>
 <tr>
 <th>ODPS 4.0 Element</th>
@@ -3722,11 +3725,7 @@ Existing 4.0 YAML files remain valid without modification.</p>
 
 <p>No breaking or renaming occurred.<br>
 Tooling built on 4.0 will continue to work.</p>
-
-<hr>
-<h2 id='how-to-extend-an-existing-4-0-file'>How to Extend an Existing 4.0 File</h2>
-<p>Add the following minimal block under <code>product:</code>  </p>
-<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">productStrategy</span><span class="pi">:</span>
+<h3 id='how-to-extend-an-existing-4-0-file'>How to Extend an Existing 4.0 File</h3><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">productStrategy</span><span class="pi">:</span>
   <span class="na">objectives</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Enable</span><span class="nv"> </span><span class="s">smarter</span><span class="nv"> </span><span class="s">marketing</span><span class="nv"> </span><span class="s">campaigns"</span>
   <span class="na">contributesToKPI</span><span class="pi">:</span>
@@ -3742,8 +3741,8 @@ Tooling built on 4.0 will continue to work.</p>
       <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">downloads"</span>
       <span class="na">target</span><span class="pi">:</span> <span class="m">4000</span>
 </code></pre></div>
-<hr>
-<h2 id='summary'>Summary</h2>
+<p>Add the following minimal block under <code>product:</code>  </p>
+<h3 id='summary'>Summary</h3>
 <table><thead>
 <tr>
 <th>Topic</th>
@@ -3772,15 +3771,11 @@ Tooling built on 4.0 will continue to work.</p>
 <td>100 % backward-compatible</td>
 </tr>
 </tbody></table>
-
-<hr>
 <h3 id='next-steps'>Next Steps</h3>
 <ul>
 <li>Update internal templates or tools if you want to capture KPI/OKR alignment.<br></li>
 <li>No urgent migration is required for existing 4.0 files.<br></li>
 </ul>
-
-<hr>
 <h1 id='terms-used'>Terms used</h1>
 <p>Here&#39;s list of terms used and what we mean with them. The meaning of terms is mostly taken from existing knowledge eg articles and other trusted sources. The source is always linked to the term. In some rare cases term is defined for the specification purposes only. </p>
 
