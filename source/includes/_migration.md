@@ -3,19 +3,8 @@
 Version 4.1 is a **minor, fully backward-compatible update** to the Open Data Product Specification.  
 Existing 4.0 YAML files remain valid without modification.
 
----
 
 ## What Changed
-
-### 1. New `productStrategy` object
-A new top-level object under `product` introduces the ability to connect data products to business outcomes.
-
-**Purpose:**  
-- Express business **objectives** and **strategic alignment**  
-- Define measurable **product KPIs**  
-- Link to higher-level **business KPIs (OKRs)**  
-
-**Location in schema**
 
 ```yaml
 product:
@@ -27,9 +16,18 @@ product:
     relatedKPIs:
 ```
 
-See the [ODPS 4.1 schema](https://opendataproducts.org/v4.1/) for full JSON/YAML definitions.
+### 1. New `productStrategy` object
+A new top-level object under `product` introduces the ability to connect data products to business outcomes.
 
----
+**Purpose:**  
+- Express business **objectives** and **strategic alignment**  
+- Define measurable **product KPIs**  
+- Link to higher-level **business KPIs (OKRs)**  
+
+**Location in schema on the left example**
+
+See the [ODPS 4.1 schema](https://opendataproducts.org/v4.1rc/schema) for full JSON/YAML definitions.
+
 
 ## Backward Compatibility
 
