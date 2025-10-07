@@ -58,7 +58,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Migration from 4.0 to 4.1**
 
-* [Migration guide available](#migration)
+* [Migration guide available](#odps-4-0-4-1-migration-guide)
 
 **Participate and contribute:**
 
