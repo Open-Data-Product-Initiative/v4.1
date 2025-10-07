@@ -485,6 +485,23 @@
               </ul>
           </li>
           <li>
+            <a href="#odps-4-0-4-1-migration-guide" class="toc-h1 toc-link" data-title="ODPS 4.0 → 4.1 Migration Guide">ODPS 4.0 → 4.1 Migration Guide</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#what-changed" class="toc-h2 toc-link" data-title="What Changed">What Changed</a>
+                  </li>
+                  <li>
+                    <a href="#backward-compatibility" class="toc-h2 toc-link" data-title="Backward Compatibility">Backward Compatibility</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-extend-an-existing-4-0-file" class="toc-h2 toc-link" data-title="How to Extend an Existing 4.0 File">How to Extend an Existing 4.0 File</a>
+                  </li>
+                  <li>
+                    <a href="#summary" class="toc-h2 toc-link" data-title="Summary">Summary</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#terms-used" class="toc-h1 toc-link" data-title="Terms used">Terms used</a>
           </li>
           <li>
@@ -522,6 +539,12 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <ul>
 <li><a href="https://opendataproducts.org/v4.1rc/schema/odps.yaml">YAML Schema</a></li>
 <li><a href="https://opendataproducts.org/v4.1rc/schema/odps.json">JSON Schema</a></li>
+</ul>
+
+<p><strong>Migration from 4.0 to 4.1</strong></p>
+
+<ul>
+<li><a href="#migration">Migration guide available</a></li>
 </ul>
 
 <p><strong>Participate and contribute:</strong></p>
@@ -3656,6 +3679,112 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 
 <p>Bring your ideas, questions, and use cases — <a href="https://discord.gg/7KfnFxAc">join the ODPS Discord</a> and get involved!</p>
+<h1 id='odps-4-0-4-1-migration-guide'>ODPS 4.0 → 4.1 Migration Guide</h1>
+<p>Version 4.1 is a <strong>minor, fully backward-compatible update</strong> to the Open Data Product Specification.<br>
+Existing 4.0 YAML files remain valid without modification.</p>
+
+<hr>
+<h2 id='what-changed'>What Changed</h2><h3 id='1-new-productstrategy-object'>1. New <code>productStrategy</code> object</h3>
+<p>A new top-level object under <code>product</code> introduces the ability to connect data products to business outcomes.</p>
+
+<p><strong>Purpose:</strong><br>
+- Express business <strong>objectives</strong> and <strong>strategic alignment</strong><br>
+- Define measurable <strong>product KPIs</strong><br>
+- Link to higher-level <strong>business KPIs (OKRs)</strong>  </p>
+
+<p><strong>Location in schema</strong></p>
+<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">product</span><span class="pi">:</span>
+  <span class="na">productStrategy</span><span class="pi">:</span>
+    <span class="na">objectives</span><span class="pi">:</span>
+    <span class="na">strategicAlignment</span><span class="pi">:</span>
+    <span class="na">contributesToKPI</span><span class="pi">:</span>
+    <span class="na">productKPIs</span><span class="pi">:</span>
+    <span class="na">relatedKPIs</span><span class="pi">:</span>
+</code></pre></div>
+<p>See the <a href="https://opendataproducts.org/v4.1/">ODPS 4.1 schema</a> for full JSON/YAML definitions.</p>
+
+<hr>
+<h2 id='backward-compatibility'>Backward Compatibility</h2>
+<table><thead>
+<tr>
+<th>ODPS 4.0 Element</th>
+<th>ODPS 4.1 Change</th>
+<th>Action Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>All existing objects (<code>details</code>, <code>SLA</code>, <code>dataQuality</code>, etc.)</td>
+<td>No change</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>productStrategy</code></td>
+<td>New optional block</td>
+<td>Add only if you want to link products to KPIs/OKRs</td>
+</tr>
+</tbody></table>
+
+<p>No breaking or renaming occurred.<br>
+Tooling built on 4.0 will continue to work.</p>
+
+<hr>
+<h2 id='how-to-extend-an-existing-4-0-file'>How to Extend an Existing 4.0 File</h2>
+<p>Add the following minimal block under <code>product:</code>  </p>
+<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">productStrategy</span><span class="pi">:</span>
+  <span class="na">objectives</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Enable</span><span class="nv"> </span><span class="s">smarter</span><span class="nv"> </span><span class="s">marketing</span><span class="nv"> </span><span class="s">campaigns"</span>
+  <span class="na">contributesToKPI</span><span class="pi">:</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">KPI-OUT-001"</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Retail</span><span class="nv"> </span><span class="s">Revenue</span><span class="nv"> </span><span class="s">Uplift"</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percent"</span>
+    <span class="na">target</span><span class="pi">:</span> <span class="m">5</span>
+    <span class="na">direction</span><span class="pi">:</span> <span class="s">increase</span>
+    <span class="na">timeframe</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2025-Q4"</span>
+  <span class="na">productKPIs</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">KPI-OUT-001-A"</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Customer</span><span class="nv"> </span><span class="s">dataset</span><span class="nv"> </span><span class="s">usage"</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">downloads"</span>
+      <span class="na">target</span><span class="pi">:</span> <span class="m">4000</span>
+</code></pre></div>
+<hr>
+<h2 id='summary'>Summary</h2>
+<table><thead>
+<tr>
+<th>Topic</th>
+<th>4.0</th>
+<th>4.1</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Specification type</td>
+<td>Modular YAML schema</td>
+<td>Same</td>
+</tr>
+<tr>
+<td>New object</td>
+<td>—</td>
+<td><code>productStrategy</code></td>
+</tr>
+<tr>
+<td>Business linkage</td>
+<td>External</td>
+<td>Built-in</td>
+</tr>
+<tr>
+<td>Compatibility</td>
+<td>—</td>
+<td>100 % backward-compatible</td>
+</tr>
+</tbody></table>
+
+<hr>
+<h3 id='next-steps'>Next Steps</h3>
+<ul>
+<li>Update internal templates or tools if you want to capture KPI/OKR alignment.<br></li>
+<li>No urgent migration is required for existing 4.0 files.<br></li>
+</ul>
+
+<hr>
 <h1 id='terms-used'>Terms used</h1>
 <p>Here&#39;s list of terms used and what we mean with them. The meaning of terms is mostly taken from existing knowledge eg articles and other trusted sources. The source is always linked to the term. In some rare cases term is defined for the specification purposes only. </p>
 
