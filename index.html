@@ -3682,9 +3682,14 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <h1 id='odps-4-0-4-1-migration-guide'>ODPS 4.0 → 4.1 Migration Guide</h1>
 <p>Version 4.1 is a <strong>minor, fully backward-compatible update</strong> to the Open Data Product Specification.<br>
 Existing 4.0 YAML files remain valid without modification.</p>
-
-<hr>
-<h2 id='what-changed'>What Changed</h2><h3 id='1-new-productstrategy-object'>1. New <code>productStrategy</code> object</h3>
+<h2 id='what-changed'>What Changed</h2><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">product</span><span class="pi">:</span>
+  <span class="na">productStrategy</span><span class="pi">:</span>
+    <span class="na">objectives</span><span class="pi">:</span>
+    <span class="na">strategicAlignment</span><span class="pi">:</span>
+    <span class="na">contributesToKPI</span><span class="pi">:</span>
+    <span class="na">productKPIs</span><span class="pi">:</span>
+    <span class="na">relatedKPIs</span><span class="pi">:</span>
+</code></pre></div><h3 id='1-new-productstrategy-object'>1. New <code>productStrategy</code> object</h3>
 <p>A new top-level object under <code>product</code> introduces the ability to connect data products to business outcomes.</p>
 
 <p><strong>Purpose:</strong><br>
@@ -3692,18 +3697,9 @@ Existing 4.0 YAML files remain valid without modification.</p>
 - Define measurable <strong>product KPIs</strong><br>
 - Link to higher-level <strong>business KPIs (OKRs)</strong>  </p>
 
-<p><strong>Location in schema</strong></p>
-<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">product</span><span class="pi">:</span>
-  <span class="na">productStrategy</span><span class="pi">:</span>
-    <span class="na">objectives</span><span class="pi">:</span>
-    <span class="na">strategicAlignment</span><span class="pi">:</span>
-    <span class="na">contributesToKPI</span><span class="pi">:</span>
-    <span class="na">productKPIs</span><span class="pi">:</span>
-    <span class="na">relatedKPIs</span><span class="pi">:</span>
-</code></pre></div>
-<p>See the <a href="https://opendataproducts.org/v4.1/">ODPS 4.1 schema</a> for full JSON/YAML definitions.</p>
+<p><strong>Location in schema on the left example</strong></p>
 
-<hr>
+<p>See the <a href="https://opendataproducts.org/v4.1rc/schema">ODPS 4.1 schema</a> for full JSON/YAML definitions.</p>
 <h2 id='backward-compatibility'>Backward Compatibility</h2>
 <table><thead>
 <tr>
