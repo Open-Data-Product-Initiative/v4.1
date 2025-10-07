@@ -3,9 +3,6 @@
 Version 4.1 is a **minor, fully backward-compatible update** to the Open Data Product Specification.  
 Existing 4.0 YAML files remain valid without modification.
 
-
-## What Changed
-
 ```yaml
 product:
   productStrategy:
@@ -29,7 +26,7 @@ A new top-level object under `product` introduces the ability to connect data pr
 See the [ODPS 4.1 schema](https://opendataproducts.org/v4.1rc/schema) for full JSON/YAML definitions.
 
 
-## Backward Compatibility
+### Backward Compatibility
 
 | ODPS 4.0 Element | ODPS 4.1 Change | Action Required |
 |------------------|-----------------|----------------|
@@ -39,11 +36,7 @@ See the [ODPS 4.1 schema](https://opendataproducts.org/v4.1rc/schema) for full J
 No breaking or renaming occurred.  
 Tooling built on 4.0 will continue to work.
 
----
-
-## How to Extend an Existing 4.0 File
-
-Add the following minimal block under `product:`  
+### How to Extend an Existing 4.0 File
 
 ```yaml
 productStrategy:
@@ -63,9 +56,10 @@ productStrategy:
       target: 4000
 ```
 
----
+Add the following minimal block under `product:`  
 
-## Summary
+
+### Summary
 
 | Topic | 4.0 | 4.1 |
 |--------|-----|-----|
@@ -74,10 +68,9 @@ productStrategy:
 | Business linkage | External | Built-in |
 | Compatibility | — | 100 % backward-compatible |
 
----
+
 
 ### Next Steps
 - Update internal templates or tools if you want to capture KPI/OKR alignment.  
 - No urgent migration is required for existing 4.0 files.  
 
----
