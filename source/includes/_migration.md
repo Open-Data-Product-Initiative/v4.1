@@ -56,7 +56,7 @@ productStrategy:
       target: 4000
 ```
 
-Add the following minimal block under `product:`  
+Add the block under `product:` like in the example.  
 
 
 ### Summary
