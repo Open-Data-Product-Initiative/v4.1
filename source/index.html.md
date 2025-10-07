@@ -24,7 +24,7 @@ includes:
   - helloworld
   - bareminimum
   - catalog
-  - mingration
+  - migration
   - terms
   - contributors
 
