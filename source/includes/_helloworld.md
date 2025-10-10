@@ -5,9 +5,45 @@
 ```yml
 
 ---
-schema: 'https://opendataproducts.org/v3.1/schema/odps.yaml'
-version: 4.0
+schema: 'https://opendataproducts.org/v4.1/schema/odps.yaml'
+version: 4.1
 product:
+  productStrategy:
+    objectives:
+      - en: Reduce emergency response time
+    strategicAlignment:
+      - en: Smart City Vision 2030
+    contributesToKPI:
+      id: bizkpi-city-response-time
+      name: City Emergency Response Time
+      description: Average minutes from incident to first responder arrival
+      unit: minutes
+      target: 5
+      direction: at_most
+      timeframe: "by Q4"
+    relatedKPIs:
+      - id: bizkpi-traffic-congestion
+        name: Traffic Congestion Index
+        unit: percentage
+        target: -10
+        direction: decrease
+    productKPIs:
+      - id: kpi-detection-coverage
+        name: Event Detection Coverage
+        description: % of reported incidents captured in real time
+        unit: percentage
+        target: 95
+        direction: at_least
+        frequency: hourly
+        calculation: detected_events / reported_events
+
+      - id: kpi-time-to-insight
+        name: Average Time to Insight
+        description: Median time from event occurrence to product update
+        unit: seconds
+        target: 60
+        direction: at_most
+        calculation: p50(update_ts - event_ts)
   contract:
     id: 02323M123
     type: ODCS
