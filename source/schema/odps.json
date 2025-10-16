@@ -220,81 +220,7 @@
 				},
 				"productStrategy": {
 					"type": "object",
-					"description": "Connects the data product to business objectives and KPIs.",
-					"properties": {
-						"objectives": {
-							"type": "array",
-							"items": {
-								"type": "object",
-								"properties": {
-									"en": { "type": "string" }
-								}
-							}
-						},
-						"strategicAlignment": {
-							"type": "array",
-							"items": {
-								"type": "object",
-								"properties": {
-									"en": { "type": "string" }
-								}
-							}
-						},
-						"contributesToKPI": {
-							"type": "object",
-							"required": ["id", "name", "unit", "target"],
-							"properties": {
-								"id": { "type": "string" },
-								"name": { "type": "string" },
-								"description": { "type": "string" },
-								"unit": { "type": "string" },
-								"target": { "type": ["number", "string"] },
-								"direction": {
-									"type": "string",
-									"enum": ["increase", "decrease", "at_least", "at_most", "equals"]
-								},
-								"timeframe": { "type": "string" }
-							}
-						},
-						"productKPIs": {
-							"type": "array",
-							"items": {
-								"type": "object",
-								"required": ["id", "name", "unit", "target"],
-								"properties": {
-									"id": { "type": "string" },
-									"name": { "type": "string" },
-									"description": { "type": "string" },
-									"unit": { "type": "string" },
-									"target": { "type": ["number", "string"] },
-									"direction": {
-										"type": "string",
-										"enum": ["increase", "decrease", "at_least", "at_most", "equals"]
-									},
-									"frequency": { "type": "string" },
-									"owner": { "type": "string" },
-									"calculation": { "type": "string" }
-								}
-							}
-						},
-						"relatedKPIs": {
-							"type": "array",
-							"items": {
-								"type": "object",
-								"required": ["id", "name", "unit", "target"],
-								"properties": {
-									"id": { "type": "string" },
-									"name": { "type": "string" },
-									"unit": { "type": "string" },
-									"target": { "type": ["number", "string"] },
-									"direction": {
-										"type": "string",
-										"enum": ["increase", "decrease", "at_least", "at_most", "equals"]
-									}
-								}
-							}
-						}
-					}
+					"$ref": "#/$defs/ProductStrategy"
 				}
 			}
 		}
@@ -377,18 +303,69 @@
 			}
 		},
 		"DataAccess": {
-				"type": "array",
-				"description": "This object must always be present and named exactly default.",
-				"items": {
-					"$ref": "#/$defs/DataAccessItem"
-				}
+			"type": "array",
+			"description": "This object must always be present and named exactly default.",
+			"items": {
+				"$ref": "#/$defs/DataAccessItem"
+			}
 		},
 		"PaymentGateway": {
-				"type": "array",
-				"description": "This object must always be present and named exactly default.",
-				"items": {
-					"$ref": "#/$defs/PaymentGateways"
+			"type": "array",
+			"description": "This object must always be present and named exactly default.",
+			"items": {
+				"$ref": "#/$defs/PaymentGateways"
+			}
+		},
+		"ProductStrategy": {
+			"type": "object",
+			"description": "Connects the data product to business objectives and KPIs.",
+			"properties": {
+				"objectives": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"$ref": "#/$defs/Languages"
+					},
+					"description": "Business objectives the product supports, written in natural language."
+				},
+				"contributesToKPI": {
+					"type": "object",
+					"description": "Single higher-level business KPI (from SMART objectives) that this product is accountable for.",
+					"$ref": "#/$defs/KPI"
+				},
+				"productKPIs": {
+					"type": "array",
+					"description": "KPIs measured at product level that influence contributesToKPI. Useful for contribution analysis and governance checks.",
+					"items": {
+						"type": "object",
+						"$ref": "#/$defs/KPI",
+						"required": [
+							"id",
+							"name",
+							"unit",
+							"target",
+							"calculation"
+						]
+					}
+				},
+				"relatedKPIs": {
+					"type": "array",
+					"description": "Secondary/cross-unit KPIs to monitor side-effects and additional value (informational; not for prioritization).",
+					"items": {
+						"type": "object",
+						"$ref": "#/$defs/KPI"
+					}
+				},
+				"strategicAlignment": {
+					"type": "array",
+					"description": "Strategic initiatives, policies, or visions the product aligns with.",
+					"items": {
+						"type": "object",
+						"$ref": "#/$defs/Languages"
+					}
 				}
+			},
+			"required": ["productKPIs","contributesToKPI"]
 		},
 		"PricingPlans": {
 			"type": "object",
@@ -410,10 +387,12 @@
 		"SlaDefinition": {
 			"properties": {
 				"name": {
-					"type": "string"
+					"type": "object",
+					"$ref": "#/$defs/Languages"
 				},
 				"description": {
-					"type": "string",
+					"type": "object",
+					"$ref": "#/$defs/Languages",
 					"description": "Description of the SLA package."
 				},
 				"type": {
@@ -468,8 +447,12 @@
 		"DQDefinition": {
 			"properties": {
 				"displayTitle": {
-					"type": "string",
-					"description": "Dimension title to be shown in UIs."
+					"type": "array",
+					"description": "Dimension title to be shown in UIs.",
+					"items": {
+						"type": "object",
+						"$ref": "#/$defs/Languages"
+					}
 				},
 				"description": {
 					"type": "string",
@@ -528,8 +511,7 @@
 					]
 				},
 				"objective": {
-					"type": "string",
-					"format": "number",
+					"type": ["string","integer"],
 					"description": "Target level to be achieved for the dimension."
 				},
 				"unit": {
@@ -554,8 +536,12 @@
 					"description": "the description of the SLA dimension"
 				},
 				"displayTitle": {
-					"type": "string",
-					"description": "Dimension title to be shown in UIs."
+					"type": "array",
+					"description": "Dimension title to be shown in UIs.",
+					"items": {
+						"type": "object",
+						"$ref": "#/$defs/Languages"
+					}
 				}
 			}
 		},
@@ -850,11 +836,13 @@
 			"type": "object",
 			"properties": {
 				"name": {
-					"type": "string",
+					"type": "object",
+					"$ref": "#/$defs/Languages",
 					"description": "Name for the access interface. Can be shown in UIs."
 				},
 				"description": {
-					"type": "string",
+					"type": "object",
+					"$ref": "#/$defs/Languages",
 					"description": "Description for the access interface. Supports user understanding."
 				},
 				"outputPortType": {
@@ -1033,7 +1021,8 @@
 			"type": "object",
 			"properties": {
 				"description": {
-					"type": "string",
+					"type": "object",
+					"$ref": "#/$defs/Languages",
 					"description": "Descriptions of the payment gateway."
 				},
 				"type": {
@@ -1063,6 +1052,257 @@
 					"description": "Contains the executable or declarative logic for the payment gateway integration. Can be inline YAML, stringified logic, or link to external file."
 				}
 			}
+		},
+		"KPI": {
+			"type": "object",
+			"description": "Single higher-level business KPI (from SMART objectives) that this product is accountable for.",
+			"properties": {
+				"id": {
+					"type": "string",
+					"description": "Identifier of the business KPI (use shared IDs for roll-ups)."
+				},
+				"name": {
+					"type": "string",
+					"description": "KPI name."
+				},
+				"description": {
+					"type": "string",
+					"description": "Human-readable description."
+				},
+				"unit": {
+					"type": "string",
+					"description": "Unit of measurement."
+				},
+				"target": {
+					"type": ["number", "string"],
+					"description": "Target value for the KPI."
+				},
+				"direction": {
+					"type": "string",
+					"description": "Desired direction of movement.",
+					"enum": [
+						"increase",
+						"decrease",
+						"at_least",
+						"at_most",
+						"equals"
+					]
+				},
+				"timeframe": {
+					"type": "string",
+					"description": "When the target should be met."
+				},
+				"frequency": {
+					"type": "string",
+					"description": "Measurement cadence (e.g., hourly, daily, monthly)."
+				},
+				"owner": {
+					"type": "string",
+					"description": "Responsible role/team"
+				},
+				"calculation": {
+					"type": "string",
+					"description": "Human-readable formula"
+				}
+			},
+			"required": [
+				"id",
+				"name",
+				"unit",
+				"target"
+			]
+		},
+		"Languages": {
+			"type": "object",
+			"oneOf": [
+				{
+					"properties": {
+						"en": { "type": "string", "description": "English"},
+						"aa": { "type": "string", "description": "Afar"},
+						"ab": { "type": "string", "description": "Abkhazian"},
+						"ae": { "type": "string", "description": "Avestan"},
+						"af": { "type": "string", "description": "Afrikaans"},
+						"ak": { "type": "string", "description": "Akan"},
+						"am": { "type": "string", "description": "Amharic"},
+						"an": { "type": "string", "description": "Aragonese"},
+						"ar": { "type": "string", "description": "Arabic"},
+						"as": { "type": "string", "description": "Assamese"},
+						"av": { "type": "string", "description": "Avaric"},
+						"ay": { "type": "string", "description": "Aymara"},
+						"az": { "type": "string", "description": "Azerbaijani"},
+						"ba": { "type": "string", "description": "Bashkir"},
+						"be": { "type": "string", "description": "Belarusian"},
+						"bg": { "type": "string", "description": "Bulgarian"},
+						"bi": { "type": "string", "description": "Bislama"},
+						"bm": { "type": "string", "description": "Bambara"},
+						"bn": { "type": "string", "description": "Bengali"},
+						"bo": { "type": "string", "description": "Tibetan"},
+						"br": { "type": "string", "description": "Breton"},
+						"bs": { "type": "string", "description": "Bosnian"},
+						"ca": { "type": "string", "description": "Catalan"},
+						"ce": { "type": "string", "description": "Chechen"},
+						"ch": { "type": "string", "description": "Chamorro"},
+						"co": { "type": "string", "description": "Corsican"},
+						"cr": { "type": "string", "description": "Cree"},
+						"cs": { "type": "string", "description": "Czech"},
+						"cu": { "type": "string", "description": "Church Slavonic"},
+						"cv": { "type": "string", "description": "Chuvash"},
+						"cy": { "type": "string", "description": "Welsh"},
+						"da": { "type": "string", "description": "Danish"},
+						"de": { "type": "string", "description": "German"},
+						"dv": { "type": "string", "description": "Dhivehi"},
+						"dz": { "type": "string", "description": "Dzongkha"},
+						"ee": { "type": "string", "description": "Ewe"},
+						"el": { "type": "string", "description": "Greek"},
+						"eo": { "type": "string", "description": "Esperanto"},
+						"es": { "type": "string", "description": "Spanish"},
+						"et": { "type": "string", "description": "Estonian"},
+						"eu": { "type": "string", "description": "Basque"},
+						"fa": { "type": "string", "description": "Persian"},
+						"ff": { "type": "string", "description": "Fulah"},
+						"fi": { "type": "string", "description": "Finnish"},
+						"fj": { "type": "string", "description": "Fijian"},
+						"fo": { "type": "string", "description": "Faroese"},
+						"fr": { "type": "string", "description": "French"},
+						"fy": { "type": "string", "description": "Western Frisian"},
+						"ga": { "type": "string", "description": "Irish"},
+						"gd": { "type": "string", "description": "Gaelic"},
+						"gl": { "type": "string", "description": "Galician"},
+						"gn": { "type": "string", "description": "Guarani"},
+						"gu": { "type": "string", "description": "Gujarati"},
+						"gv": { "type": "string", "description": "Manx"},
+						"ha": { "type": "string", "description": "Hausa"},
+						"he": { "type": "string", "description": "Hebrew"},
+						"hi": { "type": "string", "description": "Hindi"},
+						"ho": { "type": "string", "description": "Hiri Motu"},
+						"hr": { "type": "string", "description": "Croatian"},
+						"ht": { "type": "string", "description": "Haitian"},
+						"hu": { "type": "string", "description": "Hungarian"},
+						"hy": { "type": "string", "description": "Armenian"},
+						"hz": { "type": "string", "description": "Herero"},
+						"ia": { "type": "string", "description": "Interlingua"},
+						"id": { "type": "string", "description": "Indonesian"},
+						"ie": { "type": "string", "description": "Interlingue"},
+						"ig": { "type": "string", "description": "Igbo"},
+						"ii": { "type": "string", "description": "Sichuan Yi"},
+						"ik": { "type": "string", "description": "Inupiaq"},
+						"io": { "type": "string", "description": "Ido"},
+						"is": { "type": "string", "description": "Icelandic"},
+						"it": { "type": "string", "description": "Italian"},
+						"iu": { "type": "string", "description": "Inuktitut"},
+						"ja": { "type": "string", "description": "Japanese"},
+						"jv": { "type": "string", "description": "Javanese"},
+						"ka": { "type": "string", "description": "Georgian"},
+						"kg": { "type": "string", "description": "Kongo"},
+						"ki": { "type": "string", "description": "Kikuyu"},
+						"kj": { "type": "string", "description": "Kwanyama"},
+						"kk": { "type": "string", "description": "Kazakh"},
+						"kl": { "type": "string", "description": "Kalaallisut"},
+						"km": { "type": "string", "description": "Central Khmer"},
+						"kn": { "type": "string", "description": "Kannada"},
+						"ko": { "type": "string", "description": "Korean"},
+						"kr": { "type": "string", "description": "Kanuri"},
+						"ks": { "type": "string", "description": "Kashmiri"},
+						"ku": { "type": "string", "description": "Kurdish"},
+						"kv": { "type": "string", "description": "Komi"},
+						"kw": { "type": "string", "description": "Cornish"},
+						"ky": { "type": "string", "description": "Kyrgyz"},
+						"la": { "type": "string", "description": "Latin"},
+						"lb": { "type": "string", "description": "Luxembourgish"},
+						"lg": { "type": "string", "description": "Ganda"},
+						"li": { "type": "string", "description": "Limburgan"},
+						"ln": { "type": "string", "description": "Lingala"},
+						"lo": { "type": "string", "description": "Lao"},
+						"lt": { "type": "string", "description": "Lithuanian"},
+						"lu": { "type": "string", "description": "Luba-Katanga"},
+						"lv": { "type": "string", "description": "Latvian"},
+						"mg": { "type": "string", "description": "Malagasy"},
+						"mh": { "type": "string", "description": "Marshallese"},
+						"mi": { "type": "string", "description": "Maori"},
+						"mk": { "type": "string", "description": "Macedonian"},
+						"ml": { "type": "string", "description": "Malayalam"},
+						"mn": { "type": "string", "description": "Mongolian"},
+						"mr": { "type": "string", "description": "Marathi"},
+						"ms": { "type": "string", "description": "Malay"},
+						"mt": { "type": "string", "description": "Maltese"},
+						"my": { "type": "string", "description": "Burmese"},
+						"na": { "type": "string", "description": "Nauru"},
+						"nb": { "type": "string", "description": "Norwegian Bokmål"},
+						"nd": { "type": "string", "description": "North Ndebele"},
+						"ne": { "type": "string", "description": "Nepali"},
+						"ng": { "type": "string", "description": "Ndonga"},
+						"nl": { "type": "string", "description": "Dutch"},
+						"nn": { "type": "string", "description": "Norwegian Nynorsk"},
+						"no": { "type": "string", "description": "Norwegian"},
+						"nr": { "type": "string", "description": "South Ndebele"},
+						"nv": { "type": "string", "description": "Navaho"},
+						"ny": { "type": "string", "description": "Chichewa"},
+						"oc": { "type": "string", "description": "Occitan"},
+						"oj": { "type": "string", "description": "Ojibwa"},
+						"om": { "type": "string", "description": "Oromo"},
+						"or": { "type": "string", "description": "Oriya"},
+						"os": { "type": "string", "description": "Ossetian"},
+						"pa": { "type": "string", "description": "Punjabi"},
+						"pi": { "type": "string", "description": "Pali"},
+						"pl": { "type": "string", "description": "Polish"},
+						"ps": { "type": "string", "description": "Pashto"},
+						"pt": { "type": "string", "description": "Portuguese"},
+						"qu": { "type": "string", "description": "Quechua"},
+						"rm": { "type": "string", "description": "Romansh"},
+						"rn": { "type": "string", "description": "Rundi"},
+						"ro": { "type": "string", "description": "Romanian"},
+						"ru": { "type": "string", "description": "Russian"},
+						"rw": { "type": "string", "description": "Kinyarwanda"},
+						"sa": { "type": "string", "description": "Sanskrit"},
+						"sc": { "type": "string", "description": "Sardinian"},
+						"sd": { "type": "string", "description": "Sindhi"},
+						"se": { "type": "string", "description": "Northern Sami"},
+						"sg": { "type": "string", "description": "Sango"},
+						"si": { "type": "string", "description": "Sinhala"},
+						"sk": { "type": "string", "description": "Slovak"},
+						"sl": { "type": "string", "description": "Slovenian"},
+						"sm": { "type": "string", "description": "Samoan"},
+						"sn": { "type": "string", "description": "Shona"},
+						"so": { "type": "string", "description": "Somali"},
+						"sq": { "type": "string", "description": "Albanian"},
+						"sr": { "type": "string", "description": "Serbian"},
+						"ss": { "type": "string", "description": "Swati"},
+						"st": { "type": "string", "description": "Southern Sotho"},
+						"su": { "type": "string", "description": "Sundanese"},
+						"sv": { "type": "string", "description": "Swedish"},
+						"sw": { "type": "string", "description": "Swahili"},
+						"ta": { "type": "string", "description": "Tamil"},
+						"te": { "type": "string", "description": "Telugu"},
+						"tg": { "type": "string", "description": "Tajik"},
+						"th": { "type": "string", "description": "Thai"},
+						"ti": { "type": "string", "description": "Tigrinya"},
+						"tk": { "type": "string", "description": "Turkmen"},
+						"tl": { "type": "string", "description": "Tagalog"},
+						"tn": { "type": "string", "description": "Tswana"},
+						"to": { "type": "string", "description": "Tonga"},
+						"tr": { "type": "string", "description": "Turkish"},
+						"ts": { "type": "string", "description": "Tsonga"},
+						"tt": { "type": "string", "description": "Tatar"},
+						"tw": { "type": "string", "description": "Twi"},
+						"ty": { "type": "string", "description": "Tahitian"},
+						"ug": { "type": "string", "description": "Uyghur"},
+						"uk": { "type": "string", "description": "Ukrainian"},
+						"ur": { "type": "string", "description": "Urdu"},
+						"uz": { "type": "string", "description": "Uzbek"},
+						"ve": { "type": "string", "description": "Venda"},
+						"vi": { "type": "string", "description": "Vietnamese"},
+						"vo": { "type": "string", "description": "Volapük"},
+						"wa": { "type": "string", "description": "Walloon"},
+						"wo": { "type": "string", "description": "Wolof"},
+						"xh": { "type": "string", "description": "Xhosa"},
+						"yi": { "type": "string", "description": "Yiddish"},
+						"yo": { "type": "string", "description": "Yoruba"},
+						"za": { "type": "string", "description": "Zhuang"},
+						"zh": { "type": "string", "description": "Chinese"},
+						"zu": { "type": "string", "description": "Zulu"}
+					}
+				}
+			]
 		}
 	}
 }
