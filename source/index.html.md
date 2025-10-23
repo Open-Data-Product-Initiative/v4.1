@@ -1,5 +1,5 @@
 ---
-title: Open (source) Data Product Specification 4.1 Release Candidate Version | Linux Foundation 
+title: Open (source) Data Product Specification 4.1 Version | Linux Foundation 
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -39,7 +39,7 @@ meta:
 
 # OPEN DATA PRODUCT SPECIFICATION 
 
-## Release Candidate Version for 4.1 
+## Version for 4.1 
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
@@ -49,12 +49,12 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/v4.1rc">https://github.com/Open-Data-Product-Initiative/v4.1rc</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/v4.1">https://github.com/Open-Data-Product-Initiative/v4.1</a>
 
 **ODPS Schemas:**
 
-* <a href="https://opendataproducts.org/v4.1rc/schema/odps.yaml">YAML Schema</a>
-* <a href="https://opendataproducts.org/v4.1rc/schema/odps.json">JSON Schema</a>
+* <a href="https://opendataproducts.org/v4.1/schema/odps.yaml">YAML Schema</a>
+* <a href="https://opendataproducts.org/v4.1/schema/odps.json">JSON Schema</a>
 
 **Migration from 4.0 to 4.1**
 
@@ -62,7 +62,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Participate and contribute:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.1rc/issues)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.1/issues)
   
 * [Join ODPS Discord Server](https://discord.gg/3EjQf3CD46)
 
@@ -85,8 +85,7 @@ Benefits of Referencing:
 * Auditability: Clearly link machine-readable checks to business commitments.
 
 
-**ODPS 4.1 introduces the productStrategy object**, a significant extension that connects data products to business intent, objectives, and KPIs.
-This release makes ODPS the first open specification where data products declare not just what they are but also why they exist and how success is measured.
+**ODPS 4.1 introduces the productStrategy object**, a significant extension that connects data products to business intent, objectives, and KPIs. This release makes ODPS the first open specification where data products declare not just what they are but also why they exist and how success is measured.
 
 
 ## HowTo - ODPS Knowledge Base
@@ -126,7 +125,7 @@ The four aspects are described in 10 objects, which contain attributes and eleme
 ![odps-model](images/ODPS-design.png)
 
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.1rc/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.1/issues)
 
 Be part of the ODPS community! Share your challenges and shape the future of data products on our [Discord](https://discord.gg/3EjQf3CD46)
 
