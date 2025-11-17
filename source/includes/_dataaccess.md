@@ -100,7 +100,7 @@ dataAccess:
 | **name** | object | ISO 639-1 language codes (e.g., `en`) | Multilingual name for the access interface. Can be shown in UIs. |
 | **description** | object | ISO 639-1 language codes (e.g., `en`) | Multilingual description for the access interface. Supports user understanding. |
 | **outputPorttype** | string | file, API, SQL, AI, gRPC, sFTP, etc. | Describes the technical method for delivering data (e.g., `file` for file downloads, `API` for web services). |
-| **format** | string | JSON, XML, CSV, Excel, zip, plain text, GraphQL, MCP | Specifies the data format made available through this access channel. |
+| **format** | string | TOON, JSON, XML, CSV, Excel, zip, plain text, GraphQL, MCP | Specifies the data format made available through this access channel. |
 | **authenticationMethod** | string | OAuth, Token, API key, HTTP Basic, none | Security model required to access the data. |
 | **specification** | string | OAS, RAML, Slate, MCP | Defines the type of API or protocol specification used to describe access (e.g., OpenAPI, RAML, or a custom protocol like MCP). |
 | **specsURL** | URL | Valid URL | Points to the machine-readable technical documentation (e.g., OpenAPI YAML). |
