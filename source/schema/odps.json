@@ -882,6 +882,7 @@
                 "format": {
                     "type": "string",
                     "enum": [
+                        "TOON",
                         "JSON",
                         "XML",
                         "CSV",
