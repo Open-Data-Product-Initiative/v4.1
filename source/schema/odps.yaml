@@ -10,7 +10,7 @@ properties:
     type: number
   product:
     type: object
-    required: [contract, details, pricingPlans, SLA, dataQuality, dataAccess, paymentGateways, support, license, dataHolder]
+    required: [details]
     properties:
       contract:
         type: object
@@ -141,7 +141,7 @@ properties:
                 type: array
                 items:
                   type: object
-                  required: [name, priceCurrency, price, billingDuration, unit, paymentGateway, SLA, access]
+                  required: [name]
 
       SLA:
         type: object
