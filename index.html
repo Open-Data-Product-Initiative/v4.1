@@ -955,6 +955,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <span class="na">version</span><span class="pi">:</span> <span class="m">4.1</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">productStrategy</span><span class="pi">:</span>
+    <span class="na">status</span><span class="pi">:</span> <span class="s">planned</span>
     <span class="na">objectives</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Reduce emergency response time</span>
     <span class="na">strategicAlignment</span><span class="pi">:</span>
@@ -1031,6 +1032,12 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>KPI name.</td>
 </tr>
 <tr>
+<td><strong>status</strong></td>
+<td>string</td>
+<td>One of: Planned, Active, At Risk, Achieved, Partially Achieved, Cancelled, Expired</td>
+<td>Indicates the status of the strategy object. Consider this similar to data product lifecycle status.</td>
+</tr>
+<tr>
 <td><strong>description</strong></td>
 <td>string</td>
 <td>optional</td>
@@ -1104,8 +1111,6 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <li><strong>Optional:</strong> <code>relatedKPIs</code> for secondary/side effects.<br></li>
 <li><strong>Traceability:</strong> use shared KPI <code>id</code>s to enable cross‑product roll‑ups against the same business KPI.</li>
 </ul>
-
-<p>Bring your ideas, questions, and use cases — <a href="https://discord.gg/7KfnFxAc">join the ODPS Discord</a> and get involved!</p>
 <h1 id='data-contract'>Data Contract</h1>
 <p>The <code>contract</code> object in the ODPS schema defines the structure for linking a data product to a formal data contract. It includes an <code>id</code> as a unique identifier, a <code>type</code> field that specifies the contract standard (either ODCS or DCS), a <code>contractVersion</code> indicating the version of the standard, and a <code>contractURL</code> that points to an external contract document in a contract management service. Optionally, an inline YAML spec element can be used instead of a URL to embed the contract directly in the product file. These specifications allow data producers to clearly declare governance, usage rights, and technical expectations, supporting interoperability across platforms using standards such as the Open Data Contract Standard (ODCS) or the Data Contract Specification (DCS). More details in the <a href="https://opendataproducts.org/howto/">Knowledge Base</a>.</p>
 

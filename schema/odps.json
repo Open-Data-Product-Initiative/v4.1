@@ -331,6 +331,19 @@
             "type": "object",
             "description": "Connects the data product to business objectives and KPIs.",
             "properties": {
+                "status": {
+                "type": "string",
+                "description": "Execution status of the product strategy.",
+                "enum": [
+                    "Planned",
+                    "Active",
+                    "At Risk",
+                    "Achieved",
+                    "Partially Achieved",
+                    "Cancelled",
+                    "Expired"
+                ]
+                },
                 "objectives": {
                     "type": "array",
                     "items": {
