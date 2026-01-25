@@ -61,6 +61,17 @@ properties:
               - Partially Achieved
               - Cancelled
               - Expired
+          
+          startDate:
+            type: string
+            format: date
+            description: Date when the product strategy becomes active. Use ISO 8601, (YYYY-MM-DD).
+
+          endDate:
+            type: string
+            format: date
+            description: Date when the product strategy ends or is planned to end. Use ISO 8601, (YYYY-MM-DD).
+
           objectives:
             type: array
             items:
