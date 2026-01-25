@@ -344,6 +344,16 @@
                     "Expired"
                 ]
                 },
+                "startDate": {
+                "type": "string",
+                "format": "date",
+                "description": "Date when the product strategy becomes active. Used for timeline and Gantt chart visualizations."
+                },
+                "endDate": {
+                "type": "string",
+                "format": "date",
+                "description": "Date when the product strategy ends or is planned to end. Used for timeline and Gantt chart visualizations."
+                },
                 "objectives": {
                     "type": "array",
                     "items": {

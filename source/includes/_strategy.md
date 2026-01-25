@@ -25,7 +25,9 @@ schema: https://opendataproducts.org/v4.1/schema/odps.yaml
 version: 4.1
 product:
   productStrategy:
-    status: planned
+    status: Planned
+    startDate: 2026-01-12
+    endDate: 2026-06-30
     objectives:
       - en: Reduce emergency response time
     strategicAlignment:
@@ -72,6 +74,8 @@ product:
 | **id** | string | optional | Identifier of the business KPI (use shared IDs for roll‑ups). |
 | **name** | string | required | KPI name. |
 | **status** | string | One of: Planned, Active, At Risk, Achieved, Partially Achieved, Cancelled, Expired | Indicates the status of the strategy object. Consider this similar to data product lifecycle status. |
+| **startDate** | string (date) | ISO 8601 date (YYYY-MM-DD) | Indicates when the product strategy becomes active. Used for timeline and Gantt chart visualizations. |
+| **endDate**   | string (date) | ISO 8601 date (YYYY-MM-DD) | Indicates when the product strategy ends or is planned to end. Used for timeline and Gantt chart visualizations. |
 | **description** | string | optional | Human‑readable description. |
 | **unit** | string | e.g., `percentage`, `minutes`, `s` | Unit of measurement. |
 | **target** | number/string | – | Target value for the KPI. |
