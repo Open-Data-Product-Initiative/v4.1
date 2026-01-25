@@ -25,6 +25,7 @@ schema: https://opendataproducts.org/v4.1/schema/odps.yaml
 version: 4.1
 product:
   productStrategy:
+    status: planned
     objectives:
       - en: Reduce emergency response time
     strategicAlignment:
@@ -70,6 +71,7 @@ product:
 | **contributesToKPI** | object | required | **Single higher‑level business KPI** (from SMART objectives) that this product is accountable for. |
 | **id** | string | optional | Identifier of the business KPI (use shared IDs for roll‑ups). |
 | **name** | string | required | KPI name. |
+| **status** | string | One of: Planned, Active, At Risk, Achieved, Partially Achieved, Cancelled, Expired | Indicates the status of the strategy object. Consider this similar to data product lifecycle status. |
 | **description** | string | optional | Human‑readable description. |
 | **unit** | string | e.g., `percentage`, `minutes`, `s` | Unit of measurement. |
 | **target** | number/string | – | Target value for the KPI. |
@@ -83,8 +85,6 @@ product:
 | **strategicAlignment** | array | language‑tagged strings | Strategic initiatives, policies, or visions the product aligns with. |
 
 
-
-
 ### Governance‑by‑Design checks (Minimum Lovable Gates)
 
 - **Required:** `contributesToKPI.name` present.  
@@ -92,5 +92,3 @@ product:
 - **Optional:** `relatedKPIs` for secondary/side effects.  
 - **Traceability:** use shared KPI `id`s to enable cross‑product roll‑ups against the same business KPI.
 
-
-Bring your ideas, questions, and use cases — [join the ODPS Discord](https://discord.gg/7KfnFxAc) and get involved!
