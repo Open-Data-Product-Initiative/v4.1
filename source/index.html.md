@@ -37,7 +37,7 @@ meta:
     content: The Open Data Product Specification (Linux Foundation project) is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. 
 ---
 
-# OPEN DATA PRODUCT SPECIFICATION 
+# OPEN DATA PRODUCT SPECIFICATION - The Linux Foundation
 
 ## Version 4.1 
 
