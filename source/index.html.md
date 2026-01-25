@@ -127,8 +127,6 @@ The four aspects are described in 10 objects, which contain attributes and eleme
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.1/issues)
 
-Be part of the ODPS community! Share your challenges and shape the future of data products on our [Discord](https://discord.gg/3EjQf3CD46)
-
 ## Documentation structure
 
 **LEFT COLUMN: Navigation**
