@@ -30,6 +30,9 @@ It supports both **KPI** and **OKR** models, turning every YAML file into a livi
 
 ```yaml
 productStrategy:
+  status: Planned
+  startDate: 2026-01-01
+  endDate: 2026-12-31
   objectives:
     - en: "Enable smarter marketing campaigns"
   contributesToKPI:
