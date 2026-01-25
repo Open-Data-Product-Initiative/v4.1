@@ -51,6 +51,16 @@ properties:
       productStrategy:
         type: object
         properties:
+          status:
+            type: string
+            enum:
+              - Planned
+              - Active
+              - At Risk
+              - Achieved
+              - Partially Achieved
+              - Cancelled
+              - Expired
           objectives:
             type: array
             items:

@@ -25,11 +25,11 @@ schema: https://opendataproducts.org/v4.1/schema/odps.yaml
 version: 4.1
 product:
   productStrategy:
+    status: planned
     objectives:
       - en: Reduce emergency response time
     strategicAlignment:
       - en: Smart City Vision 2030
-    status: planned
     contributesToKPI:
       id: bizkpi-city-response-time
       name: City Emergency Response Time
