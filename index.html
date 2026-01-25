@@ -955,7 +955,9 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <span class="na">version</span><span class="pi">:</span> <span class="m">4.1</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">productStrategy</span><span class="pi">:</span>
-    <span class="na">status</span><span class="pi">:</span> <span class="s">planned</span>
+    <span class="na">status</span><span class="pi">:</span> <span class="s">Planned</span>
+    <span class="na">startDate</span><span class="pi">:</span> <span class="s">2026-01-12</span>
+    <span class="na">endDate</span><span class="pi">:</span> <span class="s">2026-06-30</span>
     <span class="na">objectives</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Reduce emergency response time</span>
     <span class="na">strategicAlignment</span><span class="pi">:</span>
@@ -1036,6 +1038,18 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>string</td>
 <td>One of: Planned, Active, At Risk, Achieved, Partially Achieved, Cancelled, Expired</td>
 <td>Indicates the status of the strategy object. Consider this similar to data product lifecycle status.</td>
+</tr>
+<tr>
+<td><strong>startDate</strong></td>
+<td>string (date)</td>
+<td>ISO 8601 date (YYYY-MM-DD)</td>
+<td>Indicates when the product strategy becomes active. Used for timeline and Gantt chart visualizations.</td>
+</tr>
+<tr>
+<td><strong>endDate</strong></td>
+<td>string (date)</td>
+<td>ISO 8601 date (YYYY-MM-DD)</td>
+<td>Indicates when the product strategy ends or is planned to end. Used for timeline and Gantt chart visualizations.</td>
 </tr>
 <tr>
 <td><strong>description</strong></td>
