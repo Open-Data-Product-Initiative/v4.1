@@ -36,6 +36,16 @@
                                     "type": "string",
                                     "description": "Product identifier."
                                 },
+                                "portfolioPriority": {
+                                    "type": "string",
+                                    "description": "Indicates the importance of the data product within the organization's data product portfolio. Helps organizations prioritize development, governance, and investment decisions across multiple data products.",
+                                    "enum": [
+                                        "Critical",
+                                        "High",
+                                        "Medium",
+                                        "Low"
+                                    ]
+                                    },
                                 "visibility": {
                                     "type": "string",
                                     "description": "The publicity level i.e. who can see this product.",
