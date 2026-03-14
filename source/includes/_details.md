@@ -50,6 +50,7 @@ product:
       productSeries: Lovely pets data products
       visibility: private
       status: draft
+      portfolioPriority: high
       productVersion: '0.1.0'
       versionNotes: New version with additional details such more accurate pet details
       issues: The current issues include incorrect information in the dog breeds. The
@@ -94,6 +95,7 @@ Additional details of the data product.
 | **standards** | array | - | Comma separated array of standards related e.g. to data content or quality, such as ISO 8000 or ISO 19131. |
 | **tags** | array | - | Comma separates array of tags. |
 | **productVersion** | string | The versioning according to [SemVer](https://semver.org/) | The version of the data product. Applies for ODPS metadata as well. |
+| **portfolioPriority** | string | critical, high, medium, low | Indicates the importance of the data product within the organization's data product portfolio. Helps organizations prioritize development, governance, and investment decisions across multiple data products. |
 | **versionNotes** | string | - | Additional information about the version. |
 | **issues** | string | - |  There may be errors in the data product that require corrections. These issues will be briefly described to users, along with information about when the fixes will be implemented.|
 | **contentSample** | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | Sample content of the data product, for example JSON/XML output. This sample should match the actual data product output and give the data consumer an idea what to expect. Obviously if the data product is pure service for example dashboard or algorithm, then consider providing preview version or alike |
