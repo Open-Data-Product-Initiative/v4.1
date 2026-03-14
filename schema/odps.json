@@ -40,10 +40,10 @@
                                     "type": "string",
                                     "description": "Indicates the importance of the data product within the organization's data product portfolio. Helps organizations prioritize development, governance, and investment decisions across multiple data products.",
                                     "enum": [
-                                        "Critical",
-                                        "High",
-                                        "Medium",
-                                        "Low"
+                                        "critical",
+                                        "high",
+                                        "medium",
+                                        "low"
                                     ]
                                     },
                                 "visibility": {
