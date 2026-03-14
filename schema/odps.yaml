@@ -37,6 +37,14 @@ properties:
                 type: string
               productID:
                 type: string
+              portfolioPriority:
+                description: Indicates the importance of the data product within the organization's data product portfolio.
+                type: string
+                enum:
+                  - critical
+                  - high
+                  - medium
+                  - low
               valueProposition:
                 type: string
               description:
