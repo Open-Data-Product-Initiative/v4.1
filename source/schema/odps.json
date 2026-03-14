@@ -36,6 +36,16 @@
                                     "type": "string",
                                     "description": "Product identifier."
                                 },
+                                "governanceProfile": {
+                                    "type": "string",
+                                    "description": "Indicates the governance maturity applied to the data product. The value describes the expected level of governance enforcement, automation, and operational control associated with the product.",
+                                    "enum": [
+                                        "structured",
+                                        "enforced",
+                                        "automated",
+                                        "audit_ready"
+                                    ]
+                                },
                                 "portfolioPriority": {
                                     "type": "string",
                                     "description": "Indicates the importance of the data product within the organization's data product portfolio. Helps organizations prioritize development, governance, and investment decisions across multiple data products.",
