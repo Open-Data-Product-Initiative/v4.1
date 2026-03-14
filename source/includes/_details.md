@@ -51,6 +51,7 @@ product:
       visibility: private
       status: draft
       portfolioPriority: high
+      governanceprofile: structured
       productVersion: '0.1.0'
       versionNotes: New version with additional details such more accurate pet details
       issues: The current issues include incorrect information in the dog breeds. The
@@ -96,6 +97,7 @@ Additional details of the data product.
 | **tags** | array | - | Comma separates array of tags. |
 | **productVersion** | string | The versioning according to [SemVer](https://semver.org/) | The version of the data product. Applies for ODPS metadata as well. |
 | **portfolioPriority** | string | critical, high, medium, low | Indicates the importance of the data product within the organization's data product portfolio. Helps organizations prioritize development, governance, and investment decisions across multiple data products. |
+| **governanceProfile** | string | structured, enforced, automated, audit_ready | Indicates the governance maturity applied to the data product. The value describes the expected level of governance enforcement, automation, and operational control associated with the product.<br/><br/>Value definitions:<br/>**structured** — The data product is defined and registered as a structured asset within the organization. Governance controls are mostly declarative and focus on visibility and portfolio management.<br/>**enforced** — Governance policies and operational controls are actively enforced. Ownership, lifecycle rules, and governance responsibilities are applied consistently.<br/>**automated** — Governance controls are implemented through automated workflows and policy enforcement mechanisms. Operational governance activities such as quality monitoring and lifecycle approvals may be automated.<br/>**audit_ready** — The data product operates with audit-grade governance and traceability. Governance controls, lineage, and operational changes are fully traceable and can support regulatory or compliance requirements. |
 | **versionNotes** | string | - | Additional information about the version. |
 | **issues** | string | - |  There may be errors in the data product that require corrections. These issues will be briefly described to users, along with information about when the fixes will be implemented.|
 | **contentSample** | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | Sample content of the data product, for example JSON/XML output. This sample should match the actual data product output and give the data consumer an idea what to expect. Obviously if the data product is pure service for example dashboard or algorithm, then consider providing preview version or alike |
