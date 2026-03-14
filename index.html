@@ -763,6 +763,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
       <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
       <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
       <span class="na">portfolioPriority</span><span class="pi">:</span> <span class="s">high</span>
+      <span class="na">governanceprofile</span><span class="pi">:</span> <span class="s">structured</span>
       <span class="na">productVersion</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>
       <span class="na">versionNotes</span><span class="pi">:</span> <span class="s">New version with additional details such more accurate pet details</span>
       <span class="na">issues</span><span class="pi">:</span> <span class="s">The current issues include incorrect information in the dog breeds. The</span>
@@ -862,6 +863,12 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>string</td>
 <td>critical, high, medium, low</td>
 <td>Indicates the importance of the data product within the organization&#39;s data product portfolio. Helps organizations prioritize development, governance, and investment decisions across multiple data products.</td>
+</tr>
+<tr>
+<td><strong>governanceProfile</strong></td>
+<td>string</td>
+<td>structured, enforced, automated, audit_ready</td>
+<td>Indicates the governance maturity applied to the data product. The value describes the expected level of governance enforcement, automation, and operational control associated with the product.<br/><br/>Value definitions:<br/><strong>structured</strong> — The data product is defined and registered as a structured asset within the organization. Governance controls are mostly declarative and focus on visibility and portfolio management.<br/><strong>enforced</strong> — Governance policies and operational controls are actively enforced. Ownership, lifecycle rules, and governance responsibilities are applied consistently.<br/><strong>automated</strong> — Governance controls are implemented through automated workflows and policy enforcement mechanisms. Operational governance activities such as quality monitoring and lifecycle approvals may be automated.<br/><strong>audit_ready</strong> — The data product operates with audit-grade governance and traceability. Governance controls, lineage, and operational changes are fully traceable and can support regulatory or compliance requirements.</td>
 </tr>
 <tr>
 <td><strong>versionNotes</strong></td>
