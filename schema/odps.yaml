@@ -37,6 +37,14 @@ properties:
                 type: string
               productID:
                 type: string
+              governanceProfile:
+                description: Indicates the governance maturity applied to the data product. The value describes the expected level of governance enforcement, automation, and operational control associated with the product.
+                type: string
+                enum:
+                  - structured
+                  - enforced
+                  - automated
+                  - audit_ready
               portfolioPriority:
                 description: Indicates the importance of the data product within the organization's data product portfolio.
                 type: string
