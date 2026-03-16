@@ -85,6 +85,14 @@ Benefits of Referencing:
 
 **ODPS 4.1 introduces the productStrategy object**, a significant extension that connects data products to business intent, objectives, and KPIs. This release makes ODPS the first open specification where data products declare not just what they are but also why they exist and how success is measured.
 
+ODPS 4.1 has also been extended with **two optional attributes that support portfolio management and governance transparency for data products.**
+
+**The portfolioPriority attribute** allows organizations to express the relative importance of a data product within their overall data product portfolio. While lifecycle states describe maturity, portfolioPriority communicates strategic importance. This helps organizations prioritize development, allocate resources, and identify which products require stronger operational attention. Typical values include Critical, High, Medium, and Low.
+
+**The governanceProfile attribute** indicates the governance maturity applied to the data product. Not all products require the same level of operational rigor. Some may only be structured and registered, while others must operate with automated governance controls or audit-grade traceability. GovernanceProfile provides a portable way for platforms and catalogs to understand the governance posture of a product without prescribing implementation details. Example values include structured, enforced, automated, and audit_ready.
+
+Together these attributes allow ODPS to represent not only the structure and intent of a data product but also its importance and governance posture within a portfolio. This makes it easier for organizations to manage large collections of data products, prioritize investments, and communicate governance expectations across tools and platforms.
+
 
 ## HowTo - ODPS Knowledge Base
 
