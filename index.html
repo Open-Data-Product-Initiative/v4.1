@@ -576,6 +576,14 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </ul>
 
 <p><strong>ODPS 4.1 introduces the productStrategy object</strong>, a significant extension that connects data products to business intent, objectives, and KPIs. This release makes ODPS the first open specification where data products declare not just what they are but also why they exist and how success is measured.</p>
+
+<p>ODPS 4.1 has also been extended with <strong>two optional attributes that support portfolio management and governance transparency for data products.</strong></p>
+
+<p><strong>The portfolioPriority attribute</strong> allows organizations to express the relative importance of a data product within their overall data product portfolio. While lifecycle states describe maturity, portfolioPriority communicates strategic importance. This helps organizations prioritize development, allocate resources, and identify which products require stronger operational attention. Typical values include Critical, High, Medium, and Low.</p>
+
+<p><strong>The governanceProfile attribute</strong> indicates the governance maturity applied to the data product. Not all products require the same level of operational rigor. Some may only be structured and registered, while others must operate with automated governance controls or audit-grade traceability. GovernanceProfile provides a portable way for platforms and catalogs to understand the governance posture of a product without prescribing implementation details. Example values include structured, enforced, automated, and audit_ready.</p>
+
+<p>Together these attributes allow ODPS to represent not only the structure and intent of a data product but also its importance and governance posture within a portfolio. This makes it easier for organizations to manage large collections of data products, prioritize investments, and communicate governance expectations across tools and platforms.</p>
 <h2 id='howto-odps-knowledge-base'>HowTo - ODPS Knowledge Base</h2>
 <p>The odps‑examples repository serves as a comprehensive knowledge base for using the Open Data Product Specification (ODPS), combining clear FAQs with real-world YAML examples to guide users through practical implementation. Each FAQ entry tackles a specific task—like defining metadata, setting pricing tiers, assigning SLAs, configuring data quality rules, managing access roles, or enabling AI/agent consumption—accompanied by executable YAML snippets and full .yml files. </p>
 
