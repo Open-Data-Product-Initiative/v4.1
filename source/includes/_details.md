@@ -37,8 +37,8 @@ product:
 > Example of details object usage:
 
 ```yml
-schema: https://opendataproducts.org/v4.0/schema/odps.yaml
-version: 4.0
+schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+version: 4.1
 product:
   details: 
     en:
