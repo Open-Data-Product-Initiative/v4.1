@@ -70,9 +70,11 @@ SLA:
         - en: Uptime
       objective: 99
       unit: percent
+      weight: 50
     - dimension: responseTime
       objective: 200
       unit: milliseconds
+      weight: 30
 
 ```
 
@@ -111,12 +113,15 @@ SLA:
             en: Uptime
           objective: 90
           unit: percent
+          weight: 50
         - dimension: responseTime
           objective: 200
           unit: milliseconds
+          weight: 30
         - dimension: updateFrequency
           objective: 30
           unit: minutes
+          weight: 20
     premium:
       name: 
         en: The Premium SLA
@@ -128,12 +133,15 @@ SLA:
             en: Uptime
           objective: 99
           unit: percent
+          weight: 70
         - dimension: responseTime
           objective: 100
           unit: milliseconds
+          weight: 20
         - dimension: updateFrequency
           objective: 5
           unit: minutes
+          weight: 10
   executable:
     - dimension: uptime
       type: prometheus
@@ -193,6 +201,7 @@ SLA:
 | **dimension** | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension. |
 | **objective** | attribute | integer | Target level to be achieved for the dimension (e.g., 99). |
 | **unit** | attribute | Options: percent, milliseconds, seconds, minutes, days, weeks, months, years, never, date, null | Measurement unit for the SLA objective. If "date" is used, format should be dd/mm/yyyy. |
+| **weight** | attribute | integer | Optional. Relative importance as percentage of the SLA dimension when calculating the product's overall SLA score. Must be an integer (no decimals). User-editable. |
 | **displayTitle** | array | - | Dimension title to be shown in UIs. Localized per language. |
 | **description** | array | - | Description of the SLA package or specific dimension, localized per language. |
 | **executable** | element | - | Grouping element for SLA monitoring logic. Monitoring definitions are provided as code in the `spec` field for each dimension. |

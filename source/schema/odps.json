@@ -579,6 +579,10 @@
                     ],
                     "description": "Target level to be achieved for the dimension."
                 },
+                "weight": {
+                    "type": "integer",
+                    "description": "Relative importance of this SLA dimension for product-level scoring. User-editable integer (no decimals)."
+                },
                 "unit": {
                     "type": "string",
                     "enum": [
@@ -635,6 +639,10 @@
                 "objective": {
                     "type": "integer",
                     "description": "Defines the target value for the data quality dimension."
+                },
+                "weight": {
+                    "type": "integer",
+                    "description": "Relative importance of this Data Quality dimension when calculating the product's overall Data Quality score. User-editable integer (no decimals)."
                 },
                 "unit": {
                     "type": "string",

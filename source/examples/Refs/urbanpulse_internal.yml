@@ -1,5 +1,5 @@
-schema: 'https://opendataproducts.org/v3.1/schema/odps.yaml'
-version: 3.1
+schema: 'https://opendataproducts.org/v4.1/schema/odps.yaml'
+version: 4.1
 product:
   contract:
     id: 02323M123
@@ -121,12 +121,15 @@ product:
             en: Uptime
           objective: 90
           unit: percent
+          weight: 50
         - dimension: responseTime
           objective: 200
           unit: milliseconds
+          weight: 30
         - dimension: updateFrequency
           objective: 30
           unit: minutes
+          weight: 20
     premium:
       name:
         en: The Premium SLA
@@ -138,12 +141,15 @@ product:
             en: Uptime
           objective: 99
           unit: percent
+          weight: 70
         - dimension: responseTime
           objective: 100
           unit: milliseconds
+          weight: 20
         - dimension: updateFrequency
           objective: 5
           unit: minutes
+          weight: 10
   dataQuality:
     default:
       displaytitle:
@@ -161,11 +167,13 @@ product:
               reliable insights.
           objective: 90
           unit: percentage
+          weight: 60
         - dimension: completeness
           displaytitle:
             en: Data Completeness (percent)
           objective: 90
           unit: percentage
+          weight: 40
     premium:
       displaytitle:
         en: The Premium Data Quality
@@ -182,11 +190,13 @@ product:
               reliable insights.
           objective: 98
           unit: percentage
+          weight: 80
         - dimension: completeness
           displaytitle:
             en: Data Completeness (percent)
           objective: 99
           unit: percentage
+          weight: 20
   dataAccess:
     default:
       name:
