@@ -198,6 +198,16 @@ properties:
                   items:
                     type: object
                     required: [dimension, objective, unit]
+                    properties:
+                      dimension:
+                        type: string
+                      objective:
+                        type: integer
+                      unit:
+                        type: string
+                      weight:
+                        type: integer
+                        description: Relative importance of this dimension for product-level scoring. User-editable integer (no decimals).
 
       dataQuality:
         type: object
@@ -217,6 +227,16 @@ properties:
                   items:
                     type: object
                     required: [dimension, objective, unit]
+                    properties:
+                      dimension:
+                        type: string
+                      objective:
+                        type: integer
+                      unit:
+                        type: string
+                      weight:
+                        type: integer
+                        description: Relative importance of this dimension for product-level scoring. User-editable integer (no decimals).
 
       dataAccess:
         type: object

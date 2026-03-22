@@ -12,11 +12,13 @@ dataQuality:
             en: Data Accuracy (percent)
           objective: 90
           unit: percentage
+          weight: 60
         - dimension: completeness
           displaytitle:
             - en: Data Completeness (percent)
           objective: 90
           unit: percentage
+          weight: 40
   executable:
     - dimension: selected dimension
       type:  
@@ -115,11 +117,13 @@ dataQuality:
               reliable insights.
           objective: 90
           unit: percentage
+          weight: 60
         - dimension: completeness
           displaytitle:
             - en: Data Completeness (percent)
           objective: 90
           unit: percentage
+          weight: 40
 
 
     premium:
@@ -138,11 +142,13 @@ dataQuality:
               reliable insights.
           objective: 98
           unit: percentage
+          weight: 70
         - dimension: completeness
           displaytitle:
             en: Data Completeness (percent)
           objective: 99
           unit: percentage
+          weight: 30
 
   executable:
     - dimension: accuracy
@@ -198,6 +204,7 @@ dataQuality:
 | **dimension** | attribute | string, one of: *accuracy, completeness, conformity, consistency, coverage, timeliness, validity, or uniqueness.* | Defines the data quality dimension. |
 | **objective** | attribute | integer | Defines the target value for the data quality dimension |
 | **unit** | attribute | string. One of: *percentage, number* | Defines the unit used in stating the target quality level. |
+| **weight** | attribute | integer | Optional. Relative importance as percentage of the dimension when calculating the product's overall Data Quality score. Must be an integer (no decimals). |
 | **executable** | element | - | Grouping element that collects together data quality monitoring rules. You can define monitoring patterns as code under this element for each dimension. The actual as-code part is defined in the `spec` element. |
 | **displaytitle** | array | - | Dimension title to be shown in various UIs. Array contains title(s) in desired language(s). |
 | **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | Binds the text elements together in a given language. Multilanguage support is implemented by duplicating content under other ISO language codes. |
@@ -206,6 +213,8 @@ dataQuality:
 | **version** | attribute | string | The version of DQ monitoring tool used. |
 | **reference** | URL | Valid URL | Provide URL pointing to the reference documentation. |
 | **spec** | element | YAML/URL/string | The content for Data Quality monitoring expressed as code. Accepted as inline YAML, a valid URL pointing to YAML, or a plain string if `type` is `Custom`. |
+
+
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
