@@ -1,5 +1,5 @@
-schema: 'https://opendataproducts.org/v3.1/schema/odps.yaml'
-version: 3.1
+schema: 'https://opendataproducts.org/v4.1/schema/odps.yaml'
+version: 4.1
 product:
   contract:
     id: 02323M123
@@ -55,12 +55,15 @@ product:
             en: Uptime
           objective: 90
           unit: percent
+          weight: 50
         - dimension: responseTime
           objective: 200
           unit: milliseconds
+          weight: 30
         - dimension: updateFrequency
           objective: 30
           unit: minutes
+          weight: 20
   dataQuality:
     default:
       displaytitle:
@@ -78,11 +81,13 @@ product:
               reliable insights.
           objective: 90
           unit: percentage
+          weight: 60
         - dimension: completeness
           displaytitle:
             en: Data Completeness (percent)
           objective: 90
           unit: percentage
+          weight: 40
   dataAccess:
     default:
       name:
