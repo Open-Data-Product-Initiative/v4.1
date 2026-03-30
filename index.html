@@ -1622,7 +1622,7 @@ The <code>dataQuality</code> object consists of two parts:</p>
 
 <ul>
 <li><strong><code>declarative</code></strong>: Captures target levels for defined quality dimensions like <code>accuracy</code>, <code>completeness</code>, or <code>timeliness</code>. These values represent your <strong>intended</strong> or <strong>promised</strong> quality levels.</li>
-<li><strong><code>executive</code></strong>: Allows integration with supported <em>Everything as Code</em> tools (e.g., SodaCL, DQOps, MonteCarlo) to define <strong>verifiable</strong> and <strong>executable</strong> rules that check whether those targets are met in practice.</li>
+<li><strong><code>executive</code></strong>: Allows integration with supported <em>Everything as Code</em> tools (e.g., SodaCL, DQOps, MonteCarlo, OpenMetadata) to define <strong>verifiable</strong> and <strong>executable</strong> rules that check whether those targets are met in practice.</li>
 </ul>
 
 <p>This structure ensures that both expectations and enforcement logic are documented and machine-actionable in the same place.</p>
@@ -1881,7 +1881,7 @@ any industry specific needs. </p>
 <tr>
 <td><strong>type</strong></td>
 <td>attribute</td>
-<td>string, one of: <a href="https://docs.soda.io/soda-cl/soda-cl-overview.html">SodaCL</a>, <a href="https://docs.getmontecarlo.com/docs/monitors-as-code">Montecarlo</a>, <a href="https://dqops.com/docs/">DQOps</a>,  <a href="https://docs.greatexpectations.io/docs/reference/learn/data_quality_use_cases/dq_use_cases_lp">Great Expectations</a>, Custom</td>
+<td>string, one of: <a href="https://docs.soda.io/soda-cl/soda-cl-overview.html">SodaCL</a>, <a href="https://docs.getmontecarlo.com/docs/monitors-as-code">Montecarlo</a>, <a href="https://dqops.com/docs/">DQOps</a>,  <a href="https://docs.greatexpectations.io/docs/reference/learn/data_quality_use_cases/dq_use_cases_lp">Great Expectations</a>, <a href="https://docs.open-metadata.org/v1.12.x/how-to-guides/data-quality-observability/quality/data-quality-as-code">OpenMetadata</a>, Custom</td>
 <td>Data Quality Monitoring as code system name. Use one of the predefined options only. With <em>Custom</em> type you can use your in-house solution.</td>
 </tr>
 <tr>
