@@ -36,7 +36,7 @@ The `dataQuality` component in ODPS provides a structured and machine-readable w
 The `dataQuality` object consists of two parts:
 
 - **`declarative`**: Captures target levels for defined quality dimensions like `accuracy`, `completeness`, or `timeliness`. These values represent your **intended** or **promised** quality levels.
-- **`executive`**: Allows integration with supported *Everything as Code* tools (e.g., SodaCL, DQOps, MonteCarlo) to define **verifiable** and **executable** rules that check whether those targets are met in practice.
+- **`executive`**: Allows integration with supported *Everything as Code* tools (e.g., SodaCL, DQOps, MonteCarlo, OpenMetadata) to define **verifiable** and **executable** rules that check whether those targets are met in practice.
 
 This structure ensures that both expectations and enforcement logic are documented and machine-actionable in the same place.
 
@@ -209,12 +209,10 @@ dataQuality:
 | **displaytitle** | array | - | Dimension title to be shown in various UIs. Array contains title(s) in desired language(s). |
 | **en** | attribute | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | Binds the text elements together in a given language. Multilanguage support is implemented by duplicating content under other ISO language codes. |
 | **description** | array | - | Describe the dimension so that it can be used for example in info boxes in UI. Array contains descriptions in desired language(s). |
-| **type** | attribute | string, one of: [SodaCL](https://docs.soda.io/soda-cl/soda-cl-overview.html), [Montecarlo](https://docs.getmontecarlo.com/docs/monitors-as-code), [DQOps](https://dqops.com/docs/),  [Great Expectations](https://docs.greatexpectations.io/docs/reference/learn/data_quality_use_cases/dq_use_cases_lp), Custom | Data Quality Monitoring as code system name. Use one of the predefined options only. With _Custom_ type you can use your in-house solution. |
+| **type** | attribute | string, one of: [SodaCL](https://docs.soda.io/soda-cl/soda-cl-overview.html), [Montecarlo](https://docs.getmontecarlo.com/docs/monitors-as-code), [DQOps](https://dqops.com/docs/),  [Great Expectations](https://docs.greatexpectations.io/docs/reference/learn/data_quality_use_cases/dq_use_cases_lp), [OpenMetadata](https://docs.open-metadata.org/v1.12.x/how-to-guides/data-quality-observability/quality/data-quality-as-code), Custom | Data Quality Monitoring as code system name. Use one of the predefined options only. With _Custom_ type you can use your in-house solution. |
 | **version** | attribute | string | The version of DQ monitoring tool used. |
 | **reference** | URL | Valid URL | Provide URL pointing to the reference documentation. |
 | **spec** | element | YAML/URL/string | The content for Data Quality monitoring expressed as code. Accepted as inline YAML, a valid URL pointing to YAML, or a plain string if `type` is `Custom`. |
-
-
 
 
 If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)

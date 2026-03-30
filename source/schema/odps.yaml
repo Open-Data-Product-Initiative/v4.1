@@ -237,6 +237,29 @@ properties:
                       weight:
                         type: integer
                         description: Relative importance of this dimension for product-level scoring. User-editable integer (no decimals).
+          executable:
+            type: array
+            items:
+              type: object
+              properties:
+                dimension:
+                  type: string
+                type:
+                  type: string
+                  enum:
+                    - SodaCL
+                    - Montecarlo
+                    - DQOps
+                    - Great Expectations
+                    - OpenMetadata
+                    - Custom
+                version:
+                  type: string
+                reference:
+                  type: string
+                  format: uri
+                spec:
+                  type: object
 
       dataAccess:
         type: object

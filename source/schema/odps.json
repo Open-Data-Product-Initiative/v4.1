@@ -527,6 +527,8 @@
                         "SodaCL",
                         "Montecarlo",
                         "DQOps",
+                        "Great Expectations",
+                        "OpenMetadata",
                         "Custom"
                     ]
                 },
