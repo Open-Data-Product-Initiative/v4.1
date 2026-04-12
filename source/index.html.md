@@ -46,24 +46,13 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
 Development of the specification is under the umbrella of the Linux Foundation. 
 
-
-**Version source:**
-
-* <a href="https://github.com/Open-Data-Product-Initiative/v4.1">https://github.com/Open-Data-Product-Initiative/v4.1</a>
-
-**ODPS Schemas:**
-
-* <a href="https://opendataproducts.org/v4.1/schema/odps.yaml">YAML Schema</a>
-* <a href="https://opendataproducts.org/v4.1/schema/odps.json">JSON Schema</a>
-
-**Migration from 4.0 to 4.1**
-
-* [Migration guide available](#odps-4-0-4-1-migration-guide)
-
-**Participate and contribute:**
-
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.1/issues)
-  
+| Topic | Link |
+|---|---|
+| Version source | <a href="https://github.com/Open-Data-Product-Initiative/v4.1">Open Data Product Specification 4.1 on GitHub</a> |
+| ODPS YAML schema | <a href="https://opendataproducts.org/v4.1/schema/odps.yaml">YAML Schema</a> |
+| ODPS JSON schema | <a href="https://opendataproducts.org/v4.1/schema/odps.json">JSON Schema</a> |
+| Migration guide | [Migration guide available](#odps-4-0-4-1-migration-guide) |
+| Contribute | [Raise an issue in GitHub](https://github.com/Open-Data-Product-Initiative/v4.1/issues) |
 
 ## Introduction
 
