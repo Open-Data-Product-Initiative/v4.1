@@ -52,6 +52,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 | ODPS YAML schema | <a href="https://opendataproducts.org/v4.1/schema/odps.yaml">YAML Schema</a> |
 | ODPS JSON schema | <a href="https://opendataproducts.org/v4.1/schema/odps.json">JSON Schema</a> |
 | Migration guide | [Migration guide available](#odps-4-0-4-1-migration-guide) |
+| Knowledge Base | [ODPS Knowledge Base](https://opendataproducts.org/howto/) |
 | Contribute | [Raise an issue in GitHub](https://github.com/Open-Data-Product-Initiative/v4.1/issues) |
 
 ## Introduction
