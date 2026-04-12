@@ -46,14 +46,14 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
 Development of the specification is under the umbrella of the Linux Foundation. 
 
-| Topic | Link |
-|---|---|
-| Version source | <a href="https://github.com/Open-Data-Product-Initiative/v4.1">Open Data Product Specification 4.1 on GitHub</a> |
-| ODPS YAML schema | <a href="https://opendataproducts.org/v4.1/schema/odps.yaml">YAML Schema</a> |
-| ODPS JSON schema | <a href="https://opendataproducts.org/v4.1/schema/odps.json">JSON Schema</a> |
-| Migration guide | [Migration guide available](#odps-4-0-4-1-migration-guide) |
-| Knowledge Base | [ODPS Knowledge Base](https://opendataproducts.org/howto/) |
-| Contribute | [Raise an issue in GitHub](https://github.com/Open-Data-Product-Initiative/v4.1/issues) |
+| Topic | Link | Description |
+|---|---|---|
+| Version source | <a href="https://github.com/Open-Data-Product-Initiative/v4.1">Open Data Product Specification 4.1 on GitHub</a> | Official source repository for the ODPS 4.1 specification |
+| ODPS YAML schema | <a href="https://opendataproducts.org/v4.1/schema/odps.yaml">YAML Schema</a> | Machine-readable schema definition in YAML format |
+| ODPS JSON schema | <a href="https://opendataproducts.org/v4.1/schema/odps.json">JSON Schema</a> | Machine-readable schema definition in JSON format |
+| Migration guide | [Migration guide available](#odps-4-0-4-1-migration-guide) | Notes and guidance for upgrading from ODPS 4.0 to 4.1 |
+| Knowledge Base | [ODPS Knowledge Base](https://opendataproducts.org/howto/) | Practical examples, FAQs, and implementation guidance |
+| Contribute | [Raise an issue in GitHub](https://github.com/Open-Data-Product-Initiative/v4.1/issues) | Submit issues or suggestions to the specification maintainers |
 
 ## Introduction
 
