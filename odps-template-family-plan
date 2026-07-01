@@ -1,0 +1,693 @@
+<h1 id='odps-template-family-plan'>ODPS Template Family Plan</h1><h2 id='purpose'>Purpose</h2>
+<p>ODPS v4.1 is broad enough to describe many kinds of data products. A single full-schema example is too large for adoption. A small set of applied templates helps users start from the right pattern without learning the full schema first.</p>
+
+<p>This plan defines an ODPS template family that can be added to the ODPS specification, documentation, examples, and SDK tooling.</p>
+
+<p>The templates should be treated as application skeletons. They do not require new schema fields. They reuse the existing ODPS v4.1 schema areas.</p>
+<h2 id='design-principles'>Design principles</h2>
+<ol>
+<li><p>Avoid maturity labels such as Bronze, Silver, Gold.
+These names imply quality tiers but do not explain the purpose of the template.</p></li>
+<li><p>Avoid the word Dataset in template names.
+It pulls users back to legacy catalog thinking. The template can still support ODPS product types such as <code>raw data</code>, <code>derived data</code>, and <code>dataset</code>, but the template name should focus on reuse and product thinking.</p></li>
+<li><p>Separate product templates from access patterns.
+API, SQL, file, MCP, GraphQL, gRPC, and AI are access channels. They are not product templates by themselves.</p></li>
+<li><p>Make Product Profile the universal minimum.
+Every ODPS data product should be able to start from a Product Profile.</p></li>
+<li><p>Add richer templates by product intent.
+The template should answer what kind of product is being described, not how mature it is.</p></li>
+</ol>
+<h2 id='recommended-template-family'>Recommended template family</h2>
+<table><thead>
+<tr>
+<th>Template</th>
+<th>Purpose</th>
+<th>Best for</th>
+<th>Main ODPS schema areas</th>
+<th>Typical ODPS product types</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ODPS Product Profile</td>
+<td>Describe any data product at minimum level</td>
+<td>Cataloging, portfolio inventory, discovery, basic ownership</td>
+<td><code>product.details</code>, <code>product.dataHolder</code>, <code>product.dataAccess</code></td>
+<td>Any product type</td>
+</tr>
+<tr>
+<td>ODPS Reusable Data Product</td>
+<td>Package reusable data for trusted consumption</td>
+<td>Shared data assets, reference data, open data, internal reuse, source-aligned or derived data products</td>
+<td><code>product.details</code>, <code>product.dataHolder</code>, <code>product.dataAccess</code>, <code>product.dataQuality</code>, <code>product.SLA</code></td>
+<td><code>raw data</code>, <code>derived data</code>, <code>dataset</code></td>
+</tr>
+<tr>
+<td>ODPS Analytical Product</td>
+<td>Deliver insight, reporting, and decision support</td>
+<td>Reports, analytical views, dashboards, indicators, decision-support products</td>
+<td><code>product.details</code>, <code>product.productStrategy</code>, <code>product.dataQuality</code>, <code>product.SLA</code>, <code>product.dataAccess</code></td>
+<td><code>reports</code>, <code>analytic view</code>, <code>decision support</code></td>
+</tr>
+<tr>
+<td>ODPS Agentic Product</td>
+<td>Serve AI agents, AI workflows, and automation</td>
+<td>MCP, AI output ports, algorithms, automated decision-making, bi-directional workflows</td>
+<td><code>product.details</code>, <code>product.productStrategy</code>, <code>product.dataAccess</code>, <code>product.SLA</code>, <code>product.dataQuality</code>, <code>product.contract</code>, <code>product.license</code></td>
+<td><code>algorithm</code>, <code>automated decision-making</code>, <code>data-driven service</code>, <code>bi-directional</code></td>
+</tr>
+<tr>
+<td>ODPS Marketplace Product</td>
+<td>Package a data product for controlled or priced consumption</td>
+<td>Marketplaces, pricing plans, licensing, contracts, payment gateways, partner sharing, internal chargeback</td>
+<td><code>product.details</code>, <code>product.productStrategy</code>, <code>product.pricingPlans</code>, <code>product.license</code>, <code>product.contract</code>, <code>product.paymentGateways</code>, <code>product.dataAccess</code>, <code>product.SLA</code>, <code>product.dataQuality</code></td>
+<td>Any product with controlled, priced, or contractual consumption</td>
+</tr>
+</tbody></table>
+<h2 id='access-patterns'>Access patterns</h2>
+<p>Access patterns should be modeled inside <code>product.dataAccess</code>. A single product can have several access channels.</p>
+
+<table><thead>
+<tr>
+<th>Access pattern</th>
+<th>ODPS schema usage</th>
+<th>Use when</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>File access</td>
+<td><code>product.dataAccess[].outputPortType: file</code></td>
+<td>Consumers download files such as CSV, Excel, JSON, XML, zip, or plain text</td>
+</tr>
+<tr>
+<td>SQL access</td>
+<td><code>product.dataAccess[].outputPortType: SQL</code></td>
+<td>Consumers query the product through a database or query layer</td>
+</tr>
+<tr>
+<td>API access</td>
+<td><code>product.dataAccess[].outputPortType: API</code></td>
+<td>Applications, platforms, or services consume the product through an API</td>
+</tr>
+<tr>
+<td>GraphQL access</td>
+<td><code>product.dataAccess[].format: GraphQL</code></td>
+<td>Consumers need flexible query-based access</td>
+</tr>
+<tr>
+<td>AI access</td>
+<td><code>product.dataAccess[].outputPortType: AI</code></td>
+<td>AI systems consume the product directly</td>
+</tr>
+<tr>
+<td>MCP access</td>
+<td><code>product.dataAccess[].format: MCP</code> or <code>product.dataAccess[].specification: MCP</code></td>
+<td>AI agents consume tools, context, or actions through MCP</td>
+</tr>
+<tr>
+<td>gRPC access</td>
+<td><code>product.dataAccess[].outputPortType: gRPC</code></td>
+<td>Low-latency system-to-system consumption is needed</td>
+</tr>
+<tr>
+<td>sFTP access</td>
+<td><code>product.dataAccess[].outputPortType: sFTP</code></td>
+<td>Controlled batch transfer is needed</td>
+</tr>
+</tbody></table>
+<h2 id='template-1-odps-product-profile'>Template 1: ODPS Product Profile</h2><h3 id='intent'>Intent</h3>
+<p>Use this as the minimum ODPS starting point for any data product.</p>
+
+<p>It answers:</p>
+
+<ul>
+<li>What is this product?</li>
+<li>Who holds or owns it?</li>
+<li>How is it accessed?</li>
+<li>What is its status and visibility?</li>
+</ul>
+<h3 id='yaml-skeleton'>YAML skeleton</h3><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.1/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">v4.1"</span>
+
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">details</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{name}}"</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productID}}"</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s2">"</span><span class="s">organisation"</span> <span class="c1"># private | invitation | organisation | dataspace | public</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s2">"</span><span class="s">draft"</span> <span class="c1"># announcement | draft | development | testing | acceptance | production | sunset | retired</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">dataset"</span> <span class="c1"># use one allowed ODPS product type</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{description}}"</span>
+      <span class="na">valueProposition</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{valueProposition}}"</span>
+      <span class="na">productVersion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">v1.0.0"</span>
+      <span class="na">portfolioPriority</span><span class="pi">:</span> <span class="s2">"</span><span class="s">medium"</span> <span class="c1"># critical | high | medium | low</span>
+      <span class="na">governanceProfile</span><span class="pi">:</span> <span class="s2">"</span><span class="s">structured"</span> <span class="c1"># structured | enforced | automated | audit_ready</span>
+      <span class="na">categories</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">{{category}}"</span>
+      <span class="na">tags</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">{{tag}}"</span>
+
+  <span class="na">dataHolder</span><span class="pi">:</span>
+    <span class="na">legalName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{legalName}}"</span>
+    <span class="na">businessDomain</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessDomain}}"</span>
+    <span class="na">contactName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{contactName}}"</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{email}}"</span>
+    <span class="na">URL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{holderUrl}}"</span>
+
+  <span class="na">dataAccess</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{accessName}}"</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{accessDescription}}"</span>
+      <span class="na">outputPortType</span><span class="pi">:</span> <span class="s2">"</span><span class="s">file"</span> <span class="c1"># file | API | SQL | AI | gRPC | sFTP</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">CSV"</span> <span class="c1"># TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s2">"</span><span class="s">none"</span> <span class="c1"># OAuth | Token | API key | HTTP Basic | none</span>
+      <span class="na">accessURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{accessUrl}}"</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{documentationUrl}}"</span>
+</code></pre></div><h2 id='template-2-odps-reusable-data-product'>Template 2: ODPS Reusable Data Product</h2><h3 id='intent-2'>Intent</h3>
+<p>Use this when the product packages reusable data for trusted consumption.</p>
+
+<p>It answers:</p>
+
+<ul>
+<li>What reusable data is provided?</li>
+<li>How good must the data be?</li>
+<li>How fresh or available must it be?</li>
+<li>How can consumers access it?</li>
+</ul>
+<h3 id='yaml-skeleton-2'>YAML skeleton</h3><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.1/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">v4.1"</span>
+
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">details</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{name}}"</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productID}}"</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s2">"</span><span class="s">organisation"</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s2">"</span><span class="s">production"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">derived</span><span class="nv"> </span><span class="s">data"</span> <span class="c1"># raw data | derived data | dataset</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{description}}"</span>
+      <span class="na">valueProposition</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{valueProposition}}"</span>
+      <span class="na">productVersion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">v1.0.0"</span>
+      <span class="na">portfolioPriority</span><span class="pi">:</span> <span class="s2">"</span><span class="s">high"</span>
+      <span class="na">governanceProfile</span><span class="pi">:</span> <span class="s2">"</span><span class="s">enforced"</span>
+      <span class="na">created</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2026-01-01"</span>
+      <span class="na">updated</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2026-01-01"</span>
+      <span class="na">outputFileFormats</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">CSV"</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">JSON"</span>
+      <span class="na">categories</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">{{category}}"</span>
+      <span class="na">tags</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">{{tag}}"</span>
+
+  <span class="na">dataHolder</span><span class="pi">:</span>
+    <span class="na">legalName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{legalName}}"</span>
+    <span class="na">businessDomain</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessDomain}}"</span>
+    <span class="na">contactName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{contactName}}"</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{email}}"</span>
+
+  <span class="na">dataQuality</span><span class="pi">:</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">displayTitle</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Trusted</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">quality</span><span class="nv"> </span><span class="s">targets"</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Quality</span><span class="nv"> </span><span class="s">targets</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">trusted</span><span class="nv"> </span><span class="s">reuse."</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">completeness"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">95</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">40</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">completeness</span><span class="nv"> </span><span class="s">level."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">timeliness"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">95</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">timeliness</span><span class="nv"> </span><span class="s">level."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">validity"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">95</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">validity</span><span class="nv"> </span><span class="s">level."</span>
+
+  <span class="na">SLA</span><span class="pi">:</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Reusable</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">SLA"</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Service</span><span class="nv"> </span><span class="s">expectations</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">reusable</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">consumption."</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">updateFrequency"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1"</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">50</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">days"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">update</span><span class="nv"> </span><span class="s">interval."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">uptime"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="s2">"</span><span class="s">99"</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">50</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percent"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">access</span><span class="nv"> </span><span class="s">availability."</span>
+
+  <span class="na">dataAccess</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">File</span><span class="nv"> </span><span class="s">download"</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Downloadable</span><span class="nv"> </span><span class="s">reusable</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">file."</span>
+      <span class="na">outputPortType</span><span class="pi">:</span> <span class="s2">"</span><span class="s">file"</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">CSV"</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s2">"</span><span class="s">none"</span>
+      <span class="na">accessURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{fileAccessUrl}}"</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{documentationUrl}}"</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">API</span><span class="nv"> </span><span class="s">access"</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">API</span><span class="nv"> </span><span class="s">access</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">reusable</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">product."</span>
+      <span class="na">outputPortType</span><span class="pi">:</span> <span class="s2">"</span><span class="s">API"</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">JSON"</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s2">"</span><span class="s">API</span><span class="nv"> </span><span class="s">key"</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s2">"</span><span class="s">OAS"</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{openApiSpecUrl}}"</span>
+      <span class="na">accessURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{apiAccessUrl}}"</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{apiDocumentationUrl}}"</span>
+</code></pre></div><h2 id='template-3-odps-analytical-product'>Template 3: ODPS Analytical Product</h2><h3 id='intent-3'>Intent</h3>
+<p>Use this when the product delivers insight, reporting, indicators, or decision support.</p>
+
+<p>It answers:</p>
+
+<ul>
+<li>What business objective does this analytical product support?</li>
+<li>Which KPI does it contribute to?</li>
+<li>What product-level KPIs track its usefulness?</li>
+<li>What quality and SLA expectations apply?</li>
+</ul>
+<h3 id='yaml-skeleton-3'>YAML skeleton</h3><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.1/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">v4.1"</span>
+
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">details</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{name}}"</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productID}}"</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s2">"</span><span class="s">organisation"</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s2">"</span><span class="s">production"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">analytic</span><span class="nv"> </span><span class="s">view"</span> <span class="c1"># reports | analytic view | decision support</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{description}}"</span>
+      <span class="na">valueProposition</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{valueProposition}}"</span>
+      <span class="na">productVersion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">v1.0.0"</span>
+      <span class="na">portfolioPriority</span><span class="pi">:</span> <span class="s2">"</span><span class="s">high"</span>
+      <span class="na">governanceProfile</span><span class="pi">:</span> <span class="s2">"</span><span class="s">enforced"</span>
+      <span class="na">useCases</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">useCase</span><span class="pi">:</span>
+            <span class="na">useCaseTitle</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{useCaseTitle}}"</span>
+            <span class="na">useCaseDescription</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{useCaseDescription}}"</span>
+            <span class="na">useCaseURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{useCaseUrl}}"</span>
+
+  <span class="na">productStrategy</span><span class="pi">:</span>
+    <span class="na">status</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Active"</span>
+    <span class="na">startDate</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2026-01-01"</span>
+    <span class="na">endDate</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2026-12-31"</span>
+    <span class="na">objectives</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessObjective}}"</span>
+    <span class="na">contributesToKPI</span><span class="pi">:</span>
+      <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiId}}"</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiName}}"</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiUnit}}"</span>
+      <span class="na">target</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiTarget}}"</span>
+      <span class="na">direction</span><span class="pi">:</span> <span class="s2">"</span><span class="s">increase"</span> <span class="c1"># increase | decrease | at_least | at_most | equals</span>
+      <span class="na">timeframe</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{timeframe}}"</span>
+      <span class="na">frequency</span><span class="pi">:</span> <span class="s2">"</span><span class="s">monthly"</span>
+      <span class="na">owner</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{owner}}"</span>
+      <span class="na">calculation</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{calculation}}"</span>
+    <span class="na">productKPIs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiId}}"</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiName}}"</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiUnit}}"</span>
+        <span class="na">target</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiTarget}}"</span>
+        <span class="na">calculation</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiCalculation}}"</span>
+        <span class="na">direction</span><span class="pi">:</span> <span class="s2">"</span><span class="s">increase"</span>
+        <span class="na">frequency</span><span class="pi">:</span> <span class="s2">"</span><span class="s">monthly"</span>
+        <span class="na">owner</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{owner}}"</span>
+
+  <span class="na">dataQuality</span><span class="pi">:</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">displayTitle</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Analytical</span><span class="nv"> </span><span class="s">quality</span><span class="nv"> </span><span class="s">targets"</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Quality</span><span class="nv"> </span><span class="s">expectations</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">analytical</span><span class="nv"> </span><span class="s">use."</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">accuracy"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">95</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">40</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">analytical</span><span class="nv"> </span><span class="s">accuracy."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">consistency"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">95</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">consistency</span><span class="nv"> </span><span class="s">across</span><span class="nv"> </span><span class="s">reporting</span><span class="nv"> </span><span class="s">periods."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">timeliness"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">95</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">freshness</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">analytical</span><span class="nv"> </span><span class="s">use."</span>
+
+  <span class="na">SLA</span><span class="pi">:</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Analytical</span><span class="nv"> </span><span class="s">product</span><span class="nv"> </span><span class="s">SLA"</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Service</span><span class="nv"> </span><span class="s">expectations</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">analytical</span><span class="nv"> </span><span class="s">product</span><span class="nv"> </span><span class="s">consumption."</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">updateFrequency"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1"</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">60</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">days"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">refresh</span><span class="nv"> </span><span class="s">interval."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">emailResponseTime"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2"</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">40</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">days"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">response</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">support</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">email."</span>
+
+  <span class="na">dataAccess</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Analytical</span><span class="nv"> </span><span class="s">view"</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Access</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">analytical</span><span class="nv"> </span><span class="s">view</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">report."</span>
+      <span class="na">outputPortType</span><span class="pi">:</span> <span class="s2">"</span><span class="s">API"</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">JSON"</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s2">"</span><span class="s">OAuth"</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s2">"</span><span class="s">OAS"</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{specsUrl}}"</span>
+      <span class="na">accessURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{accessUrl}}"</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{documentationUrl}}"</span>
+</code></pre></div><h2 id='template-4-odps-agentic-product'>Template 4: ODPS Agentic Product</h2><h3 id='intent-4'>Intent</h3>
+<p>Use this when the product is consumed by AI agents, AI applications, workflows, automation, or machine-to-machine processes.</p>
+
+<p>It answers:</p>
+
+<ul>
+<li>What can the agent or system consume?</li>
+<li>What access protocol is used?</li>
+<li>What operational promises apply?</li>
+<li>What contract or license terms guide automated consumption?</li>
+</ul>
+<h3 id='yaml-skeleton-4'>YAML skeleton</h3><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.1/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">v4.1"</span>
+
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">details</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{name}}"</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productID}}"</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s2">"</span><span class="s">organisation"</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s2">"</span><span class="s">production"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">data-driven</span><span class="nv"> </span><span class="s">service"</span> <span class="c1"># algorithm | automated decision-making | data-driven service | bi-directional</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{description}}"</span>
+      <span class="na">valueProposition</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{valueProposition}}"</span>
+      <span class="na">productVersion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">v1.0.0"</span>
+      <span class="na">portfolioPriority</span><span class="pi">:</span> <span class="s2">"</span><span class="s">critical"</span>
+      <span class="na">governanceProfile</span><span class="pi">:</span> <span class="s2">"</span><span class="s">automated"</span>
+      <span class="na">standards</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">{{standard}}"</span>
+      <span class="na">tags</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">agent-ready"</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">MCP"</span>
+
+  <span class="na">productStrategy</span><span class="pi">:</span>
+    <span class="na">status</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Active"</span>
+    <span class="na">objectives</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessObjective}}"</span>
+    <span class="na">contributesToKPI</span><span class="pi">:</span>
+      <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiId}}"</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiName}}"</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiUnit}}"</span>
+      <span class="na">target</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiTarget}}"</span>
+      <span class="na">direction</span><span class="pi">:</span> <span class="s2">"</span><span class="s">increase"</span>
+      <span class="na">timeframe</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{timeframe}}"</span>
+      <span class="na">frequency</span><span class="pi">:</span> <span class="s2">"</span><span class="s">monthly"</span>
+      <span class="na">owner</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{owner}}"</span>
+      <span class="na">calculation</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{calculation}}"</span>
+    <span class="na">productKPIs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiId}}"</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiName}}"</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiUnit}}"</span>
+        <span class="na">target</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiTarget}}"</span>
+        <span class="na">calculation</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiCalculation}}"</span>
+
+  <span class="na">dataQuality</span><span class="pi">:</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">displayTitle</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Agentic</span><span class="nv"> </span><span class="s">quality</span><span class="nv"> </span><span class="s">targets"</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Quality</span><span class="nv"> </span><span class="s">expectations</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">AI</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">automated</span><span class="nv"> </span><span class="s">consumption."</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">validity"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">35</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">validity</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">machine</span><span class="nv"> </span><span class="s">consumption."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">timeliness"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">35</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">freshness</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">agentic</span><span class="nv"> </span><span class="s">use."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">consistency"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">consistency</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">automated</span><span class="nv"> </span><span class="s">workflows."</span>
+
+  <span class="na">SLA</span><span class="pi">:</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Agentic</span><span class="nv"> </span><span class="s">product</span><span class="nv"> </span><span class="s">SLA"</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Service</span><span class="nv"> </span><span class="s">expectations</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">agentic</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">automated</span><span class="nv"> </span><span class="s">consumption."</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">latency"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="s2">"</span><span class="s">500"</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">35</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">milliseconds"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">response</span><span class="nv"> </span><span class="s">latency."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">uptime"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="s2">"</span><span class="s">99"</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">35</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percent"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">service</span><span class="nv"> </span><span class="s">availability."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">errorRate"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1"</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percent"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Maximum</span><span class="nv"> </span><span class="s">expected</span><span class="nv"> </span><span class="s">error</span><span class="nv"> </span><span class="s">rate."</span>
+
+  <span class="na">contract</span><span class="pi">:</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{contractId}}"</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ODCS"</span> <span class="c1"># ODCS | DCS</span>
+    <span class="na">contractVersion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{contractVersion}}"</span>
+    <span class="na">contractURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{contractUrl}}"</span>
+
+  <span class="na">license</span><span class="pi">:</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">definition</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{licenseDefinition}}"</span>
+      <span class="na">restrictions</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{licenseRestrictions}}"</span>
+      <span class="na">permanent</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">exclusive</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">rights</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">Reproduction"</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">Display"</span>
+    <span class="na">governance</span><span class="pi">:</span>
+      <span class="na">ownership</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{licenseOwnership}}"</span>
+      <span class="na">audit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{auditTerms}}"</span>
+      <span class="na">confidentiality</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{confidentiality}}"</span>
+      <span class="na">applicableLaws</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{applicableLaws}}"</span>
+
+  <span class="na">dataAccess</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">MCP</span><span class="nv"> </span><span class="s">access"</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">MCP</span><span class="nv"> </span><span class="s">access</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">AI</span><span class="nv"> </span><span class="s">agents</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">tools."</span>
+      <span class="na">outputPortType</span><span class="pi">:</span> <span class="s2">"</span><span class="s">AI"</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">MCP"</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Token"</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s2">"</span><span class="s">MCP"</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{mcpSpecUrl}}"</span>
+      <span class="na">accessURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{mcpAccessUrl}}"</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{documentationUrl}}"</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">API</span><span class="nv"> </span><span class="s">access"</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">API</span><span class="nv"> </span><span class="s">access</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">applications</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">automated</span><span class="nv"> </span><span class="s">workflows."</span>
+      <span class="na">outputPortType</span><span class="pi">:</span> <span class="s2">"</span><span class="s">API"</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">JSON"</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s2">"</span><span class="s">OAuth"</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s2">"</span><span class="s">OAS"</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{openApiSpecUrl}}"</span>
+      <span class="na">accessURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{apiAccessUrl}}"</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{apiDocumentationUrl}}"</span>
+</code></pre></div><h2 id='template-5-odps-marketplace-product'>Template 5: ODPS Marketplace Product</h2><h3 id='intent-5'>Intent</h3>
+<p>Use this when the product is offered under controlled, priced, licensed, contractual, or marketplace terms.</p>
+
+<p>It answers:</p>
+
+<ul>
+<li>What is being offered?</li>
+<li>What pricing applies?</li>
+<li>What license rights and restrictions apply?</li>
+<li>What contract applies?</li>
+<li>What payment gateway applies?</li>
+<li>What SLA and quality terms are attached to the offer?</li>
+</ul>
+<h3 id='yaml-skeleton-5'>YAML skeleton</h3><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.1/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">v4.1"</span>
+
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">details</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{name}}"</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productID}}"</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s2">"</span><span class="s">dataspace"</span> <span class="c1"># private | invitation | organisation | dataspace | public</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s2">"</span><span class="s">production"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">data-enhanced</span><span class="nv"> </span><span class="s">product"</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{description}}"</span>
+      <span class="na">valueProposition</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{valueProposition}}"</span>
+      <span class="na">productVersion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">v1.0.0"</span>
+      <span class="na">portfolioPriority</span><span class="pi">:</span> <span class="s2">"</span><span class="s">high"</span>
+      <span class="na">governanceProfile</span><span class="pi">:</span> <span class="s2">"</span><span class="s">audit_ready"</span>
+      <span class="na">categories</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">{{category}}"</span>
+      <span class="na">tags</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">marketplace"</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">controlled-consumption"</span>
+
+  <span class="na">productStrategy</span><span class="pi">:</span>
+    <span class="na">status</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Active"</span>
+    <span class="na">objectives</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessObjective}}"</span>
+    <span class="na">contributesToKPI</span><span class="pi">:</span>
+      <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiId}}"</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiName}}"</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiUnit}}"</span>
+      <span class="na">target</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{businessKpiTarget}}"</span>
+      <span class="na">direction</span><span class="pi">:</span> <span class="s2">"</span><span class="s">increase"</span>
+      <span class="na">timeframe</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{timeframe}}"</span>
+      <span class="na">frequency</span><span class="pi">:</span> <span class="s2">"</span><span class="s">monthly"</span>
+      <span class="na">owner</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{owner}}"</span>
+      <span class="na">calculation</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{calculation}}"</span>
+    <span class="na">productKPIs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiId}}"</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiName}}"</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiUnit}}"</span>
+        <span class="na">target</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiTarget}}"</span>
+        <span class="na">calculation</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{productKpiCalculation}}"</span>
+
+  <span class="na">pricingPlans</span><span class="pi">:</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="na">en</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{pricingPlanName}}"</span>
+          <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s2">"</span><span class="s">USD"</span>
+          <span class="na">price</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{price}}"</span>
+          <span class="na">billingDuration</span><span class="pi">:</span> <span class="s2">"</span><span class="s">month"</span> <span class="c1"># instant | day | week | month | year</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Recurring"</span> <span class="c1"># One-time-payment | Pay-per-use | Recurring | Revenue-sharing | Data-volume | Pay-what-you-want | Freemium | Open-data | Value-based | On-request | Trial</span>
+          <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">0</span>
+          <span class="na">offering</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s2">"</span><span class="s">{{offeringItem}}"</span>
+          <span class="na">valueAddedTaxIncluded</span><span class="pi">:</span> <span class="no">false</span>
+          <span class="na">valueAddedTaxPercentage</span><span class="pi">:</span> <span class="m">0</span>
+          <span class="na">notes</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{pricingNotes}}"</span>
+
+  <span class="na">license</span><span class="pi">:</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">definition</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{licenseDefinition}}"</span>
+      <span class="na">restrictions</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{licenseRestrictions}}"</span>
+      <span class="na">geographicalArea</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">{{geographicalArea}}"</span>
+      <span class="na">permanent</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">exclusive</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">rights</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">Reproduction"</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">Display"</span>
+        <span class="pi">-</span> <span class="s2">"</span><span class="s">Distribution"</span>
+    <span class="na">termination</span><span class="pi">:</span>
+      <span class="na">noticePeriod</span><span class="pi">:</span> <span class="m">30</span>
+      <span class="na">terminationConditions</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{terminationConditions}}"</span>
+      <span class="na">continuityConditions</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{continuityConditions}}"</span>
+    <span class="na">governance</span><span class="pi">:</span>
+      <span class="na">ownership</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{licenseOwnership}}"</span>
+      <span class="na">audit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{auditTerms}}"</span>
+      <span class="na">warranties</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{warranties}}"</span>
+      <span class="na">confidentiality</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{confidentiality}}"</span>
+      <span class="na">applicableLaws</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{applicableLaws}}"</span>
+
+  <span class="na">contract</span><span class="pi">:</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{contractId}}"</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ODCS"</span> <span class="c1"># ODCS | DCS</span>
+    <span class="na">contractVersion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{contractVersion}}"</span>
+    <span class="na">contractURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{contractUrl}}"</span>
+
+  <span class="na">paymentGateways</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{paymentGatewayDescription}}"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Stripe"</span> <span class="c1"># Stripe | Axio | Checkout | Custom</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{paymentGatewayVersion}}"</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{paymentGatewayReferenceUrl}}"</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">{}</span>
+
+  <span class="na">dataQuality</span><span class="pi">:</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">displayTitle</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Marketplace</span><span class="nv"> </span><span class="s">quality</span><span class="nv"> </span><span class="s">targets"</span>
+        <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Quality</span><span class="nv"> </span><span class="s">targets</span><span class="nv"> </span><span class="s">attached</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">marketplace</span><span class="nv"> </span><span class="s">offer."</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">completeness"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">95</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">completeness</span><span class="nv"> </span><span class="s">level."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">accuracy"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">95</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">40</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">accuracy</span><span class="nv"> </span><span class="s">level."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">timeliness"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="m">95</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percentage"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">timeliness</span><span class="nv"> </span><span class="s">level."</span>
+
+  <span class="na">SLA</span><span class="pi">:</span>
+    <span class="na">declarative</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Marketplace</span><span class="nv"> </span><span class="s">product</span><span class="nv"> </span><span class="s">SLA"</span>
+        <span class="na">description</span><span class="pi">:</span>
+          <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Service</span><span class="nv"> </span><span class="s">expectations</span><span class="nv"> </span><span class="s">attached</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">marketplace</span><span class="nv"> </span><span class="s">offer."</span>
+        <span class="na">support</span><span class="pi">:</span>
+          <span class="na">email</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{supportEmail}}"</span>
+          <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{emailServiceHours}}"</span>
+          <span class="na">documentationURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{supportDocumentationUrl}}"</span>
+        <span class="na">dimensions</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">uptime"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="s2">"</span><span class="s">99"</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">40</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">percent"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">service</span><span class="nv"> </span><span class="s">availability."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">responseTime"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2"</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">seconds"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">technical</span><span class="nv"> </span><span class="s">response</span><span class="nv"> </span><span class="s">time."</span>
+          <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s2">"</span><span class="s">emailResponseTime"</span>
+            <span class="na">objective</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1"</span>
+            <span class="na">weight</span><span class="pi">:</span> <span class="m">30</span>
+            <span class="na">unit</span><span class="pi">:</span> <span class="s2">"</span><span class="s">days"</span>
+            <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Expected</span><span class="nv"> </span><span class="s">support</span><span class="nv"> </span><span class="s">response</span><span class="nv"> </span><span class="s">time."</span>
+
+  <span class="na">dataAccess</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Marketplace</span><span class="nv"> </span><span class="s">API</span><span class="nv"> </span><span class="s">access"</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Controlled</span><span class="nv"> </span><span class="s">API</span><span class="nv"> </span><span class="s">access</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">product."</span>
+      <span class="na">outputPortType</span><span class="pi">:</span> <span class="s2">"</span><span class="s">API"</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">JSON"</span>
+      <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Token"</span>
+      <span class="na">specification</span><span class="pi">:</span> <span class="s2">"</span><span class="s">OAS"</span>
+      <span class="na">specsURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{specsUrl}}"</span>
+      <span class="na">accessURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{accessUrl}}"</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{documentationUrl}}"</span>
+</code></pre></div>

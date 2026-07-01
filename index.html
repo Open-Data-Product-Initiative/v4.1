@@ -466,6 +466,9 @@
             <a href="#mandatory-only-example" class="toc-h1 toc-link" data-title="Mandatory-only example">Mandatory-only example</a>
           </li>
           <li>
+            <a href="#odps-template-family" class="toc-h1 toc-link" data-title="ODPS template family">ODPS template family</a>
+          </li>
+          <li>
             <a href="#data-product-catalog" class="toc-h1 toc-link" data-title="Data Product Catalog">Data Product Catalog</a>
               <ul class="toc-list-h2">
                   <li>
@@ -3513,7 +3516,55 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
     <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">derived data</span>
 
-</code></pre></div><h1 id='data-product-catalog'>Data Product Catalog</h1>
+</code></pre></div><h1 id='odps-template-family'>ODPS template family</h1>
+<p>ODPS can describe many kinds of data products. A full-schema example is useful for completeness, but it is too large as the first starting point for many teams. The ODPS template family gives users a smaller set of application skeletons that reuse the existing ODPS schema areas.</p>
+
+<p>These templates are guidance patterns, not new schema objects. They do not add a mandatory <code>template</code> or <code>profile</code> field. Tools can still package them as starter files, replace the placeholders, validate the completed files with the normal ODPS schema, and extend them with additional ODPS components when needed.</p>
+
+<p>Use the template that best matches the product intent. Do not use maturity labels such as Bronze, Silver, or Gold as template names, because they describe perceived quality instead of product purpose. Access methods such as API, SQL, file, MCP, GraphQL, gRPC, and AI should be modeled inside <code>product.dataAccess</code>; they are access patterns, not product templates.</p>
+
+<p>The skeleton files are intentionally stored as separate YAML files so they can be copied, validated, versioned, and reused outside this documentation page.</p>
+
+<table><thead>
+<tr>
+<th>Template</th>
+<th>Use when</th>
+<th>Main ODPS areas</th>
+<th>Skeleton</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>ODPS Product Profile</strong></td>
+<td>Use this as the minimum starting point for any data product. It answers what the product is, who holds it, and what its status and visibility are.</td>
+<td><code>details</code>, <code>dataHolder</code></td>
+<td><a href="examples/Templates/product-profile.yml">product-profile.yml</a></td>
+</tr>
+<tr>
+<td><strong>ODPS Reusable Data Product</strong></td>
+<td>Use this when the product packages reusable data for trusted consumption. It adds quality expectations to the product profile pattern.</td>
+<td><code>details</code>, <code>dataHolder</code>, <code>dataQuality</code>, <code>dataAccess</code></td>
+<td><a href="examples/Templates/reusable-data-product.yml">reusable-data-product.yml</a></td>
+</tr>
+<tr>
+<td><strong>ODPS Analytical Product</strong></td>
+<td>Use this when the product delivers insight, reporting, indicators, or decision support. The template adds product strategy so the product can declare the business objective and KPIs it supports.</td>
+<td><code>details</code>, <code>dataHolder</code>, <code>productStrategy</code>, <code>dataQuality</code>, <code>SLA</code>, <code>dataAccess</code></td>
+<td><a href="examples/Templates/analytical-product.yml">analytical-product.yml</a></td>
+</tr>
+<tr>
+<td><strong>ODPS Agentic Product</strong></td>
+<td>Use this when the product is consumed by AI agents, AI applications, workflows, automation, or machine-to-machine processes. It connects agentic use cases to strategy, quality, SLA, and named <code>dataAccess</code> methods such as MCP or API.</td>
+<td><code>details</code>, <code>useCases</code>, <code>productStrategy</code>, <code>dataAccess</code>, <code>SLA</code>, <code>dataQuality</code>, <code>contract</code>, <code>license</code></td>
+<td><a href="examples/Templates/agentic-product.yml">agentic-product.yml</a></td>
+</tr>
+<tr>
+<td><strong>ODPS Marketplace Product</strong></td>
+<td>Use this when the product is offered under controlled, priced, licensed, contractual, or marketplace terms. The template connects pricing, license, contract, payment, quality, SLA, and access metadata.</td>
+<td><code>details</code>, <code>productStrategy</code>, <code>pricingPlans</code>, <code>license</code>, <code>contract</code>, <code>paymentGateways</code>, <code>dataAccess</code>, <code>SLA</code>, <code>dataQuality</code></td>
+<td><a href="examples/Templates/marketplace-product.yml">marketplace-product.yml</a></td>
+</tr>
+</tbody></table>
+<h1 id='data-product-catalog'>Data Product Catalog</h1>
 <blockquote>
 <p>Example of catalog object usage:</p>
 </blockquote>

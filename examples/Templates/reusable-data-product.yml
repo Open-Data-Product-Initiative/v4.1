@@ -1,0 +1,76 @@
+schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+version: 4.1
+product:
+  details:
+    en:
+      name: "{{name}}"
+      productID: "{{productID}}"
+      visibility: organisation
+      status: production
+      type: derived data
+      description: "{{description}}"
+      valueProposition: "{{valueProposition}}"
+      productVersion: 1.0.0
+      portfolioPriority: high
+      governanceProfile: enforced
+      created: "2026-01-01"
+      updated: "2026-01-01"
+      outputFileFormats:
+        - CSV
+        - JSON
+      categories:
+        - "{{category}}"
+      tags:
+        - "{{tag}}"
+
+  dataHolder:
+    en:
+      legalName: "{{legalName}}"
+      businessDomain: "{{businessDomain}}"
+      contactName: "{{contactName}}"
+      email: "{{email}}"
+
+  dataQuality:
+    declarative:
+      default:
+        displaytitle:
+          en: Trusted data quality targets
+        description:
+          en: Quality targets for trusted reuse.
+        dimensions:
+          - dimension: completeness
+            objective: 95
+            weight: 40
+            unit: percentage
+          - dimension: timeliness
+            objective: 95
+            weight: 30
+            unit: percentage
+          - dimension: validity
+            objective: 95
+            weight: 30
+            unit: percentage
+
+  dataAccess:
+    default:
+      name:
+        en: File download
+      description:
+        en: Downloadable reusable data file.
+      outputPorttype: file
+      format: CSV
+      authenticationMethod: none
+      accessURL: "{{fileAccessUrl}}"
+      documentationURL: "{{documentationUrl}}"
+    API:
+      name:
+        en: API access
+      description:
+        en: API access to the same reusable data product.
+      outputPorttype: API
+      format: JSON
+      authenticationMethod: API key
+      specification: OAS
+      specsURL: "{{openApiSpecUrl}}"
+      accessURL: "{{apiAccessUrl}}"
+      documentationURL: "{{apiDocumentationUrl}}"
