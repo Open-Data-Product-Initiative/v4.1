@@ -23,6 +23,7 @@ includes:
   - extensions
   - helloworld
   - bareminimum
+  - templates
   - catalog
   - migration
   - terms

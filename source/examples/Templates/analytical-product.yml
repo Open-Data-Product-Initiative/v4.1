@@ -1,0 +1,103 @@
+schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+version: 4.1
+product:
+  details:
+    en:
+      name: "{{name}}"
+      productID: "{{productID}}"
+      visibility: organisation
+      status: production
+      type: analytic view
+      description: "{{description}}"
+      valueProposition: "{{valueProposition}}"
+      productVersion: 1.0.0
+      portfolioPriority: high
+      governanceProfile: enforced
+      useCases:
+        - useCase:
+            useCaseTitle: "{{useCaseTitle}}"
+            useCaseDescription: "{{useCaseDescription}}"
+            useCaseURL: "{{useCaseUrl}}"
+
+  dataHolder:
+    en:
+      legalName: "{{legalName}}"
+      businessDomain: "{{businessDomain}}"
+      contactName: "{{contactName}}"
+      email: "{{email}}"
+
+  productStrategy:
+    status: Active
+    objectives:
+      - en: "{{businessObjective}}"
+    contributesToKPI:
+      id: "{{businessKpiId}}"
+      name: "{{businessKpiName}}"
+      unit: "{{businessKpiUnit}}"
+      target: "{{businessKpiTarget}}"
+      direction: increase
+      timeframe: "{{timeframe}}"
+      frequency: monthly
+      owner: "{{owner}}"
+      calculation: "{{calculation}}"
+    productKPIs:
+      - id: "{{productKpiId}}"
+        name: "{{productKpiName}}"
+        unit: "{{productKpiUnit}}"
+        target: "{{productKpiTarget}}"
+        calculation: "{{productKpiCalculation}}"
+        direction: increase
+        frequency: monthly
+        owner: "{{owner}}"
+
+  dataQuality:
+    declarative:
+      default:
+        displaytitle:
+          en: Analytical quality targets
+        description:
+          en: Quality expectations for analytical use.
+        dimensions:
+          - dimension: accuracy
+            objective: 95
+            weight: 40
+            unit: percentage
+          - dimension: consistency
+            objective: 95
+            weight: 30
+            unit: percentage
+          - dimension: timeliness
+            objective: 95
+            weight: 30
+            unit: percentage
+
+  SLA:
+    declarative:
+      default:
+        name:
+          en: Analytical product SLA
+        description:
+          en: Service expectations for analytical product consumption.
+        dimensions:
+          - dimension: updateFrequency
+            objective: 1
+            weight: 60
+            unit: days
+          - dimension: emailResponseTime
+            objective: 2
+            weight: 40
+            unit: days
+
+  dataAccess:
+    default:
+      name:
+        en: Analytical view
+      description:
+        en: Access to the analytical view or report.
+      outputPorttype: API
+      format: JSON
+      authenticationMethod: OAuth
+      specification: OAS
+      specsURL: "{{specsUrl}}"
+      accessURL: "{{accessUrl}}"
+      documentationURL: "{{documentationUrl}}"

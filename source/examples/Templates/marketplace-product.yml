@@ -1,0 +1,162 @@
+schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+version: 4.1
+product:
+  details:
+    en:
+      name: "{{name}}"
+      productID: "{{productID}}"
+      visibility: dataspace
+      status: production
+      type: data-enhanced product
+      description: "{{description}}"
+      valueProposition: "{{valueProposition}}"
+      productVersion: 1.0.0
+      portfolioPriority: high
+      governanceProfile: audit_ready
+      categories:
+        - "{{category}}"
+      tags:
+        - marketplace
+        - controlled-consumption
+
+  productStrategy:
+    status: Active
+    objectives:
+      - en: "{{businessObjective}}"
+    contributesToKPI:
+      id: "{{businessKpiId}}"
+      name: "{{businessKpiName}}"
+      unit: "{{businessKpiUnit}}"
+      target: "{{businessKpiTarget}}"
+      direction: increase
+      timeframe: "{{timeframe}}"
+      frequency: monthly
+      owner: "{{owner}}"
+      calculation: "{{calculation}}"
+    productKPIs:
+      - id: "{{productKpiId}}"
+        name: "{{productKpiName}}"
+        unit: "{{productKpiUnit}}"
+        target: "{{productKpiTarget}}"
+        calculation: "{{productKpiCalculation}}"
+
+  pricingPlans:
+    declarative:
+      en:
+        - name: "{{pricingPlanName}}"
+          priceCurrency: USD
+          price: "{{price}}"
+          billingDuration: month
+          unit: Recurring
+          maxTransactionQuantity: 0
+          offering:
+            - "{{offeringItem}}"
+          valueAddedTaxIncluded: false
+          valueAddedTaxPercentage: 0
+          paymentGateway:
+            $ref: "#/product/paymentGateways/default"
+          dataQuality:
+            $ref: "#/product/dataQuality/declarative/default"
+          SLA:
+            $ref: "#/product/SLA/declarative/default"
+          access:
+            $ref: "#/product/dataAccess/default"
+
+  license:
+    en:
+      scope:
+        definition: "{{licenseDefinition}}"
+        restrictions: "{{licenseRestrictions}}"
+        geographicalArea:
+          - "{{geographicalArea}}"
+        permanent: false
+        exclusive: false
+        rights:
+          - Reproduction
+          - Display
+          - Distribution
+      termination:
+        noticePeriod: 30
+        terminationConditions: "{{terminationConditions}}"
+        continuityConditions: "{{continuityConditions}}"
+      governance:
+        ownership: "{{licenseOwnership}}"
+        audit: "{{auditTerms}}"
+        warranties: "{{warranties}}"
+        confidentiality: "{{confidentiality}}"
+        applicableLaws: "{{applicableLaws}}"
+
+  contract:
+    id: "{{contractId}}"
+    type: ODCS
+    contractVersion: "{{contractVersion}}"
+    contractURL: "{{contractUrl}}"
+
+  paymentGateways:
+    default:
+      description:
+        en: "{{paymentGatewayDescription}}"
+      type: Stripe
+      version: "{{paymentGatewayVersion}}"
+      reference: "{{paymentGatewayReferenceUrl}}"
+      spec: {}
+
+  dataQuality:
+    declarative:
+      default:
+        displaytitle:
+          en: Marketplace quality targets
+        description:
+          en: Quality targets attached to the marketplace offer.
+        dimensions:
+          - dimension: completeness
+            objective: 95
+            weight: 30
+            unit: percentage
+          - dimension: accuracy
+            objective: 95
+            weight: 40
+            unit: percentage
+          - dimension: timeliness
+            objective: 95
+            weight: 30
+            unit: percentage
+
+  SLA:
+    declarative:
+      default:
+        name:
+          en: Marketplace product SLA
+        description:
+          en: Service expectations attached to the marketplace offer.
+        dimensions:
+          - dimension: uptime
+            objective: 99
+            weight: 40
+            unit: percent
+          - dimension: responseTime
+            objective: 2
+            weight: 30
+            unit: seconds
+          - dimension: emailResponseTime
+            objective: 1
+            weight: 30
+            unit: days
+    support:
+      email: "{{supportEmail}}"
+      emailServiceHours: "{{emailServiceHours}}"
+      documentationURL: "{{supportDocumentationUrl}}"
+
+  dataAccess:
+    default:
+      name:
+        en: Marketplace API access
+      description:
+        en: Controlled API access to the product.
+      outputPorttype: API
+      format: JSON
+      authenticationMethod: Token
+      specification: OAS
+      specsURL: "{{specsUrl}}"
+      accessURL: "{{accessUrl}}"
+      documentationURL: "{{documentationUrl}}"

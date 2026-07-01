@@ -1,0 +1,136 @@
+schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+version: 4.1
+product:
+  details:
+    en:
+      name: "{{name}}"
+      productID: "{{productID}}"
+      visibility: organisation
+      status: production
+      type: data-driven service
+      description: "{{description}}"
+      valueProposition: "{{valueProposition}}"
+      productVersion: 1.0.0
+      portfolioPriority: critical
+      governanceProfile: automated
+      standards:
+        - "{{standard}}"
+      tags:
+        - agent-ready
+        - MCP
+      useCases:
+        - useCase:
+            useCaseTitle: "{{agenticUseCaseTitle}}"
+            useCaseDescription: "{{agenticUseCaseDescription}}"
+            useCaseURL: "{{agenticUseCaseUrl}}"
+
+  productStrategy:
+    status: Active
+    objectives:
+      - en: "{{businessObjective}}"
+    contributesToKPI:
+      id: "{{businessKpiId}}"
+      name: "{{businessKpiName}}"
+      unit: "{{businessKpiUnit}}"
+      target: "{{businessKpiTarget}}"
+      direction: increase
+      timeframe: "{{timeframe}}"
+      frequency: monthly
+      owner: "{{owner}}"
+      calculation: "{{calculation}}"
+    productKPIs:
+      - id: "{{productKpiId}}"
+        name: "{{productKpiName}}"
+        unit: "{{productKpiUnit}}"
+        target: "{{productKpiTarget}}"
+        calculation: "{{productKpiCalculation}}"
+
+  dataQuality:
+    declarative:
+      default:
+        displaytitle:
+          en: Agentic quality targets
+        description:
+          en: Quality expectations for AI and automated consumption.
+        dimensions:
+          - dimension: validity
+            objective: 98
+            weight: 35
+            unit: percentage
+          - dimension: timeliness
+            objective: 98
+            weight: 35
+            unit: percentage
+          - dimension: consistency
+            objective: 98
+            weight: 30
+            unit: percentage
+
+  SLA:
+    declarative:
+      default:
+        name:
+          en: Agentic product SLA
+        description:
+          en: Service expectations for agentic and automated consumption.
+        dimensions:
+          - dimension: latency
+            objective: 500
+            weight: 35
+            unit: milliseconds
+          - dimension: uptime
+            objective: 99
+            weight: 35
+            unit: percent
+          - dimension: errorRate
+            objective: 1
+            weight: 30
+            unit: percent
+
+  contract:
+    id: "{{contractId}}"
+    type: ODCS
+    contractVersion: "{{contractVersion}}"
+    contractURL: "{{contractUrl}}"
+
+  license:
+    en:
+      scope:
+        definition: "{{licenseDefinition}}"
+        restrictions: "{{licenseRestrictions}}"
+        permanent: false
+        exclusive: false
+        rights:
+          - Reproduction
+          - Display
+      governance:
+        ownership: "{{licenseOwnership}}"
+        audit: "{{auditTerms}}"
+        confidentiality: "{{confidentiality}}"
+        applicableLaws: "{{applicableLaws}}"
+
+  dataAccess:
+    default:
+      name:
+        en: MCP access
+      description:
+        en: MCP access for AI agents and tools.
+      outputPorttype: AI
+      format: MCP
+      authenticationMethod: Token
+      specification: MCP
+      specsURL: "{{mcpSpecUrl}}"
+      accessURL: "{{mcpAccessUrl}}"
+      documentationURL: "{{documentationUrl}}"
+    API:
+      name:
+        en: API access
+      description:
+        en: API access for applications and automated workflows.
+      outputPorttype: API
+      format: JSON
+      authenticationMethod: OAuth
+      specification: OAS
+      specsURL: "{{openApiSpecUrl}}"
+      accessURL: "{{apiAccessUrl}}"
+      documentationURL: "{{apiDocumentationUrl}}"

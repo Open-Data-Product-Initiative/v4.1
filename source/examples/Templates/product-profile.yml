@@ -1,0 +1,27 @@
+schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+version: 4.1
+product:
+  details:
+    en:
+      name: "{{name}}"
+      productID: "{{productID}}"
+      visibility: organisation
+      status: draft
+      type: dataset
+      description: "{{description}}"
+      valueProposition: "{{valueProposition}}"
+      productVersion: 1.0.0
+      portfolioPriority: medium
+      governanceProfile: structured
+      categories:
+        - "{{category}}"
+      tags:
+        - "{{tag}}"
+
+  dataHolder:
+    en:
+      legalName: "{{legalName}}"
+      businessDomain: "{{businessDomain}}"
+      contactName: "{{contactName}}"
+      email: "{{email}}"
+      URL: "{{holderUrl}}"
