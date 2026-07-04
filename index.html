@@ -469,7 +469,7 @@
             <a href="#odps-template-family" class="toc-h1 toc-link" data-title="ODPS template family">ODPS template family</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#templates-by-known-detail-level" class="toc-h2 toc-link" data-title="Templates by known detail level">Templates by known detail level</a>
+                    <a href="#templates-by-description-maturity" class="toc-h2 toc-link" data-title="Templates by description maturity">Templates by description maturity</a>
                   </li>
               </ul>
           </li>
@@ -3569,8 +3569,8 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <td><a href="examples/Templates/purpose-marketplace-product.yml">purpose-marketplace-product.yml</a></td>
 </tr>
 </tbody></table>
-<h2 id='templates-by-known-detail-level'>Templates by known detail level</h2>
-<p>The following templates are organized by how much is known about the product at the time of description. They are not maturity or quality tiers. A product can start with a summary and later move to a fuller definition or operational description without changing its product intent.</p>
+<h2 id='templates-by-description-maturity'>Templates by description maturity</h2>
+<p>The following templates are organized by how complete the product description is at the time of use. They are not quality tiers. A product can start with a brief and later move to a definition or operating model as ownership, use cases, access, quality, and service expectations become known.</p>
 
 <table><thead>
 <tr>
@@ -3581,22 +3581,22 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>ODPS Product Summary</strong></td>
+<td><strong>ODPS Product Brief</strong></td>
 <td>Use this when only the basic identity, value proposition, lifecycle state, and product type are known.</td>
 <td><code>details</code></td>
-<td><a href="examples/Templates/detail-product-summary.yml">detail-product-summary.yml</a></td>
+<td><a href="examples/Templates/maturity-product-brief.yml">maturity-product-brief.yml</a></td>
 </tr>
 <tr>
 <td><strong>ODPS Product Definition</strong></td>
 <td>Use this when the product owner, business context, categories, tags, and use cases are known, but operational access and service terms are not yet complete.</td>
 <td><code>details</code>, <code>dataHolder</code>, <code>useCases</code></td>
-<td><a href="examples/Templates/detail-product-definition.yml">detail-product-definition.yml</a></td>
+<td><a href="examples/Templates/maturity-product-definition.yml">maturity-product-definition.yml</a></td>
 </tr>
 <tr>
-<td><strong>ODPS Product Operations Profile</strong></td>
+<td><strong>ODPS Product Operating Model</strong></td>
 <td>Use this when the product has known operational access, quality expectations, SLA expectations, and support metadata.</td>
 <td><code>details</code>, <code>dataHolder</code>, <code>dataAccess</code>, <code>dataQuality</code>, <code>SLA</code></td>
-<td><a href="examples/Templates/detail-product-operations-profile.yml">detail-product-operations-profile.yml</a></td>
+<td><a href="examples/Templates/maturity-product-operating-model.yml">maturity-product-operating-model.yml</a></td>
 </tr>
 </tbody></table>
 <h1 id='data-product-catalog'>Data Product Catalog</h1>
