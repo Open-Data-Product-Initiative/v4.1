@@ -1,0 +1,67 @@
+schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+version: 4.1
+product:
+  details:
+    en:
+      name: "{{string}}"
+      productID: "{{string}}"
+      visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
+      status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
+      type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
+      description: "{{string}}"
+      valueProposition: "{{string}}"
+      productVersion: "{{string: semver}}"
+      portfolioPriority: "{{enum: critical | high | medium | low}}"
+      governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
+      created: "{{date: YYYY-MM-DD}}"
+      updated: "{{date: YYYY-MM-DD}}"
+      outputFileFormats:
+        - "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
+      categories:
+        - "{{string}}"
+      tags:
+        - "{{string}}"
+
+  dataHolder:
+    en:
+      legalName: "{{string}}"
+      businessDomain: "{{string}}"
+      contactName: "{{string}}"
+      email: "{{string: email}}"
+
+  dataQuality:
+    declarative:
+      default:
+        displaytitle:
+          en: "{{string}}"
+        description:
+          en: "{{string}}"
+        dimensions:
+          - dimension: "{{enum: accuracy | completeness | conformity | consistency | coverage | timeliness | validity | uniqueness}}"
+            objective: "{{integer}}"
+            weight: "{{integer}}"
+            unit: "{{enum: percentage | number}}"
+
+  dataAccess:
+    default:
+      name:
+        en: "{{string}}"
+      description:
+        en: "{{string}}"
+      outputPorttype: "{{enum: file | API | SQL | AI | gRPC | sFTP}}"
+      format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
+      authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
+      accessURL: "{{string: url}}"
+      documentationURL: "{{string: url}}"
+    API:
+      name:
+        en: "{{string}}"
+      description:
+        en: "{{string}}"
+      outputPorttype: "{{enum: file | API | SQL | AI | gRPC | sFTP}}"
+      format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
+      authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
+      specification: "{{enum: OAS | RAML | Slate | MCP}}"
+      specsURL: "{{string: url}}"
+      accessURL: "{{string: url}}"
+      documentationURL: "{{string: url}}"

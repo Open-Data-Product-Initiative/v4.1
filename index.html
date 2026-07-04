@@ -467,6 +467,11 @@
           </li>
           <li>
             <a href="#odps-template-family" class="toc-h1 toc-link" data-title="ODPS template family">ODPS template family</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#templates-by-known-detail-level" class="toc-h2 toc-link" data-title="Templates by known detail level">Templates by known detail level</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#data-product-catalog" class="toc-h1 toc-link" data-title="Data Product Catalog">Data Product Catalog</a>
@@ -3537,31 +3542,61 @@ Whenever the <code>paymentGateways</code> object is used, a gateway named <code>
 <td><strong>ODPS Product Profile</strong></td>
 <td>Use this as the minimum starting point for any data product. It answers what the product is, who holds it, and what its status and visibility are.</td>
 <td><code>details</code>, <code>dataHolder</code></td>
-<td><a href="examples/Templates/product-profile.yml">product-profile.yml</a></td>
+<td><a href="examples/Templates/purpose-product-profile.yml">purpose-product-profile.yml</a></td>
 </tr>
 <tr>
 <td><strong>ODPS Reusable Data Product</strong></td>
 <td>Use this when the product packages reusable data for trusted consumption. It adds quality expectations to the product profile pattern.</td>
 <td><code>details</code>, <code>dataHolder</code>, <code>dataQuality</code>, <code>dataAccess</code></td>
-<td><a href="examples/Templates/reusable-data-product.yml">reusable-data-product.yml</a></td>
+<td><a href="examples/Templates/purpose-reusable-data-product.yml">purpose-reusable-data-product.yml</a></td>
 </tr>
 <tr>
 <td><strong>ODPS Analytical Product</strong></td>
 <td>Use this when the product delivers insight, reporting, indicators, or decision support. The template adds product strategy so the product can declare the business objective and KPIs it supports.</td>
 <td><code>details</code>, <code>dataHolder</code>, <code>productStrategy</code>, <code>dataQuality</code>, <code>SLA</code>, <code>dataAccess</code></td>
-<td><a href="examples/Templates/analytical-product.yml">analytical-product.yml</a></td>
+<td><a href="examples/Templates/purpose-analytical-product.yml">purpose-analytical-product.yml</a></td>
 </tr>
 <tr>
 <td><strong>ODPS Agentic Product</strong></td>
 <td>Use this when the product is consumed by AI agents, AI applications, workflows, automation, or machine-to-machine processes. It connects agentic use cases to strategy, quality, SLA, and named <code>dataAccess</code> methods such as MCP or API.</td>
 <td><code>details</code>, <code>useCases</code>, <code>productStrategy</code>, <code>dataAccess</code>, <code>SLA</code>, <code>dataQuality</code>, <code>contract</code>, <code>license</code></td>
-<td><a href="examples/Templates/agentic-product.yml">agentic-product.yml</a></td>
+<td><a href="examples/Templates/purpose-agentic-product.yml">purpose-agentic-product.yml</a></td>
 </tr>
 <tr>
 <td><strong>ODPS Marketplace Product</strong></td>
 <td>Use this when the product is offered under controlled, priced, licensed, contractual, or marketplace terms. The template connects pricing, license, contract, payment, quality, SLA, and access metadata.</td>
 <td><code>details</code>, <code>productStrategy</code>, <code>pricingPlans</code>, <code>license</code>, <code>contract</code>, <code>paymentGateways</code>, <code>dataAccess</code>, <code>SLA</code>, <code>dataQuality</code></td>
-<td><a href="examples/Templates/marketplace-product.yml">marketplace-product.yml</a></td>
+<td><a href="examples/Templates/purpose-marketplace-product.yml">purpose-marketplace-product.yml</a></td>
+</tr>
+</tbody></table>
+<h2 id='templates-by-known-detail-level'>Templates by known detail level</h2>
+<p>The following templates are organized by how much is known about the product at the time of description. They are not maturity or quality tiers. A product can start with a summary and later move to a fuller definition or operational description without changing its product intent.</p>
+
+<table><thead>
+<tr>
+<th>Template</th>
+<th>Use when</th>
+<th>Main ODPS areas</th>
+<th>Skeleton</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>ODPS Product Summary</strong></td>
+<td>Use this when only the basic identity, value proposition, lifecycle state, and product type are known.</td>
+<td><code>details</code></td>
+<td><a href="examples/Templates/detail-product-summary.yml">detail-product-summary.yml</a></td>
+</tr>
+<tr>
+<td><strong>ODPS Product Definition</strong></td>
+<td>Use this when the product owner, business context, categories, tags, and use cases are known, but operational access and service terms are not yet complete.</td>
+<td><code>details</code>, <code>dataHolder</code>, <code>useCases</code></td>
+<td><a href="examples/Templates/detail-product-definition.yml">detail-product-definition.yml</a></td>
+</tr>
+<tr>
+<td><strong>ODPS Product Operations Profile</strong></td>
+<td>Use this when the product has known operational access, quality expectations, SLA expectations, and support metadata.</td>
+<td><code>details</code>, <code>dataHolder</code>, <code>dataAccess</code>, <code>dataQuality</code>, <code>SLA</code></td>
+<td><a href="examples/Templates/detail-product-operations-profile.yml">detail-product-operations-profile.yml</a></td>
 </tr>
 </tbody></table>
 <h1 id='data-product-catalog'>Data Product Catalog</h1>

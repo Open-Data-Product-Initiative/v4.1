@@ -1,0 +1,32 @@
+schema: https://opendataproducts.org/v4.1/schema/odps.yaml
+version: 4.1
+product:
+  details:
+    en:
+      name: "{{string}}"
+      productID: "{{string}}"
+      visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
+      status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
+      type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
+      description: "{{string}}"
+      valueProposition: "{{string}}"
+      productVersion: "{{string: semver}}"
+      portfolioPriority: "{{enum: critical | high | medium | low}}"
+      governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
+      categories:
+        - "{{string}}"
+      tags:
+        - "{{string}}"
+      useCases:
+        - useCase:
+            useCaseTitle: "{{string}}"
+            useCaseDescription: "{{string}}"
+            useCaseURL: "{{string: url}}"
+
+  dataHolder:
+    en:
+      legalName: "{{string}}"
+      businessDomain: "{{string}}"
+      contactName: "{{string}}"
+      email: "{{string: email}}"
+      URL: "{{string: url}}"
