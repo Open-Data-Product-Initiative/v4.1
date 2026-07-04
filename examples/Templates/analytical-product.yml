@@ -5,14 +5,14 @@ product:
     en:
       name: "{{name}}"
       productID: "{{productID}}"
-      visibility: organisation
-      status: production
-      type: analytic view
+      visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
+      status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
+      type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
       description: "{{description}}"
       valueProposition: "{{valueProposition}}"
-      productVersion: 1.0.0
-      portfolioPriority: high
-      governanceProfile: enforced
+      productVersion: "{{string: semver}}"
+      portfolioPriority: "{{enum: critical | high | medium | low}}"
+      governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
       useCases:
         - useCase:
             useCaseTitle: "{{useCaseTitle}}"
@@ -27,7 +27,7 @@ product:
       email: "{{email}}"
 
   productStrategy:
-    status: Active
+    status: "{{enum: Planned | Active | At Risk | Achieved | Partially Achieved | Cancelled | Expired}}"
     objectives:
       - en: "{{businessObjective}}"
     contributesToKPI:
@@ -35,9 +35,9 @@ product:
       name: "{{businessKpiName}}"
       unit: "{{businessKpiUnit}}"
       target: "{{businessKpiTarget}}"
-      direction: increase
+      direction: "{{enum: increase | decrease | at_least | at_most | equals}}"
       timeframe: "{{timeframe}}"
-      frequency: monthly
+      frequency: "{{string}}"
       owner: "{{owner}}"
       calculation: "{{calculation}}"
     productKPIs:
@@ -46,58 +46,46 @@ product:
         unit: "{{productKpiUnit}}"
         target: "{{productKpiTarget}}"
         calculation: "{{productKpiCalculation}}"
-        direction: increase
-        frequency: monthly
+        direction: "{{enum: increase | decrease | at_least | at_most | equals}}"
+        frequency: "{{string}}"
         owner: "{{owner}}"
 
   dataQuality:
     declarative:
       default:
         displaytitle:
-          en: Analytical quality targets
+          en: "{{string}}"
         description:
-          en: Quality expectations for analytical use.
+          en: "{{string}}"
         dimensions:
-          - dimension: accuracy
-            objective: 95
-            weight: 40
-            unit: percentage
-          - dimension: consistency
-            objective: 95
-            weight: 30
-            unit: percentage
-          - dimension: timeliness
-            objective: 95
-            weight: 30
-            unit: percentage
+          - dimension: "{{enum: accuracy | completeness | conformity | consistency | coverage | timeliness | validity | uniqueness}}"
+            objective: "{{integer}}"
+            weight: "{{integer}}"
+            unit: "{{enum: percentage | number}}"
 
   SLA:
     declarative:
       default:
         name:
-          en: Analytical product SLA
+          en: "{{string}}"
         description:
-          en: Service expectations for analytical product consumption.
+          en: "{{string}}"
         dimensions:
-          - dimension: updateFrequency
-            objective: 1
-            weight: 60
-            unit: days
-          - dimension: emailResponseTime
-            objective: 2
-            weight: 40
-            unit: days
+          - dimension: "{{enum: latency | uptime | responseTime | errorRate | endOfSupport | endOfLife | updateFrequency | timeToDetect | timeToNotify | timeToRepair | emailResponseTime}}"
+            objective: "{{integer}}"
+            weight: "{{integer}}"
+            unit: "{{string}}"
 
   dataAccess:
     default:
       name:
-        en: Analytical view
+        en: "{{string}}"
       description:
-        en: Access to the analytical view or report.
-      outputPorttype: API
-      format: JSON
-      authenticationMethod: OAuth
-      specification: OAS
+        en: "{{string}}"
+      outputPorttype: "{{enum: file | API | SQL | AI | gRPC | sFTP}}"
+      format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
+      authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
+      specification: "{{enum: OAS | RAML | Slate | MCP}}"
       specsURL: "{{specsUrl}}"
       accessURL: "{{accessUrl}}"
       documentationURL: "{{documentationUrl}}"

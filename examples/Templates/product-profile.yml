@@ -5,14 +5,14 @@ product:
     en:
       name: "{{name}}"
       productID: "{{productID}}"
-      visibility: organisation
-      status: draft
-      type: dataset
+      visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
+      status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
+      type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
       description: "{{description}}"
       valueProposition: "{{valueProposition}}"
-      productVersion: 1.0.0
-      portfolioPriority: medium
-      governanceProfile: structured
+      productVersion: "{{string: semver}}"
+      portfolioPriority: "{{enum: critical | high | medium | low}}"
+      governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
       categories:
         - "{{category}}"
       tags:

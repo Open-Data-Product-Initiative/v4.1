@@ -5,19 +5,18 @@ product:
     en:
       name: "{{name}}"
       productID: "{{productID}}"
-      visibility: organisation
-      status: production
-      type: derived data
+      visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
+      status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
+      type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
       description: "{{description}}"
       valueProposition: "{{valueProposition}}"
-      productVersion: 1.0.0
-      portfolioPriority: high
-      governanceProfile: enforced
-      created: "2026-01-01"
-      updated: "2026-01-01"
+      productVersion: "{{string: semver}}"
+      portfolioPriority: "{{enum: critical | high | medium | low}}"
+      governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
+      created: "{{date: YYYY-MM-DD}}"
+      updated: "{{date: YYYY-MM-DD}}"
       outputFileFormats:
-        - CSV
-        - JSON
+        - "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
       categories:
         - "{{category}}"
       tags:
@@ -34,43 +33,35 @@ product:
     declarative:
       default:
         displaytitle:
-          en: Trusted data quality targets
+          en: "{{string}}"
         description:
-          en: Quality targets for trusted reuse.
+          en: "{{string}}"
         dimensions:
-          - dimension: completeness
-            objective: 95
-            weight: 40
-            unit: percentage
-          - dimension: timeliness
-            objective: 95
-            weight: 30
-            unit: percentage
-          - dimension: validity
-            objective: 95
-            weight: 30
-            unit: percentage
+          - dimension: "{{enum: accuracy | completeness | conformity | consistency | coverage | timeliness | validity | uniqueness}}"
+            objective: "{{integer}}"
+            weight: "{{integer}}"
+            unit: "{{enum: percentage | number}}"
 
   dataAccess:
     default:
       name:
-        en: File download
+        en: "{{string}}"
       description:
-        en: Downloadable reusable data file.
-      outputPorttype: file
-      format: CSV
-      authenticationMethod: none
+        en: "{{string}}"
+      outputPorttype: "{{enum: file | API | SQL | AI | gRPC | sFTP}}"
+      format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
+      authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
       accessURL: "{{fileAccessUrl}}"
       documentationURL: "{{documentationUrl}}"
     API:
       name:
-        en: API access
+        en: "{{string}}"
       description:
-        en: API access to the same reusable data product.
-      outputPorttype: API
-      format: JSON
-      authenticationMethod: API key
-      specification: OAS
+        en: "{{string}}"
+      outputPorttype: "{{enum: file | API | SQL | AI | gRPC | sFTP}}"
+      format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
+      authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
+      specification: "{{enum: OAS | RAML | Slate | MCP}}"
       specsURL: "{{openApiSpecUrl}}"
       accessURL: "{{apiAccessUrl}}"
       documentationURL: "{{apiDocumentationUrl}}"
