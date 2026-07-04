@@ -3,25 +3,25 @@ version: 4.1
 product:
   details:
     en:
-      name: "{{name}}"
-      productID: "{{productID}}"
+      name: "{{string}}"
+      productID: "{{string}}"
       visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
       status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
       type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
-      description: "{{description}}"
-      valueProposition: "{{valueProposition}}"
+      description: "{{string}}"
+      valueProposition: "{{string}}"
       productVersion: "{{string: semver}}"
       portfolioPriority: "{{enum: critical | high | medium | low}}"
       governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
       categories:
-        - "{{category}}"
+        - "{{string}}"
       tags:
-        - "{{tag}}"
+        - "{{string}}"
 
   dataHolder:
     en:
-      legalName: "{{legalName}}"
-      businessDomain: "{{businessDomain}}"
-      contactName: "{{contactName}}"
-      email: "{{email}}"
-      URL: "{{holderUrl}}"
+      legalName: "{{string}}"
+      businessDomain: "{{string}}"
+      contactName: "{{string}}"
+      email: "{{string: email}}"
+      URL: "{{string: url}}"

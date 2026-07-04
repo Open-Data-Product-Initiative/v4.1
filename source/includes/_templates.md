@@ -6,7 +6,7 @@ These templates are guidance patterns, not new schema objects. They do not add a
 
 Use the template that best matches the product intent. Do not use maturity labels such as Bronze, Silver, or Gold as template names, because they describe perceived quality instead of product purpose. Access methods such as API, SQL, file, MCP, GraphQL, gRPC, and AI should be modeled inside `product.dataAccess`; they are access patterns, not product templates.
 
-The skeleton files are intentionally stored as separate YAML files so they can be copied, validated, versioned, and reused outside this documentation page. The skeletons use typed placeholders such as `{{string}}`, `{{integer}}`, `{{boolean}}`, and `{{enum: option | option}}` where users or tools must supply a value.
+The skeleton files are intentionally stored as separate YAML files so they can be copied, validated, versioned, and reused outside this documentation page. The skeletons use typed placeholders such as `{{string}}`, `{{integer}}`, `{{number or string}}`, `{{boolean}}`, and `{{enum: option | option}}` where users or tools must supply a value.
 
 | Template | Use when | Main ODPS areas | Skeleton |
 |---|---|---|---|
