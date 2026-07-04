@@ -3,46 +3,46 @@ version: 4.1
 product:
   details:
     en:
-      name: "{{name}}"
-      productID: "{{productID}}"
+      name: "{{string}}"
+      productID: "{{string}}"
       visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
       status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
       type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
-      description: "{{description}}"
-      valueProposition: "{{valueProposition}}"
+      description: "{{string}}"
+      valueProposition: "{{string}}"
       productVersion: "{{string: semver}}"
       portfolioPriority: "{{enum: critical | high | medium | low}}"
       governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
       standards:
-        - "{{standard}}"
+        - "{{string}}"
       tags:
-        - "{{tag}}"
+        - "{{string}}"
       useCases:
         - useCase:
-            useCaseTitle: "{{agenticUseCaseTitle}}"
-            useCaseDescription: "{{agenticUseCaseDescription}}"
-            useCaseURL: "{{agenticUseCaseUrl}}"
+            useCaseTitle: "{{string}}"
+            useCaseDescription: "{{string}}"
+            useCaseURL: "{{string: url}}"
 
   productStrategy:
     status: "{{enum: Planned | Active | At Risk | Achieved | Partially Achieved | Cancelled | Expired}}"
     objectives:
-      - en: "{{businessObjective}}"
+      - en: "{{string}}"
     contributesToKPI:
-      id: "{{businessKpiId}}"
-      name: "{{businessKpiName}}"
-      unit: "{{businessKpiUnit}}"
-      target: "{{businessKpiTarget}}"
+      id: "{{string}}"
+      name: "{{string}}"
+      unit: "{{string}}"
+      target: "{{number or string}}"
       direction: "{{enum: increase | decrease | at_least | at_most | equals}}"
-      timeframe: "{{timeframe}}"
+      timeframe: "{{string}}"
       frequency: "{{string}}"
-      owner: "{{owner}}"
-      calculation: "{{calculation}}"
+      owner: "{{string}}"
+      calculation: "{{string}}"
     productKPIs:
-      - id: "{{productKpiId}}"
-        name: "{{productKpiName}}"
-        unit: "{{productKpiUnit}}"
-        target: "{{productKpiTarget}}"
-        calculation: "{{productKpiCalculation}}"
+      - id: "{{string}}"
+        name: "{{string}}"
+        unit: "{{string}}"
+        target: "{{number or string}}"
+        calculation: "{{string}}"
 
   dataQuality:
     declarative:
@@ -71,25 +71,25 @@ product:
             unit: "{{string}}"
 
   contract:
-    id: "{{contractId}}"
+    id: "{{string}}"
     type: "{{enum: ODCS | DCS}}"
-    contractVersion: "{{contractVersion}}"
-    contractURL: "{{contractUrl}}"
+    contractVersion: "{{string}}"
+    contractURL: "{{string: url}}"
 
   license:
     en:
       scope:
-        definition: "{{licenseDefinition}}"
-        restrictions: "{{licenseRestrictions}}"
+        definition: "{{string}}"
+        restrictions: "{{string}}"
         permanent: "{{boolean}}"
         exclusive: "{{boolean}}"
         rights:
           - "{{string}}"
       governance:
-        ownership: "{{licenseOwnership}}"
-        audit: "{{auditTerms}}"
-        confidentiality: "{{confidentiality}}"
-        applicableLaws: "{{applicableLaws}}"
+        ownership: "{{string}}"
+        audit: "{{string}}"
+        confidentiality: "{{string}}"
+        applicableLaws: "{{string}}"
 
   dataAccess:
     default:
@@ -101,9 +101,9 @@ product:
       format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
       authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
       specification: "{{enum: OAS | RAML | Slate | MCP}}"
-      specsURL: "{{mcpSpecUrl}}"
-      accessURL: "{{mcpAccessUrl}}"
-      documentationURL: "{{documentationUrl}}"
+      specsURL: "{{string: url}}"
+      accessURL: "{{string: url}}"
+      documentationURL: "{{string: url}}"
     API:
       name:
         en: "{{string}}"
@@ -113,6 +113,6 @@ product:
       format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
       authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
       specification: "{{enum: OAS | RAML | Slate | MCP}}"
-      specsURL: "{{openApiSpecUrl}}"
-      accessURL: "{{apiAccessUrl}}"
-      documentationURL: "{{apiDocumentationUrl}}"
+      specsURL: "{{string: url}}"
+      accessURL: "{{string: url}}"
+      documentationURL: "{{string: url}}"

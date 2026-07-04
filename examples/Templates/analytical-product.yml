@@ -3,52 +3,52 @@ version: 4.1
 product:
   details:
     en:
-      name: "{{name}}"
-      productID: "{{productID}}"
+      name: "{{string}}"
+      productID: "{{string}}"
       visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
       status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
       type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
-      description: "{{description}}"
-      valueProposition: "{{valueProposition}}"
+      description: "{{string}}"
+      valueProposition: "{{string}}"
       productVersion: "{{string: semver}}"
       portfolioPriority: "{{enum: critical | high | medium | low}}"
       governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
       useCases:
         - useCase:
-            useCaseTitle: "{{useCaseTitle}}"
-            useCaseDescription: "{{useCaseDescription}}"
-            useCaseURL: "{{useCaseUrl}}"
+            useCaseTitle: "{{string}}"
+            useCaseDescription: "{{string}}"
+            useCaseURL: "{{string: url}}"
 
   dataHolder:
     en:
-      legalName: "{{legalName}}"
-      businessDomain: "{{businessDomain}}"
-      contactName: "{{contactName}}"
-      email: "{{email}}"
+      legalName: "{{string}}"
+      businessDomain: "{{string}}"
+      contactName: "{{string}}"
+      email: "{{string: email}}"
 
   productStrategy:
     status: "{{enum: Planned | Active | At Risk | Achieved | Partially Achieved | Cancelled | Expired}}"
     objectives:
-      - en: "{{businessObjective}}"
+      - en: "{{string}}"
     contributesToKPI:
-      id: "{{businessKpiId}}"
-      name: "{{businessKpiName}}"
-      unit: "{{businessKpiUnit}}"
-      target: "{{businessKpiTarget}}"
+      id: "{{string}}"
+      name: "{{string}}"
+      unit: "{{string}}"
+      target: "{{number or string}}"
       direction: "{{enum: increase | decrease | at_least | at_most | equals}}"
-      timeframe: "{{timeframe}}"
+      timeframe: "{{string}}"
       frequency: "{{string}}"
-      owner: "{{owner}}"
-      calculation: "{{calculation}}"
+      owner: "{{string}}"
+      calculation: "{{string}}"
     productKPIs:
-      - id: "{{productKpiId}}"
-        name: "{{productKpiName}}"
-        unit: "{{productKpiUnit}}"
-        target: "{{productKpiTarget}}"
-        calculation: "{{productKpiCalculation}}"
+      - id: "{{string}}"
+        name: "{{string}}"
+        unit: "{{string}}"
+        target: "{{number or string}}"
+        calculation: "{{string}}"
         direction: "{{enum: increase | decrease | at_least | at_most | equals}}"
         frequency: "{{string}}"
-        owner: "{{owner}}"
+        owner: "{{string}}"
 
   dataQuality:
     declarative:
@@ -86,6 +86,6 @@ product:
       format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
       authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
       specification: "{{enum: OAS | RAML | Slate | MCP}}"
-      specsURL: "{{specsUrl}}"
-      accessURL: "{{accessUrl}}"
-      documentationURL: "{{documentationUrl}}"
+      specsURL: "{{string: url}}"
+      accessURL: "{{string: url}}"
+      documentationURL: "{{string: url}}"

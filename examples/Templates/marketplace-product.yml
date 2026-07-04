@@ -3,53 +3,53 @@ version: 4.1
 product:
   details:
     en:
-      name: "{{name}}"
-      productID: "{{productID}}"
+      name: "{{string}}"
+      productID: "{{string}}"
       visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
       status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
       type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
-      description: "{{description}}"
-      valueProposition: "{{valueProposition}}"
+      description: "{{string}}"
+      valueProposition: "{{string}}"
       productVersion: "{{string: semver}}"
       portfolioPriority: "{{enum: critical | high | medium | low}}"
       governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
       categories:
-        - "{{category}}"
+        - "{{string}}"
       tags:
-        - "{{tag}}"
+        - "{{string}}"
 
   productStrategy:
     status: "{{enum: Planned | Active | At Risk | Achieved | Partially Achieved | Cancelled | Expired}}"
     objectives:
-      - en: "{{businessObjective}}"
+      - en: "{{string}}"
     contributesToKPI:
-      id: "{{businessKpiId}}"
-      name: "{{businessKpiName}}"
-      unit: "{{businessKpiUnit}}"
-      target: "{{businessKpiTarget}}"
+      id: "{{string}}"
+      name: "{{string}}"
+      unit: "{{string}}"
+      target: "{{number or string}}"
       direction: "{{enum: increase | decrease | at_least | at_most | equals}}"
-      timeframe: "{{timeframe}}"
+      timeframe: "{{string}}"
       frequency: "{{string}}"
-      owner: "{{owner}}"
-      calculation: "{{calculation}}"
+      owner: "{{string}}"
+      calculation: "{{string}}"
     productKPIs:
-      - id: "{{productKpiId}}"
-        name: "{{productKpiName}}"
-        unit: "{{productKpiUnit}}"
-        target: "{{productKpiTarget}}"
-        calculation: "{{productKpiCalculation}}"
+      - id: "{{string}}"
+        name: "{{string}}"
+        unit: "{{string}}"
+        target: "{{number or string}}"
+        calculation: "{{string}}"
 
   pricingPlans:
     declarative:
       en:
-        - name: "{{pricingPlanName}}"
+        - name: "{{string}}"
           priceCurrency: "{{string: ISO 4217 currency code or crypto ticker}}"
-          price: "{{price}}"
+          price: "{{number or string}}"
           billingDuration: "{{enum: instant | day | week | month | year}}"
           unit: "{{enum: One-time-payment | Pay-per-use | Recurring | Revenue-sharing | Data-volume | Pay-what-you-want | Freemium | Open-data | Value-based | On-request | Trial}}"
           maxTransactionQuantity: "{{integer}}"
           offering:
-            - "{{offeringItem}}"
+            - "{{string}}"
           valueAddedTaxIncluded: "{{boolean}}"
           valueAddedTaxPercentage: "{{integer}}"
           paymentGateway:
@@ -64,38 +64,38 @@ product:
   license:
     en:
       scope:
-        definition: "{{licenseDefinition}}"
-        restrictions: "{{licenseRestrictions}}"
+        definition: "{{string}}"
+        restrictions: "{{string}}"
         geographicalArea:
-          - "{{geographicalArea}}"
+          - "{{string}}"
         permanent: "{{boolean}}"
         exclusive: "{{boolean}}"
         rights:
           - "{{string}}"
       termination:
         noticePeriod: "{{integer}}"
-        terminationConditions: "{{terminationConditions}}"
-        continuityConditions: "{{continuityConditions}}"
+        terminationConditions: "{{string}}"
+        continuityConditions: "{{string}}"
       governance:
-        ownership: "{{licenseOwnership}}"
-        audit: "{{auditTerms}}"
-        warranties: "{{warranties}}"
-        confidentiality: "{{confidentiality}}"
-        applicableLaws: "{{applicableLaws}}"
+        ownership: "{{string}}"
+        audit: "{{string}}"
+        warranties: "{{string}}"
+        confidentiality: "{{string}}"
+        applicableLaws: "{{string}}"
 
   contract:
-    id: "{{contractId}}"
+    id: "{{string}}"
     type: "{{enum: ODCS | DCS}}"
-    contractVersion: "{{contractVersion}}"
-    contractURL: "{{contractUrl}}"
+    contractVersion: "{{string}}"
+    contractURL: "{{string: url}}"
 
   paymentGateways:
     default:
       description:
-        en: "{{paymentGatewayDescription}}"
+        en: "{{string}}"
       type: "{{enum: Stripe | Axio | Checkout | Custom}}"
-      version: "{{paymentGatewayVersion}}"
-      reference: "{{paymentGatewayReferenceUrl}}"
+      version: "{{string}}"
+      reference: "{{string: url}}"
       spec: "{{object}}"
 
   dataQuality:
@@ -124,9 +124,9 @@ product:
             weight: "{{integer}}"
             unit: "{{string}}"
     support:
-      email: "{{supportEmail}}"
-      emailServiceHours: "{{emailServiceHours}}"
-      documentationURL: "{{supportDocumentationUrl}}"
+      email: "{{string: email}}"
+      emailServiceHours: "{{string}}"
+      documentationURL: "{{string: url}}"
 
   dataAccess:
     default:
@@ -138,6 +138,6 @@ product:
       format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
       authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
       specification: "{{enum: OAS | RAML | Slate | MCP}}"
-      specsURL: "{{specsUrl}}"
-      accessURL: "{{accessUrl}}"
-      documentationURL: "{{documentationUrl}}"
+      specsURL: "{{string: url}}"
+      accessURL: "{{string: url}}"
+      documentationURL: "{{string: url}}"
