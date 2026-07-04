@@ -16,12 +16,12 @@ The skeleton files are intentionally stored as separate YAML files so they can b
 | **ODPS Agentic Product** | Use this when the product is consumed by AI agents, AI applications, workflows, automation, or machine-to-machine processes. It connects agentic use cases to strategy, quality, SLA, and named `dataAccess` methods such as MCP or API. | `details`, `useCases`, `productStrategy`, `dataAccess`, `SLA`, `dataQuality`, `contract`, `license` | [purpose-agentic-product.yml](examples/Templates/purpose-agentic-product.yml) |
 | **ODPS Marketplace Product** | Use this when the product is offered under controlled, priced, licensed, contractual, or marketplace terms. The template connects pricing, license, contract, payment, quality, SLA, and access metadata. | `details`, `productStrategy`, `pricingPlans`, `license`, `contract`, `paymentGateways`, `dataAccess`, `SLA`, `dataQuality` | [purpose-marketplace-product.yml](examples/Templates/purpose-marketplace-product.yml) |
 
-## Templates by known detail level
+## Templates by description maturity
 
-The following templates are organized by how much is known about the product at the time of description. They are not maturity or quality tiers. A product can start with a summary and later move to a fuller definition or operational description without changing its product intent.
+The following templates are organized by how complete the product description is at the time of use. They are not quality tiers. A product can start with a brief and later move to a definition or operating model as ownership, use cases, access, quality, and service expectations become known.
 
 | Template | Use when | Main ODPS areas | Skeleton |
 |---|---|---|---|
-| **ODPS Product Summary** | Use this when only the basic identity, value proposition, lifecycle state, and product type are known. | `details` | [detail-product-summary.yml](examples/Templates/detail-product-summary.yml) |
-| **ODPS Product Definition** | Use this when the product owner, business context, categories, tags, and use cases are known, but operational access and service terms are not yet complete. | `details`, `dataHolder`, `useCases` | [detail-product-definition.yml](examples/Templates/detail-product-definition.yml) |
-| **ODPS Product Operations Profile** | Use this when the product has known operational access, quality expectations, SLA expectations, and support metadata. | `details`, `dataHolder`, `dataAccess`, `dataQuality`, `SLA` | [detail-product-operations-profile.yml](examples/Templates/detail-product-operations-profile.yml) |
+| **ODPS Product Brief** | Use this when only the basic identity, value proposition, lifecycle state, and product type are known. | `details` | [maturity-product-brief.yml](examples/Templates/maturity-product-brief.yml) |
+| **ODPS Product Definition** | Use this when the product owner, business context, categories, tags, and use cases are known, but operational access and service terms are not yet complete. | `details`, `dataHolder`, `useCases` | [maturity-product-definition.yml](examples/Templates/maturity-product-definition.yml) |
+| **ODPS Product Operating Model** | Use this when the product has known operational access, quality expectations, SLA expectations, and support metadata. | `details`, `dataHolder`, `dataAccess`, `dataQuality`, `SLA` | [maturity-product-operating-model.yml](examples/Templates/maturity-product-operating-model.yml) |
