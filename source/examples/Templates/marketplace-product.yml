@@ -5,22 +5,21 @@ product:
     en:
       name: "{{name}}"
       productID: "{{productID}}"
-      visibility: dataspace
-      status: production
-      type: data-enhanced product
+      visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
+      status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
+      type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
       description: "{{description}}"
       valueProposition: "{{valueProposition}}"
-      productVersion: 1.0.0
-      portfolioPriority: high
-      governanceProfile: audit_ready
+      productVersion: "{{string: semver}}"
+      portfolioPriority: "{{enum: critical | high | medium | low}}"
+      governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
       categories:
         - "{{category}}"
       tags:
-        - marketplace
-        - controlled-consumption
+        - "{{tag}}"
 
   productStrategy:
-    status: Active
+    status: "{{enum: Planned | Active | At Risk | Achieved | Partially Achieved | Cancelled | Expired}}"
     objectives:
       - en: "{{businessObjective}}"
     contributesToKPI:
@@ -28,9 +27,9 @@ product:
       name: "{{businessKpiName}}"
       unit: "{{businessKpiUnit}}"
       target: "{{businessKpiTarget}}"
-      direction: increase
+      direction: "{{enum: increase | decrease | at_least | at_most | equals}}"
       timeframe: "{{timeframe}}"
-      frequency: monthly
+      frequency: "{{string}}"
       owner: "{{owner}}"
       calculation: "{{calculation}}"
     productKPIs:
@@ -44,15 +43,15 @@ product:
     declarative:
       en:
         - name: "{{pricingPlanName}}"
-          priceCurrency: USD
+          priceCurrency: "{{string: ISO 4217 currency code or crypto ticker}}"
           price: "{{price}}"
-          billingDuration: month
-          unit: Recurring
-          maxTransactionQuantity: 0
+          billingDuration: "{{enum: instant | day | week | month | year}}"
+          unit: "{{enum: One-time-payment | Pay-per-use | Recurring | Revenue-sharing | Data-volume | Pay-what-you-want | Freemium | Open-data | Value-based | On-request | Trial}}"
+          maxTransactionQuantity: "{{integer}}"
           offering:
             - "{{offeringItem}}"
-          valueAddedTaxIncluded: false
-          valueAddedTaxPercentage: 0
+          valueAddedTaxIncluded: "{{boolean}}"
+          valueAddedTaxPercentage: "{{integer}}"
           paymentGateway:
             $ref: "#/product/paymentGateways/default"
           dataQuality:
@@ -69,14 +68,12 @@ product:
         restrictions: "{{licenseRestrictions}}"
         geographicalArea:
           - "{{geographicalArea}}"
-        permanent: false
-        exclusive: false
+        permanent: "{{boolean}}"
+        exclusive: "{{boolean}}"
         rights:
-          - Reproduction
-          - Display
-          - Distribution
+          - "{{string}}"
       termination:
-        noticePeriod: 30
+        noticePeriod: "{{integer}}"
         terminationConditions: "{{terminationConditions}}"
         continuityConditions: "{{continuityConditions}}"
       governance:
@@ -88,7 +85,7 @@ product:
 
   contract:
     id: "{{contractId}}"
-    type: ODCS
+    type: "{{enum: ODCS | DCS}}"
     contractVersion: "{{contractVersion}}"
     contractURL: "{{contractUrl}}"
 
@@ -96,52 +93,36 @@ product:
     default:
       description:
         en: "{{paymentGatewayDescription}}"
-      type: Stripe
+      type: "{{enum: Stripe | Axio | Checkout | Custom}}"
       version: "{{paymentGatewayVersion}}"
       reference: "{{paymentGatewayReferenceUrl}}"
-      spec: {}
+      spec: "{{object}}"
 
   dataQuality:
     declarative:
       default:
         displaytitle:
-          en: Marketplace quality targets
+          en: "{{string}}"
         description:
-          en: Quality targets attached to the marketplace offer.
+          en: "{{string}}"
         dimensions:
-          - dimension: completeness
-            objective: 95
-            weight: 30
-            unit: percentage
-          - dimension: accuracy
-            objective: 95
-            weight: 40
-            unit: percentage
-          - dimension: timeliness
-            objective: 95
-            weight: 30
-            unit: percentage
+          - dimension: "{{enum: accuracy | completeness | conformity | consistency | coverage | timeliness | validity | uniqueness}}"
+            objective: "{{integer}}"
+            weight: "{{integer}}"
+            unit: "{{enum: percentage | number}}"
 
   SLA:
     declarative:
       default:
         name:
-          en: Marketplace product SLA
+          en: "{{string}}"
         description:
-          en: Service expectations attached to the marketplace offer.
+          en: "{{string}}"
         dimensions:
-          - dimension: uptime
-            objective: 99
-            weight: 40
-            unit: percent
-          - dimension: responseTime
-            objective: 2
-            weight: 30
-            unit: seconds
-          - dimension: emailResponseTime
-            objective: 1
-            weight: 30
-            unit: days
+          - dimension: "{{enum: latency | uptime | responseTime | errorRate | endOfSupport | endOfLife | updateFrequency | timeToDetect | timeToNotify | timeToRepair | emailResponseTime}}"
+            objective: "{{integer}}"
+            weight: "{{integer}}"
+            unit: "{{string}}"
     support:
       email: "{{supportEmail}}"
       emailServiceHours: "{{emailServiceHours}}"
@@ -150,13 +131,13 @@ product:
   dataAccess:
     default:
       name:
-        en: Marketplace API access
+        en: "{{string}}"
       description:
-        en: Controlled API access to the product.
-      outputPorttype: API
-      format: JSON
-      authenticationMethod: Token
-      specification: OAS
+        en: "{{string}}"
+      outputPorttype: "{{enum: file | API | SQL | AI | gRPC | sFTP}}"
+      format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
+      authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
+      specification: "{{enum: OAS | RAML | Slate | MCP}}"
       specsURL: "{{specsUrl}}"
       accessURL: "{{accessUrl}}"
       documentationURL: "{{documentationUrl}}"

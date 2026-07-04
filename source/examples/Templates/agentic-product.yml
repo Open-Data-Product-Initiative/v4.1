@@ -5,19 +5,18 @@ product:
     en:
       name: "{{name}}"
       productID: "{{productID}}"
-      visibility: organisation
-      status: production
-      type: data-driven service
+      visibility: "{{enum: private | invitation | organisation | dataspace | public}}"
+      status: "{{enum: announcement | draft | development | testing | acceptance | production | sunset | retired}}"
+      type: "{{enum: raw data | derived data | dataset | reports | analytic view | 3D visualisation | algorithm | decision support | automated decision-making | data-enhanced product | data-driven service | data-enabled performance | bi-directional}}"
       description: "{{description}}"
       valueProposition: "{{valueProposition}}"
-      productVersion: 1.0.0
-      portfolioPriority: critical
-      governanceProfile: automated
+      productVersion: "{{string: semver}}"
+      portfolioPriority: "{{enum: critical | high | medium | low}}"
+      governanceProfile: "{{enum: structured | enforced | automated | audit_ready}}"
       standards:
         - "{{standard}}"
       tags:
-        - agent-ready
-        - MCP
+        - "{{tag}}"
       useCases:
         - useCase:
             useCaseTitle: "{{agenticUseCaseTitle}}"
@@ -25,7 +24,7 @@ product:
             useCaseURL: "{{agenticUseCaseUrl}}"
 
   productStrategy:
-    status: Active
+    status: "{{enum: Planned | Active | At Risk | Achieved | Partially Achieved | Cancelled | Expired}}"
     objectives:
       - en: "{{businessObjective}}"
     contributesToKPI:
@@ -33,9 +32,9 @@ product:
       name: "{{businessKpiName}}"
       unit: "{{businessKpiUnit}}"
       target: "{{businessKpiTarget}}"
-      direction: increase
+      direction: "{{enum: increase | decrease | at_least | at_most | equals}}"
       timeframe: "{{timeframe}}"
-      frequency: monthly
+      frequency: "{{string}}"
       owner: "{{owner}}"
       calculation: "{{calculation}}"
     productKPIs:
@@ -49,47 +48,31 @@ product:
     declarative:
       default:
         displaytitle:
-          en: Agentic quality targets
+          en: "{{string}}"
         description:
-          en: Quality expectations for AI and automated consumption.
+          en: "{{string}}"
         dimensions:
-          - dimension: validity
-            objective: 98
-            weight: 35
-            unit: percentage
-          - dimension: timeliness
-            objective: 98
-            weight: 35
-            unit: percentage
-          - dimension: consistency
-            objective: 98
-            weight: 30
-            unit: percentage
+          - dimension: "{{enum: accuracy | completeness | conformity | consistency | coverage | timeliness | validity | uniqueness}}"
+            objective: "{{integer}}"
+            weight: "{{integer}}"
+            unit: "{{enum: percentage | number}}"
 
   SLA:
     declarative:
       default:
         name:
-          en: Agentic product SLA
+          en: "{{string}}"
         description:
-          en: Service expectations for agentic and automated consumption.
+          en: "{{string}}"
         dimensions:
-          - dimension: latency
-            objective: 500
-            weight: 35
-            unit: milliseconds
-          - dimension: uptime
-            objective: 99
-            weight: 35
-            unit: percent
-          - dimension: errorRate
-            objective: 1
-            weight: 30
-            unit: percent
+          - dimension: "{{enum: latency | uptime | responseTime | errorRate | endOfSupport | endOfLife | updateFrequency | timeToDetect | timeToNotify | timeToRepair | emailResponseTime}}"
+            objective: "{{integer}}"
+            weight: "{{integer}}"
+            unit: "{{string}}"
 
   contract:
     id: "{{contractId}}"
-    type: ODCS
+    type: "{{enum: ODCS | DCS}}"
     contractVersion: "{{contractVersion}}"
     contractURL: "{{contractUrl}}"
 
@@ -98,11 +81,10 @@ product:
       scope:
         definition: "{{licenseDefinition}}"
         restrictions: "{{licenseRestrictions}}"
-        permanent: false
-        exclusive: false
+        permanent: "{{boolean}}"
+        exclusive: "{{boolean}}"
         rights:
-          - Reproduction
-          - Display
+          - "{{string}}"
       governance:
         ownership: "{{licenseOwnership}}"
         audit: "{{auditTerms}}"
@@ -112,25 +94,25 @@ product:
   dataAccess:
     default:
       name:
-        en: MCP access
+        en: "{{string}}"
       description:
-        en: MCP access for AI agents and tools.
-      outputPorttype: AI
-      format: MCP
-      authenticationMethod: Token
-      specification: MCP
+        en: "{{string}}"
+      outputPorttype: "{{enum: file | API | SQL | AI | gRPC | sFTP}}"
+      format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
+      authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
+      specification: "{{enum: OAS | RAML | Slate | MCP}}"
       specsURL: "{{mcpSpecUrl}}"
       accessURL: "{{mcpAccessUrl}}"
       documentationURL: "{{documentationUrl}}"
     API:
       name:
-        en: API access
+        en: "{{string}}"
       description:
-        en: API access for applications and automated workflows.
-      outputPorttype: API
-      format: JSON
-      authenticationMethod: OAuth
-      specification: OAS
+        en: "{{string}}"
+      outputPorttype: "{{enum: file | API | SQL | AI | gRPC | sFTP}}"
+      format: "{{enum: TOON | JSON | XML | CSV | Excel | zip | plain text | GraphQL | MCP}}"
+      authenticationMethod: "{{enum: OAuth | Token | API key | HTTP Basic | none}}"
+      specification: "{{enum: OAS | RAML | Slate | MCP}}"
       specsURL: "{{openApiSpecUrl}}"
       accessURL: "{{apiAccessUrl}}"
       documentationURL: "{{apiDocumentationUrl}}"
