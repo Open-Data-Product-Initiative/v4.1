@@ -52,6 +52,14 @@ html, body {
 
   overflow-y: auto;
   overflow-x: hidden;
+  // Keep the long navigation usable without showing a separate scrollbar strip.
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
   position: fixed;
   z-index: 30;
   top: 0;
