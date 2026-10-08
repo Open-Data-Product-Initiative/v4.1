@@ -93,7 +93,7 @@ The content is modular, code‑first, and designed for easy reuse, enabling team
 
 [Knowledge Base in Github](https://opendataproducts.org/howto/). 
 
-[Udemy course - Master the Leading Data Product Specification with GPT tool](https://www.udemy.com/course/master-the-open-data-product-specification-with-gpt-tool)
+[Udemy course - Scalable Data Product Value Management with Agent-Ready SDK](https://www.udemy.com/course/scalable-data-product-value-management-with-agent-ready-sdk/?referralCode=DE23AF7C13D47E90B996)
 
 ## Specification aims and aspects
 
