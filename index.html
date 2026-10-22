@@ -384,7 +384,13 @@
             <a href="#data-contract" class="toc-h1 toc-link" data-title="Data Contract">Data Contract</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                    <a href="#external-contract-reference" class="toc-h2 toc-link" data-title="External contract reference">External contract reference</a>
+                  </li>
+                  <li>
+                    <a href="#contract-identity-and-url" class="toc-h2 toc-link" data-title="Contract identity and URL">Contract identity and URL</a>
+                  </li>
+                  <li>
+                    <a href="#inline-contract-specification" class="toc-h2 toc-link" data-title="Inline contract specification">Inline contract specification</a>
                   </li>
               </ul>
           </li>
@@ -578,6 +584,9 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>Submit issues or suggestions to the specification maintainers</td>
 </tr>
 </tbody></table>
+
+<p><code>odps.json</code> is the canonical ODPS 4.1 JSON Schema. <code>odps.yaml</code> is generated from it and has identical
+validation semantics; consumers may use either representation without changing the accepted contract.</p>
 <h2 id='introduction'>Introduction</h2>
 <p>The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. The work is based on existing standards (schema.org), best practices and emerging concepts like Data Mesh. The reasoning is that we reuse and proudly copy instead of reinventing the wheel. More detailed information of the origin can be found from the <a href="http://www.opendataproducts.org">Open Data Product Specification homepage</a>. </p>
 
@@ -717,7 +726,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <blockquote>
 <p>Example of details object usage:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.0/schema/odps.yaml</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.1/schema/odps.yaml</span>
 <span class="na">version</span><span class="pi">:</span> <span class="m">4.1</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">details</span><span class="pi">:</span> 
@@ -797,7 +806,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
       <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
       <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
       <span class="na">portfolioPriority</span><span class="pi">:</span> <span class="s">high</span>
-      <span class="na">governanceprofile</span><span class="pi">:</span> <span class="s">structured</span>
+      <span class="na">governanceProfile</span><span class="pi">:</span> <span class="s">structured</span>
       <span class="na">productVersion</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>
       <span class="na">versionNotes</span><span class="pi">:</span> <span class="s">New version with additional details such more accurate pet details</span>
       <span class="na">issues</span><span class="pi">:</span> <span class="s">The current issues include incorrect information in the dog breeds. The</span>
@@ -813,7 +822,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
       <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
       <span class="na">contentSample</span><span class="pi">:</span> <span class="s">https://download.com/pets.json</span>
       <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png</span>
-      <span class="na">OutputFileFormats</span><span class="pi">:</span>
+      <span class="na">outputFileFormats</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">JSON</span>
       <span class="pi">-</span> <span class="s">XML</span>
       <span class="pi">-</span> <span class="s">CSV</span>
@@ -1172,104 +1181,86 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <li><strong>Traceability:</strong> use shared KPI <code>id</code>s to enable cross‑product roll‑ups against the same business KPI.</li>
 </ul>
 <h1 id='data-contract'>Data Contract</h1>
-<p>The <code>contract</code> object in the ODPS schema defines the structure for linking a data product to a formal data contract. It includes an <code>id</code> as a unique identifier, a <code>type</code> field that specifies the contract standard (either ODCS or DCS), a <code>contractVersion</code> indicating the version of the standard, and a <code>contractURL</code> that points to an external contract document in a contract management service. Optionally, an inline YAML spec element can be used instead of a URL to embed the contract directly in the product file. These specifications allow data producers to clearly declare governance, usage rights, and technical expectations, supporting interoperability across platforms using standards such as the Open Data Contract Standard (ODCS) or the Data Contract Specification (DCS). More details in the <a href="https://opendataproducts.org/howto/">Knowledge Base</a>.</p>
-
-<p>Contract can be defined in 3 ways:</p>
-
-<ul>
-<li>Use ODPS given attributes to define basic information of the data contract and add URL to details found in contract management system</li>
-<li>Same as above but add contract details as YAML on <code>spec</code> element. </li>
-<li>Use <code>$ref</code> to define contract object content in a separate file.<br></li>
-</ul>
-<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
-<blockquote>
-<p>Example of contract object usage:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v4.0/schema/odps.yaml</span>
-<span class="na">version</span><span class="pi">:</span> <span class="m">4.1</span>
-<span class="na">product</span><span class="pi">:</span>
-  <span class="na">contract</span><span class="pi">:</span>
-    <span class="c1"># Optionally se URI of external file, contains all contract details</span>
-    <span class="s">$ref</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://example.org/contracts/default.yaml'</span>
-    <span class="c1"># Or then define with attributes</span>
-    <span class="na">id</span><span class="pi">:</span> <span class="s">02323M123</span>  
-    <span class="na">type</span><span class="pi">:</span>  <span class="s">ODCS</span> 
-    <span class="na">contractVersion</span><span class="pi">:</span>  <span class="s">2.2.2</span>
-    <span class="na">contractURL</span><span class="pi">:</span> <span class="s">https://demo.datamesh-manager.com/demo834016807886/dataproducts/9bd53b1b-b51e-41a8-a757-4d33b4cde460</span>
-    <span class="c1"># Or use inline style and add contract under spec element</span>
-    <span class="na">spec</span><span class="pi">:</span>
-        <span class="s">....</span>
-
-
+<p>The optional <code>product.contract</code> object links an ODPS product to a formal data contract. Use either a
+reference to an external contract, a compact contract identity with a URL, or an inline structured <code>spec</code>.
+ODPS does not require a contract unless a publisher or profile adds that rule.</p>
+<h2 id='external-contract-reference'>External contract reference</h2><div class="highlight"><pre class="highlight yaml"><code><span class="na">contract</span><span class="pi">:</span>
+  <span class="s">$ref</span><span class="pi">:</span> <span class="s">https://example.org/contracts/default.yaml</span>
+</code></pre></div><h2 id='contract-identity-and-url'>Contract identity and URL</h2><div class="highlight"><pre class="highlight yaml"><code><span class="na">contract</span><span class="pi">:</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s">02323M123</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">ODCS</span>
+  <span class="na">contractVersion</span><span class="pi">:</span> <span class="s">2.2.2</span>
+  <span class="na">contractURL</span><span class="pi">:</span> <span class="s">https://example.org/contracts/02323M123</span>
+</code></pre></div><h2 id='inline-contract-specification'>Inline contract specification</h2><div class="highlight"><pre class="highlight yaml"><code><span class="na">contract</span><span class="pi">:</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s">02323M123</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">ODCS</span>
+  <span class="na">contractVersion</span><span class="pi">:</span> <span class="s">2.2.2</span>
+  <span class="na">spec</span><span class="pi">:</span>
+    <span class="na">dataContractSpecification</span><span class="pi">:</span> <span class="s">odcs</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s">1.0.0</span>
 </code></pre></div>
 <table><thead>
 <tr>
-<th><div style="width:150px">Element name</div></th>
+<th>Element</th>
 <th>Type</th>
-<th>Options</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>contract</strong></td>
-<td>element</td>
-<td>-</td>
-<td>Binds together data contract details. You can use both URL and inline (YAML) for data contract content.</td>
+<td><code>contract</code></td>
+<td>object</td>
+<td>Optional contract link or inline description.</td>
 </tr>
 <tr>
-<td><strong>id</strong></td>
-<td>string</td>
-<td>-</td>
-<td>UUID of the data contract</td>
-</tr>
-<tr>
-<td><strong>type</strong></td>
-<td>string</td>
-<td>one of: ODCS, DCS</td>
-<td>Defines the standard used in data contract. Currently supported options: <a href="https://github.com/bitol-io/open-data-contract-standard">ODCS</a> and <a href="https://datacontract.com/">DCS</a>.</td>
-</tr>
-<tr>
-<td><strong>contractVersion</strong></td>
-<td>string</td>
-<td>-</td>
-<td>Version of the standard used to define the Data Contract. Type attribute defines the standard/specification. NOTE! This is not the possible iterated version of the data contract itself.</td>
-</tr>
-<tr>
-<td><strong>contractURL</strong></td>
-<td>URL</td>
-<td>Valid URL. See more from <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</td>
-<td>URL pointing to data contract in data contract management service or alike. Optionally you can use <em>spec</em> to add data contract details as YAML inline element.</td>
-</tr>
-<tr>
-<td><strong>spec</strong></td>
-<td>string</td>
-<td>YAML</td>
-<td>Inline YAML element to add data contract details instead of using URL.</td>
-</tr>
-<tr>
-<td><strong>$ref</strong></td>
+<td><code>$ref</code></td>
 <td>URI</td>
-<td>Valid URI</td>
-<td>Points to the contract content, local file or online. You can use this or then the other above described approaches to define elements of the contract.</td>
+<td>Points to contract content in another file or online.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>Contract identifier.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td><code>ODCS</code> or <code>DCS</code>.</td>
+</tr>
+<tr>
+<td><code>contractVersion</code></td>
+<td>string</td>
+<td>Version of the referenced contract standard.</td>
+</tr>
+<tr>
+<td><code>contractURL</code></td>
+<td>URI</td>
+<td>Link to a contract in a management service.</td>
+</tr>
+<tr>
+<td><code>spec</code></td>
+<td>object</td>
+<td>Inline structured contract content.</td>
 </tr>
 </tbody></table>
 <h1 id='data-sla'>Data SLA</h1>
 <blockquote>
-<p>Template structure of SLA array component:</p>
+<p>Template structure of the named SLA-profile component:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">SLA</span><span class="pi">:</span>
   <span class="na">declarative</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
-      <span class="na">displaytitle</span><span class="pi">:</span>
-      <span class="na">description</span><span class="pi">:</span>
-      <span class="na">objective</span><span class="pi">:</span> 
-      <span class="na">unit</span><span class="pi">:</span>
+    <span class="na">default</span><span class="pi">:</span>
+      <span class="na">dimensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+          <span class="na">displaytitle</span><span class="pi">:</span>
+            <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+          <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+          <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
   <span class="na">executable</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
-      <span class="na">type</span><span class="pi">:</span>  
-      <span class="na">version</span><span class="pi">:</span> 
-      <span class="na">reference</span><span class="pi">:</span> 
-      <span class="na">spec</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Prometheus</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="s">up == </span><span class="m">1</span>
 </code></pre></div>
 <p>Data Service Level Agreement (SLA) <strong>Object</strong> contains attributes which define the desired and promised quality of the data product. </p>
 
@@ -1523,7 +1514,7 @@ SLA:
 <tr>
 <td><strong>unit</strong></td>
 <td>attribute</td>
-<td>Options: percent, milliseconds, seconds, minutes, days, weeks, months, years, never, date, null</td>
+<td>Options: percent, milliseconds, seconds, minutes, hours, days, weeks, months, years, never, date, null</td>
 <td>Measurement unit for the SLA objective. If &quot;date&quot; is used, format should be dd/mm/yyyy.</td>
 </tr>
 <tr>
@@ -1606,10 +1597,10 @@ SLA:
 </tr>
 </tbody></table>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/v4.0/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/v4.1/issues">raise an issue in Github</a></p>
 <h1 id='data-quality'>Data Quality</h1>
 <blockquote>
-<p>Template structure of Data Quality array component:</p>
+<p>Template structure of the named Data Quality profile component:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
   <span class="na">declarative</span><span class="pi">:</span>
@@ -1628,11 +1619,12 @@ SLA:
           <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
           <span class="na">weight</span><span class="pi">:</span> <span class="m">40</span>
   <span class="na">executable</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
-      <span class="na">type</span><span class="pi">:</span>  
-      <span class="na">version</span><span class="pi">:</span> 
-      <span class="na">reference</span><span class="pi">:</span> 
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Custom</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">1'</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://example.org/data-quality-rules</span>
       <span class="na">spec</span><span class="pi">:</span>
+        <span class="na">rule</span><span class="pi">:</span> <span class="s">source_record_must_match</span>
 </code></pre></div>
 <p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  </p>
 
@@ -1645,7 +1637,7 @@ The <code>dataQuality</code> object consists of two parts:</p>
 
 <ul>
 <li><strong><code>declarative</code></strong>: Captures target levels for defined quality dimensions like <code>accuracy</code>, <code>completeness</code>, or <code>timeliness</code>. These values represent your <strong>intended</strong> or <strong>promised</strong> quality levels.</li>
-<li><strong><code>executive</code></strong>: Allows integration with supported <em>Everything as Code</em> tools (e.g., SodaCL, DQOps, MonteCarlo, OpenMetadata) to define <strong>verifiable</strong> and <strong>executable</strong> rules that check whether those targets are met in practice.</li>
+<li><strong><code>executable</code></strong>: Allows integration with supported <em>Everything as Code</em> tools (e.g., SodaCL, DQOps, MonteCarlo, OpenMetadata) to define <strong>verifiable</strong> and <strong>executable</strong> rules that check whether those targets are met in practice.</li>
 </ul>
 
 <p>This structure ensures that both expectations and enforcement logic are documented and machine-actionable in the same place.</p>
@@ -1840,7 +1832,7 @@ any industry specific needs. </p>
 <td><strong>dataQuality</strong></td>
 <td>element</td>
 <td>-</td>
-<td>Contains array of data quality dimensions with optional computational monitoring object. Under this element Data Quality is divided into declarative and executable parts.</td>
+<td>Contains named declarative data quality profiles and an optional executable monitoring-rule array.</td>
 </tr>
 <tr>
 <td><strong>$ref</strong></td>
@@ -1852,7 +1844,7 @@ any industry specific needs. </p>
 <td><strong>default</strong></td>
 <td>object</td>
 <td>-</td>
-<td>This object must always be present and named exactly <code>default</code> if dataQuality object is used. It acts as the fallback or primary data quality profile. <br/><br/>Users are free to define additional named profiles such as <code>premium</code>, <code>gold</code>, etc., in parallel to the default. <br/><br/>In the example, <code>default</code> and <code>premium</code> are both included. These variants can be referred to from other components like pricing plans. <br/><br/><strong>Example reference usage:</strong> <br/> <code>dataQuality: $ref: &#39;#/product/dataQuality/declarative/default&#39;</code></td>
+<td>Conventional name for the fallback or primary data quality profile. The schema permits any named profile. Users can define additional profiles such as <code>premium</code> or <code>gold</code> and refer to them from other components. <br/><br/><strong>Example reference usage:</strong> <br/> <code>dataQuality: $ref: &#39;#/product/dataQuality/declarative/default&#39;</code></td>
 </tr>
 <tr>
 <td><strong>dimension</strong></td>
@@ -1898,9 +1890,9 @@ any industry specific needs. </p>
 </tr>
 <tr>
 <td><strong>description</strong></td>
-<td>object</td>
+<td>string or object</td>
 <td>-</td>
-<td>Describe the dimension so that it can be used for example in info boxes in UI. Object contains descriptions in desired language(s).</td>
+<td>Describe the dimension for use in UI info boxes. It may be a plain string or an object with ISO 639-1 language keys.</td>
 </tr>
 <tr>
 <td><strong>type</strong></td>
@@ -1922,30 +1914,30 @@ any industry specific needs. </p>
 </tr>
 <tr>
 <td><strong>spec</strong></td>
-<td>element</td>
-<td>YAML/URL/string</td>
-<td>The content for Data Quality monitoring expressed as code. Accepted as inline YAML, a valid URL pointing to YAML, or a plain string if <code>type</code> is <code>Custom</code>.</td>
+<td>object</td>
+<td>Inline YAML object</td>
+<td>Structured monitoring-rule content expressed as an inline YAML object.</td>
 </tr>
 </tbody></table>
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 <h1 id='data-pricing-plans'>Data Pricing Plans</h1>
 <blockquote>
-<p>Template structure of Data Pricing Plans array component:</p>
+<p>Template structure of the localized Data Pricing Plans component:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">pricingPlans</span><span class="pi">:</span>
-  <span class="na">en</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">Recurring</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="s2">"</span><span class="s">50.00"</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
-
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subcsription 1 month</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">Recurring</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="s2">"</span><span class="s">8.00"</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">Recurring</span>
+        <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+        <span class="na">price</span><span class="pi">:</span> <span class="s2">"</span><span class="s">50.00"</span>
+        <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 month</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">Recurring</span>
+        <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+        <span class="na">price</span><span class="pi">:</span> <span class="s2">"</span><span class="s">8.00"</span>
+        <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
 </code></pre></div>
 <p><strong>Standardized data pricing plans are crucial for transparency, scalability, and customer trust.</strong> They ensure that customers can easily understand and compare costs, fostering trust and reducing disputes. For providers, standardized pricing streamlines operations, supports scalability, and simplifies market comparison, allowing for effective competitive positioning. Additionally, it aids in better financial planning and forecasting for both the provider and the customer, ensuring predictable revenue and informed decision-making. Overall, standardized pricing is essential for the sustainable growth and success of data products.</p>
 
@@ -1965,18 +1957,18 @@ any industry specific needs.
 A suggestive example below 
 
 pricingPlans:
-  en:
-  - name: Premium subscription 1 year
-    unit: Recurring
-    priceCurrency: EUR
-    price: "50.00"
-    billingDuration: year
-
-  - x-name: Extension plan
-    unit: custom
-    priceCurrency: EUR
-    price: "50.00"
-    billingDuration: year
+  declarative:
+    en:
+      - name: Premium subscription 1 year
+        unit: Recurring
+        priceCurrency: EUR
+        price: "50.00"
+        billingDuration: year
+      - x-name: Extension plan
+        unit: custom
+        priceCurrency: EUR
+        price: "50.00"
+        billingDuration: year
 
 </code></pre></div>
 <p><strong>Referencing Capability in Pricing Plans</strong> </p>
@@ -2679,7 +2671,7 @@ pricingPlans:
 <td><strong>default</strong></td>
 <td>object</td>
 <td>-</td>
-<td>This object defines the default access interface and must always be present if dataAccess object is used. The name <code>default</code> is fixed and used as the fallback or primary access method. <br/><br/> In the example, you will see additional user-defined access methods (<code>dataonly</code>, <code>API</code>, <code>Agent</code>) demonstrating how various access interfaces can be added beyond the required <code>default</code>. <br/><br/> <strong>Example reference usage:</strong> <br/> <code>access: $ref: &#39;#/dataAccess/default&#39;</code></td>
+<td>Conventional name for the fallback or primary access interface. The schema permits any named access method, including <code>API</code> and <code>Agent</code>. <br/><br/> <strong>Example reference usage:</strong> <br/> <code>access: $ref: &#39;#/product/dataAccess/default&#39;</code></td>
 </tr>
 <tr>
 <td><strong>name</strong></td>
@@ -2755,7 +2747,7 @@ pricingPlans:
 
 <p>The <em>data holder</em> might not be the original IPR owner of the data used, but has rights operate with it. The contract or other agreement between Provider and possible data owner is not part of the standard as metadata or licence wise.</p>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/v4.0/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/v4.1/issues">raise an issue in Github</a></p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
 <p>Example of Holder component with some of the voluntary attributes:</p>
@@ -3867,7 +3859,7 @@ Existing 4.0 YAML files remain valid without modification.</p>
 
 <p><strong>Location in schema on the left example</strong></p>
 
-<p>See the <a href="https://opendataproducts.org/v4.1rc/schema">ODPS 4.1 schema</a> for full JSON/YAML definitions.</p>
+<p>See the <a href="https://opendataproducts.org/v4.1/schema/odps.json">ODPS 4.1 JSON Schema</a> and its equivalent <a href="https://opendataproducts.org/v4.1/schema/odps.yaml">YAML representation</a> for the full definition.</p>
 <h3 id='backward-compatibility'>Backward Compatibility</h3>
 <table><thead>
 <tr>
