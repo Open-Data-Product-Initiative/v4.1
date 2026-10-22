@@ -56,6 +56,9 @@ Development of the specification is under the umbrella of the Linux Foundation.
 | Knowledge Base | [ODPS Knowledge Base](https://opendataproducts.org/howto/) | Practical examples, FAQs, and implementation guidance |
 | Contribute | [Raise an issue in GitHub](https://github.com/Open-Data-Product-Initiative/v4.1/issues) | Submit issues or suggestions to the specification maintainers |
 
+`odps.json` is the canonical ODPS 4.1 JSON Schema. `odps.yaml` is generated from it and has identical
+validation semantics; consumers may use either representation without changing the accepted contract.
+
 ## Introduction
 
 The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. The work is based on existing standards (schema.org), best practices and emerging concepts like Data Mesh. The reasoning is that we reuse and proudly copy instead of reinventing the wheel. More detailed information of the origin can be found from the [Open Data Product Specification homepage](http://www.opendataproducts.org). 

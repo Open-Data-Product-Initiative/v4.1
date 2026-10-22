@@ -23,6 +23,8 @@ jobs:
         python-version: '3.x'
     - name: Install validation dependencies
       run: python -m pip install -r requirements-dev.txt
+    - name: Check JSON and YAML schema parity
+      run: python scripts/sync_schema_representations.py
     - name: Validate ODPS spec alignment
       run: python scripts/validate_spec_alignment.py
     - name: Set up Ruby

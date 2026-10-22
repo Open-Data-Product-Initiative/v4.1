@@ -1,21 +1,21 @@
 # Data Pricing Plans
 
-> Template structure of Data Pricing Plans array component:
+> Template structure of the localized Data Pricing Plans component:
 
 ```yml
 pricingPlans:
-  en:
-  - name: Premium subscription 1 year
-    unit: Recurring
-    priceCurrency: EUR
-    price: "50.00"
-    billingDuration: year
-    
-  - name: Premium subcsription 1 month
-    unit: Recurring
-    priceCurrency: EUR
-    price: "8.00"
-    billingDuration: month
+  declarative:
+    en:
+      - name: Premium subscription 1 year
+        unit: Recurring
+        priceCurrency: EUR
+        price: "50.00"
+        billingDuration: year
+      - name: Premium subscription 1 month
+        unit: Recurring
+        priceCurrency: EUR
+        price: "8.00"
+        billingDuration: month
 ```
 
 
@@ -37,18 +37,18 @@ any industry specific needs.
 A suggestive example below 
 
 pricingPlans:
-  en:
-  - name: Premium subscription 1 year
-    unit: Recurring
-    priceCurrency: EUR
-    price: "50.00"
-    billingDuration: year
-    
-  - x-name: Extension plan
-    unit: custom
-    priceCurrency: EUR
-    price: "50.00"
-    billingDuration: year
+  declarative:
+    en:
+      - name: Premium subscription 1 year
+        unit: Recurring
+        priceCurrency: EUR
+        price: "50.00"
+        billingDuration: year
+      - x-name: Extension plan
+        unit: custom
+        priceCurrency: EUR
+        price: "50.00"
+        billingDuration: year
     
 ```
 

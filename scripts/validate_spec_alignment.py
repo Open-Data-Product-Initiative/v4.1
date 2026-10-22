@@ -417,6 +417,15 @@ def validate_schema_alignment(
     Draft202012Validator.check_schema(json_schema)
     Draft202012Validator.check_schema(yaml_schema)
 
+    if json_schema != yaml_schema:
+        failures.append(
+            Failure(
+                "schema-representation-alignment",
+                "source/schema",
+                "odps.json and odps.yaml are not equivalent parsed JSON Schemas; run sync_schema_representations.py --write",
+            )
+        )
+
     for path in [(), ("product",)]:
         json_node = pointer(json_schema, path) if path else json_schema
         yaml_node = pointer(yaml_schema, path) if path else yaml_schema
@@ -463,11 +472,6 @@ def validate_schema_alignment(
     json_access = resolve_ref(json_schema, "#/$defs/DataAccessItem")
     if "outputPortType" not in json_access.get("properties", {}):
         failures.append(Failure("schema-canonical-field", "#/$defs/DataAccessItem", "missing outputPortType"))
-
-    yaml_access = pointer(yaml_schema, ("product", "dataAccess"))
-    yaml_required = yaml_access.get("additionalProperties", {}).get("required", []) if yaml_access else []
-    if "outputPortType" not in yaml_required:
-        failures.append(Failure("schema-canonical-field", "/product/dataAccess", "outputPortType is not required"))
 
 
 def validate_forbidden_drift(failures: list[Failure]) -> None:

@@ -1,42 +1,51 @@
 # Inline Pattern
 
-The objects are not defined inline, but instead references a reusable definition in the components section using a $ref path.
-
-> Example:
+Use the named ODPS objects directly under `product` when a data product carries its own service, quality,
+and access definitions. Reuse a named definition elsewhere in the same document with its JSON Pointer.
 
 ```yml
-
 schema: https://opendataproducts.org/v4.1/schema/odps.yaml
-version: 4.1
+version: '4.1'
 product:
   details:
     en:
       name: Pets of the year
-      productID: 123456are
-      valueProposition: Design a customised petstore using pet preference data.
-      description: This is an inline example of a petstore data product.
+      productID: pets-of-the-year
+      valueProposition: Reusable pet preference data for petstore services.
+      description: An inline ODPS 4.1 example.
       visibility: private
       status: draft
       productVersion: '0.1.0'
-      type: derived data
-    
-  serviceLevel:
-    slas:
-      - dimension: uptime
-        objective: 99
-        unit: percent
+      type: dataset
 
-  access:
-    format: REST
-    specification: OAS 3.0
-    specsURL: https://urbanpulse.ai/spec.json
+  SLA:
+    declarative:
+      default:
+        dimensions:
+          - dimension: uptime
+            objective: 99
+            unit: percent
 
   dataQuality:
-    metrics:
+    declarative:
+      default:
+        dimensions:
+          - dimension: completeness
+            objective: 95
+            unit: percentage
+    executable:
       - dimension: completeness
-        objective: 95
-        code:
-          language: SQL
-          logic: |
-            SELECT ...;
+        type: Custom
+        spec:
+          rule: pet_id_must_be_present
+
+  dataAccess:
+    API:
+      outputPortType: API
+      format: JSON
+      authenticationMethod: OAuth
+      specification: OAS
+      specsURL: https://example.org/pets/openapi.yaml
+      accessURL: https://api.example.org/pets
+      documentationURL: https://example.org/pets/docs
 ```

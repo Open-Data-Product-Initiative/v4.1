@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "ODPS schema",
-    "description": "This is the schema for ODPS v4.1.",
+    "description": "Canonical JSON Schema for ODPS v4.1. source/schema/odps.yaml is a generated, equivalent YAML representation.",
     "type": "object",
     "properties": {
         "schema": {
@@ -319,7 +319,7 @@
         },
         "DataQuality": {
             "type": "object",
-            "description": "Contains array of data quality dimensions with optional computational monitoring object. Under this element Data Quality is divided into declarative and executable parts.",
+            "description": "Contains named declarative data-quality profiles and an optional executable monitoring-rule array.",
             "properties": {
                 "declarative": {
                     "type": "object",
@@ -551,7 +551,7 @@
                 },
                 "spec": {
                     "type": "object",
-                    "description": "The content for Data Quality monitoring expressed as code. Accepted as inline YAML, a valid URL pointing to YAML, or a plain string if type is Custom."
+                    "description": "The structured content for a data-quality monitoring rule, expressed as an inline YAML object."
                 },
                 "dimensions": {
                     "type": "array",
@@ -600,6 +600,7 @@
                         "milliseconds",
                         "seconds",
                         "minutes",
+                        "hours",
                         "days",
                         "weeks",
                         "months",

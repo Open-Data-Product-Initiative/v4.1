@@ -1,21 +1,23 @@
 # Data SLA
 
-> Template structure of SLA array component:
+> Template structure of the named SLA-profile component:
 
 ```yml
 SLA:
   declarative:
-    - dimension: selected dimension
-      displaytitle:
-      description:
-      objective: 
-      unit:
+    default:
+      dimensions:
+        - dimension: uptime
+          displaytitle:
+            en: Uptime
+          objective: 99
+          unit: percent
   executable:
-    - dimension: selected dimension
-      type:  
-      version: 
-      reference: 
-      spec:
+    - dimension: uptime
+      type: Prometheus
+      version: '2'
+      reference: https://prometheus.io/docs/prometheus/latest/querying/basics/
+      spec: up == 1
 ```
 
 Data Service Level Agreement (SLA) **Object** contains attributes which define the desired and promised quality of the data product. 
@@ -200,7 +202,7 @@ SLA:
 | **dimensions** | array | - | Contains one or more SLA dimension objects. Each defines a measurable SLA metric such as uptime or responseTime. |
 | **dimension** | attribute | string, one of: *latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime* | Defines the SLA dimension. |
 | **objective** | attribute | integer | Target level to be achieved for the dimension (e.g., 99). |
-| **unit** | attribute | Options: percent, milliseconds, seconds, minutes, days, weeks, months, years, never, date, null | Measurement unit for the SLA objective. If "date" is used, format should be dd/mm/yyyy. |
+| **unit** | attribute | Options: percent, milliseconds, seconds, minutes, hours, days, weeks, months, years, never, date, null | Measurement unit for the SLA objective. If "date" is used, format should be dd/mm/yyyy. |
 | **weight** | attribute | integer | Optional. Relative importance as percentage of the SLA dimension when calculating the product's overall SLA score. Must be an integer (no decimals). User-editable. |
 | **displaytitle** | object | - | Dimension title to be shown in UIs. Localized per language. |
 | **description** | object | - | Description of the SLA package or specific dimension, localized per language. |
@@ -218,4 +220,4 @@ SLA:
 
 
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.0/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v4.1/issues)

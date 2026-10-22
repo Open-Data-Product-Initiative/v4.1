@@ -23,7 +23,7 @@ A new top-level object under `product` introduces the ability to connect data pr
 
 **Location in schema on the left example**
 
-See the [ODPS 4.1 schema](https://opendataproducts.org/v4.1rc/schema) for full JSON/YAML definitions.
+See the [ODPS 4.1 JSON Schema](https://opendataproducts.org/v4.1/schema/odps.json) and its equivalent [YAML representation](https://opendataproducts.org/v4.1/schema/odps.yaml) for the full definition.
 
 
 ### Backward Compatibility
